@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -26,11 +25,8 @@ body { background: #1a1612; color: #e8dfd4; font-family: 'Cormorant Garamond', G
 .sub-btn.active, .sub-btn:hover { background: #5a4e3e; color: #e8dfd4; }
 .results-count { padding: 16px 0 8px; font-size: 13px; color: #8a7d6b; font-family: 'Source Sans 3', sans-serif; }
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; padding-bottom: 40px; }
-.card { background: #221e19; border: 1px solid #3a322a; cursor: pointer; transition: all 0.2s; overflow: hidden; }
+.card { background: #221e19; border: 1px solid #3a322a; padding: 20px; cursor: pointer; transition: all 0.2s; }
 .card:hover { border-color: #c4a97d; background: #2a241e; }
-.card-img { width: 100%; height: 180px; object-fit: cover; display: block; background: #2a241e; }
-.card-img-placeholder { width: 100%; height: 180px; background: linear-gradient(135deg, #2a241e 0%, #3a322a 100%); display: flex; align-items: center; justify-content: center; font-size: 40px; color: #3a322a; }
-.card-body { padding: 16px 20px 20px; }
 .card-cat { font-family: 'Source Sans 3', sans-serif; font-size: 10px; letter-spacing: 2px; color: #8a7d6b; margin-bottom: 6px; text-transform: uppercase; }
 .card-name { font-size: 18px; color: #f0e6d6; margin-bottom: 8px; line-height: 1.3; }
 .card-desc { font-family: 'Source Sans 3', sans-serif; font-size: 13px; color: #a89880; line-height: 1.5; margin-bottom: 12px; }
@@ -41,7 +37,6 @@ body { background: #1a1612; color: #e8dfd4; font-family: 'Cormorant Garamond', G
 .detail { max-width: 720px; margin: 0 auto; padding: 24px 20px; }
 .back-btn { background: none; border: 1px solid #5a4e3e; color: #c4a97d; padding: 8px 20px; cursor: pointer; font-family: 'Source Sans 3', sans-serif; font-size: 14px; letter-spacing: 1px; margin-bottom: 24px; transition: all 0.2s; }
 .back-btn:hover { background: #c4a97d; color: #1a1612; }
-.detail-hero { width: 100%; max-height: 400px; object-fit: cover; display: block; margin-bottom: 24px; border: 1px solid #3a322a; }
 .detail-header { border-bottom: 1px solid #3a322a; padding-bottom: 24px; margin-bottom: 24px; }
 .detail-cat { font-family: 'Source Sans 3', sans-serif; font-size: 11px; letter-spacing: 3px; color: #8a7d6b; margin-bottom: 8px; text-transform: uppercase; }
 .detail h1 { font-size: 32px; font-weight: 400; line-height: 1.2; color: #f0e6d6; }
@@ -62,7 +57,6 @@ body { background: #1a1612; color: #e8dfd4; font-family: 'Cormorant Garamond', G
   .header h1 { font-size: 28px; }
   .grid { grid-template-columns: 1fr; }
   .card-name { font-size: 16px; }
-  .card-img { height: 160px; }
 }
 </style>
 </head>
@@ -258,34 +252,12 @@ const recipes = [
   {n:"Trufas de Chocolate",id:"Trufas_Chocolate",c:"Postres",s:"",d:"Trufas de ganache con cacao",t:"Cocción",p:"-"},
 ];
 
-/* --- Image mapping --- */
-const jpegIds = new Set([
-  "01_Fondo_Blanco_Pollo","02_Fondo_Dorado_Pollo","03_Fumet_Pescado",
-  "04_Fondo_Marisco","05_Fondo_Oscuro_Ternera","06_Caldo_Verduras","07_Demi_Glace",
-  "Chucrut_Afinado_Gourmet","Chuleta_Cerdo_Chucrut","Coq_au_Vin",
-  "Koenigsberger_Klopse","Linseneintopf_Bockwurst","Mojos_Canarios",
-  "Patatas_Gajo_Bistro","Pollo_Ajillo_Plato","Pure_Boniato",
-  "Pure_Cremoso_Robuchon","Pure_Patata_Firme","Ropa_Vieja_Canaria",
-  "Rote_Bete_Salat","Salmon_Curado_Confitado","Salsa_Tonkatsu_Mejorada",
-  "Sancocho_Canario_Bacalao","Shakshuka","Sopa_Miso_Tofu_Wakame",
-  "Tonkatsu_Pollo_Componente","Tonkatsu_Pollo_Plato"
-]);
-const imgAlias = {
-  "Portobello_Shiitake_Glaseados_Fondo_Oscuro": "Portobello_Shiitake_Glaseados",
-  "Risotto_Azafran_Plato": "Risotto_Azafran"
-};
-function getImg(id) {
-  const base = imgAlias[id] || id;
-  const ext = jpegIds.has(id) ? "jpeg" : "jpg";
-  return `img/${base}_AI.${ext}`;
-}
-
 const cats = [
-  {id:"all",l:"Todo",i:"\u25C8"},
-  {id:"Componentes",l:"Componentes",i:"\u25C6"},
-  {id:"Platos",l:"Platos",i:"\u25C9"},
-  {id:"Entrantes",l:"Entrantes",i:"\u25CE"},
-  {id:"Postres",l:"Postres",i:"\u25C7"}
+  {id:"all",l:"Todo",i:"◈"},
+  {id:"Componentes",l:"Componentes",i:"◆"},
+  {id:"Platos",l:"Platos",i:"◉"},
+  {id:"Entrantes",l:"Entrantes",i:"◎"},
+  {id:"Postres",l:"Postres",i:"◇"}
 ];
 const subCats = ["Principal","Guarnición HI","Guarnición V","Base/Salsa","Base/Caldo","Base/Elemento"];
 
@@ -323,15 +295,12 @@ function renderGrid() {
   document.getElementById("results-count").textContent = `${f.length} receta${f.length!==1?"s":""}`;
   document.getElementById("grid").innerHTML = f.map(r => `
     <div class="card" onclick="select('${r.id}')">
-      <img class="card-img" src="${getImg(r.id)}" alt="${r.n}" loading="lazy" onerror="this.outerHTML='<div class=\\'card-img-placeholder\\'>&#9672;</div>'">
-      <div class="card-body">
-        <div class="card-cat">${r.c}${r.s?" \u00B7 "+r.s:""}</div>
-        <div class="card-name">${r.n}</div>
-        <div class="card-desc">${r.d}</div>
-        <div class="card-tags">
-          <span class="tag tag-tech">${r.t}</span>
-          ${r.p!=="-"?`<span class="tag tag-prot">${r.p}</span>`:""}
-        </div>
+      <div class="card-cat">${r.c}${r.s?" · "+r.s:""}</div>
+      <div class="card-name">${r.n}</div>
+      <div class="card-desc">${r.d}</div>
+      <div class="card-tags">
+        <span class="tag tag-tech">${r.t}</span>
+        ${r.p!=="-"?`<span class="tag tag-prot">${r.p}</span>`:""}
       </div>
     </div>
   `).join("");
@@ -344,28 +313,27 @@ function renderDetail() {
   document.getElementById("detail-view").classList.remove("hidden");
   const path = `Recetas/${r.c}/${r.s?r.s+"/":""}${r.id}/${r.id}`;
   document.getElementById("detail").innerHTML = `
-    <button class="back-btn" onclick="back()">\u2190 CAT\u00C1LOGO</button>
-    <img class="detail-hero" src="${getImg(r.id)}" alt="${r.n}" onerror="this.style.display='none'">
+    <button class="back-btn" onclick="back()">← CATÁLOGO</button>
     <div class="detail-header">
-      <div class="detail-cat">${r.c}${r.s?" \u00B7 "+r.s:""}</div>
+      <div class="detail-cat">${r.c}${r.s?" · "+r.s:""}</div>
       <h1>${r.n}</h1>
       <p class="detail-desc">${r.d}</p>
     </div>
     <div class="detail-tags">
-      <div class="detail-tag"><span>T\u00E9cnica: </span><span>${r.t}</span></div>
-      ${r.p!=="-"?`<div class="detail-tag"><span>Prote\u00EDna: </span><span>${r.p}</span></div>`:""}
+      <div class="detail-tag"><span>Técnica: </span><span>${r.t}</span></div>
+      ${r.p!=="-"?`<div class="detail-tag"><span>Proteína: </span><span>${r.p}</span></div>`:""}
       <div class="detail-tag"><span>PAX: </span><span>25</span></div>
     </div>
     <div class="tab-btns">
-      <button class="tab-btn${state.tab==="ficha"?" active":""}" onclick="setTab('ficha')">FICHA T\u00C9CNICA</button>
+      <button class="tab-btn${state.tab==="ficha"?" active":""}" onclick="setTab('ficha')">FICHA TÉCNICA</button>
       <button class="tab-btn${state.tab==="story"?" active":""}" onclick="setTab('story')">STORYTELLING</button>
     </div>
     <div class="content-box">
       ${state.tab==="ficha"?`
-        <p>La ficha t\u00E9cnica completa est\u00E1 disponible en el vault de Obsidian.</p>
+        <p>La ficha técnica completa está disponible en el vault de Obsidian.</p>
         <p class="path">${path}.md</p>
       `:`
-        <p>El storytelling completo est\u00E1 disponible en el vault de Obsidian.</p>
+        <p>El storytelling completo está disponible en el vault de Obsidian.</p>
         <p class="path">${path}_storytelling.md</p>
       `}
     </div>
@@ -373,8 +341,8 @@ function renderDetail() {
 }
 
 function render() { renderCats(); renderSubs(); renderGrid(); renderDetail();
-  document.getElementById("total-count").textContent = recipes.length + " recetas \u00B7 Tenerife";
-  document.getElementById("footer").textContent = "ATTENYA \u00B7 SISTEMA CULINARIO \u00B7 " + recipes.length + " RECETAS \u00B7 2026";
+  document.getElementById("total-count").textContent = recipes.length + " recetas · Tenerife";
+  document.getElementById("footer").textContent = "ATTENYA · SISTEMA CULINARIO · " + recipes.length + " RECETAS · 2026";
 }
 
 function setCat(c) { state.cat = c; state.sub = null; render(); }
