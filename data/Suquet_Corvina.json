@@ -1,0 +1,21 @@
+{
+  "id": "Suquet_Corvina",
+  "name": "Suquet de Corvina",
+  "category": "Platos",
+  "subcategory": null,
+  "description": "Plato único guisado. Mediterráneo, textura amable, espina cero.",
+  "technique": "Guiso",
+  "protein": "Pescado",
+  "pax": 25,
+  "time_total": "~50 min",
+  "difficulty": null,
+  "allergens": null,
+  "ingredients": "- Patata nueva: 4,5 kg\n- Perejil fresco: 120 g\n- Maicena: 60 g (opcional)",
+  "procedure": "### Fase 1 — Base Aromática (10–12 Min) - Ajo: 120 G\n- Perejil fresco: 120 g\n1. Calentar aceite en marmita amplia.\n\n### Fase 2 — Patata Y Fondo (20–25 Min) - Alioli Suave: 300 G\n- Maicena: 60 g (opcional)\n1. Añadir las patatas.\n2. Cubrir con caldo caliente. Condimentos\n3. Cocer a hervor suave hasta patata muy tierna. - Pimentón dulce: 20 g\n4. Chafar algunas patatas para ligazón natural. - Sal fina: al gusto\nEl caldo debe quedar ligeramente espeso, no sopa. - Pimienta blanca: al gusto\n\n### Fase 3 — Cocción Pescado (6–8 Min)\n\n### Fase 4 — Ligazón Final (2–3 Min)\n1. Retirar del fuego.\n2. Añadir alioli poco a poco, mezclando suave.\n3. Si hace falta, ajustar con maicena disuelta.\n4. Ajustar sal y pimienta. Añadir perejil.\nTextura final: melosa, brillante, sin separación grasa.",
+  "plating": "- Pescado visible, napado con el guiso.\n- Patata integrada, no puré.\nnn PUNTOS CRÍTICOS: No prolongar cocción del pescado · No añadir alioli con guiso caliente ·\nNo romper las piezas de corvina al remover · Ligazón sin separación grasa\n\"El suquet no es una sopa ni un puré: es un guiso ligado donde el pescado llega al final\ny se protege con técnica, no con prisa.\"",
+  "critical_points": "No prolongar cocción del pescado · No añadir alioli con guiso caliente ·\nNo romper las piezas de corvina al remover · Ligazón sin separación grasa",
+  "appcc": null,
+  "senior_adaptation": null,
+  "storytelling": "# Suquet de Corvina — Historia\n\n## Origen\nEl suquet es la sopa-guiso costero de Cataluña, esa región donde el mar habla catalán. La corvina es pescado blanco de carne firme, generosa, que no se deshace fácilmente. El suquet no es ni sopa líquida ni puré: es un punto intermedio, una emulsión natural donde la patata chafada liga el caldo con alioli, creando untuosidad sin crema. Ferran Adrià mismo lo respetaba.\n\n## La Historia\nSe construye en fases. Primero, ajo y tomate se suavizan en aceite hasta perder su forma agresiva y volverse casi sauce. Luego, patata en dados medianos entra en caldo de pescado—ese caldo que huele a mar limpio, a hinojo, a espinas remojadas. Se cocina hasta que la patata esté tierna pero íntegra. En este momento, algunas patatas se chafan contra la pared de la marmita, espesando el líquido naturalmente. Solo entonces, con todo listo, entra la corvina: porciones controladas, carne limpia de espinas, que se cuece suavemente sin remover. Cuando está en su punto—nacarada, jugosa—se retira el fuego y el alioli frío se incorpora poco a poco, creando una textura melosa, brillante, sin separación de grasa.\n\n## Para Nuestros Comensales\nEsta es la sopa que sus abuelas no les podían dar todos los días porque requiere tiempo y pescado bueno. Aquí la hacemos pensando en ustedes. Cada cucharada tiene pescado, patata, y una salsa que no existe en botellas. Mastica con seguridad; no hay espinas traicioneras. Es la Cataluña en un plato hondo.\n",
+  "quote": "El suquet no es una sopa ni un puré: es un guiso ligado donde el pescado llega al final\ny se protege con técnica, no con prisa."
+}

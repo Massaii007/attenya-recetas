@@ -1,0 +1,21 @@
+{
+  "id": "Manzana_Horno",
+  "name": "Manzana al Horno",
+  "category": "Postres",
+  "subcategory": null,
+  "description": "Postre clásico tipo Bratapfel, textura fundente. Familiar para residentes alemanes.",
+  "technique": "Horno",
+  "protein": "-",
+  "pax": 25,
+  "time_total": "40 min",
+  "difficulty": null,
+  "allergens": "** lácteos (mantequilla, nata), frutos de cáscara (nuez/almendra)",
+  "ingredients": "### Fruta\n- Manzanas Golden o Reineta: 25 uds *(tamaño medio-grande, firmes)*\n\n### Relleno\n- Mantequilla: 375 g *(pomada)*\n- Azúcar moreno: 250 g\n- Canela molida: 15 g\n- Frutos secos (nuez/almendra): 190 g *(picados muy finos)*\n- Pasas: 125 g *(opcionales, hidratadas en agua tibia)*\n\n### Acompañamiento (opcional)\n- Nata para montar: 500 ml\n- Azúcar glas: 30 g",
+  "procedure": "### MISE EN PLACE\n\n1. Lavar manzanas. Descorazonar sin atravesar la base (dejar fondo cerrado).\n2. Hacer una incisión circular superficial en el ecuador (evita que reviente).\n3. Picar frutos secos muy finos (casi polvo grueso, sin trozos duros).\n4. Mezclar mantequilla pomada con azúcar moreno, canela y frutos secos.\n\n### RELLENADO\n\n1. Rellenar el hueco de cada manzana con la mezcla de mantequilla.\n2. Colocar en bandejas GN ligeramente engrasadas.\n3. Añadir un dedo de agua en el fondo de la bandeja.\n\n### HORNEADO (25–30 min)\n\n1. Hornear en Convotherm a 180 °C, modo mixto, 25–30 min.\n2. La manzana debe estar muy tierna, casi colapsando, pero entera.\n3. No debe quedar firme: para senior debe ceder al contacto de la cuchara.\n\n### SERVICIO\n\n1. Servir tibia o a temperatura ambiente.\n2. Napar con el jugo de cocción de la bandeja.\n3. Opcional: acompañar con nata semimontada o helado de vainilla.",
+  "plating": null,
+  "critical_points": "Descorazonar SIN atravesar la base · Incisión ecuatorial para evitar reventón · Frutos secos picados MUY finos (riesgo masticación) · Manzana MUY tierna, debe ceder con cuchara · Agua en bandeja para evitar que se pegue y crear jugo",
+  "appcc": "Horneado >85 °C interno · Regenerar en Convotherm 140 °C tapado, 10 min · **Alérgenos:** lácteos (mantequilla, nata), frutos de cáscara (nuez/almendra)",
+  "senior_adaptation": null,
+  "storytelling": "# Manzana al Horno con Mantequilla, Canela y Frutos Secos Tiernos — Historia\n\n## Origen\nEl Bratapfel, manzana rellena de los Alpes austríacos, es memoria tejida en fruta. Llevado a las mesas de Europa Central durante los inviernos largos, cuando la manzana era lo único que quedaba de las cosechas guardadas. La canela viajó desde Oriente, trayendo misterio y calidez a los hogares del norte. La mantequilla y los frutos secos convergen en Centroeuropa como lengua común del hogar, del confort, del fuego encendido que hace la noche menos oscura. En las Islas Canarias, este postre clásico encuentra nuevas raíces, honrando la memoria de quienes llevan esa tradición en el corazón.\n\n## La Historia\nLa manzana entra al horno con su corazón vaciado, un hueco sagrado esperando ser llenado. La mezcla de mantequilla, azúcar moreno y canela se tiende en ese vacío como un acto de generosidad; los frutos secos picados tan finos que casi son polvo, desaparecen en ese manjar. El calor del horno es paciente, envolvente; la manzana se reblandece lentamente desde adentro, su pulpa transformándose en algo que cede al contacto más suave de una cuchara. La canela perfuma el aire de la cocina, recordando chocolate caliente en tardes de nostalgia. Cuando sale del horno, la manzana brilla, tibia, completamente abierta a quien la quiera tocar.\n\n## Para Nuestros Comensales\nLlevar esta manzana a su mesa es traer al presente un recuerdo hecho fruta y calidez. Aquellos que guardan en la memoria las manzanas de sus abuelas encontrarán aquí el mismo consuelo, la misma promesa de dulzura sin artificio. La manzana se deshace bajo la cuchara, la canela os envuelve como un abrazo conocido, y en cada bocado está la seguridad de que la vida, cuando es buena, es tan simple como esto. Es el postre de quien ha aprendido que la verdadera riqueza cabe en una cuchara.\n",
+  "quote": "El Bratapfel es memoria emocional para los residentes alemanes. La manzana debe fundirse en la boca, el relleno de mantequilla y canela perfumar sin dominar. Los frutos secos aportan textura sutil solo si están picados en fino: nunca trozos que incomoden."
+}
