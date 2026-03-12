@@ -1,0 +1,18 @@
+{
+  "nombre": "Fondo de Ternera (T.Straker)",
+  "fuente": "Thomas Straker - Food You Want to Eat",
+  "pax": "25",
+  "time_total": "5 h",
+  "technique": "",
+  "protein": "",
+  "allergens": "apio",
+  "difficulty": "Baja",
+  "ingredients": "| Ingrediente | Cantidad (25 PAX) | Unidad | Notas |\n|---|---|---|---|\n| Huesos de ternera (rodilla, canilla) | 8.000 | g | troceados por el carnicero |\n| Aceite vegetal | 200 | ml | |\n| Cebolla | 6 | uds | cuarteadas |\n| Zanahoria | 6 | uds | troceadas |\n| Apio | 6 | tallos | troceados |\n| Puerro | 3 | uds | troceados |\n| Concentrado de tomate | 120 | g | |\n| Vino tinto | 750 | ml | |\n| Tomillo fresco | 20 | g | ramillete |\n| Romero fresco | 10 | g | ramillete |\n| Laurel | 4 | uds | |\n| Pimienta negra en grano | 8 | g | |\n| Agua fria | ~15 | L | cubrir huesos |",
+  "procedure": "### Fase 1 -- ASADO HUESOS (45 min)\n1. Precalentar Convotherm a 220 C.\n2. Untar huesos con aceite. Colocar en bandejas GN con rejilla.\n3. Asar 45 min hasta marron oscuro intenso.\n\n### Fase 2 -- BASE AROMATICA (10 min)\n1. En marmita: dorar verduras con aceite 5 min.\n2. Anadir concentrado tomate, cocinar 2 min.\n3. Desglasar con vino tinto, reducir a la mitad.\n\n### Fase 3 -- COCCION (3-4 h)\n1. Transferir huesos asados a la marmita (con grasa de la bandeja).\n2. Cubrir con agua fria.\n3. Hervir, espumar. Anadir hierbas y pimienta.\n4. Hervor suave 3-4 horas. Espumar periodicamente.\n\n### Fase 4 -- COLADO Y CONSERVACION\n1. Colar por colador fino.\n2. Degrasar en frio (dejar enfriar, retirar grasa solidificada).\n3. Abatir en Sammic.\n4. Refrigerar (7 dias) o congelar (3 meses).",
+  "plating": null,
+  "critical_points": null,
+  "appcc": null,
+  "senior_adaptation": null,
+  "quote": null,
+  "storytelling": "# Fondo de Ternera (T.Straker) -- Storytelling\n\n## Contexto en el libro\nStraker incluye el beef stock como base del capitulo de carne, esencial para las Beef Cheeks y la Peppercorn Sauce. Huesos asados a alta temperatura para color y profundidad, desgrasado con vino tinto.\n\n## Por que encaja en ATTENYA\n- Base para platos de ternera del catalogo Straker (Carrilleras, Solomillo Pimienta).\n- Coexiste con 05_Fondo_Oscuro_Ternera del catalogo — la version Straker incluye vino tinto en la coccion.\n- Produccion en lote: congelable 3 meses. Ideal para produccion quincenal.\n\n## Conexiones con el catalogo\n- Base para: Carrilleras Ternera Polenta Straker, Solomillo Pimienta Straker, Ragu Cerdo Ternera Straker.\n- Coexiste con 05_Fondo_Oscuro_Ternera y 07_Demi_Glace del catalogo."
+}

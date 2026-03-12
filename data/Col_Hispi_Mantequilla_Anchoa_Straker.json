@@ -1,0 +1,18 @@
+{
+  "nombre": "Col Hispi con Mantequilla de Anchoa",
+  "fuente": "Thomas Straker - Food You Want to Eat",
+  "pax": "25",
+  "time_total": "15 min",
+  "technique": "",
+  "protein": "",
+  "allergens": "pescado (anchoas en mantequilla), lacteos (mantequilla)",
+  "difficulty": "Baja",
+  "ingredients": "| Ingrediente | Cantidad (25 PAX) | Unidad | Notas |\n|---|---|---|---|\n| Col hispi (Spitzkohl) | 13 | uds | medianas, cortadas por la mitad (o cuarteadas si grandes) |\n| Aceite de oliva virgen extra | 300 | ml | |\n| Mantequilla de anchoa | 1.300 | g | ver Anchovy_Butter_Straker -- ~50 g/mitad. O sustituir por mantequilla miso |\n| Sal en escamas | c/n | | |",
+  "procedure": "### Fase 1 -- MISE EN PLACE\n1. Cortar coles por la mitad (o cuartos si grandes).\n2. Tener mantequilla de anchoa preparada (ver componente Base/Elemento).\n\n### Fase 2 -- CHARRADO (5 min)\n1. Rociar mitades de col con aceite y sal.\n2. Calentar sartenes amplias con tapa a fuego fuerte.\n3. Colocar col corte abajo. Chamuscar por todas las caras cortadas hasta dorado intenso.\n\n### Fase 3 -- MANTEQUILLA Y VAPOR (3 min)\n1. Retirar col. Untar mantequilla de anchoa entre las hojas y en las superficies cortadas (~50 g por mitad).\n2. Devolver a la sarten.\n3. Anadir chorrito de agua.\n4. Tapar. Cocinar 3 min al vapor.\n5. La mantequilla se derrite entre las hojas.\n\n### Fase 4 -- SERVICIO\n1. Servir mitad de col por persona con la mantequilla derretida que quede en la sarten.",
+  "plating": null,
+  "critical_points": "- PC1: Chamuscar BIEN las caras cortadas -- el sabor viene de la carbonizacion.\n- PC2: La mantequilla de anchoa va ENTRE las hojas, no solo encima.\n- PC3: Solo 3 min tapado -- la col debe quedar tierna pero con estructura.",
+  "appcc": "- Servir >65 C inmediatamente. No regenera bien (pierde crujiente).\n- Alergenos: pescado (anchoa), lacteos (mantequilla).",
+  "senior_adaptation": "- Col hispi cocida al vapor es tierna -- buena masticacion\n- La mantequilla de anchoa aporta umami sin ser agresiva\n- Si la col es demasiado fibrosa: cuartear y cocinar 1-2 min mas al vapor\n- Para deglucion dificil: cortar en juliana fina antes de chamuscar",
+  "quote": null,
+  "storytelling": "# Col Hispi con Mantequilla de Anchoa (T.Straker) -- Storytelling\n## Origen\nLa col charrada con mantequilla aromatizada es tecnica de restaurante contemporaneo londinense. La col hispi (Spitzkohl en aleman) es mas tierna y dulce que la col normal. Las anchoas aportan umami profundo sin saber a pescado.\n## Thomas Straker\n\"Prueba de que las verduras no son aburridas.\" Tambien sugiere mantequilla de miso como alternativa.\n## Narrativa para el residente\n\"Col tierna, dorada en la sarten y terminada con una mantequilla aromatica que se derrite entre las hojas. Es Spitzkohl como nunca la han probado -- con un sabor profundo y reconfortante.\"\n## Conexion emocional\nSpitzkohl es col cotidiana alemana. Aqui se transforma: de guarnicion humilde a plato de restaurante con una simple mantequilla aromatizada. Lo familiar hecho nuevo."
+}

@@ -1,0 +1,18 @@
+{
+  "nombre": "Cebollas Asadas con Romesco",
+  "fuente": "Thomas Straker - Food You Want to Eat",
+  "pax": "25",
+  "time_total": "30 min",
+  "technique": "",
+  "protein": "",
+  "allergens": "frutos de cascara (almendras en romesco)",
+  "difficulty": "Baja",
+  "ingredients": "| Ingrediente | Cantidad (25 PAX) | Unidad | Notas |\n|---|---|---|---|\n| Cebollas tiernas tipo Tropea o cebolleta grande | 50 | uds | ~2 por persona, con capas externas intactas |\n| Limon | 6 | uds | zumo |\n| Aceite de oliva virgen extra | 200 | ml | |\n| Sal en escamas | c/n | | |\n| Pimienta negra | c/n | | |\n| Romesco | 800 | g | ver Romesco_Straker en CONDIMENTS (o Romesco del catalogo existente) |",
+  "procedure": "### Fase 1 -- ASADO (20 min)\n1. Asar cebollas enteras (con capas externas) sobre llama directa, plancha caliente, o Convotherm modo grill.\n2. Girar regularmente. Empezar por el bulbo (necesita mas tiempo).\n3. Asar ~20 min hasta charradas por fuera y blandas por dentro.\n4. Transferir a bandeja, tapar con film. Dejar sudar.\n\n### Fase 2 -- PELADO\n1. Una vez frias: pelar capas externas quemadas. El interior queda tierno y dulce.\n2. Rociar con zumo de limon.\n\n### Fase 3 -- SERVICIO\n1. Disponer cebollas peladas en fuente.\n2. AOVE generoso.\n3. Sal en escamas y pimienta.\n4. Romesco en bol lateral o napado parcialmente.",
+  "plating": null,
+  "critical_points": "- PC1: Dejar las capas externas durante el asado -- protegen el interior y concentran vapor.\n- PC2: Tapar con film despues de asar -- el vapor afloja las pieles para pelar.\n- PC3: El interior debe estar MUY blando -- si esta firme, mas tiempo de asado.",
+  "appcc": "- Servir caliente o a temperatura ambiente. Conservar <3 C, 48 h. Regenerar suavemente.\n- Alergenos: frutos de cascara (almendras en romesco).",
+  "senior_adaptation": "- Cebolla asada y pelada: textura MUY blanda, se deshace -- ideal senior\n- El romesco es salsa lisa/semilisa -- apto\n- Sin textura problematica\n- Para deglucion dificil: trocear la cebolla pelada en tiras",
+  "quote": null,
+  "storytelling": "# Cebollas Asadas con Romesco (T.Straker) -- Storytelling\n## Origen\nLa calcotada es fiesta nacional catalana: cebollas tiernas asadas sobre brasas, peladas a mano y mojadas en salsa romesco. Straker adapta el concepto con cebollas Tropea y romesco casero.\n## Thomas Straker\n\"En Espana se usan calcots, cebollas gigantes tipo cebolleta. En el resto del mundo, cebollas tiernas o puerros funcionan igual de bien.\"\n## Narrativa para el residente\n\"Cebollas tiernas asadas enteras a la brasa hasta caramelizadas, peladas y servidas con salsa romesco catalana. Es una tradicion de fiesta campestre espanola, sencilla y deliciosa.\"\n## Conexion emocional\nPara los residentes que conocen Espana: la calcotada es una de las experiencias gastronomicas mas alegres del Mediterraneo. Fuego, cebollas, manos manchadas, romesco. Pura fiesta."
+}

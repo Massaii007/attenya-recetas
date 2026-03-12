@@ -1,0 +1,18 @@
+{
+  "nombre": "Caldo de Pollo (T.Straker)",
+  "fuente": "Thomas Straker - Food You Want to Eat",
+  "pax": "25",
+  "time_total": "3 h",
+  "technique": "",
+  "protein": "",
+  "allergens": "apio",
+  "difficulty": "Baja",
+  "ingredients": "| Ingrediente | Cantidad (25 PAX) | Unidad | Notas |\n|---|---|---|---|\n| Carcasas de pollo | 5.000 | g | crudas o asadas (mas sabor) |\n| Cebolla | 6 | uds | cuarteadas |\n| Zanahoria | 6 | uds | troceadas gruesas |\n| Apio | 6 | tallos | troceados |\n| Puerro | 3 | uds | troceados |\n| Laurel | 3 | uds | |\n| Tomillo fresco | 15 | g | ramillete |\n| Perejil tallos | 30 | g | ramillete |\n| Pimienta negra en grano | 6 | g | |\n| Agua fria | ~12 | L | cubrir carcasas |",
+  "procedure": "### Fase 1 -- MISE EN PLACE\n1. Trocear verduras gruesas.\n\n### Fase 2 -- COCCION (2,5-3 h)\n1. Colocar carcasas en marmita. Cubrir con agua fria.\n2. Llevar a ebullicion. Espumar.\n3. Anadir verduras, hierbas y pimienta.\n4. Reducir a hervor suave. Cocinar 2,5-3 h.\n5. Espumar periodicamente.\n\n### Fase 3 -- COLADO Y CONSERVACION\n1. Colar por colador fino. No apretar las verduras.\n2. Abatir en Sammic.\n3. Refrigerar (7 dias) o congelar (3 meses).",
+  "plating": null,
+  "critical_points": null,
+  "appcc": null,
+  "senior_adaptation": null,
+  "quote": null,
+  "storytelling": "# Caldo de Pollo (T.Straker) -- Storytelling\n\n## Contexto en el libro\nStraker incluye el chicken stock como base esencial del capitulo de carne. Version clasica, sin complicaciones: carcasas, mirepoix, hierbas, agua fria, coccion lenta.\n\n## Por que encaja en ATTENYA\n- Caldo base para sopas (Chicken Broth, Minestrone) y salsas de los platos Straker.\n- Coexiste con Fondo Blanco y Caldo Pollo Mise en Place del catalogo — version mas rapida y basica.\n- Produccion en lote: congelable 3 meses.\n\n## Conexiones con el catalogo\n- Base para: Caldo Pollo Verduras Straker (Entrante), Minestrone Straker.\n- Coexiste con 01_Fondo_Blanco_Pollo y Caldo_Pollo_Mise_en_Place."
+}

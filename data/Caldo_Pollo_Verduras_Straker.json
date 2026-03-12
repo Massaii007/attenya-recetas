@@ -1,0 +1,18 @@
+{
+  "nombre": "Caldo de Pollo con Verduras y Eneldo",
+  "fuente": "Thomas Straker - Food You Want to Eat",
+  "pax": "25",
+  "time_total": "1 h 30 min",
+  "technique": "",
+  "protein": "",
+  "allergens": "apio",
+  "difficulty": "Baja",
+  "ingredients": "**Caldo**\n\n| Ingrediente | Cantidad (25 PAX) | Unidad | Notas |\n|---|---|---|---|\n| Pollo entero | 4 | uds | ~1,5 kg/ud |\n| Aceite de oliva virgen extra | 200 | ml | + extra servicio |\n| Cebolla | 4 | uds | cuarteadas |\n| Zanahoria | 4 | uds | troceada 2 cm |\n| Apio | 8 | tallos | troceado 2 cm |\n| Puerro | 4 | uds | troceado 2 cm |\n| Cabeza de ajo | 4 | uds | mitades |\n| Tomillo fresco | 24 | ramitas | |\n| Romero fresco | 12 | ramitas | |\n| Laurel | 8 | uds | |\n| Pimienta negra en grano | 6 | g | |\n| Sal fina | c/n | | |\n| Agua | ~12-15 | L | cubrir pollos |\n\n**Acabado sopa**\n\n| Ingrediente | Cantidad (25 PAX) | Unidad | Notas |\n|---|---|---|---|\n| Apio | 18 | tallos | troceado 2 cm |\n| Zanahoria | 18 | uds | troceada 2 cm |\n| Ajo | 36 | dientes | aplastados |\n| Eneldo fresco | 90 | g | sin tallos gruesos |\n| Limon | 6 | uds | zumo |\n| Aceite de oliva | c/n | | para servicio |\n| Sal y pimienta | c/n | | |",
+  "procedure": "### Fase 1 -- CALDO (1 h 15 min)\n1. Cortar pollos por la mitad (espinazo + esternon). Salar.\n2. Dorar mitades en marmita con aceite, piel abajo, 5 min.\n3. Voltear. Anadir verduras, hierbas, pimienta. Cubrir con agua.\n4. Hervir. Espumar. Reducir a hervor suave.\n5. Cocinar 1 hora.\n6. Enfriar 1 hora. Retirar pollo. Deshilachar carne, descartar piel y huesos.\n7. Colar caldo.\n\n### Fase 2 -- SOPA (15 min)\n1. En marmita limpia: pochar verduras de acabado en aceite 5 min.\n2. Anadir caldo colado y pollo deshilachado.\n3. Hervir suave 10 min hasta verduras tiernas.\n4. Ajustar sal y pimienta.\n\n### Fase 3 -- SERVICIO\n1. Servir en bol precalentado.\n2. Eneldo picado, chorrito zumo limon, hilo AOVE.",
+  "plating": null,
+  "critical_points": "- PC1: No sobrecocer el pollo -- 1 hora es suficiente. Mas = carne seca.\n- PC2: Espumar siempre -- caldo limpio y claro.\n- PC3: Las verduras del acabado son FRESCAS -- no las del caldo (esas se descartan al colar).",
+  "appcc": "- Servir >65 C. Vida util 72 h refrigerado. Congela bien (3 meses sin pollo, 48 h con pollo).\n- Alergenos: apio.",
+  "senior_adaptation": "- IDEAL para senior: caldo calido, nutritivo, facil de comer\n- Pollo deshilachado: cero masticacion problematica\n- Verduras cocidas tiernas: apio y zanahoria blandos\n- Eneldo y limon: frescor sin agresividad\n- Para deglucion dificil: colar verduras gruesas, servir solo caldo con pollo fino",
+  "quote": null,
+  "storytelling": "# Caldo de Pollo con Verduras y Eneldo (T.Straker) -- Storytelling\n## Origen\nEl caldo de pollo como medicina es tradicion milenaria: Maimonides lo prescribia en el siglo XII. En todas las culturas existe: Huhnersuppe en Alemania, Jewish penicillin en NY, canja en Portugal.\n## Thomas Straker\n\"El caldo de pollo te hace sentir mejor. Es un hecho.\" Usa pollo entero, nariz-a-cola: la carne va a la sopa, los huesos hacen el caldo.\n## Narrativa para el residente\n\"Caldo de pollo casero con verduras frescas y eneldo, como hacia la abuela. El pollo se cuece entero para extraer todo el sabor, y luego se deshilacha y se devuelve al caldo con zanahoria y apio frescos.\"\n## Conexion emocional\nHuhnersuppe es la sopa de la infancia alemana. Reconfortante, terapeutica, hogarena. Cada residente tiene su version de la sopa de pollo de la abuela."
+}

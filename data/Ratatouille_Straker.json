@@ -1,0 +1,18 @@
+{
+  "nombre": "Ratatouille",
+  "fuente": "Thomas Straker - Food You Want to Eat",
+  "pax": "25",
+  "time_total": "30 min",
+  "technique": "",
+  "protein": "",
+  "allergens": "ninguno",
+  "difficulty": "Baja",
+  "ingredients": "| Ingrediente | Cantidad (25 PAX) | Unidad | Notas |\n|---|---|---|---|\n| Berenjena | 6 | uds | dados 2 cm |\n| Calabacin | 12 | uds | dados 2 cm |\n| Aceite de oliva virgen extra | 600 | ml | total |\n| Cebolla roja | 6 | uds | dados 2 cm |\n| Ajo | 12 | dientes | picado fino |\n| Pimiento rojo | 6 | uds | dados 2 cm |\n| Tomate cherry | 2.400 | g | |\n| Albahaca fresca | 90 | g | hojas, desgarrar al final |\n| Sal en escamas | c/n | | |\n| Pimienta negra | c/n | | |",
+  "procedure": "### Fase 1 -- MISE EN PLACE\n1. Salar berenjena y calabacin por separado. Reposar 10 min para extraer humedad.\n\n### Fase 2 -- BASE (15 min)\n1. Calentar mitad del aceite en marmita. Pochar cebolla con sal 5 min.\n2. Anadir ajo, 2 min.\n3. Anadir pimiento y tomates cherry. Cocinar 6-8 min hasta tomates blandos pero con forma.\n4. Retirar del fuego.\n\n### Fase 3 -- VERDURAS POR SEPARADO\n1. En sarten aparte con aceite restante: freir calabacin en una capa hasta dorado tierno (3-5 min). Transferir a la marmita.\n2. En la misma sarten: freir berenjena (5-6 min) en una capa. Transferir a la marmita.\n\n### Fase 4 -- COMBINADO Y SERVICIO\n1. Mezclar todo suavemente sin romper.\n2. Ajustar sal y pimienta.\n3. Desgarrar albahaca fresca y mezclar.\n4. Servir caliente o a temperatura ambiente.",
+  "plating": null,
+  "critical_points": "- PC1: Cada verdura SE FRIE POR SEPARADO -- mezclar cruda = estofado aguado.\n- PC2: Berenjena en UNA capa -- amontonada se cuece en vez de dorarse.\n- PC3: No triturar -- ratatouille es verduras con forma y textura.",
+  "appcc": "- Servir >65 C o a temperatura ambiente. Refrigerar <3 C, vida util 72 h. Regenera bien (Convotherm vapor suave).\n- Alergenos: ninguno.",
+  "senior_adaptation": "- Verduras en dados de 2 cm: tiernas tras coccion, facil masticacion con tenedor\n- La berenjena y el calabacin cocidos son muy blandos\n- Tomates cherry cocidos: piel blanda, apto (pelar si necesario para deglucion)\n- Sin especias agresivas -- solo ajo, albahaca, aceite\n- Para deglucion dificil: trocear mas fino (1 cm) o triturar parcialmente",
+  "quote": null,
+  "storytelling": "# Ratatouille (T.Straker) -- Storytelling\n## Origen\nNiza, Provenza. Plato campesino del verano que aprovecha la abundancia de verduras. Cada cocinero provenzal tiene su version. La clave siempre es no mezclar todo crudo -- cada verdura se trata con respeto.\n## Thomas Straker\n\"Delicioso solo, con couscous, o con bacalao asado. La buena ratatouille se cocina despacio.\"\n## Narrativa para el residente\n\"Ratatouille provenzal: berenjena, calabacin, pimiento y tomate, cada verdura dorada por separado y luego combinadas con albahaca fresca. Es el sabor del sur de Francia en verano.\"\n## Conexion emocional\nVacaciones en la Cote d'Azur, mercados provenzales, terrazas al sol. La ratatouille es el sabor del Mediterraneo frances que muchos residentes han disfrutado en sus viajes."
+}

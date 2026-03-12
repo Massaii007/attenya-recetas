@@ -1,0 +1,18 @@
+{
+  "nombre": "Crema de Calabacin y Albahaca",
+  "fuente": "Thomas Straker - Food You Want to Eat",
+  "pax": "25",
+  "time_total": "25 min",
+  "technique": "",
+  "protein": "",
+  "allergens": "ninguno",
+  "difficulty": "Baja",
+  "ingredients": "| Ingrediente | Cantidad (25 PAX) | Unidad | Notas |\n|---|---|---|---|\n| Aceite de oliva virgen extra | 600 | ml | + extra servicio |\n| Cebolla | 18 | uds | juliana fina |\n| Ajo | 18 | dientes | aplastados |\n| Calabacin | 3.000 | g | mitades, rodajas finas |\n| Caldo de pollo o verduras | ~6.000 | ml | cubrir justo |\n| Albahaca fresca | 180 | g | hojas |\n| Limon | 6 | uds | zumo |\n| Sal fina | c/n | | |\n| Pimienta negra | c/n | | |",
+  "procedure": "### Fase 1 -- BASE (12 min)\n1. Pochar cebolla en aceite con sal 10 min sin color.\n2. Anadir ajo, 2 min.\n\n### Fase 2 -- CALABACIN (5 min)\n1. Anadir calabacin, sal, pimienta. Sudar 2 min.\n2. Cubrir justo con caldo. Hervir fuerte 5 min hasta calabacin cocido.\n\n### Fase 3 -- TRITURADO\n1. Anadir albahaca.\n2. Triturar hasta liso.\n3. Anadir zumo limon. Ajustar sal.\n4. Servir caliente o enfriar para servir fria.",
+  "plating": null,
+  "critical_points": "- PC1: Calabacin solo 5 min -- sobrecocido pierde color y frescor.\n- PC2: Caldo JUSTO para cubrir -- exceso = sopa aguada.\n- PC3: Albahaca se anade al triturar, no a la coccion -- preserva color y aroma.",
+  "appcc": "- Caliente: >65 C. Fria: <4 C. Vida util 48 h. Congela bien (3 meses).\n- Alergenos: ninguno (si caldo de verduras).",
+  "senior_adaptation": "- Crema lisa: ideal senior. Fuera de temporada: sustituir calabacin por guisantes congelados.",
+  "quote": null,
+  "storytelling": "# Crema de Calabacin y Albahaca (T.Straker) -- Storytelling\n## Origen\nSopa de calabacin es mediterranea pura: Italia, Francia, Espana. Straker la hace versatil: caliente o fria.\n## Thomas Straker\n\"Igual de bienvenida caliente en otono que fria en verano. Fuera de temporada, sustituir por guisantes congelados.\"\n## Narrativa para el residente\n\"Crema suave de calabacin con albahaca fresca y un toque de limon. Ligera, verde, refrescante. La servimos caliente hoy, pero en verano se sirve fria.\"\n## Conexion emocional\nZucchinisuppe -- los residentes alemanes conocen la sopa de calabacin como plato ligero y dietetico. Aqui con albahaca mediterranea."
+}
