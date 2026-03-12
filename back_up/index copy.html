@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ATTENYA · Sistema Culinario</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #1a1612; color: #e8dfd4; font-family: 'Cormorant Garamond', Georgia, serif; min-height: 100vh; }
+
+/* === HEADER === */
+.header { background: linear-gradient(180deg, #2a241e 0%, #1a1612 100%); border-bottom: 1px solid #3a322a; padding: 32px 20px 24px; text-align: center; }
+.header-sub { font-family: 'Source Sans 3', sans-serif; font-size: 11px; letter-spacing: 6px; color: #8a7d6b; margin-bottom: 8px; text-transform: uppercase; }
+.header h1 { font-size: 38px; font-weight: 300; color: #f0e6d6; letter-spacing: 3px; }
+.header-count { font-size: 14px; color: #8a7d6b; margin-top: 8px; font-family: 'Source Sans 3', sans-serif; }
+
+/* === NAVIGATION TABS === */
+.nav-bar { background: #221e19; border-bottom: 1px solid #3a322a; padding: 0 20px; display: flex; justify-content: center; gap: 0; overflow-x: auto; }
+.nav-tab { background: none; border: none; border-bottom: 2px solid transparent; color: #8a7d6b; padding: 14px 24px; cursor: pointer; font-family: 'Source Sans 3', sans-serif; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; white-space: nowrap; transition: all 0.2s; }
+.nav-tab:hover { color: #c4a97d; }
+.nav-tab.active { color: #c4a97d; border-bottom-color: #c4a97d; }
+
+/* === CONTAINER === */
+.container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+
+/* === CATALOG STYLES (existing) === */
+.search-wrap { padding: 20px 0; }
+.search-input { width: 100%; background: #221e19; border: 1px solid #3a322a; color: #e8dfd4; padding: 14px 18px; font-size: 15px; font-family: 'Source Sans 3', sans-serif; outline: none; }
+.search-input:focus { border-color: #c4a97d; }
+.search-input::placeholder { color: #5a4e3e; }
+.cats { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 16px; border-bottom: 1px solid #2a241e; }
+.cat-btn { background: #221e19; color: #a89880; border: 1px solid #3a322a; padding: 8px 16px; cursor: pointer; font-family: 'Source Sans 3', sans-serif; font-size: 13px; letter-spacing: 1px; white-space: nowrap; flex-shrink: 0; transition: all 0.2s; }
+.cat-btn.active, .cat-btn:hover { background: #c4a97d; color: #1a1612; border-color: #c4a97d; }
+.subs { display: none; gap: 6px; overflow-x: auto; padding: 12px 0; border-bottom: 1px solid #2a241e; }
+.subs.visible { display: flex; }
+.sub-btn { background: transparent; color: #8a7d6b; border: 1px solid #3a322a; padding: 5px 12px; cursor: pointer; font-family: 'Source Sans 3', sans-serif; font-size: 12px; white-space: nowrap; transition: all 0.2s; }
+.sub-btn.active, .sub-btn:hover { background: #5a4e3e; color: #e8dfd4; }
+.results-count { padding: 16px 0 8px; font-size: 13px; color: #8a7d6b; font-family: 'Source Sans 3', sans-serif; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; padding-bottom: 40px; }
+.card { background: #221e19; border: 1px solid #3a322a; cursor: pointer; transition: all 0.2s; overflow: hidden; }
+.card:hover { border-color: #c4a97d; background: #2a241e; }
+.card-img { width: 100%; height: 180px; object-fit: cover; display: block; background: #2a241e; }
+.card-img-placeholder { width: 100%; height: 180px; background: linear-gradient(135deg, #2a241e 0%, #3a322a 100%); display: flex; align-items: center; justify-content: center; font-size: 40px; color: #3a322a; }
+.card-body { padding: 16px 20px 20px; }
+.card-cat { font-family: 'Source Sans 3', sans-serif; font-size: 10px; letter-spacing: 2px; color: #8a7d6b; margin-bottom: 6px; text-transform: uppercase; }
+.card-name { font-size: 18px; color: #f0e6d6; margin-bottom: 8px; line-height: 1.3; }
+.card-desc { font-family: 'Source Sans 3', sans-serif; font-size: 13px; color: #a89880; line-height: 1.5; margin-bottom: 12px; }
+.card-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+.tag { font-family: 'Source Sans 3', sans-serif; font-size: 11px; background: #2a241e; border: 1px solid #3a322a; padding: 2px 8px; }
+.tag-tech { color: #c4a97d; }
+.tag-prot { color: #a89880; }
+
+/* === DETAIL STYLES (existing) === */
+.detail { max-width: 720px; margin: 0 auto; padding: 24px 20px; }
+.back-btn { background: none; border: 1px solid #5a4e3e; color: #c4a97d; padding: 8px 20px; cursor: pointer; font-family: 'Source Sans 3', sans-serif; font-size: 14px; letter-spacing: 1px; margin-bottom: 24px; transition: all 0.2s; }
+.back-btn:hover { background: #c4a97d; color: #1a1612; }
+.detail-hero { width: 100%; max-height: 400px; object-fit: cover; display: block; margin-bottom: 24px; border: 1px solid #3a322a; }
+.detail-header { border-bottom: 1px solid #3a322a; padding-bottom: 24px; margin-bottom: 24px; }
+.detail-cat { font-family: 'Source Sans 3', sans-serif; font-size: 11px; letter-spacing: 3px; color: #8a7d6b; margin-bottom: 8px; text-transform: uppercase; }
+.detail h1 { font-size: 32px; font-weight: 400; line-height: 1.2; color: #f0e6d6; }
+.detail-desc { font-size: 16px; color: #a89880; margin-top: 8px; font-style: italic; }
+.detail-tags { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 24px; }
+.detail-tag { background: #2a241e; border: 1px solid #3a322a; padding: 6px 14px; font-family: 'Source Sans 3', sans-serif; font-size: 13px; }
+.detail-tag span:first-child { color: #8a7d6b; }
+.detail-tag span:last-child { color: #c4a97d; }
+.tab-btns { display: flex; gap: 12px; margin-bottom: 32px; }
+.tab-btn { background: transparent; color: #c4a97d; border: 1px solid #c4a97d; padding: 10px 24px; cursor: pointer; font-family: 'Source Sans 3', sans-serif; font-size: 14px; letter-spacing: 1px; transition: all 0.2s; }
+.tab-btn.active { background: #c4a97d; color: #1a1612; }
+.content-box { background: #221e19; border: 1px solid #3a322a; padding: 28px 32px; line-height: 1.8; font-size: 15px; color: #d4c8b8; font-family: 'Source Sans 3', sans-serif; }
+.content-box .empty-msg { color: #a89880; text-align: center; font-style: italic; font-family: 'Cormorant Garamond', serif; }
+.content-box .loading { color: #8a7d6b; text-align: center; font-style: italic; }
+.content-section { margin-bottom: 32px; }
+.content-section:last-child { margin-bottom: 0; }
+.content-section-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; color: #c4a97d; letter-spacing: 1px; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1px solid #3a322a; }
+.content-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-weight: 500; color: #e8dfd4; margin: 18px 0 8px; }
+.content-box h4 { font-family: 'Source Sans 3', sans-serif; font-size: 14px; font-weight: 600; color: #c4a97d; margin: 14px 0 6px; letter-spacing: 0.5px; }
+.content-box p { color: #d4c8b8; margin-bottom: 8px; }
+.content-box ul, .content-box ol { margin: 8px 0 8px 20px; color: #d4c8b8; }
+.content-box li { margin-bottom: 4px; }
+.content-box li::marker { color: #c4a97d; }
+.content-box strong { color: #e8dfd4; }
+.content-box em { color: #a89880; }
+.content-box blockquote { border-left: 3px solid #c4a97d; padding: 12px 20px; margin: 16px 0; background: #2a241e; font-family: 'Cormorant Garamond', serif; font-size: 17px; font-style: italic; color: #c4a97d; line-height: 1.6; }
+.content-box hr { border: none; border-top: 1px solid #3a322a; margin: 20px 0; }
+.content-box table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+.content-box th, .content-box td { border: 1px solid #3a322a; padding: 8px 12px; text-align: left; font-size: 14px; }
+.content-box th { background: #2a241e; color: #c4a97d; font-weight: 600; }
+.content-box td { color: #d4c8b8; }
+.story-content { font-family: 'Cormorant Garamond', serif; font-size: 18px; line-height: 1.9; color: #d4c8b8; }
+.story-content h1 { font-size: 26px; font-weight: 400; color: #f0e6d6; margin-bottom: 8px; }
+.story-content h2 { font-size: 20px; font-weight: 400; color: #c4a97d; margin: 24px 0 12px; border-bottom: 1px solid #3a322a; padding-bottom: 6px; }
+.story-content p { margin-bottom: 14px; }
+.quote-box { background: #2a241e; border-left: 3px solid #c4a97d; padding: 16px 24px; margin-top: 24px; font-family: 'Cormorant Garamond', serif; font-size: 17px; font-style: italic; color: #c4a97d; line-height: 1.6; }
+.detail-meta { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; margin-bottom: 24px; }
+.meta-item { background: #2a241e; border: 1px solid #3a322a; padding: 10px 14px; }
+.meta-label { font-family: 'Source Sans 3', sans-serif; font-size: 10px; letter-spacing: 2px; color: #8a7d6b; text-transform: uppercase; margin-bottom: 4px; }
+.meta-value { font-family: 'Source Sans 3', sans-serif; font-size: 14px; color: #e8dfd4; }
+
+/* === MENU VIEW === */
+.menu-header { padding: 28px 0 20px; text-align: center; border-bottom: 1px solid #3a322a; margin-bottom: 24px; }
+.menu-periodo { font-size: 28px; font-weight: 300; color: #f0e6d6; letter-spacing: 2px; }
+.menu-meta { font-family: 'Source Sans 3', sans-serif; font-size: 13px; color: #8a7d6b; margin-top: 6px; }
+.menu-day { background: #221e19; border: 1px solid #3a322a; margin-bottom: 16px; overflow: hidden; transition: border-color 0.2s; }
+.menu-day:hover { border-color: #5a4e3e; }
+.menu-day.chef-free { border-left: 3px solid #8b3a3a; }
+.menu-day-header { padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+.menu-day-date { font-family: 'Source Sans 3', sans-serif; font-size: 14px; font-weight: 600; color: #e8dfd4; }
+.menu-day-label { font-family: 'Source Sans 3', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; }
+.menu-day-label.normal { color: #8a7d6b; }
+.menu-day-label.chef-free-label { color: #c47d7d; }
+.menu-day-body { padding: 0 20px 20px; display: none; }
+.menu-day.open .menu-day-body { display: block; }
+.menu-day.open .menu-day-header { border-bottom: 1px solid #3a322a; padding-bottom: 14px; margin-bottom: 0; }
+.menu-row { display: grid; grid-template-columns: 110px 1fr; gap: 0; padding: 10px 0; border-bottom: 1px solid #2a241e; }
+.menu-row:last-child { border-bottom: none; }
+.menu-row-label { font-family: 'Source Sans 3', sans-serif; font-size: 11px; letter-spacing: 1px; color: #8a7d6b; text-transform: uppercase; padding-top: 2px; }
+.menu-row-value { font-family: 'Source Sans 3', sans-serif; font-size: 14px; color: #d4c8b8; line-height: 1.5; }
+.menu-recipe-link { color: #c4a97d; cursor: pointer; text-decoration: none; border-bottom: 1px dotted #5a4e3e; transition: border-color 0.2s; }
+.menu-recipe-link:hover { border-bottom-color: #c4a97d; }
+.menu-produccion { margin-top: 12px; padding: 12px 16px; background: #2a241e; font-family: 'Source Sans 3', sans-serif; font-size: 13px; color: #a89880; line-height: 1.6; }
+.menu-produccion-title { font-size: 10px; letter-spacing: 2px; color: #8a7d6b; text-transform: uppercase; margin-bottom: 6px; }
+
+/* === MISE EN PLACE VIEW === */
+.mise-day { background: #221e19; border: 1px solid #3a322a; margin-bottom: 16px; overflow: hidden; }
+.mise-day.chef-free { border-left: 3px solid #8b3a3a; }
+.mise-day-header { padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+.mise-day-header-left { display: flex; align-items: baseline; gap: 12px; }
+.mise-day-date { font-family: 'Source Sans 3', sans-serif; font-size: 14px; font-weight: 600; color: #e8dfd4; }
+.mise-day-title { font-family: 'Cormorant Garamond', serif; font-size: 16px; color: #a89880; font-style: italic; }
+.mise-carga { font-family: 'Source Sans 3', sans-serif; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; padding: 3px 10px; border: 1px solid; }
+.mise-carga.baja { color: #7d9a6b; border-color: #7d9a6b; }
+.mise-carga.media { color: #c4a97d; border-color: #c4a97d; }
+.mise-carga.media-alta { color: #c49a5d; border-color: #c49a5d; }
+.mise-carga.alta { color: #c47d7d; border-color: #c47d7d; }
+.mise-carga.auxiliar { color: #8b3a3a; border-color: #8b3a3a; }
+.mise-day-body { padding: 0 20px 20px; display: none; }
+.mise-day.open .mise-day-body { display: block; }
+.mise-day.open .mise-day-header { border-bottom: 1px solid #3a322a; }
+.mise-task { display: grid; grid-template-columns: 60px 1fr auto; gap: 12px; padding: 10px 0; border-bottom: 1px solid #2a241e; align-items: start; }
+.mise-task:last-child { border-bottom: none; }
+.mise-hora { font-family: 'Source Sans 3', sans-serif; font-size: 13px; font-weight: 600; color: #c4a97d; padding-top: 1px; }
+.mise-tarea { font-family: 'Source Sans 3', sans-serif; font-size: 14px; color: #d4c8b8; line-height: 1.5; }
+.mise-tipo { font-family: 'Source Sans 3', sans-serif; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; padding: 2px 8px; white-space: nowrap; }
+.mise-tipo.servicio { color: #c4a97d; background: rgba(196,169,125,0.1); }
+.mise-tipo.anticipacion { color: #7da8c4; background: rgba(125,168,196,0.1); }
+.mise-tipo.chef-free-task { color: #c47d7d; background: rgba(196,125,125,0.1); }
+.mise-tipo.nota { color: #8a7d6b; background: rgba(138,125,107,0.1); }
+.mise-note { padding: 8px 12px; margin-top: 8px; font-family: 'Source Sans 3', sans-serif; font-size: 12px; color: #8a7d6b; font-style: italic; border-left: 2px solid #3a322a; }
+
+/* === COMPRAS VIEW === */
+.compra-lista { background: #221e19; border: 1px solid #3a322a; margin-bottom: 20px; overflow: hidden; }
+.compra-header { padding: 18px 20px; cursor: pointer; border-bottom: 1px solid transparent; }
+.compra-lista.open .compra-header { border-bottom-color: #3a322a; }
+.compra-titulo { font-size: 20px; font-weight: 400; color: #f0e6d6; margin-bottom: 4px; }
+.compra-meta { font-family: 'Source Sans 3', sans-serif; font-size: 12px; color: #8a7d6b; line-height: 1.5; }
+.compra-body { padding: 0 20px 20px; display: none; }
+.compra-lista.open .compra-body { display: block; }
+.compra-seccion { margin-top: 16px; }
+.compra-seccion-title { font-family: 'Source Sans 3', sans-serif; font-size: 12px; letter-spacing: 2px; color: #c4a97d; text-transform: uppercase; padding-bottom: 8px; border-bottom: 1px solid #3a322a; margin-bottom: 8px; }
+.compra-item { display: grid; grid-template-columns: 1fr 100px; gap: 8px; padding: 6px 0; border-bottom: 1px solid #2a241e; font-family: 'Source Sans 3', sans-serif; font-size: 13px; }
+.compra-item:last-child { border-bottom: none; }
+.compra-producto { color: #d4c8b8; }
+.compra-cantidad { color: #c4a97d; text-align: right; font-weight: 600; }
+.compra-nota { font-size: 11px; color: #8a7d6b; font-style: italic; grid-column: 1 / -1; padding-left: 12px; }
+
+/* === FOOTER === */
+.footer { border-top: 1px solid #2a241e; padding: 20px; text-align: center; font-family: 'Source Sans 3', sans-serif; font-size: 12px; color: #5a4e3e; letter-spacing: 2px; }
+.hidden { display: none; }
+
+/* === RESPONSIVE === */
+@media (max-width: 600px) {
+  .header h1 { font-size: 28px; }
+  .grid { grid-template-columns: 1fr; }
+  .card-name { font-size: 16px; }
+  .card-img { height: 160px; }
+  .nav-tab { padding: 12px 16px; font-size: 11px; letter-spacing: 1px; }
+  .menu-row { grid-template-columns: 90px 1fr; }
+  .mise-task { grid-template-columns: 50px 1fr; }
+  .mise-tipo { grid-column: 2; }
+  .mise-day-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .mise-day-header-left { flex-direction: column; gap: 4px; }
+  .compra-item { grid-template-columns: 1fr 80px; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-sub">ATTENYA SENIOR RESIDENCES</div>
+  <h1>Sistema Culinario</h1>
+  <div class="header-count" id="total-count"></div>
+</div>
+
+<!-- NAVIGATION -->
+<div class="nav-bar">
+  <button class="nav-tab active" onclick="switchView('catalogo')">Catálogo</button>
+  <button class="nav-tab" onclick="switchView('menu')">Menú</button>
+  <button class="nav-tab" onclick="switchView('mise')">Mise en Place</button>
+  <button class="nav-tab" onclick="switchView('compras')">Compras</button>
+</div>
+
+<!-- CATALOG VIEW -->
+<div id="view-catalogo">
+  <div class="container">
+    <div class="search-wrap">
+      <input type="text" class="search-input" id="search" placeholder="Buscar receta, técnica, proteína...">
+    </div>
+    <div class="cats" id="cats"></div>
+    <div class="subs" id="subs"></div>
+    <div class="results-count" id="results-count"></div>
+    <div class="grid" id="grid"></div>
+  </div>
+</div>
+
+<!-- DETAIL VIEW -->
+<div id="detail-view" class="hidden">
+  <div class="detail" id="detail"></div>
+</div>
+
+<!-- MENU VIEW -->
+<div id="view-menu" class="hidden">
+  <div class="container">
+    <div class="menu-header">
+      <div class="menu-periodo" id="menu-periodo"></div>
+      <div class="menu-meta" id="menu-meta"></div>
+    </div>
+    <div id="menu-days"></div>
+  </div>
+</div>
+
+<!-- MISE EN PLACE VIEW -->
+<div id="view-mise" class="hidden">
+  <div class="container">
+    <div class="menu-header">
+      <div class="menu-periodo">Mise en Place</div>
+      <div class="menu-meta" id="mise-meta"></div>
+    </div>
+    <div id="mise-days"></div>
+  </div>
+</div>
+
+<!-- COMPRAS VIEW -->
+<div id="view-compras" class="hidden">
+  <div class="container">
+    <div class="menu-header">
+      <div class="menu-periodo">Listas de Compra</div>
+      <div class="menu-meta" id="compras-meta"></div>
+    </div>
+    <div id="compras-listas"></div>
+  </div>
+</div>
+
+<div class="footer" id="footer"></div>
+
+<script>
+/* ============================================================
+   RECIPES DATA (existing)
+   ============================================================ */
+const recipes = [
+  {n:"Albóndigas de Cordero y Feta",id:"Albondigas_Cordero_Feta_Componente",c:"Componentes",s:"Principal",d:"Albóndigas especiadas con cordero y feta",t:"Horno",p:"Cordero"},
+  {n:"Bacalao Beer Batter",id:"Bacalao_Beer_Batter",c:"Componentes",s:"Principal",d:"Bacalao en tempura de cerveza crujiente",t:"Fritura",p:"Pescado"},
+  {n:"Bacalao con Espinacas y Aceite Verde",id:"Bacalao_Espinacas_Aceite_Verde",c:"Componentes",s:"Principal",d:"Bacalao con espinacas salteadas y aceite de hierbas",t:"Confitado",p:"Pescado"},
+  {n:"Bratwurst Doble Cocción",id:"Bratwurst_Doble_Coccion",c:"Componentes",s:"Principal",d:"Salchicha alemana pochada y grillada",t:"Pochado + Plancha",p:"Cerdo"},
+  {n:"Carrilleras de Ternera al Vino y Mostaza",id:"Carrilleras_Ternera_Vino_Mostaza",c:"Componentes",s:"Principal",d:"Carrilleras braseadas en vino tinto con mostaza",t:"Braseado",p:"Ternera"},
+  {n:"Costillas de Cerdo BBQ",id:"Costillas_Cerdo_BBQ",c:"Componentes",s:"Principal",d:"Costillas deshuesadas glaseadas con BBQ",t:"Horno lento",p:"Cerdo"},
+  {n:"Dorada al Vapor Japonesa",id:"Dorada_Vapor_Japonesa",c:"Componentes",s:"Principal",d:"Dorada al vapor con salsa de soja y jengibre",t:"Vapor",p:"Pescado"},
+  {n:"Escabeche de Pavo Filipino",id:"Escabeche_Pavo_Filipino",c:"Componentes",s:"Principal",d:"Pavo en escabeche agridulce filipino",t:"Escabeche",p:"Ave"},
+  {n:"Gulasch Alemán",id:"Gulasch_Aleman_Componente",c:"Componentes",s:"Principal",d:"Estofado de ternera con pimentón húngaro",t:"Estofado",p:"Ternera"},
+  {n:"Jurel en Vinagreta Mediterránea",id:"Jurel_Vinagreta",c:"Componentes",s:"Principal",d:"Jurel horneado con vinagreta de hierbas",t:"Horno",p:"Pescado"},
+  {n:"Lomo de Cerdo con Pimiento Asado",id:"Lomo_Cerdo_Pimiento",c:"Componentes",s:"Principal",d:"Lomo de cerdo asado con pimientos confitados",t:"Horno",p:"Cerdo"},
+  {n:"Lubina al Horno",id:"Lubina_Horno",c:"Componentes",s:"Principal",d:"Lubina entera al horno sobre patata y tomate",t:"Horno",p:"Pescado"},
+  {n:"Moqueca de Camarones Baiano",id:"Moqueca_Camarones_Baiano",c:"Componentes",s:"Principal",d:"Guiso brasileño de camarones con leche de coco",t:"Guiso",p:"Marisco"},
+  {n:"Ossobuco a la Milanesa",id:"Ossobuco_Milanesa",c:"Componentes",s:"Principal",d:"Braseado milanés con gremolata suave",t:"Braseado",p:"Ternera"},
+  {n:"Pata Asada Canaria",id:"Pata_Asada_Canaria",c:"Componentes",s:"Principal",d:"Pata de cerdo asada al estilo canario",t:"Horno lento",p:"Cerdo"},
+  {n:"Pato Asado Clásico",id:"Pato_Asado_Clasico",c:"Componentes",s:"Principal",d:"Pato entero asado con piel crujiente",t:"Horno",p:"Ave"},
+  {n:"Pollo al Ajillo",id:"Pollo_Ajillo_Componente",c:"Componentes",s:"Principal",d:"Pollo en salsa de ajo confitado",t:"Salteado",p:"Ave"},
+  {n:"Pollo a l'Ast",id:"Pollo_Ast",c:"Componentes",s:"Principal",d:"Pollo asado al limón y hierbas",t:"Horno",p:"Ave"},
+  {n:"Pollo Deshuesado Asado en Caldo",id:"Pollo_Deshuesado_Asado_Caldo",c:"Componentes",s:"Principal",d:"Pollo deshuesado asado en su propio caldo",t:"Horno",p:"Ave"},
+  {n:"Pollo Salmorejo Canario",id:"Pollo_Salmorejo_Canario",c:"Componentes",s:"Principal",d:"Pollo en salmorejo canario tradicional",t:"Guiso",p:"Ave"},
+  {n:"Raya a la Mantequilla Tostada",id:"Raya_Mantequilla_Tostada",c:"Componentes",s:"Principal",d:"Raya con beurre noisette y alcaparras",t:"Plancha",p:"Pescado"},
+  {n:"Salmón Glaseado",id:"Salmon_Glaseado",c:"Componentes",s:"Principal",d:"Salmón glaseado con miel, mostaza y soja",t:"Horno",p:"Pescado"},
+  {n:"Solomillo Filet Mignon",id:"Solomillo_Filet_Mignon",c:"Componentes",s:"Principal",d:"Filet mignon sellado y terminado en horno",t:"Plancha + Horno",p:"Ternera"},
+  {n:"Tonkatsu de Pollo",id:"Tonkatsu_Pollo_Componente",c:"Componentes",s:"Principal",d:"Escalope japonés de pollo empanado",t:"Fritura",p:"Ave"},
+  {n:"Aligot de Plátano de Canarias",id:"Aligot_Platano_Canarias",c:"Componentes",s:"Guarnición HI",d:"Puré elástico de plátano canario con queso",t:"Cocción",p:"-"},
+  {n:"Arroz Bahiano",id:"Arroz_Bahiano",c:"Componentes",s:"Guarnición HI",d:"Arroz brasileño con leche de coco y dendê",t:"Cocción",p:"-"},
+  {n:"Arroz Blanco Suelto",id:"Arroz_Blanco_Suelto",c:"Componentes",s:"Guarnición HI",d:"Arroz basmati cocido al punto perfecto",t:"Cocción",p:"-"},
+  {n:"Bratkartoffeln",id:"Bratkartoffeln",c:"Componentes",s:"Guarnición HI",d:"Patatas salteadas alemanas con cebolla y bacon",t:"Salteado",p:"-"},
+  {n:"Couscous Aromático",id:"Couscous_Aromatico",c:"Componentes",s:"Guarnición HI",d:"Couscous especiado con hierbas y frutos secos",t:"Hidratación",p:"-"},
+  {n:"Knödel Salteados con Setas",id:"Knodel_Salteados_Setas",c:"Componentes",s:"Guarnición HI",d:"Dumplings bávaros salteados en mantequilla",t:"Pochado + Salteado",p:"-"},
+  {n:"Patatas Boulangère",id:"Patatas_Boulangere",c:"Componentes",s:"Guarnición HI",d:"Patatas laminadas al horno con caldo",t:"Horno",p:"-"},
+  {n:"Patatas y Cebollas con Romesco",id:"Patatas_Cebollas_Romesco",c:"Componentes",s:"Guarnición HI",d:"Patatas asadas con cebolla y salsa romesco",t:"Horno",p:"-"},
+  {n:"Patatas Dauphine",id:"Patatas_Dauphine",c:"Componentes",s:"Guarnición HI",d:"Croquetas de patata con pasta choux",t:"Fritura",p:"-"},
+  {n:"Patatas Fritas Triple Cocción",id:"Patatas_Fritas_Triple_Coccion",c:"Componentes",s:"Guarnición HI",d:"Patatas fritas Heston Blumenthal",t:"Triple fritura",p:"-"},
+  {n:"Patatas Gajo Bistro",id:"Patatas_Gajo_Bistro",c:"Componentes",s:"Guarnición HI",d:"Patatas gajo crujientes estilo bistro",t:"Horno",p:"-"},
+  {n:"Patatas al Vapor en Horno",id:"Patatas_Vapor_Horno",c:"Componentes",s:"Guarnición HI",d:"Patatas cocidas al vapor dentro del horno",t:"Vapor",p:"-"},
+  {n:"Polenta al Parmesano",id:"Polenta_Parmesano",c:"Componentes",s:"Guarnición HI",d:"Polenta cremosa con parmesano",t:"Cocción",p:"-"},
+  {n:"Puré de Boniato",id:"Pure_Boniato",c:"Componentes",s:"Guarnición HI",d:"Puré suave de boniato",t:"Cocción",p:"-"},
+  {n:"Puré Cremoso Robuchon",id:"Pure_Cremoso_Robuchon",c:"Componentes",s:"Guarnición HI",d:"Puré de patata estilo Joël Robuchon",t:"Cocción",p:"-"},
+  {n:"Puré de Patata Firme",id:"Pure_Patata_Firme",c:"Componentes",s:"Guarnición HI",d:"Puré de patata con textura firme para emplatado",t:"Cocción",p:"-"},
+  {n:"Risotto al Azafrán",id:"Risotto_Azafran",c:"Componentes",s:"Guarnición HI",d:"Risotto alla milanese con azafrán",t:"Cocción lenta",p:"-"},
+  {n:"Salzkartoffeln",id:"Salzkartoffeln",c:"Componentes",s:"Guarnición HI",d:"Patatas cocidas alemanas con mantequilla",t:"Cocción",p:"-"},
+  {n:"Spätzle Manual",id:"Spatzle_Manual",c:"Componentes",s:"Guarnición HI",d:"Pasta fresca suaba hecha a mano",t:"Pochado",p:"-"},
+  {n:"Tallarines Caseros al Huevo",id:"Tallarines_Caseros_Huevo",c:"Componentes",s:"Guarnición HI",d:"Pasta fresca al huevo laminada",t:"Pochado",p:"-"},
+  {n:"Berenjena Asada con Miso",id:"Berenjena_Asada_Miso",c:"Componentes",s:"Guarnición V",d:"Berenjena al horno con glaseado de miso",t:"Horno",p:"-"},
+  {n:"Brócoli Charred con Miso",id:"Broccoli_Charred_Miso_Bagna_Cauda",c:"Componentes",s:"Guarnición V",d:"Brócoli chamuscado con bagna cauda",t:"Plancha",p:"-"},
+  {n:"Chucrut Afinado Gourmet",id:"Chucrut_Afinado_Gourmet",c:"Componentes",s:"Guarnición V",d:"Chucrut fermentado con manzana y especias",t:"Cocción lenta",p:"-"},
+  {n:"Coles de Bruselas con Lardo",id:"Coles_Bruselas_Lardo",c:"Componentes",s:"Guarnición V",d:"Coles de Bruselas crujientes con lardo",t:"Horno",p:"-"},
+  {n:"Ensalada de Col Japonesa",id:"Ensalada_Col_Japonesa",c:"Componentes",s:"Guarnición V",d:"Ensalada crujiente con aderezo japonés",t:"Crudo",p:"-"},
+  {n:"Ensalada de Pepino Agridulce",id:"Ensalada_Pepino_Agridulce",c:"Componentes",s:"Guarnición V",d:"Gurkensalat alemán agridulce",t:"Crudo",p:"-"},
+  {n:"Espárragos Trigueros",id:"Esparragos_Trigueros",c:"Componentes",s:"Guarnición V",d:"Espárragos trigueros a la plancha",t:"Plancha",p:"-"},
+  {n:"Gratinado de Coliflor",id:"Gratinado_Coliflor_Afinado",c:"Componentes",s:"Guarnición V",d:"Coliflor gratinada con bechamel y queso",t:"Horno",p:"-"},
+  {n:"Pimientos del Piquillo Confitados",id:"Pimientos_Piquillo_Confitados",c:"Componentes",s:"Guarnición V",d:"Pimientos confitados en aceite de oliva",t:"Confitado",p:"-"},
+  {n:"Portobello y Shiitake Glaseados",id:"Portobello_Shiitake_Glaseados_Fondo_Oscuro",c:"Componentes",s:"Guarnición V",d:"Setas glaseadas en fondo oscuro",t:"Salteado",p:"-"},
+  {n:"Rote Bete Salat",id:"Rote_Bete_Salat",c:"Componentes",s:"Guarnición V",d:"Ensalada alemana de remolacha",t:"Cocción",p:"-"},
+  {n:"Rotkohl Clásico",id:"Rotkohl_Clasico",c:"Componentes",s:"Guarnición V",d:"Col lombarda alemana agridulce",t:"Cocción lenta",p:"-"},
+  {n:"Verduras del Mediterráneo del Este",id:"Verduras_Mediterraneo_Este",c:"Componentes",s:"Guarnición V",d:"Verduras asadas estilo otomano",t:"Horno",p:"-"},
+  {n:"Currysauce Gourmet",id:"Currysauce_Gourmet",c:"Componentes",s:"Base/Salsa",d:"Salsa curry alemana premium",t:"Cocción",p:"-"},
+  {n:"Gravy de Pato",id:"Gravy_Pato",c:"Componentes",s:"Base/Salsa",d:"Gravy intenso de pato asado",t:"Reducción",p:"-"},
+  {n:"Mojos Canarios",id:"Mojos_Canarios",c:"Componentes",s:"Base/Salsa",d:"Mojo rojo y verde canario",t:"Emulsión",p:"-"},
+  {n:"Salmorejo Canario",id:"Salmorejo_Canario",c:"Componentes",s:"Base/Salsa",d:"Marinada canaria para carnes",t:"Maceración",p:"-"},
+  {n:"Salsa Cóctel",id:"Salsa_Coctel",c:"Componentes",s:"Base/Salsa",d:"Salsa cóctel casera para mariscos",t:"Emulsión",p:"-"},
+  {n:"Salsa Holandesa",id:"Salsa_Holandesa",c:"Componentes",s:"Base/Salsa",d:"Holandesa clásica con mantequilla clarificada",t:"Emulsión",p:"-"},
+  {n:"Salsa Tártara Estilo Roux",id:"Salsa_Tartara_Roux",c:"Componentes",s:"Base/Salsa",d:"Tártara adaptada con base de roux",t:"Emulsión",p:"-"},
+  {n:"Salsa Tonkatsu Mejorada",id:"Salsa_Tonkatsu_Mejorada",c:"Componentes",s:"Base/Salsa",d:"Salsa japonesa para empanados",t:"Cocción",p:"-"},
+  {n:"Salsa de Vino Tinto Fallow",id:"Salsa_Vino_Tinto_Fallow",c:"Componentes",s:"Base/Salsa",d:"Reducción de vino tinto estilo Fallow",t:"Reducción",p:"-"},
+  {n:"Salsa de Yogur con Zumaque",id:"Salsa_Yogur_Zumaque",c:"Componentes",s:"Base/Salsa",d:"Salsa fresca de yogur con zumaque",t:"Crudo",p:"-"},
+  {n:"Velouté de Mostaza",id:"Veloute_Mostaza",c:"Componentes",s:"Base/Salsa",d:"Velouté cremosa con mostaza de Dijon",t:"Cocción",p:"-"},
+  {n:"Fondo Blanco de Pollo",id:"01_Fondo_Blanco_Pollo",c:"Componentes",s:"Base/Caldo",d:"Fondo claro de huesos de pollo",t:"Cocción lenta",p:"-"},
+  {n:"Fondo Dorado de Pollo",id:"02_Fondo_Dorado_Pollo",c:"Componentes",s:"Base/Caldo",d:"Fondo oscuro de pollo tostado",t:"Cocción lenta",p:"-"},
+  {n:"Fumet de Pescado",id:"03_Fumet_Pescado",c:"Componentes",s:"Base/Caldo",d:"Fumet clásico de espinas y cabezas",t:"Cocción",p:"-"},
+  {n:"Fondo de Marisco",id:"04_Fondo_Marisco",c:"Componentes",s:"Base/Caldo",d:"Fondo intenso de caparazones",t:"Cocción",p:"-"},
+  {n:"Fondo Oscuro de Ternera",id:"05_Fondo_Oscuro_Ternera",c:"Componentes",s:"Base/Caldo",d:"Fondo oscuro de huesos tostados",t:"Cocción lenta",p:"-"},
+  {n:"Caldo de Verduras",id:"06_Caldo_Verduras",c:"Componentes",s:"Base/Caldo",d:"Caldo vegetal aromático",t:"Cocción",p:"-"},
+  {n:"Caldo de Pollo Mise en Place",id:"Caldo_Pollo_Mise_en_Place",c:"Componentes",s:"Base/Caldo",d:"Caldo de pollo con mise en place",t:"Cocción lenta",p:"-"},
+  {n:"Demi-Glace",id:"07_Demi_Glace",c:"Componentes",s:"Base/Elemento",d:"Reducción concentrada de fondo oscuro",t:"Reducción",p:"-"},
+  {n:"Mostaza Encurtida",id:"Mostaza_Encurtida",c:"Componentes",s:"Base/Elemento",d:"Mostaza casera encurtida con especias",t:"Fermentación",p:"-"},
+  {n:"Albóndigas de Cordero — Plato",id:"Albondigas_Cordero_Plato",c:"Platos",s:"",d:"Albóndigas con couscous y yogur de zumaque",t:"Horno",p:"Cordero"},
+  {n:"Arroz Caldoso de Marisco",id:"Arroz_Caldoso_Marisco",c:"Platos",s:"",d:"Arroz meloso con mariscos y fumet",t:"Cocción",p:"Marisco"},
+  {n:"Arroz de Pato",id:"Arroz_de_Pato",c:"Platos",s:"",d:"Arroz portugués con pato confitado",t:"Horno",p:"Ave"},
+  {n:"Atún Encebollado Canario",id:"Atun_Encebollado_Canario",c:"Platos",s:"",d:"Atún con cebolla caramelizada canario",t:"Plancha",p:"Pescado"},
+  {n:"Bkeila",id:"Bkeila",c:"Platos",s:"",d:"Estofado judío marroquí de espinacas",t:"Estofado",p:"Legumbres"},
+  {n:"Canelones de Rabo de Toro",id:"Canelones_Rabo_Toro_Demiglace",c:"Platos",s:"",d:"Canelones rellenos con demi-glace",t:"Horno",p:"Ternera"},
+  {n:"Chuleta de Cerdo con Chucrut",id:"Chuleta_Cerdo_Chucrut",c:"Platos",s:"",d:"Chuleta a la plancha con chucrut",t:"Plancha",p:"Cerdo"},
+  {n:"Coq au Vin",id:"Coq_au_Vin",c:"Platos",s:"",d:"Pollo braseado en vino tinto francés",t:"Braseado",p:"Ave"},
+  {n:"Costilla con Papa y Piña",id:"Costilla_Papa_Pina",c:"Platos",s:"",d:"Costilla de cerdo con patata y piña",t:"Horno",p:"Cerdo"},
+  {n:"Curry Nativo Australiano",id:"Curry_Nativo_Australiano_Corvina",c:"Platos",s:"",d:"Curry con especias australianas y corvina",t:"Guiso",p:"Pescado"},
+  {n:"Curry Tailandés de Pato",id:"Curry_Tailandes_Pato",c:"Platos",s:"",d:"Curry amarillo con pato asado",t:"Guiso",p:"Ave"},
+  {n:"Currywurst Premium",id:"Currywurst_Premium",c:"Platos",s:"",d:"Currywurst berlinés gourmet",t:"Fritura + Salsa",p:"Cerdo"},
+  {n:"Estofado de Lentejas Alemán",id:"Estofado_Lentejas_Aleman",c:"Platos",s:"",d:"Linseneintopf con verduras",t:"Estofado",p:"Legumbres"},
+  {n:"Fabada Asturiana",id:"Fabada_Asturiana",c:"Platos",s:"",d:"Fabada clásica con compango",t:"Cocción lenta",p:"Cerdo"},
+  {n:"Fish and Chips",id:"Fish_and_Chips",c:"Platos",s:"",d:"Bacalao en tempura con patatas fritas",t:"Fritura",p:"Pescado"},
+  {n:"Gulasch Alemán — Plato",id:"Gulasch_Aleman_Plato",c:"Platos",s:"",d:"Gulasch con spätzle y rotkohl",t:"Estofado",p:"Ternera"},
+  {n:"Königsberger Klopse",id:"Koenigsberger_Klopse",c:"Platos",s:"",d:"Albóndigas prusianas en salsa de alcaparras",t:"Pochado",p:"Ternera"},
+  {n:"Linseneintopf con Bockwurst",id:"Linseneintopf_Bockwurst",c:"Platos",s:"",d:"Potaje de lentejas con bockwurst",t:"Estofado",p:"Cerdo"},
+  {n:"Moqueca con Arroz Bahiano",id:"Moqueca_Camarones_Arroz_Bahiano",c:"Platos",s:"",d:"Moqueca brasileña con arroz de coco",t:"Guiso",p:"Marisco"},
+  {n:"Musaka de Verduras",id:"Musaka_Verduras",c:"Platos",s:"",d:"Musaka vegetariana con bechamel",t:"Horno",p:"Vegetariano"},
+  {n:"Nasi Goreng",id:"Nasi_Goreng",c:"Platos",s:"",d:"Arroz frito indonesio",t:"Wok",p:"Ave"},
+  {n:"Paccheri al Pomodoro Cremoso",id:"Paccheri_Pomodoro_Cremoso",c:"Platos",s:"",d:"Pasta con salsa de tomate cremosa",t:"Cocción",p:"Vegetariano"},
+  {n:"Pollo al Ajillo — Plato",id:"Pollo_Ajillo_Plato",c:"Platos",s:"",d:"Pollo al ajillo con patatas y ensalada",t:"Salteado",p:"Ave"},
+  {n:"Pollo Salmorejo con Papas",id:"Pollo_Salmorejo_Papas",c:"Platos",s:"",d:"Pollo canario con papas arrugadas",t:"Guiso",p:"Ave"},
+  {n:"Pollo Velouté con Setas",id:"Pollo_Veloute_Mostaza_Setas_Tallarines",c:"Platos",s:"",d:"Pollo con velouté y pasta fresca",t:"Horno + Salsa",p:"Ave"},
+  {n:"Risotto al Azafrán — Plato",id:"Risotto_Azafran_Plato",c:"Platos",s:"",d:"Risotto alla milanese principal",t:"Cocción lenta",p:"Vegetariano"},
+  {n:"Rollitos de Col Rellenos",id:"Rollitos_Col_Rellenos",c:"Platos",s:"",d:"Kohlrouladen — rollitos con carne",t:"Horno",p:"Cerdo/Ternera"},
+  {n:"Ropa Vieja Canaria",id:"Ropa_Vieja_Canaria",c:"Platos",s:"",d:"Estofado canario deshilachado",t:"Estofado",p:"Ternera"},
+  {n:"Salchichas en Salsa de Tomate",id:"Salchichas_Salsa_Tomate",c:"Platos",s:"",d:"Salchichas de pollo en tomate",t:"Guiso",p:"Ave"},
+  {n:"Salmón Curado Confitado",id:"Salmon_Curado_Confitado",c:"Platos",s:"",d:"Salmón curado a baja temperatura",t:"Sous vide",p:"Pescado"},
+  {n:"Salmón Glaseado con Brócoli",id:"Salmon_Glaseado_Broccoli_Charred",c:"Platos",s:"",d:"Salmón glaseado con brócoli charred",t:"Horno",p:"Pescado"},
+  {n:"Sancocho Canario de Bacalao",id:"Sancocho_Canario_Bacalao",c:"Platos",s:"",d:"Sancocho canario con bacalao y papas",t:"Cocción",p:"Pescado"},
+  {n:"Senfeier — Huevos en Mostaza",id:"Senfeier_Huevos_Mostaza",c:"Platos",s:"",d:"Huevos duros en salsa de mostaza",t:"Cocción + Salsa",p:"Huevo"},
+  {n:"Shakshuka",id:"Shakshuka",c:"Platos",s:"",d:"Huevos en salsa de tomate especiada",t:"Estofado",p:"Huevo"},
+  {n:"Suquet de Corvina",id:"Suquet_Corvina",c:"Platos",s:"",d:"Suquet catalán con patatas",t:"Guiso",p:"Pescado"},
+  {n:"Ternera al Curry Thai",id:"Ternera_Curry_Thai",c:"Platos",s:"",d:"Ternera guisada en curry tailandés",t:"Guiso",p:"Ternera"},
+  {n:"Tonkatsu de Pollo — Plato",id:"Tonkatsu_Pollo_Plato",c:"Platos",s:"",d:"Tonkatsu con ensalada y arroz",t:"Fritura",p:"Ave"},
+  {n:"Ajoblanco",id:"Ajoblanco",c:"Entrantes",s:"",d:"Sopa fría de almendras malagueña",t:"Crudo",p:"-"},
+  {n:"Alubias Blancas con Tahini",id:"Alubias_Tahini",c:"Entrantes",s:"",d:"Alubias cremosas con tahini",t:"Cocción",p:"Legumbres"},
+  {n:"Bisque de Gambas",id:"Bisque_Gambas",c:"Entrantes",s:"",d:"Crema de caparazones de gamba",t:"Cocción lenta",p:"Marisco"},
+  {n:"Cóctel de Gambas Clásico",id:"Coctel_Gambas_Clasico",c:"Entrantes",s:"",d:"Cóctel clásico con salsa rosa",t:"Crudo",p:"Marisco"},
+  {n:"Cogollos Gratinados al Azul",id:"Cogollos_Gratinados_Azul",c:"Entrantes",s:"",d:"Cogollos gratinados con queso azul",t:"Horno",p:"-"},
+  {n:"Cogollos a la Plancha",id:"Cogollos_Plancha",c:"Entrantes",s:"",d:"Cogollos grillados con vinagreta",t:"Plancha",p:"-"},
+  {n:"Coliflor Gratinada",id:"Coliflor_Gratinada",c:"Entrantes",s:"",d:"Coliflor con bechamel gratinada",t:"Horno",p:"-"},
+  {n:"Consomé Claro de Ave",id:"Consome_Ave_Ligero",c:"Entrantes",s:"",d:"Consomé clarificado de ave",t:"Cocción lenta",p:"Ave"},
+  {n:"Crema de Apio Nabo",id:"Crema_Apio_Nabo",c:"Entrantes",s:"",d:"Crema suave con aceite de trufa",t:"Cocción",p:"-"},
+  {n:"Ensalada de Arenque y Remolacha",id:"Ensalada_Arenque_Remolacha",c:"Entrantes",s:"",d:"Ensalada nórdica de arenque",t:"Crudo",p:"Pescado"},
+  {n:"Ensalada César",id:"Ensalada_Cesar",c:"Entrantes",s:"",d:"César clásica con pollo",t:"Crudo",p:"Ave"},
+  {n:"Ensalada Waldorf",id:"Ensalada_Waldorf",c:"Entrantes",s:"",d:"Waldorf con manzana y nuez",t:"Crudo",p:"-"},
+  {n:"Ensaladilla Alemana",id:"Ensaladilla_Alemana",c:"Entrantes",s:"",d:"Kartoffelsalat alemana",t:"Cocción",p:"-"},
+  {n:"Esfera de Boletus con Coulis",id:"Esfera_Boletus_Coulis_Frutos_Rojos",c:"Entrantes",s:"",d:"Esfera molecular de boletus",t:"Molecular",p:"-"},
+  {n:"Espárragos a la Carbonara",id:"Esparragos_Carbonara",c:"Entrantes",s:"",d:"Espárragos blancos con carbonara",t:"Cocción + Salsa",p:"-"},
+  {n:"Gambas al Ajillo",id:"Gambas_Ajillo",c:"Entrantes",s:"",d:"Gambas en aceite con ajo",t:"Salteado",p:"Marisco"},
+  {n:"Guisantes con Jamón y Menta",id:"Guisantes_Jamon",c:"Entrantes",s:"",d:"Guisantes salteados con jamón",t:"Salteado",p:"Cerdo"},
+  {n:"Lentejas Verdes con Queso de Oveja",id:"Lentejas_Verdes_Queso_Oveja",c:"Entrantes",s:"",d:"Lentejas tibias con queso fresco",t:"Cocción",p:"Legumbres"},
+  {n:"Pastel de Ventresca Laredo",id:"Pastel_Ventresca_Laredo",c:"Entrantes",s:"",d:"Pastel prensado de ventresca",t:"Horno",p:"Pescado"},
+  {n:"Pimientos Muhammara con Feta",id:"Pimientos_Muhammara",c:"Entrantes",s:"",d:"Dip de pimientos con nueces",t:"Horno",p:"-"},
+  {n:"Sopa Miso con Tofu",id:"Sopa_Miso_Tofu_Wakame",c:"Entrantes",s:"",d:"Sopa japonesa de miso",t:"Cocción",p:"Vegetariano"},
+  {n:"Steak Tartar Clásico",id:"Steak_Tartar_Clasico",c:"Entrantes",s:"",d:"Tartar de solomillo clásico",t:"Crudo",p:"Ternera"},
+  {n:"Steak Tartar Sin Yema",id:"Steak_Tartar_Sin_Yema",c:"Entrantes",s:"",d:"Tartar sin yema de huevo",t:"Crudo",p:"Ternera"},
+  {n:"Timbal de Aguacate y Gambas",id:"Timbal_Aguacate_Gambas",c:"Entrantes",s:"",d:"Timbal con gambas marinadas",t:"Crudo",p:"Marisco"},
+  {n:"Tiradito Nikkei de Atún",id:"Tiradito_Nikkei_Atun",c:"Entrantes",s:"",d:"Tiradito peruano-japonés",t:"Crudo",p:"Pescado"},
+  {n:"Tomate Tonnato",id:"Tomate_Tonnato",c:"Entrantes",s:"",d:"Tomate con salsa tonnato",t:"Crudo",p:"Pescado"},
+  {n:"Vichyssoise",id:"Vichyssoise",c:"Entrantes",s:"",d:"Crema fría de puerros",t:"Cocción",p:"-"},
+  {n:"Wurstsalat Bavaria",id:"Wurstsalat_Bavaria",c:"Entrantes",s:"",d:"Ensalada bávara de salchichas",t:"Crudo",p:"Cerdo"},
+  {n:"Arroz con Leche",id:"Arroz_con_Leche",c:"Postres",s:"",d:"Arroz con leche cremoso",t:"Cocción",p:"-"},
+  {n:"Compota de Manzana Especiada",id:"Compota_Manzana_Especiada",c:"Postres",s:"",d:"Compota templada con canela",t:"Cocción",p:"-"},
+  {n:"Cookies de Chocolate",id:"Cookies_Chocolate",c:"Postres",s:"",d:"Galletas con chocolate negro",t:"Horno",p:"-"},
+  {n:"Crema Catalana",id:"Crema_Catalana",c:"Postres",s:"",d:"Crema con costra de caramelo",t:"Cocción + Soplete",p:"-"},
+  {n:"Crema de Piña y Coco",id:"Crema_Pina_Coco",c:"Postres",s:"",d:"Crema tropical de piña",t:"Cocción",p:"-"},
+  {n:"Cremoso de Chocolate Blanco",id:"Cremoso_Chocolate_Blanco",c:"Postres",s:"",d:"Cremoso suave de chocolate blanco",t:"Cocción",p:"-"},
+  {n:"Flan de Coco",id:"Flan_Coco",c:"Postres",s:"",d:"Flan de coco al baño maría",t:"Horno",p:"-"},
+  {n:"Fresas con Vinagre",id:"Fresas_Vinagre",c:"Postres",s:"",d:"Fresas en vinagre balsámico",t:"Maceración",p:"-"},
+  {n:"Mandarina al Cointreau",id:"Mandarina_Cointreau",c:"Postres",s:"",d:"Mandarinas en almíbar",t:"Maceración",p:"-"},
+  {n:"Mango con Yogur y Chocolate Blanco",id:"Mango_Yogur_Chocolate_Blanco",c:"Postres",s:"",d:"Mango fresco con yogur",t:"Crudo",p:"-"},
+  {n:"Manzana al Horno",id:"Manzana_Horno",c:"Postres",s:"",d:"Bratapfel — manzana asada",t:"Horno",p:"-"},
+  {n:"Mousse de Chocolate",id:"Mousse_Chocolate",c:"Postres",s:"",d:"Mousse aérea de chocolate negro",t:"Batido",p:"-"},
+  {n:"Naranjas con Miel",id:"Naranjas_Miel",c:"Postres",s:"",d:"Naranjas en almíbar de miel",t:"Maceración",p:"-"},
+  {n:"Natillas de Pistacho",id:"Natillas_Pistacho",c:"Postres",s:"",d:"Natillas con pasta de pistacho",t:"Cocción",p:"-"},
+  {n:"Plátano con Lima",id:"Platano_Lima",c:"Postres",s:"",d:"Plátano flambeado con ron",t:"Flambeado",p:"-"},
+  {n:"Sangría de Frutas",id:"Sangria_Frutas",c:"Postres",s:"",d:"Sangría sin alcohol",t:"Maceración",p:"-"},
+  {n:"Sopa de Melón con Menta",id:"Sopa_Melon_Menta",c:"Postres",s:"",d:"Sopa fría de melón",t:"Crudo",p:"-"},
+  {n:"Torrija de Brioche",id:"Torrija_Brioche_Caramelizada",c:"Postres",s:"",d:"Torrija con caramelo tostado",t:"Fritura + Caramelo",p:"-"},
+  {n:"Trufas de Chocolate",id:"Trufas_Chocolate",c:"Postres",s:"",d:"Trufas de ganache con cacao",t:"Cocción",p:"-"},
+];
+
+/* ============================================================
+   MENU DATA — 3-12 Marzo 2026
+   ============================================================ */
+const menuData = {
+  periodo: "3 — 12 de Marzo 2026",
+  pax: 25,
+  ciclo: "Ciclo 15 días · Días 1–10",
+  chef_free: "Mié 04, Dom 08, Mié 11",
+  dias: [
+    {fecha:"2026-03-03",ds:"Martes 03/03",dc:1,tipo:"normal",prot:"Pescado / marisco",
+      entrante:{n:"Ensalada César",id:"Ensalada_Cesar"},
+      principal:{n:"Arroz Caldoso de Mariscos",id:"Arroz_Caldoso_Marisco"},
+      guarnicion:{n:"Integrado en plato",id:null},
+      postre:{n:"Mango con Yogur al Chocolate Blanco",id:"Mango_Yogur_Chocolate_Blanco"},
+      cena:"Crema de champiñones + tosta",
+      prod:"César: salsa martes AM. Caldoso: caldo AM, marisco al pase. Crema champiñones: hacer martes. Prep Carrilleras completo para mañana."},
+    {fecha:"2026-03-04",ds:"Miércoles 04/03",dc:2,tipo:"chef-free",prot:"Carne roja estofada",
+      entrante:{n:"Vichyssoise (fría)",id:"Vichyssoise"},
+      principal:{n:"Carrilleras de Ternera al Vino y Mostaza",id:"Carrilleras_Ternera_Vino_Mostaza"},
+      guarnicion:{n:"Polenta al Parmesano",id:"Polenta_Parmesano"},
+      postre:{n:"Cookies de Chocolate con Especias",id:"Cookies_Chocolate"},
+      cena:"Tabla fría: fiambres, queso, fruta",
+      prod:"100% hecho martes. Regen: Convotherm vapor 90°C, 20 min tapado. Cookies: masa congelada → hornear 170°C/8 min."},
+    {fecha:"2026-03-05",ds:"Jueves 05/03",dc:3,tipo:"normal",prot:"Vegetariano / ligero",
+      entrante:{n:"Guisantes con Jamón y Menta",id:"Guisantes_Jamon"},
+      principal:{n:"Espárragos Blancos a la Carbonara",id:"Esparragos_Carbonara"},
+      guarnicion:{n:"—",id:null},
+      postre:{n:"Naranjas con Miel y AOVE",id:"Naranjas_Miel"},
+      cena:"Alubias Blancas con Tahini + pan",
+      prod:"Espárragos: pelar miércoles PM. Carbonara: montaje AL MOMENTO (yemas pasteurizadas)."},
+    {fecha:"2026-03-06",ds:"Viernes 06/03",dc:4,tipo:"normal",prot:"Pescado blanco",
+      entrante:{n:"Cogollos a la Plancha con Menta",id:"Cogollos_Plancha"},
+      principal:{n:"Bacalao con Espinacas y Aceite Verde",id:"Bacalao_Espinacas_Aceite_Verde"},
+      guarnicion:{n:"Patatas cocidas",id:null},
+      postre:{n:"Crema de Piña y Coco",id:"Crema_Pina_Coco"},
+      cena:"Ensalada verde + fiambre",
+      prod:"Bacalao: aceite verde puerro prep AM. Prep Costillas BBQ: marinada viernes, cocción larga sábado."},
+    {fecha:"2026-03-07",ds:"Sábado 07/03",dc:5,tipo:"normal",prot:"Carne blanca",
+      entrante:{n:"Tomate Tonnato",id:"Tomate_Tonnato"},
+      principal:{n:"Pollo a l'Ast (asado limón y hierbas)",id:"Pollo_Ast"},
+      guarnicion:{n:"Patatas asadas (integradas)",id:null},
+      postre:{n:"Natillas de Pistacho",id:"Natillas_Pistacho"},
+      cena:"Patatas y Cebollas Asadas con Romesco",
+      prod:"Pollo: horno sábado AM. Tonnato: salsa hecha viernes. Terminar Costillas BBQ + Ajoblanco + Sangría para domingo."},
+    {fecha:"2026-03-08",ds:"Domingo 08/03",dc:6,tipo:"chef-free",prot:"Cerdo / tradicional",
+      entrante:{n:"Ajoblanco (frío)",id:"Ajoblanco"},
+      principal:{n:"Costillas de Cerdo BBQ Deshuesadas",id:"Costillas_Cerdo_BBQ"},
+      guarnicion:{n:"Puré de boniato",id:"Pure_Boniato"},
+      postre:{n:"Sangría de Frutas (fría)",id:"Sangria_Frutas"},
+      cena:"Tabla fría: fiambres, queso, fruta",
+      prod:"100% hecho sábado. Regen Costillas: Convotherm vapor 85°C, 15–20 min tapado. Puré boniato: hecho sábado, regen vapor suave."},
+    {fecha:"2026-03-09",ds:"Lunes 09/03",dc:7,tipo:"normal",prot:"Pescado",
+      entrante:{n:"Berenjena Asada con Miso",id:"Berenjena_Asada_Miso"},
+      principal:{n:"Dorada al Vapor a la Japonesa",id:"Dorada_Vapor_Japonesa"},
+      guarnicion:{n:"Arroz basmati",id:"Arroz_Blanco_Suelto"},
+      postre:{n:"Flan de Coco",id:"Flan_Coco"},
+      cena:"Polenta al Parmesano + ensalada",
+      prod:"Berenjena: asar domingo PM. Dorada: vapor al momento. Flan coco: hacer domingo."},
+    {fecha:"2026-03-10",ds:"Martes 10/03",dc:8,tipo:"normal",prot:"Carne blanca / cerdo",
+      entrante:{n:"Pimientos Muhammara con Feta",id:"Pimientos_Muhammara"},
+      principal:{n:"Salchichas de Pollo en Salsa de Tomate",id:"Salchichas_Salsa_Tomate"},
+      guarnicion:{n:"Salzkartoffeln",id:"Salzkartoffeln"},
+      postre:{n:"Trufas de Chocolate",id:"Trufas_Chocolate"},
+      cena:"Sopa de verduras + tosta",
+      prod:"Salchichas: dorar + salsa tomate al momento. Salzkartoffeln: cocer AM. Trufas: ganache lunes PM → bolear martes AM. Prep Ternera Curry completo para mañana."},
+    {fecha:"2026-03-11",ds:"Miércoles 11/03",dc:9,tipo:"chef-free",prot:"Carne roja guisada",
+      entrante:{n:"Lentejas Verdes con Queso de Oveja",id:"Lentejas_Verdes_Queso_Oveja"},
+      principal:{n:"Ternera Guisada al Curry Thai",id:"Ternera_Curry_Thai"},
+      guarnicion:{n:"Arroz basmati",id:"Arroz_Blanco_Suelto"},
+      postre:{n:"Manzana al Horno",id:"Manzana_Horno"},
+      cena:"Tabla fría: fiambres, queso, fruta",
+      prod:"100% hecho martes. Regen Ternera: Convotherm vapor 90°C, 20 min tapado. Lentejas: cocidas martes, aliñar."},
+    {fecha:"2026-03-12",ds:"Jueves 12/03",dc:10,tipo:"normal",prot:"Pescado blanco",
+      entrante:{n:"Ensalada Waldorf",id:"Ensalada_Waldorf"},
+      principal:{n:"Lubina al Horno sobre Patata y Tomate",id:"Lubina_Horno"},
+      guarnicion:{n:"Integrado en plato",id:null},
+      postre:{n:"Mousse de Chocolate con Avellanas",id:"Mousse_Chocolate"},
+      cena:"Ensalada + fiambre",
+      prod:"Waldorf: ensamblar al momento. Lubina: base patata AM, lubina al pase. Mousse: sifón ISI jueves AM."}
+  ]
+};
+
+/* ============================================================
+   MISE EN PLACE DATA — 3-12 Marzo 2026
+   ============================================================ */
+const miseData = [
+  {fecha:"2026-03-03",ds:"Martes 03/03",tipo:"normal",titulo:"Arroz Caldoso + César + Crema Champiñones",carga:"Media",
+    tareas:[
+      {h:"7:30",t:"Salsa César: anchoas, yemas, parmesano, aceite. Reservar frío.",tipo:"servicio"},
+      {h:"8:00",t:"Caldo Arroz Caldoso: cabezas langostino + sofrito + caldo pescado. Fuego lento.",tipo:"servicio"},
+      {h:"9:30",t:"Picatostes César: cortar pan, hornear con aceite 180°C.",tipo:"servicio"},
+      {h:"10:00",t:"Pelar langostinos. Reservar colas frío, cabezas al caldo.",tipo:"servicio"},
+      {h:"10:30",t:"Arroz Caldoso: sofrito + arroz + caldo. Marisco al final, al pase.",tipo:"servicio"},
+      {h:"11:00",t:"Lechuga César lavada, secada. Mango pelado y cortado. Yogur + chocolate blanco fundido.",tipo:"servicio"},
+      {h:"12:00",t:"SERVICIO",tipo:"servicio"},
+      {h:"13:00",t:"CARRILLERAS: dorar 25 uds, sofreír verdura, desglasar vino tinto + brandy, caldo, horno 160°C ~2.5h. Enfriar, refrigerar GN.",tipo:"anticipacion",para:"Mié 04"},
+      {h:"13:30",t:"VICHYSSOISE: pochar puerro + patata, caldo, triturar, nata. Enfriar, refrigerar.",tipo:"anticipacion",para:"Mié 04"},
+      {h:"14:30",t:"POLENTA: cocer polenta + nata + parmesano. Verter en GN, refrigerar.",tipo:"anticipacion",para:"Mié 04"},
+      {h:"15:00",t:"COOKIES: masa (chocolate fundido + mantequilla + huevos + harina + especias). Formar, congelar.",tipo:"anticipacion",para:"Mié 04"},
+      {h:"15:30",t:"Crema champiñones (cena): pochar cebolla + champiñón, caldo, triturar, ajustar nata.",tipo:"servicio"},
+    ],
+    nota:"Día cargado por la anticipación de todo el miércoles CF. La clave: carrilleras al horno a las 13:00, trabajan solas 2.5h."},
+  {fecha:"2026-03-04",ds:"Miércoles 04/03",tipo:"chef-free",titulo:"CF — Carrilleras + Vichyssoise + Polenta + Cookies",carga:"Auxiliar",
+    tareas:[
+      {h:"10:00",t:"Sacar Vichyssoise del frío. Servir fría en boles con cebollino.",tipo:"chef-free"},
+      {h:"10:30",t:"REGEN CARRILLERAS: GN tapado → Convotherm vapor 90°C, 20 min.",tipo:"chef-free"},
+      {h:"10:30",t:"REGEN POLENTA: GN tapado → Convotherm vapor 85°C, 15 min. Remover, ajustar textura con leche caliente si espesa.",tipo:"chef-free"},
+      {h:"11:30",t:"COOKIES: del congelador → horno 170°C, 8 min. Retirar blandas (endurecen al enfriar).",tipo:"chef-free"},
+      {h:"12:00",t:"SERVICIO: Vichyssoise → Carrilleras + Polenta → Cookies",tipo:"chef-free"},
+      {h:"19:00",t:"CENA: Tabla fría — fiambres, queso variado, fruta de temporada. Solo sacar y emplatar.",tipo:"chef-free"},
+    ],
+    nota:"Todo producido ayer. Solo regenerar y emplatar. Cookies: no sobrecocinar, salen blandas del horno."},
+  {fecha:"2026-03-05",ds:"Jueves 05/03",tipo:"normal",titulo:"Espárragos Carbonara + Guisantes Jamón + Naranjas",carga:"Media",
+    tareas:[
+      {h:"7:30",t:"Guisantes: pochar cebolla + grasa jamón, guisantes congelados, caldo, jamón lonchas. Menta al final.",tipo:"servicio"},
+      {h:"8:30",t:"Espárragos: pelar (si no pelados ayer), cocer en agua con sal + azúcar 8-12 min según grosor.",tipo:"servicio"},
+      {h:"9:30",t:"Panko tostado con mantequilla para acabado carbonara.",tipo:"servicio"},
+      {h:"10:30",t:"Naranjas: pelar a vivo o rodajas, miel, AOVE, sal en escamas.",tipo:"servicio"},
+      {h:"11:30",t:"CARBONARA AL MOMENTO: yemas pasteurizadas + pecorino + pimienta. Espárragos calientes, salsa sin fuego, panko.",tipo:"servicio"},
+      {h:"12:00",t:"SERVICIO",tipo:"servicio"},
+      {h:"13:00",t:"Tarde libre — día ligero. Opcionalmente adelantar: aceite verde para bacalao de mañana.",tipo:"nota"},
+    ],
+    nota:"Carbonara AL MOMENTO — la salsa no espera. Yemas pasteurizadas eliminan riesgo. Panko tostado = textura."},
+  {fecha:"2026-03-06",ds:"Viernes 06/03",tipo:"normal",titulo:"Bacalao Espinacas + Cogollos Plancha + Piña Coco",carga:"Media",
+    tareas:[
+      {h:"7:30",t:"Aceite verde: blanquear parte verde de puerros, triturar con aceite, colar.",tipo:"servicio"},
+      {h:"8:30",t:"Espinacas: lavar, secar. Saltear al pase con mantequilla.",tipo:"servicio"},
+      {h:"9:00",t:"Cogollos: limpiar, cortar mitad. Vinagreta de mostaza + menta.",tipo:"servicio"},
+      {h:"10:00",t:"Crema piña: piña fresca + leche coco, triturar, enfriar.",tipo:"servicio"},
+      {h:"10:30",t:"Patatas cocidas: pelar, cocer, reservar caliente.",tipo:"servicio"},
+      {h:"11:00",t:"Cogollos a la plancha fuerte. Bacalao: confitar/vapor, espinacas salteadas, aceite verde.",tipo:"servicio"},
+      {h:"12:00",t:"SERVICIO",tipo:"servicio"},
+      {h:"13:00",t:"COSTILLAS BBQ: marinada (salsa BBQ + especias). Refrigerar hasta mañana.",tipo:"anticipacion",para:"Dom 08"},
+      {h:"14:00",t:"Prep TONNATO: salsa (atún + anchoas + alcaparras + mayonesa + limón). Refrigerar.",tipo:"anticipacion",para:"Sáb 07"},
+    ],
+    nota:"Bacalao: aceite verde es la estrella. Prep costillas BBQ y tonnato en la tarde."},
+  {fecha:"2026-03-07",ds:"Sábado 07/03",tipo:"normal",titulo:"Pollo l'Ast + Tonnato + Natillas Pistacho",carga:"Media-alta",
+    tareas:[
+      {h:"7:30",t:"POLLOS AL HORNO: 7 pollos enteros, limón + hierbas + patatas gajos. Horno 200°C, ~1h15.",tipo:"servicio"},
+      {h:"8:00",t:"COSTILLAS BBQ: al horno 130°C, cocción larga ~3h. Glasear al final.",tipo:"anticipacion",para:"Dom 08"},
+      {h:"9:00",t:"Tonnato: cortar tomate corazón de buey, salsa ya hecha ayer.",tipo:"servicio"},
+      {h:"9:30",t:"Natillas pistacho: yemas + leche + azúcar + pasta pistacho. Cocción suave, enfriar.",tipo:"servicio"},
+      {h:"11:00",t:"Pollos listos. Trinchar, reservar caliente. Patatas del horno.",tipo:"servicio"},
+      {h:"12:00",t:"SERVICIO",tipo:"servicio"},
+      {h:"13:00",t:"AJOBLANCO: almendras remojadas + pan + ajo + vinagre + aceite. Triturar, colar, refrigerar.",tipo:"anticipacion",para:"Dom 08"},
+      {h:"14:00",t:"SANGRÍA: vino tinto + zumo uva + fruta cortada + azúcar + especias. Refrigerar.",tipo:"anticipacion",para:"Dom 08"},
+      {h:"14:30",t:"PURÉ BONIATO: pelar, cocer, prensar, montar mantequilla + nata. En GN, refrigerar.",tipo:"anticipacion",para:"Dom 08"},
+      {h:"15:00",t:"Romesco cena: ñoras + almendras + pimiento + ajo + tomate. Triturar.",tipo:"servicio"},
+    ],
+    nota:"Día cargado: pollos + costillas en horno simultáneo. Costillas van a 130°C, pollos a 200°C — planificar bandejas."},
+  {fecha:"2026-03-08",ds:"Domingo 08/03",tipo:"chef-free",titulo:"CF — Costillas BBQ + Ajoblanco + Sangría + Puré Boniato",carga:"Auxiliar",
+    tareas:[
+      {h:"10:00",t:"Sacar Ajoblanco del frío. Servir en boles con uvas y almendras laminadas.",tipo:"chef-free"},
+      {h:"10:30",t:"REGEN COSTILLAS: GN tapado → Convotherm vapor 85°C, 15–20 min.",tipo:"chef-free"},
+      {h:"10:30",t:"REGEN PURÉ BONIATO: GN tapado → vapor suave. Remover.",tipo:"chef-free"},
+      {h:"11:30",t:"Sangría: sacar del frío, servir en jarra con hielo.",tipo:"chef-free"},
+      {h:"12:00",t:"SERVICIO: Ajoblanco → Costillas + Puré boniato → Sangría",tipo:"chef-free"},
+      {h:"19:00",t:"CENA: Tabla fría — fiambres, queso, fruta.",tipo:"chef-free"},
+    ],
+    nota:"Todo producido sábado. Solo regenerar. Costillas: vapor 85°C, NO más de 20 min."},
+  {fecha:"2026-03-09",ds:"Lunes 09/03",tipo:"normal",titulo:"Dorada Vapor Japonesa + Berenjena Miso + Flan Coco",carga:"Media",
+    tareas:[
+      {h:"7:30",t:"Berenjena miso: cortar, glasear miso + dashi + sésamo, horno 200°C 25 min.",tipo:"servicio"},
+      {h:"8:30",t:"Arroz basmati: lavar, cocer, reservar.",tipo:"servicio"},
+      {h:"9:00",t:"Flan de coco: huevos + leche coco + leche + azúcar. Caramelo, hornear baño maría ~45min.",tipo:"servicio"},
+      {h:"10:30",t:"Dorada al vapor: filetes en vaporera, salsa soja + jengibre + cebolleta + cilantro al servir.",tipo:"servicio"},
+      {h:"12:00",t:"SERVICIO",tipo:"servicio"},
+      {h:"13:00",t:"TRUFAS: ganache (chocolate + nata + mantequilla + coñac). Enfriar, refrigerar.",tipo:"anticipacion",para:"Mar 10"},
+    ],
+    nota:"Dorada al vapor = timing crítico. Cocinar al pase. Berenjenas se pueden hacer antes, aguantan bien."},
+  {fecha:"2026-03-10",ds:"Martes 10/03",tipo:"normal",titulo:"Salchichas Pollo Tomate + Muhammara + Trufas",carga:"Media-alta",
+    tareas:[
+      {h:"7:30",t:"TRUFAS: bolear ganache de ayer, rebozar cacao. Refrigerar.",tipo:"servicio"},
+      {h:"8:00",t:"Muhammara: asar pimientos, triturar con nueces + pan rallado + harissa + melaza granada.",tipo:"servicio"},
+      {h:"9:00",t:"Salzkartoffeln: pelar, cocer agua + sal + laurel.",tipo:"servicio"},
+      {h:"10:00",t:"Salchichas: dorar en plancha, salsa tomate al momento.",tipo:"servicio"},
+      {h:"11:00",t:"Muhammara en plato con feta desmenuzado y menta. Salchichas listas.",tipo:"servicio"},
+      {h:"12:00",t:"SERVICIO",tipo:"servicio"},
+      {h:"13:00",t:"TERNERA CURRY: dorar ternera, pasta curry + leche coco + verduras. Cocer 1.5h. Enfriar, GN.",tipo:"anticipacion",para:"Mié 11"},
+      {h:"14:00",t:"LENTEJAS: cocer lentejas verdes/Puy. Escurrir, aliñar tibias. Refrigerar.",tipo:"anticipacion",para:"Mié 11"},
+      {h:"14:30",t:"MANZANA HORNO: prep manzanas rellenas (frutos secos + pasas + canela + azúcar moreno). Refrigerar listas para hornear.",tipo:"anticipacion",para:"Mié 11"},
+      {h:"15:00",t:"Sopa verduras (cena): pochar verduras, caldo, cocer. Fideos aparte.",tipo:"servicio"},
+    ],
+    nota:"Otro día de doble carga: servicio + anticipación miércoles CF. Ternera curry va sola 1.5h en fuego."},
+  {fecha:"2026-03-11",ds:"Miércoles 11/03",tipo:"chef-free",titulo:"CF — Ternera Curry Thai + Lentejas + Manzana Horno",carga:"Auxiliar",
+    tareas:[
+      {h:"10:00",t:"Lentejas: sacar del frío, dejar temperar. Aliñar con limón + aceite + perejil. Queso oveja encima.",tipo:"chef-free"},
+      {h:"10:30",t:"REGEN TERNERA CURRY: GN tapado → Convotherm vapor 90°C, 20 min.",tipo:"chef-free"},
+      {h:"10:30",t:"Arroz basmati: cocer (lavar, 1:1.5, fuego, tapar 12 min, reposar 5 min).",tipo:"chef-free"},
+      {h:"11:00",t:"MANZANAS AL HORNO: del frío → horno 180°C, 25-30 min hasta tiernas.",tipo:"chef-free"},
+      {h:"12:00",t:"SERVICIO: Lentejas con queso → Ternera curry + arroz → Manzana al horno",tipo:"chef-free"},
+      {h:"19:00",t:"CENA: Tabla fría — fiambres, queso, fruta.",tipo:"chef-free"},
+    ],
+    nota:"Todo producido martes. Arroz basmati es lo único de cero — sencillo. Manzanas: vigilar, cada horno es distinto."},
+  {fecha:"2026-03-12",ds:"Jueves 12/03",tipo:"normal",titulo:"Lubina Horno + Waldorf + Mousse Chocolate",carga:"Media-alta",
+    tareas:[
+      {h:"7:30",t:"MOUSSE: fundir chocolate, montar claras + nata, plegar. Al sifón ISI con 2 cargas. Refrigerar.",tipo:"servicio"},
+      {h:"8:30",t:"Lubina base: patatas finas + tomate + cebolla + ajo + tomillo en bandeja. Horno 180°C 20 min.",tipo:"servicio"},
+      {h:"9:30",t:"Waldorf: apio pelado fino, manzana Golden dados, nueces, mayonesa + nata + mostaza + limón.",tipo:"servicio"},
+      {h:"10:30",t:"LUBINA: lomos sobre base patata ya cocida. Romero, aceite. Horno 200°C, 12-15 min.",tipo:"servicio"},
+      {h:"11:30",t:"Mousse: dispensar del sifón ISI a vasitos. Avellanas garrapiñadas picadas encima.",tipo:"servicio"},
+      {h:"12:00",t:"SERVICIO",tipo:"servicio"},
+    ],
+    nota:"Cierre de periodo. Mousse al sifón ISI: cargar temprano, refrigerar mínimo 2h. Lubina: en dos tandas si no caben 25 lomos."},
+];
+
+/* ============================================================
+   COMPRAS DATA — 3-12 Marzo 2026
+   ============================================================ */
+const comprasData = [
+  {lista:1,titulo:"URGENTE — Mar 03 + Mié 04 (CF)",entrega:"Martes 03 primera hora",
+    cubre:"Arroz Caldoso + César + Mango Yogur + Crema Champiñones · Carrilleras + Vichyssoise + Polenta + Cookies",
+    secciones:[
+      {s:"Pescadería",items:[
+        {p:"Langostinos/gambas/gambón (con cáscara)",c:"3,5 kg",n:"Para Arroz Caldoso — pelar, reservar cabezas"}]},
+      {s:"Carnicería",items:[
+        {p:"Carrilleras de ternera (limpias)",c:"25 uds",n:"Para Mié CF — hacer martes completo"}]},
+      {s:"Frutería / Verduras",items:[
+        {p:"Lechuga romana",c:"2,5 kg",n:"César — hojas tiernas"},
+        {p:"Champiñones",c:"2 kg",n:"Crema champiñones (cena martes)"},
+        {p:"Puerro (parte blanca)",c:"2,5 kg",n:"Vichyssoise"},
+        {p:"Patata",c:"4 kg",n:"1,5 kg vichy + 2,5 kg puré carrilleras"},
+        {p:"Cebolla",c:"500 g",n:"Crema champiñones"},
+        {p:"Mangos maduros",c:"10 uds",n:"Postre martes — bien maduros"},
+        {p:"Ajo",c:"1 cabeza",n:"César + crema champiñones"}]},
+      {s:"Lácteos / Huevos",items:[
+        {p:"Parmesano rallado",c:"975 g",n:"350 g César + 625 g polenta"},
+        {p:"Yogur natural",c:"780 g",n:"Mango yogur"},
+        {p:"Nata líquida 35%",c:"2,8 L",n:"625 ml vichy + 1,875 L polenta + 300 ml crema champ"},
+        {p:"Mantequilla",c:"690 g",n:"190 g vichy + 250 g polenta + 105 g cookies + 100 g puré + champ"},
+        {p:"Huevos",c:"15 uds",n:"9 César (yemas) + 6 cookies"},
+        {p:"Leche entera",c:"500 ml",n:"Puré patata firme"}]},
+      {s:"Chocolate / Repostería",items:[
+        {p:"Chocolate negro 55%",c:"750 g",n:"Cookies — fundir"},
+        {p:"Chocolate negro troceado",c:"280 g",n:"Cookies — trozos en masa"},
+        {p:"Chocolate blanco troceado",c:"280 g",n:"Cookies — trozos en masa"},
+        {p:"Chocolate blanco (tableta)",c:"500 g",n:"Mango yogur — fundir"},
+        {p:"Azúcar",c:"500 g",n:"Cookies"},
+        {p:"Harina de trigo",c:"105 g",n:"Cookies"}]},
+      {s:"Despensa / Secos",items:[
+        {p:"Arroz (bomba o calasparra)",c:"2,5 kg",n:"Arroz Caldoso"},
+        {p:"Polenta de maíz",c:"750 g",n:"Polenta Parmesano"},
+        {p:"Caldo de pescado",c:"11 L",n:"Arroz Caldoso — o hacer con cabezas"},
+        {p:"Caldo pollo/vegetal",c:"4 L",n:"3,5 L vichy + crema champ"},
+        {p:"Vino tinto",c:"3,75 L",n:"Carrilleras"},
+        {p:"Brandy",c:"400 ml",n:"Carrilleras — reducido"},
+        {p:"Mostaza antigua",c:"90 g",n:"Carrilleras"},
+        {p:"Pan de pueblo (tostas)",c:"500 g",n:"Cenas + tostas"}]},
+      {s:"Fiambres / Tabla Fría (Mié cena)",items:[
+        {p:"Fiambres variados",c:"1,5 kg",n:"Tabla fría Mié CF"},
+        {p:"Queso variado",c:"750 g",n:"Tabla fría Mié CF"},
+        {p:"Fruta de temporada",c:"2 kg",n:"Tabla + fruta"}]}
+    ]},
+  {lista:2,titulo:"Jue 05 — Lun 09",entrega:"Miércoles 04",
+    cubre:"Espárragos Carbonara + Guisantes · Bacalao Espinacas + Cogollos · Pollo l'Ast + Tonnato · Costillas BBQ CF + Ajoblanco + Sangría · Dorada Japonesa + Berenjena Miso",
+    secciones:[
+      {s:"Pescadería",items:[
+        {p:"Bacalao fresco (filetes 150 g)",c:"25 uds (≈3,75 kg)",n:"Vie — lomos limpios, sin espinas"},
+        {p:"Dorada (filetes 150-160 g)",c:"25 uds (≈4 kg)",n:"Lun — limpios, sin espinas"}]},
+      {s:"Carnicería",items:[
+        {p:"Pollos enteros (1,2 kg)",c:"7 uds",n:"Sáb — Pollo l'Ast"},
+        {p:"Costillares cerdo enteros (≈2 kg/ud)",c:"5 uds",n:"Dom CF — cocción larga sábado"},
+        {p:"Guanciale (o panceta curada)",c:"600 g",n:"Jue — Espárragos Carbonara"},
+        {p:"Jamón curado (lonchas)",c:"375 g",n:"Jue — Guisantes con Jamón"},
+        {p:"Atún en conserva (aceite)",c:"500 g",n:"Sáb — Tonnato"}]},
+      {s:"Frutería / Verduras",items:[
+        {p:"Espárragos blancos",c:"4 kg",n:"Jue — verificar temporada"},
+        {p:"Guisantes congelados",c:"3,75 kg",n:"Jue — Guisantes Jamón"},
+        {p:"Cogollos grandes",c:"25 uds",n:"Vie — Plancha"},
+        {p:"Espinacas frescas",c:"1,875 kg",n:"Vie — Bacalao"},
+        {p:"Tomates corazón de buey",c:"5 kg",n:"Sáb — Tonnato"},
+        {p:"Berenjenas medianas",c:"25 uds",n:"Lun — Miso"},
+        {p:"Piña fresca",c:"3,25 kg",n:"Vie — Crema piña"},
+        {p:"Naranjas de mesa",c:"28 uds",n:"25 naranjas miel + 3 costillas"},
+        {p:"Boniato",c:"4 kg",n:"Dom CF — Puré de boniato"},
+        {p:"Jengibre fresco",c:"250 g",n:"Lun — Dorada"},
+        {p:"Cilantro fresco",c:"100 g",n:"Lun — Dorada"},
+        {p:"Menta fresca",c:"3 manojos",n:"Cogollos + guisantes + sangría"}]},
+      {s:"Lácteos / Huevos",items:[
+        {p:"Yemas pasteurizadas",c:"25 uds (~500 g)",n:"Jue — Carbonara"},
+        {p:"Pecorino romano",c:"500 g",n:"Jue — Carbonara"},
+        {p:"Nata líquida 35%",c:"1,3 L",n:"Natillas + nata montada"},
+        {p:"Yemas de huevo",c:"25 uds (~500 g)",n:"Sáb — Natillas pistacho"},
+        {p:"Leche entera",c:"2,5 L",n:"Natillas pistacho"},
+        {p:"Huevos enteros",c:"18 uds",n:"Lun — Flan coco"},
+        {p:"Leche de coco",c:"1,7 L",n:"700 ml crema piña + 1 L flan coco"},
+        {p:"Mantequilla",c:"1,1 kg",n:"Bacalao + espinacas + espárragos + manzana + boniato"}]},
+      {s:"Chocolate / Repostería",items:[
+        {p:"Pistachos verdes repelados",c:"440 g",n:"Sáb — Natillas pistacho"},
+        {p:"Azúcar",c:"1,25 kg",n:"Flan + caramelo + sangría + manzana"},
+        {p:"Azúcar moreno",c:"250 g",n:"Dom — Manzana horno"}]},
+      {s:"Despensa / Secos",items:[
+        {p:"Almendras blanqueadas",c:"500 g",n:"Dom — Ajoblanco (remojar 1 h)"},
+        {p:"Salsa barbacoa",c:"2,5 kg",n:"Dom CF — Costillas BBQ"},
+        {p:"Dashi en polvo",c:"65 g",n:"Lun — Berenjena miso"},
+        {p:"Miso rojo",c:"50 g",n:"Lun — Berenjena miso"},
+        {p:"Salsa de soja",c:"310 ml",n:"250 g dorada + 60 ml berenjena"},
+        {p:"Aceite de sésamo tostado",c:"190 ml",n:"Lun — Berenjena"},
+        {p:"Mostaza antigua (grano)",c:"225 g",n:"Vie — Cogollos plancha"},
+        {p:"Vino tinto",c:"400 ml",n:"Dom — Sangría"},
+        {p:"Pan tierno",c:"1 kg",n:"Alubias + tostas cenas"}]},
+      {s:"Fiambres / Tablas Frías",items:[
+        {p:"Fiambres variados",c:"2 kg",n:"Tabla Dom CF + cenas"},
+        {p:"Queso variado",c:"1 kg",n:"Tabla Dom CF"},
+        {p:"Ensalada verde (lechugas)",c:"3 kg",n:"Dom + cenas"},
+        {p:"Alubias blancas cocidas (botes)",c:"6 botes 400 g",n:"Jue cena — Alubias tahini"},
+        {p:"Tahini",c:"300 g",n:"Jue cena — Alubias tahini"}]}
+    ]},
+  {lista:3,titulo:"Mar 10 — Jue 12",entrega:"Lunes 09",
+    cubre:"Salchichas Pollo Tomate + Muhammara · Ternera Curry Thai CF + Lentejas · Lubina Horno + Waldorf + Mousse",
+    secciones:[
+      {s:"Pescadería",items:[
+        {p:"Lomos de lubina (150-160 g)",c:"25 uds (≈4 kg)",n:"Jue — limpios, sin espinas"}]},
+      {s:"Carnicería",items:[
+        {p:"Ternera (llata, para guisar)",c:"3,75 kg",n:"Mié CF — Curry Thai, hacer martes"},
+        {p:"Salchichas de POLLO frescas (≈40 g)",c:"150 uds (≈6 kg)",n:"Mar — tripa natural, textura blanda"}]},
+      {s:"Frutería / Verduras",items:[
+        {p:"Pimientos rojos puntiagudos",c:"25 uds",n:"Mar — Muhammara"},
+        {p:"Tomates maduros",c:"1,875 kg",n:"Jue — Lubina horno"},
+        {p:"Patatas",c:"3,75 kg",n:"Jue — Lubina horno"},
+        {p:"Apio",c:"1,25 kg",n:"Jue — Waldorf"},
+        {p:"Manzana Golden",c:"34 uds",n:"9 Waldorf + 25 Manzana horno"},
+        {p:"Jengibre fresco",c:"100 g",n:"Mié — Curry Thai"},
+        {p:"Cilantro fresco",c:"75 g",n:"Mié — Curry Thai"},
+        {p:"Verduras variadas sopa",c:"2 kg",n:"Mar cena — sopa verduras"}]},
+      {s:"Lácteos / Huevos",items:[
+        {p:"Feta",c:"300 g",n:"Mar — Muhammara"},
+        {p:"Queso oveja curado",c:"300 g",n:"Mié — Lentejas verdes"},
+        {p:"Nata líquida 35%",c:"1,25 L",n:"500 ml trufas + 750 ml mousse"},
+        {p:"Claras de huevo",c:"565 g (~18)",n:"Jue — Mousse"},
+        {p:"Mayonesa",c:"665 g",n:"Jue — Waldorf"},
+        {p:"Leche de coco",c:"1,6 L",n:"Mié — Curry Thai"}]},
+      {s:"Chocolate / Repostería",items:[
+        {p:"Chocolate negro 55-60%",c:"2,3 kg",n:"1,5 kg trufas + 800 g mousse"},
+        {p:"Cacao en polvo puro",c:"125 g",n:"Mar — Trufas acabado"},
+        {p:"Avellanas garrapiñadas",c:"375 g",n:"Jue — Mousse"}]},
+      {s:"Despensa / Secos",items:[
+        {p:"Lentejas verdes/Puy",c:"1,25 kg",n:"Mié — cocer martes"},
+        {p:"Arroz largo",c:"2 kg",n:"Mié — Curry Thai"},
+        {p:"Salsa de tomate",c:"2 kg",n:"Mar — Salchichas"},
+        {p:"Pasta curry amarillo",c:"50 g",n:"Mié — Curry Thai"},
+        {p:"Nueces",c:"575 g",n:"200 g muhammara + 375 g Waldorf"},
+        {p:"Melaza de granada",c:"60 ml",n:"Mar — Muhammara"},
+        {p:"Cargas N₂O para sifón ISI",c:"4 uds",n:"Jue — Mousse"}]},
+      {s:"Fiambres / Tablas",items:[
+        {p:"Fiambres variados",c:"2 kg",n:"Tabla Mié CF + Jue cena"},
+        {p:"Queso variado",c:"750 g",n:"Tabla Mié CF"},
+        {p:"Ensalada verde (lechugas)",c:"2 kg",n:"Cenas"}]}
+    ]}
+];
+
+/* ============================================================
+   IMAGE MAPPING (existing)
+   ============================================================ */
+const jpegIds = new Set([
+  "01_Fondo_Blanco_Pollo","02_Fondo_Dorado_Pollo","03_Fumet_Pescado",
+  "04_Fondo_Marisco","05_Fondo_Oscuro_Ternera","06_Caldo_Verduras","07_Demi_Glace",
+  "Chucrut_Afinado_Gourmet","Chuleta_Cerdo_Chucrut","Coq_au_Vin",
+  "Koenigsberger_Klopse","Linseneintopf_Bockwurst","Mojos_Canarios",
+  "Patatas_Gajo_Bistro","Pollo_Ajillo_Plato","Pure_Boniato",
+  "Pure_Cremoso_Robuchon","Pure_Patata_Firme","Ropa_Vieja_Canaria",
+  "Rote_Bete_Salat","Salmon_Curado_Confitado","Salsa_Tonkatsu_Mejorada",
+  "Sancocho_Canario_Bacalao","Shakshuka","Sopa_Miso_Tofu_Wakame",
+  "Tonkatsu_Pollo_Componente","Tonkatsu_Pollo_Plato"
+]);
+const imgAlias = {
+  "Portobello_Shiitake_Glaseados_Fondo_Oscuro": "Portobello_Shiitake_Glaseados",
+  "Risotto_Azafran_Plato": "Risotto_Azafran"
+};
+function getImg(id) {
+  const base = imgAlias[id] || id;
+  const ext = jpegIds.has(id) ? "jpeg" : "jpg";
+  return `img/${base}_AI.${ext}`;
+}
+
+/* ============================================================
+   CATALOG LOGIC (existing)
+   ============================================================ */
+const cats = [
+  {id:"all",l:"Todo",i:"◈"},
+  {id:"Componentes",l:"Componentes",i:"◆"},
+  {id:"Platos",l:"Platos",i:"◉"},
+  {id:"Entrantes",l:"Entrantes",i:"◎"},
+  {id:"Postres",l:"Postres",i:"◇"}
+];
+const subCats = ["Principal","Guarnición HI","Guarnición V","Base/Salsa","Base/Caldo","Base/Elemento"];
+
+let state = { cat: "all", sub: null, search: "", selected: null, tab: "ficha", view: "catalogo" };
+
+function count(c) { return c === "all" ? recipes.length : recipes.filter(r => r.c === c).length; }
+
+function filter() {
+  let r = recipes;
+  if (state.cat !== "all") r = r.filter(x => x.c === state.cat);
+  if (state.sub) r = r.filter(x => x.s === state.sub);
+  if (state.search.trim()) {
+    const s = state.search.toLowerCase();
+    r = r.filter(x => x.n.toLowerCase().includes(s) || x.d.toLowerCase().includes(s) || x.t.toLowerCase().includes(s) || x.p.toLowerCase().includes(s));
+  }
+  return r;
+}
+
+function renderCats() {
+  document.getElementById("cats").innerHTML = cats.map(c =>
+    `<button class="cat-btn${state.cat===c.id?" active":""}" onclick="setCat('${c.id}')">${c.i} ${c.l} (${count(c.id)})</button>`
+  ).join("");
+}
+
+function renderSubs() {
+  const el = document.getElementById("subs");
+  if (state.cat !== "Componentes") { el.classList.remove("visible"); return; }
+  el.classList.add("visible");
+  el.innerHTML = `<button class="sub-btn${!state.sub?" active":""}" onclick="setSub(null)">Todos</button>` +
+    subCats.map(s => `<button class="sub-btn${state.sub===s?" active":""}" onclick="setSub('${s}')">${s}</button>`).join("");
+}
+
+function renderGrid() {
+  const f = filter();
+  document.getElementById("results-count").textContent = `${f.length} receta${f.length!==1?"s":""}`;
+  document.getElementById("grid").innerHTML = f.map(r => `
+    <div class="card" onclick="select('${r.id}')">
+      <img class="card-img" src="${getImg(r.id)}" alt="${r.n}" loading="lazy" onerror="this.outerHTML='<div class=\\'card-img-placeholder\\'>&#9672;</div>'">
+      <div class="card-body">
+        <div class="card-cat">${r.c}${r.s?" · "+r.s:""}</div>
+        <div class="card-name">${r.n}</div>
+        <div class="card-desc">${r.d}</div>
+        <div class="card-tags">
+          <span class="tag tag-tech">${r.t}</span>
+          ${r.p!=="-"?`<span class="tag tag-prot">${r.p}</span>`:""}
+        </div>
+      </div>
+    </div>
+  `).join("");
+}
+
+/* --- JSON cache & markdown renderer --- */
+const jsonCache = {};
+
+function md2html(txt) {
+  if (!txt) return '';
+  let h = txt
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/^#### (.+)$/gm, '<h4>$1</h4>')
+    .replace(/^### (.+)$/gm, '<h3>$1</h3>')
+    .replace(/\*\*\*(.+?)\*\*\*/g, '<strong><em>$1</em></strong>')
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g, '<em>$1</em>')
+    .replace(/^---+$/gm, '<hr>')
+    .replace(/^[-•·]\s+(.+)$/gm, '<li>$1</li>')
+    .replace(/^\d+[.)]\s*(.+)$/gm, '<li>$1</li>');
+  h = h.replace(/((?:<li>.*<\/li>\n?)+)/g, '<ul>$1</ul>');
+  h = h.replace(/^(\|.+\|)$/gm, function(row) {
+    if (/^[\|\s\-:]+$/.test(row)) return '';
+    const cells = row.split('|').filter(c => c.trim() !== '');
+    const tag = row.includes('---') ? 'th' : 'td';
+    return '<tr>' + cells.map(c => `<${tag}>${c.trim()}</${tag}>`).join('') + '</tr>';
+  });
+  h = h.replace(/((?:<tr>.*<\/tr>\n?)+)/g, '<table>$1</table>');
+  h = h.replace(/^([A-ZÁÉÍÓÚÑÜ][A-ZÁÉÍÓÚÑÜ\s\—\-\(\)0-9,°]{5,})$/gm, '<h3>$1</h3>');
+  h = h.replace(/^(?!<[huptol])((?!\s*$).+)$/gm, '<p>$1</p>');
+  h = h.replace(/\n{2,}/g, '\n');
+  return h;
+}
+
+function renderSection(title, content) {
+  if (!content) return '';
+  return `<div class="content-section"><div class="content-section-title">${title}</div>${md2html(content)}</div>`;
+}
+
+function renderFicha(d) {
+  let meta = '<div class="detail-meta">';
+  if (d.pax) meta += `<div class="meta-item"><div class="meta-label">PAX</div><div class="meta-value">${d.pax}</div></div>`;
+  if (d.time_total) meta += `<div class="meta-item"><div class="meta-label">Tiempo</div><div class="meta-value">${d.time_total}</div></div>`;
+  if (d.technique) meta += `<div class="meta-item"><div class="meta-label">Técnica</div><div class="meta-value">${d.technique}</div></div>`;
+  if (d.protein) meta += `<div class="meta-item"><div class="meta-label">Proteína</div><div class="meta-value">${d.protein}</div></div>`;
+  if (d.allergens) meta += `<div class="meta-item"><div class="meta-label">Alérgenos</div><div class="meta-value">${d.allergens}</div></div>`;
+  if (d.difficulty) meta += `<div class="meta-item"><div class="meta-label">Dificultad</div><div class="meta-value">${d.difficulty}</div></div>`;
+  meta += '</div>';
+  let html = meta;
+  html += renderSection('Ingredientes', d.ingredients);
+  html += renderSection('Procedimiento', d.procedure);
+  html += renderSection('Emplatado', d.plating);
+  html += renderSection('Puntos Críticos', d.critical_points);
+  html += renderSection('APPCC', d.appcc);
+  html += renderSection('Adaptación Senior', d.senior_adaptation);
+  if (d.quote) html += `<div class="quote-box">\u201C${d.quote}\u201D</div>`;
+  return html;
+}
+
+function renderStory(d) {
+  if (!d.storytelling) return '<p class="empty-msg">Storytelling no disponible.</p>';
+  return `<div class="story-content">${md2html(d.storytelling)}</div>`;
+}
+
+async function loadJson(id) {
+  if (jsonCache[id]) return jsonCache[id];
+  try {
+    const res = await fetch('data/' + id + '.json');
+    if (!res.ok) return null;
+    const data = await res.json();
+    jsonCache[id] = data;
+    return data;
+  } catch(e) { return null; }
+}
+
+async function renderDetail() {
+  const r = state.selected;
+  if (!r) {
+    document.getElementById("detail-view").classList.add("hidden");
+    if (state.view === "catalogo") document.getElementById("view-catalogo").classList.remove("hidden");
+    return;
+  }
+  document.getElementById("view-catalogo").classList.add("hidden");
+  document.getElementById("view-menu").classList.add("hidden");
+  document.getElementById("view-mise").classList.add("hidden");
+  document.getElementById("view-compras").classList.add("hidden");
+  document.getElementById("detail-view").classList.remove("hidden");
+  document.getElementById("detail").innerHTML = `
+    <button class="back-btn" onclick="back()">← VOLVER</button>
+    <img class="detail-hero" src="${getImg(r.id)}" alt="${r.n}" onerror="this.style.display='none'">
+    <div class="detail-header">
+      <div class="detail-cat">${r.c}${r.s?" · "+r.s:""}</div>
+      <h1>${r.n}</h1>
+      <p class="detail-desc">${r.d}</p>
+    </div>
+    <div class="tab-btns">
+      <button class="tab-btn${state.tab==="ficha"?" active":""}" onclick="setTab('ficha')">FICHA TÉCNICA</button>
+      <button class="tab-btn${state.tab==="story"?" active":""}" onclick="setTab('story')">STORYTELLING</button>
+    </div>
+    <div class="content-box"><p class="loading">Cargando...</p></div>
+  `;
+  const d = await loadJson(r.id);
+  if (!d) {
+    document.querySelector(".content-box").innerHTML = '<p class="empty-msg">Contenido no disponible.</p>';
+    return;
+  }
+  document.querySelector(".content-box").innerHTML = state.tab === "ficha" ? renderFicha(d) : renderStory(d);
+}
+
+/* ============================================================
+   MENU RENDERING
+   ============================================================ */
+function recipeLink(item) {
+  if (!item || !item.id) return item ? item.n : "—";
+  return `<span class="menu-recipe-link" onclick="event.stopPropagation(); goToRecipe('${item.id}')">${item.n}</span>`;
+}
+
+function renderMenu() {
+  document.getElementById("menu-periodo").textContent = `Menú ${menuData.periodo}`;
+  document.getElementById("menu-meta").textContent = `${menuData.pax} PAX · ${menuData.ciclo} · Chef-free: ${menuData.chef_free}`;
+  
+  document.getElementById("menu-days").innerHTML = menuData.dias.map((d, i) => `
+    <div class="menu-day ${d.tipo}${i===0?' open':''}" onclick="toggleDay(this)">
+      <div class="menu-day-header">
+        <div class="menu-day-date">${d.ds} — Día ${d.dc}</div>
+        <div class="menu-day-label ${d.tipo==='chef-free'?'chef-free-label':'normal'}">${d.prot}${d.tipo==='chef-free'?' · CHEF-FREE':''}</div>
+      </div>
+      <div class="menu-day-body">
+        <div class="menu-row"><div class="menu-row-label">Entrante</div><div class="menu-row-value">${recipeLink(d.entrante)}</div></div>
+        <div class="menu-row"><div class="menu-row-label">Principal</div><div class="menu-row-value">${recipeLink(d.principal)}</div></div>
+        <div class="menu-row"><div class="menu-row-label">Guarnición</div><div class="menu-row-value">${recipeLink(d.guarnicion)}</div></div>
+        <div class="menu-row"><div class="menu-row-label">Postre</div><div class="menu-row-value">${recipeLink(d.postre)}</div></div>
+        <div class="menu-row"><div class="menu-row-label">Cena</div><div class="menu-row-value">${d.cena}</div></div>
+        <div class="menu-produccion">
+          <div class="menu-produccion-title">Notas de producción</div>
+          ${d.prod}
+        </div>
+      </div>
+    </div>
+  `).join("");
+}
+
+/* ============================================================
+   MISE EN PLACE RENDERING
+   ============================================================ */
+function renderMise() {
+  document.getElementById("mise-meta").textContent = `${menuData.pax} PAX · ${menuData.periodo} · Chef solo 7:30–15:30`;
+  
+  document.getElementById("mise-days").innerHTML = miseData.map((d, i) => {
+    const cargaClass = d.carga.toLowerCase().replace(/[- ]/g,'-');
+    return `
+    <div class="mise-day ${d.tipo}${i===0?' open':''}" onclick="toggleDay(this)">
+      <div class="mise-day-header">
+        <div class="mise-day-header-left">
+          <div class="mise-day-date">${d.ds}</div>
+          <div class="mise-day-title">${d.titulo}</div>
+        </div>
+        <div class="mise-carga ${cargaClass}">${d.carga}</div>
+      </div>
+      <div class="mise-day-body">
+        ${d.tareas.map(t => `
+          <div class="mise-task">
+            <div class="mise-hora">${t.h}</div>
+            <div class="mise-tarea">${t.t}${t.para ? ` <em style="color:#7da8c4">→ ${t.para}</em>` : ''}</div>
+            <div class="mise-tipo ${t.tipo === 'chef-free' ? 'chef-free-task' : t.tipo}">${t.tipo === 'anticipacion' ? 'anticipación' : t.tipo === 'chef-free' ? 'chef-free' : t.tipo}</div>
+          </div>
+        `).join("")}
+        ${d.nota ? `<div class="mise-note">💡 ${d.nota}</div>` : ''}
+      </div>
+    </div>
+  `}).join("");
+}
+
+/* ============================================================
+   COMPRAS RENDERING
+   ============================================================ */
+function renderCompras() {
+  document.getElementById("compras-meta").textContent = `${menuData.pax} PAX · ${menuData.periodo}`;
+  
+  document.getElementById("compras-listas").innerHTML = comprasData.map((l, i) => `
+    <div class="compra-lista${i===0?' open':''}" onclick="toggleCompra(this)">
+      <div class="compra-header">
+        <div class="compra-titulo">Lista ${l.lista} — ${l.titulo}</div>
+        <div class="compra-meta">Entregar: ${l.entrega}<br>Cubre: ${l.cubre}</div>
+      </div>
+      <div class="compra-body">
+        ${l.secciones.map(s => `
+          <div class="compra-seccion">
+            <div class="compra-seccion-title">${s.s}</div>
+            ${s.items.map(it => `
+              <div class="compra-item">
+                <div class="compra-producto">${it.p}</div>
+                <div class="compra-cantidad">${it.c}</div>
+                ${it.n ? `<div class="compra-nota">${it.n}</div>` : ''}
+              </div>
+            `).join("")}
+          </div>
+        `).join("")}
+      </div>
+    </div>
+  `).join("");
+}
+
+/* ============================================================
+   NAVIGATION & INTERACTION
+   ============================================================ */
+function switchView(v) {
+  state.view = v;
+  state.selected = null;
+  
+  // Hide all views
+  document.getElementById("view-catalogo").classList.add("hidden");
+  document.getElementById("view-menu").classList.add("hidden");
+  document.getElementById("view-mise").classList.add("hidden");
+  document.getElementById("view-compras").classList.add("hidden");
+  document.getElementById("detail-view").classList.add("hidden");
+  
+  // Show selected view
+  document.getElementById("view-" + v).classList.remove("hidden");
+  
+  // Update nav tabs
+  document.querySelectorAll(".nav-tab").forEach(t => t.classList.remove("active"));
+  document.querySelector(`.nav-tab[onclick="switchView('${v}')"]`).classList.add("active");
+  
+  window.scrollTo(0, 0);
+}
+
+function toggleDay(el) {
+  // Don't toggle if clicking a recipe link
+  if (event.target.classList.contains('menu-recipe-link')) return;
+  el.classList.toggle("open");
+}
+
+function toggleCompra(el) {
+  el.classList.toggle("open");
+}
+
+function goToRecipe(id) {
+  const r = recipes.find(x => x.id === id);
+  if (r) {
+    state.selected = r;
+    state.tab = "ficha";
+    renderDetail();
+    window.scrollTo(0, 0);
+  }
+}
+
+function setCat(c) { state.cat = c; state.sub = null; renderCats(); renderSubs(); renderGrid(); }
+function setSub(s) { state.sub = s; renderSubs(); renderGrid(); }
+function select(id) { state.selected = recipes.find(r => r.id === id); state.tab = "ficha"; renderDetail(); window.scrollTo(0,0); }
+function back() {
+  state.selected = null;
+  document.getElementById("detail-view").classList.add("hidden");
+  // Return to the view we came from
+  document.getElementById("view-" + state.view).classList.remove("hidden");
+}
+function setTab(t) { state.tab = t; renderDetail(); }
+
+document.getElementById("search").addEventListener("input", e => { state.search = e.target.value; renderGrid(); });
+
+/* ============================================================
+   INIT
+   ============================================================ */
+function init() {
+  document.getElementById("total-count").textContent = recipes.length + " recetas · Tenerife";
+  document.getElementById("footer").textContent = "ATTENYA · SISTEMA CULINARIO · " + recipes.length + " RECETAS · 2026";
+  renderCats();
+  renderSubs();
+  renderGrid();
+  renderMenu();
+  renderMise();
+  renderCompras();
+}
+
+init();
+</script>
+</body>
+</html>
