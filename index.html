@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ATTENYA · Sistema Culinario</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { background: #1a1612; color: #e8dfd4; font-family: 'Cormorant Garamond', Georgia, serif; min-height: 100vh; }
@@ -1070,149 +1070,23 @@ async function renderDetail() {
 
 
 /* ============================================================
-   PDF BENCHMARK GENERATOR
+   PDF DOWNLOAD — links to pre-generated benchmark PDFs
    ============================================================ */
-function parseMdTable(md) {
-  if (!md) return [];
-  const lines = md.split('\n').filter(l => l.trim().startsWith('|'));
-  return lines
-    .filter(l => !/^[\|\s\-:]+$/.test(l))
-    .map(l => l.split('|').filter(c => c.trim()).map(c => c.trim()));
-}
-
-function buildIngredientTableHtml(md) {
-  if (!md) return '';
-  const groups = [];
-  let currentGroup = null;
-  let currentItems = [];
-  const lines = md.split('\n');
-  for (const line of lines) {
-    const trimmed = line.trim();
-    if (trimmed.startsWith('###')) {
-      if (currentGroup !== null) groups.push({name: currentGroup, items: currentItems});
-      currentGroup = trimmed.replace(/^#+\s*/, '').trim();
-      currentItems = [];
-    } else if (trimmed.startsWith('|') && !/^[\|\s\-:]+$/.test(trimmed) && !trimmed.toLowerCase().includes('ingrediente') && !trimmed.toLowerCase().includes('cantidad')) {
-      const cells = trimmed.split('|').filter(c => c.trim()).map(c => c.trim());
-      if (cells.length >= 2) currentItems.push(cells);
-    }
-  }
-  if (currentGroup !== null) groups.push({name: currentGroup, items: currentItems});
-  if (groups.length === 0) {
-    const rows = parseMdTable(md);
-    if (rows.length > 1) groups.push({name: null, items: rows.slice(1)});
-  }
-  let html = '<table style="width:100%;border-collapse:collapse;font-size:8.5px;line-height:1.4;">';
-  for (const g of groups) {
-    if (g.name) {
-      html += '<tr><td colspan="4" style="padding:6px 6px 2px;font-weight:600;font-size:7.5px;color:#4A5D3A;text-transform:uppercase;letter-spacing:1.5px;border-bottom:1px solid #C9B99A;">' + g.name + '</td></tr>';
-    }
-    for (let i = 0; i < g.items.length; i++) {
-      const r = g.items[i];
-      const bg = i % 2 === 0 ? '#FDFBF7' : '#F8F5EF';
-      html += '<tr style="background:' + bg + ';">' +
-        '<td style="padding:2.5px 6px;color:#3A3530;">' + (r[0]||'') + '</td>' +
-        '<td style="padding:2.5px 6px;text-align:right;color:#5C4F3A;font-weight:500;">' + (r[1]||'') + '</td>' +
-        '<td style="padding:2.5px 6px;color:#8A7B62;">' + (r[2]||'') + '</td>' +
-        '<td style="padding:2.5px 6px;color:#8A7B62;font-style:italic;font-size:7.5px;">' + ((r[3]||'').replace(/^\*|\*$/g,'')) + '</td>' +
-        '</tr>';
-    }
-  }
-  html += '</table>';
-  return html;
-}
-
-function buildProcedureHtml(md) {
-  if (!md) return '';
-  let html = '';
-  const lines = md.split('\n');
-  for (const line of lines) {
-    const trimmed = line.trim();
-    if (!trimmed) continue;
-    if (trimmed.startsWith('### ') || trimmed.startsWith('## ')) {
-      const title = trimmed.replace(/^#+\s*/, '').replace(/^Fase\s*\d+\s*[-\u2013\u2014]\s*/i, '');
-      html += '<div style="font-weight:600;font-size:8px;color:#3A3530;text-transform:uppercase;letter-spacing:1.5px;margin:10px 0 4px;padding:3px 0;border-bottom:1px solid #E8E0D4;">' + title + '</div>';
-    } else if (/^\d+[.)]\s/.test(trimmed)) {
-      const text = trimmed.replace(/^\d+[.)]\s*/, '');
-      html += '<div style="padding-left:8px;margin:2px 0;font-size:8.5px;line-height:1.5;color:#3A3530;">\u2022 ' + text + '</div>';
-    } else {
-      html += '<div style="margin:2px 0;font-size:8.5px;line-height:1.5;color:#3A3530;">' + trimmed + '</div>';
-    }
-  }
-  return html;
-}
-
-function buildBoxHtml(title, content, bgColor, borderColor, titleColor) {
-  if (!content) return '';
-  const lines = content.split('\n').filter(l => l.trim());
-  const formatted = lines.map(function(l) {
-    let t = l.trim().replace(/^[-\u2022\u00B7]\s*/, '\u2022 ').replace(/^- PC\d+:\s*/, '\u2022 ').replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
-    return '<div style="margin:1px 0;">' + t + '</div>';
-  }).join('');
-  return '<div style="background:' + bgColor + ';border:1px solid ' + borderColor + ';padding:8px 10px;font-size:8px;line-height:1.5;">' +
-    '<div style="font-weight:600;color:' + titleColor + ';text-transform:uppercase;letter-spacing:1.5px;margin-bottom:4px;font-size:7px;">' + title + '</div>' +
-    formatted + '</div>';
-}
-
 async function downloadPDF(id) {
-  const d = await loadJson(id);
-  if (!d) { alert('Contenido no disponible para esta receta'); return; }
-  const r = recipes.find(function(x) { return x.id === id; });
-  if (!r) return;
-  const tipo = r.c + (r.s ? ' \u00B7 ' + r.s : '');
-  const pdfHtml = '<div style="font-family:Helvetica,Arial,sans-serif;color:#3A3530;width:100%;padding:0;">' +
-    '<div style="display:flex;justify-content:space-between;align-items:flex-end;border-bottom:2px solid #C9B99A;padding-bottom:10px;margin-bottom:12px;">' +
-      '<div style="flex:1;">' +
-        '<div style="font-size:7px;color:#8A7B62;text-transform:uppercase;letter-spacing:3px;margin-bottom:4px;">' + tipo + '</div>' +
-        '<div style="font-size:20px;font-weight:300;color:#3A3530;letter-spacing:0.5px;line-height:1.2;">' + r.n + '</div>' +
-        '<div style="font-size:9px;color:#8A7B62;font-style:italic;margin-top:3px;">' + r.d + '</div>' +
-      '</div>' +
-      '<div style="text-align:right;font-size:7px;color:#C9B99A;letter-spacing:2px;text-transform:uppercase;">ATTENYA</div>' +
-    '</div>' +
-    '<div style="display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap;">' +
-      (d.pax ? '<div style="background:#F5F0E8;padding:4px 10px;font-size:7.5px;"><span style="color:#8A7B62;letter-spacing:1px;text-transform:uppercase;">PAX</span> <strong style="color:#3A3530;">' + d.pax + '</strong></div>' : '') +
-      (d.time_total ? '<div style="background:#F5F0E8;padding:4px 10px;font-size:7.5px;"><span style="color:#8A7B62;letter-spacing:1px;text-transform:uppercase;">Tiempo</span> <strong style="color:#3A3530;">' + d.time_total + '</strong></div>' : '') +
-      (d.difficulty ? '<div style="background:#F5F0E8;padding:4px 10px;font-size:7.5px;"><span style="color:#8A7B62;letter-spacing:1px;text-transform:uppercase;">Dificultad</span> <strong style="color:#3A3530;">' + d.difficulty + '</strong></div>' : '') +
-      (d.allergens ? '<div style="background:#F5F0E8;padding:4px 10px;font-size:7.5px;"><span style="color:#8A7B62;letter-spacing:1px;text-transform:uppercase;">Al\u00E9rgenos</span> <strong style="color:#3A3530;">' + d.allergens + '</strong></div>' : '') +
-      (d.fuente ? '<div style="background:#F5F0E8;padding:4px 10px;font-size:7.5px;"><span style="color:#8A7B62;letter-spacing:1px;text-transform:uppercase;">Fuente</span> <strong style="color:#3A3530;">' + d.fuente + '</strong></div>' : '') +
-    '</div>' +
-    '<div style="border-bottom:1px solid #E8E0D4;margin-bottom:12px;"></div>' +
-    '<div style="display:flex;gap:14px;margin-bottom:14px;">' +
-      '<div style="flex:1.1;">' +
-        '<div style="font-size:9px;font-weight:600;color:#3A3530;text-transform:uppercase;letter-spacing:2px;border-bottom:1.5px solid #C9B99A;padding-bottom:3px;margin-bottom:8px;">Procedimiento</div>' +
-        buildProcedureHtml(d.procedure) +
-      '</div>' +
-      '<div style="flex:0.9;">' +
-        '<div style="font-size:9px;font-weight:600;color:#3A3530;text-transform:uppercase;letter-spacing:2px;border-bottom:1.5px solid #C9B99A;padding-bottom:3px;margin-bottom:8px;">Ingredientes</div>' +
-        buildIngredientTableHtml(d.ingredients) +
-      '</div>' +
-    '</div>' +
-    (d.plating ? '<div style="margin-bottom:10px;"><div style="font-size:9px;font-weight:600;color:#3A3530;text-transform:uppercase;letter-spacing:2px;border-bottom:1.5px solid #C9B99A;padding-bottom:3px;margin-bottom:6px;">Emplatado</div><div style="font-size:8.5px;line-height:1.6;color:#3A3530;">' + d.plating.replace(/\n/g, '<br>') + '</div></div>' : '') +
-    '<div style="display:flex;gap:8px;margin-bottom:10px;">' +
-      '<div style="flex:1;">' + buildBoxHtml('Puntos Cr\u00EDticos', d.critical_points, '#FFF8F0', '#E8D8C0', '#8B5E3C') + '</div>' +
-      '<div style="flex:1;">' + buildBoxHtml('APPCC', d.appcc, '#F0F4F0', '#C8D8C8', '#4A5D3A') + '</div>' +
-    '</div>' +
-    (d.senior_adaptation ? '<div style="background:#F5F0E8;border-left:3px solid #C9B99A;padding:8px 12px;margin-bottom:10px;"><div style="font-weight:600;color:#8A7B62;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:3px;font-size:7px;">Adaptaci\u00F3n Senior</div><div style="font-size:8px;line-height:1.5;color:#3A3530;">' + d.senior_adaptation.replace(/\n/g, '<br>').replace(/- /g, '\u2022 ') + '</div></div>' : '') +
-    (d.quote ? '<div style="text-align:center;font-style:italic;color:#8A7B62;font-size:9px;padding:8px 16px;border-top:1px solid #E0D8CA;margin-top:8px;">\u201C' + d.quote + '\u201D</div>' : '') +
-    '<div style="text-align:center;font-size:6px;color:#C9B99A;letter-spacing:3px;text-transform:uppercase;margin-top:8px;padding-top:6px;border-top:1px solid #F0ECE2;">ATTENYA \u00B7 Sistema Culinario \u00B7 ' + tipo + '</div>' +
-  '</div>';
-  var container = document.createElement('div');
-  container.innerHTML = pdfHtml;
-  container.style.position = 'absolute';
-  container.style.left = '-9999px';
-  container.style.width = '680px';
-  document.body.appendChild(container);
-  var opt = {
-    margin: [8, 10, 8, 10],
-    filename: id + '.pdf',
-    image: { type: 'jpeg', quality: 0.98 },
-    html2canvas: { scale: 2, useCORS: true, width: 680 },
-    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-    pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
-  };
-  html2pdf().set(opt).from(container.firstElementChild).save().then(function() {
-    document.body.removeChild(container);
-  });
+  const url = 'data/pdf/' + id + '.pdf';
+  try {
+    const res = await fetch(url, {method: 'HEAD'});
+    if (res.ok) {
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = id + '.pdf';
+      a.click();
+    } else {
+      alert('PDF no disponible para esta receta');
+    }
+  } catch(e) {
+    alert('PDF no disponible para esta receta');
+  }
 }
 
 /* ============================================================
