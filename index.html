@@ -121,6 +121,8 @@ body { background: #1a1612; color: #e8dfd4; font-family: 'Cormorant Garamond', G
 .menu-row-value { font-family: 'Jost', sans-serif; font-size: 14px; color: #d4c8b8; line-height: 1.5; }
 .menu-recipe-link { color: #c4a97d; cursor: pointer; text-decoration: none; border-bottom: 1px dotted #5a4e3e; transition: border-color 0.2s; }
 .menu-recipe-link:hover { border-bottom-color: #c4a97d; }
+.menu-pdf-icon { display: inline-block; color: #5a4e3e; cursor: pointer; font-size: 12px; margin-left: 6px; padding: 2px 6px; border: 1px solid #3a322a; transition: all 0.2s; vertical-align: middle; }
+.menu-pdf-icon:hover { background: #c4a97d; color: #1a1612; border-color: #c4a97d; }
 .menu-produccion { margin-top: 12px; padding: 12px 16px; background: #2a241e; font-family: 'Jost', sans-serif; font-size: 13px; color: #a89880; line-height: 1.6; }
 .menu-produccion-title { font-size: 10px; letter-spacing: 2px; color: #8a7d6b; text-transform: uppercase; margin-bottom: 6px; }
 
@@ -210,6 +212,9 @@ body { background: #1a1612; color: #e8dfd4; font-family: 'Cormorant Garamond', G
       <input type="text" class="search-input" id="search" placeholder="Buscar receta, técnica, proteína...">
     </div>
     <div class="cats" id="cats"></div>
+    <div style="padding:8px 0 12px;border-bottom:1px solid #2a241e;">
+      <button class="cat-btn" id="periodo-btn" onclick="togglePeriodo()">✦ Periodo actual</button>
+    </div>
     <div class="subs" id="subs"></div>
     <div class="results-count" id="results-count"></div>
     <div class="grid" id="grid"></div>
@@ -918,12 +923,27 @@ const cats = [
 ];
 const subCats = ["Principal","Guarnición HI","Guarnición V","Base/Salsa","Base/Caldo","Base/Elemento"];
 
-let state = { cat: "all", sub: null, search: "", selected: null, tab: "ficha", view: "catalogo" };
+/* Build set of recipe IDs in current period from menuData */
+const periodoIds = new Set();
+if (typeof menuData !== 'undefined' && menuData.dias) {
+  menuData.dias.forEach(function(d) {
+    ['entrante','principal','guarnicion','postre'].forEach(function(k) {
+      if (d[k] && d[k].id) periodoIds.add(d[k].id);
+    });
+  });
+}
 
-function count(c) { return c === "all" ? recipes.length : recipes.filter(r => r.c === c).length; }
+let state = { cat: "all", sub: null, search: "", selected: null, tab: "ficha", view: "catalogo", periodo: false };
+
+function count(c) {
+  let r = recipes;
+  if (state.periodo) r = r.filter(x => periodoIds.has(x.id));
+  return c === "all" ? r.length : r.filter(x => x.c === c).length;
+}
 
 function filter() {
   let r = recipes;
+  if (state.periodo) r = r.filter(x => periodoIds.has(x.id));
   if (state.cat !== "all") r = r.filter(x => x.c === state.cat);
   if (state.sub) r = r.filter(x => x.s === state.sub);
   if (state.search.trim()) {
@@ -931,6 +951,22 @@ function filter() {
     r = r.filter(x => x.n.toLowerCase().includes(s) || x.d.toLowerCase().includes(s) || x.t.toLowerCase().includes(s) || x.p.toLowerCase().includes(s));
   }
   return r;
+}
+
+function togglePeriodo() {
+  state.periodo = !state.periodo;
+  renderCats();
+  renderSubs();
+  renderGrid();
+  renderPeriodoBtn();
+}
+
+function renderPeriodoBtn() {
+  const btn = document.getElementById("periodo-btn");
+  if (btn) {
+    btn.className = "cat-btn" + (state.periodo ? " active" : "");
+    btn.textContent = state.periodo ? "✦ Periodo actual (" + periodoIds.size + ")" : "✦ Periodo actual";
+  }
 }
 
 function renderCats() {
@@ -1115,7 +1151,7 @@ function downloadFile(url, filename) {
    ============================================================ */
 function recipeLink(item) {
   if (!item || !item.id) return item ? item.n : "—";
-  return `<span class="menu-recipe-link" onclick="event.stopPropagation(); goToRecipe('${item.id}')">${item.n}</span>`;
+  return `<span class="menu-recipe-link" onclick="event.stopPropagation(); goToRecipe('${item.id}')">${item.n}</span> <span class="menu-pdf-icon" onclick="event.stopPropagation(); downloadPDF('${item.id}')" title="Descargar PDF">↓</span>`;
 }
 
 function renderMenu() {
