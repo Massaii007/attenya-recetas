@@ -1303,12 +1303,35 @@ document.getElementById("search").addEventListener("input", e => { state.search 
 function init() {
   document.getElementById("total-count").textContent = recipes.length + " recetas · Tenerife";
   document.getElementById("footer").textContent = "ATTENYA · SISTEMA CULINARIO · " + recipes.length + " RECETAS · 2026";
+  
+  /* Check URL parameters */
+  var params = new URLSearchParams(window.location.search);
+  var modo = params.get('modo');
+  
   renderCats();
   renderSubs();
   renderGrid();
   renderMenu();
   renderMise();
   renderCompras();
+  
+  /* modo=cocina: activate periodo filter + switch to menu view */
+  if (modo === 'cocina') {
+    state.periodo = true;
+    renderCats();
+    renderSubs();
+    renderGrid();
+    renderPeriodoBtn();
+    switchView('menu');
+  }
+  /* modo=periodo: just activate periodo filter on catalog */
+  if (modo === 'periodo') {
+    state.periodo = true;
+    renderCats();
+    renderSubs();
+    renderGrid();
+    renderPeriodoBtn();
+  }
 }
 
 init();
