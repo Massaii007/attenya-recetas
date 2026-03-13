@@ -1068,163 +1068,149 @@ async function renderDetail() {
   document.querySelector(".content-box").innerHTML = state.tab === "ficha" ? renderFicha(d) : renderStory(d);
 }
 
+
 /* ============================================================
    PDF BENCHMARK GENERATOR
    ============================================================ */
-function md2text(txt) {
-  if (!txt) return '';
-  return txt
-    .replace(/\*\*(.+?)\*\*/g, '$1')
-    .replace(/\*(.+?)\*/g, '$1')
-    .replace(/^#+\s*/gm, '')
-    .replace(/^[-•·]\s+/gm, '• ')
-    .replace(/^\d+[.)]\s*/gm, '');
-}
-
-function mdTableToRows(txt) {
-  if (!txt) return [];
-  const lines = txt.split('\n').filter(l => l.trim().startsWith('|'));
+function parseMdTable(md) {
+  if (!md) return [];
+  const lines = md.split('\n').filter(l => l.trim().startsWith('|'));
   return lines
     .filter(l => !/^[\|\s\-:]+$/.test(l))
     .map(l => l.split('|').filter(c => c.trim()).map(c => c.trim()));
 }
 
-function pdfSection(title, content) {
-  if (!content) return '';
-  const clean = content
-    .replace(/^###\s+(.+)$/gm, '<div style="font-weight:600;font-size:11px;color:#4A5D3A;margin:10px 0 4px;text-transform:uppercase;letter-spacing:1px;">$1</div>')
-    .replace(/^[-•·]\s+(.+)$/gm, '<div style="padding-left:12px;margin:2px 0;">• $1</div>')
-    .replace(/^\d+[.)]\s*(.+)$/gm, '<div style="padding-left:12px;margin:2px 0;">$1</div>')
-    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-    .replace(/\*(.+?)\*/g, '<em style="color:#666;">$1</em>')
-    .replace(/^(?!<div|<strong|<em)(.+)$/gm, '<div style="margin:2px 0;">$1</div>');
-  return `
-    <div style="margin-bottom:14px;">
-      <div style="font-size:12px;font-weight:600;color:#3A3530;text-transform:uppercase;letter-spacing:2px;border-bottom:1.5px solid #C9B99A;padding-bottom:4px;margin-bottom:8px;">${title}</div>
-      <div style="font-size:10px;line-height:1.7;color:#3A3530;">${clean}</div>
-    </div>`;
+function buildIngredientTableHtml(md) {
+  if (!md) return '';
+  const groups = [];
+  let currentGroup = null;
+  let currentItems = [];
+  const lines = md.split('\n');
+  for (const line of lines) {
+    const trimmed = line.trim();
+    if (trimmed.startsWith('###')) {
+      if (currentGroup !== null) groups.push({name: currentGroup, items: currentItems});
+      currentGroup = trimmed.replace(/^#+\s*/, '').trim();
+      currentItems = [];
+    } else if (trimmed.startsWith('|') && !/^[\|\s\-:]+$/.test(trimmed) && !trimmed.toLowerCase().includes('ingrediente') && !trimmed.toLowerCase().includes('cantidad')) {
+      const cells = trimmed.split('|').filter(c => c.trim()).map(c => c.trim());
+      if (cells.length >= 2) currentItems.push(cells);
+    }
+  }
+  if (currentGroup !== null) groups.push({name: currentGroup, items: currentItems});
+  if (groups.length === 0) {
+    const rows = parseMdTable(md);
+    if (rows.length > 1) groups.push({name: null, items: rows.slice(1)});
+  }
+  let html = '<table style="width:100%;border-collapse:collapse;font-size:8.5px;line-height:1.4;">';
+  for (const g of groups) {
+    if (g.name) {
+      html += '<tr><td colspan="4" style="padding:6px 6px 2px;font-weight:600;font-size:7.5px;color:#4A5D3A;text-transform:uppercase;letter-spacing:1.5px;border-bottom:1px solid #C9B99A;">' + g.name + '</td></tr>';
+    }
+    for (let i = 0; i < g.items.length; i++) {
+      const r = g.items[i];
+      const bg = i % 2 === 0 ? '#FDFBF7' : '#F8F5EF';
+      html += '<tr style="background:' + bg + ';">' +
+        '<td style="padding:2.5px 6px;color:#3A3530;">' + (r[0]||'') + '</td>' +
+        '<td style="padding:2.5px 6px;text-align:right;color:#5C4F3A;font-weight:500;">' + (r[1]||'') + '</td>' +
+        '<td style="padding:2.5px 6px;color:#8A7B62;">' + (r[2]||'') + '</td>' +
+        '<td style="padding:2.5px 6px;color:#8A7B62;font-style:italic;font-size:7.5px;">' + ((r[3]||'').replace(/^\*|\*$/g,'')) + '</td>' +
+        '</tr>';
+    }
+  }
+  html += '</table>';
+  return html;
 }
 
-function pdfIngredientTable(content) {
-  if (!content) return '';
-  const rows = mdTableToRows(content);
-  if (rows.length === 0) return pdfSection('Ingredientes', content);
-  
-  let currentGroup = '';
-  let html = `<div style="margin-bottom:14px;">
-    <div style="font-size:12px;font-weight:600;color:#3A3530;text-transform:uppercase;letter-spacing:2px;border-bottom:1.5px solid #C9B99A;padding-bottom:4px;margin-bottom:8px;">Ingredientes</div>
-    <table style="width:100%;border-collapse:collapse;font-size:9.5px;">`;
-  
-  const headerRow = rows[0];
-  const isHeader = headerRow.some(c => c.toLowerCase().includes('ingrediente') || c.toLowerCase().includes('cantidad'));
-  const dataRows = isHeader ? rows.slice(1) : rows;
-  
-  html += `<tr style="background:#F5F0E8;">
-    <td style="padding:4px 8px;font-weight:600;color:#3A3530;border-bottom:1px solid #E0D8CA;">Ingrediente</td>
-    <td style="padding:4px 8px;font-weight:600;color:#3A3530;border-bottom:1px solid #E0D8CA;width:60px;text-align:right;">Cant.</td>
-    <td style="padding:4px 8px;font-weight:600;color:#3A3530;border-bottom:1px solid #E0D8CA;width:40px;">Ud.</td>
-    <td style="padding:4px 8px;font-weight:600;color:#3A3530;border-bottom:1px solid #E0D8CA;">Notas</td>
-  </tr>`;
-  
-  for (const row of dataRows) {
-    if (row.length < 2) continue;
-    const bg = dataRows.indexOf(row) % 2 === 0 ? '#FDFBF7' : '#F8F5EF';
-    html += `<tr style="background:${bg};">
-      <td style="padding:3px 8px;border-bottom:1px solid #F0ECE2;color:#3A3530;">${row[0] || ''}</td>
-      <td style="padding:3px 8px;border-bottom:1px solid #F0ECE2;text-align:right;color:#5C4F3A;">${row[1] || ''}</td>
-      <td style="padding:3px 8px;border-bottom:1px solid #F0ECE2;color:#8A7B62;">${row[2] || ''}</td>
-      <td style="padding:3px 8px;border-bottom:1px solid #F0ECE2;color:#8A7B62;font-style:italic;">${row[3] || ''}</td>
-    </tr>`;
+function buildProcedureHtml(md) {
+  if (!md) return '';
+  let html = '';
+  const lines = md.split('\n');
+  for (const line of lines) {
+    const trimmed = line.trim();
+    if (!trimmed) continue;
+    if (trimmed.startsWith('### ') || trimmed.startsWith('## ')) {
+      const title = trimmed.replace(/^#+\s*/, '').replace(/^Fase\s*\d+\s*[-\u2013\u2014]\s*/i, '');
+      html += '<div style="font-weight:600;font-size:8px;color:#3A3530;text-transform:uppercase;letter-spacing:1.5px;margin:10px 0 4px;padding:3px 0;border-bottom:1px solid #E8E0D4;">' + title + '</div>';
+    } else if (/^\d+[.)]\s/.test(trimmed)) {
+      const text = trimmed.replace(/^\d+[.)]\s*/, '');
+      html += '<div style="padding-left:8px;margin:2px 0;font-size:8.5px;line-height:1.5;color:#3A3530;">\u2022 ' + text + '</div>';
+    } else {
+      html += '<div style="margin:2px 0;font-size:8.5px;line-height:1.5;color:#3A3530;">' + trimmed + '</div>';
+    }
   }
-  html += '</table></div>';
   return html;
+}
+
+function buildBoxHtml(title, content, bgColor, borderColor, titleColor) {
+  if (!content) return '';
+  const lines = content.split('\n').filter(l => l.trim());
+  const formatted = lines.map(function(l) {
+    let t = l.trim().replace(/^[-\u2022\u00B7]\s*/, '\u2022 ').replace(/^- PC\d+:\s*/, '\u2022 ').replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+    return '<div style="margin:1px 0;">' + t + '</div>';
+  }).join('');
+  return '<div style="background:' + bgColor + ';border:1px solid ' + borderColor + ';padding:8px 10px;font-size:8px;line-height:1.5;">' +
+    '<div style="font-weight:600;color:' + titleColor + ';text-transform:uppercase;letter-spacing:1.5px;margin-bottom:4px;font-size:7px;">' + title + '</div>' +
+    formatted + '</div>';
 }
 
 async function downloadPDF(id) {
   const d = await loadJson(id);
-  if (!d) { alert('Contenido no disponible'); return; }
-  const r = recipes.find(x => x.id === id);
+  if (!d) { alert('Contenido no disponible para esta receta'); return; }
+  const r = recipes.find(function(x) { return x.id === id; });
   if (!r) return;
-  
-  const tipo = r.c + (r.s ? ' · ' + r.s : '');
-  
-  const pdfHtml = `
-  <div id="pdf-content" style="font-family:Helvetica,Arial,sans-serif;color:#3A3530;padding:0;width:100%;">
-    
-    <!-- HEADER -->
-    <div style="border-bottom:2.5px solid #C9B99A;padding-bottom:14px;margin-bottom:16px;">
-      <div style="font-size:9px;color:#8A7B62;text-transform:uppercase;letter-spacing:3px;margin-bottom:6px;">${tipo}</div>
-      <div style="font-size:24px;font-weight:300;color:#3A3530;letter-spacing:1px;margin-bottom:4px;">${r.n}</div>
-      <div style="font-size:10px;color:#8A7B62;font-style:italic;">${r.d}</div>
-    </div>
-    
-    <!-- META GRID -->
-    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;">
-      ${d.pax ? `<div style="background:#F5F0E8;padding:6px 12px;font-size:9px;"><span style="color:#8A7B62;text-transform:uppercase;letter-spacing:1px;">PAX</span> <strong style="color:#3A3530;margin-left:4px;">${d.pax}</strong></div>` : ''}
-      ${d.time_total ? `<div style="background:#F5F0E8;padding:6px 12px;font-size:9px;"><span style="color:#8A7B62;text-transform:uppercase;letter-spacing:1px;">Tiempo</span> <strong style="color:#3A3530;margin-left:4px;">${d.time_total}</strong></div>` : ''}
-      ${d.difficulty ? `<div style="background:#F5F0E8;padding:6px 12px;font-size:9px;"><span style="color:#8A7B62;text-transform:uppercase;letter-spacing:1px;">Dificultad</span> <strong style="color:#3A3530;margin-left:4px;">${d.difficulty}</strong></div>` : ''}
-      ${d.allergens ? `<div style="background:#F5F0E8;padding:6px 12px;font-size:9px;"><span style="color:#8A7B62;text-transform:uppercase;letter-spacing:1px;">Alérgenos</span> <strong style="color:#3A3530;margin-left:4px;">${d.allergens}</strong></div>` : ''}
-      ${d.fuente ? `<div style="background:#F5F0E8;padding:6px 12px;font-size:9px;"><span style="color:#8A7B62;text-transform:uppercase;letter-spacing:1px;">Fuente</span> <strong style="color:#3A3530;margin-left:4px;">${d.fuente}</strong></div>` : ''}
-    </div>
-    
-    <!-- TWO COLUMNS: PROCEDURE + INGREDIENTS -->
-    <div style="display:flex;gap:16px;margin-bottom:14px;">
-      <div style="flex:1.2;">
-        ${pdfSection('Procedimiento', d.procedure)}
-      </div>
-      <div style="flex:0.8;">
-        ${pdfIngredientTable(d.ingredients)}
-      </div>
-    </div>
-    
-    <!-- PLATING -->
-    ${d.plating ? pdfSection('Emplatado', d.plating) : ''}
-    
-    <!-- BOTTOM BOXES -->
-    <div style="display:flex;gap:10px;margin-bottom:14px;">
-      ${d.critical_points ? `<div style="flex:1;background:#FFF8F0;border:1px solid #E8D8C0;padding:10px;font-size:9px;line-height:1.6;">
-        <div style="font-weight:600;color:#8B5E3C;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;font-size:8px;">Puntos Críticos</div>
-        ${d.critical_points.replace(/- PC\d+:\s*/g, '• ').replace(/·/g, '<br>• ').split('\n').map(l => '<div>' + l + '</div>').join('')}
-      </div>` : ''}
-      ${d.appcc ? `<div style="flex:1;background:#F0F4F0;border:1px solid #C8D8C8;padding:10px;font-size:9px;line-height:1.6;">
-        <div style="font-weight:600;color:#4A5D3A;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;font-size:8px;">APPCC</div>
-        ${d.appcc.replace(/·/g, '<br>').split('\n').map(l => '<div>' + l + '</div>').join('')}
-      </div>` : ''}
-    </div>
-    
-    <!-- SENIOR ADAPTATION -->
-    ${d.senior_adaptation ? `<div style="background:#F5F0E8;border-left:3px solid #C9B99A;padding:10px 14px;margin-bottom:14px;font-size:9px;line-height:1.6;">
-      <div style="font-weight:600;color:#8A7B62;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;font-size:8px;">Adaptación Senior</div>
-      ${d.senior_adaptation.replace(/- /g, '• ').split('\n').map(l => '<div>' + l + '</div>').join('')}
-    </div>` : ''}
-    
-    <!-- QUOTE -->
-    ${d.quote ? `<div style="text-align:center;font-style:italic;color:#8A7B62;font-size:10px;padding:10px 20px;border-top:1px solid #E0D8CA;margin-top:10px;">
-      "${d.quote}"
-    </div>` : ''}
-    
-    <!-- FOOTER -->
-    <div style="text-align:center;font-size:7px;color:#C9B99A;letter-spacing:3px;text-transform:uppercase;margin-top:10px;padding-top:8px;border-top:1px solid #F0ECE2;">
-      ATTENYA · Sistema Culinario · ${tipo}
-    </div>
-  </div>`;
-  
-  const container = document.createElement('div');
+  const tipo = r.c + (r.s ? ' \u00B7 ' + r.s : '');
+  const pdfHtml = '<div style="font-family:Helvetica,Arial,sans-serif;color:#3A3530;width:100%;padding:0;">' +
+    '<div style="display:flex;justify-content:space-between;align-items:flex-end;border-bottom:2px solid #C9B99A;padding-bottom:10px;margin-bottom:12px;">' +
+      '<div style="flex:1;">' +
+        '<div style="font-size:7px;color:#8A7B62;text-transform:uppercase;letter-spacing:3px;margin-bottom:4px;">' + tipo + '</div>' +
+        '<div style="font-size:20px;font-weight:300;color:#3A3530;letter-spacing:0.5px;line-height:1.2;">' + r.n + '</div>' +
+        '<div style="font-size:9px;color:#8A7B62;font-style:italic;margin-top:3px;">' + r.d + '</div>' +
+      '</div>' +
+      '<div style="text-align:right;font-size:7px;color:#C9B99A;letter-spacing:2px;text-transform:uppercase;">ATTENYA</div>' +
+    '</div>' +
+    '<div style="display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap;">' +
+      (d.pax ? '<div style="background:#F5F0E8;padding:4px 10px;font-size:7.5px;"><span style="color:#8A7B62;letter-spacing:1px;text-transform:uppercase;">PAX</span> <strong style="color:#3A3530;">' + d.pax + '</strong></div>' : '') +
+      (d.time_total ? '<div style="background:#F5F0E8;padding:4px 10px;font-size:7.5px;"><span style="color:#8A7B62;letter-spacing:1px;text-transform:uppercase;">Tiempo</span> <strong style="color:#3A3530;">' + d.time_total + '</strong></div>' : '') +
+      (d.difficulty ? '<div style="background:#F5F0E8;padding:4px 10px;font-size:7.5px;"><span style="color:#8A7B62;letter-spacing:1px;text-transform:uppercase;">Dificultad</span> <strong style="color:#3A3530;">' + d.difficulty + '</strong></div>' : '') +
+      (d.allergens ? '<div style="background:#F5F0E8;padding:4px 10px;font-size:7.5px;"><span style="color:#8A7B62;letter-spacing:1px;text-transform:uppercase;">Al\u00E9rgenos</span> <strong style="color:#3A3530;">' + d.allergens + '</strong></div>' : '') +
+      (d.fuente ? '<div style="background:#F5F0E8;padding:4px 10px;font-size:7.5px;"><span style="color:#8A7B62;letter-spacing:1px;text-transform:uppercase;">Fuente</span> <strong style="color:#3A3530;">' + d.fuente + '</strong></div>' : '') +
+    '</div>' +
+    '<div style="border-bottom:1px solid #E8E0D4;margin-bottom:12px;"></div>' +
+    '<div style="display:flex;gap:14px;margin-bottom:14px;">' +
+      '<div style="flex:1.1;">' +
+        '<div style="font-size:9px;font-weight:600;color:#3A3530;text-transform:uppercase;letter-spacing:2px;border-bottom:1.5px solid #C9B99A;padding-bottom:3px;margin-bottom:8px;">Procedimiento</div>' +
+        buildProcedureHtml(d.procedure) +
+      '</div>' +
+      '<div style="flex:0.9;">' +
+        '<div style="font-size:9px;font-weight:600;color:#3A3530;text-transform:uppercase;letter-spacing:2px;border-bottom:1.5px solid #C9B99A;padding-bottom:3px;margin-bottom:8px;">Ingredientes</div>' +
+        buildIngredientTableHtml(d.ingredients) +
+      '</div>' +
+    '</div>' +
+    (d.plating ? '<div style="margin-bottom:10px;"><div style="font-size:9px;font-weight:600;color:#3A3530;text-transform:uppercase;letter-spacing:2px;border-bottom:1.5px solid #C9B99A;padding-bottom:3px;margin-bottom:6px;">Emplatado</div><div style="font-size:8.5px;line-height:1.6;color:#3A3530;">' + d.plating.replace(/\n/g, '<br>') + '</div></div>' : '') +
+    '<div style="display:flex;gap:8px;margin-bottom:10px;">' +
+      '<div style="flex:1;">' + buildBoxHtml('Puntos Cr\u00EDticos', d.critical_points, '#FFF8F0', '#E8D8C0', '#8B5E3C') + '</div>' +
+      '<div style="flex:1;">' + buildBoxHtml('APPCC', d.appcc, '#F0F4F0', '#C8D8C8', '#4A5D3A') + '</div>' +
+    '</div>' +
+    (d.senior_adaptation ? '<div style="background:#F5F0E8;border-left:3px solid #C9B99A;padding:8px 12px;margin-bottom:10px;"><div style="font-weight:600;color:#8A7B62;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:3px;font-size:7px;">Adaptaci\u00F3n Senior</div><div style="font-size:8px;line-height:1.5;color:#3A3530;">' + d.senior_adaptation.replace(/\n/g, '<br>').replace(/- /g, '\u2022 ') + '</div></div>' : '') +
+    (d.quote ? '<div style="text-align:center;font-style:italic;color:#8A7B62;font-size:9px;padding:8px 16px;border-top:1px solid #E0D8CA;margin-top:8px;">\u201C' + d.quote + '\u201D</div>' : '') +
+    '<div style="text-align:center;font-size:6px;color:#C9B99A;letter-spacing:3px;text-transform:uppercase;margin-top:8px;padding-top:6px;border-top:1px solid #F0ECE2;">ATTENYA \u00B7 Sistema Culinario \u00B7 ' + tipo + '</div>' +
+  '</div>';
+  var container = document.createElement('div');
   container.innerHTML = pdfHtml;
   container.style.position = 'absolute';
   container.style.left = '-9999px';
+  container.style.width = '680px';
   document.body.appendChild(container);
-  
-  const opt = {
-    margin: [10, 12, 10, 12],
+  var opt = {
+    margin: [8, 10, 8, 10],
     filename: id + '.pdf',
     image: { type: 'jpeg', quality: 0.98 },
-    html2canvas: { scale: 2, useCORS: true },
+    html2canvas: { scale: 2, useCORS: true, width: 680 },
     jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
     pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
   };
-  
-  html2pdf().set(opt).from(container.firstElementChild).save().then(() => {
+  html2pdf().set(opt).from(container.firstElementChild).save().then(function() {
     document.body.removeChild(container);
   });
 }
