@@ -185,48 +185,6 @@ body { background: #1a1612; color: #e8dfd4; font-family: 'Cormorant Garamond', G
   .mise-day-header-left { flex-direction: column; gap: 4px; }
   .compra-item { grid-template-columns: 1fr 80px; }
 }
-
-/* === PRINT STYLES === */
-@media print {
-  body { background: #fff !important; color: #000 !important; font-size: 11px; }
-  .header, .nav-bar, .footer, .pdf-btn, .back-btn, .tab-btns { display: none !important; }
-  .hidden { display: none !important; }
-  #view-mise, #view-compras { display: block !important; }
-  .container { max-width: 100%; padding: 0; }
-  
-  /* Mise print */
-  .mise-day, .compra-lista { background: #fff !important; border: 1px solid #ccc !important; page-break-inside: avoid; margin-bottom: 12px; }
-  .mise-day-body, .compra-body { display: block !important; }
-  .mise-day-header { border-bottom: 1px solid #ccc; }
-  .mise-day-date { color: #000 !important; font-size: 13px; }
-  .mise-day-title { color: #333 !important; }
-  .mise-carga { border: 1px solid #999 !important; color: #333 !important; font-size: 9px; }
-  .mise-hora { color: #000 !important; font-size: 11px; }
-  .mise-tarea { color: #000 !important; font-size: 11px; }
-  .mise-tipo { font-size: 8px; border: 1px solid #ccc; color: #666 !important; background: none !important; }
-  .mise-tipo.anticipacion { border-color: #4a8ac4; color: #4a8ac4 !important; }
-  .mise-tipo.chef-free-task { border-color: #c44a4a; color: #c44a4a !important; }
-  .mise-note { color: #666 !important; border-left: 2px solid #ccc; }
-  .mise-task { border-bottom: 1px solid #eee !important; }
-  
-  /* Compras print */
-  .compra-header { border-bottom: 1px solid #ccc; }
-  .compra-titulo { color: #000 !important; font-size: 16px; }
-  .compra-meta { color: #666 !important; }
-  .compra-seccion-title { color: #000 !important; border-bottom: 1px solid #ccc; font-size: 11px; }
-  .compra-producto { color: #000 !important; }
-  .compra-cantidad { color: #000 !important; font-size: 12px; }
-  .compra-nota { color: #666 !important; }
-  .compra-item { border-bottom: 1px solid #eee !important; }
-  
-  /* Menu header for print */
-  .menu-header { border-bottom: 1px solid #ccc; padding: 0 0 10px; }
-  .menu-periodo { color: #000 !important; font-size: 22px; }
-  .menu-meta { color: #666 !important; }
-  
-  /* Chef-free indicator */
-  .mise-day.chef-free, .menu-day.chef-free { border-left: 3px solid #c44a4a !important; }
-}
 </style>
 </head>
 <body>
@@ -269,7 +227,6 @@ body { background: #1a1612; color: #e8dfd4; font-family: 'Cormorant Garamond', G
     <div class="menu-header">
       <div class="menu-periodo" id="menu-periodo"></div>
       <div class="menu-meta" id="menu-meta"></div>
-      <button class="pdf-btn" style="margin-top:12px;" onclick="downloadMenuPDF()">↓ PDF Menú</button>
     </div>
     <div id="menu-days"></div>
   </div>
@@ -281,7 +238,6 @@ body { background: #1a1612; color: #e8dfd4; font-family: 'Cormorant Garamond', G
     <div class="menu-header">
       <div class="menu-periodo">Mise en Place</div>
       <div class="menu-meta" id="mise-meta"></div>
-      <button class="pdf-btn" style="margin-top:12px;" onclick="printView('mise')">⎙ Imprimir</button>
     </div>
     <div id="mise-days"></div>
   </div>
@@ -293,7 +249,6 @@ body { background: #1a1612; color: #e8dfd4; font-family: 'Cormorant Garamond', G
     <div class="menu-header">
       <div class="menu-periodo">Listas de Compra</div>
       <div class="menu-meta" id="compras-meta"></div>
-      <button class="pdf-btn" style="margin-top:12px;" onclick="printView('compras')">⎙ Imprimir</button>
     </div>
     <div id="compras-listas"></div>
   </div>
@@ -1132,74 +1087,6 @@ async function downloadPDF(id) {
   } catch(e) {
     alert('PDF no disponible para esta receta');
   }
-}
-
-/* ============================================================
-   PRINT VIEW — for Mise en Place and Compras
-   ============================================================ */
-function printView(viewName) {
-  // Open all collapsed sections so they print
-  const view = document.getElementById('view-' + viewName);
-  if (viewName === 'mise') {
-    view.querySelectorAll('.mise-day').forEach(d => d.classList.add('open'));
-  } else if (viewName === 'compras') {
-    view.querySelectorAll('.compra-lista').forEach(d => d.classList.add('open'));
-  }
-  
-  // Hide all views except the one we're printing
-  const allViews = ['view-catalogo', 'view-menu', 'view-mise', 'view-compras', 'detail-view'];
-  const origStates = {};
-  allViews.forEach(id => {
-    const el = document.getElementById(id);
-    origStates[id] = el.style.display;
-    el.style.display = (id === 'view-' + viewName) ? 'block' : 'none';
-  });
-  
-  window.print();
-  
-  // Restore original states
-  allViews.forEach(id => {
-    document.getElementById(id).style.display = origStates[id];
-  });
-}
-
-/* ============================================================
-   MENU PDF — links to pre-generated menu PDF
-   ============================================================ */
-function downloadMenuPDF() {
-  // Try the current period filename
-  const periodo = document.getElementById('menu-periodo').textContent;
-  const match = periodo.match(/\d{1,2}[\s\/\-]+\w+/g);
-  const url = 'data/pdf/Menu_periodo_actual.pdf';
-  
-  fetch(url, {method: 'HEAD'}).then(function(res) {
-    if (res.ok) {
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'Menu_ATTENYA.pdf';
-      a.click();
-    } else {
-      // Fallback: print the menu view
-      const view = document.getElementById('view-menu');
-      view.querySelectorAll('.menu-day').forEach(d => d.classList.add('open'));
-      
-      const allViews = ['view-catalogo', 'view-menu', 'view-mise', 'view-compras', 'detail-view'];
-      const origStates = {};
-      allViews.forEach(function(id) {
-        const el = document.getElementById(id);
-        origStates[id] = el.style.display;
-        el.style.display = (id === 'view-menu') ? 'block' : 'none';
-      });
-      
-      window.print();
-      
-      allViews.forEach(function(id) {
-        document.getElementById(id).style.display = origStates[id];
-      });
-    }
-  }).catch(function() {
-    alert('PDF de menú no disponible');
-  });
 }
 
 /* ============================================================
