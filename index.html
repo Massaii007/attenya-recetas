@@ -752,9 +752,12 @@ if (typeof menuData !== 'undefined' && menuData.dias) {
 /* Expand: load JSONs of periodo recipes and add their componentes */
 async function expandPeriodoIds() {
   const toCheck = [...periodoIds];
+  const v = Date.now();
   for (const id of toCheck) {
     try {
-      const d = await loadJson(id);
+      const res = await fetch('data/' + id + '.json?v=' + v);
+      if (!res.ok) continue;
+      const d = await res.json();
       if (d && d.componentes) {
         d.componentes.forEach(function(c) {
           if (c.id && !c.id.startsWith('pendiente_')) periodoIds.add(c.id);
