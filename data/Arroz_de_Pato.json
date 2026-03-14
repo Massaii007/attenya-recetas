@@ -17,5 +17,18 @@
   "appcc": "Pato cocción completa >74 °C · Servir inmediatamente tras cocción · Si se regenera: vapor suave añadiendo caldo caliente · **Alérgenos:** gluten (verificar caldo y picada), sulfitos (vino)",
   "senior_adaptation": null,
   "storytelling": "# Arroz de Pato — Historia\n\n## Origen\n\nEl arroz de pato es plato de invierno español, hijo de la tradición cazadora donde el pato silvestre, el ave noble, enriquecía con su grasa los arroces melosos de las comarcas ribereñas. No es plato de lujo ostentoso sino de confort profundo, de esos que calientan desde adentro, que satisfacen como solo puede hacerlo el arroz integrado con su proteína, cocinados juntos, fundiéndose mutuamente en sabor. El pato, ave de carne oscura y sabor penetrante, es el opuesto al pollo: sus grasas aromáticas son el tesoro que enriquece cada grano de arroz, cada porción de caldo.\n\n## La Historia\n\nEl muslo de pato, cortado en trozos, entra en el aceite ardiente donde se dora de forma completa, cada cara dorada uniformemente, cada trozo ganando color oscuro que promete profundidad. El vino blanco sube en vapor, limpiando, deglasando, llevándose las impurezas. El sofrito, esos aromas de cebolla y tomate que han estado envejeciendo lentamente, entra en la sartén y abraza el pato. El arroz, después, se toasta en el mismo aceite donde el pato ha dejado sus marcas, se calienta, se tuesta ligeramente sus granos en un proceso que durará apenas minutos. El caldo caliente de pollo entra todo de una vez, cubriendo, envolviendo. A partir de aquí, el arroz se convierte en meditación: debe cocer sin que se seque, debe absorber el caldo pero mantener su estructura. El pato permanece integrado, su carne se ablanda, se vuelve tan tierna que se deshilachará con apenas presión de cuchara. La picada final, ajo y perejil molidos finísimo, entra cuando el arroz está casi listo, aportando frescura, cortando la densidad con su presencia verde y vivaz.\n\n## Para Nuestros Comensales\n\nApreciados comensales, este es plato único pensado especialmente para ustedes, donde el pato está tan tierno que cada fibra cede bajo el tenedor, donde no hay hueso ni cartílago que ofrezca resistencia. El arroz está meloso, nunca caldoso, untuoso con la grasa que el pato ha depositado en él durante la cocción compartida, pero nunca pesado ni indigesto. Es confortante sin ser pesado, sustancioso sin ser excesivo. Se sirve en plato hondo, con el pato visible e integrado, humoso aún, generoso en cantidad. No requiere acompañamiento, es plato que se basta a sí mismo, que propone una comida entera en una sola presentación. En invierno, cuando el cuerpo pide calor, cuando la tarde oscurece temprano, este es el arroz que ustedes merecen.\n",
-  "quote": "Un arroz de pato bien hecho es un plato único contundente donde la grasa del pato enriquece cada grano. El sofrito y la picada aportan fondo, el vino blanco limpieza. Ideal para días fríos como plato único que no necesita acompañamiento."
+  "quote": "Un arroz de pato bien hecho es un plato único contundente donde la grasa del pato enriquece cada grano. El sofrito y la picada aportan fondo, el vino blanco limpieza. Ideal para días fríos como plato único que no necesita acompañamiento.",
+  "componentes": [
+    {
+      "id": "Sofrito_Portugues",
+      "tipo": "Base/Elemento",
+      "rol": "integrado"
+    },
+    {
+      "id": "Pato_Asado_Clasico",
+      "tipo": "Principal",
+      "rol": "integrado"
+    }
+  ],
+  "subtipo": "Plato unico"
 }

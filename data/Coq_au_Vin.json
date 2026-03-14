@@ -17,5 +17,13 @@
   "appcc": "tapado, suave -- Alergenos: gluten (harina, croutons), lacteos (pure), sulfitos (vino)\n\"El coq au vin es paciencia convertida en plato: el marinado de 24 h, la reduccion a glace del vino, el reposo en su propio liquido. Todo existe para\nque la salsa tenga profundidad borgoñona y el pollo llegue tierno y oscuro. La guarnicion Grand Mere no decora: aporta textura y contraste.\"",
   "senior_adaptation": null,
   "storytelling": "# Coq au Vin — Historia\n\n## Origen\nEl Coq au Vin nace en Burgundia, Francia, donde el vino es casi un personaje. No es plato que haya nacido de la sofisticación sino de la necesidad: un gallo viejo, la única carne disponible, el vino de la región, fuego lento durante horas. Ochocientos años de refinamiento transformaron necesidad en gloria francesa.\n\n## La Historia\nEl pollo entero se deshuesó con cuidado: muslos, contramuslos, pechugas, alitas. Se marinó veinticuatro horas en vino Pinot Noir con mirepoix de verduras y especias—el tiempo hace el trabajo invisible de ablandar fibras y teñir de color burdeos. Luego se sella en aceite caliente hasta dorado profundo: el Maillard es la firma de la seriedad. El vino del marinado se reduce hasta casi secar—jarabe denso de alcohol evaporado—punto donde el sabor se comprime. Junto con fondo de ave oscuro, el pollo regresa al horno a 160 grados durante una hora. Luego reposa en su propio caldo: eso es crucial, eso es lo que diferencia la brasería de la cocción simple. La salsa se reduce nuevamente, se cuela, se enriquece con guarnición Grand Mère: champiñones dorados, cebollas caramelizadas, bacon crujiente. Croutones de pan en grasa de panceta.\n\n## Para Nuestros Comensales\nAquí viajan a Borgoña, a viñedos olvidados, a mesones antiguos donde la paciencia era virtud. Cada bocado es vino transformado en textura, es fuego lento convertido en ternura. La guarnición no decora: enriquece la experiencia. Es la Francia que ustedes siempre quisieron conocer, servida en un plato que respira nostalgia y perfección.\n",
-  "quote": "El coq au vin es paciencia convertida en plato: el marinado de 24 h, la reduccion a glace del vino, el reposo en su propio liquido. Todo existe para\nque la salsa tenga profundidad borgoñona y el pollo llegue tierno y oscuro. La guarnicion Grand Mere no decora: aporta textura y contraste."
+  "quote": "El coq au vin es paciencia convertida en plato: el marinado de 24 h, la reduccion a glace del vino, el reposo en su propio liquido. Todo existe para\nque la salsa tenga profundidad borgoñona y el pollo llegue tierno y oscuro. La guarnicion Grand Mere no decora: aporta textura y contraste.",
+  "componentes": [
+    {
+      "id": "Pure_Cremoso_Robuchon",
+      "tipo": "Guarnicion_HI",
+      "rol": "integrado"
+    }
+  ],
+  "subtipo": "Plato unico"
 }

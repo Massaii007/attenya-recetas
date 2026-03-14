@@ -17,5 +17,16 @@
   "appcc": "Regeneración chucrut: >75°C centro, mantener >65°C hasta servicio. Dorado Schupfnudeln: temperatura interna >65°C al servicio. Speck: dorar hasta crujiente (>75°C). Tiempo máximo en mesa caliente: 2 h. Alérgenos: gluten (trigo), huevo, posible trazas lácteos (mantequilla clarificada). Verificar panceta (posible sulfitos).",
   "senior_adaptation": "Schupfnudeln con dorado suave, no crujiente agresivo — masticación fácil. Chucrut estofado largo: textura melosa, sin fibra dura. La manzana y el fondo lo suavizan. Speck en lardons finos y bien crujientes — se deshacen al morder, no requieren masticación fuerte. Ración generosa pero no excesiva: equilibrar con la acidez del chucrut. La acidez elegante del chucrut favorece la digestión.",
   "storytelling": "# Schupfnudeln mit Sauerkraut und Speck — Historia\n\n## Origen\n\nEste es posiblemente el plato más honesto de la cocina suaba. Tres ingredientes humildes — pasta de patata, col fermentada y panceta ahumada — que juntos producen algo mucho más grande que la suma de sus partes. Es el tipo de plato que aparece en los Gasthäuser de la Selva Negra cuando el frío aprieta, servido sin ceremonia en platos hondos y acompañado de un vaso de Trollinger.\n\n## Tradición\n\nEn Suabia y Baden-Württemberg, las Schupfnudeln mit Sauerkraut son un plato de invierno y de Metzgete (matanza). El chucrut se elaboraba en casa durante otoño, la panceta se curaba y ahumaba, y las Schupfnudeln se formaban a mano con la patata del día anterior. Cada familia tenía su proporción secreta de harina a patata.\n\n## En ATTENYA\n\nPara nuestros comensales alemanes, este plato es un viaje directo a casa. El Sauerkraut Afinado Gourmet — estofado lento en fundición con manzana Granny Smith, enebro y fondo de ave — eleva el chucrut de guarnición a protagonista. Las Schupfnudeln caseras, prensadas el día anterior y doradas al momento en mantequilla clarificada, aportan el contraste de textura. Los lardons de Speck crujientes son el punto final: humo, sal, crunch.\n\nEs comfort food sin pedir perdón. Reconfortante, profundo, con la acidez del chucrut equilibrando la riqueza de la masa dorada y la grasa del Speck.\n\n## Perfil sensorial\n\nSchupfnudeln doradas con aroma a mantequilla tostada, interior cremoso que se funde en la boca. Chucrut meloso con fondo profundo de panceta, manzana y especias, acidez presente pero elegante. Lardons crujientes que estallan con sabor ahumado. El cebollino fresco corta la riqueza y añade un punto verde y vivo. Conjunto: cálido, reconfortante, equilibrado entre grasa, ácido y umami.",
-  "quote": "Clásico suabo reconfortante — la armonía entre el dorado cremoso, la acidez elegante y el crujiente ahumado."
+  "quote": "Clásico suabo reconfortante — la armonía entre el dorado cremoso, la acidez elegante y el crujiente ahumado.",
+  "componentes": [
+    {
+      "id": "Schupfnudeln_Caseras",
+      "tipo": "Guarnicion_HI"
+    },
+    {
+      "id": "Chucrut_Afinado_Gourmet",
+      "tipo": "Guarnicion_V"
+    }
+  ],
+  "subtipo": "Ensamblado"
 }

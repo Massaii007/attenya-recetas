@@ -17,5 +17,13 @@
   "appcc": "\"La shakshuka es generosidad pura: una salsa profunda que abraza los huevos sin agredirlos. El secreto esta en la paciencia con el\ntomate y en no tocar los huevos una vez dentro.\"",
   "senior_adaptation": null,
   "storytelling": "# Shakshuka — Historia\n\n## Origen\nShakshuka viaja desde el Levante, desde esas cocinas donde tomate, cebolla y especias generosas hablan el idioma de la comida de verdad. Es un plato nómada: se come en Túnez, Líbano, Israel, Palestina, siempre con sus variaciones, siempre con su esencia. No es una salsa con huevos; es una filosofía: la idea de que lo simple, bien hecho, es sagrado.\n\n## La Historia\nComienza lentamente: cebolla y pimiento se pochán hasta que desaparecen en su propio jugo dulce. El ajo entra sin quemarse. Las especias—comino, pimentón dulce, apenas un toque de cayena—se despiertan fuera del fuego para no amargar. Luego viene el tomate triturado: mucho, generoso, que se cocina a fuego bajo durante treinta minutos hasta que el agua evaporada y la salsa se espesa. Cuando llega el momento del servicio, se hacen huecos en esta base que es casi una compota cálida. Los huevos se casan con ella: la clara se cuaja en el calor, pero la yema permanece líquida, cremosa, lista para rocar la salsa. El hilo de aceite de oliva crudo, el perejil fresco: son el toque que recuerda que la vida continúa afuera de esa sartén.\n\n## Para Nuestros Comensales\nEs la comida que repara cuerpos y almas. Sin complicación, sin pretensión. La yema líquida que mezclan con la salsa, las patatas que absorben todo: esto es lo que significa comer con confort. Una sola cucharada lo entiende.\n",
-  "quote": "La shakshuka es generosidad pura: una salsa profunda que abraza los huevos sin agredirlos. El secreto esta en la paciencia con el\ntomate y en no tocar los huevos una vez dentro."
+  "quote": "La shakshuka es generosidad pura: una salsa profunda que abraza los huevos sin agredirlos. El secreto esta en la paciencia con el\ntomate y en no tocar los huevos una vez dentro.",
+  "componentes": [
+    {
+      "id": "Salzkartoffeln",
+      "tipo": "Guarnicion_HI",
+      "rol": "integrado"
+    }
+  ],
+  "subtipo": "Plato unico"
 }

@@ -17,5 +17,18 @@
   "appcc": "Marisco cocción >74 °C · Caldo reforzado a ebullición · Servir inmediatamente · **Alérgenos:** crustáceos (langostinos/gambas/gambón), gluten (verificar caldo/picada), sulfitos (vino)",
   "senior_adaptation": "Original usa cangrejos enteros con cáscara (riesgo de atragantamiento y difícil manipulación). Sustituidos por langostinos, gambas o gambón pelados. Caldo de pescado reforzado con cabezas y cáscaras aparte para mantener el sabor a marisco.",
   "storytelling": "# Arroz Caldoso de Marisco — Historia\n\n## Origen\n\nEl arroz caldoso nace en las costas levantinas españolas, donde la tradición paellera se ramifica en mil direcciones según la disponibilidad del mar. Este es arroz de pescadores que no querían pensar en proporciones exactas sino en el deseo: mucho caldo, mucho marisco, el arroz como vehículo de la esencia marina. Las cabezas de langostinos, gambas o gambón no se tiran sino que se revuelven en aceite ardiente, liberando su sabor concentrado, tiñendo el caldo de rojo y profundidad. El arroz caldoso es hermano del caldo, hermano de la sopa que se vuelve sólida solo parcialmente, porque el líquido es tan importante como el grano.\n\n## La Historia\n\nLas cabezas de marisco entran en la sartén caliente donde el aceite de oliva crepita y ellas se doran, se torturan casi, hasta que ceden sus aceites esenciales, sus sabores más concentrados. El caldo, ya perfumado con este fondo marino, hierve después, cargado de umami, de sal mineral del mar. El sofrito, esos azúcares y aromas que darán contexto, entra después. El arroz, cada grano, se abrasa ligeramente y toma color, se tostan sus proteínas. El vino blanco sube en vapor y desaparece. Y entonces, de golpe, entra el caldo ardiente que cubre el arroz con generosidad. El fuego es fuerte, relentless, porque el arroz caldoso requiere rapidez, movimiento, transformación rápida. A mitad del camino, el marisco pelado entra, langostinos o gambas cuya carne blanca se cuece rápidamente, sin sobrecocción, apenas tres minutos de verdadera cocción. La picada final, ajo y perejil molidos, entra en el último instante, suavizando y ligando. El plato debe servirse con caldo visible, líquido que refleja el brillo de los granos.\n\n## Para Nuestros Comensales\n\nQueridos comensales, les presentamos un plato único donde el marisco pelado reposa sobre arroz que aún está comunicado con el caldo que lo nutre. No hay cáscaras duras que mantengan el sabor prisionero, solo carne tierna de langostinos, gambas o gambón que se deshacen bajo el tenedor. El caldo es abundante, generoso, bebible, puro sabor marino sin intermediarios. El arroz está hecho, tierno pero con estructura, cremoso pero caldoso. Es un plato que pide una cuchara, que permite comer caldo y arroz juntos, sin separaciones. La picada final perfuma cada cucharada con ajo dulce y perejil fresco. Se sirve inmediatamente del fuego, cuando aún está callente, cuando el aroma sube como oración.\n",
-  "quote": "El arroz caldoso necesita ser generoso en caldo: al servir debe haber líquido visible. Se puede hacer con langostinos, gambas o gambón según disponibilidad y precio. Las cabezas y cáscaras son imprescindibles para el caldo reforzado: sin ellas pierde toda la identidad de marisco. La picada al final liga y perfuma."
+  "quote": "El arroz caldoso necesita ser generoso en caldo: al servir debe haber líquido visible. Se puede hacer con langostinos, gambas o gambón según disponibilidad y precio. Las cabezas y cáscaras son imprescindibles para el caldo reforzado: sin ellas pierde toda la identidad de marisco. La picada al final liga y perfuma.",
+  "componentes": [
+    {
+      "id": "Sofrito_Portugues",
+      "tipo": "Base/Elemento",
+      "rol": "integrado"
+    },
+    {
+      "id": "03_Fumet_Pescado",
+      "tipo": "Base/Caldo",
+      "rol": "integrado"
+    }
+  ],
+  "subtipo": "Plato unico"
 }
