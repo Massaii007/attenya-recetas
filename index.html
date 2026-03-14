@@ -586,7 +586,7 @@ const menuData = {
       prod:"Chucrut Afinado: elaborado previamente (solo regenerar). Schupfnudeln: patatas cocidas+prensadas sábado, amasado+formado+cocción agua domingo AM, dorado al pase. Speck: dorar al pase. Timbal: montar al momento. Arroz con leche: hecho sábado."},
     {fecha:"2026-03-16",ds:"Lunes 16/03",dc:14,tipo:"normal",prot:"Pescado blanco",
       entrante:{n:"Pimientos Asados con Burrata (T.Straker)",id:"Pimientos_Asados_Burrata_Straker"},
-      principal:{n:"Lenguado en Papillote (T.Straker)",id:"Lenguado_Papillote_Straker"},
+      principal:{n:"Lenguado en Papillote con Patatas (Straker)",id:"Lenguado_Papillote_Patatas_Straker"},
       guarnicion:{n:"Patatas al Vapor con Hierbas",id:"Patatas_Vapor_Horno"},
       postre:{n:"Torrija Brioche Caramelizada",id:"Torrija_Brioche_Caramelizada"},
       cena:"Ensalada verde + queso",
@@ -748,6 +748,20 @@ if (typeof menuData !== 'undefined' && menuData.dias) {
       if (d[k] && d[k].id) periodoIds.add(d[k].id);
     });
   });
+}
+/* Expand: load JSONs of periodo recipes and add their componentes */
+async function expandPeriodoIds() {
+  const toCheck = [...periodoIds];
+  for (const id of toCheck) {
+    try {
+      const d = await loadJson(id);
+      if (d && d.componentes) {
+        d.componentes.forEach(function(c) {
+          if (c.id && !c.id.startsWith('pendiente_')) periodoIds.add(c.id);
+        });
+      }
+    } catch(e) {}
+  }
 }
 
 let state = { cat: "all", sub: null, search: "", selected: null, tab: "ficha", view: "catalogo", periodo: false };
@@ -1155,9 +1169,12 @@ document.getElementById("search").addEventListener("input", e => { state.search 
 /* ============================================================
    INIT
    ============================================================ */
-function init() {
+async function init() {
   document.getElementById("total-count").textContent = recipes.length + " recetas · Tenerife";
   document.getElementById("footer").textContent = "ATTENYA · SISTEMA CULINARIO · " + recipes.length + " RECETAS · 2026";
+  
+  /* Expand periodo IDs with components from assembled dishes */
+  await expandPeriodoIds();
   
   /* Check URL parameters */
   var params = new URLSearchParams(window.location.search);
