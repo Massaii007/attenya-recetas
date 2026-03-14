@@ -750,6 +750,7 @@ if (typeof menuData !== 'undefined' && menuData.dias) {
 }
 
 let state = { cat: "all", sub: null, search: "", selected: null, tab: "ficha", view: "catalogo", periodo: false };
+const navStack = [];
 
 function count(c) {
   let r = recipes;
@@ -1089,6 +1090,7 @@ function renderCompras() {
 function switchView(v) {
   state.view = v;
   state.selected = null;
+  navStack.length = 0;
   
   // Hide all views
   document.getElementById("view-catalogo").classList.add("hidden");
@@ -1129,12 +1131,21 @@ function goToRecipe(id) {
 
 function setCat(c) { state.cat = c; state.sub = null; renderCats(); renderSubs(); renderGrid(); }
 function setSub(s) { state.sub = s; renderSubs(); renderGrid(); }
-function select(id) { state.selected = recipes.find(r => r.id === id); state.tab = "ficha"; renderDetail(); window.scrollTo(0,0); }
+function select(id) {
+  if (state.selected) navStack.push(state.selected);
+  state.selected = recipes.find(r => r.id === id); state.tab = "ficha"; renderDetail(); window.scrollTo(0,0);
+}
 function back() {
-  state.selected = null;
-  document.getElementById("detail-view").classList.add("hidden");
-  // Return to the view we came from
-  document.getElementById("view-" + state.view).classList.remove("hidden");
+  if (navStack.length > 0) {
+    state.selected = navStack.pop();
+    state.tab = "ficha";
+    renderDetail();
+    window.scrollTo(0,0);
+  } else {
+    state.selected = null;
+    document.getElementById("detail-view").classList.add("hidden");
+    document.getElementById("view-" + state.view).classList.remove("hidden");
+  }
 }
 function setTab(t) { state.tab = t; renderDetail(); }
 
