@@ -1,21 +1,27 @@
 {
-  "id": "Moqueca_Camarones_Arroz_Bahiano",
-  "name": "Moqueca con Arroz Bahiano",
-  "category": "Platos",
-  "subcategory": null,
-  "description": "con Arroz Bahiano. Plato brasileño completo. Estofado de camarones",
-  "technique": "Guiso",
-  "protein": "Marisco",
-  "pax": 25,
-  "time_total": "60 Min",
-  "difficulty": null,
-  "allergens": "crustáceos, pescado (si gamba seca)",
-  "ingredients": "- Camarón crudo pelado: 4,5 kg\n- Moqueca de Camarones\n- Cebolla + pimientos + tomate: 4,5 kg\n- Leche coco espesa: 2,0 L\n- Caldo pescado/verduras: 0,5 L\n- Pasta aromática: 40 g\n- Aceite dendê: 80-100 ml\n- Arroz largo fino: 1,8 kg\n- Agua + Leche coco ligera: 3,5 L\n- Lima: 3 uds\n- Cilantro fresco: 180 g",
-  "procedure": "**Mise En Place: 30 Min Tiempo Total: 60 Min**\nTécnica: Estofado + Absorción · Conservación: Base 48h · Camarón a la\nBase leche coco, aromáticos, camarón a la minute\nMoqueca - Base\nArroz con coco y lima, cremoso y suelto\nPRODUCCIÓN BASE MOQUECA (Día -1)\n1. Sudar vegetales + pasta aromática sin dorar\n2. Añadir tomate + leche coco + caldo, cocer 15 min suave\n3. Enfriar y refrigerar (base lista para servicio) Arroz Bahiano\nARROZ BAHIANO (2h antes servicio)\n1. Cocer arroz en agua salada 15 min (80% cocido)\n2. Añadir leche coco tibia + ralladura lima, terminar 8-10 min\n3. Reposar 5 min, soltar con tenedor Acabado\nTERMINACIÓN MOQUECA (a la minute)\n1. Calentar base de moqueca sin hervir\n2. Añadir camarones, cocer 3-4 min hasta opacos\n3. Aceite dendê al final, cilantro, ajustar sal\n1. Base de arroz bahiano caliente (180-200 g)\n2. Moqueca con camarones napando el arroz (350-400 g)\n3. Cilantro fresco por encima\n4. Gajo de lima lateral\nâš ï¸n PUNTOS CRÃnTICOS: NO hervir leche coco · NO recalentar camarones cocidos · Dendê siempre al final · Arroz suelto no pastoso ·\nBase anticipada OK, camarón a la minute\nâš ï¸n APPCC: Base moqueca: 48h refrigerado · Arroz: regenerar vapor 5 min · Camarón siempre fresco, cocción controlada · Alérgenos:\ncrustáceos, pescado (si gamba seca)\n\"La moqueca no es sopa ni curry: es estofado ligado donde el camarón llega al final. El arroz bahiano no es risotto: es arroz\nsuelto enriquecido con coco. Juntos crean equilibrio perfecto entre mar y tierra.\"",
-  "plating": "2. Moqueca con camarones napando el arroz (350-400 g)\n3. Cilantro fresco por encima\n4. Gajo de lima lateral\nâš ï¸n PUNTOS CRÃnTICOS: NO hervir leche coco · NO recalentar camarones cocidos · Dendê siempre al final · Arroz suelto no pastoso ·\nBase anticipada OK, camarón a la minute\nâš ï¸n APPCC: Base moqueca: 48h refrigerado · Arroz: regenerar vapor 5 min · Camarón siempre fresco, cocción controlada · Alérgenos:\ncrustáceos, pescado (si gamba seca)\n\"La moqueca no es sopa ni curry: es estofado ligado donde el camarón llega al final. El arroz bahiano no es risotto: es arroz\nsuelto enriquecido con coco. Juntos crean equilibrio perfecto entre mar y tierra.\"",
-  "critical_points": null,
-  "appcc": "âš ï¸n APPCC: Base moqueca: 48h refrigerado · Arroz: regenerar vapor 5 min · Camarón siempre fresco, cocción controlada · Alérgenos:\ncrustáceos, pescado (si gamba seca)",
+  "nombre": "Moqueca de Camarones con Arroz Bahiano",
+  "fuente": "",
+  "pax": "25",
+  "time_total": "20 min (ensamblaje)",
+  "difficulty": "Media",
+  "allergens": "Crustaceos, Pescado (si gamba seca)",
+  "subtipo": "Ensamblado",
+  "componentes": [
+    {
+      "id": "Moqueca_Camarones_Baiano",
+      "tipo": "Principal"
+    },
+    {
+      "id": "Arroz_Bahiano",
+      "tipo": "Guarnicion_HI"
+    }
+  ],
+  "ingredients": "| Ingrediente | Cantidad | Notas |\n|---|---|---|\n| Moqueca base | ~8 L | regenerada caliente |\n| Camaron crudo pelado | 4,5 kg | coccion a la minute |\n| Arroz Bahiano | ~5 kg cocido | caliente, suelto |\n| Aceite dende | 80-100 ml | al final |\n| Cilantro fresco | 180 g | picado, acabado |\n| Lima | 6-8 uds | gajos |",
+  "procedure": "**Mise en Place -- Orden de Ejecucion**\n1. Base moqueca lista (producida Dia -1, refrigerada).\n2. Arroz bahiano cocido (2 h antes servicio o regenerado).\n3. Camarones crudos pelados, refrigerados.\n4. Cilantro fresco picado. Limas cortadas. Aceite dende medido.\n\n**Regeneracion y Coccion Final**\nARROZ BAHIANO: Regenerar vapor suave 5 min. Soltar con tenedor.\nTERMINACION MOQUECA (a la minute): Calentar base sin hervir. Anadir camarones, cocer 3-4 min hasta opacos. Aceite dende al final, cilantro, ajustar sal.",
+  "plating": "1. Base de arroz bahiano caliente (180-200 g).\n2. Moqueca con camarones napando el arroz (350-400 g).\n3. Cilantro fresco por encima.\n4. Gajo de lima lateral.",
+  "critical_points": "- NO hervir leche coco\n- NO recalentar camarones cocidos\n- Dende siempre al final\n- Arroz suelto no pastoso\n- Base anticipada OK, camaron a la minute",
+  "appcc": "- Base moqueca: 48 h refrigerado\n- Arroz: regenerar vapor 5 min\n- Camaron siempre fresco, coccion controlada\n- Alergenos: crustaceos, pescado (si gamba seca)",
   "senior_adaptation": null,
-  "storytelling": "# Moqueca Camarones Arroz Bahiano — Historia\n\n## Origen\nLa moqueca nace en Bahía, Brasil, donde el oceáno tropical y la riqueza africana se encuentran. Los camarones frescos, la leche de coco, el dendê dorado: todos elementos de una cocina que mezcla técnica portuguesa, sabor africano y generosidad brasileña. Es el plato que los pescadores llevaban a tierra después de sus faenas, transformado en un estofado legendario.\n\n## La Historia\nEn las cocinas bahianas, la moqueca nunca fue sopa ni curry. Era un estofado ligado, donde cada ingrediente tenía su función: la leche de coco no es adorno sino estructura cremosa que protege al camarón delicado, el arroz abierto y aromático acompaña sin competir, el dendê llega al final como un aroma, no como agresión. Los cocineros la preparaban con respeto, sabiendo que en tres y cuatro minutos el camarón pasaría de crudo a perfecto, y un minuto más lo arruinaría. Era paciencia, era conocimiento, era tradición marinera convertida en cuchara.\n\n## Para Nuestros Comensales\nCuando pruebe esta moqueca, está probando el ritmo de Bahía, la calidez del camarón sazonado con delicadeza, la dulzura del coco equilibrado con el umami del fondo de pescado. El arroz que la acompaña es como un lecho reconfortante, blando sin ser pegajoso. Es un viaje a una tierra donde el tiempo se mueve lentamente y la comida es un acto de amor. Aquí, en nuestra casa, le ofrecemos ese mismo cuidado, esa misma paciencia con la que Bahía lo ha hecho siempre.\n",
-  "quote": "La moqueca no es sopa ni curry: es estofado ligado donde el camarón llega al final. El arroz bahiano no es risotto: es arroz\nsuelto enriquecido con coco. Juntos crean equilibrio perfecto entre mar y tierra."
+  "quote": "La moqueca no es sopa ni curry: es estofado ligado donde el camaron llega al final. El arroz bahiano no es risotto: es arroz suelto enriquecido con coco. Juntos crean equilibrio perfecto entre mar y tierra.",
+  "storytelling": "# Moqueca Camarones Arroz Bahiano — Historia\n\n## Origen\nLa moqueca nace en Bahía, Brasil, donde el oceáno tropical y la riqueza africana se encuentran. Los camarones frescos, la leche de coco, el dendê dorado: todos elementos de una cocina que mezcla técnica portuguesa, sabor africano y generosidad brasileña. Es el plato que los pescadores llevaban a tierra después de sus faenas, transformado en un estofado legendario.\n\n## La Historia\nEn las cocinas bahianas, la moqueca nunca fue sopa ni curry. Era un estofado ligado, donde cada ingrediente tenía su función: la leche de coco no es adorno sino estructura cremosa que protege al camarón delicado, el arroz abierto y aromático acompaña sin competir, el dendê llega al final como un aroma, no como agresión. Los cocineros la preparaban con respeto, sabiendo que en tres y cuatro minutos el camarón pasaría de crudo a perfecto, y un minuto más lo arruinaría. Era paciencia, era conocimiento, era tradición marinera convertida en cuchara.\n\n## Para Nuestros Comensales\nCuando pruebe esta moqueca, está probando el ritmo de Bahía, la calidez del camarón sazonado con delicadeza, la dulzura del coco equilibrado con el umami del fondo de pescado. El arroz que la acompaña es como un lecho reconfortante, blando sin ser pegajoso. Es un viaje a una tierra donde el tiempo se mueve lentamente y la comida es un acto de amor. Aquí, en nuestra casa, le ofrecemos ese mismo cuidado, esa misma paciencia con la que Bahía lo ha hecho siempre.\n"
 }

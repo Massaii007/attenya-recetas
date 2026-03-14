@@ -1,21 +1,32 @@
 {
-  "id": "Chuleta_Cerdo_Chucrut",
-  "name": "Chuleta de Cerdo con Chucrut",
-  "category": "Platos",
-  "subcategory": null,
-  "description": "Centro chuletero sin hueso con Chucrut Afinado y Pure de Boniato. Cocina alemana",
-  "technique": "Plancha",
-  "protein": "Cerdo",
-  "pax": 25,
-  "time_total": "~30 Min (Cerdo) + 75 Min (Chucrut)",
-  "difficulty": null,
-  "allergens": "sulfitos (vino, chucrut), lacteos (pure boniato)",
-  "ingredients": "- Schweinekotelett (centro chuletero): Sin hueso, sellado + horno mixto. Jugoso, rosa -- Centro chuletero sin piel: 5,5 kg (pieza entera, corte\n- Chucrut Afinado Gourmet: Fermentado, estofado con panceta, manzana, enebro. -- Aceite vegetal neutro: 150 ml (sellado)\n- Vino blanco seco: 300 ml (deglasado)\n- Fondo de carne suave: 300 ml\n- Sauerkraut fermentado: 6 kg (escurrido, NO lavado)\n\n- Cebolla blanca: 1,2 kg (juliana fina)\n- Manzana Granny Smith: 700 g (dados pequenos)\n- Fondo ave/carne: 2-2,5 L\n- Enebro: 10 g (machacado)\n- Comino grano: 8 g",
-  "procedure": "### Jugo De Servicio\n\n**Mise En Place**\n- Vino blanco seco: 300 ml (deglasado)\n1. Chucrut afinado listo (produccion dia anterior, ver ficha componente).\n- Fondo de carne suave: 300 ml\n2. Pure de boniato caliente y estable (ver ficha componente).\n3. Cortar centro chuletero en 25 chuletas iguales (~220 g crudo, sin hueso). Chucrut Afinado (Comp. V)\n4. Tener aceite, vino blanco y fondo de carne medidos.\n- Sauerkraut fermentado: 6 kg (escurrido, NO lavado)\n\n### Fase 1 -- Sellado (Por Tandas, ~15 Min Total) -- Panceta Ahumada: 450 G (Brunoise Fina)\n- Cebolla blanca: 1,2 kg (juliana fina)\n1. Salpimentar justo antes del sellado (no antes, extrae humedad).\n- Manzana Granny Smith: 700 g (dados pequenos)\n2. Plancha/sarten con aceite bien caliente.\n- Fondo ave/carne: 2-2,5 L\n3. Sellar por tandas: 1,5-2 min por lado. Dorado uniforme, SIN buscar punto final.\n- Enebro: 10 g (machacado)\n4. Reservar en bandejas GN.\n- Comino grano: 8 g\n\n### Fase 2 -- Jugo De Servicio -- Laurel: 4 Hojas\n1. Desglasar plancha con vino blanco seco. Reducir ligeramente. Pure de Boniato (Comp. H)\n2. Anadir fondo de carne suave, hervir 2-3 min. Colar y reservar caliente.\n- Ver ficha componente\n\n### Fase 3 -- Acabado En Horno (Clave) Acabado\n1. Horno mixto (Convotherm): 160 C, 10-15% vapor, 8-10 min.\n- Mostaza alemana suave: c/s (opcional, en sala)\n2. Temp. interna salida horno: 62-64 C. Tras reposo: 66-68 C.\n3. Reposar 5 min ligeramente cubierto (papel aluminio sin cerrar hermetico).\n4. NO mantener en calor seco. Si hay espera, dejar en horno apagado entreabierto.",
-  "plating": "C).\n2. Pure de boniato en quenelle o cuchara al lado.\n3. Chuleta centrada o ligeramente ladeada sobre el chucrut.\n4. Nape ligero con jugo caliente (no empapar, solo brillo).\n5. Opcional en sala: mostaza alemana suave / Dijon aparte.\nPUNTOS CRITICOS: No sobrepasar 68 C internos (cerdo se reseca) -- Salpimentar JUSTO antes del sellado -- No mantener carne en calor seco -- Chucrut siempre jugoso,\nnunca seco -- Jugo servido caliente, no hirviendo -- Reposo 5 min obligatorio tras horno -- Sin hueso: mejor masticabilidad senior, menos merma",
-  "critical_points": "No sobrepasar 68 C internos (cerdo se reseca) -- Salpimentar JUSTO antes del sellado -- No mantener carne en calor seco -- Chucrut siempre jugoso,\nnunca seco -- Jugo servido caliente, no hirviendo -- Reposo 5 min obligatorio tras horno -- Sin hueso: mejor masticabilidad senior, menos merma",
-  "appcc": "Refrigerar <2 h -- Alergenos: sulfitos (vino, chucrut), lacteos (pure boniato)\n\"La chuleta alemana no necesita complejidad: necesita precision. Sellado fuerte para Maillard, horno con vapor para jugosidad, reposo para equilibrio\ntermico. El chucrut afinado con manzana y enebro redondea la acidez sin perderla. El pure de boniato aporta dulzor que cierra el triangulo aleman: grasa,\nacido, dulce.\"",
+  "nombre": "Chuleta de Cerdo con Chucrut Afinado",
+  "fuente": "",
+  "pax": "25",
+  "time_total": "~30 min (ensamblaje)",
+  "difficulty": "Media",
+  "allergens": "Sulfitos (vino, chucrut), Lacteos (pure boniato)",
+  "subtipo": "Ensamblado",
+  "componentes": [
+    {
+      "id": "pendiente_Chuleta_Cerdo_Componente",
+      "tipo": "Principal",
+      "nota": "componente principal pendiente de crear"
+    },
+    {
+      "id": "Chucrut_Afinado_Gourmet",
+      "tipo": "Guarnicion_V"
+    },
+    {
+      "id": "Pure_Boniato",
+      "tipo": "Guarnicion_HI"
+    }
+  ],
+  "ingredients": "| Ingrediente | Cantidad | Notas |\n|---|---|---|\n| Centro chuletero sin piel | 5,5 kg | corte 2,5-3 cm, 25 porciones |\n| Aceite vegetal neutro | 150 ml | sellado |\n| Vino blanco seco | 300 ml | deglasado |\n| Fondo de carne suave | 300 ml | jugo servicio |\n| Chucrut Afinado | ~6 kg | regenerado |\n| Pure de Boniato | ~4 kg | caliente |\n| Mostaza alemana suave | c/s | opcional, en sala |",
+  "procedure": "**Mise en Place -- Orden de Ejecucion**\n1. Chucrut afinado listo (produccion dia anterior).\n2. Pure de boniato caliente y estable.\n3. Cortar centro chuletero en 25 chuletas iguales (~220 g crudo, sin hueso).\n\n**Regeneracion y Coccion Final**\nCHUCRUT: Convotherm vapor 85-90°C, tapado.\nPURE BONIATO: Bano maria suave o Convotherm vapor.\nCERDO (al momento, ~25 min): Sellar por tandas 1,5-2 min/lado. Desglasar con vino blanco, reducir. Anadir fondo, colar = jugo servicio. Horno mixto 160°C, 10-15% vapor, 8-10 min. Temp. interna 62-64°C (tras reposo: 66-68°C). Reposar 5 min.",
+  "plating": "1. Base: cama generosa de chucrut afinado caliente.\n2. Pure de boniato en quenelle o cuchara al lado.\n3. Chuleta centrada o ligeramente ladeada sobre el chucrut.\n4. Nape ligero con jugo caliente (no empapar, solo brillo).\n5. Opcional en sala: mostaza alemana suave aparte.",
+  "critical_points": "- No sobrepasar 68°C internos (cerdo se reseca)\n- Salpimentar JUSTO antes del sellado\n- No mantener carne en calor seco\n- Chucrut siempre jugoso, nunca seco\n- Reposo 5 min obligatorio tras horno",
+  "appcc": "- Sellado a temp. alta + horno mixto 160°C 10-15% vapor\n- Temp. interna >66°C tras reposo\n- Alergenos: sulfitos (vino, chucrut), lacteos (pure boniato)",
   "senior_adaptation": null,
-  "storytelling": "# Chuleta Cerdo Chucrut — Historia\n\n## Origen\nLa Schweinekotelett es el corazón de la mesa alemana: carne de cerdo del centro chuletero, tierna y pálida, sellada en fuego vivo y terminada con vapor en horno mixto. Acompañado de chucrut afinado—ácido suave—y puré de boniato—dulce generoso. Es el triángulo de Alemania: grasa, ácido, dulce, unidos en un plato que no necesita explicación.\n\n## La Historia\nLa chuleta se trata con reverencia: no se pincha, no se presiona. Se salpimenta en el último momento para evitar que pierda sus jugos. Plancha ardiente, sellado rápido por ambos lados—el Maillard ocurre en segundos. Luego al horno mixto con vapor: catorce minutos delicados donde el interior sigue rosado, jugoso, mientras la superficie permanece dorada. El puré de boniato aporta su dulzor tropical, contrapunto a la acidez del chucrut afinado que viene adosado como cama generosa. No hay complejidad: hay precisión. Hay respeto a la materia prima.\n\n## Para Nuestros Comensales\nRecuerdan esos almuerzos domingueros en casas alemanas o austríacas, ¿verdad? Donde el cerdo era lujo asequible, donde la técnica lo elevaba a dignidad. Hoy aquí lo vivimos: la chuleta no debe ser seca, no debe ser cruda. Debe estar exacta. En ATTENYA buscamos esa exactitud que sus abuelas lograban sin horno mixto, solo con paciencia y fuego. Ahora tenemos ambos.\n",
-  "quote": "La chuleta alemana no necesita complejidad: necesita precision. Sellado fuerte para Maillard, horno con vapor para jugosidad, reposo para equilibrio\ntermico. El chucrut afinado con manzana y enebro redondea la acidez sin perderla. El pure de boniato aporta dulzor que cierra el triangulo aleman: grasa,\nacido, dulce."
+  "quote": "La chuleta alemana no necesita complejidad: necesita precision. Sellado fuerte para Maillard, horno con vapor para jugosidad, reposo para equilibrio termico. El chucrut afinado con manzana y enebro redondea la acidez. El pure de boniato aporta dulzor que cierra el triangulo aleman: grasa, acido, dulce.",
+  "storytelling": "# Chuleta Cerdo Chucrut — Historia\n\n## Origen\nLa Schweinekotelett es el corazón de la mesa alemana: carne de cerdo del centro chuletero, tierna y pálida, sellada en fuego vivo y terminada con vapor en horno mixto. Acompañado de chucrut afinado—ácido suave—y puré de boniato—dulce generoso. Es el triángulo de Alemania: grasa, ácido, dulce, unidos en un plato que no necesita explicación.\n\n## La Historia\nLa chuleta se trata con reverencia: no se pincha, no se presiona. Se salpimenta en el último momento para evitar que pierda sus jugos. Plancha ardiente, sellado rápido por ambos lados—el Maillard ocurre en segundos. Luego al horno mixto con vapor: catorce minutos delicados donde el interior sigue rosado, jugoso, mientras la superficie permanece dorada. El puré de boniato aporta su dulzor tropical, contrapunto a la acidez del chucrut afinado que viene adosado como cama generosa. No hay complejidad: hay precisión. Hay respeto a la materia prima.\n\n## Para Nuestros Comensales\nRecuerdan esos almuerzos domingueros en casas alemanas o austríacas, ¿verdad? Donde el cerdo era lujo asequible, donde la técnica lo elevaba a dignidad. Hoy aquí lo vivimos: la chuleta no debe ser seca, no debe ser cruda. Debe estar exacta. En ATTENYA buscamos esa exactitud que sus abuelas lograban sin horno mixto, solo con paciencia y fuego. Ahora tenemos ambos.\n"
 }

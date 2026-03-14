@@ -1,21 +1,35 @@
 {
-  "id": "Tonkatsu_Pollo_Plato",
-  "name": "Tonkatsu de Pollo — Plato",
-  "category": "Platos",
-  "subcategory": null,
-  "description": "con Ensalada de Col Japonesa, Arroz Blanco y Salsa Tonkatsu. Plato principal",
-  "technique": "Fritura",
-  "protein": "Ave",
-  "pax": 25,
-  "time_total": "45 min",
-  "difficulty": null,
-  "allergens": "Gluten (Harina, Panko), Huevo, Soja (Salsa), Mostaza (Salsa),",
-  "ingredients": "- Tonkatsu de Pollo: Solomillo y pechuga marinados, empanados panko, fritos 170 C. -- Solomillo de pollo: 3 kg (enteros, sin nervio)\n- Salsa Tonkatsu Mejorada: Ketchup, Worcestershire, soja, mirin, manzana rallada. -- Ajo fresco: 40 g (fino o aplastado)\n- Tomillo: 10 g\n\n- Col blanca: 2,5 kg (Comp. V)\n- Lima: 6 uds (cunas)",
-  "procedure": "**Mise En Place: 30 Min (+ Marinado 12 H) Col + 30 Ml Salsa**\nTecnica: Marinado + empanado panko + Tiempo total: 45 min\nfritura 170 C -- Conservacion: Fritura al momento.\nhierbabuena. Comp. V. -- Sal fina: ~50 g (10 g/kg)\nReposo 12-24 h. Comp. S.\n\n**Mise En Place -- Orden De Ejecucion -- Vinagre Suave: 20 Ml (Gotas)**\n1. Pollo marinado desde dia anterior (sal, ajo, tomillo, gotas vinagre). En frio. Empanado\n2. Salsa tonkatsu lista (producida 12-24 h antes minimo). -- Harina de trigo: 400 g\n3. Arroz jazmin lavado 4-5 veces, escurrido y reposado. -- Huevos: 8 uds (batidos)\n4. Col cortada en mandolina, lista para alinar. -- Panko japones: 800 g (suelto, aireado)\nARROZ (30 min, iniciar primero) Fritura\n1. Tostar arroz en olla fondo grueso con aceite 1-2 min. Anadir agua 1.5:1 + sal, -- Aceite neutro girasol: 3-4 L (170 C estables)\nebullicion. Guarniciones (ver fichas)\n2. Minimo, tapar hermetico, 12-15 min SIN destapar. Reposar 10 min. Soltar con\ntenedor. -- Arroz jazmin: 2,5 kg seco (Comp. H)\n1. Salar col mandolina, apretar 10 min rotura fibra. Reposar 15 min, escurrir.\n2. Alinar: vinagre arroz + sesamo + azucar + soja. Hierbabuena al final.\nEMPANADO Y FRITURA (20 min)\n1. Estacion: harina, huevo batido, panko suelto. Empanar sin prensar. Max 30-45 min\nantes.\n2. Freir aceite neutro 170 C estables, tandas pequenas. 3-4 min/lado.\n3. Dorado claro y crujiente, interior jugoso. Retirar a rejilla, reposo 1-2 min.\n1. Cortar en tiras 2-2,5 cm (estilo clasico). Servir inmediatamente.\n2. Si espera: Convotherm 70-80 C seco, puerta entreabierta, max 10-15 min.\n1. Arroz en montaculo a un lado (~250 g). Cuna de lima sobre arroz.\n2. Tonkatsu cortado en tiras, reensamblado mostrando seccion, centro del plato.\n3. Ensalada col lado opuesto (~100 g).\n4. Salsera individual salsa tonkatsu al frente (~30 ml).\n5. Plato limpio. Estilo japones: orden y claridad.\nPUNTOS CRITICOS: No bajar temp. aceite (170 C) -- No empanar >45 min antes -- No tapar tras fritura -- No mantener caliente >15 min -- Mejor corto que\npasado -- El crujiente depende del aceite, no del panko -- El marinado NO debe notarse\npescado (Worcestershire)\n\"El tonkatsu es un plato de precision: el marinado aromatiza sin notarse, el panko cruje sin absorber grasa, y el pollo llega jugoso al centro. Todo se\njuega en la temperatura del aceite y en no tener prisa.\"",
-  "plating": "2. Tonkatsu cortado en tiras, reensamblado mostrando seccion, centro del plato.\n3. Ensalada col lado opuesto (~100 g).\n4. Salsera individual salsa tonkatsu al frente (~30 ml).\n5. Plato limpio. Estilo japones: orden y claridad.\nPUNTOS CRITICOS: No bajar temp. aceite (170 C) -- No empanar >45 min antes -- No tapar tras fritura -- No mantener caliente >15 min -- Mejor corto que\npasado -- El crujiente depende del aceite, no del panko -- El marinado NO debe notarse",
-  "critical_points": "No bajar temp. aceite (170 C) -- No empanar >45 min antes -- No tapar tras fritura -- No mantener caliente >15 min -- Mejor corto que\npasado -- El crujiente depende del aceite, no del panko -- El marinado NO debe notarse",
-  "appcc": "pescado (Worcestershire)\n\"El tonkatsu es un plato de precision: el marinado aromatiza sin notarse, el panko cruje sin absorber grasa, y el pollo llega jugoso al centro. Todo se\njuega en la temperatura del aceite y en no tener prisa.\"",
+  "nombre": "Tonkatsu de Pollo",
+  "fuente": "",
+  "pax": "25",
+  "time_total": "45 min (ensamblaje y fritura)",
+  "difficulty": "Media",
+  "allergens": "Gluten (harina, panko), Huevo, Soja (salsa), Mostaza (salsa), Pescado (Worcestershire)",
+  "subtipo": "Ensamblado",
+  "componentes": [
+    {
+      "id": "Tonkatsu_Pollo_Componente",
+      "tipo": "Principal"
+    },
+    {
+      "id": "Ensalada_Col_Japonesa",
+      "tipo": "Guarnicion_V"
+    },
+    {
+      "id": "Arroz_Blanco_Suelto",
+      "tipo": "Guarnicion_HI"
+    },
+    {
+      "id": "Salsa_Tonkatsu_Mejorada",
+      "tipo": "Salsa"
+    }
+  ],
+  "ingredients": "| Ingrediente | Cantidad | Notas |\n|---|---|---|\n| Bratwurst Doble Coccion | 50 uds (2/pax) | ~125 g/ud |\n(Ver componentes individuales para ingredientes completos)",
+  "procedure": "**Mise en Place -- Orden de Ejecucion**\n1. Salsa tonkatsu lista (producida 12-24 h antes minimo).\n2. Pollo marinado desde dia anterior (sal, ajo, tomillo, gotas vinagre). En frio.\n3. Arroz jazmin lavado, cocido y reposado.\n4. Col cortada en mandolina, lista para alinar.\n\n**Regeneracion y Coccion Final**\n1. Arroz (30 min, iniciar primero): tener caliente y suelto.\n2. Ensalada col (15 min, en paralelo): alinar justo antes del servicio.\n3. Tonkatsu (20 min): empanado y fritura al momento a 170°C.\n4. Cortar en tiras 2-2,5 cm. Servir inmediatamente.\n5. Si espera: Convotherm 70-80°C seco, max 10-15 min.",
+  "plating": "1. Arroz en montaculo a un lado (~250 g). Cuna de lima sobre arroz.\n2. Tonkatsu cortado en tiras, reensamblado mostrando seccion, centro del plato.\n3. Ensalada col lado opuesto (~100 g).\n4. Salsera individual salsa tonkatsu al frente (~30 ml).\n5. Plato limpio. Estilo japones: orden y claridad.",
+  "critical_points": "- No bajar temp. aceite (170°C)\n- No empanar >45 min antes\n- No tapar tras fritura\n- No mantener caliente >15 min\n- El crujiente depende del aceite, no del panko\n- El marinado NO debe notarse",
+  "appcc": "- Fritura 170°C — Temp. interna pollo >74°C\n- No reutilizar aceite >3 veces\n- Alergenos: gluten (harina, panko), huevo, soja (salsa), mostaza (salsa), pescado (Worcestershire)",
   "senior_adaptation": null,
-  "storytelling": "# Tonkatsu de Pollo (Plato Completo) — Historia\n\n## Origen\nEl tonkatsu es un plato de equilibrio arquitectónico: proteína principal, hidrato neutro, verdura fresca, salsa umami profunda. Nace en Japón a finales del siglo diecinueve, cuando la cocina occidental se encontró con la precisión nipona. No es un revolijo; es orden. Cada elemento tiene lugar, cada color complementa al siguiente. Ver el plato es entender qué va a pasar en la boca.\n\n## La Historia\nEl arroz jázmín se tuesta brevemente, luego se cocina en ratio exacto agua-grano. Mientras, el pollo llega crujiente de la freidora, aún caliente, cortado en tiras que muestran el contraste entre corteza dorada y fibra blanca jugosa. La col se corta finamente, se sala para romper fibra, y se alina con vinagre de arroz, sesamo, un toque de azúcar—es fresca, es crispy, es contrapunto perfecto al frito. La salsa tonkatsu, hecha con paciencia días antes, reposaba en la nevera, sus sabores casándose. En el plato convergen: el calor del pollo y arroz, la frescura de la col, la untuosidad oscura de la salsa. La lima corta acidez al momento. El comensal come: la corteza cruje, la fibra cede, la salsa liga, la col refresca.\n\n## Para Nuestros Comensales\nEste es el plato que merece comerse lentamente, masticando, observando cómo cada elemento cumple su función. No hay sorpresas desagradables, no hay texturas que confundan. Es limpio, es honesto, es la precisión convertida en cena. Japón estaría orgullosa.\n",
-  "quote": "El tonkatsu es un plato de precision: el marinado aromatiza sin notarse, el panko cruje sin absorber grasa, y el pollo llega jugoso al centro. Todo se\njuega en la temperatura del aceite y en no tener prisa."
+  "quote": "El tonkatsu es un plato de precision: el marinado aromatiza sin notarse, el panko cruje sin absorber grasa, y el pollo llega jugoso al centro. Todo se juega en la temperatura del aceite y en no tener prisa.",
+  "storytelling": "# Tonkatsu de Pollo (Plato Completo) — Historia\n\n## Origen\nEl tonkatsu es un plato de equilibrio arquitectónico: proteína principal, hidrato neutro, verdura fresca, salsa umami profunda. Nace en Japón a finales del siglo diecinueve, cuando la cocina occidental se encontró con la precisión nipona. No es un revolijo; es orden. Cada elemento tiene lugar, cada color complementa al siguiente. Ver el plato es entender qué va a pasar en la boca.\n\n## La Historia\nEl arroz jázmín se tuesta brevemente, luego se cocina en ratio exacto agua-grano. Mientras, el pollo llega crujiente de la freidora, aún caliente, cortado en tiras que muestran el contraste entre corteza dorada y fibra blanca jugosa. La col se corta finamente, se sala para romper fibra, y se alina con vinagre de arroz, sesamo, un toque de azúcar—es fresca, es crispy, es contrapunto perfecto al frito. La salsa tonkatsu, hecha con paciencia días antes, reposaba en la nevera, sus sabores casándose. En el plato convergen: el calor del pollo y arroz, la frescura de la col, la untuosidad oscura de la salsa. La lima corta acidez al momento. El comensal come: la corteza cruje, la fibra cede, la salsa liga, la col refresca.\n\n## Para Nuestros Comensales\nEste es el plato que merece comerse lentamente, masticando, observando cómo cada elemento cumple su función. No hay sorpresas desagradables, no hay texturas que confundan. Es limpio, es honesto, es la precisión convertida en cena. Japón estaría orgullosa.\n"
 }
