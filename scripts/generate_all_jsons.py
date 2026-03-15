@@ -146,8 +146,7 @@ HEADING_MAP = {
 
 HEADING_MAP_PLATO = {
     "ingredients": [
-        "Ingredientes", "Ingredients",
-        "Componentes del Plato", "Componentes"
+        "Ingredientes", "Ingredients"
     ],
     "procedure": [
         "Procedimiento", "Procedure",
@@ -216,17 +215,20 @@ def process_recipe(md_path, recipe_dir, recipe_id):
     if comps:
         data["componentes"] = comps
 
-    # ── MERGE: For platos ensamblados, pull content from principal component ──
+    # ── MERGE: For platos ensamblados, always pull content from principal component ──
     is_ensamblado = fm.get("subtipo", "").lower().startswith("plato ensamblado")
     principal_ids = [c["id"] for c in comps if c["role"] == "principal"] if comps else []
-    needs_merge = is_ensamblado and principal_ids and not data.get("ingredients")
+    needs_merge = is_ensamblado and principal_ids
 
     if needs_merge:
         principal_id = principal_ids[0]
         comp = extract_component(principal_id)
 
         if comp:
-            # 1. Ingredients from component
+            # Save plato's own assembly procedure before overwriting
+            plato_assembly = data.get("procedure")
+            
+            # 1. Ingredients: always from component (the real recipe)
             if comp.get("ingredients"):
                 data["ingredients"] = comp["ingredients"]
 
@@ -234,8 +236,8 @@ def process_recipe(md_path, recipe_dir, recipe_id):
             parts = []
             if comp.get("procedure"):
                 parts.append(comp["procedure"])
-            if data.get("procedure"):
-                parts.append("---\n\n### Ensamblaje y Emplatado\n\n" + data["procedure"])
+            if plato_assembly:
+                parts.append("---\n\n### Ensamblaje y Emplatado\n\n" + plato_assembly)
             if parts:
                 data["procedure"] = "\n\n".join(parts)
 

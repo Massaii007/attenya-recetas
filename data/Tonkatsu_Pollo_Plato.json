@@ -7,7 +7,7 @@
   "protein": "",
   "allergens": "Gluten (harina, panko), Huevo, Soja (salsa), Mostaza (salsa), Pescado (Worcestershire)",
   "difficulty": "Media",
-  "ingredients": "| Componente | Tipo | Ficha |\n|---|---|---|\n| Tonkatsu de Pollo | Principal | (vease componente: Tonkatsu_Pollo_Componente) |\n| Ensalada de Col Japonesa | Guarnicion V | (vease componente: Ensalada_Col_Japonesa) |\n| Arroz Blanco Suelto | Guarnicion HI | (vease componente: Arroz_Blanco_Suelto) |\n| Salsa Tonkatsu Mejorada | Salsa | (vease componente: Salsa_Tonkatsu_Mejorada) |",
+  "ingredients": null,
   "procedure": "1. Salsa tonkatsu lista (producida 12-24 h antes minimo). (vease componente: Salsa_Tonkatsu_Mejorada)\n2. Pollo marinado desde dia anterior (sal, ajo, tomillo, gotas vinagre). En frio. (vease componente: Tonkatsu_Pollo_Componente)\n3. Arroz jazmin lavado, cocido y reposado. (vease componente: Arroz_Blanco_Suelto)\n4. Col cortada en mandolina, lista para alinar. (vease componente: Ensalada_Col_Japonesa)",
   "plating": "1. Arroz en montaculo a un lado (~250 g). Cuna de lima sobre arroz.\n2. Tonkatsu cortado en tiras, reensamblado mostrando seccion, centro del plato.\n3. Ensalada col lado opuesto (~100 g).\n4. Salsera individual salsa tonkatsu al frente (~30 ml).\n5. Plato limpio. Estilo japones: orden y claridad.",
   "timing": null,
