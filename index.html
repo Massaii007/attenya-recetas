@@ -45,6 +45,7 @@ body { background: #1a1612; color: #e8dfd4; font-family: 'Cormorant Garamond', G
 .card-img-placeholder { width: 100%; height: 180px; background: linear-gradient(135deg, #2a241e 0%, #3a322a 100%); display: flex; align-items: center; justify-content: center; font-size: 40px; color: #3a322a; }
 .card-body { padding: 16px 20px 20px; }
 .card-cat { font-family: 'Jost', sans-serif; font-size: 10px; letter-spacing: 2px; color: #8a7d6b; margin-bottom: 6px; text-transform: uppercase; }
+.card-day { font-family: 'Jost', sans-serif; font-size: 10px; letter-spacing: 1px; color: #7da8c4; margin-bottom: 4px; padding: 2px 8px; background: rgba(125,168,196,0.1); border-radius: 3px; display: inline-block; }
 .card-name { font-size: 18px; color: #f0e6d6; margin-bottom: 8px; line-height: 1.3; }
 .card-desc { font-family: 'Jost', sans-serif; font-size: 13px; color: #a89880; line-height: 1.5; margin-bottom: 12px; font-weight: 300; }
 .card-tags { display: flex; gap: 8px; flex-wrap: wrap; }
@@ -1508,35 +1509,83 @@ let periodoIds_siguiente = buildIdsFromMenu(periodoSiguienteData);
 /* Also expose periodoIds for backward compat (used by switchPeriodo toggle) */
 let periodoIds = periodoIds_actual;
 
-/* Expand: load JSONs and add componentes */
-async function expandPeriodoIds() {
-  async function expandSet(ids) {
-    const toCheck = [...ids];
-    const v = Date.now();
-    for (const id of toCheck) {
-      try {
-        const res = await fetch('data/' + id + '.json?v=' + v);
-        if (!res.ok) continue;
-        const d = await res.json();
-        if (d && d.componentes) {
-          d.componentes.forEach(function(c) {
-            if (c.id && !c.id.startsWith('pendiente_')) ids.add(c.id);
-          });
-        }
-      } catch(e) {}
-    }
-  }
-  await expandSet(periodoIds_actual);
-  await expandSet(periodoIds_siguiente);
-  periodoIds = periodoIds_actual;
-}
-
 let state = { cat: "all", sub: null, search: "", selected: null, tab: "ficha", view: "catalogo", periodo: false };
 const navStack = [];
 
 function activePeriodoIds() {
   if (state.periodo === 'actual') return periodoIds_actual;
   if (state.periodo === 'siguiente') return periodoIds_siguiente;
+  return null;
+}
+
+/* Build a map of recipeId → { order, dayLabel, role } for periodo sorting */
+function buildPeriodoSortMap(menuDataRef) {
+  var sortMap = {};
+  if (!menuDataRef || !menuDataRef.dias) return sortMap;
+  var roleOrder = { entrante: 0, principal: 1, guarnicion: 2, postre: 3 };
+  menuDataRef.dias.forEach(function(d, dayIdx) {
+    ['entrante','principal','guarnicion','postre'].forEach(function(k) {
+      if (d[k] && d[k].id) {
+        sortMap[d[k].id] = {
+          order: dayIdx * 100 + roleOrder[k] * 10,
+          dayLabel: d.ds,
+          role: k,
+          parentId: null
+        };
+      }
+    });
+  });
+  return sortMap;
+}
+
+var periodoSortMap_actual = buildPeriodoSortMap(periodoActualData);
+var periodoSortMap_siguiente = buildPeriodoSortMap(periodoSiguienteData);
+
+/* Expand periodo IDs with componentes from assembled dishes + track parent relationships */
+var componenteParents = {};
+async function expandPeriodoIds() {
+  async function expandAndTrack(ids, sortMap) {
+    var toCheck = [...ids];
+    var v = Date.now();
+    for (var i = 0; i < toCheck.length; i++) {
+      var id = toCheck[i];
+      try {
+        var res = await fetch('data/' + id + '.json?v=' + v);
+        if (!res.ok) continue;
+        var d = await res.json();
+        if (d && d.componentes) {
+          d.componentes.forEach(function(c) {
+            if (c.id && !c.id.startsWith('pendiente_')) {
+              ids.add(c.id);
+              componenteParents[c.id] = id;
+              if (sortMap[id]) {
+                sortMap[c.id] = {
+                  order: sortMap[id].order + 1,
+                  dayLabel: sortMap[id].dayLabel,
+                  role: "componente",
+                  parentId: id
+                };
+              }
+            }
+          });
+        }
+      } catch(e) {}
+    }
+    /* Mark remaining unassigned IDs */
+    ids.forEach(function(rid) {
+      if (!sortMap[rid]) {
+        sortMap[rid] = { order: 9999, dayLabel: "", role: "componente", parentId: null };
+      }
+    });
+  }
+  await expandAndTrack(periodoIds_actual, periodoSortMap_actual);
+  await expandAndTrack(periodoIds_siguiente, periodoSortMap_siguiente);
+  periodoIds = periodoIds_actual;
+}
+
+function activeSortMap() {
+  if (state.periodo === 'actual') return periodoSortMap_actual;
+  if (state.periodo === 'siguiente') return periodoSortMap_siguiente;
   return null;
 }
 
@@ -1556,6 +1605,15 @@ function filter() {
   if (state.search.trim()) {
     const s = state.search.toLowerCase();
     r = r.filter(x => x.n.toLowerCase().includes(s) || x.d.toLowerCase().includes(s) || x.t.toLowerCase().includes(s) || x.p.toLowerCase().includes(s));
+  }
+  /* Sort by periodo day order when a periodo filter is active */
+  const sm = activeSortMap();
+  if (sm) {
+    r.sort(function(a, b) {
+      var oa = sm[a.id] ? sm[a.id].order : 9999;
+      var ob = sm[b.id] ? sm[b.id].order : 9999;
+      return oa - ob;
+    });
   }
   return r;
 }
@@ -1597,11 +1655,16 @@ function renderSubs() {
 
 function renderGrid() {
   const f = filter();
+  const sm = activeSortMap();
   document.getElementById("results-count").textContent = `${f.length} receta${f.length!==1?"s":""}`;
-  document.getElementById("grid").innerHTML = f.map(r => `
+  document.getElementById("grid").innerHTML = f.map(r => {
+    const info = sm ? sm[r.id] : null;
+    const dayTag = info && info.dayLabel ? `<div class="card-day">${info.dayLabel}${info.role === 'componente' ? ' · componente' : ''}</div>` : '';
+    return `
     <div class="card" onclick="select('${r.id}')">
       <img class="card-img" src="${getImg(r.id)}" alt="${r.n}" loading="lazy" onerror="this.outerHTML='<div class=\\'card-img-placeholder\\'>&#9672;</div>'">
       <div class="card-body">
+        ${dayTag}
         <div class="card-cat">${r.c}${r.s?" · "+r.s:""}</div>
         <div class="card-name">${r.n}</div>
         <div class="card-desc">${r.d}</div>
@@ -1611,7 +1674,7 @@ function renderGrid() {
         </div>
       </div>
     </div>
-  `).join("");
+  `}).join("");
 }
 
 /* --- JSON cache & markdown renderer --- */
