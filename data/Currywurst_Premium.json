@@ -3,29 +3,16 @@
   "fuente": "",
   "pax": "25",
   "time_total": "25 min (ensamblaje)",
-  "difficulty": "Baja",
+  "technique": "",
+  "protein": "",
   "allergens": "Gluten (bratwurst), Lacteos (mantequilla patatas), Apio/Mostaza (curry)",
-  "subtipo": "Ensamblado",
-  "componentes": [
-    {
-      "id": "Bratwurst_Doble_Coccion",
-      "tipo": "Principal"
-    },
-    {
-      "id": "Currysauce_Gourmet",
-      "tipo": "Salsa"
-    },
-    {
-      "id": "Bratkartoffeln",
-      "tipo": "Guarnicion_HI"
-    }
-  ],
+  "difficulty": "Baja",
   "ingredients": "| Ingrediente | Cantidad | Notas |\n|---|---|---|\n| Bratwurst Doble Coccion | 50 uds (2/pax) | ~125 g/ud |\n| Currysauce Gourmet | ~2 kg | 80 g/pax |\n| Bratkartoffeln | ~4 kg | 150 g/pax |\n| Curry en polvo suave | 10 g | espolvorear acabado |\n| Perejil fresco | 1 manojo | opcional |",
-  "procedure": "**Mise en Place -- Orden de Ejecucion**\n1. Bratwurst abatidas (Fase 1 vapor hecha Dia -1), listas para dorado.\n2. Currysauce lista, en cazo a fuego suave (55-65°C).\n3. Patatas cocidas y peladas (Dia -1), cortadas en rodajas.\n4. Cebolla pochada lista. Sartenes amplias preparadas.\n\n**Regeneracion y Coccion Final**\nBRATKARTOFFELN (20 min): Saltear por tandas en mantequilla clarificada. Dorar 3-4 min por lado. Incorporar cebolla pochada y perejil.\nDORADO BRATWURST (6-8 min): Convotherm aire caliente 210°C, humedad 0-10%. Color dorado claro/ambar.\nCURRYSAUCE (al pase): Verificar temperatura (55-65°C) y consistencia napante.",
+  "procedure": "1. Bratwurst abatidas (Fase 1 vapor hecha Dia -1), listas para dorado. (vease componente: Bratwurst_Doble_Coccion)\n2. Currysauce lista, en cazo a fuego suave (55-65 C). (vease componente: Currysauce_Gourmet)\n3. Patatas cocidas y peladas (Dia -1), cortadas en rodajas. (vease componente: Bratkartoffeln)\n4. Cebolla pochada lista. Sartenes amplias preparadas.",
   "plating": "1. Bratkartoffeln doradas como base o lateral generoso (~150 g).\n2. 2 bratwurst por persona: enteras o en medallones gruesos diagonales.\n3. Napar bratwurst con Currysauce generosamente.\n4. Espolvorear curry suave en polvo sobre la salsa como acabado visual.\n5. Opcional: perejil fresco picado sobre las patatas.",
   "critical_points": "- No pinchar las bratwurst nunca\n- No dorar en crudo (siempre Fase 1 primero)\n- Currysauce nunca fria sobre producto caliente\n- Patatas por tandas, sin amontonar\n- No mantener bratwurst mas de 20 min tras dorado",
-  "appcc": "- Bratwurst: centro >70°C al servicio\n- Salsa: >65°C — Patatas: >65°C\n- Alergenos: gluten (bratwurst), lacteos (mantequilla patatas), posible apio/mostaza (curry)",
+  "appcc": "- Bratwurst: centro >70 C al servicio\n- Salsa: >65 C -- Patatas: >65 C\n- Alergenos: gluten (bratwurst), lacteos (mantequilla patatas), posible apio/mostaza (curry)\n\n\"La Currywurst no es comida rapida: es el plato mas democratico de Alemania. En ATTENYA la tratamos con respeto tecnico -- doble coccion, salsa de autor, patata con costra real -- sin perder ni un gramo de identidad callejera.\"",
   "senior_adaptation": null,
-  "quote": "La Currywurst no es comida rapida: es el plato mas democratico de Alemania. En ATTENYA la tratamos con respeto tecnico -- doble coccion, salsa de autor, patata con costra real -- sin perder ni un gramo de identidad callejera.",
-  "storytelling": "# Currywurst Premium — Historia\n\n## Origen\nLa Currywurst nace en Berlín, 1949, cuando una mujer llamada Herta Heuwer mezcló Bratwurst con Currysauce en una esquina berlinesa. Ese plato accidental se convirtió en leyenda alemana, símbolo de ciudad dividida buscando identidad. Hoy es patrimonio, democracia en plato, el alimento donde el ejecutivo y el peón comen lado a lado.\n\n## La Historia\nAquí no simplificamos: elevamos. La Bratwurst viene de doble cocción—vapor suave primero, luego aire seco dorado. Se mantiene jugo adentro, tripa firme afuera. Las Bratkartoffeln se cocinan un día antes, se saltean después en mantequilla clarificada sin tocarse durante tres minutos: la costra debe formar sola. Cebolla pochada se integra al final. La Currysauce, de autor, napante, color caoba, cubre todo con generosidad. El curry en polvo suave se espolvorea como acabado visual. Perejil fresco al pase. No hay componente que no exija precisión: toda la economía del plato converge en simplicidad que fue ardua de lograr.\n\n## Para Nuestros Comensales\nAquí están en Berlín, en cualquier esquina, observando la vida pasar. La Currywurst en su mano, hambre satisfecha, el mundo mejora por un momento. En ATTENYA no vendemos comida rápida: vendemos democracia culinaria—la idea de que lo grande no necesita ser complicado, que el respeto técnico transforma hasta lo callejero. Coman esta Currywurst sabiendo que fue trabajada como si fuera Coq au Vin.\n"
+  "quote": null,
+  "storytelling": "# Currywurst Premium — Historia\n\n## Origen\nLa Currywurst nace en Berlín, 1949, cuando una mujer llamada Herta Heuwer mezcló Bratwurst con Currysauce en una esquina berlinesa. Ese plato accidental se convirtió en leyenda alemana, símbolo de ciudad dividida buscando identidad. Hoy es patrimonio, democracia en plato, el alimento donde el ejecutivo y el peón comen lado a lado.\n\n## La Historia\nAquí no simplificamos: elevamos. La Bratwurst viene de doble cocción—vapor suave primero, luego aire seco dorado. Se mantiene jugo adentro, tripa firme afuera. Las Bratkartoffeln se cocinan un día antes, se saltean después en mantequilla clarificada sin tocarse durante tres minutos: la costra debe formar sola. Cebolla pochada se integra al final. La Currysauce, de autor, napante, color caoba, cubre todo con generosidad. El curry en polvo suave se espolvorea como acabado visual. Perejil fresco al pase. No hay componente que no exija precisión: toda la economía del plato converge en simplicidad que fue ardua de lograr.\n\n## Para Nuestros Comensales\nAquí están en Berlín, en cualquier esquina, observando la vida pasar. La Currywurst en su mano, hambre satisfecha, el mundo mejora por un momento. En ATTENYA no vendemos comida rápida: vendemos democracia culinaria—la idea de que lo grande no necesita ser complicado, que el respeto técnico transforma hasta lo callejero. Coman esta Currywurst sabiendo que fue trabajada como si fuera Coq au Vin."
 }

@@ -3,25 +3,16 @@
   "fuente": "",
   "pax": "25",
   "time_total": "25 min (ensamblaje)",
-  "difficulty": "Media",
+  "technique": "",
+  "protein": "",
   "allergens": "Pescado (salmon, anchoas), Soja, Mostaza, Lacteos (parmigiano si se usa)",
-  "subtipo": "Ensamblado",
-  "componentes": [
-    {
-      "id": "Salmon_Glaseado",
-      "tipo": "Principal"
-    },
-    {
-      "id": "Broccoli_Charred_Miso_Bagna_Cauda",
-      "tipo": "Guarnicion_V"
-    }
-  ],
+  "difficulty": "Media",
   "ingredients": "| Ingrediente | Cantidad | Notas |\n|---|---|---|\n| Salmon Glaseado | 25 porciones | 150-180 g/pax, caliente |\n| Broccoli Charred | ~4,5 kg | caliente, con bagna cauda |\n| Pan rallado tostado + parmigiano | c/s | opcional, acabado |",
-  "procedure": "**Mise en Place -- Orden de Ejecucion**\n1. Salmon en lomos limpios 150-180 g, refrigerado.\n2. Glaseado preparado (miel, mostaza, soja, limon, jengibre).\n3. Broccoli cortado en floretes, blanqueado.\n4. Miso bagna cauda lista.\n\n**Regeneracion y Coccion Final**\nBROCCOLI CHARRED (20 min -- arrancar primero): Convotherm 230°C hasta carbonizado. Bagna cauda caliente lista para napar.\nSALMON GLASEADO (10 min): Sellar por piel 3-4 min, girar. Cocinar 1-2 min mas (centro rosado). Napar con glaseado 30-60 seg, reposar.",
+  "procedure": "1. Salmon en lomos limpios 150-180 g, refrigerado. (vease componente: Salmon_Glaseado)\n2. Glaseado preparado (miel, mostaza, soja, limon, jengibre). (vease componente: Salmon_Glaseado)\n3. Broccoli cortado en floretes, blanqueado. (vease componente: Broccoli_Charred_Miso_Bagna_Cauda)\n4. Miso bagna cauda lista. (vease componente: Broccoli_Charred_Miso_Bagna_Cauda)",
   "plating": "1. Base de broccoli charred (140 g).\n2. Salmon glaseado sobre broccoli.\n3. Rociar bagna cauda generosamente.\n4. (Opcional) Pan rallado tostado + parmigiano.",
   "critical_points": "- No sobrecocer salmon (centro rosado)\n- No quemar glaseado\n- Broccoli: charred visual pero tierno interior\n- Servir broccoli inmediato tras charred",
-  "appcc": "- Salmon: 24 h refrigerado\n- Broccoli: consumo inmediato\n- Bagna cauda: 2 h anticipacion OK\n- Alergenos: pescado (salmon, anchoas), soja, mostaza, lacteos (parmigiano si se usa)",
+  "appcc": "- Salmon: 24 h refrigerado\n- Broccoli: consumo inmediato\n- Bagna cauda: 2 h anticipacion OK\n- Alergenos: pescado (salmon, anchoas), soja, mostaza, lacteos (parmigiano si se usa)\n\n\"Equilibrio perfecto entre dulzor (miel), salinidad (soja), umami (miso, anchoas) y amargor controlado (charred). Textura jugosa del salmon contrasta con crujiente del broccoli.\"",
   "senior_adaptation": null,
-  "quote": "Equilibrio perfecto entre dulzor (miel), salinidad (soja), umami (miso, anchoas) y amargor controlado (charred). Textura jugosa del salmon contrasta con crujiente del broccoli.",
-  "storytelling": "# Salmón Glaseado con Brócoli Charred — Historia\n\n## Origen\nEl salmón lacado es una técnica que fusiona la elegancia escandinava con el refinamiento japonés. El brócoli carbonizado en horno es interpretación moderna de la cocina alemana, donde los vegetales adquieren profundidad a través del fuego. Esta combinación respeta la tradición pero celebra el presente, donde los grandes chefs comprenden que el umami y la dulzura equilibrada son el idioma universal de la cocina reconfortante.\n\n## La Historia\nImaginen las aguas frías del norte europeo, donde el salmón ha nadado fuerte y ha acumulado sus grasas nobles. Una vez en la mesa, se sella rápidamente en la sartén, creando una corteza dorada que sella los jugos interiores. Luego llega el glaseado: miel que promete dulzor, mostaza que añade vigor, soja que susurra umami, y jengibre que despierta todos los sentidos. El brócoli, mientras tanto, se carboniza en el horno hasta que sus flores crocantes abrazan un corazón tierno. La bagna cauda de anchoas y ajo asado no decora; transforma. En cada bocado, hay capas: la jugosidad del pescado, la textura del carbón, el calor suave de la salsa.\n\n## Para Nuestros Comensales\nEste es un plato pensado para ustedes, que saben que lo fino no necesita complicación. El salmón está tan tierno que el tenedor basta. El brócoli carbonizado, lejos de ser \"quemado\", es un regalo de sabor intenso. Esta es la cena que un chef disfruta en casa después de un largo servicio: sencilla, pero completa. Servimos la verdadera generosidad.\n"
+  "quote": null,
+  "storytelling": "# Salmón Glaseado con Brócoli Charred — Historia\n\n## Origen\nEl salmón lacado es una técnica que fusiona la elegancia escandinava con el refinamiento japonés. El brócoli carbonizado en horno es interpretación moderna de la cocina alemana, donde los vegetales adquieren profundidad a través del fuego. Esta combinación respeta la tradición pero celebra el presente, donde los grandes chefs comprenden que el umami y la dulzura equilibrada son el idioma universal de la cocina reconfortante.\n\n## La Historia\nImaginen las aguas frías del norte europeo, donde el salmón ha nadado fuerte y ha acumulado sus grasas nobles. Una vez en la mesa, se sella rápidamente en la sartén, creando una corteza dorada que sella los jugos interiores. Luego llega el glaseado: miel que promete dulzor, mostaza que añade vigor, soja que susurra umami, y jengibre que despierta todos los sentidos. El brócoli, mientras tanto, se carboniza en el horno hasta que sus flores crocantes abrazan un corazón tierno. La bagna cauda de anchoas y ajo asado no decora; transforma. En cada bocado, hay capas: la jugosidad del pescado, la textura del carbón, el calor suave de la salsa.\n\n## Para Nuestros Comensales\nEste es un plato pensado para ustedes, que saben que lo fino no necesita complicación. El salmón está tan tierno que el tenedor basta. El brócoli carbonizado, lejos de ser \"quemado\", es un regalo de sabor intenso. Esta es la cena que un chef disfruta en casa después de un largo servicio: sencilla, pero completa. Servimos la verdadera generosidad."
 }

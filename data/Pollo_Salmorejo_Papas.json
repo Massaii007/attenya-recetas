@@ -3,30 +3,16 @@
   "fuente": "",
   "pax": "25",
   "time_total": "35 min (ensamblaje y regeneracion)",
-  "difficulty": "Baja",
+  "technique": "",
+  "protein": "",
   "allergens": "Sulfitos (vinagre)",
-  "subtipo": "Ensamblado",
-  "componentes": [
-    {
-      "id": "Pollo_Salmorejo_Canario",
-      "tipo": "Principal"
-    },
-    {
-      "id": "Salmorejo_Canario",
-      "tipo": "Salsa"
-    },
-    {
-      "id": "Patatas_Vapor_Horno",
-      "tipo": "Guarnicion_HI",
-      "nota": "variante papas arrugadas canarias"
-    }
-  ],
+  "difficulty": "Baja",
   "ingredients": "| Ingrediente | Cantidad | Notas |\n|---|---|---|\n| Pollo Salmorejo | 25 porciones | 120-130 g/pax, regenerado |\n| Jugo braseado / salsa | ~1,5 L | reducido napante |\n| Papa bonita o negra | 4,5 kg | con piel, arrugadas |\n| Sal gorda marina | 400-500 g | para coccion papas |",
-  "procedure": "**Mise en Place -- Orden de Ejecucion**\n1. Pollo braseado listo en GN con su jugo (produccion anticipada).\n2. Papas lavadas, sin pelar, calibre pequeno-mediano (3-5 cm).\n3. Sal gorda preparada (80-100 g sal/litro agua).\n\n**Regeneracion y Coccion Final**\nPAPAS ARRUGADAS (25-30 min -- arrancar primero): Cocer en agua muy salada 20-25 min. Escurrir casi toda el agua, dejar ~1 cm. Fuego suave, vaiven 3-5 min. Se arrugan y forman costra blanca de sal.\nREGENERACION POLLO (8-10 min): Napar con jugo. Convotherm vapor suave 140°C, tapado. Centro >65°C.\nSALSA: Separar jugo de braseado. Reducir hasta napante. Ajustar sal. Toque final de vinagre si falta acidez.",
-  "plating": "1. Colocar 4-5 papas arrugadas en un lateral del plato (~150-180 g).\n2. Contramuslo de pollo en el centro o lado opuesto, piel visible si tiene.\n3. Napar pollo generosamente con salsa de salmorejo reducida.\n4. La salsa puede tocar ligeramente las papas (buen contraste).\n5. Limpio y rustico. El color del salmorejo es protagonista.",
-  "critical_points": "- No superar 24 h de marinado (la acidez 'cocina' el pollo)\n- No secar papas sin agua residual (necesitan el vapor para arrugarse)\n- Salsa: no colar del todo, la textura rustica es identitaria\n- No servir pollo sin napar (se reseca rapido)",
-  "appcc": "- Marinado siempre en frio 2-4°C\n- Centro pollo >75°C en coccion, >65°C en regeneracion\n- Papas: servir el mismo dia de coccion\n- Alergenos: sulfitos (vinagre)",
+  "procedure": "1. Pollo braseado listo en GN con su jugo (produccion anticipada). (vease componente: Pollo_Salmorejo_Canario)\n2. Papas lavadas, sin pelar, calibre pequeno-mediano (3-5 cm).\n3. Sal gorda preparada (proporcion: 80-100 g sal/litro agua).",
+  "plating": "1. Colocar 4-5 papas arrugadas en un lateral del plato (~150-180 g).\n2. Contramuslo de pollo en el centro o lado opuesto, piel visible si tiene.\n3. Napar pollo generosamente con salsa de salmorejo reducida.\n4. La salsa puede tocar ligeramente las papas (buen contraste).\n5. Limpio y rustico. Sin adornos innecesarios. El color del salmorejo es protagonista.",
+  "critical_points": "- No superar 24 h de marinado (la acidez \"cocina\" el pollo)\n- No secar papas sin agua residual (necesitan el vapor para arrugarse)\n- Salsa: no colar del todo, la textura rustica es identitaria\n- No servir pollo sin napar (se reseca rapido)",
+  "appcc": "- Marinado siempre en frio 2-4 C\n- Centro pollo >75 C en coccion, >65 C en regeneracion\n- Papas: servir el mismo dia de coccion\n- Alergenos: sulfitos (vinagre)\n\n\"El salmorejo canario es marinada y salsa a la vez. Pollo que se corta con tenedor, papas con costra de sal que crujen al morder. Canarias en un plato.\"",
   "senior_adaptation": null,
-  "quote": "El salmorejo canario es marinada y salsa a la vez. Pollo que se corta con tenedor, papas con costra de sal que crujen al morder. Canarias en un plato.",
-  "storytelling": "# Pollo Salmorejo con Papas Arrugadas — Historia\n\n## Origen\nEste es el plato de las festividades canarias, aquél que se sirve en las mesas de piedra junto al océano, en restaurantes que llevan generaciones sirviendo lo mismo porque es perfección. Pollo en salmorejo, papas con costra de sal: dos elementos que necesitaban encontrarse.\n\n## La Historia\nLas papas arrugadas son paradoja: cociéndose en agua hipersalada, se ajrugan mientras se saltan levemente, formando una costra blanca que cruje cuando las muerdes y dentro es dulce, harinosa, perfecta. El pollo, ya tierno de su baño en salmorejo durante horas, llega apenas regenerado, manteniendo toda su jugosidad. Juntos crean una armonía: la sal de la papa contrasta con el aroma terroso del salmorejo, la textura crujiente con la tierna, el dulzor natural con la acidez controlada. Es ecuación perfecta, es lo que significa alimento tradicional.\n\n## Para Nuestros Comensales\nCuando llegue a su mesa el pollo en salmorejo con papas arrugadas, sabrá que está comiendo Canarias entera: la mar en el aroma, la sal en la costra de papa, la paciencia en cada bocado de carne. No necesita explicación, no requiere defensa. Solo necesita que lo disfrute lentamente, que entienda que esto es lo que significa comer bien en un lugar donde el tiempo se mide de otra forma. Respete la costra de sal, respete la jugosidad del pollo, y déjese llevar.\n"
+  "quote": null,
+  "storytelling": "# Pollo Salmorejo con Papas Arrugadas — Historia\n\n## Origen\nEste es el plato de las festividades canarias, aquél que se sirve en las mesas de piedra junto al océano, en restaurantes que llevan generaciones sirviendo lo mismo porque es perfección. Pollo en salmorejo, papas con costra de sal: dos elementos que necesitaban encontrarse.\n\n## La Historia\nLas papas arrugadas son paradoja: cociéndose en agua hipersalada, se ajrugan mientras se saltan levemente, formando una costra blanca que cruje cuando las muerdes y dentro es dulce, harinosa, perfecta. El pollo, ya tierno de su baño en salmorejo durante horas, llega apenas regenerado, manteniendo toda su jugosidad. Juntos crean una armonía: la sal de la papa contrasta con el aroma terroso del salmorejo, la textura crujiente con la tierna, el dulzor natural con la acidez controlada. Es ecuación perfecta, es lo que significa alimento tradicional.\n\n## Para Nuestros Comensales\nCuando llegue a su mesa el pollo en salmorejo con papas arrugadas, sabrá que está comiendo Canarias entera: la mar en el aroma, la sal en la costra de papa, la paciencia en cada bocado de carne. No necesita explicación, no requiere defensa. Solo necesita que lo disfrute lentamente, que entienda que esto es lo que significa comer bien en un lugar donde el tiempo se mide de otra forma. Respete la costra de sal, respete la jugosidad del pollo, y déjese llevar."
 }

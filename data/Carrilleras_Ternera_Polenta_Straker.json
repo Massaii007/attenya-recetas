@@ -3,26 +3,16 @@
   "fuente": "Thomas Straker - Food You Want to Eat",
   "pax": "25",
   "time_total": "45 min (ensamblaje dia servicio)",
-  "difficulty": "Baja",
+  "technique": "",
+  "protein": "",
   "allergens": "Lacteos (mantequilla, parmesano), Apio",
-  "subtipo": "Ensamblado",
-  "componentes": [
-    {
-      "id": "Carrilleras_Ternera_Vino_Mostaza",
-      "tipo": "Principal",
-      "nota": "variante Straker (vino tinto sin mostaza, con gremolata)"
-    },
-    {
-      "id": "Polenta_Parmesano",
-      "tipo": "Guarnicion_HI"
-    }
-  ],
+  "difficulty": "Baja",
   "ingredients": "| Ingrediente | Cantidad | Notas |\n|---|---|---|\n| Carrilleras braseadas | 25 piezas | regeneradas |\n| Salsa reducida | ~2 L | napante |\n| Polenta Parmesano | ~8 kg | al momento |\n| Perejil fresco | 180 g | gremolata |\n| Ajo | 6 dientes | rallado fino |\n| Limon | 6 uds | solo ralladura |\n| AOVE | 900 ml | gremolata |\n| Parmesano extra | 500 g | rallado, servicio |",
-  "procedure": "**Mise en Place -- Orden de Ejecucion**\n1. Carrilleras braseadas listas (dia -1, refrigeradas en salsa).\n2. Salsa reducida separada, lista para calentar.\n3. Ingredientes gremolata listos: perejil, ajo, limon, aceite.\n\n**Regeneracion y Coccion Final**\nCARRILLERAS (20-25 min): Convotherm vapor 85-90°C tapado. Napar con salsa antes de tapar. Centro >75°C.\nPOLENTA (40 min -- arrancar primero): Hacer al momento del servicio.\nGREMOLATA (al momento): Mezclar 180 g perejil picado + 6 dientes ajo rallado + ralladura 6 limones + 900 ml AOVE + sal escamas.",
+  "procedure": "1. Carrilleras braseadas listas (dia -1, refrigeradas en salsa). (vease componente: Carrilleras_Ternera_Vino_Mostaza)\n2. Salsa reducida separada, lista para calentar.\n3. Ingredientes gremolata listos: perejil, ajo, limon, aceite.",
   "plating": "1. Base de polenta cremosa en plato hondo precalentado.\n2. Carrillera entera centrada sobre la polenta.\n3. Napar generosamente con salsa reducida.\n4. Cucharada de gremolata sobre la carrillera.\n5. Parmesano rallado fino por encima.",
   "critical_points": "- Carrilleras tiernas al tenedor — si oponen resistencia, mas tiempo\n- Polenta bramata necesita 30-40 min reales, no acortar\n- Gremolata AL MOMENTO — pierde frescor si reposa\n- Salsa no reducir demasiado — concentra sal",
-  "appcc": "- Centro carne >75°C\n- Regeneracion: Convotherm vapor 85-90°C tapado\n- Polenta: al dia\n- Alergenos: lacteos (mantequilla, parmesano), apio",
+  "appcc": "- Centro carne >75 C\n- Regeneracion: Convotherm vapor 85-90 C tapado\n- Polenta: al dia\n- Alergenos: lacteos (mantequilla, parmesano), apio\n\n\"Carrillera fundente, polenta cremosa, gremolata fresca. Tres texturas, un plato invernal perfecto. Produccion anticipada ideal para chef-free.\"",
   "senior_adaptation": null,
-  "quote": "Carrillera fundente, polenta cremosa, gremolata fresca. Tres texturas, un plato invernal perfecto. Produccion anticipada ideal para chef-free.",
+  "quote": null,
   "storytelling": "# Carrilleras de Ternera con Polenta y Gremolata (T.Straker) -- Storytelling\n\n## Origen\n\nLas carrilleras braseadas son aristocracia de la cocina humilde. En Italia son guanciale brasato, en Francia joues de boeuf, en Espana carrilleras al vino. La tecnica es siempre la misma: una pieza de carne llena de colageno que, con horas de coccion lenta, se convierte en algo sedoso y profundo. La polenta es del norte de Italia -- Veneto, Lombardia -- y la gremolata es milanesa pura (nacio como acompanamiento del ossobuco).\n\n## Thomas Straker\n\nStraker lo describe como \"el arte de cocinar lento\": aprender a brasear correctamente es algo que merece dedicacion. Su version combina tecnica francesa (braseo en vino tinto y fondo) con acompanamiento italiano (polenta al parmesano y gremolata). Es un plato que cruza fronteras con naturalidad.\n\n## Narrativa para el residente\n\n\"Hoy servimos carrilleras de ternera braseadas durante seis horas en vino tinto, sobre una cama de polenta cremosa al parmesano. La carne se deshace en la boca, la salsa es profunda y reconfortante, y el toque fresco de perejil, limon y ajo por encima equilibra toda la riqueza. Es cocina de invierno en su mejor expresion.\"\n\n## Conexion emocional\n\nPara los residentes alemanes: Schmorbraten, la tradicion del asado lento del domingo. Las carrilleras evocan esa cocina que llena la casa de aromas durante horas. La polenta conecta con viajes al norte de Italia, a los Alpes, a las trattorias de montana. Comida que abraza."
 }

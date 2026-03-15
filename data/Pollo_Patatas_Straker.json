@@ -3,35 +3,16 @@
   "fuente": "Thomas Straker - Food You Want to Eat",
   "pax": "25",
   "time_total": "1 h 30 min",
-  "difficulty": "Media",
+  "technique": "",
+  "protein": "",
   "allergens": "Huevo (mayonesa), Lacteos (mantequilla gravy)",
-  "subtipo": "Ensamblado",
-  "componentes": [
-    {
-      "id": "pendiente_Pollo_Asado_Sarten_Straker",
-      "tipo": "Principal",
-      "nota": "pollo asado lento en sarten, componente pendiente de crear"
-    },
-    {
-      "id": "pendiente_Gravy_Pollo_Straker",
-      "tipo": "Salsa",
-      "nota": "gravy con huesos del pollo, componente pendiente de crear"
-    },
-    {
-      "id": "Patatas_Gajo_Bistro",
-      "tipo": "Guarnicion_HI"
-    },
-    {
-      "id": "Mayonesa_Limon_Straker",
-      "tipo": "Salsa"
-    }
-  ],
+  "difficulty": "Media",
   "ingredients": "| Ingrediente | Cantidad | Notas |\n|---|---|---|\n| Pollo entero grande | 7 uds (~1,8 kg/ud) | 1/2 por persona |\n| Gravy de pollo | ~3 L | caliente |\n| Patatas Gajo | ~7 kg | horneadas |\n| Mayonesa de Limon | 600 g | fria |",
-  "procedure": "**Mise en Place -- Orden de Ejecucion**\n1. Gravy lista (produccion anticipada posible).\n2. Mayonesa de limon lista, refrigerada.\n3. Patatas cortadas en gajos, listas para hornear.\n4. Pollos despiezados en mitades, salados.\n\n**Regeneracion y Coccion Final**\nGRAVY: Calentar a fuego suave hasta napante.\nPATATAS GAJO (25-30 min): Hornear Convotherm 200°C con aceite y romero.\nPOLLO EN SARTEN (30-35 min, al dia): Coccion lenta piel abajo 15-20 min. Voltear 10 min. Basting con mantequilla 5 min. Reposar 15 min.",
+  "procedure": "1. Gravy lista (produccion anticipada posible). Componente pendiente de crear.\n2. Mayonesa de limon lista, refrigerada. (vease componente: Mayonesa_Limon_Straker)\n3. Patatas cortadas en gajos, listas para hornear. (vease componente: Patatas_Gajo_Bistro)\n4. Pollos despiezados en mitades, salados.",
   "plating": "1. Media pieza de pollo (piel dorada arriba) centrada.\n2. Patatas gajo al lado.\n3. Gravy napada parcialmente sobre el pollo.\n4. Punto de mayonesa de limon.\n5. Ramita de romero.",
   "critical_points": "- Coccion lenta piel abajo es la clave -- prisa = piel blanda\n- Basting con mantequilla al final\n- Reposar 15 min minimo\n- Gravy con huesos del MISMO pollo",
-  "appcc": "- Temperatura centro pollo: >74°C\n- Gravy: refrigerar 48 h, recalentar al pase\n- Pollo: asado al dia, no regenerar\n- Alergenos: huevo (mayonesa), lacteos (mantequilla gravy)",
+  "appcc": "- Temperatura centro pollo: >74 C\n- Gravy: refrigerar 48 h, recalentar al pase\n- Pollo: asado al dia, no regenerar\n- Alergenos: huevo (mayonesa), lacteos (mantequilla gravy)\n\n\"Una de las mejores recetas de pollo que haras jamas. La coccion lenta en sarten es la tecnica estrella de Straker.\"",
   "senior_adaptation": null,
-  "quote": "Una de las mejores recetas de pollo que haras jamas. La coccion lenta en sarten es la tecnica estrella de Straker.",
+  "quote": null,
   "storytelling": "# Pollo Asado con Patatas y Gravy (T.Straker) -- Storytelling\n\n## Origen\nEl roast chicken with chips es la quintaesencia del pub britanico elevado. Straker lo convierte en plato de autor con su tecnica de sarten lenta y gravy hecha con los huesos del propio pollo.\n\n## Thomas Straker\n\"Pollo jugoso asado es uno de los grandes placeres de la vida.\" Su metodo: 20 min piel abajo a fuego lento, voltear, terminar con basting de mantequilla. Gravy con los huesos, patatas crujientes, mayo de limon.\n\n## Narrativa para el residente\n\"Hoy servimos pollo asado como en los mejores pubs britanicos: dorado lentamente en sarten con mantequilla y hierbas, acompanado de patatas crujientes y una salsa hecha con los propios jugos del pollo.\"\n\n## Conexion emocional\nBrathaehnchen con patatas es almuerzo dominical universal. Los residentes alemanes lo reconoceran como Sonntagsbraten. Reconfortante, generoso, hogareno."
 }
