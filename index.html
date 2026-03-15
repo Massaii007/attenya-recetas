@@ -1898,7 +1898,7 @@ document.getElementById("search").addEventListener("input", e => { state.search 
 /* ============================================================
    PERIODO SWITCHING
    ============================================================ */
-let currentPeriodo = 'actual';
+var currentPeriodo = 'actual';
 
 function getMenuData() { return currentPeriodo === 'actual' ? menuData : menuData_prev; }
 function getMiseData() { return currentPeriodo === 'actual' ? miseData : miseData_prev; }
