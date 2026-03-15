@@ -7,12 +7,23 @@
   "protein": "",
   "allergens": "Gluten (gnocchi), huevos (gnocchi), lácteos (parmesano)",
   "difficulty": "Baja",
-  "ingredients": null,
-  "procedure": null,
+  "ingredients": "| Componente | Tipo | Ficha |\n|---|---|---|\n| Ragú de Cerdo y Ternera (T.Straker) | Principal (salsa) | Ragu_Cerdo_Ternera_Gnocchi_Straker |\n| Gnocchi Caseros (T.Straker) | Guarnición HI | Gnocchi_Straker |",
+  "procedure": "1. Ragú: regenerar en sartén amplia a fuego medio, 8–10 min. Debe estar espeso, brillante, concentrado.\n2. Gnocchi: dorar en sartén con aceite/mantequilla hasta caras crujientes (3–4 min). O regenerar directamente en el ragú caliente.\n3. Combinar gnocchi y ragú en la sartén — mezclar suavemente, que el ragú nape cada gnocchi.\n4. Plato hondo o semihondo.\n5. Servir con generosidad — ragú visible cubriendo los gnocchi.\n6. Parmesano rallado al momento por encima.\n7. Hilo de AOVE y perejil fresco opcional.",
   "plating": null,
+  "timing": "- Ragú: empezar primero (8–10 min).\n- Gnocchi: dorar al final (3–4 min) o calentar directo en ragú.\n- Combinar, emplatar, parmesano al momento.",
   "critical_points": "- El ragú debe ser ESPESO — si es líquido, los gnocchi nadan y el plato pierde identidad.\n- Si se doran los gnocchi antes, no sobrecocerlos — solo caras crujientes.\n- Parmesano generoso — es parte del plato, no decoración.",
   "appcc": "- Ragú: >75 °C.\n- Gnocchi: >65 °C.\n- Alérgenos: gluten (gnocchi harina), huevos (gnocchi), lácteos (parmesano).",
   "senior_adaptation": "- Gnocchi: textura blanda, se deshace en boca — ideal senior.\n- Ragú de cocción lenta: carne completamente desmenuzada en la salsa — sin trozos duros.\n- Parmesano rallado fino: se funde al contacto con el calor.\n- Plato reconfortante, contundencia moderada.",
   "quote": null,
-  "storytelling": "# Ragú de Cerdo y Ternera con Gnocchi — Storytelling\n\nUn buen ragú no se cocina — se construye. Capa sobre capa, hora sobre hora, hasta que lo que empezó siendo carne y verduras se convierte en una salsa de profundidad casi mineral. El ragú de Straker mezcla cerdo y ternera, lo cual no es casualidad: el cerdo aporta grasa y dulzor, la ternera aporta estructura y fondo. Juntas hacen lo que ninguna hace sola.\n\nEl ragú de cocción lenta es el opuesto absoluto de la cocina de minuto. No hay sartenazo, no hay llama alta, no hay prisa. Es la olla sobre el fuego más bajo posible durante horas, mientras el colágeno se disuelve, las verduras se funden en la salsa, y el tomate pierde toda su acidez para convertirse en dulzor concentrado.\n\nLos gnocchi son el vehículo perfecto. Su textura blanda absorbe el ragú como una esponja noble, y cada bocado combina la cremosidad de la patata con la intensidad de la carne. La opción de dorarlos primero en sartén añade una capa crujiente que contrasta con el ragú — Straker lo recomienda, y tiene razón.\n\nEn ATTENYA, el ragú con gnocchi es nuestro plato de pasta con más profundidad. Donde el paccheri pomodoro es ligereza y frescor, y los gnocchi con salvia son elegancia mantecosa, este es poder puro. Es el plato para el día que hace frío y los residentes quieren algo que los abrace desde dentro."
+  "storytelling": "# Ragú de Cerdo y Ternera con Gnocchi — Storytelling\n\nUn buen ragú no se cocina — se construye. Capa sobre capa, hora sobre hora, hasta que lo que empezó siendo carne y verduras se convierte en una salsa de profundidad casi mineral. El ragú de Straker mezcla cerdo y ternera, lo cual no es casualidad: el cerdo aporta grasa y dulzor, la ternera aporta estructura y fondo. Juntas hacen lo que ninguna hace sola.\n\nEl ragú de cocción lenta es el opuesto absoluto de la cocina de minuto. No hay sartenazo, no hay llama alta, no hay prisa. Es la olla sobre el fuego más bajo posible durante horas, mientras el colágeno se disuelve, las verduras se funden en la salsa, y el tomate pierde toda su acidez para convertirse en dulzor concentrado.\n\nLos gnocchi son el vehículo perfecto. Su textura blanda absorbe el ragú como una esponja noble, y cada bocado combina la cremosidad de la patata con la intensidad de la carne. La opción de dorarlos primero en sartén añade una capa crujiente que contrasta con el ragú — Straker lo recomienda, y tiene razón.\n\nEn ATTENYA, el ragú con gnocchi es nuestro plato de pasta con más profundidad. Donde el paccheri pomodoro es ligereza y frescor, y los gnocchi con salvia son elegancia mantecosa, este es poder puro. Es el plato para el día que hace frío y los residentes quieren algo que los abrace desde dentro.",
+  "componentes": [
+    {
+      "role": "principal",
+      "id": "Ragu_Cerdo_Ternera_Gnocchi_Straker"
+    },
+    {
+      "role": "hi",
+      "id": "Gnocchi_Straker"
+    }
+  ]
 }

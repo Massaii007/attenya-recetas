@@ -7,12 +7,31 @@
   "protein": "",
   "allergens": "Gluten (Bratwurst), lácteos (mantequilla Bratkartoffeln), sulfitos (chucrut)",
   "difficulty": "Baja",
-  "ingredients": null,
-  "procedure": null,
+  "ingredients": "| Componente | Tipo | Ficha |\n|---|---|---|\n| Bratwurst Doble Cocción | Principal | Bratwurst_Doble_Coccion |\n| Bratkartoffeln | Guarnición HI | Bratkartoffeln |\n| Chucrut Afinado Gourmet | Guarnición V | Chucrut_Afinado_Gourmet |\n| Currysauce Gourmet | Salsa | Currysauce_Gourmet |",
+  "procedure": "1. Bratwurst: regenerar en sartén con mantequilla hasta dorada por todos lados (3–4 min). O Convotherm combinado 180 °C 8 min.\n2. Bratkartoffeln: regenerar en sartén caliente con aceite, crujientes (5 min).\n3. Chucrut afinado: regenerar en sartén tapada a fuego suave (5 min).\n4. Currysauce: calentar suavemente, no hervir.\n5. Plato llano amplio.\n6. Bratwurst centrada o ligeramente diagonal.\n7. Bratkartoffeln a un lado, apiladas con naturalidad.\n8. Chucrut al lado opuesto, compacto.\n9. Currysauce en salsera aparte o punto lateral del plato.\n10. Opcional: mostaza alemana suave en punto.",
   "plating": null,
+  "timing": "- Bratkartoffeln: empezar primero (5 min en sartén).\n- Chucrut: en paralelo tapado.\n- Bratwurst: último, al pase.\n- Currysauce: calentar mientras se emplata.",
   "critical_points": "- Bratwurst debe estar dorada y crujiente por fuera, jugosa por dentro. No pinchar con tenedor.\n- Bratkartoffeln deben tener caras crujientes — no blandas.\n- No mezclar currysauce con chucrut en el plato — sabores distintos.",
   "appcc": "- Bratwurst: centro >75 °C.\n- Alérgenos: gluten (Bratwurst), lácteos (mantequilla), sulfitos (chucrut, vino en currysauce).",
   "senior_adaptation": "- Bratwurst: textura blanda, sin fibra, se corta fácilmente.\n- Bratkartoffeln: crujiente suave, interior tierno.\n- Chucrut afinado: textura muy suave tras cocción larga — no es el Sauerkraut crudo y fibroso.\n- Plato extremadamente familiar para perfil alemán — comfort food total.",
   "quote": null,
-  "storytelling": "# Bratwurst Doble Cocción — Storytelling\n\nHay pocas cosas más alemanas que una Bratwurst en un plato. Es el equivalente germano del jamón ibérico o la baguette — un producto que define una cultura gastronómica entera. Pero en ATTENYA no servimos la Bratwurst del puesto de mercadillo. La nuestra pasa por doble cocción: pochada primero para cocinar el interior de forma uniforme, dorada después para ese exterior crujiente que cruje al morder.\n\nLa Bratwurst con Bratkartoffeln y Sauerkraut es la Santísima Trinidad de la cocina alemana casera. Cada elemento tiene su función: la salchicha aporta proteína y grasa, las patatas salteadas dan textura y sustancia, el chucrut corta la grasa con su acidez y aporta el perfil fermentado que los alemanes reconocen como sabor de casa.\n\nEl chucrut afinado de ATTENYA no es el Sauerkraut de bote. Es un chucrut trabajado con vino blanco, manzana, enebro y una cocción lenta que transforma la acidez agresiva en algo suave, complejo y elegante. Es la diferencia entre comedor industrial y restaurante.\n\nLa currysauce es el guiño moderno — esa salsa picante-dulce que nació en Berlín en 1949 y se convirtió en el condimento nacional. En nuestra versión es suave, aromática, con profundidad de especias pero sin picor que moleste a nuestros comensales. El plato completo es un abrazo alemán: familiar, generoso, sin pretensiones pero bien hecho."
+  "storytelling": "# Bratwurst Doble Cocción — Storytelling\n\nHay pocas cosas más alemanas que una Bratwurst en un plato. Es el equivalente germano del jamón ibérico o la baguette — un producto que define una cultura gastronómica entera. Pero en ATTENYA no servimos la Bratwurst del puesto de mercadillo. La nuestra pasa por doble cocción: pochada primero para cocinar el interior de forma uniforme, dorada después para ese exterior crujiente que cruje al morder.\n\nLa Bratwurst con Bratkartoffeln y Sauerkraut es la Santísima Trinidad de la cocina alemana casera. Cada elemento tiene su función: la salchicha aporta proteína y grasa, las patatas salteadas dan textura y sustancia, el chucrut corta la grasa con su acidez y aporta el perfil fermentado que los alemanes reconocen como sabor de casa.\n\nEl chucrut afinado de ATTENYA no es el Sauerkraut de bote. Es un chucrut trabajado con vino blanco, manzana, enebro y una cocción lenta que transforma la acidez agresiva en algo suave, complejo y elegante. Es la diferencia entre comedor industrial y restaurante.\n\nLa currysauce es el guiño moderno — esa salsa picante-dulce que nació en Berlín en 1949 y se convirtió en el condimento nacional. En nuestra versión es suave, aromática, con profundidad de especias pero sin picor que moleste a nuestros comensales. El plato completo es un abrazo alemán: familiar, generoso, sin pretensiones pero bien hecho.",
+  "componentes": [
+    {
+      "role": "principal",
+      "id": "Bratwurst_Doble_Coccion"
+    },
+    {
+      "role": "hi",
+      "id": "Bratkartoffeln"
+    },
+    {
+      "role": "v",
+      "id": "Chucrut_Afinado_Gourmet"
+    },
+    {
+      "role": "salsa",
+      "id": "Currysauce_Gourmet"
+    }
+  ]
 }

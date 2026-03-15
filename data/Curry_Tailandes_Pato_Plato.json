@@ -7,12 +7,23 @@
   "protein": "",
   "allergens": "Crustáceos (pasta curry puede contener), lácteos (si se usa nata de coco)",
   "difficulty": "Baja",
-  "ingredients": null,
-  "procedure": null,
+  "ingredients": "| Componente | Tipo | Ficha |\n|---|---|---|\n| Curry Tailandés de Pato | Principal | Curry_Tailandes_Pato |\n| Arroz Blanco Suelto (jazmín) | Guarnición HI | Arroz_Blanco_Suelto |",
+  "procedure": "1. Curry de pato: regenerar en sartén tapada a fuego suave, 10–12 min. La leche de coco no debe hervir fuerte — se separa.\n2. Arroz jazmín/suelto: regenerar en Convotherm vapor 3 min.\n3. Plato hondo o bowl amplio.\n4. Arroz moldeado a un lado.\n5. Pato en curry vertido junto al arroz, piezas de pato visibles sobre la salsa.\n6. Hojas de albahaca tailandesa o cilantro como acabado.\n7. Opcional: rodaja de lima en el borde.",
   "plating": null,
+  "timing": "- Arroz: primero (3 min).\n- Curry: en paralelo, suavemente (10–12 min).\n- Emplatar inmediatamente.",
   "critical_points": "- No hervir fuerte el curry — la leche de coco se corta y queda granulosa.\n- El pato en curry debe estar tierno y fundente — si está fibroso, falta cocción previa.\n- Equilibrar dulzor (coco) con acidez (lima) al emplatado.",
   "appcc": "- Pato: centro >75 °C.\n- Leche de coco: verificar temperatura.\n- Alérgenos: verificar pasta curry (puede contener crustáceos, pescado).",
   "senior_adaptation": "- Pato en curry: textura fundente tras cocción en salsa — se deshace.\n- Curry suave — sin picor agresivo, solo aromático.\n- Leche de coco aporta cremosidad y calma.\n- Arroz jazmín: suave, aromático, fácil de comer.\n- Perfil asiático suave — exótico pero accesible.",
   "quote": null,
-  "storytelling": "# Curry Tailandés de Pato — Storytelling\n\nEl curry de pato es el plato que demuestra que la cocina tailandesa y la europea comparten más de lo que parece. En Tailandia, el pato en curry rojo con coco es un clásico de celebración — la grasa del pato se funde en la salsa de coco creando algo que es más que la suma de sus partes. En Centroeuropa, el pato es el ave festiva por excelencia. Juntar las dos tradiciones produce un plato que nuestros residentes alemanes prueban con curiosidad y repiten con entusiasmo.\n\nLa leche de coco es el puente. Su cremosidad envuelve las especias del curry — galangal, lemongrass, lima kaffir — y las suaviza hasta un punto donde son aromáticas sin ser agresivas. El pato, con su grasa intramuscular, no necesita aceite adicional: se cocina en su propia riqueza, y esa riqueza se integra en la salsa.\n\nEl arroz jazmín al lado no es un accidente — es el único arroz que tiene sentido con un curry tailandés. Su aroma floral complementa la leche de coco de una manera que un arroz basmati o un arroz bomba no consiguen. Y su textura ligeramente pegajosa pero suelta permite al comensal gestionar la salsa a su ritmo.\n\nEn ATTENYA, el curry de pato es uno de nuestros platos \"puente cultural\" — algo que abre puertas a sabores nuevos desde un ingrediente conocido. El pato es familiar; la salsa es la aventura."
+  "storytelling": "# Curry Tailandés de Pato — Storytelling\n\nEl curry de pato es el plato que demuestra que la cocina tailandesa y la europea comparten más de lo que parece. En Tailandia, el pato en curry rojo con coco es un clásico de celebración — la grasa del pato se funde en la salsa de coco creando algo que es más que la suma de sus partes. En Centroeuropa, el pato es el ave festiva por excelencia. Juntar las dos tradiciones produce un plato que nuestros residentes alemanes prueban con curiosidad y repiten con entusiasmo.\n\nLa leche de coco es el puente. Su cremosidad envuelve las especias del curry — galangal, lemongrass, lima kaffir — y las suaviza hasta un punto donde son aromáticas sin ser agresivas. El pato, con su grasa intramuscular, no necesita aceite adicional: se cocina en su propia riqueza, y esa riqueza se integra en la salsa.\n\nEl arroz jazmín al lado no es un accidente — es el único arroz que tiene sentido con un curry tailandés. Su aroma floral complementa la leche de coco de una manera que un arroz basmati o un arroz bomba no consiguen. Y su textura ligeramente pegajosa pero suelta permite al comensal gestionar la salsa a su ritmo.\n\nEn ATTENYA, el curry de pato es uno de nuestros platos \"puente cultural\" — algo que abre puertas a sabores nuevos desde un ingrediente conocido. El pato es familiar; la salsa es la aventura.",
+  "componentes": [
+    {
+      "role": "principal",
+      "id": "Curry_Tailandes_Pato"
+    },
+    {
+      "role": "hi",
+      "id": "Arroz_Blanco_Suelto"
+    }
+  ]
 }

@@ -7,12 +7,23 @@
   "protein": "",
   "allergens": "Pescado",
   "difficulty": "Baja",
-  "ingredients": null,
-  "procedure": null,
+  "ingredients": "| Componente | Tipo | Ficha |\n|---|---|---|\n| Curry de Rape (T.Straker) | Principal | Curry_Rape_Straker |\n| Arroz Blanco Suelto | Guarnición HI | Arroz_Blanco_Suelto |",
+  "procedure": "1. Curry de rape: regenerar suavemente en sartén tapada a fuego medio-bajo, 8–10 min.\n2. El rape es firme — tolera mejor la regeneración que otros pescados.\n3. Arroz blanco suelto: regenerar en Convotherm vapor 3 min.\n4. Plato hondo o semihondo.\n5. Arroz moldeado a un lado.\n6. Rape en su curry vertido junto al arroz.\n7. Cilantro fresco como acabado.",
   "plating": null,
+  "timing": "- Arroz: regenerar primero.\n- Curry: en paralelo, suavemente.\n- Emplatar inmediatamente.",
   "critical_points": "- El rape es más resistente que la corvina pero igualmente no sobrecocinar.\n- Espinas: el rape tiene pocas pero verificar igualmente.\n- Salsa aromática y napante, no líquida.",
   "appcc": "- Rape: centro >65 °C.\n- Alérgenos: pescado (rape).",
   "senior_adaptation": "- Rape: textura firme pero tierna, se corta limpiamente — muy buena para senior.\n- Curry suave sin picor.\n- Porciones de rape grandes y manejables.\n- Arroz suelto como vehículo de la salsa.",
   "quote": null,
-  "storytelling": "# Curry de Rape (T.Straker) — Storytelling\n\nEl rape es el pescado que más se parece a la carne. Firme, denso, sin espinas, con una textura que aguanta cualquier salsa sin deshacerse. Es el pescado perfecto para un curry — donde la corvina o la merluza se romperían, el rape se mantiene entero, absorbiendo los aromáticos sin perder su forma.\n\nEl curry de Straker no es un curry indio clásico ni un curry tailandés — es algo intermedio, más suave, más británico en su moderación pero con suficiente complejidad para que cada cucharada tenga algo nuevo que decir. Las especias están tostadas, no crudas, lo que redondea el picor y amplifica el aroma.\n\nEn una residencia senior, el rape en curry es un plato estratégico. Permite ofrecer pescado blanco con un perfil completamente distinto al horno o el vapor — es exótico sin ser arriesgado, aromático sin ser picante, contundente sin ser pesado. Y la logística es impecable: el rape tolera la regeneración mejor que cualquier otro pescado blanco.\n\nEl arroz suelto al lado no es decoración — es función pura. Absorbe la salsa, modera la intensidad, y ofrece al comensal la posibilidad de mezclar a su ritmo. Simple, eficaz, profesional."
+  "storytelling": "# Curry de Rape (T.Straker) — Storytelling\n\nEl rape es el pescado que más se parece a la carne. Firme, denso, sin espinas, con una textura que aguanta cualquier salsa sin deshacerse. Es el pescado perfecto para un curry — donde la corvina o la merluza se romperían, el rape se mantiene entero, absorbiendo los aromáticos sin perder su forma.\n\nEl curry de Straker no es un curry indio clásico ni un curry tailandés — es algo intermedio, más suave, más británico en su moderación pero con suficiente complejidad para que cada cucharada tenga algo nuevo que decir. Las especias están tostadas, no crudas, lo que redondea el picor y amplifica el aroma.\n\nEn una residencia senior, el rape en curry es un plato estratégico. Permite ofrecer pescado blanco con un perfil completamente distinto al horno o el vapor — es exótico sin ser arriesgado, aromático sin ser picante, contundente sin ser pesado. Y la logística es impecable: el rape tolera la regeneración mejor que cualquier otro pescado blanco.\n\nEl arroz suelto al lado no es decoración — es función pura. Absorbe la salsa, modera la intensidad, y ofrece al comensal la posibilidad de mezclar a su ritmo. Simple, eficaz, profesional.",
+  "componentes": [
+    {
+      "role": "principal",
+      "id": "Curry_Rape_Straker"
+    },
+    {
+      "role": "hi",
+      "id": "Arroz_Blanco_Suelto"
+    }
+  ]
 }

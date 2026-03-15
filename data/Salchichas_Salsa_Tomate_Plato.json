@@ -7,12 +7,23 @@
   "protein": "",
   "allergens": "Gluten (salchichas posible)",
   "difficulty": "Baja",
-  "ingredients": null,
-  "procedure": null,
+  "ingredients": "| Componente | Tipo | Ficha |\n|---|---|---|\n| Salchichas en Salsa de Tomate | Principal | Salchichas_Salsa_Tomate |\n| Puré de Patata Firme | Guarnición HI | Pure_Patata_Firme |",
+  "procedure": "1. Salchichas en su salsa: regenerar en sartén tapada a fuego medio, 8–10 min. La salsa debe napar las salchichas.\n2. Puré de patata firme: regenerar en baño maría o Convotherm vapor suave.\n3. Plato llano amplio.\n4. Puré a un lado (≈180 g), quenelle o cucharada generosa.\n5. 2–3 salchichas centradas con salsa de tomate napando generosamente.\n6. Perejil fresco como acabado.",
   "plating": null,
+  "timing": "- Puré: regenerar primero (5 min).\n- Salchichas + salsa: en paralelo (8–10 min).\n- Emplatar inmediatamente.",
   "critical_points": "- Las salchichas son de POLLO — no confundir con cerdo.\n- No pinchar las salchichas — pierden jugos.\n- La salsa de tomate debe estar suavizada, sin acidez cruda — cocción lenta previa.",
   "appcc": "- Salchichas: centro >75 °C.\n- Alérgenos: gluten (verificar composición salchichas).",
   "senior_adaptation": "- Salchichas de pollo: textura suave, fácil de cortar.\n- Salsa de tomate: humecta cada bocado, sin acidez agresiva.\n- Puré firme: consistencia amable, no líquido.\n- Plato sencillo, reconfortante — tipo Hausmannskost.",
   "quote": null,
-  "storytelling": "# Salchichas en Salsa de Tomate — Storytelling\n\nLas salchichas en salsa de tomate son el plato que nadie pone en Instagram pero que todo el mundo repite. Es comfort food en estado puro — sin pretensiones, sin complicaciones, sin otra ambición que satisfacer. Y eso, en una residencia senior, es exactamente lo que se necesita algunos días.\n\nLas nuestras son de pollo, no de cerdo — una elección deliberada que permite colocar este plato sin gastar el slot de cerdo de la quincena. Las salchichas de pollo tienen textura más suave, sabor más limpio, y se cocinan perfectamente en la salsa de tomate sin soltar grasa excesiva.\n\nLa salsa de tomate casera es la que hace la diferencia entre una salchicha con ketchup y un plato de restaurante. Tomate cocido lentamente con cebolla, ajo, un punto de azúcar para cortar la acidez, hierbas frescas — una salsa que envuelve las salchichas y las transforma.\n\nEl puré de patata firme al lado cumple su función eterna: base neutra, textura cremosa, vehículo de salsa. No intenta brillar — deja que la salchicha y el tomate cuenten la historia.\n\nEn ATTENYA, este plato aparece en la rotación como día de descanso culinario — después de un ossobuco o un curry de pato, las salchichas en tomate recuerdan que la cocina no tiene que ser compleja para ser buena."
+  "storytelling": "# Salchichas en Salsa de Tomate — Storytelling\n\nLas salchichas en salsa de tomate son el plato que nadie pone en Instagram pero que todo el mundo repite. Es comfort food en estado puro — sin pretensiones, sin complicaciones, sin otra ambición que satisfacer. Y eso, en una residencia senior, es exactamente lo que se necesita algunos días.\n\nLas nuestras son de pollo, no de cerdo — una elección deliberada que permite colocar este plato sin gastar el slot de cerdo de la quincena. Las salchichas de pollo tienen textura más suave, sabor más limpio, y se cocinan perfectamente en la salsa de tomate sin soltar grasa excesiva.\n\nLa salsa de tomate casera es la que hace la diferencia entre una salchicha con ketchup y un plato de restaurante. Tomate cocido lentamente con cebolla, ajo, un punto de azúcar para cortar la acidez, hierbas frescas — una salsa que envuelve las salchichas y las transforma.\n\nEl puré de patata firme al lado cumple su función eterna: base neutra, textura cremosa, vehículo de salsa. No intenta brillar — deja que la salchicha y el tomate cuenten la historia.\n\nEn ATTENYA, este plato aparece en la rotación como día de descanso culinario — después de un ossobuco o un curry de pato, las salchichas en tomate recuerdan que la cocina no tiene que ser compleja para ser buena.",
+  "componentes": [
+    {
+      "role": "principal",
+      "id": "Salchichas_Salsa_Tomate"
+    },
+    {
+      "role": "hi",
+      "id": "Pure_Patata_Firme"
+    }
+  ]
 }

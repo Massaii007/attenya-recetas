@@ -7,12 +7,31 @@
   "protein": "",
   "allergens": "Lácteos (mantequilla en patatas, salsa)",
   "difficulty": "Media",
-  "ingredients": null,
-  "procedure": null,
+  "ingredients": "| Componente | Tipo | Ficha |\n|---|---|---|\n| Solomillo Filet Mignon | Principal | Solomillo_Filet_Mignon |\n| Patatas Boulangère | Guarnición HI | Patatas_Boulangere |\n| Pimientos del Piquillo Confitados | Guarnición V | Pimientos_Piquillo_Confitados |\n| Salsa de Vino Tinto (Fallow) | Salsa | Salsa_Vino_Tinto_Fallow |",
+  "procedure": "1. Solomillo: regenerar Convotherm combinado 60 °C centro máximo — debe quedar rosado. O sellar y terminar al momento.\n2. Patatas boulangère: regenerar horno 160 °C tapado 10 min.\n3. Piquillos confitados: templar suavemente en sartén 2 min.\n4. Salsa vino tinto: calentar suavemente, no hervir. Consistencia napante.\n5. Plato llano amplio.\n6. Porción de patatas boulangère a un lado (las capas de patata y cebolla visibles).\n7. Solomillo centrado, cortado en 2–3 medallones mostrando el interior rosado.\n8. Pimientos del piquillo apoyados contra el solomillo — 2–3 piquillos por ración.\n9. Salsa de vino tinto napando los medallones y parte del plato. No empapar las patatas.\n10. Bordes limpios — este es un plato de restaurante.",
   "plating": null,
+  "timing": "- Patatas: horno primero (10 min).\n- Solomillo: al momento o regeneración controlada (crítico).\n- Piquillos: templar mientras se emplata.\n- Salsa: calentar en paralelo.\n- Cortar medallones y emplatar inmediatamente.",
   "critical_points": "- El solomillo DEBE estar rosado en el centro — si se pasa a gris, pierde identidad.\n- Cortar en medallones AL MOMENTO de servir — no antes.\n- La salsa de vino tinto es concentrada y potente — napar, no inundar.\n- Las patatas boulangère NO son prensadas — deben mantener sus capas naturales.\n- Los piquillos son el contrapunto dulce — no necesitan más cocción que templar.",
   "appcc": "- Solomillo: centro 55–60 °C (punto rosado). Reposo antes de cortar.\n- Salsa: >65 °C.\n- Alérgenos: lácteos (mantequilla en patatas y salsa), sulfitos (vino).",
   "senior_adaptation": "- Solomillo: el corte más tierno de la ternera — se corta con cuchillo de mesa.\n- Medallones de tamaño manejable.\n- Patatas boulangère: fundentes tras horneado prolongado.\n- Piquillos confitados: textura sedosa, sin fibra.\n- Salsa de vino: profundidad sin agresividad (alcohol evaporado).\n- **Plato de celebración** — para ocasiones especiales en el menú.",
   "quote": null,
-  "storytelling": "# Filet Mignon — Storytelling\n\nEl filet mignon es el corte que no necesita explicación. Es el solomillo — la pieza más tierna del animal, la que tiene menos trabajo muscular, la que se corta con cuchillo de mesa y se deshace en la boca sin resistencia. En una residencia senior, donde la masticación es una consideración real, el filet mignon no es un lujo — es una solución técnica perfecta disfrazada de celebración.\n\nLa técnica es minimalista: sellar a fuego fuerte para crear costra, terminar en horno a temperatura controlada para mantener el centro rosado. El rosado es innegociable. Un solomillo pasado de punto es un trozo de carne gris que ha perdido su razón de ser. El rosa es jugosidad, es ternura, es sabor — y es perfectamente seguro cuando la superficie está sellada.\n\nLos pimientos del piquillo confitados son el acompañamiento perfecto. Dulces, sedosos, con un punto ahumado que complementa la carne sin competir. Vienen de lata pero cuando los templas suavemente en aceite de oliva, parecen recién asados. Es un truco de la cocina española que funciona a nivel profesional.\n\nLas patatas boulangère — no prensadas, en sus capas naturales de patata y cebolla horneadas — aportan la rusticidad francesa que equilibra la nobleza del corte. Y la salsa de vino tinto Fallow cierra todo: profunda, concentrada, con la acidez justa para cortar la riqueza de la carne.\n\nEste es el plato que servimos cuando queremos que nuestros residentes sepan que están en un restaurante, no en un comedor."
+  "storytelling": "# Filet Mignon — Storytelling\n\nEl filet mignon es el corte que no necesita explicación. Es el solomillo — la pieza más tierna del animal, la que tiene menos trabajo muscular, la que se corta con cuchillo de mesa y se deshace en la boca sin resistencia. En una residencia senior, donde la masticación es una consideración real, el filet mignon no es un lujo — es una solución técnica perfecta disfrazada de celebración.\n\nLa técnica es minimalista: sellar a fuego fuerte para crear costra, terminar en horno a temperatura controlada para mantener el centro rosado. El rosado es innegociable. Un solomillo pasado de punto es un trozo de carne gris que ha perdido su razón de ser. El rosa es jugosidad, es ternura, es sabor — y es perfectamente seguro cuando la superficie está sellada.\n\nLos pimientos del piquillo confitados son el acompañamiento perfecto. Dulces, sedosos, con un punto ahumado que complementa la carne sin competir. Vienen de lata pero cuando los templas suavemente en aceite de oliva, parecen recién asados. Es un truco de la cocina española que funciona a nivel profesional.\n\nLas patatas boulangère — no prensadas, en sus capas naturales de patata y cebolla horneadas — aportan la rusticidad francesa que equilibra la nobleza del corte. Y la salsa de vino tinto Fallow cierra todo: profunda, concentrada, con la acidez justa para cortar la riqueza de la carne.\n\nEste es el plato que servimos cuando queremos que nuestros residentes sepan que están en un restaurante, no en un comedor.",
+  "componentes": [
+    {
+      "role": "principal",
+      "id": "Solomillo_Filet_Mignon"
+    },
+    {
+      "role": "hi",
+      "id": "Patatas_Boulangere"
+    },
+    {
+      "role": "v",
+      "id": "Pimientos_Piquillo_Confitados"
+    },
+    {
+      "role": "salsa",
+      "id": "Salsa_Vino_Tinto_Fallow"
+    }
+  ]
 }

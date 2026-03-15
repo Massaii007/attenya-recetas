@@ -10,6 +10,7 @@
   "ingredients": "| Ingrediente | Cantidad | Notas |\n|---|---|---|\n| Pollo entero grande | 7 uds (~1,8 kg/ud) | 1/2 por persona |\n| Gravy de pollo | ~3 L | caliente |\n| Patatas Gajo | ~7 kg | horneadas |\n| Mayonesa de Limon | 600 g | fria |",
   "procedure": "1. Gravy lista (produccion anticipada posible). Componente pendiente de crear.\n2. Mayonesa de limon lista, refrigerada. (vease componente: Mayonesa_Limon_Straker)\n3. Patatas cortadas en gajos, listas para hornear. (vease componente: Patatas_Gajo_Bistro)\n4. Pollos despiezados en mitades, salados.",
   "plating": "1. Media pieza de pollo (piel dorada arriba) centrada.\n2. Patatas gajo al lado.\n3. Gravy napada parcialmente sobre el pollo.\n4. Punto de mayonesa de limon.\n5. Ramita de romero.",
+  "timing": null,
   "critical_points": "- Coccion lenta piel abajo es la clave -- prisa = piel blanda\n- Basting con mantequilla al final\n- Reposar 15 min minimo\n- Gravy con huesos del MISMO pollo",
   "appcc": "- Temperatura centro pollo: >74 C\n- Gravy: refrigerar 48 h, recalentar al pase\n- Pollo: asado al dia, no regenerar\n- Alergenos: huevo (mayonesa), lacteos (mantequilla gravy)\n\n\"Una de las mejores recetas de pollo que haras jamas. La coccion lenta en sarten es la tecnica estrella de Straker.\"",
   "senior_adaptation": null,

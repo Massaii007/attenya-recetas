@@ -7,12 +7,27 @@
   "protein": "",
   "allergens": "Lácteos (nata en salsa pimienta, mantequilla patatas)",
   "difficulty": "Media",
-  "ingredients": null,
-  "procedure": null,
+  "ingredients": "| Componente | Tipo | Ficha |\n|---|---|---|\n| Solomillo a la Pimienta (T.Straker) | Principal | Solomillo_Pimienta_Straker |\n| Patatas Fritas Bistró | Guarnición HI | Patatas_Fritas_Bistro |\n| Espinacas Limón y Parmesano (T.Straker) | Guarnición V | Espinacas_Limon_Parmesano_Straker |",
+  "procedure": "1. Solomillo: sellar al momento con costra de pimienta, terminar en horno. Centro rosado obligatorio.\n2. Salsa de pimienta: preparar/calentar al pase — nata, fondo, pimienta machacada, cognac.\n3. Patatas bistró: segunda cocción 180 °C, 3–4 min. Corte fino tipo McDonalds.\n4. Espinacas limón parmesano: saltear al momento (3 min).\n5. Plato llano amplio.\n6. Solomillo centrado, cortado en medallones mostrando centro rosado.\n7. Salsa de pimienta napando los medallones — cremosa, con granos de pimienta visibles.\n8. Patatas bistró rectas y uniformes a un lado.\n9. Espinacas con parmesano al otro lado — montículo compacto, bien escurrido.\n10. Bordes limpios.",
   "plating": null,
+  "timing": "- Solomillo: al momento (sellar + horno, 8–10 min + reposo).\n- Patatas: segunda cocción en paralelo (3–4 min).\n- Espinacas: saltear mientras reposa el solomillo (3 min).\n- Salsa: calentar mientras se emplata.\n- Cortar medallones y servir inmediatamente.",
   "critical_points": "- Centro ROSADO — innegociable. Si se pasa, el plato pierde identidad.\n- La costra de pimienta no debe ser excesiva — pimienta machacada gruesa, no molida fina.\n- La salsa de pimienta con nata no debe hervir — se corta.\n- Espinacas MUY bien escurridas — no contaminar la salsa ni las patatas.\n- Patatas bistró finas y rectas — la uniformidad es la marca.",
   "appcc": "- Solomillo: centro 55–60 °C (rosado). Reposo 3–5 min.\n- Salsa: >65 °C.\n- Alérgenos: lácteos (nata salsa, mantequilla patatas, parmesano espinacas).",
   "senior_adaptation": "- Solomillo: el corte más tierno — se corta con cuchillo de mesa.\n- Salsa de pimienta: la nata suaviza el picor — aromático, no agresivo.\n- Patatas finas: crujiente suave, interior cremoso.\n- Espinacas: fundentes, con limón y parmesano como sabor sin sal excesiva.\n- Plato de restaurante — experiencia gastronómica de nivel.",
   "quote": null,
-  "storytelling": "# Solomillo a la Pimienta (T.Straker) — Storytelling\n\nEl steak au poivre es uno de los platos más icónicos de la cocina de bistró francesa. No es complicado — es solomillo, pimienta machacada, mantequilla, cognac, nata — pero cada paso tiene que estar ejecutado con precisión de relojero. La pimienta se machaca gruesa (nunca molida), se prensa contra la carne formando una costra que al sellarse crea un aroma que llena la cocina. El cognac va a la sartén caliente, flamea, y se reduce hasta dejar solo su esencia. La nata liga todo.\n\nStraker hace su versión con la misma honestidad que aplica a todo: ingredientes buenos, técnica limpia, sin trucos. El resultado es un solomillo que tiene más capas de sabor de las que sugiere su aparente simplicidad.\n\nLas patatas bistró tipo McDonalds son la elección perfecta — finas, rectas, crujientes, ligeras. Donde unas patatas gruesas competirían con el solomillo por contundencia, las bistró son un complemento que no pesa. Se mojan en la salsa de pimienta, se combinan con el solomillo, y cada bocado es autocontenido.\n\nLas espinacas con limón y parmesano de Straker son el contrapunto verde — ácido cítrico que corta la nata de la salsa, umami del parmesano que dialoga con la carne, hierro vegetal que complementa el hierro de la ternera. Un triángulo de sabores que funciona a nivel instintivo.\n\nEn ATTENYA, el solomillo a la pimienta es el hermano del filet mignon — ambos usan el mismo corte noble, pero con personalidades completamente distintas. Donde el filet es elegancia contenida, el au poivre es carácter franco."
+  "storytelling": "# Solomillo a la Pimienta (T.Straker) — Storytelling\n\nEl steak au poivre es uno de los platos más icónicos de la cocina de bistró francesa. No es complicado — es solomillo, pimienta machacada, mantequilla, cognac, nata — pero cada paso tiene que estar ejecutado con precisión de relojero. La pimienta se machaca gruesa (nunca molida), se prensa contra la carne formando una costra que al sellarse crea un aroma que llena la cocina. El cognac va a la sartén caliente, flamea, y se reduce hasta dejar solo su esencia. La nata liga todo.\n\nStraker hace su versión con la misma honestidad que aplica a todo: ingredientes buenos, técnica limpia, sin trucos. El resultado es un solomillo que tiene más capas de sabor de las que sugiere su aparente simplicidad.\n\nLas patatas bistró tipo McDonalds son la elección perfecta — finas, rectas, crujientes, ligeras. Donde unas patatas gruesas competirían con el solomillo por contundencia, las bistró son un complemento que no pesa. Se mojan en la salsa de pimienta, se combinan con el solomillo, y cada bocado es autocontenido.\n\nLas espinacas con limón y parmesano de Straker son el contrapunto verde — ácido cítrico que corta la nata de la salsa, umami del parmesano que dialoga con la carne, hierro vegetal que complementa el hierro de la ternera. Un triángulo de sabores que funciona a nivel instintivo.\n\nEn ATTENYA, el solomillo a la pimienta es el hermano del filet mignon — ambos usan el mismo corte noble, pero con personalidades completamente distintas. Donde el filet es elegancia contenida, el au poivre es carácter franco.",
+  "componentes": [
+    {
+      "role": "principal",
+      "id": "Solomillo_Pimienta_Straker"
+    },
+    {
+      "role": "hi",
+      "id": "Patatas_Fritas_Bistro"
+    },
+    {
+      "role": "v",
+      "id": "Espinacas_Limon_Parmesano_Straker"
+    }
+  ]
 }

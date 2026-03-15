@@ -7,12 +7,19 @@
   "protein": "",
   "allergens": "Huevos",
   "difficulty": "Baja",
-  "ingredients": null,
+  "ingredients": "- Base de tomate especiada - Huevos frescos grandes: 50 uds\nCebolla, pimiento, ajo, tomate, comino, pimenton. Produccion anticipada OK. (2/persona, calibre L)\n- Huevos pochados en salsa Base vegetal\n2 por persona, pochados directamente en la base caliente.\n- Cebolla blanca: 2,0 kg\n- Salzkartoffeln\n(juliana fina)\nComponente hidrato ya documentado. Servir aparte.\n- Pimiento rojo: 1,5 kg\n(dados medianos)\n\n**Mise En Place**\n- Ajo: 80 g\n1. Picar cebolla en juliana fina, pimiento rojo en dados medianos, ajo muy (picado muy fino)\nfino. - Tomate triturado: 4,0 kg\n2. Tener tomate triturado escurrido. Medir especias. Picar perejil. (escurrido si acuoso)",
   "procedure": null,
   "plating": "1. Plato hondo, porcion generosa de salsa con 2 huevos visibles.\n2. Hilo de AOVE en crudo, perejil fresco picado por encima.\n3. Salzkartoffeln aparte (~180 g).\nPUNTOS CRITICOS: No hervir salsa al pochar huevos (fuego bajo) - No sobrecocer huevos (yema cremosa) - Base espesa, no liquida - Especias\nfuera del fuego directo (amargan)",
+  "timing": null,
   "critical_points": null,
   "appcc": null,
   "senior_adaptation": null,
   "quote": null,
-  "storytelling": "# Shakshuka — Historia\n\n## Origen\nShakshuka viaja desde el Levante, desde esas cocinas donde tomate, cebolla y especias generosas hablan el idioma de la comida de verdad. Es un plato nómada: se come en Túnez, Líbano, Israel, Palestina, siempre con sus variaciones, siempre con su esencia. No es una salsa con huevos; es una filosofía: la idea de que lo simple, bien hecho, es sagrado.\n\n## La Historia\nComienza lentamente: cebolla y pimiento se pochán hasta que desaparecen en su propio jugo dulce. El ajo entra sin quemarse. Las especias—comino, pimentón dulce, apenas un toque de cayena—se despiertan fuera del fuego para no amargar. Luego viene el tomate triturado: mucho, generoso, que se cocina a fuego bajo durante treinta minutos hasta que el agua evaporada y la salsa se espesa. Cuando llega el momento del servicio, se hacen huecos en esta base que es casi una compota cálida. Los huevos se casan con ella: la clara se cuaja en el calor, pero la yema permanece líquida, cremosa, lista para rocar la salsa. El hilo de aceite de oliva crudo, el perejil fresco: son el toque que recuerda que la vida continúa afuera de esa sartén.\n\n## Para Nuestros Comensales\nEs la comida que repara cuerpos y almas. Sin complicación, sin pretensión. La yema líquida que mezclan con la salsa, las patatas que absorben todo: esto es lo que significa comer con confort. Una sola cucharada lo entiende."
+  "storytelling": "# Shakshuka — Historia\n\n## Origen\nShakshuka viaja desde el Levante, desde esas cocinas donde tomate, cebolla y especias generosas hablan el idioma de la comida de verdad. Es un plato nómada: se come en Túnez, Líbano, Israel, Palestina, siempre con sus variaciones, siempre con su esencia. No es una salsa con huevos; es una filosofía: la idea de que lo simple, bien hecho, es sagrado.\n\n## La Historia\nComienza lentamente: cebolla y pimiento se pochán hasta que desaparecen en su propio jugo dulce. El ajo entra sin quemarse. Las especias—comino, pimentón dulce, apenas un toque de cayena—se despiertan fuera del fuego para no amargar. Luego viene el tomate triturado: mucho, generoso, que se cocina a fuego bajo durante treinta minutos hasta que el agua evaporada y la salsa se espesa. Cuando llega el momento del servicio, se hacen huecos en esta base que es casi una compota cálida. Los huevos se casan con ella: la clara se cuaja en el calor, pero la yema permanece líquida, cremosa, lista para rocar la salsa. El hilo de aceite de oliva crudo, el perejil fresco: son el toque que recuerda que la vida continúa afuera de esa sartén.\n\n## Para Nuestros Comensales\nEs la comida que repara cuerpos y almas. Sin complicación, sin pretensión. La yema líquida que mezclan con la salsa, las patatas que absorben todo: esto es lo que significa comer con confort. Una sola cucharada lo entiende.",
+  "componentes": [
+    {
+      "role": "id",
+      "id": "Salzkartoffeln"
+    }
+  ]
 }

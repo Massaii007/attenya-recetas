@@ -7,12 +7,27 @@
   "protein": "",
   "allergens": "Lácteos (mantequilla en patatas)",
   "difficulty": "Baja",
-  "ingredients": null,
-  "procedure": null,
+  "ingredients": "| Componente | Tipo | Ficha |\n|---|---|---|\n| Pollo al Ajillo | Principal | Pollo_Ajillo_Componente |\n| Patatas Fritas Bistró | Guarnición HI | Patatas_Fritas_Bistro |\n| Ratatouille (T.Straker) | Guarnición V | Ratatouille_Straker |",
+  "procedure": "1. Pollo al ajillo: regenerar en sartén con su aceite a fuego medio, 8–10 min. Piel crujiente, interior jugoso.\n2. Patatas bistró: segunda cocción a 170–175 °C (punto menos que standard — más blanquitas, menos doradas). 3 min.\n3. Ratatouille: templar suavemente en sartén, 3 min.\n4. Plato llano amplio.\n5. Pollo centrado con algunos ajos confitados del aceite visibles.\n6. Patatas bistró a un lado (tono más claro que habitual).\n7. Pequeña quenelle de ratatouille al otro lado — decorativa y funcional.\n8. Aceite del ajillo napando ligeramente el pollo.\n9. Perejil fresco picado generoso como acabado.",
   "plating": null,
+  "timing": "- Ratatouille: templar primero (3 min).\n- Pollo: sartén en paralelo (8–10 min).\n- Patatas: segunda cocción al final (3 min).\n- Emplatar, perejil al momento.",
   "critical_points": "- Los ajos deben estar confitados y dorados, NUNCA quemados — amargo.\n- Patatas a punto MENOS de lo habitual — más blanquitas, no crujientes oscuras. Temperatura 10 °C menor.\n- La ratatouille es un punto de color y vegetal, no una guarnición masiva — quenelle pequeña.\n- El aceite del ajillo es el \"salsa\" del plato — no descartarlo.",
   "appcc": "- Pollo: centro >75 °C.\n- Patatas: aceite >170 °C.\n- Alérgenos: verificar patatas (aceite), lácteos si hay en ratatouille.",
   "senior_adaptation": "- Pollo al ajillo: textura tierna si está bien cocinado — la cocción en aceite lo protege.\n- Los ajos confitados son dulces y blandísimos — no picantes ni duros.\n- Patatas más blanquitas: menos crujientes = más amables masticación.\n- Ratatouille: verduras fundentes, sin fibra.\n- Plato extremadamente familiar y reconfortante.",
   "quote": null,
-  "storytelling": "# Pollo al Ajillo — Storytelling\n\nEl pollo al ajillo es España en un plato. Ajo, aceite, pollo, fuego. No hay nada más y no hace falta nada más. Es el plato que aparece en cada bar de carretera, en cada cocina de abuela, en cada comedor de pueblo — y cuando está bien hecho, compite con cualquier elaboración de tres estrellas en satisfacción pura.\n\nEl secreto no es el pollo — es el ajo. Ajos enteros, aplastados pero no picados, confitados lentamente en aceite hasta que se vuelven dorados, dulces, casi caramelizados. Ese aceite aromatizado es el oro del plato: napa el pollo, se cuela entre las patatas, y convierte el perejil fresco en algo más que decoración.\n\nEn ATTENYA lo servimos con patatas fritas bistró a punto menos — más blanquitas, más suaves, menos tostadas. Es una decisión técnica: el pollo al ajillo ya tiene suficiente intensidad de sabor; las patatas no necesitan competir con dorado extra. Necesitan ser vehículo del aceite de ajo, y para eso la patata clara y tierna funciona mejor que la crujiente oscura.\n\nLa quenelle de ratatouille es el toque de color y verdura que equilibra el plato. Un punto de Provenza en un plato castellano — la ratatouille corta la grasa del ajillo con la acidez del tomate y la dulzura de los pimientos asados. Es pequeña, decorativa, pero cumple una función nutricional y sensorial real.\n\nPara nuestros residentes alemanes, el ajo suave y confitado es una sorpresa agradable — no es el ajo crudo que temen, sino algo dulce y untuoso que quieren repetir."
+  "storytelling": "# Pollo al Ajillo — Storytelling\n\nEl pollo al ajillo es España en un plato. Ajo, aceite, pollo, fuego. No hay nada más y no hace falta nada más. Es el plato que aparece en cada bar de carretera, en cada cocina de abuela, en cada comedor de pueblo — y cuando está bien hecho, compite con cualquier elaboración de tres estrellas en satisfacción pura.\n\nEl secreto no es el pollo — es el ajo. Ajos enteros, aplastados pero no picados, confitados lentamente en aceite hasta que se vuelven dorados, dulces, casi caramelizados. Ese aceite aromatizado es el oro del plato: napa el pollo, se cuela entre las patatas, y convierte el perejil fresco en algo más que decoración.\n\nEn ATTENYA lo servimos con patatas fritas bistró a punto menos — más blanquitas, más suaves, menos tostadas. Es una decisión técnica: el pollo al ajillo ya tiene suficiente intensidad de sabor; las patatas no necesitan competir con dorado extra. Necesitan ser vehículo del aceite de ajo, y para eso la patata clara y tierna funciona mejor que la crujiente oscura.\n\nLa quenelle de ratatouille es el toque de color y verdura que equilibra el plato. Un punto de Provenza en un plato castellano — la ratatouille corta la grasa del ajillo con la acidez del tomate y la dulzura de los pimientos asados. Es pequeña, decorativa, pero cumple una función nutricional y sensorial real.\n\nPara nuestros residentes alemanes, el ajo suave y confitado es una sorpresa agradable — no es el ajo crudo que temen, sino algo dulce y untuoso que quieren repetir.",
+  "componentes": [
+    {
+      "role": "principal",
+      "id": "Pollo_Ajillo_Componente"
+    },
+    {
+      "role": "hi",
+      "id": "Patatas_Fritas_Bistro"
+    },
+    {
+      "role": "v",
+      "id": "Ratatouille_Straker"
+    }
+  ]
 }

@@ -7,12 +7,23 @@
   "protein": "",
   "allergens": "Soja (salsa soja en escabeche)",
   "difficulty": "Baja",
-  "ingredients": null,
-  "procedure": null,
+  "ingredients": "| Componente | Tipo | Ficha |\n|---|---|---|\n| Escabeche de Pavo Filipino | Principal | Escabeche_Pavo_Filipino |\n| Cuscús Aromático | Guarnición HI | Couscous_Aromatico |",
+  "procedure": "1. Escabeche de pavo: regenerar en sartén tapada a fuego medio, 10 min. La salsa debe reducir ligeramente y napar el pavo.\n2. Cuscús aromático: regenerar en Convotherm vapor 3 min o soltar con tenedor y calentar en microondas tapado.\n3. Plato llano amplio.\n4. Cuscús moldeado a un lado (≈150 g).\n5. Pavo con su escabeche vertido junto al cuscús, napando parcialmente.\n6. La salsa debe ser brillante y ligeramente siruposa — no líquida.\n7. Hojas de laurel retiradas antes de servir.\n8. Cebolleta picada como acabado opcional.",
   "plating": null,
+  "timing": "- Cuscús: primero (3 min).\n- Escabeche: en paralelo (10 min).\n- Emplatar inmediatamente.",
   "critical_points": "- El pavo en escabeche mejora con el reposo — ideal producir día anterior.\n- La salsa no debe ser ni muy líquida ni muy espesa — napante.\n- Retirar laurel — riesgo masticación senior.",
   "appcc": "- Pavo: centro >75 °C.\n- Escabeche: la acidez del vinagre ayuda a la conservación, pero mantener <4 °C igualmente.\n- Alérgenos: soja (salsa soja).",
   "senior_adaptation": "- Pavo escabechado: textura muy tierna tras marinado y cocción en salsa ácida.\n- Cuscús: granos pequeños, muy fácil de comer, textura amable.\n- Sabor agridulce equilibrado — sin picor.\n- Plato que mejora con el reposo — perfecto para producción anticipada.",
   "quote": null,
-  "storytelling": "# Escabeche de Pavo Filipino — Storytelling\n\nEl adobo filipino no tiene nada que ver con el adobo mexicano ni con el escabeche español, aunque comparta ancestro ibérico. Cuando los españoles llegaron a Filipinas, encontraron una técnica local de conservación en vinagre que ya existía. Le pusieron \"adobo\" — su palabra para marinadas — y el resultado fue un cruce cultural que lleva 500 años evolucionando.\n\nLa receta es brutalmente simple: proteína, vinagre, soja, ajo, laurel, pimienta. Sin tomate, sin chile, sin complicaciones. Lo que la hace especial es la cocción lenta en ese líquido, que transforma cualquier carne en algo tierno, profundo y ligeramente brillante. El vinagre se suaviza con la cocción, la soja aporta umami, el ajo perfuma todo, y el laurel da esa nota aromática de fondo que conecta con el Mediterráneo.\n\nEl pavo es nuestra elección para ATTENYA porque es carne blanca, magra, digestiva, y absorbe el escabeche como una esponja. El resultado tiene el espíritu del adobo filipino pero con un perfil que nuestros comensales alemanes reconocen inmediatamente como Sauerbraten-adjacent — carne en vinagre, algo que entienden desde la infancia.\n\nEl cuscús aromático en vez de arroz es un guiño al Mediterráneo — conecta el plato con la cocina norteafricana que también comparte la tradición de proteínas en vinagre. Un triángulo cultural España-Filipinas-Magreb en un solo plato."
+  "storytelling": "# Escabeche de Pavo Filipino — Storytelling\n\nEl adobo filipino no tiene nada que ver con el adobo mexicano ni con el escabeche español, aunque comparta ancestro ibérico. Cuando los españoles llegaron a Filipinas, encontraron una técnica local de conservación en vinagre que ya existía. Le pusieron \"adobo\" — su palabra para marinadas — y el resultado fue un cruce cultural que lleva 500 años evolucionando.\n\nLa receta es brutalmente simple: proteína, vinagre, soja, ajo, laurel, pimienta. Sin tomate, sin chile, sin complicaciones. Lo que la hace especial es la cocción lenta en ese líquido, que transforma cualquier carne en algo tierno, profundo y ligeramente brillante. El vinagre se suaviza con la cocción, la soja aporta umami, el ajo perfuma todo, y el laurel da esa nota aromática de fondo que conecta con el Mediterráneo.\n\nEl pavo es nuestra elección para ATTENYA porque es carne blanca, magra, digestiva, y absorbe el escabeche como una esponja. El resultado tiene el espíritu del adobo filipino pero con un perfil que nuestros comensales alemanes reconocen inmediatamente como Sauerbraten-adjacent — carne en vinagre, algo que entienden desde la infancia.\n\nEl cuscús aromático en vez de arroz es un guiño al Mediterráneo — conecta el plato con la cocina norteafricana que también comparte la tradición de proteínas en vinagre. Un triángulo cultural España-Filipinas-Magreb en un solo plato.",
+  "componentes": [
+    {
+      "role": "principal",
+      "id": "Escabeche_Pavo_Filipino"
+    },
+    {
+      "role": "hi",
+      "id": "Couscous_Aromatico"
+    }
+  ]
 }

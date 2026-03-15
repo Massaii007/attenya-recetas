@@ -7,12 +7,23 @@
   "protein": "",
   "allergens": "Lácteos (mantequilla en patatas)",
   "difficulty": "Baja",
-  "ingredients": null,
-  "procedure": null,
+  "ingredients": "| Componente | Tipo | Ficha |\n|---|---|---|\n| Ossobuco alla Milanese | Principal | Ossobuco_Milanesa |\n| Patatas Fritas Bistró | Guarnición HI | Patatas_Fritas_Bistro |",
+  "procedure": "1. Ossobuco: regenerar en Convotherm vapor 85 °C tapado, 15–20 min. La carne debe estar fall-apart tierna, el tuétano visible en el hueso.\n2. Gremolata fresca: preparar al momento (ralladura limón + perejil + ajo picado fino).\n3. Patatas bistró: segunda cocción al momento (180 °C, 3–4 min).\n4. Plato llano amplio o ligeramente hondo.\n5. Ossobuco centrado con su fondo de braseado napando — salsa brillante y concentrada.\n6. Gremolata esparcida sobre el ossobuco al servir.\n7. Patatas bistró agrupadas a un lado, rectas y uniformes.\n8. El tuétano debe quedar visible y accesible — es parte de la experiencia.",
   "plating": null,
+  "timing": "- Ossobuco: empezar primero (15–20 min regeneración).\n- Patatas: segunda cocción mientras se emplata (3–4 min).\n- Gremolata: picar mientras regenera.\n- Emplatar, gremolata al momento.",
   "critical_points": "- El ossobuco debe estar TAN tierno que se deshaga solo — si resiste al cortarlo, más regeneración.\n- La gremolata va AL MOMENTO — pierde frescor en segundos.\n- El tuétano es parte del plato — no descartarlo, no esconderlo.\n- El fondo de braseado debe estar concentrado y brillante — si está líquido, reducir antes de napar.",
   "appcc": "- Ternera: centro >75 °C.\n- Fondo de braseado: >65 °C.\n- Alérgenos: verificar patatas (aceite). Lácteos si se usa mantequilla en algún paso.",
   "senior_adaptation": "- Ossobuco braseado: textura ideal senior — se deshace con cuchara.\n- El tuétano es gelatinoso y nutritivo — perfecto para senior.\n- Patatas bistró finas: crujiente suave, interior cremoso.\n- La gremolata aporta frescor que alivia la contundencia.\n- Plato reconfortante con sabor profundo — alta aceptación.",
   "quote": null,
-  "storytelling": "# Ossobuco alla Milanese — Storytelling\n\nEl ossobuco es el plato que explica por qué Italia domina la cocina mundial. No por sofisticación — por paciencia. Un corte de jarrete de ternera, con su hueso al centro lleno de tuétano, braseado durante horas en vino, caldo y aromáticos hasta que la carne se rinde completamente y el colágeno se convierte en gelatina.\n\nEl nombre lo dice todo: osso (hueso) buco (agujero). El agujero del hueso es la joya del plato. El tuétano que contiene es grasa pura, gelatinosa, que se funde en la boca con una riqueza que ningún corte magro puede igualar. Los milaneses lo comen con cucharilla directamente del hueso. En ATTENYA no hacemos menos.\n\nLa gremolata es el toque que demuestra que los italianos entienden el equilibrio mejor que nadie. Después de un plato pesado, profundo, rico en colágeno y grasa, llega una mezcla fresca de ralladura de limón, perejil crudo y ajo picado que corta todo, limpia el paladar y te dice: otro bocado.\n\nLa decisión de servir con patatas fritas bistró en vez del risotto alla milanese tradicional es deliberada. El risotto compite con el ossobuco por protagonismo — ambos son ricos, cremosos, mantecosos. Las patatas fritas ofrecen contraste: crujientes, limpias, directas. El ossobuco no necesita más cremosidad — necesita textura que lo despierte.\n\nEs el plato más rotundamente italiano de nuestro catálogo, y uno de los más queridos por nuestros residentes."
+  "storytelling": "# Ossobuco alla Milanese — Storytelling\n\nEl ossobuco es el plato que explica por qué Italia domina la cocina mundial. No por sofisticación — por paciencia. Un corte de jarrete de ternera, con su hueso al centro lleno de tuétano, braseado durante horas en vino, caldo y aromáticos hasta que la carne se rinde completamente y el colágeno se convierte en gelatina.\n\nEl nombre lo dice todo: osso (hueso) buco (agujero). El agujero del hueso es la joya del plato. El tuétano que contiene es grasa pura, gelatinosa, que se funde en la boca con una riqueza que ningún corte magro puede igualar. Los milaneses lo comen con cucharilla directamente del hueso. En ATTENYA no hacemos menos.\n\nLa gremolata es el toque que demuestra que los italianos entienden el equilibrio mejor que nadie. Después de un plato pesado, profundo, rico en colágeno y grasa, llega una mezcla fresca de ralladura de limón, perejil crudo y ajo picado que corta todo, limpia el paladar y te dice: otro bocado.\n\nLa decisión de servir con patatas fritas bistró en vez del risotto alla milanese tradicional es deliberada. El risotto compite con el ossobuco por protagonismo — ambos son ricos, cremosos, mantecosos. Las patatas fritas ofrecen contraste: crujientes, limpias, directas. El ossobuco no necesita más cremosidad — necesita textura que lo despierte.\n\nEs el plato más rotundamente italiano de nuestro catálogo, y uno de los más queridos por nuestros residentes.",
+  "componentes": [
+    {
+      "role": "principal",
+      "id": "Ossobuco_Milanesa"
+    },
+    {
+      "role": "hi",
+      "id": "Patatas_Fritas_Bistro"
+    }
+  ]
 }

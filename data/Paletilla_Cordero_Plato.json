@@ -7,12 +7,31 @@
   "protein": "",
   "allergens": "Lácteos (puré, yogur)",
   "difficulty": "Media",
-  "ingredients": null,
-  "procedure": null,
+  "ingredients": "| Componente | Tipo | Ficha |\n|---|---|---|\n| Paletilla Cordero Asada (T.Straker) | Principal | Paletilla_Cordero_Asada_Straker |\n| Puré de Patata (T.Straker) | Guarnición HI | Pure_Patata_Straker |\n| Verduras Mediterráneo Este | Guarnición V | Verduras_Mediterraneo_Este |\n| Salsa de Yogur con Zumaque | Salsa | Salsa_Yogur_Zumaque |",
+  "procedure": "1. Paletilla: regenerar Convotherm vapor 85 °C tapado, 20 min. La carne debe desmenuzarse con dos tenedores.\n2. Puré Straker: regenerar baño maría o vapor suave.\n3. Verduras Mediterráneo Este: regenerar sartén o horno 5 min.\n4. Yogur zumaque: a temperatura ambiente, remover antes de servir.\n5. Desmenuzar la paletilla en trozos generosos — no triturar, mantener fibras visibles.\n6. Plato llano amplio.\n7. Quenelle generosa de puré a un lado (≈180 g).\n8. Cordero desmenuzado centrado, con sus jugos.\n9. Verduras Mediterráneo Este distribuidas alrededor.\n10. Punto generoso de yogur zumaque en lateral o sobre el cordero.\n11. El zumaque del yogur crea un color rosado distintivo — hacerlo visible.",
   "plating": null,
+  "timing": "- Paletilla: empezar primero (20 min).\n- Puré: en paralelo (5 min).\n- Verduras: últimos 5 min.\n- Yogur: sacar del frío 10 min antes.\n- Desmenuzar y emplatar inmediatamente.",
   "critical_points": "- La paletilla DEBE desmenuzarse fácilmente — si resiste, más tiempo de regeneración.\n- Desmenuzar con tenedores, no cortar — las fibras visibles son la identidad del plato.\n- El yogur zumaque va FRÍO o a temperatura ambiente — nunca calentarlo.\n- Los jugos del cordero son \"salsa\" — no descartarlos.",
   "appcc": "- Cordero: centro >75 °C.\n- Yogur: mantener <4 °C hasta servicio.\n- Alérgenos: lácteos (puré mantequilla, yogur).",
   "senior_adaptation": "- Cordero desmenuzado: textura ideal senior — se deshace sin esfuerzo.\n- Sin huesos en el plato (desmenuzado antes de servir).\n- Puré: cremoso y estable.\n- Yogur: frescor que alivia la contundencia del cordero.\n- Verduras asadas: blandas, sin fibra.",
   "quote": null,
-  "storytelling": "# Paletilla de Cordero Asada (T.Straker) — Storytelling\n\nLa paletilla de cordero asada lentamente es el plato que enseña paciencia. No hay atajo — o le das horas a fuego bajo, o no tienes cordero desmenuzable. Straker lo entiende: su receta es tiempo + calor suave + confianza en que la naturaleza hará el trabajo.\n\nLo que sale del horno después de horas ya no es una pieza de carne — es algo que se rinde al contacto de dos tenedores. Las fibras se separan como hilos de seda, húmedas, fragantes, con ese sabor profundo que solo el cordero cocinado en hueso consigue. La grasa se ha fundido casi por completo, dejando atrás solo sabor y textura.\n\nLos acompañamientos son puro Ottolenghi: verduras mediterráneas asadas con especias del Levante, puré cremoso como base neutra, y esa salsa de yogur con zumaque que lo cambia todo. El zumaque es la especia que más gente debería conocer — ácida como un limón pero sin la agresividad cítrica, con un tono afrutado y un color rosado que hace que cualquier plato parezca más sofisticado de lo que es.\n\nEn ATTENYA, la paletilla de cordero es uno de nuestros platos más ambiciosos y más queridos. Es cocina de celebración que funciona en producción gracias al formato: se asa completa, se abate, se regenera en porciones desmenuzadas. El resultado es idéntico al recién hecho — porque el cordero desmenuzado no pierde textura en la regeneración."
+  "storytelling": "# Paletilla de Cordero Asada (T.Straker) — Storytelling\n\nLa paletilla de cordero asada lentamente es el plato que enseña paciencia. No hay atajo — o le das horas a fuego bajo, o no tienes cordero desmenuzable. Straker lo entiende: su receta es tiempo + calor suave + confianza en que la naturaleza hará el trabajo.\n\nLo que sale del horno después de horas ya no es una pieza de carne — es algo que se rinde al contacto de dos tenedores. Las fibras se separan como hilos de seda, húmedas, fragantes, con ese sabor profundo que solo el cordero cocinado en hueso consigue. La grasa se ha fundido casi por completo, dejando atrás solo sabor y textura.\n\nLos acompañamientos son puro Ottolenghi: verduras mediterráneas asadas con especias del Levante, puré cremoso como base neutra, y esa salsa de yogur con zumaque que lo cambia todo. El zumaque es la especia que más gente debería conocer — ácida como un limón pero sin la agresividad cítrica, con un tono afrutado y un color rosado que hace que cualquier plato parezca más sofisticado de lo que es.\n\nEn ATTENYA, la paletilla de cordero es uno de nuestros platos más ambiciosos y más queridos. Es cocina de celebración que funciona en producción gracias al formato: se asa completa, se abate, se regenera en porciones desmenuzadas. El resultado es idéntico al recién hecho — porque el cordero desmenuzado no pierde textura en la regeneración.",
+  "componentes": [
+    {
+      "role": "principal",
+      "id": "Paletilla_Cordero_Asada_Straker"
+    },
+    {
+      "role": "hi",
+      "id": "Pure_Patata_Straker"
+    },
+    {
+      "role": "v",
+      "id": "Verduras_Mediterraneo_Este"
+    },
+    {
+      "role": "salsa",
+      "id": "Salsa_Yogur_Zumaque"
+    }
+  ]
 }

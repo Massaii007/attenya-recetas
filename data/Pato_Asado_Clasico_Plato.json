@@ -7,12 +7,31 @@
   "protein": "",
   "allergens": "Gluten (Knödel), huevos (Knödel), lácteos (Knödel, gravy)",
   "difficulty": "Media",
-  "ingredients": null,
-  "procedure": null,
+  "ingredients": "| Componente | Tipo | Ficha |\n|---|---|---|\n| Pato Asado Clásico | Principal | Pato_Asado_Clasico |\n| Knödel Base (Halb-Halb) | Guarnición HI | Knodel_Base |\n| Rotkohl Clásico | Guarnición V | Rotkohl_Clasico |\n| Gravy de Pato | Salsa | Gravy_Pato |",
+  "procedure": "1. Pato: regenerar Convotherm combinado 180 °C, 12–15 min. La piel debe recuperar crujiente.\n2. Knödel: regenerar en vapor suave 5 min o en caldo/gravy caliente.\n3. Rotkohl: regenerar en sartén tapada a fuego suave, 8 min.\n4. Gravy: calentar suavemente, no hervir. Debe estar espeso y brillante.\n5. Porcionar el pato: cuartos, con piel crujiente intacta. Cortar DESPUÉS de regenerar.\n6. Plato llano amplio.\n7. Porción de pato centrada, piel visible y crujiente hacia arriba.\n8. 2 Knödel a un lado.\n9. Porción de Rotkohl al otro lado — color púrpura brillante.\n10. Gravy napando el pato y parcialmente los Knödel. No empapar el Rotkohl — su sabor agridulce es independiente.\n11. La tríada visual debe ser clara: pato dorado / Knödel pálido / Rotkohl púrpura.",
   "plating": null,
+  "timing": "- Pato y Rotkohl: al horno/sartén simultáneamente (12–15 min).\n- Knödel: en vapor los últimos 5 min.\n- Gravy: calentar mientras se emplata.\n- Porcionar y servir inmediatamente.",
   "critical_points": "- La piel del pato DEBE estar crujiente — si sale blanda, pasar bajo grill 2 min.\n- Los Knödel absorben gravy — eso es bueno, pero no ahogarlos.\n- El Rotkohl no debe mezclarse con el gravy en el plato — sabores distintos.\n- Este es un plato-evento para residentes alemanes — la presentación importa más que nunca.",
   "appcc": "- Pato: centro >75 °C.\n- Knödel: >65 °C.\n- Gravy: >65 °C.\n- Alérgenos: gluten (Knödel harina), huevos (Knödel), lácteos (mantequilla Knödel, gravy).",
   "senior_adaptation": "- Pato asado: textura tierna bajo la piel crujiente — la piel se puede retirar si es necesario.\n- Knödel Halb-Halb: esponjoso, cremoso, se deshace.\n- Rotkohl: muy suave tras cocción larga — ninguna fibra.\n- Gravy: lubrica todo, facilita la deglución.\n- **Plato con máxima carga emocional para residentes alemanes** — Weihnachtsessen, recuerdos familiares.",
   "quote": null,
-  "storytelling": "# Pato Asado Clásico — Storytelling\n\nEl Entenbraten es el plato más sagrado de la mesa alemana. Es Navidad, es domingo en familia, es el plato que la abuela hacía y que nadie hace tan bien como ella. Servir un pato asado clásico con Knödel, Rotkohl y gravy en una residencia senior alemana no es cocinar — es devolver un recuerdo.\n\nEl pato asado es técnica pura. La piel debe estar crujiente como cristal mientras la carne debajo se mantiene jugosa y tierna. Los alemanes hablan del \"Knusprige Haut\" con reverencia — una piel de pato crujiente es un logro culinario que se celebra como se celebra un buen vino. Y cuando la piel no está crujiente, se nota. Se nota mucho.\n\nLos Knödel Halb-Halb son la guarnición que nació para este plato. Su textura esponjosa absorbe el gravy como una esponja noble, y cada bocado de Knödel bañado en jugo de pato es un momento de perfección textural. La mezcla de patata cocida y cruda crea esa densidad justa — ni demasiado ligero, ni demasiado pesado.\n\nEl Rotkohl aporta lo que ningún otro componente puede: acidez, frescor y color. Su tono púrpura brillante rompe la monotonía marrón-dorada del pato y los Knödel, y su sabor agridulce — col roja cocida con manzana, vinagre y especias — corta la grasa del pato de forma quirúrgica.\n\nEn ATTENYA, este plato es un acto de respeto cultural. No lo adaptamos, no lo fusionamos, no le ponemos un twist. Lo hacemos como se ha hecho siempre, porque eso es exactamente lo que nuestros comensales necesitan: que alguien les cocine el plato de su memoria."
+  "storytelling": "# Pato Asado Clásico — Storytelling\n\nEl Entenbraten es el plato más sagrado de la mesa alemana. Es Navidad, es domingo en familia, es el plato que la abuela hacía y que nadie hace tan bien como ella. Servir un pato asado clásico con Knödel, Rotkohl y gravy en una residencia senior alemana no es cocinar — es devolver un recuerdo.\n\nEl pato asado es técnica pura. La piel debe estar crujiente como cristal mientras la carne debajo se mantiene jugosa y tierna. Los alemanes hablan del \"Knusprige Haut\" con reverencia — una piel de pato crujiente es un logro culinario que se celebra como se celebra un buen vino. Y cuando la piel no está crujiente, se nota. Se nota mucho.\n\nLos Knödel Halb-Halb son la guarnición que nació para este plato. Su textura esponjosa absorbe el gravy como una esponja noble, y cada bocado de Knödel bañado en jugo de pato es un momento de perfección textural. La mezcla de patata cocida y cruda crea esa densidad justa — ni demasiado ligero, ni demasiado pesado.\n\nEl Rotkohl aporta lo que ningún otro componente puede: acidez, frescor y color. Su tono púrpura brillante rompe la monotonía marrón-dorada del pato y los Knödel, y su sabor agridulce — col roja cocida con manzana, vinagre y especias — corta la grasa del pato de forma quirúrgica.\n\nEn ATTENYA, este plato es un acto de respeto cultural. No lo adaptamos, no lo fusionamos, no le ponemos un twist. Lo hacemos como se ha hecho siempre, porque eso es exactamente lo que nuestros comensales necesitan: que alguien les cocine el plato de su memoria.",
+  "componentes": [
+    {
+      "role": "principal",
+      "id": "Pato_Asado_Clasico"
+    },
+    {
+      "role": "hi",
+      "id": "Knodel_Base"
+    },
+    {
+      "role": "v",
+      "id": "Rotkohl_Clasico"
+    },
+    {
+      "role": "salsa",
+      "id": "Gravy_Pato"
+    }
+  ]
 }

@@ -7,12 +7,27 @@
   "protein": "",
   "allergens": "Pescado",
   "difficulty": "Baja",
-  "ingredients": null,
-  "procedure": null,
+  "ingredients": "| Componente | Tipo | Ficha |\n|---|---|---|\n| Atún Encebollado Canario | Principal | Atun_Encebollado_Canario |\n| Papas Arrugadas Canarias | Guarnición HI | Papas_Arrugadas_Canarias |\n| Mojos Canarios (rojo y verde) | Salsa | Mojos_Canarios |",
+  "procedure": "1. Atún encebollado caliente: regenerar en sartén amplia a fuego medio, 5 min. La cebollada debe estar brillante y fundida.\n2. Papas arrugadas calientes o templadas — con costra de sal visible.\n3. Mojos a temperatura ambiente en salseras o puntos laterales.\n4. Plato llano amplio.\n5. Atún centrado con su cebollada napándolo generosamente.\n6. Papas arrugadas agrupadas a un lado (4–5 unidades).\n7. Punto de mojo rojo en un lado, punto de mojo verde en el otro.\n8. Sin más decoración — la sencillez es la identidad del plato.",
   "plating": null,
+  "timing": "- Papas arrugadas: pueden estar hechas con antelación, regenerar 5 min horno.\n- Atún encebollado: regenerar al pase.\n- Mojos: siempre a temperatura ambiente.",
   "critical_points": "- No sobrecocer el atún en la regeneración — debe quedar jugoso, no seco.\n- Las papas deben tener su costra de sal visible — si no la tienen, no son arrugadas.\n- Los mojos deben estar presentes siempre — sin mojo las papas están incompletas.",
   "appcc": "- Regeneración atún >65 °C.\n- Papas: servir >65 °C.\n- Alérgenos: pescado (atún).",
   "senior_adaptation": "- El atún con cebollada queda muy tierno, se deshace con tenedor.\n- Las papas arrugadas son cremosas por dentro — la piel blanda tras cocción larga.\n- Los mojos suavizan y humectan cada bocado.\n- Plato muy aceptado por perfil senior — sabores familiares, sin agresividad.",
   "quote": null,
-  "storytelling": "# Atún Encebollado Canario — Storytelling\n\nEl encebollado de atún es el plato que define la cocina de barco canaria. Nace en las cofradías de pescadores, donde el atún llegaba fresco del mismo día y la cebolla era lo que siempre había en la despensa. No hay sofisticación técnica — hay producto noble tratado con respeto y tiempo.\n\nLa cebollada es el alma del plato. Cebolla cortada en juliana gruesa, pochada lentamente hasta que pierde todo rastro de agresividad y se convierte en un manto dulce, sedoso, casi mermelada. El atún se incorpora al final — justo lo necesario para cocinarse en el calor residual de la cebolla, quedando jugoso y rosado en el centro.\n\nLas papas arrugadas con mojos completan el trío canario perfecto. La costra de sal de las papas, el picor controlado del mojo rojo, la frescura herbal del verde — cada elemento tiene su papel y ninguno intenta ser protagonista. El protagonista es el conjunto.\n\nEn ATTENYA, este plato es un puente directo con la isla. Nuestros comensales viven en Tenerife, y cuando sirves un encebollado con papas arrugadas y mojo, les estás diciendo que esta cocina no ignora dónde está. Que puede haber gulasch y schnitzel en el menú, pero también hay atún del Atlántico con cebolla canaria. Eso es respeto al lugar."
+  "storytelling": "# Atún Encebollado Canario — Storytelling\n\nEl encebollado de atún es el plato que define la cocina de barco canaria. Nace en las cofradías de pescadores, donde el atún llegaba fresco del mismo día y la cebolla era lo que siempre había en la despensa. No hay sofisticación técnica — hay producto noble tratado con respeto y tiempo.\n\nLa cebollada es el alma del plato. Cebolla cortada en juliana gruesa, pochada lentamente hasta que pierde todo rastro de agresividad y se convierte en un manto dulce, sedoso, casi mermelada. El atún se incorpora al final — justo lo necesario para cocinarse en el calor residual de la cebolla, quedando jugoso y rosado en el centro.\n\nLas papas arrugadas con mojos completan el trío canario perfecto. La costra de sal de las papas, el picor controlado del mojo rojo, la frescura herbal del verde — cada elemento tiene su papel y ninguno intenta ser protagonista. El protagonista es el conjunto.\n\nEn ATTENYA, este plato es un puente directo con la isla. Nuestros comensales viven en Tenerife, y cuando sirves un encebollado con papas arrugadas y mojo, les estás diciendo que esta cocina no ignora dónde está. Que puede haber gulasch y schnitzel en el menú, pero también hay atún del Atlántico con cebolla canaria. Eso es respeto al lugar.",
+  "componentes": [
+    {
+      "role": "principal",
+      "id": "Atun_Encebollado_Canario"
+    },
+    {
+      "role": "hi",
+      "id": "Papas_Arrugadas_Canarias"
+    },
+    {
+      "role": "salsa",
+      "id": "Mojos_Canarios"
+    }
+  ]
 }

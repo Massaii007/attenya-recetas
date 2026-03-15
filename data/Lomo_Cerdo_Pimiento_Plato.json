@@ -7,12 +7,23 @@
   "protein": "",
   "allergens": "Ninguno",
   "difficulty": "Baja",
-  "ingredients": null,
-  "procedure": null,
+  "ingredients": "| Componente | Tipo | Ficha |\n|---|---|---|\n| Lomo de Cerdo con Pimiento | Principal | Lomo_Cerdo_Pimiento |\n| Patatas Gajo Bistró | Guarnición HI | Patatas_Gajo_Bistro |",
+  "procedure": "1. Lomo de cerdo con pimientos: regenerar en sartén tapada a fuego medio, 8–10 min. Los pimientos deben quedar brillantes y tiernos.\n2. Patatas gajo: regenerar en horno 180 °C 8 min hasta crujientes.\n3. Plato llano amplio.\n4. Lomo cortado en medallones centrados.\n5. Pimientos distribuidos sobre y alrededor del lomo.\n6. Patatas gajo agrupadas a un lado.\n7. Jugo de cocción napando ligeramente.",
   "plating": null,
+  "timing": "- Patatas: horno primero (8 min).\n- Lomo + pimientos: sartén en paralelo (8–10 min).\n- Emplatar inmediatamente.",
   "critical_points": "- Lomo de cerdo se reseca fácilmente — regeneración suave obligatoria.\n- Los pimientos deben mantener color — no sobrecocinar hasta marrón.\n- Cortar medallones DESPUÉS de regenerar, no antes — retiene jugos.",
   "appcc": "- Cerdo: centro >75 °C.\n- Alérgenos: ninguno (verificar si patatas llevan algo).",
   "senior_adaptation": "- Lomo: corte tierno, sin fibra si está bien cocinado.\n- Pimientos: textura blanda tras el salteado.\n- Patatas gajo: crujiente suave exterior, interior tierno.\n- Plato muy visual — los colores de los pimientos alegran.",
   "quote": null,
-  "storytelling": "# Lomo de Cerdo con Pimientos — Storytelling\n\nEl lomo de cerdo con pimientos es el plato que define la cocina española de diario. Está en cada casa, en cada bar de menú del día, en cada comedor de empresa. No porque sea espectacular — porque es perfecto en su sencillez. Lomo magro, pimientos de colores, un poco de ajo, aceite de oliva, y el calor justo para que todo se funda sin perder identidad.\n\nEl truco del lomo de cerdo es no maltratarlo. Es una carne magra que se reseca si la miras fijamente. Se sella rápido a fuego fuerte para crear costra, se termina a temperatura suave para mantener jugosidad, y se corta EN MEDALLONES solo después de la cocción — nunca antes, porque cada corte es una ventana por donde escapa el jugo.\n\nLos pimientos son el alma cromática del plato. Rojo, verde, quizás amarillo — salteados justo hasta que ceden pero conservan color. Cuando los pimientos pierden su brillo y se vuelven marrones, el plato pierde su razón de ser visual. El color es sabor percibido.\n\nEn ATTENYA, este plato con las patatas gajo bistró es la versión cuidada de algo que todos conocen. No reinventamos la rueda — la equilibramos, la porcionamos, la presentamos con dignidad. Es el plato que los residentes miran y dicen \"esto es lo que me hacía mi mujer\", y eso es el cumplido más alto que existe en cocina senior."
+  "storytelling": "# Lomo de Cerdo con Pimientos — Storytelling\n\nEl lomo de cerdo con pimientos es el plato que define la cocina española de diario. Está en cada casa, en cada bar de menú del día, en cada comedor de empresa. No porque sea espectacular — porque es perfecto en su sencillez. Lomo magro, pimientos de colores, un poco de ajo, aceite de oliva, y el calor justo para que todo se funda sin perder identidad.\n\nEl truco del lomo de cerdo es no maltratarlo. Es una carne magra que se reseca si la miras fijamente. Se sella rápido a fuego fuerte para crear costra, se termina a temperatura suave para mantener jugosidad, y se corta EN MEDALLONES solo después de la cocción — nunca antes, porque cada corte es una ventana por donde escapa el jugo.\n\nLos pimientos son el alma cromática del plato. Rojo, verde, quizás amarillo — salteados justo hasta que ceden pero conservan color. Cuando los pimientos pierden su brillo y se vuelven marrones, el plato pierde su razón de ser visual. El color es sabor percibido.\n\nEn ATTENYA, este plato con las patatas gajo bistró es la versión cuidada de algo que todos conocen. No reinventamos la rueda — la equilibramos, la porcionamos, la presentamos con dignidad. Es el plato que los residentes miran y dicen \"esto es lo que me hacía mi mujer\", y eso es el cumplido más alto que existe en cocina senior.",
+  "componentes": [
+    {
+      "role": "principal",
+      "id": "Lomo_Cerdo_Pimiento"
+    },
+    {
+      "role": "hi",
+      "id": "Patatas_Gajo_Bistro"
+    }
+  ]
 }
