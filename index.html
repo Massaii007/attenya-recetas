@@ -213,6 +213,18 @@ body { background: #1a1612; color: #e8dfd4; font-family: 'Cormorant Garamond', G
   <div class="header-count" id="total-count"></div>
 </div>
 
+<!-- PERIODO SELECTOR -->
+<div class="periodo-tabs" style="display:flex; gap:10px; margin-bottom:0; padding:12px 0 8px; justify-content:center; background:transparent;">
+  <button class="periodo-tab" id="tab-actual" onclick="switchPeriodo('actual')"
+    style="padding:6px 18px; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); border-radius:4px; color:#d4c5a0; cursor:pointer; font-family:'Jost',sans-serif; font-size:13px;">
+    17–30 Mar 2026
+  </button>
+  <button class="periodo-tab" id="tab-anterior" onclick="switchPeriodo('anterior')"
+    style="padding:6px 18px; background:transparent; border:1px solid rgba(255,255,255,0.1); border-radius:4px; color:#888; cursor:pointer; font-family:'Jost',sans-serif; font-size:13px;">
+    13–16 Mar 2026
+  </button>
+</div>
+
 <!-- NAVIGATION -->
 <div class="nav-bar">
   <button class="nav-tab active" onclick="switchView('catalogo')">Catálogo</button>
@@ -248,7 +260,7 @@ body { background: #1a1612; color: #e8dfd4; font-family: 'Cormorant Garamond', G
     <div class="menu-header">
       <div class="menu-periodo" id="menu-periodo"></div>
       <div class="menu-meta" id="menu-meta"></div>
-      <button class="pdf-btn" style="margin-top:12px;" onclick="downloadFile('data/pdf/Menu_periodo_actual.pdf','Menu_ATTENYA.pdf')">↓ PDF Menú</button>
+      <button class="pdf-btn" style="margin-top:12px;" onclick="downloadPeriodoPDF('menu')">↓ PDF Menú</button>
     </div>
     <div id="menu-days"></div>
   </div>
@@ -260,7 +272,7 @@ body { background: #1a1612; color: #e8dfd4; font-family: 'Cormorant Garamond', G
     <div class="menu-header">
       <div class="menu-periodo">Mise en Place</div>
       <div class="menu-meta" id="mise-meta"></div>
-      <button class="pdf-btn" style="margin-top:12px;" onclick="downloadFile('data/pdf/Mise_periodo_actual.pdf','Mise_en_Place_ATTENYA.pdf')">↓ PDF Mise en Place</button>
+      <button class="pdf-btn" style="margin-top:12px;" onclick="downloadPeriodoPDF('mise')">↓ PDF Mise en Place</button>
     </div>
     <div id="mise-days"></div>
   </div>
@@ -272,7 +284,7 @@ body { background: #1a1612; color: #e8dfd4; font-family: 'Cormorant Garamond', G
     <div class="menu-header">
       <div class="menu-periodo">Listas de Compra</div>
       <div class="menu-meta" id="compras-meta"></div>
-      <button class="pdf-btn" style="margin-top:12px;" onclick="downloadFile('data/pdf/Compras_periodo_actual.pdf','Compras_ATTENYA.pdf')">↓ PDF Compras</button>
+      <button class="pdf-btn" style="margin-top:12px;" onclick="downloadPeriodoPDF('compras')">↓ PDF Compras</button>
     </div>
     <div id="compras-listas"></div>
   </div>
@@ -588,9 +600,9 @@ const recipes = [
   {n:"Tiramisú (Straker)",id:"Tiramisu_Straker",c:"Postres",s:"",d:"Tiramisú clásico con mascarpone y café",t:"Crudo",p:"-"},
 ];
 /* ============================================================
-   MENU DATA — 13-16 Marzo 2026
+   MENU DATA — 13-16 Marzo 2026 (ANTERIOR)
    ============================================================ */
-const menuData = {
+const menuData_prev = {
   periodo: "13 — 16 de Marzo 2026",
   pax: "25 PAX",
   ciclo: "Ciclo 15 días · Días 11–14",
@@ -628,9 +640,9 @@ const menuData = {
 };
 
 /* ============================================================
-   MISE EN PLACE DATA — 13-16 Marzo 2026
+   MISE EN PLACE DATA — 13-16 Marzo 2026 (ANTERIOR)
    ============================================================ */
-const miseData = [
+const miseData_prev = [
   {fecha:"2026-03-13",ds:"Viernes 13/03",tipo:"normal",titulo:"Tonkatsu Pollo + anticipación sábado CF",carga:"Media",
     tareas:[
       {h:"7:30",t:"Sacar Gulasch congelado a descongelar en frigorífico (para sábado)",tipo:"anticipacion",para:"Sáb 14"},
@@ -680,9 +692,9 @@ const miseData = [
 ];
 
 /* ============================================================
-   COMPRAS DATA — 13-16 Marzo 2026
+   COMPRAS DATA — 13-16 Marzo 2026 (ANTERIOR)
    ============================================================ */
-const comprasData = [
+const comprasData_prev = [
   {lista:1,titulo:"URGENTE — Periodo 13-16 Marzo completo",entrega:"Viernes 13 primera hora",
     cubre:"Tonkatsu Pollo + Gulasch CF + Schupfnudeln Sauerkraut Speck + Lenguado Papillote",
     secciones:[
@@ -771,17 +783,698 @@ const cats = [
   {id:"Entrantes",l:"Entrantes",i:"◎"},
   {id:"Postres",l:"Postres",i:"◇"}
 ];
+
+/* ============================================================
+   MENU DATA — 17-30 Marzo 2026 (ACTUAL)
+   ============================================================ */
+const menuData = {
+  periodo: "17 — 30 de Marzo 2026",
+  pax: 25,
+  ciclo: "Ciclo 15 días · Patrón v4 · Días 2–15",
+  chef_free: "Mié 18, Dom 22, Mié 25, Sáb 28",
+  dias: [
+    {
+      fecha: "2026-03-17",
+      ds: "Martes 17/03",
+      dc: 2,
+      tipo: "normal",
+      prot: "Carne blanca",
+      entrante: { n: "Ens. Treviso Pecorino Clementina", id: "Ensalada_Treviso_Pecorino_Clementina_Straker" },
+      principal: { n: "Pollo Asado con Alubias y Salsa Verde", id: "Pollo_Asado_Alubias_Straker" },
+      guarnicion: { n: "Integrada (alubias + tomate cherry)", id: null },
+      postre: { n: "Tiramisu", id: "Tiramisu_Straker" },
+      cena: "Crema de calabacín con albahaca + pan fresco",
+      prod: "Día ALTA carga. Igino cocina servicio + prepara TODO para CF miércoles: Linseneintopf completo, asar remolacha, cocer lentejas Puy, natillas ruibarbo, ensaladilla alemana."
+    },
+    {
+      fecha: "2026-03-18",
+      ds: "Miércoles 18/03",
+      dc: 3,
+      tipo: "chef-free",
+      prot: "Vegetariano",
+      entrante: { n: "Ens. Remolacha Lentejas Hinojo", id: "Ensalada_Remolacha_Lentejas_Hinojo_Straker" },
+      principal: { n: "Linseneintopf mit Bockwurst", id: "Linseneintopf_Bockwurst" },
+      guarnicion: { n: "Integrada", id: null },
+      postre: { n: "Natillas Cuajadas Ruibarbo", id: "Natillas_Cuajadas_Ruibarbo_Straker" },
+      cena: "Ensaladilla Alemana + fiambre variado",
+      prod: "CF — Todo preparado martes. Auxiliar regenera Linseneintopf fuego suave, emplata remolacha+lentejas, corta Bockwurst (NO hervir)."
+    },
+    {
+      fecha: "2026-03-19",
+      ds: "Jueves 19/03",
+      dc: 4,
+      tipo: "normal",
+      prot: "Cerdo",
+      entrante: { n: "Ens. Calabacín Limón Rúcula", id: "Ensalada_Calabacin_Limon_Rucula_Straker" },
+      principal: { n: "Ragú de Cerdo y Ternera con Gnocchi", id: "Ragu_Cerdo_Ternera_Gnocchi_Plato" },
+      guarnicion: { n: "Gnocchi Caseros", id: "Gnocchi_Straker" },
+      postre: { n: "Sorbete Naranja Sanguina", id: "Sorbete_Naranja_Sanguina_Straker" },
+      cena: "Sopa Miso Tofu Wakame + tosta",
+      prod: "Regenerar ragú sartén 8-10 min. Dorar gnocchi. ANTIC: pochado cebollada para atún encebollado viernes (30-40 min)."
+    },
+    {
+      fecha: "2026-03-20",
+      ds: "Viernes 20/03",
+      dc: 5,
+      tipo: "normal",
+      prot: "Pescado azul",
+      entrante: { n: "Ensalada Verde", id: "Ensalada_Verde_Straker" },
+      principal: { n: "Atún Encebollado Canario", id: "Atun_Encebollado_Canario_Plato" },
+      guarnicion: { n: "Papas Arrugadas + Mojos", id: "Papas_Arrugadas_Canarias" },
+      postre: { n: "Tarta Frangipane de Pera", id: "Tarta_Frangipane_Pera_Straker" },
+      cena: "Chicken Burger Straker",
+      prod: "Regenerar cebollada (prep jueves). Sellar atún. ANTIC: brasear Ossobuco 2h horno para sábado. Marinar pavo escabeche para domingo CF."
+    },
+    {
+      fecha: "2026-03-21",
+      ds: "Sábado 21/03",
+      dc: 6,
+      tipo: "normal",
+      prot: "Carne roja",
+      entrante: { n: "Ens. Tomate y AOVE", id: "Ensalada_Tomate_AOVE_Straker" },
+      principal: { n: "Ossobuco alla Milanese", id: "Ossobuco_Milanese_Plato" },
+      guarnicion: { n: "Patatas Fritas Bistró", id: "Patatas_Fritas_Bistro" },
+      postre: { n: "Mandarina Cointreau", id: "Mandarina_Cointreau" },
+      cena: "Abendbrot: pan oscuro + embutido alemán + pepinillos + mantequilla",
+      prod: "Regenerar ossobuco Convotherm vapor 85-90°C. Gremolata al momento. ANTIC dom CF: base ensalada PSB, terminar escabeche pavo, compota manzana."
+    },
+    {
+      fecha: "2026-03-22",
+      ds: "Domingo 22/03",
+      dc: 7,
+      tipo: "chef-free",
+      prot: "Carne blanca",
+      entrante: { n: "Ens. PSB Huevos Tomate Croutons", id: "Ensalada_PSB_Huevos_Tomate_Croutons_Straker" },
+      principal: { n: "Escabeche de Pavo Filipino", id: "Escabeche_Pavo_Filipino_Plato" },
+      guarnicion: { n: "Arroz Blanco Suelto", id: "Arroz_Blanco_Suelto" },
+      postre: { n: "Compota de Manzana Especiada", id: "Compota_Manzana_Especiada" },
+      cena: "Vichyssoise fría + tosta",
+      prod: "CF — Todo preparado sábado. Regenerar escabeche fuego suave (NO hervir). Montar ensalada PSB + tostar croutons. Arroz Convotherm vapor 3 min."
+    },
+    {
+      fecha: "2026-03-23",
+      ds: "Lunes 23/03",
+      dc: 8,
+      tipo: "normal",
+      prot: "Pescado blanco",
+      entrante: { n: "Ens. Alcachofa y Parmesano", id: "Ensalada_Alcachofa_Parmesano_Straker" },
+      principal: { n: "Lubina con Lentejas y Salsa Verde", id: "Lubina_Lentejas_Salsa_Verde_Straker" },
+      guarnicion: { n: "Integrada (lentejas + espinacas)", id: null },
+      postre: { n: "Fresas con Vinagre", id: "Fresas_Vinagre" },
+      cena: "Abendbrot: pan de semillas + Gouda + Rote Bete Salat + pepinillos",
+      prod: "Cocer lentejas Puy. Lubina piel abajo 3-5 min. Salsa verde fresca. ANTIC: limpiar alcachofas para pasta martes."
+    },
+    {
+      fecha: "2026-03-24",
+      ds: "Martes 24/03",
+      dc: 9,
+      tipo: "normal",
+      prot: "Vegetariano",
+      entrante: { n: "Ens. Judía Verde Almendra Melocotón", id: "Ensalada_Judia_Verde_Almendra_Melocoton_Straker" },
+      principal: { n: "Pasta con Alcachofa", id: "Pasta_Alcachofa_Straker" },
+      guarnicion: { n: "Integrada", id: null },
+      postre: { n: "Mango, Yogur y Chocolate Blanco", id: "Mango_Yogur_Chocolate_Blanco" },
+      cena: "Crema de tomate asado Straker + pan",
+      prod: "Alcachofas prep lunes. ANTIC mié CF: gazpacho, pochar gnocchi + tostar avellanas, naranjas miel."
+    },
+    {
+      fecha: "2026-03-25",
+      ds: "Miércoles 25/03",
+      dc: 10,
+      tipo: "chef-free",
+      prot: "Pasta/arroz",
+      entrante: { n: "Gazpacho", id: "Gazpacho_Straker" },
+      principal: { n: "Gnocchi con Salvia y Burnt Butter", id: "Gnocchi_Salvia_Mantequilla_Tostada_Straker" },
+      guarnicion: { n: "Integrada", id: null },
+      postre: { n: "Naranjas con Miel", id: "Naranjas_Miel" },
+      cena: "Abendbrot: Vollkornbrot + Schinken + Butter + Gurkensalat",
+      prod: "CF — Gazpacho listo (frío). Gnocchi: dorar sartén + beurre noisette + salvia crujiente + avellanas + parmesano."
+    },
+    {
+      fecha: "2026-03-26",
+      ds: "Jueves 26/03",
+      dc: 11,
+      tipo: "normal",
+      prot: "Carne roja",
+      entrante: { n: "Pimientos Asados con Burrata", id: "Pimientos_Asados_Burrata_Straker" },
+      principal: { n: "Schnitzel de Ternera", id: "Schnitzel_Ternera_Straker" },
+      guarnicion: { n: "Ensalada apio, rábanos, anchoas (integrada)", id: null },
+      postre: { n: "Sopa de Melón y Menta", id: "Sopa_Melon_Menta" },
+      cena: "Caldo de pollo y verduras Straker + tosta",
+      prod: "Aplanar escalopes, empanar panko. Convotherm 220°C spray aceite 12-14 min. ANTIC: glaseado salmón para viernes."
+    },
+    {
+      fecha: "2026-03-27",
+      ds: "Viernes 27/03",
+      dc: 12,
+      tipo: "normal",
+      prot: "Pescado azul",
+      entrante: { n: "Ens. Calabaza Bulgur Nuez Pera", id: "Ensalada_Calabaza_Bulgur_Nuez_Pera_Straker" },
+      principal: { n: "Salmón Glaseado con Brócoli Charred", id: "Salmon_Glaseado_Broccoli_Charred" },
+      guarnicion: { n: "Brócoli Charred Miso Bagna Cauda", id: "Broccoli_Charred_Miso_Bagna_Cauda" },
+      postre: { n: "Plátano con Lima", id: "Platano_Lima" },
+      cena: "Wurstsalat Bavaria + pan",
+      prod: "Asar calabaza 50 min. Sellar salmón + glasear. ANTIC sáb CF: marinar pollo salmorejo, ens. maíz atún (base), crema piña coco."
+    },
+    {
+      fecha: "2026-03-28",
+      ds: "Sábado 28/03",
+      dc: 13,
+      tipo: "chef-free",
+      prot: "Carne blanca",
+      entrante: { n: "Ens. Maíz Atún Tomate Hinojo", id: "Ensalada_Maiz_Atun_Tomate_Hinojo_Straker" },
+      principal: { n: "Pollo Salmorejo con Papas Arrugadas", id: "Pollo_Salmorejo_Papas" },
+      guarnicion: { n: "Papas Arrugadas + Mojos", id: "Papas_Arrugadas_Canarias" },
+      postre: { n: "Crema de Piña y Coco", id: "Crema_Pina_Coco" },
+      cena: "Abendbrot: pan rústico + Aufschnitt mixto + Obatzda + rábanos",
+      prod: "CF — Pollo salmorejo sellado+braseado viernes. Regenerar Convotherm vapor 140°C tapado. Papas arrugadas cocer 30-40 min."
+    },
+    {
+      fecha: "2026-03-29",
+      ds: "Domingo 29/03",
+      dc: 14,
+      tipo: "normal",
+      prot: "Pescado blanco",
+      entrante: { n: "Cogollos a la Plancha", id: "Cogollos_Plancha" },
+      principal: { n: "Bacalao con Tomate, Pimientos y Pangrattato", id: "Bacalao_Tomate_Pimientos_Plato" },
+      guarnicion: { n: "Integrada (tomate + pimientos)", id: null },
+      postre: { n: "Sangría de Frutas", id: "Sangria_Frutas" },
+      cena: "Minestrone Straker + pan",
+      prod: "Cocción bacalao con tomate y pimientos. Gratinar pangrattato. ANTIC: curry de pato completo para lunes."
+    },
+    {
+      fecha: "2026-03-30",
+      ds: "Lunes 30/03",
+      dc: 15,
+      tipo: "normal",
+      prot: "Carne blanca",
+      entrante: { n: "Crema de Ajo Silvestre y Espinacas", id: "Crema_Ajo_Silvestre_Espinacas_Straker" },
+      principal: { n: "Curry Tailandés de Pato", id: "Curry_Tailandes_Pato_Plato" },
+      guarnicion: { n: "Arroz Jazmín", id: "Arroz_Blanco_Suelto" },
+      postre: { n: "Helado de Dulce de Leche", id: "Helado_Dulce_de_Leche_Straker" },
+      cena: "Sopa Miso Tofu + tosta",
+      prod: "Último día del periodo. Curry preparado domingo — regenerar sartén tapada fuego suave 10-12 min. NO hervir (leche coco). Arroz jazmín al momento."
+    }
+  ]
+};
+
+/* ============================================================
+   MISE EN PLACE DATA — 17-30 Marzo 2026 (ACTUAL)
+   ============================================================ */
+const miseData = [
+  {
+    fecha: "2026-03-17",
+    ds: "Martes 17/03",
+    tipo: "normal",
+    titulo: "Pollo Asado Alubias + prep CF miércoles",
+    carga: "Alta",
+    tareas: [
+      { h: "7:30", t: "Sacar pollos (7 uds) 1h antes. Espoleta. Rellenar cavidades. Aceite + sal.", tipo: "servicio" },
+      { h: "8:00", t: "Alubias: escurrir botes o verificar remojo. Picar chalotas, ajo.", tipo: "servicio" },
+      { h: "8:30", t: "Tiramisu: mascarpone + huevos + café + savoiardi. Refrigerar 4h.", tipo: "servicio" },
+      { h: "9:00", t: "Convotherm 250°C → pollos 25 min. Bajar 120°C + cherry. 20-25 min. Reposar.", tipo: "servicio" },
+      { h: "9:30", t: "Asar remolacha (180°C, 60-90 min cubierta).", tipo: "anticipacion", para: "Mié 18" },
+      { h: "10:00", t: "Cocer lentejas Puy (triple ebullición). Aliñar en caliente. Refrigerar.", tipo: "anticipacion", para: "Mié 18" },
+      { h: "10:00", t: "Sofrito alubias: pochar chalotas, ajo, concentrado tomate, chile.", tipo: "servicio" },
+      { h: "10:30", t: "Linseneintopf COMPLETO. Listo para regenerar mañana.", tipo: "anticipacion", para: "Mié 18" },
+      { h: "10:30", t: "Montar alubias con tomates cherry asado + jugos pollo.", tipo: "servicio" },
+      { h: "11:00", t: "Trinchar pollos. Montar Ens. Treviso. Servicio almuerzo.", tipo: "servicio" },
+      { h: "11:30", t: "Natillas Cuajadas Ruibarbo. Refrigerar.", tipo: "anticipacion", para: "Mié 18" },
+      { h: "12:00", t: "Cena: Crema calabacín albahaca. Reservar.", tipo: "servicio" },
+      { h: "13:00", t: "Ensaladilla Alemana para cena mañana. Refrigerar.", tipo: "anticipacion", para: "Mié 18" }
+    ],
+    nota: "Día ALTA carga. Igino cocina servicio + prepara TODO para CF miércoles."
+  },
+  {
+    fecha: "2026-03-18",
+    ds: "Miércoles 18/03",
+    tipo: "chef-free",
+    titulo: "Linseneintopf — solo regeneración",
+    carga: "Auxiliar",
+    tareas: [
+      { h: "10:00", t: "Regenerar Linseneintopf fuego suave. Caldo extra si espesa. NO hervir.", tipo: "chef-free" },
+      { h: "10:30", t: "Emplatar remolacha + lentejas (frías o templadas).", tipo: "chef-free" },
+      { h: "10:45", t: "Cortar Bockwurst rodajas. Añadir 65-70°C. NO hervir.", tipo: "chef-free" },
+      { h: "11:00", t: "Perejil al pase. Servicio. Natillas: solo emplatar.", tipo: "chef-free" },
+      { h: "17:00", t: "Cena: Ensaladilla (ya hecha) + fiambre en tabla.", tipo: "chef-free" }
+    ],
+    nota: "Todo preparado por Igino el martes."
+  },
+  {
+    fecha: "2026-03-19",
+    ds: "Jueves 19/03",
+    tipo: "normal",
+    titulo: "Ragú Gnocchi + prep cebollada viernes",
+    carga: "Media",
+    tareas: [
+      { h: "7:30", t: "Regenerar ragú sartén amplia fuego medio, 8-10 min.", tipo: "servicio" },
+      { h: "8:00", t: "Dorar gnocchi sartén aceite/mantequilla (3-4 min/tanda).", tipo: "servicio" },
+      { h: "9:00", t: "Ens. Calabacín: laminar 2mm mandolina, limones ultrafinos.", tipo: "servicio" },
+      { h: "10:00", t: "Cebollada atún encebollado (pochado 30-40 min). Refrigerar.", tipo: "anticipacion", para: "Vie 20" },
+      { h: "11:00", t: "Montar ensalada + ragú gnocchi + parmesano. Servicio.", tipo: "servicio" },
+      { h: "14:00", t: "Cena: Sopa miso + tofu. Tostas.", tipo: "servicio" }
+    ],
+    nota: "Verificar stock ragú y gnocchi congelados."
+  },
+  {
+    fecha: "2026-03-20",
+    ds: "Viernes 20/03",
+    tipo: "normal",
+    titulo: "Atún Encebollado + prep ossobuco y pavo",
+    carga: "Media-alta",
+    tareas: [
+      { h: "7:30", t: "Atún: sacar del frío, dados 3-4 cm, secar bien.", tipo: "servicio" },
+      { h: "8:00", t: "Vinagreta Ensalada Verde.", tipo: "servicio" },
+      { h: "8:30", t: "Regenerar cebollada. Sellar atún. Integrar fuego bajo 8-12 min.", tipo: "servicio" },
+      { h: "9:00", t: "Tarta Frangipane: hornear 180°C, 45 min.", tipo: "servicio" },
+      { h: "9:30", t: "Sellar + brasear Ossobuco (2h horno 200°C tapado).", tipo: "anticipacion", para: "Sáb 21" },
+      { h: "10:00", t: "Desglasar atún: vino blanco + vinagre Jerez + pimentón.", tipo: "servicio" },
+      { h: "10:30", t: "Papas arrugadas + mojos.", tipo: "servicio" },
+      { h: "11:00", t: "Montar Ensalada Verde al momento. Servicio.", tipo: "servicio" },
+      { h: "14:00", t: "Marinar pavo escabeche (24h mínimo).", tipo: "anticipacion", para: "Dom 22" },
+      { h: "15:00", t: "Cena: Chicken Burgers.", tipo: "servicio" }
+    ],
+    nota: "Ossobuco 2h horno — meter 9:30. Pavo marinar HOY para domingo."
+  },
+  {
+    fecha: "2026-03-21",
+    ds: "Sábado 21/03",
+    tipo: "normal",
+    titulo: "Ossobuco + prep CF domingo",
+    carga: "Media",
+    tareas: [
+      { h: "7:30", t: "Regenerar ossobuco Convotherm vapor 85-90°C tapado, 15-20 min.", tipo: "servicio" },
+      { h: "8:00", t: "Gremolata fresca: perejil + ajo blanqueado 3x + piel naranja/limón.", tipo: "servicio" },
+      { h: "8:30", t: "Patatas Fritas Bistró: 2ª cocción 180°C.", tipo: "servicio" },
+      { h: "9:00", t: "Base ensalada PSB. Cocer PSB, tomate, croutons aparte.", tipo: "anticipacion", para: "Dom 22" },
+      { h: "9:30", t: "Terminar escabeche pavo (cocción + reducción). Refrigerar.", tipo: "anticipacion", para: "Dom 22" },
+      { h: "10:00", t: "Compota Manzana Especiada. Refrigerar.", tipo: "anticipacion", para: "Dom 22" },
+      { h: "10:30", t: "Ens. Tomate AOVE. Mandarina Cointreau.", tipo: "servicio" },
+      { h: "11:00", t: "Emplatar ossobuco + patatas + gremolata. Servicio.", tipo: "servicio" },
+      { h: "17:00", t: "Cena: Abendbrot — pan oscuro + embutido + pepinillos + mantequilla.", tipo: "servicio" }
+    ],
+    nota: null
+  },
+  {
+    fecha: "2026-03-22",
+    ds: "Domingo 22/03",
+    tipo: "chef-free",
+    titulo: "Escabeche Pavo — solo regeneración",
+    carga: "Auxiliar",
+    tareas: [
+      { h: "10:00", t: "Regenerar escabeche pavo fuego suave o Convotherm vapor 65°C. NO hervir.", tipo: "chef-free" },
+      { h: "10:30", t: "Montar ensalada PSB + tomate fresco + tostar croutons.", tipo: "chef-free" },
+      { h: "11:00", t: "Emplatar escabeche + arroz. Servicio. Compota: solo emplatar.", tipo: "chef-free" },
+      { h: "17:00", t: "Cena: Vichyssoise fría + tostas.", tipo: "chef-free" }
+    ],
+    nota: "Todo preparado por Igino el sábado."
+  },
+  {
+    fecha: "2026-03-23",
+    ds: "Lunes 23/03",
+    tipo: "normal",
+    titulo: "Lubina Lentejas + prep alcachofas martes",
+    carga: "Media-alta",
+    tareas: [
+      { h: "7:30", t: "Verificar lubina: 25 filetes, sin espinas. Secar piel.", tipo: "servicio" },
+      { h: "8:00", t: "Cocer lentejas Puy. Pochar cebolla+puerro+ajo. Aliñar caliente.", tipo: "servicio" },
+      { h: "8:30", t: "Salsa verde fresca.", tipo: "servicio" },
+      { h: "9:00", t: "Alcachofas entrante: limpiar, laminar, agua acidulada. Parmesano.", tipo: "servicio" },
+      { h: "9:30", t: "Limpiar + laminar alcachofas para pasta martes. Refrigerar.", tipo: "anticipacion", para: "Mar 24" },
+      { h: "10:30", t: "Lubina piel abajo 3-5 min. Espinacas salteadas.", tipo: "servicio" },
+      { h: "11:00", t: "Montar Ens. Alcachofa + emplatar lubina+lentejas. Servicio.", tipo: "servicio" },
+      { h: "11:30", t: "Fresas Vinagre.", tipo: "servicio" },
+      { h: "17:00", t: "Cena: Abendbrot — pan semillas + Gouda + Rote Bete Salat.", tipo: "servicio" }
+    ],
+    nota: null
+  },
+  {
+    fecha: "2026-03-24",
+    ds: "Martes 24/03",
+    tipo: "normal",
+    titulo: "Pasta Alcachofa + prep CF miércoles",
+    carga: "Media",
+    tareas: [
+      { h: "7:30", t: "Alcachofas (prep lunes): escurrir, secar bien.", tipo: "servicio" },
+      { h: "8:00", t: "Hervir pasta. Saltear alcachofas mantequilla+ajo+caldo.", tipo: "servicio" },
+      { h: "9:00", t: "Ens. Judía Verde: blanquear judías, tostar almendras, cortar melocotón.", tipo: "servicio" },
+      { h: "9:30", t: "Gazpacho. Refrigerar.", tipo: "anticipacion", para: "Mié 25" },
+      { h: "10:00", t: "Gnocchi: pochar, reservar. Tostar avellanas. Salvia lista.", tipo: "anticipacion", para: "Mié 25" },
+      { h: "10:30", t: "Naranjas Miel. Refrigerar.", tipo: "anticipacion", para: "Mié 25" },
+      { h: "11:00", t: "Montar pasta+alcachofas+parmesano+hierbas. Servicio.", tipo: "servicio" },
+      { h: "11:30", t: "Mango Yogur Chocolate Blanco.", tipo: "servicio" },
+      { h: "14:00", t: "Cena: Crema tomate asado. Reservar.", tipo: "servicio" }
+    ],
+    nota: null
+  },
+  {
+    fecha: "2026-03-25",
+    ds: "Miércoles 25/03",
+    tipo: "chef-free",
+    titulo: "Gnocchi Burnt Butter — CF con dorado",
+    carga: "Auxiliar",
+    tareas: [
+      { h: "10:00", t: "Gazpacho: ya listo, solo emplatar frío.", tipo: "chef-free" },
+      { h: "10:15", t: "Gnocchi: dorar sartén → beurre noisette. Freír salvia 30s. Avellanas.", tipo: "chef-free" },
+      { h: "10:45", t: "Montar gnocchi + mantequilla tostada + salvia + parmesano + limón.", tipo: "chef-free" },
+      { h: "11:00", t: "Servicio. Naranjas Miel ya listas.", tipo: "chef-free" },
+      { h: "17:00", t: "Cena: Abendbrot — Vollkornbrot + Schinken + Gurkensalat.", tipo: "chef-free" }
+    ],
+    nota: "Gnocchi requiere dorar al momento — auxiliar puede con instrucciones claras."
+  },
+  {
+    fecha: "2026-03-26",
+    ds: "Jueves 26/03",
+    tipo: "normal",
+    titulo: "Schnitzel Ternera + prep glaseado salmón",
+    carga: "Media-alta",
+    tareas: [
+      { h: "7:30", t: "Aplanar escalopes (25 uds). Línea empanado.", tipo: "servicio" },
+      { h: "8:30", t: "Empanar todos. Refrigerar.", tipo: "servicio" },
+      { h: "9:00", t: "Aderezo anchoa (procesador).", tipo: "servicio" },
+      { h: "9:30", t: "Asar pimientos. Preparar burrata.", tipo: "servicio" },
+      { h: "10:00", t: "Glaseado salmón (miel+mostaza+soja+limón+jengibre).", tipo: "anticipacion", para: "Vie 27" },
+      { h: "10:30", t: "Convotherm 220°C. Schnitzels spray aceite, 12-14 min.", tipo: "servicio" },
+      { h: "11:00", t: "Pimientos Burrata + Schnitzel + ensalada apio. Servicio.", tipo: "servicio" },
+      { h: "11:30", t: "Sopa Melón Menta.", tipo: "servicio" },
+      { h: "14:00", t: "Caldo pollo verduras para cena.", tipo: "servicio" }
+    ],
+    nota: null
+  },
+  {
+    fecha: "2026-03-27",
+    ds: "Viernes 27/03",
+    tipo: "normal",
+    titulo: "Salmón Glaseado + prep CF sábado",
+    carga: "Media",
+    tareas: [
+      { h: "7:30", t: "Asar calabaza 220°C + miel (50 min). Bulgur. Nueces.", tipo: "servicio" },
+      { h: "8:30", t: "Brócoli charred: cortar, miso bagna cauda.", tipo: "servicio" },
+      { h: "9:00", t: "Sellar salmón + glasear.", tipo: "servicio" },
+      { h: "9:30", t: "Marinar pollo salmorejo (12-24h).", tipo: "anticipacion", para: "Sáb 28" },
+      { h: "10:00", t: "Charrar brócoli.", tipo: "servicio" },
+      { h: "10:30", t: "Montar Ens. Calabaza Bulgur. Servicio.", tipo: "servicio" },
+      { h: "14:00", t: "Ens. Maíz Atún (base sin hojas). Refrigerar.", tipo: "anticipacion", para: "Sáb 28" },
+      { h: "14:30", t: "Crema Piña Coco. Refrigerar.", tipo: "anticipacion", para: "Sáb 28" },
+      { h: "15:00", t: "Cena: Wurstsalat Bavaria.", tipo: "servicio" }
+    ],
+    nota: "Pollo salmorejo: marinar HOY para sábado CF."
+  },
+  {
+    fecha: "2026-03-28",
+    ds: "Sábado 28/03",
+    tipo: "chef-free",
+    titulo: "Pollo Salmorejo — regeneración + papas",
+    carga: "Auxiliar",
+    tareas: [
+      { h: "9:30", t: "Cocer papas arrugadas con sal (30-40 min).", tipo: "chef-free" },
+      { h: "10:00", t: "Regenerar pollo salmorejo Convotherm vapor 140°C tapado, 8-10 min.", tipo: "chef-free" },
+      { h: "10:30", t: "Emplatar Ens. Maíz Atún. Mojos temp. ambiente.", tipo: "chef-free" },
+      { h: "11:00", t: "Servicio. Crema Piña Coco ya lista.", tipo: "chef-free" },
+      { h: "17:00", t: "Cena: Abendbrot — pan rústico + Aufschnitt + Obatzda + rábanos.", tipo: "chef-free" }
+    ],
+    nota: "Pollo salmorejo sellado+braseado por Igino el viernes."
+  },
+  {
+    fecha: "2026-03-29",
+    ds: "Domingo 29/03",
+    tipo: "normal",
+    titulo: "Bacalao Pangrattato + prep curry pato",
+    carga: "Media",
+    tareas: [
+      { h: "7:30", t: "Mise en place bacalao: filetes, tomate, pimientos, pangrattato.", tipo: "servicio" },
+      { h: "8:30", t: "Cogollos: cortar mitad, secar.", tipo: "servicio" },
+      { h: "9:00", t: "Cocción bacalao. Gratinar pangrattato.", tipo: "servicio" },
+      { h: "9:30", t: "Curry pato COMPLETO (cocción larga). Refrigerar.", tipo: "anticipacion", para: "Lun 30" },
+      { h: "10:00", t: "Grillar cogollos.", tipo: "servicio" },
+      { h: "10:30", t: "Sangría Frutas.", tipo: "servicio" },
+      { h: "11:00", t: "Servicio.", tipo: "servicio" },
+      { h: "14:00", t: "Cena: Minestrone.", tipo: "servicio" }
+    ],
+    nota: null
+  },
+  {
+    fecha: "2026-03-30",
+    ds: "Lunes 30/03",
+    tipo: "normal",
+    titulo: "Curry Pato — cierre periodo",
+    carga: "Media",
+    tareas: [
+      { h: "7:30", t: "Crema Ajo Silvestre Espinacas.", tipo: "servicio" },
+      { h: "9:00", t: "Regenerar curry pato sartén tapada fuego suave 10-12 min. NO hervir.", tipo: "servicio" },
+      { h: "9:30", t: "Cocer arroz jazmín.", tipo: "servicio" },
+      { h: "10:30", t: "Albahaca/cilantro fresco para acabado.", tipo: "servicio" },
+      { h: "11:00", t: "Servicio: crema + curry + arroz + helado dulce de leche.", tipo: "servicio" },
+      { h: "14:00", t: "Cena: Sopa miso tofu + tosta. Último día.", tipo: "servicio" }
+    ],
+    nota: "Curry preparado domingo — solo regenerar. Cierre periodo."
+  }
+];
+
+/* ============================================================
+   COMPRAS DATA — 17-30 Marzo 2026 (ACTUAL)
+   ============================================================ */
+const comprasData = [
+  {
+    lista: 1,
+    titulo: "ENTREGA 1 — Lun 16 + Mar 17",
+    entrega: "Lunes 17 primera hora",
+    cubre: "d1–d5: Pollo Alubias, Linseneintopf, Ragú Gnocchi, Atún Encebollado, Ossobuco",
+    secciones: [
+      {
+        s: "Pescadería",
+        items: [
+          { p: "Atún fresco (lomos limpios)", c: "4,3 kg", n: "Vie — PEDIR ENTREGA JUEVES. Máx 48h" }
+        ]
+      },
+      {
+        s: "Carnicería",
+        items: [
+          { p: "Pollo entero (~1,8 kg/ud)", c: "7 uds", n: "Mar — asado alubias" },
+          { p: "Bockwurst", c: "25 uds (~2,7 kg)", n: "Mié — Linseneintopf" },
+          { p: "Panceta ahumada (Raucherspeck)", c: "400 g", n: "Mié — lardons" },
+          { p: "Ragú cerdo y ternera", c: "VERIFICAR STOCK", n: "Jue — gnocchi" },
+          { p: "Pechuga pollo", c: "2,5 kg", n: "Vie cena — Chicken Burger" },
+          { p: "Fiambre alemán variado", c: "1 kg", n: "Mié cena" }
+        ]
+      },
+      {
+        s: "Frutería / Verduras",
+        items: [
+          { p: "Cebolla blanca", c: "10 kg", n: "8,9 kg encebollado + 750 g linseneintopf" },
+          { p: "Treviso / radicchio largo", c: "8 uds", n: "Mar entrante" },
+          { p: "Clementinas", c: "18 uds", n: "Mar entrante" },
+          { p: "Naranjas", c: "6 uds", n: "Vinagreta treviso" },
+          { p: "Remolacha", c: "4,5 kg", n: "Asar mar para mié CF" },
+          { p: "Hinojo fresco", c: "7 uds", n: "Entrante + linseneintopf" },
+          { p: "Calabacín firme", c: "3,2 kg", n: "Entrante jue + crema cena" },
+          { p: "Rúcula fresca", c: "600 g", n: "Entrante jue" },
+          { p: "Tomate cherry", c: "2,4 kg", n: "Pollo asado" },
+          { p: "Chalota", c: "16 uds", n: "Pollo" },
+          { p: "Ajo (cabezas)", c: "~8", n: "Varios" },
+          { p: "Espinacas baby", c: "500 g", n: "Entrante remolacha" },
+          { p: "Limones", c: "~20 uds", n: "Varios" },
+          { p: "Lechugas variadas", c: "4+4+2", n: "Ensalada verde vie" },
+          { p: "Ruibarbo fresco", c: "1,5 kg", n: "Natillas (prep mar)" },
+          { p: "Naranjas sanguinas", c: "3 kg", n: "VERIFICAR — sorbete jue" },
+          { p: "Peras Conference", c: "8 uds", n: "Frangipane vie" }
+        ]
+      },
+      {
+        s: "Lácteos / Huevos",
+        items: [
+          { p: "Parmesano (pieza)", c: "~1 kg", n: "Treviso + calabacín + varios" },
+          { p: "Pecorino sardo", c: "250 g", n: "Treviso mar" },
+          { p: "Mascarpone", c: "1 kg", n: "Tiramisu" },
+          { p: "Nata montar", c: "500 ml", n: "Natillas ruibarbo" },
+          { p: "Huevos frescos", c: "2 docenas", n: "Tiramisu + natillas + ensaladilla" }
+        ]
+      },
+      {
+        s: "Despensa / Secos",
+        items: [
+          { p: "Alubias blancas", c: "3 kg escurridas", n: "Pollo mar" },
+          { p: "Lentejas verde-gris alemanas", c: "2 kg seco", n: "REMOJAR NOCHE LUNES" },
+          { p: "Lentejas Puy", c: "900 g", n: "Entrante remolacha" },
+          { p: "Nueces", c: "600 g", n: "Treviso caramelizar" },
+          { p: "Savoiardi + café + cacao", c: "c/n", n: "Tiramisu" },
+          { p: "Almendra molida", c: "400 g", n: "Frangipane" },
+          { p: "Mostaza Dijon", c: "350 g", n: "Ens verde + linseneintopf" },
+          { p: "AOVE", c: "~3 L", n: "Verificar stock" },
+          { p: "Caldo ave", c: "7 L", n: "Linseneintopf" },
+          { p: "Pan brioche burger", c: "25 uds", n: "Chicken burger vie cena" }
+        ]
+      }
+    ]
+  },
+  {
+    lista: 2,
+    titulo: "ENTREGA 2 — Mié/Jue 19-20",
+    entrega: "Jueves 20 o viernes 21",
+    cubre: "d6–d8: Ossobuco, Escabeche Pavo, Lubina Lentejas",
+    secciones: [
+      {
+        s: "Pescadería",
+        items: [
+          { p: "Lubina fresca con piel (filetes ~180g)", c: "25 filetes (~4,5 kg)", n: "Lun 23 — ENTREGA LUN TEMPRANO" }
+        ]
+      },
+      {
+        s: "Carnicería",
+        items: [
+          { p: "Ossobuco ternera (250 g/ud)", c: "25 uds (~6,25 kg)", n: "Sáb — brasear viernes" },
+          { p: "Pechuga pavo", c: "4,5 kg", n: "Dom CF — marinar viernes" },
+          { p: "Contramuslo pavo deshuesado", c: "1,5 kg", n: "Dom CF" },
+          { p: "Embutido alemán", c: "500 g", n: "Abendbrot sáb cena" }
+        ]
+      },
+      {
+        s: "Frutería / Verduras",
+        items: [
+          { p: "Tomate maduro", c: "2 kg", n: "Ens tomate sáb" },
+          { p: "Cebolla blanca", c: "4 kg", n: "Escabeche pavo" },
+          { p: "Alcachofas baby", c: "100 uds", n: "50 entrante lun + 50 plato mar" },
+          { p: "Lentejas Puy", c: "1,6 kg", n: "Lubina lun" },
+          { p: "Espinacas frescas", c: "1,8 kg", n: "Lubina salteadas" },
+          { p: "Manzanas", c: "3 kg", n: "Compota dom CF" },
+          { p: "Mandarina", c: "25 uds", n: "Postre sáb" },
+          { p: "Fresas frescas", c: "1,5 kg", n: "Postre lun" }
+        ]
+      },
+      {
+        s: "Lácteos / Huevos",
+        items: [
+          { p: "Parmesano", c: "850 g", n: "Ens alcachofa + varios" },
+          { p: "Gouda", c: "500 g", n: "Abendbrot lun cena" }
+        ]
+      },
+      {
+        s: "Despensa / Secos",
+        items: [
+          { p: "Salsa soja baja sal", c: "3 L", n: "Escabeche pavo" },
+          { p: "Vinagre arroz", c: "2,5 L", n: "Escabeche pavo" },
+          { p: "Vino blanco", c: "1,4 L", n: "Ossobuco" },
+          { p: "Mantequilla", c: "560 g", n: "Ossobuco" },
+          { p: "Cointreau", c: "200 ml", n: "Postre mandarina" },
+          { p: "Pan oscuro alemán + pan semillas", c: "2 kg + 2 kg", n: "Abendbrot sáb + lun" }
+        ]
+      }
+    ]
+  },
+  {
+    lista: 3,
+    titulo: "ENTREGA 3 — Lun 24",
+    entrega: "Lunes 24 primera hora",
+    cubre: "d9–d13: Pasta Alcachofa, Gnocchi, Schnitzel, Salmón, Pollo Salmorejo",
+    secciones: [
+      {
+        s: "Pescadería",
+        items: [
+          { p: "Salmón fresco (lomos 150-180g)", c: "25 filetes (~4,2 kg)", n: "Vie 27 — ENTREGA JUE/VIE TEMPRANO" }
+        ]
+      },
+      {
+        s: "Carnicería",
+        items: [
+          { p: "Escalopes ternera (150 g/ud)", c: "25 uds (~3,75 kg)", n: "Jue — schnitzel" },
+          { p: "Contramuslo pollo deshuesado", c: "4-4,5 kg", n: "Sáb CF — salmorejo (marinar vie)" }
+        ]
+      },
+      {
+        s: "Frutería / Verduras",
+        items: [
+          { p: "Judía verde", c: "2 kg", n: "Entrante mar" },
+          { p: "Melocotón maduro", c: "8 uds", n: "Entrante mar" },
+          { p: "Tomate gazpacho + pepino + pimientos", c: "~4,5 kg total", n: "Gazpacho (prep mar)" },
+          { p: "Calabaza butternut", c: "6 kg", n: "Entrante vie" },
+          { p: "Brócoli", c: "3 kg", n: "Salmón vie" },
+          { p: "Pimientos para asar", c: "2 kg", n: "Entrante jue burrata" },
+          { p: "Apio + rábanos + lechuga", c: "c/n", n: "Schnitzel jue" },
+          { p: "Papas bonita/negra", c: "3 kg", n: "Salmorejo sáb CF" },
+          { p: "Melón, plátano, mango, naranjas, piña", c: "c/n", n: "Postres semana" }
+        ]
+      },
+      {
+        s: "Lácteos / Huevos",
+        items: [
+          { p: "Burrata", c: "25 uds (125g)", n: "Pimientos jue" },
+          { p: "Parmesano", c: "1,2 kg", n: "Pasta + gnocchi + schnitzel" },
+          { p: "Mantequilla sin sal", c: "1,2 kg", n: "Gnocchi + pasta" },
+          { p: "Yogur griego", c: "500 g", n: "Mango yogur postre" }
+        ]
+      },
+      {
+        s: "Despensa / Secos",
+        items: [
+          { p: "Tagliolini secos", c: "2,5 kg", n: "Pasta alcachofa" },
+          { p: "Panko japonés", c: "1,2 kg", n: "Schnitzel" },
+          { p: "Avellanas", c: "600 g", n: "Gnocchi tostar" },
+          { p: "Anchoas Cantábricas", c: "68 filetes", n: "Schnitzel" },
+          { p: "Bulgur", c: "900 g", n: "Entrante calabaza" },
+          { p: "Vollkornbrot + Schinken", c: "2+1 kg", n: "Abendbrot mié CF" },
+          { p: "Pan rústico + Aufschnitt + Obatzda", c: "c/n", n: "Abendbrot sáb CF" }
+        ]
+      }
+    ]
+  },
+  {
+    lista: 4,
+    titulo: "ENTREGA 4 — Mié/Jue 26-27",
+    entrega: "Jueves 27 o viernes 28",
+    cubre: "d14–d15: Bacalao Pangrattato, Curry Pato",
+    secciones: [
+      {
+        s: "Pescadería",
+        items: [
+          { p: "Bacalao fresco (lomos sin espinas)", c: "25 filetes (~4 kg)", n: "Dom 29" }
+        ]
+      },
+      {
+        s: "Carnicería",
+        items: [
+          { p: "Pato (contramuslos/piezas curry)", c: "4 kg", n: "Lun 30 — curry (preparar dom)" }
+        ]
+      },
+      {
+        s: "Frutería / Verduras",
+        items: [
+          { p: "Cogollos", c: "13 uds", n: "Entrante dom plancha" },
+          { p: "Tomate maduro + pimientos", c: "3,5 kg total", n: "Bacalao" },
+          { p: "Ajo silvestre o espinacas+ajo", c: "1,5 kg", n: "Crema entrante lun" },
+          { p: "Frutas variadas sangría", c: "2 kg", n: "Postre dom" }
+        ]
+      },
+      {
+        s: "Despensa / Secos",
+        items: [
+          { p: "Pangrattato", c: "500 g", n: "Bacalao" },
+          { p: "Pasta curry rojo + leche coco", c: "200 g + 3 L", n: "Curry pato" },
+          { p: "Arroz jazmín", c: "2 kg", n: "Curry pato" },
+          { p: "Vino tinto (sangría)", c: "2 botellas", n: "Postre sangría" },
+          { p: "Helado dulce de leche", c: "verificar", n: "Postre lun (Straker)" }
+        ]
+      }
+    ]
+  }
+];
+
+
 const subCats = ["Principal","Guarnición HI","Guarnición V","Base/Salsa","Base/Caldo","Base/Elemento"];
 
-/* Build set of recipe IDs in current period from menuData */
-const periodoIds = new Set();
-if (typeof menuData !== 'undefined' && menuData.dias) {
-  menuData.dias.forEach(function(d) {
-    ['entrante','principal','guarnicion','postre'].forEach(function(k) {
-      if (d[k] && d[k].id) periodoIds.add(d[k].id);
+/* Build set of recipe IDs in current period */
+let periodoIds = new Set();
+function rebuildPeriodoIds() {
+  periodoIds = new Set();
+  const md = getMenuData();
+  if (md && md.dias) {
+    md.dias.forEach(function(d) {
+      ['entrante','principal','guarnicion','postre'].forEach(function(k) {
+        if (d[k] && d[k].id) periodoIds.add(d[k].id);
+      });
     });
-  });
+  }
 }
+rebuildPeriodoIds();
 /* Expand: load JSONs of periodo recipes and add their componentes */
 async function expandPeriodoIds() {
   const toCheck = [...periodoIds];
@@ -1050,10 +1743,10 @@ function recipeLink(item) {
 }
 
 function renderMenu() {
-  document.getElementById("menu-periodo").textContent = `Menú ${menuData.periodo}`;
-  document.getElementById("menu-meta").textContent = `${menuData.pax} PAX · ${menuData.ciclo} · Chef-free: ${menuData.chef_free}`;
+  document.getElementById("menu-periodo").textContent = `Menú ${getMenuData().periodo}`;
+  document.getElementById("menu-meta").textContent = `${getMenuData().pax} PAX · ${getMenuData().ciclo} · Chef-free: ${getMenuData().chef_free}`;
   
-  document.getElementById("menu-days").innerHTML = menuData.dias.map((d, i) => `
+  document.getElementById("menu-days").innerHTML = getMenuData().dias.map((d, i) => `
     <div class="menu-day ${d.tipo}${i===0?' open':''}" onclick="toggleDay(this)">
       <div class="menu-day-header">
         <div class="menu-day-date">${d.ds} — Día ${d.dc}</div>
@@ -1078,9 +1771,9 @@ function renderMenu() {
    MISE EN PLACE RENDERING
    ============================================================ */
 function renderMise() {
-  document.getElementById("mise-meta").textContent = `${menuData.pax} PAX · ${menuData.periodo} · Chef solo 7:30–15:30`;
+  document.getElementById("mise-meta").textContent = `${getMenuData().pax} PAX · ${getMenuData().periodo} · Chef solo 7:30–15:30`;
   
-  document.getElementById("mise-days").innerHTML = miseData.map((d, i) => {
+  document.getElementById("mise-days").innerHTML = getMiseData().map((d, i) => {
     const cargaClass = d.carga.toLowerCase().replace(/[- ]/g,'-');
     return `
     <div class="mise-day ${d.tipo}${i===0?' open':''}" onclick="toggleDay(this)">
@@ -1109,9 +1802,9 @@ function renderMise() {
    COMPRAS RENDERING
    ============================================================ */
 function renderCompras() {
-  document.getElementById("compras-meta").textContent = `${menuData.pax} PAX · ${menuData.periodo}`;
+  document.getElementById("compras-meta").textContent = `${getMenuData().pax} PAX · ${getMenuData().periodo}`;
   
-  document.getElementById("compras-listas").innerHTML = comprasData.map((l, i) => `
+  document.getElementById("compras-listas").innerHTML = getComprasData().map((l, i) => `
     <div class="compra-lista${i===0?' open':''}" onclick="toggleCompra(this)">
       <div class="compra-header">
         <div class="compra-titulo">Lista ${l.lista} — ${l.titulo}</div>
@@ -1201,6 +1894,46 @@ function back() {
 function setTab(t) { state.tab = t; renderDetail(); }
 
 document.getElementById("search").addEventListener("input", e => { state.search = e.target.value; renderGrid(); });
+
+/* ============================================================
+   PERIODO SWITCHING
+   ============================================================ */
+let currentPeriodo = 'actual';
+
+function getMenuData() { return currentPeriodo === 'actual' ? menuData : menuData_prev; }
+function getMiseData() { return currentPeriodo === 'actual' ? miseData : miseData_prev; }
+function getComprasData() { return currentPeriodo === 'actual' ? comprasData : comprasData_prev; }
+
+function switchPeriodo(periodo) {
+  currentPeriodo = periodo;
+  // Update tab styles
+  document.getElementById('tab-actual').style.background = periodo === 'actual' ? 'rgba(255,255,255,0.1)' : 'transparent';
+  document.getElementById('tab-actual').style.color = periodo === 'actual' ? '#d4c5a0' : '#888';
+  document.getElementById('tab-actual').style.borderColor = periodo === 'actual' ? 'rgba(255,255,255,0.2)' : 'rgba(255,255,255,0.1)';
+  document.getElementById('tab-anterior').style.background = periodo === 'anterior' ? 'rgba(255,255,255,0.1)' : 'transparent';
+  document.getElementById('tab-anterior').style.color = periodo === 'anterior' ? '#d4c5a0' : '#888';
+  document.getElementById('tab-anterior').style.borderColor = periodo === 'anterior' ? 'rgba(255,255,255,0.2)' : 'rgba(255,255,255,0.1)';
+  // Rebuild periodo IDs and re-expand
+  rebuildPeriodoIds();
+  expandPeriodoIds().then(function() {
+    if (state.periodo) { renderCats(); renderSubs(); renderGrid(); }
+  });
+  // Re-render active views
+  renderMenu();
+  renderMise();
+  renderCompras();
+}
+
+function downloadPeriodoPDF(tipo) {
+  const suffix = currentPeriodo === 'actual' ? '17-30mar' : '13-16mar';
+  const paths = {
+    menu: ['data/pdf/Menu_periodo_' + suffix + '.pdf', 'Menu_ATTENYA.pdf'],
+    mise: ['data/pdf/Mise_periodo_' + suffix + '.pdf', 'Mise_en_Place_ATTENYA.pdf'],
+    compras: ['data/pdf/Compras_periodo_' + suffix + '.pdf', 'Compras_ATTENYA.pdf']
+  };
+  const p = paths[tipo];
+  if (p) downloadFile(p[0], p[1]);
+}
 
 /* ============================================================
    INIT
