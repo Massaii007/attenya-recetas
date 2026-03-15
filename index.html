@@ -213,15 +213,13 @@ body { background: #1a1612; color: #e8dfd4; font-family: 'Cormorant Garamond', G
   <div class="header-count" id="total-count"></div>
 </div>
 
-<!-- PERIODO SELECTOR -->
+<!-- PERIODO SELECTOR (top tabs — show dates, control Menu/Mise/Compras) -->
 <div class="periodo-tabs" style="display:flex; gap:10px; margin-bottom:0; padding:12px 0 8px; justify-content:center; background:transparent;">
-  <button class="periodo-tab" id="tab-actual" onclick="switchPeriodo('actual')"
+  <button class="periodo-tab" id="tab-p1" onclick="switchPeriodo('p1')"
     style="padding:6px 18px; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); border-radius:4px; color:#d4c5a0; cursor:pointer; font-family:'Jost',sans-serif; font-size:13px;">
-    17–30 Mar 2026
   </button>
-  <button class="periodo-tab" id="tab-anterior" onclick="switchPeriodo('anterior')"
+  <button class="periodo-tab" id="tab-p2" onclick="switchPeriodo('p2')"
     style="padding:6px 18px; background:transparent; border:1px solid rgba(255,255,255,0.1); border-radius:4px; color:#888; cursor:pointer; font-family:'Jost',sans-serif; font-size:13px;">
-    13–16 Mar 2026
   </button>
 </div>
 
@@ -240,8 +238,9 @@ body { background: #1a1612; color: #e8dfd4; font-family: 'Cormorant Garamond', G
       <input type="text" class="search-input" id="search" placeholder="Buscar receta, técnica, proteína...">
     </div>
     <div class="cats" id="cats"></div>
-    <div style="padding:8px 0 12px;border-bottom:1px solid #2a241e;">
-      <button class="cat-btn" id="periodo-btn" onclick="togglePeriodo()">✦ Periodo actual</button>
+    <div style="padding:8px 0 12px;border-bottom:1px solid #2a241e;display:flex;gap:8px;flex-wrap:wrap;">
+      <button class="cat-btn" id="periodo-btn-actual" onclick="togglePeriodo('actual')">✦ Periodo actual</button>
+      <button class="cat-btn" id="periodo-btn-siguiente" onclick="togglePeriodo('siguiente')">✦ Periodo siguiente</button>
     </div>
     <div class="subs" id="subs"></div>
     <div class="results-count" id="results-count"></div>
@@ -604,7 +603,7 @@ const recipes = [
    ============================================================ */
 const menuData_prev = {
   periodo: "13 — 16 de Marzo 2026",
-  pax: "25 PAX",
+  pax: 25,
   ciclo: "Ciclo 15 días · Días 11–14",
   chef_free: "Sáb 14/03 (Igino libre)",
   dias: [
@@ -1461,50 +1460,97 @@ const comprasData = [
 
 const subCats = ["Principal","Guarnición HI","Guarnición V","Base/Salsa","Base/Caldo","Base/Elemento"];
 
-/* Build set of recipe IDs in current period */
-let periodoIds = new Set();
-function rebuildPeriodoIds() {
-  periodoIds = new Set();
-  const md = getMenuData();
+/* ============================================================
+   PERIODO DETECTION — auto-detect actual vs siguiente by date
+   ============================================================ */
+/* Determine which dataset is "actual" (today falls within) and which is "siguiente" */
+var periodoActualData, periodoSiguienteData;
+(function() {
+  var today = new Date().toISOString().split('T')[0];
+  var mdFirst = menuData.dias[0].fecha;
+  var mdLast = menuData.dias[menuData.dias.length - 1].fecha;
+  var pvFirst = menuData_prev.dias[0].fecha;
+  var pvLast = menuData_prev.dias[menuData_prev.dias.length - 1].fecha;
+  
+  if (today >= mdFirst && today <= mdLast) {
+    periodoActualData = menuData;
+    periodoSiguienteData = menuData_prev;
+  } else if (today >= pvFirst && today <= pvLast) {
+    periodoActualData = menuData_prev;
+    periodoSiguienteData = menuData;
+  } else if (today < mdFirst && today < pvFirst) {
+    /* Both in the future — the earlier one is "actual" */
+    periodoActualData = mdFirst < pvFirst ? menuData : menuData_prev;
+    periodoSiguienteData = mdFirst < pvFirst ? menuData_prev : menuData;
+  } else {
+    /* Both in the past — the later one is "actual" */
+    periodoActualData = mdLast > pvLast ? menuData : menuData_prev;
+    periodoSiguienteData = mdLast > pvLast ? menuData_prev : menuData;
+  }
+})();
+
+/* Build ID sets from the detected assignment */
+function buildIdsFromMenu(md) {
+  var ids = new Set();
   if (md && md.dias) {
     md.dias.forEach(function(d) {
       ['entrante','principal','guarnicion','postre'].forEach(function(k) {
-        if (d[k] && d[k].id) periodoIds.add(d[k].id);
+        if (d[k] && d[k].id) ids.add(d[k].id);
       });
     });
   }
+  return ids;
 }
-rebuildPeriodoIds();
-/* Expand: load JSONs of periodo recipes and add their componentes */
+
+let periodoIds_actual = buildIdsFromMenu(periodoActualData);
+let periodoIds_siguiente = buildIdsFromMenu(periodoSiguienteData);
+
+/* Also expose periodoIds for backward compat (used by switchPeriodo toggle) */
+let periodoIds = periodoIds_actual;
+
+/* Expand: load JSONs and add componentes */
 async function expandPeriodoIds() {
-  const toCheck = [...periodoIds];
-  const v = Date.now();
-  for (const id of toCheck) {
-    try {
-      const res = await fetch('data/' + id + '.json?v=' + v);
-      if (!res.ok) continue;
-      const d = await res.json();
-      if (d && d.componentes) {
-        d.componentes.forEach(function(c) {
-          if (c.id && !c.id.startsWith('pendiente_')) periodoIds.add(c.id);
-        });
-      }
-    } catch(e) {}
+  async function expandSet(ids) {
+    const toCheck = [...ids];
+    const v = Date.now();
+    for (const id of toCheck) {
+      try {
+        const res = await fetch('data/' + id + '.json?v=' + v);
+        if (!res.ok) continue;
+        const d = await res.json();
+        if (d && d.componentes) {
+          d.componentes.forEach(function(c) {
+            if (c.id && !c.id.startsWith('pendiente_')) ids.add(c.id);
+          });
+        }
+      } catch(e) {}
+    }
   }
+  await expandSet(periodoIds_actual);
+  await expandSet(periodoIds_siguiente);
+  periodoIds = periodoIds_actual;
 }
 
 let state = { cat: "all", sub: null, search: "", selected: null, tab: "ficha", view: "catalogo", periodo: false };
 const navStack = [];
 
+function activePeriodoIds() {
+  if (state.periodo === 'actual') return periodoIds_actual;
+  if (state.periodo === 'siguiente') return periodoIds_siguiente;
+  return null;
+}
+
 function count(c) {
   let r = recipes;
-  if (state.periodo) r = r.filter(x => periodoIds.has(x.id));
+  const pids = activePeriodoIds();
+  if (pids) r = r.filter(x => pids.has(x.id));
   return c === "all" ? r.length : r.filter(x => x.c === c).length;
 }
 
 function filter() {
   let r = recipes;
-  if (state.periodo) r = r.filter(x => periodoIds.has(x.id));
+  const pids = activePeriodoIds();
+  if (pids) r = r.filter(x => pids.has(x.id));
   if (state.cat !== "all") r = r.filter(x => x.c === state.cat);
   if (state.sub) r = r.filter(x => x.s === state.sub);
   if (state.search.trim()) {
@@ -1514,19 +1560,24 @@ function filter() {
   return r;
 }
 
-function togglePeriodo() {
-  state.periodo = !state.periodo;
+function togglePeriodo(which) {
+  state.periodo = (state.periodo === which) ? false : which;
   renderCats();
   renderSubs();
   renderGrid();
-  renderPeriodoBtn();
+  renderPeriodoBtns();
 }
 
-function renderPeriodoBtn() {
-  const btn = document.getElementById("periodo-btn");
-  if (btn) {
-    btn.className = "cat-btn" + (state.periodo ? " active" : "");
-    btn.textContent = state.periodo ? "✦ Periodo actual (" + periodoIds.size + ")" : "✦ Periodo actual";
+function renderPeriodoBtns() {
+  const btnActual = document.getElementById("periodo-btn-actual");
+  const btnSiguiente = document.getElementById("periodo-btn-siguiente");
+  if (btnActual) {
+    btnActual.className = "cat-btn" + (state.periodo === 'actual' ? " active" : "");
+    btnActual.textContent = state.periodo === 'actual' ? "✦ Periodo actual (" + periodoIds_actual.size + ")" : "✦ Periodo actual";
+  }
+  if (btnSiguiente) {
+    btnSiguiente.className = "cat-btn" + (state.periodo === 'siguiente' ? " active" : "");
+    btnSiguiente.textContent = state.periodo === 'siguiente' ? "✦ Periodo siguiente (" + periodoIds_siguiente.size + ")" : "✦ Periodo siguiente";
   }
 }
 
@@ -1896,42 +1947,46 @@ function setTab(t) { state.tab = t; renderDetail(); }
 document.getElementById("search").addEventListener("input", e => { state.search = e.target.value; renderGrid(); });
 
 /* ============================================================
-   PERIODO SWITCHING
+   PERIODO SWITCHING (top tabs — date-based, controls Menu/Mise/Compras)
+   p1 = menuData (newest), p2 = menuData_prev (oldest)
+   Independent of actual/siguiente detection in catalog buttons.
    ============================================================ */
-var currentPeriodo = 'actual';
+var currentPeriodo = 'p1';
 
-function getMenuData() { return currentPeriodo === 'actual' ? menuData : menuData_prev; }
-function getMiseData() { return currentPeriodo === 'actual' ? miseData : miseData_prev; }
-function getComprasData() { return currentPeriodo === 'actual' ? comprasData : comprasData_prev; }
+function getMenuData() { return currentPeriodo === 'p1' ? menuData : menuData_prev; }
+function getMiseData() { return currentPeriodo === 'p1' ? miseData : miseData_prev; }
+function getComprasData() { return currentPeriodo === 'p1' ? comprasData : comprasData_prev; }
 
-function switchPeriodo(periodo) {
-  currentPeriodo = periodo;
-  // Update tab styles
-  document.getElementById('tab-actual').style.background = periodo === 'actual' ? 'rgba(255,255,255,0.1)' : 'transparent';
-  document.getElementById('tab-actual').style.color = periodo === 'actual' ? '#d4c5a0' : '#888';
-  document.getElementById('tab-actual').style.borderColor = periodo === 'actual' ? 'rgba(255,255,255,0.2)' : 'rgba(255,255,255,0.1)';
-  document.getElementById('tab-anterior').style.background = periodo === 'anterior' ? 'rgba(255,255,255,0.1)' : 'transparent';
-  document.getElementById('tab-anterior').style.color = periodo === 'anterior' ? '#d4c5a0' : '#888';
-  document.getElementById('tab-anterior').style.borderColor = periodo === 'anterior' ? 'rgba(255,255,255,0.2)' : 'rgba(255,255,255,0.1)';
-  // Rebuild periodo IDs and re-expand
-  rebuildPeriodoIds();
-  expandPeriodoIds().then(function() {
-    if (state.periodo) { renderCats(); renderSubs(); renderGrid(); }
-  });
-  // Re-render active views
+function switchPeriodo(p) {
+  currentPeriodo = p;
+  document.getElementById('tab-p1').style.background = p === 'p1' ? 'rgba(255,255,255,0.1)' : 'transparent';
+  document.getElementById('tab-p1').style.color = p === 'p1' ? '#d4c5a0' : '#888';
+  document.getElementById('tab-p1').style.borderColor = p === 'p1' ? 'rgba(255,255,255,0.2)' : 'rgba(255,255,255,0.1)';
+  document.getElementById('tab-p2').style.background = p === 'p2' ? 'rgba(255,255,255,0.1)' : 'transparent';
+  document.getElementById('tab-p2').style.color = p === 'p2' ? '#d4c5a0' : '#888';
+  document.getElementById('tab-p2').style.borderColor = p === 'p2' ? 'rgba(255,255,255,0.2)' : 'rgba(255,255,255,0.1)';
   renderMenu();
   renderMise();
   renderCompras();
 }
 
 function downloadPeriodoPDF(tipo) {
-  const suffix = currentPeriodo === 'actual' ? '17-30mar' : '13-16mar';
-  const paths = {
+  /* Build suffix from the active periodo's date range */
+  var md = getMenuData();
+  var first = md.dias[0].fecha.slice(8,10);
+  var last = md.dias[md.dias.length-1].fecha.slice(8,10);
+  var mon = md.dias[0].fecha.slice(5,7);
+  var months = {
+    '01':'ene','02':'feb','03':'mar','04':'abr','05':'may','06':'jun',
+    '07':'jul','08':'ago','09':'sep','10':'oct','11':'nov','12':'dic'
+  };
+  var suffix = parseInt(first) + '-' + parseInt(last) + months[mon];
+  var paths = {
     menu: ['data/pdf/Menu_periodo_' + suffix + '.pdf', 'Menu_ATTENYA.pdf'],
     mise: ['data/pdf/Mise_periodo_' + suffix + '.pdf', 'Mise_en_Place_ATTENYA.pdf'],
     compras: ['data/pdf/Compras_periodo_' + suffix + '.pdf', 'Compras_ATTENYA.pdf']
   };
-  const p = paths[tipo];
+  var p = paths[tipo];
   if (p) downloadFile(p[0], p[1]);
 }
 
@@ -1941,6 +1996,10 @@ function downloadPeriodoPDF(tipo) {
 async function init() {
   document.getElementById("total-count").textContent = recipes.length + " recetas · Tenerife";
   document.getElementById("footer").textContent = "ATTENYA · SISTEMA CULINARIO · " + recipes.length + " RECETAS · 2026";
+  
+  /* Populate top periodo tabs with dates from data */
+  document.getElementById('tab-p1').textContent = menuData.periodo;
+  document.getElementById('tab-p2').textContent = menuData_prev.periodo;
   
   /* Expand periodo IDs with components from assembled dishes */
   await expandPeriodoIds();
@@ -1958,20 +2017,20 @@ async function init() {
   
   /* modo=cocina: activate periodo filter + switch to menu view */
   if (modo === 'cocina') {
-    state.periodo = true;
+    state.periodo = 'actual';
     renderCats();
     renderSubs();
     renderGrid();
-    renderPeriodoBtn();
+    renderPeriodoBtns();
     switchView('menu');
   }
   /* modo=periodo: just activate periodo filter on catalog */
   if (modo === 'periodo') {
-    state.periodo = true;
+    state.periodo = 'actual';
     renderCats();
     renderSubs();
     renderGrid();
-    renderPeriodoBtn();
+    renderPeriodoBtns();
   }
 }
 
