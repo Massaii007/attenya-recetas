@@ -1,525 +1,513 @@
-# Inventario PDFs — Catálogo Culinario
-**Fecha:** 2026-03-16 01:01
-**Total recetas escaneadas:** 294
+# Inventario PDFs — Regeneración completa
 
-## Resumen
+**Fecha:** 2026-03-16
+**Total recetas:** 294
+**PDFs OK (con foto):** 94
+**PDFs OK (sin foto):** 171
+**Contenido vacío (md no estándar):** 29
+**Sin PDF:** 0
 
-| Métrica | Valor |
-|---|---|
-| PDFs ✅ OK | 291 |
-| PDFs ⚠️ ROTO | 3 |
-| PDFs ❌ NO EXISTE | 0 |
-| Fotos ✅ OK | 94 |
-| Fotos ❌ NO EXISTE | 200 |
-
-## PDFs que necesitan regeneración (3)
-
-| Receta | Categoría | Estado PDF | Tamaño |
-|---|---|---|---|
-| 03_Fumet_Pescado | Componentes/Base/Caldo | ⚠️ ROTO (poco texto) | 1042237 B |
-| Patatas_Fritas_Triple_Cocción | Componentes/Guarnicion_HI | ⚠️ ROTO (poco texto) | 471221 B |
-| Musaka_Verduras | Platos | ⚠️ ROTO (poco texto) | 788112 B |
-
-## Fotos faltantes (200)
-
-| Receta | Categoría |
-|---|---|
-| 01_Fondo_Blanco_Pollo | Componentes/Base/Caldo |
-| 02_Fondo_Dorado_Pollo | Componentes/Base/Caldo |
-| 03_Fumet_Pescado | Componentes/Base/Caldo |
-| 04_Fondo_Marisco | Componentes/Base/Caldo |
-| 05_Fondo_Oscuro_Ternera | Componentes/Base/Caldo |
-| 06_Caldo_Verduras | Componentes/Base/Caldo |
-| Caldo_Pollo_Mise_en_Place | Componentes/Base/Caldo |
-| 07_Demi_Glace | Componentes/Base/Elemento |
-| Mostaza_Encurtida | Componentes/Base/Elemento |
-| Currysauce_Gourmet | Componentes/Base/Salsa |
-| Gravy_Pato | Componentes/Base/Salsa |
-| Miso_Bagna_Cauda | Componentes/Base/Salsa |
-| Mojos_Canarios | Componentes/Base/Salsa |
-| Salmorejo_Canario | Componentes/Base/Salsa |
-| Salsa_Coctel | Componentes/Base/Salsa |
-| Salsa_Holandesa | Componentes/Base/Salsa |
-| Salsa_Tartara_Roux | Componentes/Base/Salsa |
-| Salsa_Tonkatsu_Mejorada | Componentes/Base/Salsa |
-| Salsa_Vino_Tinto_Fallow | Componentes/Base/Salsa |
-| Salsa_Yogur_Zumaque | Componentes/Base/Salsa |
-| Veloute_Mostaza | Componentes/Base/Salsa |
-| Aligot_Platano_Canarias | Componentes/Guarnicion_HI |
-| Arroz_Bahiano | Componentes/Guarnicion_HI |
-| Arroz_Blanco_Suelto | Componentes/Guarnicion_HI |
-| Bratkartoffeln | Componentes/Guarnicion_HI |
-| Couscous_Aromatico | Componentes/Guarnicion_HI |
-| Gnocchi_Straker | Componentes/Guarnicion_HI |
-| Knodel_Base | Componentes/Guarnicion_HI |
-| Knodel_Salteados_Setas | Componentes/Guarnicion_HI |
-| Papas_Arrugadas_Canarias | Componentes/Guarnicion_HI |
-| Patatas_Boulangere | Componentes/Guarnicion_HI |
-| Patatas_Cebollas_Romesco | Componentes/Guarnicion_HI |
-| Patatas_Dauphine | Componentes/Guarnicion_HI |
-| Patatas_Fritas_Bistro | Componentes/Guarnicion_HI |
-| Patatas_Fritas_Triple_Cocción | Componentes/Guarnicion_HI |
-| Patatas_Gajo_Bistro | Componentes/Guarnicion_HI |
-| Patatas_Panaderas | Componentes/Guarnicion_HI |
-| Patatas_Vapor_Horno | Componentes/Guarnicion_HI |
-| Polenta_Parmesano | Componentes/Guarnicion_HI |
-| Pure_Boniato | Componentes/Guarnicion_HI |
-| Pure_Cremoso_Robuchon | Componentes/Guarnicion_HI |
-| Pure_Patata_Firme | Componentes/Guarnicion_HI |
-| Risotto_Azafran | Componentes/Guarnicion_HI |
-| Salzkartoffeln | Componentes/Guarnicion_HI |
-| Schupfnudeln_Caseras | Componentes/Guarnicion_HI |
-| Spatzle_Manual | Componentes/Guarnicion_HI |
-| Tallarines_Caseros_Huevo | Componentes/Guarnicion_HI |
-| Berenjena_Asada_Miso | Componentes/Guarnicion_V |
-| Broccoli_Charred_Miso_Bagna_Cauda | Componentes/Guarnicion_V |
-| Chucrut_Afinado_Gourmet | Componentes/Guarnicion_V |
-| Coles_Bruselas_Lardo | Componentes/Guarnicion_V |
-| Ensalada_Col_Japonesa | Componentes/Guarnicion_V |
-| Ensalada_Pepino_Agridulce | Componentes/Guarnicion_V |
-| Escalivada | Componentes/Guarnicion_V |
-| Esparragos_Trigueros | Componentes/Guarnicion_V |
-| Espinacas_Salteadas | Componentes/Guarnicion_V |
-| Gratinado_Coliflor_Afinado | Componentes/Guarnicion_V |
-| Pimientos_Piquillo_Confitados | Componentes/Guarnicion_V |
-| Portobello_Shiitake_Glaseados_Fondo_Oscuro | Componentes/Guarnicion_V |
-| Rote_Bete_Salat | Componentes/Guarnicion_V |
-| Rotkohl_Clasico | Componentes/Guarnicion_V |
-| Verduras_Mediterraneo_Este | Componentes/Guarnicion_V |
-| Albondigas_Cordero_Feta_Componente | Componentes/Principal |
-| Atun_Encebollado_Canario | Componentes/Principal |
-| Bacalao_Beer_Batter | Componentes/Principal |
-| Bacalao_Espinacas_Aceite_Verde | Componentes/Principal |
-| Bratwurst_Doble_Coccion | Componentes/Principal |
-| Carrilleras_Ternera_Vino_Mostaza | Componentes/Principal |
-| Costillas_Cerdo_BBQ | Componentes/Principal |
-| Curry_Nativo_Australiano_Corvina | Componentes/Principal |
-| Curry_Tailandes_Pato | Componentes/Principal |
-| Dorada_Vapor_Japonesa | Componentes/Principal |
-| Escabeche_Pavo_Filipino | Componentes/Principal |
-| Gulasch_Aleman_Componente | Componentes/Principal |
-| Jurel_Vinagreta | Componentes/Principal |
-| Lomo_Cerdo_Pimiento | Componentes/Principal |
-| Moqueca_Camarones_Baiano | Componentes/Principal |
-| Ossobuco_Milanesa | Componentes/Principal |
-| Pata_Asada_Canaria | Componentes/Principal |
-| Pato_Asado_Clasico | Componentes/Principal |
-| Pollo_Ajillo_Componente | Componentes/Principal |
-| Pollo_Ast | Componentes/Principal |
-| Pollo_Deshuesado_Asado_Caldo | Componentes/Principal |
-| Pollo_Salmorejo_Canario | Componentes/Principal |
-| Raya_Mantequilla_Tostada | Componentes/Principal |
-| Rollitos_Col_Rellenos | Componentes/Principal |
-| Salchichas_Salsa_Tomate | Componentes/Principal |
-| Salmon_Curado_Confitado_Componente | Componentes/Principal |
-| Salmon_Glaseado | Componentes/Principal |
-| Solomillo_Filet_Mignon | Componentes/Principal |
-| Ternera_Curry_Thai | Componentes/Principal |
-| Tonkatsu_Pollo_Componente | Componentes/Principal |
-| Ajoblanco | Entrantes |
-| Alubias_Tahini | Entrantes |
-| Berenjena_Asada_Miso | Entrantes |
-| Bisque_Gambas | Entrantes |
-| Coctel_Gambas_Clasico | Entrantes |
-| Cogollos_Gratinados_Azul | Entrantes |
-| Cogollos_Plancha | Entrantes |
-| Coliflor_Gratinada | Entrantes |
-| Consome_Ave_Ligero | Entrantes |
-| Crema_Apio_Nabo | Entrantes |
-| Ensalada_Arenque_Remolacha | Entrantes |
-| Ensalada_Cesar | Entrantes |
-| Ensalada_Waldorf | Entrantes |
-| Ensaladilla_Alemana | Entrantes |
-| Esfera_Boletus_Coulis_Frutos_Rojos | Entrantes |
-| Esparragos_Carbonara | Entrantes |
-| Gambas_Ajillo | Entrantes |
-| Guisantes_Jamon | Entrantes |
-| Lentejas_Verdes_Queso_Oveja | Entrantes |
-| Pastel_Ventresca_Laredo | Entrantes |
-| Patatas_Cebollas_Romesco | Entrantes |
-| Pimientos_Muhammara | Entrantes |
-| Risotto_Azafran | Entrantes |
-| Sopa_Miso_Tofu_Wakame | Entrantes |
-| Steak_Tartar_Clasico | Entrantes |
-| Steak_Tartar_Sin_Yema | Entrantes |
-| Timbal_Aguacate_Gambas | Entrantes |
-| Tiradito_Nikkei_Atun | Entrantes |
-| Tomate_Tonnato | Entrantes |
-| Vichyssoise | Entrantes |
-| Wurstsalat_Bavaria | Entrantes |
-| Albondigas_Cordero_Plato | Platos |
-| Albondigas_Mixtas_Tomate_Plato | Platos |
-| Arroz_Caldoso_Marisco | Platos |
-| Arroz_de_Pato | Platos |
-| Atun_Encebollado_Canario_Plato | Platos |
-| Bacalao_Tomate_Pimientos_Plato | Platos |
-| Bkeila | Platos |
-| Bratwurst_Plato | Platos |
-| Canelones_Rabo_Toro_Demiglace | Platos |
-| Chicken_Burger_Plato | Platos |
-| Chuleta_Cerdo_Chucrut | Platos |
-| Chuleta_Cerdo_Ciruelas_Plato | Platos |
-| Coq_au_Vin | Platos |
-| Costilla_Papa_Pina | Platos |
-| Costillas_Cerdo_BBQ_Plato | Platos |
-| Curry_Australiano_Corvina_Plato | Platos |
-| Curry_Rape_Plato | Platos |
-| Curry_Tailandes_Pato_Plato | Platos |
-| Currywurst_Premium | Platos |
-| Dorada_Vapor_Japonesa_Plato | Platos |
-| Escabeche_Pavo_Filipino_Plato | Platos |
-| Estofado_Lentejas_Aleman | Platos |
-| Fabada_Asturiana | Platos |
-| Filet_Mignon_Plato | Platos |
-| Fish_and_Chips | Platos |
-| Gulasch_Aleman_Plato | Platos |
-| Jurel_Vinagreta_Plato | Platos |
-| Koenigsberger_Klopse | Platos |
-| Lenguado_Papillote_Patatas_Straker | Platos |
-| Linseneintopf_Bockwurst | Platos |
-| Lomo_Cerdo_Pimiento_Plato | Platos |
-| Lubina_Horno | Platos |
-| Moqueca_Camarones_Arroz_Bahiano | Platos |
-| Musaka_Verduras | Platos |
-| Nasi_Goreng | Platos |
-| Ossobuco_Milanese_Plato | Platos |
-| Paccheri_Pomodoro_Cremoso | Platos |
-| Paletilla_Cordero_Plato | Platos |
-| Pato_Asado_Clasico_Plato | Platos |
-| Pollo_Ajillo_Plato | Platos |
-| Pollo_Ast_Plato | Platos |
-| Pollo_Salmorejo_Papas | Platos |
-| Pollo_Veloute_Mostaza_Setas_Tallarines | Platos |
-| Ragu_Cerdo_Ternera_Gnocchi_Plato | Platos |
-| Raya_Mantequilla_Tostada_Plato | Platos |
-| Risotto_Azafran | Platos |
-| Rollitos_Col_Rellenos_Plato | Platos |
-| Ropa_Vieja_Canaria | Platos |
-| Salchichas_Salsa_Tomate_Plato | Platos |
-| Salmon_Curado_Confitado | Platos |
-| Salmon_Glaseado_Broccoli_Charred | Platos |
-| Sancocho_Canario_Bacalao | Platos |
-| Schupfnudeln_Sauerkraut_Speck | Platos |
-| Senfeier_Huevos_Mostaza | Platos |
-| Shakshuka | Platos |
-| Solomillo_Pimienta_Plato | Platos |
-| Suquet_Corvina | Platos |
-| Tonkatsu_Pollo_Plato | Platos |
-| Arroz_con_Leche | Postres |
-| Compota_Manzana_Especiada | Postres |
-| Cookies_Chocolate | Postres |
-| Crema_Catalana | Postres |
-| Crema_Pina_Coco | Postres |
-| Cremoso_Chocolate_Blanco | Postres |
-| Flan_Coco | Postres |
-| Fresas_Vinagre | Postres |
-| Mandarina_Cointreau | Postres |
-| Mango_Yogur_Chocolate_Blanco | Postres |
-| Manzana_Horno | Postres |
-| Mousse_Chocolate | Postres |
-| Naranjas_Miel | Postres |
-| Natillas_Pistacho | Postres |
-| Platano_Lima | Postres |
-| Sangria_Frutas | Postres |
-| Sopa_Melon_Menta | Postres |
-| Torrija_Brioche_Caramelizada | Postres |
-| Trufas_Chocolate | Postres |
-
-## Inventario completo
-
-| # | Receta | Categoría | PDF | Foto |
+| Receta | Foto | PDF size | Contenido | Estado |
 |---|---|---|---|---|
-| 1 | 01_Fondo_Blanco_Pollo | Componentes/Base/Caldo | ✅ OK | ❌ NO EXISTE |
-| 2 | 02_Fondo_Dorado_Pollo | Componentes/Base/Caldo | ✅ OK | ❌ NO EXISTE |
-| 3 | 03_Fumet_Pescado | Componentes/Base/Caldo | ⚠️ ROTO (poco texto) | ❌ NO EXISTE |
-| 4 | 04_Fondo_Marisco | Componentes/Base/Caldo | ✅ OK | ❌ NO EXISTE |
-| 5 | 05_Fondo_Oscuro_Ternera | Componentes/Base/Caldo | ✅ OK | ❌ NO EXISTE |
-| 6 | 06_Caldo_Verduras | Componentes/Base/Caldo | ✅ OK | ❌ NO EXISTE |
-| 7 | Caldo_Pollo_Mise_en_Place | Componentes/Base/Caldo | ✅ OK | ❌ NO EXISTE |
-| 8 | Caldo_Pollo_Straker | Componentes/Base/Caldo | ✅ OK | ✅ OK (vault) |
-| 9 | Fondo_Pescado_Straker | Componentes/Base/Caldo | ✅ OK | ✅ OK (vault) |
-| 10 | Fondo_Ternera_Straker | Componentes/Base/Caldo | ✅ OK | ✅ OK (vault) |
-| 11 | 07_Demi_Glace | Componentes/Base/Elemento | ✅ OK | ❌ NO EXISTE |
-| 12 | Burnt_Butter_Straker | Componentes/Base/Elemento | ✅ OK | ✅ OK (vault) |
-| 13 | Focaccia_Straker | Componentes/Base/Elemento | ✅ OK | ✅ OK (vault) |
-| 14 | Mantequilla_Anchoa_Straker | Componentes/Base/Elemento | ✅ OK | ✅ OK (vault) |
-| 15 | Mantequilla_Artesanal_Straker | Componentes/Base/Elemento | ✅ OK | ✅ OK (vault) |
-| 16 | Mantequilla_Miso_Straker | Componentes/Base/Elemento | ✅ OK | ✅ OK (vault) |
-| 17 | Masa_Flatbread_Straker | Componentes/Base/Elemento | ✅ OK | ✅ OK (vault) |
-| 18 | Masa_Pasta_Fresca_Straker | Componentes/Base/Elemento | ✅ OK | ✅ OK (vault) |
-| 19 | Milk_Buns_Straker | Componentes/Base/Elemento | ✅ OK | ✅ OK (vault) |
-| 20 | Mostaza_Encurtida | Componentes/Base/Elemento | ✅ OK | ❌ NO EXISTE |
-| 21 | Pangrattato_Straker | Componentes/Base/Elemento | ✅ OK | ✅ OK (vault) |
-| 22 | Yogur_Escurrido_Straker | Componentes/Base/Elemento | ✅ OK | ✅ OK (vault) |
-| 23 | Chimichurri_Straker | Componentes/Base/Salsa | ✅ OK | ✅ OK (vault) |
-| 24 | Currysauce_Gourmet | Componentes/Base/Salsa | ✅ OK | ❌ NO EXISTE |
-| 25 | Gravy_Pato | Componentes/Base/Salsa | ✅ OK | ❌ NO EXISTE |
-| 26 | Mayonesa_Ajo_Straker | Componentes/Base/Salsa | ✅ OK | ✅ OK (vault) |
-| 27 | Mayonesa_Limon_Straker | Componentes/Base/Salsa | ✅ OK | ✅ OK (vault) |
-| 28 | Miso_Bagna_Cauda | Componentes/Base/Salsa | ✅ OK | ❌ NO EXISTE |
-| 29 | Mojos_Canarios | Componentes/Base/Salsa | ✅ OK | ❌ NO EXISTE |
-| 30 | Pesto_Ajo_Silvestre_Straker | Componentes/Base/Salsa | ✅ OK | ✅ OK (vault) |
-| 31 | Pesto_Albahaca_Straker | Componentes/Base/Salsa | ✅ OK | ✅ OK (vault) |
-| 32 | Romesco_Straker | Componentes/Base/Salsa | ✅ OK | ✅ OK (vault) |
-| 33 | Salmorejo_Canario | Componentes/Base/Salsa | ✅ OK | ❌ NO EXISTE |
-| 34 | Salsa_Coctel | Componentes/Base/Salsa | ✅ OK | ❌ NO EXISTE |
-| 35 | Salsa_Holandesa | Componentes/Base/Salsa | ✅ OK | ❌ NO EXISTE |
-| 36 | Salsa_Roja_Straker | Componentes/Base/Salsa | ✅ OK | ✅ OK (vault) |
-| 37 | Salsa_Tartara_Roux | Componentes/Base/Salsa | ✅ OK | ❌ NO EXISTE |
-| 38 | Salsa_Tonkatsu_Mejorada | Componentes/Base/Salsa | ✅ OK | ❌ NO EXISTE |
-| 39 | Salsa_Verde_Straker | Componentes/Base/Salsa | ✅ OK | ✅ OK (vault) |
-| 40 | Salsa_Vino_Tinto_Fallow | Componentes/Base/Salsa | ✅ OK | ❌ NO EXISTE |
-| 41 | Salsa_Yogur_Zumaque | Componentes/Base/Salsa | ✅ OK | ❌ NO EXISTE |
-| 42 | Sauce_Verte_Straker | Componentes/Base/Salsa | ✅ OK | ✅ OK (vault) |
-| 43 | Veloute_Mostaza | Componentes/Base/Salsa | ✅ OK | ❌ NO EXISTE |
-| 44 | Yogur_Remolacha_Straker | Componentes/Base/Salsa | ✅ OK | ✅ OK (vault) |
-| 45 | Aligot_Platano_Canarias | Componentes/Guarnicion_HI | ✅ OK | ❌ NO EXISTE |
-| 46 | Arroz_Bahiano | Componentes/Guarnicion_HI | ✅ OK | ❌ NO EXISTE |
-| 47 | Arroz_Blanco_Suelto | Componentes/Guarnicion_HI | ✅ OK | ❌ NO EXISTE |
-| 48 | Bratkartoffeln | Componentes/Guarnicion_HI | ✅ OK | ❌ NO EXISTE |
-| 49 | Couscous_Aromatico | Componentes/Guarnicion_HI | ✅ OK | ❌ NO EXISTE |
-| 50 | Gnocchi_Straker | Componentes/Guarnicion_HI | ✅ OK | ❌ NO EXISTE |
-| 51 | Knodel_Base | Componentes/Guarnicion_HI | ✅ OK | ❌ NO EXISTE |
-| 52 | Knodel_Salteados_Setas | Componentes/Guarnicion_HI | ✅ OK | ❌ NO EXISTE |
-| 53 | Papas_Arrugadas_Canarias | Componentes/Guarnicion_HI | ✅ OK | ❌ NO EXISTE |
-| 54 | Patatas_Aplastadas_Straker | Componentes/Guarnicion_HI | ✅ OK | ✅ OK (vault) |
-| 55 | Patatas_Boulangere | Componentes/Guarnicion_HI | ✅ OK | ❌ NO EXISTE |
-| 56 | Patatas_Cebollas_Romesco | Componentes/Guarnicion_HI | ✅ OK | ❌ NO EXISTE |
-| 57 | Patatas_Dauphine | Componentes/Guarnicion_HI | ✅ OK | ❌ NO EXISTE |
-| 58 | Patatas_Fritas_Bistro | Componentes/Guarnicion_HI | ✅ OK | ❌ NO EXISTE |
-| 59 | Patatas_Fritas_Triple_Cocción | Componentes/Guarnicion_HI | ⚠️ ROTO (poco texto) | ❌ NO EXISTE |
-| 60 | Patatas_Gajo_Bistro | Componentes/Guarnicion_HI | ✅ OK | ❌ NO EXISTE |
-| 61 | Patatas_Panaderas | Componentes/Guarnicion_HI | ✅ OK | ❌ NO EXISTE |
-| 62 | Patatas_Vapor_Horno | Componentes/Guarnicion_HI | ✅ OK | ❌ NO EXISTE |
-| 63 | Polenta_Parmesano | Componentes/Guarnicion_HI | ✅ OK | ❌ NO EXISTE |
-| 64 | Pure_Boniato | Componentes/Guarnicion_HI | ✅ OK | ❌ NO EXISTE |
-| 65 | Pure_Cremoso_Robuchon | Componentes/Guarnicion_HI | ✅ OK | ❌ NO EXISTE |
-| 66 | Pure_Patata_Firme | Componentes/Guarnicion_HI | ✅ OK | ❌ NO EXISTE |
-| 67 | Pure_Patata_Straker | Componentes/Guarnicion_HI | ✅ OK | ✅ OK (vault) |
-| 68 | Risotto_Azafran | Componentes/Guarnicion_HI | ✅ OK | ❌ NO EXISTE |
-| 69 | Salzkartoffeln | Componentes/Guarnicion_HI | ✅ OK | ❌ NO EXISTE |
-| 70 | Schupfnudeln_Caseras | Componentes/Guarnicion_HI | ✅ OK | ❌ NO EXISTE |
-| 71 | Spatzle_Manual | Componentes/Guarnicion_HI | ✅ OK | ❌ NO EXISTE |
-| 72 | Tallarines_Caseros_Huevo | Componentes/Guarnicion_HI | ✅ OK | ❌ NO EXISTE |
-| 73 | Berenjena_Asada_Miso | Componentes/Guarnicion_V | ✅ OK | ❌ NO EXISTE |
-| 74 | Berenjena_Pinones_Menta_Straker | Componentes/Guarnicion_V | ✅ OK | ✅ OK (vault) |
-| 75 | Broccoli_Charred_Miso_Bagna_Cauda | Componentes/Guarnicion_V | ✅ OK | ❌ NO EXISTE |
-| 76 | Calabaza_Borlotti_Salsa_Verde_Straker | Componentes/Guarnicion_V | ✅ OK | ✅ OK (vault) |
-| 77 | Caponata_Straker | Componentes/Guarnicion_V | ✅ OK | ✅ OK (vault) |
-| 78 | Cebollas_Asadas_Romesco_Straker | Componentes/Guarnicion_V | ✅ OK | ✅ OK (vault) |
-| 79 | Chucrut_Afinado_Gourmet | Componentes/Guarnicion_V | ✅ OK | ❌ NO EXISTE |
-| 80 | Col_Hispi_Mantequilla_Anchoa_Straker | Componentes/Guarnicion_V | ✅ OK | ✅ OK (vault) |
-| 81 | Coles_Bruselas_Lardo | Componentes/Guarnicion_V | ✅ OK | ❌ NO EXISTE |
-| 82 | Ensalada_Col_Japonesa | Componentes/Guarnicion_V | ✅ OK | ❌ NO EXISTE |
-| 83 | Ensalada_Pepino_Agridulce | Componentes/Guarnicion_V | ✅ OK | ❌ NO EXISTE |
-| 84 | Escalivada | Componentes/Guarnicion_V | ✅ OK | ❌ NO EXISTE |
-| 85 | Esparragos_Hierbas_Straker | Componentes/Guarnicion_V | ✅ OK | ✅ OK (vault) |
-| 86 | Esparragos_Trigueros | Componentes/Guarnicion_V | ✅ OK | ❌ NO EXISTE |
-| 87 | Espinacas_Limon_Parmesano_Straker | Componentes/Guarnicion_V | ✅ OK | ✅ OK (vault) |
-| 88 | Espinacas_Salteadas | Componentes/Guarnicion_V | ✅ OK | ❌ NO EXISTE |
-| 89 | Fritti_Verduras_Straker | Componentes/Guarnicion_V | ✅ OK | ✅ OK (vault) |
-| 90 | Gratinado_Coliflor_Afinado | Componentes/Guarnicion_V | ✅ OK | ❌ NO EXISTE |
-| 91 | Pimientos_Piquillo_Confitados | Componentes/Guarnicion_V | ✅ OK | ❌ NO EXISTE |
-| 92 | Portobello_Shiitake_Glaseados_Fondo_Oscuro | Componentes/Guarnicion_V | ✅ OK | ❌ NO EXISTE |
-| 93 | Ratatouille_Straker | Componentes/Guarnicion_V | ✅ OK | ✅ OK (vault) |
-| 94 | Romanesco_Asado_Tahini_Straker | Componentes/Guarnicion_V | ✅ OK | ✅ OK (vault) |
-| 95 | Rote_Bete_Salat | Componentes/Guarnicion_V | ✅ OK | ❌ NO EXISTE |
-| 96 | Rotkohl_Clasico | Componentes/Guarnicion_V | ✅ OK | ❌ NO EXISTE |
-| 97 | Verduras_Mediterraneo_Este | Componentes/Guarnicion_V | ✅ OK | ❌ NO EXISTE |
-| 98 | Zanahorias_Yogur_Dukkah_Straker | Componentes/Guarnicion_V | ✅ OK | ✅ OK (vault) |
-| 99 | Albondigas_Cordero_Feta_Componente | Componentes/Principal | ✅ OK | ❌ NO EXISTE |
-| 100 | Albondigas_Mixtas_Tomate_Straker | Componentes/Principal | ✅ OK | ✅ OK (vault) |
-| 101 | Atun_Encebollado_Canario | Componentes/Principal | ✅ OK | ❌ NO EXISTE |
-| 102 | Bacalao_Beer_Batter | Componentes/Principal | ✅ OK | ❌ NO EXISTE |
-| 103 | Bacalao_Espinacas_Aceite_Verde | Componentes/Principal | ✅ OK | ❌ NO EXISTE |
-| 104 | Bacalao_Tomate_Pimientos_Straker | Componentes/Principal | ✅ OK | ✅ OK (vault) |
-| 105 | Bratwurst_Doble_Coccion | Componentes/Principal | ✅ OK | ❌ NO EXISTE |
-| 106 | Carrilleras_Ternera_Vino_Mostaza | Componentes/Principal | ✅ OK | ❌ NO EXISTE |
-| 107 | Chicken_Burger_Straker | Componentes/Principal | ✅ OK | ✅ OK (vault) |
-| 108 | Chuleta_Cerdo_Ciruelas_Straker | Componentes/Principal | ✅ OK | ✅ OK (vault) |
-| 109 | Costillas_Cerdo_BBQ | Componentes/Principal | ✅ OK | ❌ NO EXISTE |
-| 110 | Curry_Nativo_Australiano_Corvina | Componentes/Principal | ✅ OK | ❌ NO EXISTE |
-| 111 | Curry_Rape_Straker | Componentes/Principal | ✅ OK | ✅ OK (vault) |
-| 112 | Curry_Tailandes_Pato | Componentes/Principal | ✅ OK | ❌ NO EXISTE |
-| 113 | Dorada_Vapor_Japonesa | Componentes/Principal | ✅ OK | ❌ NO EXISTE |
-| 114 | Escabeche_Pavo_Filipino | Componentes/Principal | ✅ OK | ❌ NO EXISTE |
-| 115 | Gulasch_Aleman_Componente | Componentes/Principal | ✅ OK | ❌ NO EXISTE |
-| 116 | Jurel_Vinagreta | Componentes/Principal | ✅ OK | ❌ NO EXISTE |
-| 117 | Lenguado_Papillote_Straker | Componentes/Principal | ✅ OK | ✅ OK (vault) |
-| 118 | Lomo_Cerdo_Pimiento | Componentes/Principal | ✅ OK | ❌ NO EXISTE |
-| 119 | Moqueca_Camarones_Baiano | Componentes/Principal | ✅ OK | ❌ NO EXISTE |
-| 120 | Ossobuco_Milanesa | Componentes/Principal | ✅ OK | ❌ NO EXISTE |
-| 121 | Paletilla_Cordero_Asada_Straker | Componentes/Principal | ✅ OK | ✅ OK (vault) |
-| 122 | Pata_Asada_Canaria | Componentes/Principal | ✅ OK | ❌ NO EXISTE |
-| 123 | Pato_Asado_Clasico | Componentes/Principal | ✅ OK | ❌ NO EXISTE |
-| 124 | Pollo_Ajillo_Componente | Componentes/Principal | ✅ OK | ❌ NO EXISTE |
-| 125 | Pollo_Ast | Componentes/Principal | ✅ OK | ❌ NO EXISTE |
-| 126 | Pollo_Deshuesado_Asado_Caldo | Componentes/Principal | ✅ OK | ❌ NO EXISTE |
-| 127 | Pollo_Salmorejo_Canario | Componentes/Principal | ✅ OK | ❌ NO EXISTE |
-| 128 | Ragu_Cerdo_Ternera_Gnocchi_Straker | Componentes/Principal | ✅ OK | ✅ OK (vault) |
-| 129 | Raya_Mantequilla_Tostada | Componentes/Principal | ✅ OK | ❌ NO EXISTE |
-| 130 | Rollitos_Col_Rellenos | Componentes/Principal | ✅ OK | ❌ NO EXISTE |
-| 131 | Salchichas_Salsa_Tomate | Componentes/Principal | ✅ OK | ❌ NO EXISTE |
-| 132 | Salmon_Curado_Confitado_Componente | Componentes/Principal | ✅ OK | ❌ NO EXISTE |
-| 133 | Salmon_Glaseado | Componentes/Principal | ✅ OK | ❌ NO EXISTE |
-| 134 | Smash_Burger_Straker | Componentes/Principal | ✅ OK | ✅ OK (vault) |
-| 135 | Solomillo_Filet_Mignon | Componentes/Principal | ✅ OK | ❌ NO EXISTE |
-| 136 | Solomillo_Pimienta_Straker | Componentes/Principal | ✅ OK | ✅ OK (vault) |
-| 137 | Ternera_Curry_Thai | Componentes/Principal | ✅ OK | ❌ NO EXISTE |
-| 138 | Tonkatsu_Pollo_Componente | Componentes/Principal | ✅ OK | ❌ NO EXISTE |
-| 139 | Ajoblanco | Entrantes | ✅ OK | ❌ NO EXISTE |
-| 140 | Alubias_Tahini | Entrantes | ✅ OK | ❌ NO EXISTE |
-| 141 | Berenjena_Asada_Miso | Entrantes | ✅ OK | ❌ NO EXISTE |
-| 142 | Bisque_Gambas | Entrantes | ✅ OK | ❌ NO EXISTE |
-| 143 | Caldo_Pollo_Verduras_Straker | Entrantes | ✅ OK | ✅ OK (vault) |
-| 144 | Carpaccio_Ternera_Straker | Entrantes | ✅ OK | ✅ OK (vault) |
-| 145 | Coctel_Gambas_Clasico | Entrantes | ✅ OK | ❌ NO EXISTE |
-| 146 | Cogollos_Gratinados_Azul | Entrantes | ✅ OK | ❌ NO EXISTE |
-| 147 | Cogollos_Plancha | Entrantes | ✅ OK | ❌ NO EXISTE |
-| 148 | Coliflor_Gratinada | Entrantes | ✅ OK | ❌ NO EXISTE |
-| 149 | Consome_Ave_Ligero | Entrantes | ✅ OK | ❌ NO EXISTE |
-| 150 | Crema_Ajo_Silvestre_Espinacas_Straker | Entrantes | ✅ OK | ✅ OK (vault) |
-| 151 | Crema_Apio_Nabo | Entrantes | ✅ OK | ❌ NO EXISTE |
-| 152 | Crema_Calabacin_Albahaca_Straker | Entrantes | ✅ OK | ✅ OK (vault) |
-| 153 | Crema_Calabaza_Pesto_Semillas_Straker | Entrantes | ✅ OK | ✅ OK (vault) |
-| 154 | Crema_Cavolo_Nero_Straker | Entrantes | ✅ OK | ✅ OK (vault) |
-| 155 | Crema_Tomate_Asado_Albahaca_Straker | Entrantes | ✅ OK | ✅ OK (vault) |
-| 156 | Ensalada_Alcachofa_Parmesano_Straker | Entrantes | ✅ OK | ✅ OK (vault) |
-| 157 | Ensalada_Arenque_Remolacha | Entrantes | ✅ OK | ❌ NO EXISTE |
-| 158 | Ensalada_Calabacin_Limon_Rucula_Straker | Entrantes | ✅ OK | ✅ OK (vault) |
-| 159 | Ensalada_Calabaza_Bulgur_Nuez_Pera_Straker | Entrantes | ✅ OK | ✅ OK (vault) |
-| 160 | Ensalada_Cesar | Entrantes | ✅ OK | ❌ NO EXISTE |
-| 161 | Ensalada_Judia_Verde_Almendra_Melocoton_Straker | Entrantes | ✅ OK | ✅ OK (vault) |
-| 162 | Ensalada_Maiz_Atun_Tomate_Hinojo_Straker | Entrantes | ✅ OK | ✅ OK (vault) |
-| 163 | Ensalada_PSB_Huevos_Tomate_Croutons_Straker | Entrantes | ✅ OK | ✅ OK (vault) |
-| 164 | Ensalada_Remolacha_Lentejas_Hinojo_Straker | Entrantes | ✅ OK | ✅ OK (vault) |
-| 165 | Ensalada_Tomate_AOVE_Straker | Entrantes | ✅ OK | ✅ OK (vault) |
-| 166 | Ensalada_Treviso_Pecorino_Clementina_Straker | Entrantes | ✅ OK | ✅ OK (vault) |
-| 167 | Ensalada_Verde_Straker | Entrantes | ✅ OK | ✅ OK (vault) |
-| 168 | Ensalada_Waldorf | Entrantes | ✅ OK | ❌ NO EXISTE |
-| 169 | Ensaladilla_Alemana | Entrantes | ✅ OK | ❌ NO EXISTE |
-| 170 | Esfera_Boletus_Coulis_Frutos_Rojos | Entrantes | ✅ OK | ❌ NO EXISTE |
-| 171 | Esparragos_Carbonara | Entrantes | ✅ OK | ❌ NO EXISTE |
-| 172 | Flatbread_Calabacin_Burrata_Straker | Entrantes | ✅ OK | ✅ OK (vault) |
-| 173 | Flatbread_Tomate_Anchoa_Straker | Entrantes | ✅ OK | ✅ OK (vault) |
-| 174 | Focaccia_Cebolla_Caramelizada_Straker | Entrantes | ✅ OK | ✅ OK (vault) |
-| 175 | Focaccia_Tomate_Ajo_Straker | Entrantes | ✅ OK | ✅ OK (vault) |
-| 176 | Gambas_Ajillo | Entrantes | ✅ OK | ❌ NO EXISTE |
-| 177 | Gazpacho_Straker | Entrantes | ✅ OK | ✅ OK (vault) |
-| 178 | Guisantes_Jamon | Entrantes | ✅ OK | ❌ NO EXISTE |
-| 179 | Lentejas_Verdes_Queso_Oveja | Entrantes | ✅ OK | ❌ NO EXISTE |
-| 180 | Minestrone_Straker | Entrantes | ✅ OK | ✅ OK (vault) |
-| 181 | Pastel_Ventresca_Laredo | Entrantes | ✅ OK | ❌ NO EXISTE |
-| 182 | Patatas_Cebollas_Romesco | Entrantes | ✅ OK | ❌ NO EXISTE |
-| 183 | Pimientos_Asados_Burrata_Straker | Entrantes | ✅ OK | ✅ OK (vault) |
-| 184 | Pimientos_Muhammara | Entrantes | ✅ OK | ❌ NO EXISTE |
-| 185 | Risotto_Azafran | Entrantes | ✅ OK | ❌ NO EXISTE |
-| 186 | Sardinas_Tomate_Straker | Entrantes | ✅ OK | ✅ OK (vault) |
-| 187 | Sopa_Miso_Tofu_Wakame | Entrantes | ✅ OK | ❌ NO EXISTE |
-| 188 | Steak_Tartar_Clasico | Entrantes | ✅ OK | ❌ NO EXISTE |
-| 189 | Steak_Tartar_Sin_Yema | Entrantes | ✅ OK | ❌ NO EXISTE |
-| 190 | Timbal_Aguacate_Gambas | Entrantes | ✅ OK | ❌ NO EXISTE |
-| 191 | Tiradito_Nikkei_Atun | Entrantes | ✅ OK | ❌ NO EXISTE |
-| 192 | Tomate_Tonnato | Entrantes | ✅ OK | ❌ NO EXISTE |
-| 193 | Vichyssoise | Entrantes | ✅ OK | ❌ NO EXISTE |
-| 194 | Wurstsalat_Bavaria | Entrantes | ✅ OK | ❌ NO EXISTE |
-| 195 | Albondigas_Cordero_Plato | Platos | ✅ OK | ❌ NO EXISTE |
-| 196 | Albondigas_Mixtas_Tomate_Plato | Platos | ✅ OK | ❌ NO EXISTE |
-| 197 | Arroz_Caldoso_Marisco | Platos | ✅ OK | ❌ NO EXISTE |
-| 198 | Arroz_de_Pato | Platos | ✅ OK | ❌ NO EXISTE |
-| 199 | Atun_Encebollado_Canario_Plato | Platos | ✅ OK | ❌ NO EXISTE |
-| 200 | Bacalao_Tomate_Pimientos_Plato | Platos | ✅ OK | ❌ NO EXISTE |
-| 201 | Bkeila | Platos | ✅ OK | ❌ NO EXISTE |
-| 202 | Bratwurst_Plato | Platos | ✅ OK | ❌ NO EXISTE |
-| 203 | Canelones_Rabo_Toro_Demiglace | Platos | ✅ OK | ❌ NO EXISTE |
-| 204 | Carrilleras_Ternera_Polenta_Straker | Platos | ✅ OK | ✅ OK (vault) |
-| 205 | Chicken_Burger_Plato | Platos | ✅ OK | ❌ NO EXISTE |
-| 206 | Chicken_Caesar_Straker | Platos | ✅ OK | ✅ OK (vault) |
-| 207 | Chuleta_Cerdo_Chucrut | Platos | ✅ OK | ❌ NO EXISTE |
-| 208 | Chuleta_Cerdo_Ciruelas_Plato | Platos | ✅ OK | ❌ NO EXISTE |
-| 209 | Coq_au_Vin | Platos | ✅ OK | ❌ NO EXISTE |
-| 210 | Costilla_Papa_Pina | Platos | ✅ OK | ❌ NO EXISTE |
-| 211 | Costillas_Cerdo_BBQ_Plato | Platos | ✅ OK | ❌ NO EXISTE |
-| 212 | Curry_Australiano_Corvina_Plato | Platos | ✅ OK | ❌ NO EXISTE |
-| 213 | Curry_Rape_Plato | Platos | ✅ OK | ❌ NO EXISTE |
-| 214 | Curry_Tailandes_Pato_Plato | Platos | ✅ OK | ❌ NO EXISTE |
-| 215 | Currywurst_Premium | Platos | ✅ OK | ❌ NO EXISTE |
-| 216 | Dorada_Vapor_Japonesa_Plato | Platos | ✅ OK | ❌ NO EXISTE |
-| 217 | Escabeche_Pavo_Filipino_Plato | Platos | ✅ OK | ❌ NO EXISTE |
-| 218 | Estofado_Lentejas_Aleman | Platos | ✅ OK | ❌ NO EXISTE |
-| 219 | Fabada_Asturiana | Platos | ✅ OK | ❌ NO EXISTE |
-| 220 | Filet_Mignon_Plato | Platos | ✅ OK | ❌ NO EXISTE |
-| 221 | Fish_and_Chips | Platos | ✅ OK | ❌ NO EXISTE |
-| 222 | Gnocchi_Salvia_Mantequilla_Tostada_Straker | Platos | ✅ OK | ✅ OK (vault) |
-| 223 | Goujons_Pescado_Tartara_Straker | Platos | ✅ OK | ✅ OK (vault) |
-| 224 | Guiso_Pescado_Straker | Platos | ✅ OK | ✅ OK (vault) |
-| 225 | Gulasch_Aleman_Plato | Platos | ✅ OK | ❌ NO EXISTE |
-| 226 | Jurel_Vinagreta_Plato | Platos | ✅ OK | ❌ NO EXISTE |
-| 227 | Koenigsberger_Klopse | Platos | ✅ OK | ❌ NO EXISTE |
-| 228 | Lenguado_Papillote_Patatas_Straker | Platos | ✅ OK | ❌ NO EXISTE |
-| 229 | Linseneintopf_Bockwurst | Platos | ✅ OK | ❌ NO EXISTE |
-| 230 | Lobster_Roll_Straker | Platos | ✅ OK | ✅ OK (vault) |
-| 231 | Lomo_Cerdo_Pimiento_Plato | Platos | ✅ OK | ❌ NO EXISTE |
-| 232 | Lubina_Horno | Platos | ✅ OK | ❌ NO EXISTE |
-| 233 | Lubina_Lentejas_Salsa_Verde_Straker | Platos | ✅ OK | ✅ OK (vault) |
-| 234 | Moqueca_Camarones_Arroz_Bahiano | Platos | ✅ OK | ❌ NO EXISTE |
-| 235 | Musaka_Verduras | Platos | ⚠️ ROTO (poco texto) | ❌ NO EXISTE |
-| 236 | Nasi_Goreng | Platos | ✅ OK | ❌ NO EXISTE |
-| 237 | Ossobuco_Milanese_Plato | Platos | ✅ OK | ❌ NO EXISTE |
-| 238 | Paccheri_Pesto_Ajo_Silvestre_Straker | Platos | ✅ OK | ✅ OK (vault) |
-| 239 | Paccheri_Pomodoro_Cremoso | Platos | ✅ OK | ❌ NO EXISTE |
-| 240 | Paletilla_Cordero_Plato | Platos | ✅ OK | ❌ NO EXISTE |
-| 241 | Pasta_Alcachofa_Straker | Platos | ✅ OK | ✅ OK (vault) |
-| 242 | Pato_Asado_Clasico_Plato | Platos | ✅ OK | ❌ NO EXISTE |
-| 243 | Pollo_Ajillo_Plato | Platos | ✅ OK | ❌ NO EXISTE |
-| 244 | Pollo_Asado_Alubias_Straker | Platos | ✅ OK | ✅ OK (vault) |
-| 245 | Pollo_Ast_Plato | Platos | ✅ OK | ❌ NO EXISTE |
-| 246 | Pollo_Patatas_Straker | Platos | ✅ OK | ✅ OK (vault) |
-| 247 | Pollo_Salmorejo_Papas | Platos | ✅ OK | ❌ NO EXISTE |
-| 248 | Pollo_Veloute_Mostaza_Setas_Tallarines | Platos | ✅ OK | ❌ NO EXISTE |
-| 249 | Ragu_Cerdo_Ternera_Gnocchi_Plato | Platos | ✅ OK | ❌ NO EXISTE |
-| 250 | Ravioli_Costilla_Ternera_Straker | Platos | ✅ OK | ✅ OK (vault) |
-| 251 | Raya_Mantequilla_Tostada_Plato | Platos | ✅ OK | ❌ NO EXISTE |
-| 252 | Risotto_Azafran | Platos | ✅ OK | ❌ NO EXISTE |
-| 253 | Rollitos_Col_Rellenos_Plato | Platos | ✅ OK | ❌ NO EXISTE |
-| 254 | Ropa_Vieja_Canaria | Platos | ✅ OK | ❌ NO EXISTE |
-| 255 | Salchichas_Salsa_Tomate_Plato | Platos | ✅ OK | ❌ NO EXISTE |
-| 256 | Salmon_Curado_Confitado | Platos | ✅ OK | ❌ NO EXISTE |
-| 257 | Salmon_Glaseado_Broccoli_Charred | Platos | ✅ OK | ❌ NO EXISTE |
-| 258 | Sancocho_Canario_Bacalao | Platos | ✅ OK | ❌ NO EXISTE |
-| 259 | Schnitzel_Pollo_Salsa_Straker | Platos | ✅ OK | ✅ OK (vault) |
-| 260 | Schnitzel_Ternera_Straker | Platos | ✅ OK | ✅ OK (vault) |
-| 261 | Schupfnudeln_Sauerkraut_Speck | Platos | ✅ OK | ❌ NO EXISTE |
-| 262 | Senfeier_Huevos_Mostaza | Platos | ✅ OK | ❌ NO EXISTE |
-| 263 | Shakshuka | Platos | ✅ OK | ❌ NO EXISTE |
-| 264 | Solomillo_Pimienta_Plato | Platos | ✅ OK | ❌ NO EXISTE |
-| 265 | Suquet_Corvina | Platos | ✅ OK | ❌ NO EXISTE |
-| 266 | Tonkatsu_Pollo_Plato | Platos | ✅ OK | ❌ NO EXISTE |
-| 267 | Arroz_con_Leche | Postres | ✅ OK | ❌ NO EXISTE |
-| 268 | Clafoutis_Cereza_Almendra_Straker | Postres | ✅ OK | ✅ OK (vault) |
-| 269 | Compota_Manzana_Especiada | Postres | ✅ OK | ❌ NO EXISTE |
-| 270 | Cookies_Chocolate | Postres | ✅ OK | ❌ NO EXISTE |
-| 271 | Crema_Catalana | Postres | ✅ OK | ❌ NO EXISTE |
-| 272 | Crema_Pina_Coco | Postres | ✅ OK | ❌ NO EXISTE |
-| 273 | Cremoso_Chocolate_Blanco | Postres | ✅ OK | ❌ NO EXISTE |
-| 274 | Donuts_Mermelada_Straker | Postres | ✅ OK | ✅ OK (vault) |
-| 275 | Flan_Coco | Postres | ✅ OK | ❌ NO EXISTE |
-| 276 | Fresas_Vinagre | Postres | ✅ OK | ❌ NO EXISTE |
-| 277 | Helado_Dulce_de_Leche_Straker | Postres | ✅ OK | ✅ OK (vault) |
-| 278 | Mandarina_Cointreau | Postres | ✅ OK | ❌ NO EXISTE |
-| 279 | Mango_Yogur_Chocolate_Blanco | Postres | ✅ OK | ❌ NO EXISTE |
-| 280 | Manzana_Horno | Postres | ✅ OK | ❌ NO EXISTE |
-| 281 | Mousse_Chocolate | Postres | ✅ OK | ❌ NO EXISTE |
-| 282 | Mousse_Chocolate_Avellana_Straker | Postres | ✅ OK | ✅ OK (vault) |
-| 283 | Naranjas_Miel | Postres | ✅ OK | ❌ NO EXISTE |
-| 284 | Natillas_Cuajadas_Ruibarbo_Straker | Postres | ✅ OK | ✅ OK (vault) |
-| 285 | Natillas_Pistacho | Postres | ✅ OK | ❌ NO EXISTE |
-| 286 | Platano_Lima | Postres | ✅ OK | ❌ NO EXISTE |
-| 287 | Sangria_Frutas | Postres | ✅ OK | ❌ NO EXISTE |
-| 288 | Sopa_Melon_Menta | Postres | ✅ OK | ❌ NO EXISTE |
-| 289 | Sorbete_Naranja_Sanguina_Straker | Postres | ✅ OK | ✅ OK (vault) |
-| 290 | Tarta_Frangipane_Pera_Straker | Postres | ✅ OK | ✅ OK (vault) |
-| 291 | Tarte_Tatin_Straker | Postres | ✅ OK | ✅ OK (vault) |
-| 292 | Tiramisu_Straker | Postres | ✅ OK | ✅ OK (vault) |
-| 293 | Torrija_Brioche_Caramelizada | Postres | ✅ OK | ❌ NO EXISTE |
-| 294 | Trufas_Chocolate | Postres | ✅ OK | ❌ NO EXISTE |
+| 01_Fondo_Blanco_Pollo | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| 02_Fondo_Dorado_Pollo | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| 03_Fumet_Pescado | ❌ | 2 KB | ⚠️ | CONTENIDO_VACIO |
+| 04_Fondo_Marisco | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| 05_Fondo_Oscuro_Ternera | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| 06_Caldo_Verduras | ❌ | 5 KB | ✅ | OK_SIN_FOTO |
+| Caldo_Pollo_Mise_en_Place | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Caldo_Pollo_Straker | ✅ | 2411 KB | ✅ | OK |
+| Fondo_Pescado_Straker | ✅ | 968 KB | ✅ | OK |
+| Fondo_Ternera_Straker | ✅ | 862 KB | ✅ | OK |
+| 07_Demi_Glace | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Burnt_Butter_Straker | ✅ | 725 KB | ✅ | OK |
+| Focaccia_Straker | ✅ | 849 KB | ✅ | OK |
+| Mantequilla_Anchoa_Straker | ✅ | 753 KB | ✅ | OK |
+| Mantequilla_Artesanal_Straker | ✅ | 717 KB | ✅ | OK |
+| Mantequilla_Miso_Straker | ✅ | 965 KB | ✅ | OK |
+| Masa_Flatbread_Straker | ✅ | 821 KB | ✅ | OK |
+| Masa_Pasta_Fresca_Straker | ✅ | 1216 KB | ✅ | OK |
+| Milk_Buns_Straker | ✅ | 717 KB | ✅ | OK |
+| Mostaza_Encurtida | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Pangrattato_Straker | ✅ | 796 KB | ✅ | OK |
+| Yogur_Escurrido_Straker | ✅ | 2487 KB | ✅ | OK |
+| Chimichurri_Straker | ✅ | 827 KB | ✅ | OK |
+| Currysauce_Gourmet | ❌ | 5 KB | ✅ | OK_SIN_FOTO |
+| Gravy_Pato | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Mayonesa_Ajo_Straker | ✅ | 1457 KB | ✅ | OK |
+| Mayonesa_Limon_Straker | ✅ | 662 KB | ✅ | OK |
+| Miso_Bagna_Cauda | ❌ | 3 KB | ✅ | OK_SIN_FOTO |
+| Mojos_Canarios | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Pesto_Ajo_Silvestre_Straker | ✅ | 793 KB | ✅ | OK |
+| Pesto_Albahaca_Straker | ✅ | 814 KB | ✅ | OK |
+| Romesco_Straker | ✅ | 796 KB | ✅ | OK |
+| Salmorejo_Canario | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Salsa_Coctel | ❌ | 3 KB | ✅ | OK_SIN_FOTO |
+| Salsa_Holandesa | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Salsa_Roja_Straker | ✅ | 785 KB | ✅ | OK |
+| Salsa_Tartara_Roux | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Salsa_Tonkatsu_Mejorada | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Salsa_Verde_Straker | ✅ | 814 KB | ✅ | OK |
+| Salsa_Vino_Tinto_Fallow | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Salsa_Yogur_Zumaque | ❌ | 3 KB | ✅ | OK_SIN_FOTO |
+| Sauce_Verte_Straker | ✅ | 766 KB | ✅ | OK |
+| Veloute_Mostaza | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Yogur_Remolacha_Straker | ✅ | 760 KB | ✅ | OK |
+| Aligot_Platano_Canarias | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Arroz_Bahiano | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Arroz_Blanco_Suelto | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Bratkartoffeln | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Couscous_Aromatico | ❌ | 3 KB | ✅ | OK_SIN_FOTO |
+| Gnocchi_Straker | ❌ | 5 KB | ✅ | OK_SIN_FOTO |
+| Knodel_Base | ❌ | 5 KB | ✅ | OK_SIN_FOTO |
+| Knodel_Salteados_Setas | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Papas_Arrugadas_Canarias | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Patatas_Aplastadas_Straker | ✅ | 823 KB | ✅ | OK |
+| Patatas_Boulangere | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Patatas_Cebollas_Romesco | ❌ | 5 KB | ✅ | OK_SIN_FOTO |
+| Patatas_Dauphine | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Patatas_Fritas_Bistro | ❌ | 5 KB | ✅ | OK_SIN_FOTO |
+| Patatas_Fritas_Triple_Cocción | ❌ | 2 KB | ⚠️ | CONTENIDO_VACIO |
+| Patatas_Gajo_Bistro | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Patatas_Panaderas | ❌ | 5 KB | ✅ | OK_SIN_FOTO |
+| Patatas_Vapor_Horno | ❌ | 3 KB | ✅ | OK_SIN_FOTO |
+| Polenta_Parmesano | ❌ | 3 KB | ✅ | OK_SIN_FOTO |
+| Pure_Boniato | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Pure_Cremoso_Robuchon | ❌ | 5 KB | ✅ | OK_SIN_FOTO |
+| Pure_Patata_Firme | ❌ | 5 KB | ✅ | OK_SIN_FOTO |
+| Pure_Patata_Straker | ✅ | 712 KB | ✅ | OK |
+| Risotto_Azafran | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Salzkartoffeln | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Schupfnudeln_Caseras | ❌ | 5 KB | ✅ | OK_SIN_FOTO |
+| Spatzle_Manual | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Tallarines_Caseros_Huevo | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Berenjena_Asada_Miso | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Berenjena_Pinones_Menta_Straker | ✅ | 802 KB | ✅ | OK |
+| Broccoli_Charred_Miso_Bagna_Cauda | ❌ | 3 KB | ✅ | OK_SIN_FOTO |
+| Calabaza_Borlotti_Salsa_Verde_Straker | ✅ | 763 KB | ✅ | OK |
+| Caponata_Straker | ✅ | 785 KB | ✅ | OK |
+| Cebollas_Asadas_Romesco_Straker | ✅ | 822 KB | ✅ | OK |
+| Chucrut_Afinado_Gourmet | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Col_Hispi_Mantequilla_Anchoa_Straker | ✅ | 817 KB | ✅ | OK |
+| Coles_Bruselas_Lardo | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Ensalada_Col_Japonesa | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Ensalada_Pepino_Agridulce | ❌ | 3 KB | ✅ | OK_SIN_FOTO |
+| Escalivada | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Esparragos_Hierbas_Straker | ✅ | 879 KB | ✅ | OK |
+| Esparragos_Trigueros | ❌ | 3 KB | ✅ | OK_SIN_FOTO |
+| Espinacas_Limon_Parmesano_Straker | ✅ | 800 KB | ✅ | OK |
+| Espinacas_Salteadas | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Fritti_Verduras_Straker | ✅ | 812 KB | ✅ | OK |
+| Gratinado_Coliflor_Afinado | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Pimientos_Piquillo_Confitados | ❌ | 3 KB | ✅ | OK_SIN_FOTO |
+| Portobello_Shiitake_Glaseados_Fondo_Oscuro | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Ratatouille_Straker | ✅ | 803 KB | ✅ | OK |
+| Romanesco_Asado_Tahini_Straker | ✅ | 817 KB | ✅ | OK |
+| Rote_Bete_Salat | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Rotkohl_Clasico | ❌ | 5 KB | ✅ | OK_SIN_FOTO |
+| Verduras_Mediterraneo_Este | ❌ | 3 KB | ✅ | OK_SIN_FOTO |
+| Zanahorias_Yogur_Dukkah_Straker | ✅ | 914 KB | ✅ | OK |
+| Albondigas_Cordero_Feta_Componente | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Albondigas_Mixtas_Tomate_Straker | ✅ | 1000 KB | ✅ | OK |
+| Atun_Encebollado_Canario | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Bacalao_Beer_Batter | ❌ | 5 KB | ✅ | OK_SIN_FOTO |
+| Bacalao_Espinacas_Aceite_Verde | ❌ | 5 KB | ✅ | OK_SIN_FOTO |
+| Bacalao_Tomate_Pimientos_Straker | ✅ | 798 KB | ✅ | OK |
+| Bratwurst_Doble_Coccion | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Carrilleras_Ternera_Vino_Mostaza | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Chicken_Burger_Straker | ✅ | 1149 KB | ✅ | OK |
+| Chuleta_Cerdo_Ciruelas_Straker | ✅ | 1020 KB | ✅ | OK |
+| Costillas_Cerdo_BBQ | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Curry_Nativo_Australiano_Corvina | ❌ | 5 KB | ✅ | OK_SIN_FOTO |
+| Curry_Rape_Straker | ✅ | 802 KB | ✅ | OK |
+| Curry_Tailandes_Pato | ❌ | 5 KB | ✅ | OK_SIN_FOTO |
+| Dorada_Vapor_Japonesa | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Escabeche_Pavo_Filipino | ❌ | 5 KB | ✅ | OK_SIN_FOTO |
+| Gulasch_Aleman_Componente | ❌ | 6 KB | ✅ | OK_SIN_FOTO |
+| Jurel_Vinagreta | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Lenguado_Papillote_Straker | ✅ | 787 KB | ✅ | OK |
+| Lomo_Cerdo_Pimiento | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Moqueca_Camarones_Baiano | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Ossobuco_Milanesa | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Paletilla_Cordero_Asada_Straker | ✅ | 1327 KB | ✅ | OK |
+| Pata_Asada_Canaria | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Pato_Asado_Clasico | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Pollo_Ajillo_Componente | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Pollo_Ast | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Pollo_Deshuesado_Asado_Caldo | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Pollo_Salmorejo_Canario | ❌ | 5 KB | ✅ | OK_SIN_FOTO |
+| Ragu_Cerdo_Ternera_Gnocchi_Straker | ✅ | 752 KB | ✅ | OK |
+| Raya_Mantequilla_Tostada | ❌ | 5 KB | ✅ | OK_SIN_FOTO |
+| Rollitos_Col_Rellenos | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Salchichas_Salsa_Tomate | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Salmon_Curado_Confitado_Componente | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Salmon_Glaseado | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Smash_Burger_Straker | ✅ | 901 KB | ✅ | OK |
+| Solomillo_Filet_Mignon | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Solomillo_Pimienta_Straker | ✅ | 795 KB | ✅ | OK |
+| Ternera_Curry_Thai | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Tonkatsu_Pollo_Componente | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Ajoblanco | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Alubias_Tahini | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Berenjena_Asada_Miso | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Bisque_Gambas | ❌ | 5 KB | ✅ | OK_SIN_FOTO |
+| Caldo_Pollo_Verduras_Straker | ✅ | 2412 KB | ✅ | OK |
+| Carpaccio_Ternera_Straker | ✅ | 4334 KB | ✅ | OK |
+| Coctel_Gambas_Clasico | ❌ | 3 KB | ✅ | OK_SIN_FOTO |
+| Cogollos_Gratinados_Azul | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Cogollos_Plancha | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Coliflor_Gratinada | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Consome_Ave_Ligero | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Crema_Ajo_Silvestre_Espinacas_Straker | ✅ | 1882 KB | ✅ | OK |
+| Crema_Apio_Nabo | ❌ | 3 KB | ✅ | OK_SIN_FOTO |
+| Crema_Calabacin_Albahaca_Straker | ✅ | 1369 KB | ✅ | OK |
+| Crema_Calabaza_Pesto_Semillas_Straker | ✅ | 1621 KB | ✅ | OK |
+| Crema_Cavolo_Nero_Straker | ✅ | 1335 KB | ✅ | OK |
+| Crema_Tomate_Asado_Albahaca_Straker | ✅ | 2768 KB | ✅ | OK |
+| Ensalada_Alcachofa_Parmesano_Straker | ✅ | 5750 KB | ✅ | OK |
+| Ensalada_Arenque_Remolacha | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Ensalada_Calabacin_Limon_Rucula_Straker | ✅ | 7640 KB | ✅ | OK |
+| Ensalada_Calabaza_Bulgur_Nuez_Pera_Straker | ✅ | 847 KB | ✅ | OK |
+| Ensalada_Cesar | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Ensalada_Judia_Verde_Almendra_Melocoton_Straker | ✅ | 833 KB | ✅ | OK |
+| Ensalada_Maiz_Atun_Tomate_Hinojo_Straker | ✅ | 875 KB | ✅ | OK |
+| Ensalada_PSB_Huevos_Tomate_Croutons_Straker | ✅ | 881 KB | ✅ | OK |
+| Ensalada_Remolacha_Lentejas_Hinojo_Straker | ✅ | 827 KB | ✅ | OK |
+| Ensalada_Tomate_AOVE_Straker | ✅ | 6526 KB | ✅ | OK |
+| Ensalada_Treviso_Pecorino_Clementina_Straker | ✅ | 854 KB | ✅ | OK |
+| Ensalada_Verde_Straker | ✅ | 873 KB | ✅ | OK |
+| Ensalada_Waldorf | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Ensaladilla_Alemana | ❌ | 3 KB | ✅ | OK_SIN_FOTO |
+| Esfera_Boletus_Coulis_Frutos_Rojos | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Esparragos_Carbonara | ❌ | 5 KB | ✅ | OK_SIN_FOTO |
+| Flatbread_Calabacin_Burrata_Straker | ✅ | 771 KB | ✅ | OK |
+| Flatbread_Tomate_Anchoa_Straker | ✅ | 886 KB | ✅ | OK |
+| Focaccia_Cebolla_Caramelizada_Straker | ✅ | 874 KB | ✅ | OK |
+| Focaccia_Tomate_Ajo_Straker | ✅ | 886 KB | ✅ | OK |
+| Gambas_Ajillo | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Gazpacho_Straker | ✅ | 3150 KB | ✅ | OK |
+| Guisantes_Jamon | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Lentejas_Verdes_Queso_Oveja | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Minestrone_Straker | ✅ | 2198 KB | ✅ | OK |
+| Pastel_Ventresca_Laredo | ❌ | 3 KB | ✅ | OK_SIN_FOTO |
+| Patatas_Cebollas_Romesco | ❌ | 5 KB | ✅ | OK_SIN_FOTO |
+| Pimientos_Asados_Burrata_Straker | ✅ | 7725 KB | ✅ | OK |
+| Pimientos_Muhammara | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Risotto_Azafran | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Sardinas_Tomate_Straker | ✅ | 4999 KB | ✅ | OK |
+| Sopa_Miso_Tofu_Wakame | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Steak_Tartar_Clasico | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Steak_Tartar_Sin_Yema | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Timbal_Aguacate_Gambas | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Tiradito_Nikkei_Atun | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Tomate_Tonnato | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Vichyssoise | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Wurstsalat_Bavaria | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Albondigas_Cordero_Plato | ❌ | 3 KB | ✅ | OK_SIN_FOTO |
+| Albondigas_Mixtas_Tomate_Plato | ❌ | 2 KB | ⚠️ | CONTENIDO_VACIO |
+| Arroz_Caldoso_Marisco | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Arroz_de_Pato | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Atun_Encebollado_Canario_Plato | ❌ | 2 KB | ⚠️ | CONTENIDO_VACIO |
+| Bacalao_Tomate_Pimientos_Plato | ❌ | 2 KB | ⚠️ | CONTENIDO_VACIO |
+| Bkeila | ❌ | 5 KB | ✅ | OK_SIN_FOTO |
+| Bratwurst_Plato | ❌ | 2 KB | ⚠️ | CONTENIDO_VACIO |
+| Canelones_Rabo_Toro_Demiglace | ❌ | 2 KB | ✅ | OK_SIN_FOTO |
+| Carrilleras_Ternera_Polenta_Straker | ✅ | 1217 KB | ✅ | OK |
+| Chicken_Burger_Plato | ❌ | 2 KB | ⚠️ | CONTENIDO_VACIO |
+| Chicken_Caesar_Straker | ✅ | 944 KB | ✅ | OK |
+| Chuleta_Cerdo_Chucrut | ❌ | 3 KB | ✅ | OK_SIN_FOTO |
+| Chuleta_Cerdo_Ciruelas_Plato | ❌ | 2 KB | ⚠️ | CONTENIDO_VACIO |
+| Coq_au_Vin | ❌ | 5 KB | ✅ | OK_SIN_FOTO |
+| Costilla_Papa_Pina | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Costillas_Cerdo_BBQ_Plato | ❌ | 2 KB | ⚠️ | CONTENIDO_VACIO |
+| Curry_Australiano_Corvina_Plato | ❌ | 2 KB | ⚠️ | CONTENIDO_VACIO |
+| Curry_Rape_Plato | ❌ | 2 KB | ⚠️ | CONTENIDO_VACIO |
+| Curry_Tailandes_Pato_Plato | ❌ | 2 KB | ⚠️ | CONTENIDO_VACIO |
+| Currywurst_Premium | ❌ | 3 KB | ✅ | OK_SIN_FOTO |
+| Dorada_Vapor_Japonesa_Plato | ❌ | 2 KB | ⚠️ | CONTENIDO_VACIO |
+| Escabeche_Pavo_Filipino_Plato | ❌ | 2 KB | ⚠️ | CONTENIDO_VACIO |
+| Estofado_Lentejas_Aleman | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Fabada_Asturiana | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Filet_Mignon_Plato | ❌ | 2 KB | ⚠️ | CONTENIDO_VACIO |
+| Fish_and_Chips | ❌ | 3 KB | ✅ | OK_SIN_FOTO |
+| Gnocchi_Salvia_Mantequilla_Tostada_Straker | ✅ | 814 KB | ✅ | OK |
+| Goujons_Pescado_Tartara_Straker | ✅ | 947 KB | ✅ | OK |
+| Guiso_Pescado_Straker | ✅ | 802 KB | ✅ | OK |
+| Gulasch_Aleman_Plato | ❌ | 3 KB | ✅ | OK_SIN_FOTO |
+| Jurel_Vinagreta_Plato | ❌ | 2 KB | ⚠️ | CONTENIDO_VACIO |
+| Koenigsberger_Klopse | ❌ | 3 KB | ✅ | OK_SIN_FOTO |
+| Lenguado_Papillote_Patatas_Straker | ❌ | 3 KB | ✅ | OK_SIN_FOTO |
+| Linseneintopf_Bockwurst | ❌ | 5 KB | ✅ | OK_SIN_FOTO |
+| Lobster_Roll_Straker | ✅ | 1015 KB | ✅ | OK |
+| Lomo_Cerdo_Pimiento_Plato | ❌ | 2 KB | ⚠️ | CONTENIDO_VACIO |
+| Lubina_Horno | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Lubina_Lentejas_Salsa_Verde_Straker | ✅ | 921 KB | ✅ | OK |
+| Moqueca_Camarones_Arroz_Bahiano | ❌ | 3 KB | ✅ | OK_SIN_FOTO |
+| Musaka_Verduras | ❌ | 2 KB | ⚠️ | CONTENIDO_VACIO |
+| Nasi_Goreng | ❌ | 5 KB | ✅ | OK_SIN_FOTO |
+| Ossobuco_Milanese_Plato | ❌ | 2 KB | ⚠️ | CONTENIDO_VACIO |
+| Paccheri_Pesto_Ajo_Silvestre_Straker | ✅ | 773 KB | ✅ | OK |
+| Paccheri_Pomodoro_Cremoso | ❌ | 3 KB | ✅ | OK_SIN_FOTO |
+| Paletilla_Cordero_Plato | ❌ | 2 KB | ⚠️ | CONTENIDO_VACIO |
+| Pasta_Alcachofa_Straker | ✅ | 766 KB | ✅ | OK |
+| Pato_Asado_Clasico_Plato | ❌ | 2 KB | ⚠️ | CONTENIDO_VACIO |
+| Pollo_Ajillo_Plato | ❌ | 2 KB | ⚠️ | CONTENIDO_VACIO |
+| Pollo_Asado_Alubias_Straker | ✅ | 2031 KB | ✅ | OK |
+| Pollo_Ast_Plato | ❌ | 2 KB | ⚠️ | CONTENIDO_VACIO |
+| Pollo_Patatas_Straker | ✅ | 1522 KB | ✅ | OK |
+| Pollo_Salmorejo_Papas | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Pollo_Veloute_Mostaza_Setas_Tallarines | ❌ | 3 KB | ✅ | OK_SIN_FOTO |
+| Ragu_Cerdo_Ternera_Gnocchi_Plato | ❌ | 2 KB | ⚠️ | CONTENIDO_VACIO |
+| Ravioli_Costilla_Ternera_Straker | ✅ | 814 KB | ✅ | OK |
+| Raya_Mantequilla_Tostada_Plato | ❌ | 2 KB | ⚠️ | CONTENIDO_VACIO |
+| Risotto_Azafran | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Rollitos_Col_Rellenos_Plato | ❌ | 2 KB | ⚠️ | CONTENIDO_VACIO |
+| Ropa_Vieja_Canaria | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Salchichas_Salsa_Tomate_Plato | ❌ | 2 KB | ⚠️ | CONTENIDO_VACIO |
+| Salmon_Curado_Confitado | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Salmon_Glaseado_Broccoli_Charred | ❌ | 3 KB | ✅ | OK_SIN_FOTO |
+| Sancocho_Canario_Bacalao | ❌ | 5 KB | ✅ | OK_SIN_FOTO |
+| Schnitzel_Pollo_Salsa_Straker | ✅ | 870 KB | ✅ | OK |
+| Schnitzel_Ternera_Straker | ✅ | 982 KB | ✅ | OK |
+| Schupfnudeln_Sauerkraut_Speck | ❌ | 5 KB | ✅ | OK_SIN_FOTO |
+| Senfeier_Huevos_Mostaza | ❌ | 3 KB | ✅ | OK_SIN_FOTO |
+| Shakshuka | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Solomillo_Pimienta_Plato | ❌ | 2 KB | ⚠️ | CONTENIDO_VACIO |
+| Suquet_Corvina | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Tonkatsu_Pollo_Plato | ❌ | 2 KB | ⚠️ | CONTENIDO_VACIO |
+| Arroz_con_Leche | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Clafoutis_Cereza_Almendra_Straker | ✅ | 840 KB | ✅ | OK |
+| Compota_Manzana_Especiada | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Cookies_Chocolate | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Crema_Catalana | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Crema_Pina_Coco | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Cremoso_Chocolate_Blanco | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Donuts_Mermelada_Straker | ✅ | 814 KB | ✅ | OK |
+| Flan_Coco | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Fresas_Vinagre | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Helado_Dulce_de_Leche_Straker | ✅ | 685 KB | ✅ | OK |
+| Mandarina_Cointreau | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Mango_Yogur_Chocolate_Blanco | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Manzana_Horno | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Mousse_Chocolate | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Mousse_Chocolate_Avellana_Straker | ✅ | 755 KB | ✅ | OK |
+| Naranjas_Miel | ❌ | 3 KB | ✅ | OK_SIN_FOTO |
+| Natillas_Cuajadas_Ruibarbo_Straker | ✅ | 739 KB | ✅ | OK |
+| Natillas_Pistacho | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Platano_Lima | ❌ | 3 KB | ✅ | OK_SIN_FOTO |
+| Sangria_Frutas | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Sopa_Melon_Menta | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Sorbete_Naranja_Sanguina_Straker | ✅ | 745 KB | ✅ | OK |
+| Tarta_Frangipane_Pera_Straker | ✅ | 811 KB | ✅ | OK |
+| Tarte_Tatin_Straker | ✅ | 800 KB | ✅ | OK |
+| Tiramisu_Straker | ✅ | 786 KB | ✅ | OK |
+| Torrija_Brioche_Caramelizada | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+| Trufas_Chocolate | ❌ | 4 KB | ✅ | OK_SIN_FOTO |
+
+## Recetas con .md no estándar (29)
+
+Estos .md no tienen el formato estándar (sin YAML frontmatter / headings limpios). El parser no pudo extraer ingredientes ni fases. Necesitan reformateo manual.
+
+- 03_Fumet_Pescado
+- Albondigas_Mixtas_Tomate_Plato
+- Atun_Encebollado_Canario_Plato
+- Bacalao_Tomate_Pimientos_Plato
+- Bratwurst_Plato
+- Chicken_Burger_Plato
+- Chuleta_Cerdo_Ciruelas_Plato
+- Costillas_Cerdo_BBQ_Plato
+- Curry_Australiano_Corvina_Plato
+- Curry_Rape_Plato
+- Curry_Tailandes_Pato_Plato
+- Dorada_Vapor_Japonesa_Plato
+- Escabeche_Pavo_Filipino_Plato
+- Filet_Mignon_Plato
+- Jurel_Vinagreta_Plato
+- Lomo_Cerdo_Pimiento_Plato
+- Musaka_Verduras
+- Ossobuco_Milanese_Plato
+- Paletilla_Cordero_Plato
+- Patatas_Fritas_Triple_Cocción
+- Pato_Asado_Clasico_Plato
+- Pollo_Ajillo_Plato
+- Pollo_Ast_Plato
+- Ragu_Cerdo_Ternera_Gnocchi_Plato
+- Raya_Mantequilla_Tostada_Plato
+- Rollitos_Col_Rellenos_Plato
+- Salchichas_Salsa_Tomate_Plato
+- Solomillo_Pimienta_Plato
+- Tonkatsu_Pollo_Plato
+
+## Recetas sin foto (171)
+
+- 01_Fondo_Blanco_Pollo
+- 02_Fondo_Dorado_Pollo
+- 04_Fondo_Marisco
+- 05_Fondo_Oscuro_Ternera
+- 06_Caldo_Verduras
+- 07_Demi_Glace
+- Ajoblanco
+- Albondigas_Cordero_Feta_Componente
+- Albondigas_Cordero_Plato
+- Aligot_Platano_Canarias
+- Alubias_Tahini
+- Arroz_Bahiano
+- Arroz_Blanco_Suelto
+- Arroz_Caldoso_Marisco
+- Arroz_con_Leche
+- Arroz_de_Pato
+- Atun_Encebollado_Canario
+- Bacalao_Beer_Batter
+- Bacalao_Espinacas_Aceite_Verde
+- Berenjena_Asada_Miso
+- Berenjena_Asada_Miso
+- Bisque_Gambas
+- Bkeila
+- Bratkartoffeln
+- Bratwurst_Doble_Coccion
+- Broccoli_Charred_Miso_Bagna_Cauda
+- Caldo_Pollo_Mise_en_Place
+- Canelones_Rabo_Toro_Demiglace
+- Carrilleras_Ternera_Vino_Mostaza
+- Chucrut_Afinado_Gourmet
+- Chuleta_Cerdo_Chucrut
+- Coctel_Gambas_Clasico
+- Cogollos_Gratinados_Azul
+- Cogollos_Plancha
+- Coles_Bruselas_Lardo
+- Coliflor_Gratinada
+- Compota_Manzana_Especiada
+- Consome_Ave_Ligero
+- Cookies_Chocolate
+- Coq_au_Vin
+- Costilla_Papa_Pina
+- Costillas_Cerdo_BBQ
+- Couscous_Aromatico
+- Crema_Apio_Nabo
+- Crema_Catalana
+- Crema_Pina_Coco
+- Cremoso_Chocolate_Blanco
+- Curry_Nativo_Australiano_Corvina
+- Curry_Tailandes_Pato
+- Currysauce_Gourmet
+- Currywurst_Premium
+- Dorada_Vapor_Japonesa
+- Ensalada_Arenque_Remolacha
+- Ensalada_Cesar
+- Ensalada_Col_Japonesa
+- Ensalada_Pepino_Agridulce
+- Ensalada_Waldorf
+- Ensaladilla_Alemana
+- Escabeche_Pavo_Filipino
+- Escalivada
+- Esfera_Boletus_Coulis_Frutos_Rojos
+- Esparragos_Carbonara
+- Esparragos_Trigueros
+- Espinacas_Salteadas
+- Estofado_Lentejas_Aleman
+- Fabada_Asturiana
+- Fish_and_Chips
+- Flan_Coco
+- Fresas_Vinagre
+- Gambas_Ajillo
+- Gnocchi_Straker
+- Gratinado_Coliflor_Afinado
+- Gravy_Pato
+- Guisantes_Jamon
+- Gulasch_Aleman_Componente
+- Gulasch_Aleman_Plato
+- Jurel_Vinagreta
+- Knodel_Base
+- Knodel_Salteados_Setas
+- Koenigsberger_Klopse
+- Lenguado_Papillote_Patatas_Straker
+- Lentejas_Verdes_Queso_Oveja
+- Linseneintopf_Bockwurst
+- Lomo_Cerdo_Pimiento
+- Lubina_Horno
+- Mandarina_Cointreau
+- Mango_Yogur_Chocolate_Blanco
+- Manzana_Horno
+- Miso_Bagna_Cauda
+- Mojos_Canarios
+- Moqueca_Camarones_Arroz_Bahiano
+- Moqueca_Camarones_Baiano
+- Mostaza_Encurtida
+- Mousse_Chocolate
+- Naranjas_Miel
+- Nasi_Goreng
+- Natillas_Pistacho
+- Ossobuco_Milanesa
+- Paccheri_Pomodoro_Cremoso
+- Papas_Arrugadas_Canarias
+- Pastel_Ventresca_Laredo
+- Pata_Asada_Canaria
+- Patatas_Boulangere
+- Patatas_Cebollas_Romesco
+- Patatas_Cebollas_Romesco
+- Patatas_Dauphine
+- Patatas_Fritas_Bistro
+- Patatas_Gajo_Bistro
+- Patatas_Panaderas
+- Patatas_Vapor_Horno
+- Pato_Asado_Clasico
+- Pimientos_Muhammara
+- Pimientos_Piquillo_Confitados
+- Platano_Lima
+- Polenta_Parmesano
+- Pollo_Ajillo_Componente
+- Pollo_Ast
+- Pollo_Deshuesado_Asado_Caldo
+- Pollo_Salmorejo_Canario
+- Pollo_Salmorejo_Papas
+- Pollo_Veloute_Mostaza_Setas_Tallarines
+- Portobello_Shiitake_Glaseados_Fondo_Oscuro
+- Pure_Boniato
+- Pure_Cremoso_Robuchon
+- Pure_Patata_Firme
+- Raya_Mantequilla_Tostada
+- Risotto_Azafran
+- Risotto_Azafran
+- Risotto_Azafran
+- Rollitos_Col_Rellenos
+- Ropa_Vieja_Canaria
+- Rote_Bete_Salat
+- Rotkohl_Clasico
+- Salchichas_Salsa_Tomate
+- Salmon_Curado_Confitado
+- Salmon_Curado_Confitado_Componente
+- Salmon_Glaseado
+- Salmon_Glaseado_Broccoli_Charred
+- Salmorejo_Canario
+- Salsa_Coctel
+- Salsa_Holandesa
+- Salsa_Tartara_Roux
+- Salsa_Tonkatsu_Mejorada
+- Salsa_Vino_Tinto_Fallow
+- Salsa_Yogur_Zumaque
+- Salzkartoffeln
+- Sancocho_Canario_Bacalao
+- Sangria_Frutas
+- Schupfnudeln_Caseras
+- Schupfnudeln_Sauerkraut_Speck
+- Senfeier_Huevos_Mostaza
+- Shakshuka
+- Solomillo_Filet_Mignon
+- Sopa_Melon_Menta
+- Sopa_Miso_Tofu_Wakame
+- Spatzle_Manual
+- Steak_Tartar_Clasico
+- Steak_Tartar_Sin_Yema
+- Suquet_Corvina
+- Tallarines_Caseros_Huevo
+- Ternera_Curry_Thai
+- Timbal_Aguacate_Gambas
+- Tiradito_Nikkei_Atun
+- Tomate_Tonnato
+- Tonkatsu_Pollo_Componente
+- Torrija_Brioche_Caramelizada
+- Trufas_Chocolate
+- Veloute_Mostaza
+- Verduras_Mediterraneo_Este
+- Vichyssoise
+- Wurstsalat_Bavaria

@@ -152,6 +152,28 @@ def parse_benchmark_md(filepath):
     for line in lines:
         stripped = line.strip()
 
+        # Track ## headers to know when entering/leaving Ingredientes
+        if stripped.startswith('## ') and not stripped.startswith('### '):
+            h2 = stripped[3:].strip().lower()
+            if 'ingrediente' in h2:
+                in_ingredients = True
+                in_appcc = False
+                in_skip = False
+                if current_fase:
+                    data["fases"].append(current_fase)
+                    current_fase = None
+            elif 'procedimiento' in h2:
+                in_ingredients = False
+                in_appcc = False
+                in_skip = False
+            elif any(s in h2 for s in ['emplatado', 'puntos', 'appcc', 'adaptaci']):
+                in_skip = True
+                in_ingredients = False
+                if current_fase:
+                    data["fases"].append(current_fase)
+                    current_fase = None
+            continue
+
         if stripped.startswith('### '):
             header = stripped[4:].strip()
             header_lower = header.lower()
@@ -164,6 +186,9 @@ def parse_benchmark_md(filepath):
                 if current_fase:
                     data["fases"].append(current_fase)
                     current_fase = None
+                continue
+            elif in_ingredients:
+                # Skip ### headers within Ingredientes section (they are ingredient groups)
                 continue
             elif any(s in header_clean for s in ['appcc', 'alérgeno', 'alergeno']):
                 in_appcc = True
@@ -188,7 +213,7 @@ def parse_benchmark_md(filepath):
                     data["fases"].append(current_fase)
                     current_fase = None
                 continue
-            elif not in_ingredients:
+            else:
                 in_appcc = False
                 in_skip = False
                 if current_fase:
@@ -247,7 +272,7 @@ def parse_benchmark_md(filepath):
                 current_group = {"grupo": header, "items": []}
                 continue
 
-            # Sub-section that starts ingredient listing for a COMPONENTE
+            # Sub-section within ingredients
             if stripped.startswith('### ') and in_ing:
                 header = stripped[4:].strip()
                 if any(s in header.lower() for s in ['mise en place', 'elaboraci', 'punto', 'appcc']):
@@ -256,8 +281,14 @@ def parse_benchmark_md(filepath):
                         current_group = None
                     in_ing = False
                     continue
+                # Treat ### headers inside ingredients as group headers
+                if not any(s in header.lower() for s in ['ingrediente']):
+                    if current_group:
+                        data["ingredientes"].append(current_group)
+                    current_group = {"grupo": header, "items": []}
+                    continue
 
-            # Ingredient line
+            # Ingredient line (list format: - Name: Quantity)
             m_ing = re.match(r'^-\s+(.+?):\s+(.+)', stripped)
             if m_ing and current_group is not None:
                 nombre = m_ing.group(1).strip()
@@ -285,6 +316,25 @@ def parse_benchmark_md(filepath):
                 item = {"nombre": nombre, "cantidad": rest}
                 if nota:
                     item["nota"] = nota
+                current_group["items"].append(item)
+                continue
+
+            # Ingredient line (table format: | Name | Quantity | Notes |)
+            m_tbl = re.match(r'^\|\s*(.+?)\s*\|\s*(.+?)\s*\|\s*(.*?)\s*\|', stripped)
+            if m_tbl:
+                nombre_t = m_tbl.group(1).strip()
+                cantidad_t = m_tbl.group(2).strip()
+                nota_t = m_tbl.group(3).strip() if m_tbl.group(3) else None
+                # Skip header rows and separator rows
+                if nombre_t.lower() in ('ingrediente', '---', ''):
+                    continue
+                if re.match(r'^[-|:\s]+$', nombre_t):
+                    continue
+                if current_group is None:
+                    current_group = {"grupo": "General", "items": []}
+                item = {"nombre": nombre_t, "cantidad": cantidad_t}
+                if nota_t and nota_t != '---' and nota_t.strip():
+                    item["nota"] = nota_t
                 current_group["items"].append(item)
                 continue
 
