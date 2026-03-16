@@ -11,6 +11,7 @@ Zona VARIABLE (escala): todo lo de debajo de la línea.
 import sys
 import os
 import io
+import re
 import subprocess
 from xml.sax.saxutils import escape as xml_escape
 
@@ -201,10 +202,18 @@ def _build_header(recipe, s, cw, image_path):
     # Columna izquierda: título + subtítulo + metadata (todo junto a la foto)
     htxt = []
     htxt.append(Paragraph(safe(recipe["title"]), s['title']))
-    htxt.append(Paragraph(
-        f'{safe(recipe.get("subtitle",""))}. {safe(recipe.get("description",""))}',
-        s['subtitle'],
-    ))
+    sub = safe(recipe.get("subtitle", ""))
+    desc = safe(recipe.get("description", ""))
+    if sub and desc:
+        sub_desc = f'{sub}. {desc}'
+    elif sub:
+        sub_desc = sub
+    elif desc:
+        sub_desc = desc
+    else:
+        sub_desc = ''
+    if sub_desc:
+        htxt.append(Paragraph(sub_desc, s['subtitle']))
 
     # Metadata como mini-tabla de 2 columnas dentro de la columna de texto
     m = recipe.get("meta", {})
@@ -278,10 +287,16 @@ def _build_body(recipe, scale, cw, img_col):
 
     # ── columna izquierda: fases
     left = []
+    fase_num = 0
     for fase in recipe.get("fases", []):
         if not fase.get("steps"):
             continue
-        left.append(Paragraph(f'<b>{safe(fase["title"])}</b>', s['section']))
+        fase_num += 1
+        title = fase["title"]
+        # Ensure title contains "Fase N" for audit compatibility
+        if not re.search(r'(?i)fase\s+\d', title):
+            title = f'Fase {fase_num} — {title}'
+        left.append(Paragraph(f'<b>{safe(title)}</b>', s['section']))
         for i, step in enumerate(fase["steps"], 1):
             left.append(Paragraph(f'{i}. {safe(step)}', s['step']))
 
@@ -289,7 +304,10 @@ def _build_body(recipe, scale, cw, img_col):
     right = []
     has_ingredientes = any(g.get("items") for g in recipe.get("ingredientes", []))
     if has_ingredientes:
-        right.append(Paragraph('<b>INGREDIENTES</b>', s['section']))
+        # Use "COMPONENTES" header for plato ensamblado format
+        is_componentes = all(g.get("grupo") == "Componentes" for g in recipe.get("ingredientes", []))
+        right_header = 'COMPONENTES' if is_componentes else 'INGREDIENTES'
+        right.append(Paragraph(f'<b>{right_header}</b>', s['section']))
         for grupo in recipe.get("ingredientes", []):
             right.append(Paragraph(safe(grupo["grupo"]), s['ing_title']))
             for item in grupo["items"]:
