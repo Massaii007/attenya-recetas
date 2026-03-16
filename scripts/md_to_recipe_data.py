@@ -44,46 +44,84 @@ def parse_benchmark_md(filepath):
     for i, line in enumerate(lines):
         if line.startswith('## ') and not line.startswith('### '):
             sub = line[3:].strip()
-            skip_headers = ['componentes', 'procedimiento', 'emplatado', 'ingredientes', 'puntos']
+            skip_headers = ['componentes', 'procedimiento', 'emplatado', 'ingredientes', 'puntos', 'descripci']
             if not any(sub.lower().startswith(s) for s in skip_headers):
                 data["subtitle"] = sub
                 break
 
     # --- DESCRIPTION ---
-    found_title = False
-    for i, line in enumerate(lines):
-        if line.startswith('# ') and not line.startswith('## '):
-            found_title = True
-            continue
-        if found_title and line.startswith('## ') and data["subtitle"]:
-            continue
-        if found_title and line.strip() and not line.startswith('#') and not line.startswith('---') and not line.startswith('**'):
-            data["description"] = line.strip()
-            break
-
-    # --- META ---
-    meta_text = text
-    m = re.search(r'\*\*Base:\*\*\s*(.+?)(?:\s*·|\s*\*\*)', meta_text)
-    if m: data["meta"]["base"] = m.group(1).strip()
-
-    m = re.search(r'\*\*Raci[oó]n:\*\*\s*(.+?)(?:\n|$)', meta_text)
-    if m:
-        data["meta"]["rendimiento"] = m.group(1).strip()
+    # First try: ## Descripción section
+    desc_m = re.search(r'##\s*Descripci[oó]n\s*\n+(.+?)(?=\n##|\n---)', text, re.DOTALL)
+    if desc_m:
+        data["description"] = ' '.join(desc_m.group(1).strip().split())
     else:
-        m = re.search(r'\*\*Rendimiento:\*\*\s*(.+?)(?:\n|$)', meta_text)
-        if m: data["meta"]["rendimiento"] = m.group(1).strip()
+        # Fallback: first non-header line after title
+        found_title = False
+        for i, line in enumerate(lines):
+            if line.startswith('# ') and not line.startswith('## '):
+                found_title = True
+                continue
+            if found_title and line.startswith('## ') and data["subtitle"]:
+                continue
+            if found_title and line.strip() and not line.startswith('#') and not line.startswith('---') and not line.startswith('**'):
+                data["description"] = line.strip()
+                break
 
-    m = re.search(r'\*\*Mise en place:\*\*\s*(.+?)(?:\s*·|\s*\*\*)', meta_text)
-    if m: data["meta"]["mise_en_place"] = m.group(1).strip()
+    # --- META (from YAML frontmatter first, then fallback to **Key:** patterns) ---
+    # Parse YAML frontmatter
+    fm = {}
+    fm_match = re.match(r'^---\s*\n(.+?)\n---', text, re.DOTALL)
+    if fm_match:
+        for fm_line in fm_match.group(1).split('\n'):
+            kv = fm_line.split(':', 1)
+            if len(kv) == 2:
+                fm[kv[0].strip().lower()] = kv[1].strip()
 
-    m = re.search(r'\*\*Tiempo total:\*\*\s*(.+?)(?:\n|$)', meta_text)
-    if m: data["meta"]["tiempo_total"] = m.group(1).strip()
+    # Fill meta from frontmatter
+    if fm.get('tipo'):
+        data["meta"]["base"] = fm.get('tipo', '')
+    if fm.get('pax'):
+        data["meta"]["rendimiento"] = f"{fm.get('pax', '')} pax"
+    if fm.get('tiempo_activo'):
+        data["meta"]["mise_en_place"] = fm.get('tiempo_activo', '')
+    if fm.get('tiempo_total'):
+        data["meta"]["tiempo_total"] = fm.get('tiempo_total', '')
+    if fm.get('tecnica'):
+        data["meta"]["tecnica"] = fm.get('tecnica', '')
+    if fm.get('dificultad'):
+        data["meta"]["tecnica"] = fm.get('tecnica', fm.get('dificultad', ''))
+    if fm.get('conservacion'):
+        data["meta"]["conservacion"] = fm.get('conservacion', '')
 
-    m = re.search(r'\*\*T[eé]cnica:\*\*\s*(.+?)(?:\s*·|\s*\*\*)', meta_text)
-    if m: data["meta"]["tecnica"] = m.group(1).strip()
+    # Fallback: **Key:** patterns in body text
+    meta_text = text
+    if not data["meta"]["base"]:
+        m = re.search(r'\*\*Base:\*\*\s*(.+?)(?:\s*·|\s*\*\*)', meta_text)
+        if m: data["meta"]["base"] = m.group(1).strip()
 
-    m = re.search(r'\*\*Conservaci[oó]n:\*\*\s*(.+?)(?:\n|$)', meta_text)
-    if m: data["meta"]["conservacion"] = m.group(1).strip()
+    if not data["meta"]["rendimiento"]:
+        m = re.search(r'\*\*Raci[oó]n:\*\*\s*(.+?)(?:\n|$)', meta_text)
+        if m:
+            data["meta"]["rendimiento"] = m.group(1).strip()
+        else:
+            m = re.search(r'\*\*Rendimiento:\*\*\s*(.+?)(?:\n|$)', meta_text)
+            if m: data["meta"]["rendimiento"] = m.group(1).strip()
+
+    if not data["meta"]["mise_en_place"]:
+        m = re.search(r'\*\*Mise en place:\*\*\s*(.+?)(?:\s*·|\s*\*\*)', meta_text)
+        if m: data["meta"]["mise_en_place"] = m.group(1).strip()
+
+    if not data["meta"]["tiempo_total"]:
+        m = re.search(r'\*\*Tiempo total:\*\*\s*(.+?)(?:\n|$)', meta_text)
+        if m: data["meta"]["tiempo_total"] = m.group(1).strip()
+
+    if not data["meta"]["tecnica"]:
+        m = re.search(r'\*\*T[eé]cnica:\*\*\s*(.+?)(?:\s*·|\s*\*\*)', meta_text)
+        if m: data["meta"]["tecnica"] = m.group(1).strip()
+
+    if not data["meta"]["conservacion"]:
+        m = re.search(r'\*\*Conservaci[oó]n:\*\*\s*(.+?)(?:\n|$)', meta_text)
+        if m: data["meta"]["conservacion"] = m.group(1).strip()
 
     # --- ADAPTACIÓN SENIOR (narrative paragraph) ---
     senior_m = re.search(
@@ -319,24 +357,27 @@ def parse_benchmark_md(filepath):
                 current_group["items"].append(item)
                 continue
 
-            # Ingredient line (table format: | Name | Quantity | Notes |)
-            m_tbl = re.match(r'^\|\s*(.+?)\s*\|\s*(.+?)\s*\|\s*(.*?)\s*\|', stripped)
-            if m_tbl:
-                nombre_t = m_tbl.group(1).strip()
-                cantidad_t = m_tbl.group(2).strip()
-                nota_t = m_tbl.group(3).strip() if m_tbl.group(3) else None
-                # Skip header rows and separator rows
-                if nombre_t.lower() in ('ingrediente', '---', ''):
+            # Ingredient line (table format: | Name | Quantity | ... optional cols ... |)
+            if stripped.startswith('|') and stripped.endswith('|'):
+                cols = [c.strip() for c in stripped.split('|')[1:-1]]  # skip empty first/last
+                if len(cols) >= 2:
+                    nombre_t = cols[0]
+                    cantidad_t = cols[1]
+                    # Collect notes from remaining columns (skip empty/separator)
+                    extra = [c for c in cols[2:] if c and c != '—' and not re.match(r'^[-:\s]+$', c)]
+                    nota_t = ', '.join(extra) if extra else None
+                    # Skip header rows and separator rows
+                    if nombre_t.lower() in ('ingrediente', '---', '', 'nombre'):
+                        continue
+                    if re.match(r'^[-|:\s]+$', nombre_t):
+                        continue
+                    if current_group is None:
+                        current_group = {"grupo": "General", "items": []}
+                    item = {"nombre": nombre_t, "cantidad": cantidad_t}
+                    if nota_t:
+                        item["nota"] = nota_t
+                    current_group["items"].append(item)
                     continue
-                if re.match(r'^[-|:\s]+$', nombre_t):
-                    continue
-                if current_group is None:
-                    current_group = {"grupo": "General", "items": []}
-                item = {"nombre": nombre_t, "cantidad": cantidad_t}
-                if nota_t and nota_t != '---' and nota_t.strip():
-                    item["nota"] = nota_t
-                current_group["items"].append(item)
-                continue
 
             # Section break
             if stripped.startswith('---') or (stripped.startswith('## ') and 'ingrediente' not in stripped.lower() and 'componente' not in stripped.lower()):
