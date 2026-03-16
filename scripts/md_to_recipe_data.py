@@ -41,11 +41,14 @@ def parse_benchmark_md(filepath):
             break
 
     # --- SUBTITLE (## line right after title) ---
+    # Skip standard section headers — only capture descriptive subtitles
+    _skip_h2 = ['componentes', 'procedimiento', 'emplatado', 'ingredientes',
+                'puntos', 'descripci', 'appcc', 'adaptaci', 'mise en place',
+                'regeneraci', 'ensamblaje', 'montaje']
     for i, line in enumerate(lines):
         if line.startswith('## ') and not line.startswith('### '):
             sub = line[3:].strip()
-            skip_headers = ['componentes', 'procedimiento', 'emplatado', 'ingredientes', 'puntos', 'descripci']
-            if not any(sub.lower().startswith(s) for s in skip_headers):
+            if not any(sub.lower().startswith(s) for s in _skip_h2):
                 data["subtitle"] = sub
                 break
 
@@ -55,15 +58,15 @@ def parse_benchmark_md(filepath):
     if desc_m:
         data["description"] = ' '.join(desc_m.group(1).strip().split())
     else:
-        # Fallback: first non-header line after title
+        # Fallback: first text line between # Title and first ## section
         found_title = False
         for i, line in enumerate(lines):
             if line.startswith('# ') and not line.startswith('## '):
                 found_title = True
                 continue
-            if found_title and line.startswith('## ') and data["subtitle"]:
-                continue
-            if found_title and line.strip() and not line.startswith('#') and not line.startswith('---') and not line.startswith('**'):
+            if found_title and line.startswith('## '):
+                break  # Stop at first ## — description must be before any section
+            if found_title and line.strip() and not line.startswith('#') and not line.startswith('---') and not line.startswith('**') and not line.strip().startswith('|'):
                 data["description"] = line.strip()
                 break
 
@@ -263,10 +266,15 @@ def parse_benchmark_md(filepath):
             continue
 
         if current_fase and not in_ingredients and not in_appcc and not in_skip:
-            m_step = re.match(r'^\d+\.\s+(.+)', stripped)
+            # Numbered step: "1. Do something"
+            m_step = re.match(r'^\d+\.\s*(.+)', stripped)
             if m_step:
                 step = m_step.group(1).strip()
                 step = re.sub(r'\*\*(.+?)\*\*', r'\1', step)
+                current_fase["steps"].append(step)
+            # Unnumbered step: plain text line (Straker format)
+            elif stripped and not stripped.startswith('|') and not stripped.startswith('-') and not stripped.startswith('*') and not stripped.startswith('>'):
+                step = re.sub(r'\*\*(.+?)\*\*', r'\1', stripped)
                 current_fase["steps"].append(step)
 
     if current_fase and current_fase["steps"]:

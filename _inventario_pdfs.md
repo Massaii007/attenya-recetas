@@ -11,7 +11,7 @@
 |---|---|---|---|---|
 | 01_Fondo_Blanco_Pollo | ✅ | 886 KB | ✅ | OK |
 | 02_Fondo_Dorado_Pollo | ✅ | 916 KB | ✅ | OK |
-| 03_Fumet_Pescado | ✅ | 1017 KB | ⚠️ | OK |
+| 03_Fumet_Pescado | ✅ | 1019 KB | ⚠️ | OK |
 | 04_Fondo_Marisco | ✅ | 1153 KB | ✅ | OK |
 | 05_Fondo_Oscuro_Ternera | ✅ | 1360 KB | ✅ | OK |
 | 06_Caldo_Verduras | ✅ | 1613 KB | ✅ | OK |
@@ -20,37 +20,37 @@
 | Fondo_Pescado_Straker | ✅ | 968 KB | ✅ | OK |
 | Fondo_Ternera_Straker | ✅ | 862 KB | ✅ | OK |
 | 07_Demi_Glace | ✅ | 1887 KB | ✅ | OK |
-| Burnt_Butter_Straker | ✅ | 726 KB | ✅ | OK |
-| Focaccia_Straker | ✅ | 849 KB | ✅ | OK |
-| Mantequilla_Anchoa_Straker | ✅ | 753 KB | ✅ | OK |
-| Mantequilla_Artesanal_Straker | ✅ | 717 KB | ✅ | OK |
-| Mantequilla_Miso_Straker | ✅ | 965 KB | ✅ | OK |
-| Masa_Flatbread_Straker | ✅ | 821 KB | ✅ | OK |
+| Burnt_Butter_Straker | ✅ | 727 KB | ✅ | OK |
+| Focaccia_Straker | ✅ | 851 KB | ✅ | OK |
+| Mantequilla_Anchoa_Straker | ✅ | 754 KB | ✅ | OK |
+| Mantequilla_Artesanal_Straker | ✅ | 718 KB | ✅ | OK |
+| Mantequilla_Miso_Straker | ✅ | 966 KB | ✅ | OK |
+| Masa_Flatbread_Straker | ✅ | 822 KB | ✅ | OK |
 | Masa_Pasta_Fresca_Straker | ✅ | 1216 KB | ✅ | OK |
-| Milk_Buns_Straker | ✅ | 717 KB | ✅ | OK |
+| Milk_Buns_Straker | ✅ | 718 KB | ✅ | OK |
 | Mostaza_Encurtida | ✅ | 851 KB | ✅ | OK |
 | Pangrattato_Straker | ✅ | 796 KB | ✅ | OK |
 | Yogur_Escurrido_Straker | ✅ | 2487 KB | ✅ | OK |
-| Chimichurri_Straker | ✅ | 827 KB | ✅ | OK |
+| Chimichurri_Straker | ✅ | 828 KB | ✅ | OK |
 | Currysauce_Gourmet | ✅ | 707 KB | ✅ | OK |
 | Gravy_Pato | ✅ | 2261 KB | ✅ | OK |
-| Mayonesa_Ajo_Straker | ✅ | 1457 KB | ✅ | OK |
+| Mayonesa_Ajo_Straker | ✅ | 1458 KB | ✅ | OK |
 | Mayonesa_Limon_Straker | ✅ | 663 KB | ✅ | OK |
 | Miso_Bagna_Cauda | ❌ | 3 KB | ✅ | OK_SIN_FOTO |
 | Mojos_Canarios | ✅ | 930 KB | ✅ | OK |
-| Pesto_Ajo_Silvestre_Straker | ✅ | 793 KB | ✅ | OK |
-| Pesto_Albahaca_Straker | ✅ | 814 KB | ✅ | OK |
-| Romesco_Straker | ✅ | 796 KB | ✅ | OK |
+| Pesto_Ajo_Silvestre_Straker | ✅ | 794 KB | ✅ | OK |
+| Pesto_Albahaca_Straker | ✅ | 815 KB | ✅ | OK |
+| Romesco_Straker | ✅ | 797 KB | ✅ | OK |
 | Salmorejo_Canario | ✅ | 809 KB | ✅ | OK |
 | Salsa_Coctel | ✅ | 720 KB | ✅ | OK |
 | Salsa_Holandesa | ✅ | 659 KB | ✅ | OK |
-| Salsa_Roja_Straker | ✅ | 785 KB | ✅ | OK |
+| Salsa_Roja_Straker | ✅ | 786 KB | ✅ | OK |
 | Salsa_Tartara_Roux | ✅ | 760 KB | ✅ | OK |
 | Salsa_Tonkatsu_Mejorada | ✅ | 1893 KB | ✅ | OK |
-| Salsa_Verde_Straker | ✅ | 814 KB | ✅ | OK |
+| Salsa_Verde_Straker | ✅ | 815 KB | ✅ | OK |
 | Salsa_Vino_Tinto_Fallow | ✅ | 767 KB | ✅ | OK |
 | Salsa_Yogur_Zumaque | ✅ | 745 KB | ✅ | OK |
-| Sauce_Verte_Straker | ✅ | 766 KB | ✅ | OK |
+| Sauce_Verte_Straker | ✅ | 767 KB | ✅ | OK |
 | Veloute_Mostaza | ✅ | 706 KB | ✅ | OK |
 | Yogur_Remolacha_Straker | ✅ | 760 KB | ✅ | OK |
 | Aligot_Platano_Canarias | ✅ | 853 KB | ✅ | OK |
@@ -67,7 +67,7 @@
 | Patatas_Cebollas_Romesco | ✅ | 880 KB | ✅ | OK |
 | Patatas_Dauphine | ✅ | 783 KB | ✅ | OK |
 | Patatas_Fritas_Bistro | ✅ | 487 KB | ✅ | OK |
-| Patatas_Fritas_Triple_Cocción | ✅ | 460 KB | ⚠️ | OK |
+| Patatas_Fritas_Triple_Cocción | ✅ | 461 KB | ⚠️ | OK |
 | Patatas_Gajo_Bistro | ✅ | 1308 KB | ✅ | OK |
 | Patatas_Panaderas | ✅ | 581 KB | ✅ | OK |
 | Patatas_Vapor_Horno | ✅ | 734 KB | ✅ | OK |
@@ -81,7 +81,7 @@
 | Schupfnudeln_Caseras | ✅ | 431 KB | ✅ | OK |
 | Spatzle_Manual | ✅ | 806 KB | ✅ | OK |
 | Tallarines_Caseros_Huevo | ✅ | 784 KB | ✅ | OK |
-| Berenjena_Asada_Miso | ✅ | 849 KB | ✅ | OK |
+| Berenjena_Asada_Miso | ✅ | 850 KB | ✅ | OK |
 | Berenjena_Pinones_Menta_Straker | ✅ | 802 KB | ✅ | OK |
 | Broccoli_Charred_Miso_Bagna_Cauda | ✅ | 5838 KB | ✅ | OK |
 | Calabaza_Borlotti_Salsa_Verde_Straker | ✅ | 764 KB | ✅ | OK |
@@ -114,7 +114,7 @@
 | Bacalao_Espinacas_Aceite_Verde | ✅ | 1112 KB | ✅ | OK |
 | Bacalao_Tomate_Pimientos_Straker | ✅ | 798 KB | ✅ | OK |
 | Bratwurst_Doble_Coccion | ✅ | 4321 KB | ✅ | OK |
-| Carrilleras_Ternera_Vino_Mostaza | ✅ | 1309 KB | ✅ | OK |
+| Carrilleras_Ternera_Vino_Mostaza | ✅ | 1308 KB | ✅ | OK |
 | Chicken_Burger_Straker | ✅ | 1149 KB | ✅ | OK |
 | Chuleta_Cerdo_Ciruelas_Straker | ✅ | 1020 KB | ✅ | OK |
 | Costillas_Cerdo_BBQ | ✅ | 2024 KB | ✅ | OK |
@@ -128,7 +128,7 @@
 | Lenguado_Papillote_Straker | ✅ | 787 KB | ✅ | OK |
 | Lomo_Cerdo_Pimiento | ✅ | 891 KB | ✅ | OK |
 | Moqueca_Camarones_Baiano | ✅ | 788 KB | ✅ | OK |
-| Ossobuco_Milanesa | ✅ | 852 KB | ✅ | OK |
+| Ossobuco_Milanesa | ✅ | 851 KB | ✅ | OK |
 | Paletilla_Cordero_Asada_Straker | ✅ | 1327 KB | ✅ | OK |
 | Pata_Asada_Canaria | ✅ | 908 KB | ✅ | OK |
 | Pato_Asado_Clasico | ✅ | 780 KB | ✅ | OK |
@@ -147,13 +147,13 @@
 | Solomillo_Pimienta_Straker | ✅ | 796 KB | ✅ | OK |
 | Ternera_Curry_Thai | ✅ | 847 KB | ✅ | OK |
 | Tonkatsu_Pollo_Componente | ✅ | 5902 KB | ✅ | OK |
-| Ajoblanco | ✅ | 764 KB | ✅ | OK |
+| Ajoblanco | ✅ | 763 KB | ✅ | OK |
 | Alubias_Tahini | ✅ | 855 KB | ✅ | OK |
-| Berenjena_Asada_Miso | ✅ | 849 KB | ✅ | OK |
+| Berenjena_Asada_Miso | ✅ | 850 KB | ✅ | OK |
 | Bisque_Gambas | ✅ | 1803 KB | ✅ | OK |
 | Caldo_Pollo_Verduras_Straker | ✅ | 2412 KB | ✅ | OK |
 | Carpaccio_Ternera_Straker | ✅ | 4334 KB | ✅ | OK |
-| Coctel_Gambas_Clasico | ✅ | 712 KB | ✅ | OK |
+| Coctel_Gambas_Clasico | ✅ | 711 KB | ✅ | OK |
 | Cogollos_Gratinados_Azul | ✅ | 862 KB | ✅ | OK |
 | Cogollos_Plancha | ✅ | 912 KB | ✅ | OK |
 | Coliflor_Gratinada | ✅ | 1609 KB | ✅ | OK |
@@ -180,9 +180,9 @@
 | Ensaladilla_Alemana | ✅ | 691 KB | ✅ | OK |
 | Esfera_Boletus_Coulis_Frutos_Rojos | ✅ | 765 KB | ✅ | OK |
 | Esparragos_Carbonara | ✅ | 853 KB | ✅ | OK |
-| Flatbread_Calabacin_Burrata_Straker | ✅ | 771 KB | ✅ | OK |
+| Flatbread_Calabacin_Burrata_Straker | ✅ | 772 KB | ✅ | OK |
 | Flatbread_Tomate_Anchoa_Straker | ✅ | 887 KB | ✅ | OK |
-| Focaccia_Cebolla_Caramelizada_Straker | ✅ | 874 KB | ✅ | OK |
+| Focaccia_Cebolla_Caramelizada_Straker | ✅ | 875 KB | ✅ | OK |
 | Focaccia_Tomate_Ajo_Straker | ✅ | 887 KB | ✅ | OK |
 | Gambas_Ajillo | ✅ | 1477 KB | ✅ | OK |
 | Gazpacho_Straker | ✅ | 3150 KB | ✅ | OK |
@@ -214,7 +214,7 @@
 | Canelones_Rabo_Toro_Demiglace | ✅ | 762 KB | ⚠️ | OK |
 | Carrilleras_Ternera_Polenta_Straker | ✅ | 1217 KB | ✅ | OK |
 | Chicken_Burger_Plato | ✅ | 494 KB | ⚠️ | OK |
-| Chicken_Caesar_Straker | ✅ | 945 KB | ✅ | OK |
+| Chicken_Caesar_Straker | ✅ | 946 KB | ✅ | OK |
 | Chuleta_Cerdo_Chucrut | ✅ | 871 KB | ✅ | OK |
 | Chuleta_Cerdo_Ciruelas_Plato | ✅ | 542 KB | ⚠️ | OK |
 | Coq_au_Vin | ✅ | 884 KB | ✅ | OK |
@@ -243,7 +243,7 @@
 | Lubina_Horno | ✅ | 942 KB | ✅ | OK |
 | Lubina_Lentejas_Salsa_Verde_Straker | ✅ | 921 KB | ✅ | OK |
 | Moqueca_Camarones_Arroz_Bahiano | ✅ | 7503 KB | ✅ | OK |
-| Musaka_Verduras | ✅ | 769 KB | ⚠️ | OK |
+| Musaka_Verduras | ✅ | 770 KB | ⚠️ | OK |
 | Nasi_Goreng | ✅ | 839 KB | ✅ | OK |
 | Ossobuco_Milanese_Plato | ✅ | 522 KB | ⚠️ | OK |
 | Paccheri_Pesto_Ajo_Silvestre_Straker | ✅ | 773 KB | ✅ | OK |
@@ -264,7 +264,7 @@
 | Rollitos_Col_Rellenos_Plato | ✅ | 537 KB | ⚠️ | OK |
 | Ropa_Vieja_Canaria | ✅ | 985 KB | ✅ | OK |
 | Salchichas_Salsa_Tomate_Plato | ✅ | 513 KB | ⚠️ | OK |
-| Salmon_Curado_Confitado | ✅ | 830 KB | ✅ | OK |
+| Salmon_Curado_Confitado | ✅ | 829 KB | ✅ | OK |
 | Salmon_Glaseado_Broccoli_Charred | ✅ | 780 KB | ✅ | OK |
 | Sancocho_Canario_Bacalao | ✅ | 892 KB | ✅ | OK |
 | Schnitzel_Pollo_Salsa_Straker | ✅ | 870 KB | ✅ | OK |
@@ -302,7 +302,7 @@
 | Tarte_Tatin_Straker | ✅ | 801 KB | ✅ | OK |
 | Tiramisu_Straker | ✅ | 786 KB | ✅ | OK |
 | Torrija_Brioche_Caramelizada | ✅ | 787 KB | ✅ | OK |
-| Trufas_Chocolate | ✅ | 3289 KB | ✅ | OK |
+| Trufas_Chocolate | ✅ | 3290 KB | ✅ | OK |
 
 ## Recetas sin foto (1)
 
