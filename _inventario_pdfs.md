@@ -69,7 +69,7 @@
 | Patatas_Fritas_Bistro | ✅ | 487 KB | ✅ | OK |
 | Patatas_Fritas_Triple_Cocción | ✅ | 460 KB | ⚠️ | OK |
 | Patatas_Gajo_Bistro | ✅ | 1308 KB | ✅ | OK |
-| Patatas_Panaderas | ✅ | 580 KB | ✅ | OK |
+| Patatas_Panaderas | ✅ | 581 KB | ✅ | OK |
 | Patatas_Vapor_Horno | ✅ | 734 KB | ✅ | OK |
 | Polenta_Parmesano | ✅ | 926 KB | ✅ | OK |
 | Pure_Boniato | ✅ | 1433 KB | ✅ | OK |
@@ -104,7 +104,7 @@
 | Ratatouille_Straker | ✅ | 803 KB | ✅ | OK |
 | Romanesco_Asado_Tahini_Straker | ✅ | 817 KB | ✅ | OK |
 | Rote_Bete_Salat | ✅ | 1532 KB | ✅ | OK |
-| Rotkohl_Clasico | ✅ | 773 KB | ✅ | OK |
+| Rotkohl_Clasico | ✅ | 774 KB | ✅ | OK |
 | Verduras_Mediterraneo_Este | ✅ | 899 KB | ✅ | OK |
 | Zanahorias_Yogur_Dukkah_Straker | ✅ | 914 KB | ✅ | OK |
 | Albondigas_Cordero_Feta_Componente | ✅ | 889 KB | ✅ | OK |
@@ -147,7 +147,7 @@
 | Solomillo_Pimienta_Straker | ✅ | 796 KB | ✅ | OK |
 | Ternera_Curry_Thai | ✅ | 847 KB | ✅ | OK |
 | Tonkatsu_Pollo_Componente | ✅ | 5902 KB | ✅ | OK |
-| Ajoblanco | ✅ | 763 KB | ✅ | OK |
+| Ajoblanco | ✅ | 764 KB | ✅ | OK |
 | Alubias_Tahini | ✅ | 855 KB | ✅ | OK |
 | Berenjena_Asada_Miso | ✅ | 849 KB | ✅ | OK |
 | Bisque_Gambas | ✅ | 1803 KB | ✅ | OK |
@@ -224,7 +224,7 @@
 | Curry_Rape_Plato | ✅ | 552 KB | ⚠️ | OK |
 | Curry_Tailandes_Pato_Plato | ✅ | 581 KB | ⚠️ | OK |
 | Currywurst_Premium | ✅ | 850 KB | ✅ | OK |
-| Dorada_Vapor_Japonesa_Plato | ✅ | 483 KB | ⚠️ | OK |
+| Dorada_Vapor_Japonesa_Plato | ✅ | 482 KB | ⚠️ | OK |
 | Escabeche_Pavo_Filipino_Plato | ✅ | 600 KB | ⚠️ | OK |
 | Estofado_Lentejas_Aleman | ✅ | 899 KB | ✅ | OK |
 | Fabada_Asturiana | ✅ | 1037 KB | ✅ | OK |
@@ -264,7 +264,7 @@
 | Rollitos_Col_Rellenos_Plato | ✅ | 537 KB | ⚠️ | OK |
 | Ropa_Vieja_Canaria | ✅ | 985 KB | ✅ | OK |
 | Salchichas_Salsa_Tomate_Plato | ✅ | 513 KB | ⚠️ | OK |
-| Salmon_Curado_Confitado | ✅ | 829 KB | ✅ | OK |
+| Salmon_Curado_Confitado | ✅ | 830 KB | ✅ | OK |
 | Salmon_Glaseado_Broccoli_Charred | ✅ | 780 KB | ✅ | OK |
 | Sancocho_Canario_Bacalao | ✅ | 892 KB | ✅ | OK |
 | Schnitzel_Pollo_Salsa_Straker | ✅ | 870 KB | ✅ | OK |

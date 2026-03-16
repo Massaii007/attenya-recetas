@@ -287,33 +287,46 @@ def _build_body(recipe, scale, cw, img_col):
 
     # ── columna derecha: ingredientes
     right = []
-    for grupo in recipe.get("ingredientes", []):
-        right.append(Paragraph(safe(grupo["grupo"]), s['ing_title']))
-        for item in grupo["items"]:
-            nota = (f' <i>({safe(item["nota"])})</i>'
-                    if item.get("nota") else '')
-            right.append(Paragraph(
-                f'- {safe(item["nombre"])}: {safe(item["cantidad"])}{nota}',
-                s['ing_item'],
-            ))
+    has_ingredientes = any(g.get("items") for g in recipe.get("ingredientes", []))
+    if has_ingredientes:
+        right.append(Paragraph('<b>INGREDIENTES</b>', s['section']))
+        for grupo in recipe.get("ingredientes", []):
+            right.append(Paragraph(safe(grupo["grupo"]), s['ing_title']))
+            for item in grupo["items"]:
+                nota = (f' <i>({safe(item["nota"])})</i>'
+                        if item.get("nota") else '')
+                right.append(Paragraph(
+                    f'- {safe(item["nombre"])}: {safe(item["cantidad"])}{nota}',
+                    s['ing_item'],
+                ))
 
-    # ── anchos de columna
-    if img_col > 0:
-        right_w = img_col
-        left_w = cw - right_w
+    # ── anchos de columna y tabla
+    if has_ingredientes:
+        if img_col > 0:
+            right_w = img_col
+            left_w = cw - right_w
+        else:
+            left_w = cw * 0.58
+            right_w = cw * 0.42
+
+        body_tbl = Table([[left, right]], colWidths=[left_w, right_w])
+        body_tbl.setStyle(TableStyle([
+            ('VALIGN',       (0, 0), (-1, -1), 'TOP'),
+            ('LEFTPADDING',  (0, 0), (0, 0), 0),
+            ('RIGHTPADDING', (0, 0), (0, 0), 6),
+            ('LEFTPADDING',  (1, 0), (1, 0), 6),
+            ('RIGHTPADDING', (1, 0), (1, 0), 0),
+            ('LINEAFTER',    (0, 0), (0, 0), 0.4, VLIGHT),
+        ]))
     else:
-        left_w = cw * 0.58
-        right_w = cw * 0.42
+        # No ingredients — use full width for fases
+        body_tbl = Table([[left]], colWidths=[cw])
+        body_tbl.setStyle(TableStyle([
+            ('VALIGN',       (0, 0), (-1, -1), 'TOP'),
+            ('LEFTPADDING',  (0, 0), (-1, -1), 0),
+            ('RIGHTPADDING', (0, 0), (-1, -1), 0),
+        ]))
 
-    body_tbl = Table([[left, right]], colWidths=[left_w, right_w])
-    body_tbl.setStyle(TableStyle([
-        ('VALIGN',       (0, 0), (-1, -1), 'TOP'),
-        ('LEFTPADDING',  (0, 0), (0, 0), 0),
-        ('RIGHTPADDING', (0, 0), (0, 0), 6),
-        ('LEFTPADDING',  (1, 0), (1, 0), 6),
-        ('RIGHTPADDING', (1, 0), (1, 0), 0),
-        ('LINEAFTER',    (0, 0), (0, 0), 0.4, VLIGHT),
-    ]))
     body_parts.append(body_tbl)
     body_parts.append(Spacer(1, sp + 1))
 
