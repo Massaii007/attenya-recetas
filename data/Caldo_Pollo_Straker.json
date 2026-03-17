@@ -15,5 +15,11 @@
   "appcc": null,
   "senior_adaptation": null,
   "quote": null,
-  "storytelling": "# Caldo de Pollo (T.Straker) -- Storytelling\n\n## Contexto en el libro\nStraker incluye el chicken stock como base esencial del capitulo de carne. Version clasica, sin complicaciones: carcasas, mirepoix, hierbas, agua fria, coccion lenta.\n\n## Por que encaja en ATTENYA\n- Caldo base para sopas (Chicken Broth, Minestrone) y salsas de los platos Straker.\n- Coexiste con Fondo Blanco y Caldo Pollo Mise en Place del catalogo — version mas rapida y basica.\n- Produccion en lote: congelable 3 meses.\n\n## Conexiones con el catalogo\n- Base para: Caldo Pollo Verduras Straker (Entrante), Minestrone Straker.\n- Coexiste con 01_Fondo_Blanco_Pollo y Caldo_Pollo_Mise_en_Place."
+  "storytelling": "# Caldo de Pollo (T.Straker) -- Storytelling\n\n## Contexto en el libro\nStraker incluye el chicken stock como base esencial del capitulo de carne. Version clasica, sin complicaciones: carcasas, mirepoix, hierbas, agua fria, coccion lenta.\n\n## Por que encaja en ATTENYA\n- Caldo base para sopas (Chicken Broth, Minestrone) y salsas de los platos Straker.\n- Coexiste con Fondo Blanco y Caldo Pollo Mise en Place del catalogo — version mas rapida y basica.\n- Produccion en lote: congelable 3 meses.\n\n## Conexiones con el catalogo\n- Base para: Caldo Pollo Verduras Straker (Entrante), Minestrone Straker.\n- Coexiste con 01_Fondo_Blanco_Pollo y Caldo_Pollo_Mise_en_Place.",
+  "componentes": [
+    {
+      "role": "base",
+      "id": "01_Fondo_Blanco_Pollo"
+    }
+  ]
 }

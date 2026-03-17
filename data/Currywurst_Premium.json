@@ -20,6 +20,14 @@
     {
       "role": "id",
       "id": "Bratwurst_Doble_Coccion"
+    },
+    {
+      "role": "guarnicion",
+      "id": "Bratkartoffeln"
+    },
+    {
+      "role": "salsa",
+      "id": "Currysauce_Gourmet"
     }
   ]
 }

@@ -20,6 +20,14 @@
     {
       "role": "id",
       "id": "Gulasch_Aleman_Componente"
+    },
+    {
+      "role": "guarnicion",
+      "id": "Spatzle_Manual"
+    },
+    {
+      "role": "guarnicion",
+      "id": "Rotkohl_Clasico"
     }
   ]
 }

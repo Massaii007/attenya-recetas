@@ -15,5 +15,20 @@
   "appcc": "- Sellado a temp. alta + horno mixto 160 C 10-15% vapor\n- Temp. interna >66 C tras reposo\n- Alergenos: sulfitos (vino, chucrut), lacteos (pure boniato)\n\n\"La chuleta alemana no necesita complejidad: necesita precision. Sellado fuerte para Maillard, horno con vapor para jugosidad, reposo para equilibrio termico. El chucrut afinado con manzana y enebro redondea la acidez. El pure de boniato aporta dulzor que cierra el triangulo aleman: grasa, acido, dulce.\"",
   "senior_adaptation": null,
   "quote": null,
-  "storytelling": "# Chuleta Cerdo Chucrut — Historia\n\n## Origen\nLa Schweinekotelett es el corazón de la mesa alemana: carne de cerdo del centro chuletero, tierna y pálida, sellada en fuego vivo y terminada con vapor en horno mixto. Acompañado de chucrut afinado—ácido suave—y puré de boniato—dulce generoso. Es el triángulo de Alemania: grasa, ácido, dulce, unidos en un plato que no necesita explicación.\n\n## La Historia\nLa chuleta se trata con reverencia: no se pincha, no se presiona. Se salpimenta en el último momento para evitar que pierda sus jugos. Plancha ardiente, sellado rápido por ambos lados—el Maillard ocurre en segundos. Luego al horno mixto con vapor: catorce minutos delicados donde el interior sigue rosado, jugoso, mientras la superficie permanece dorada. El puré de boniato aporta su dulzor tropical, contrapunto a la acidez del chucrut afinado que viene adosado como cama generosa. No hay complejidad: hay precisión. Hay respeto a la materia prima.\n\n## Para Nuestros Comensales\nRecuerdan esos almuerzos domingueros en casas alemanas o austríacas, ¿verdad? Donde el cerdo era lujo asequible, donde la técnica lo elevaba a dignidad. Hoy aquí lo vivimos: la chuleta no debe ser seca, no debe ser cruda. Debe estar exacta. En ATTENYA buscamos esa exactitud que sus abuelas lograban sin horno mixto, solo con paciencia y fuego. Ahora tenemos ambos."
+  "storytelling": "# Chuleta Cerdo Chucrut — Historia\n\n## Origen\nLa Schweinekotelett es el corazón de la mesa alemana: carne de cerdo del centro chuletero, tierna y pálida, sellada en fuego vivo y terminada con vapor en horno mixto. Acompañado de chucrut afinado—ácido suave—y puré de boniato—dulce generoso. Es el triángulo de Alemania: grasa, ácido, dulce, unidos en un plato que no necesita explicación.\n\n## La Historia\nLa chuleta se trata con reverencia: no se pincha, no se presiona. Se salpimenta en el último momento para evitar que pierda sus jugos. Plancha ardiente, sellado rápido por ambos lados—el Maillard ocurre en segundos. Luego al horno mixto con vapor: catorce minutos delicados donde el interior sigue rosado, jugoso, mientras la superficie permanece dorada. El puré de boniato aporta su dulzor tropical, contrapunto a la acidez del chucrut afinado que viene adosado como cama generosa. No hay complejidad: hay precisión. Hay respeto a la materia prima.\n\n## Para Nuestros Comensales\nRecuerdan esos almuerzos domingueros en casas alemanas o austríacas, ¿verdad? Donde el cerdo era lujo asequible, donde la técnica lo elevaba a dignidad. Hoy aquí lo vivimos: la chuleta no debe ser seca, no debe ser cruda. Debe estar exacta. En ATTENYA buscamos esa exactitud que sus abuelas lograban sin horno mixto, solo con paciencia y fuego. Ahora tenemos ambos.",
+  "componentes": [
+    {
+      "role": "principal",
+      "id": "pendiente_Chuleta_Cerdo_Componente",
+      "nota": "pendiente de crear"
+    },
+    {
+      "role": "guarnicion",
+      "id": "Chucrut_Afinado_Gourmet"
+    },
+    {
+      "role": "guarnicion",
+      "id": "Pure_Boniato"
+    }
+  ]
 }

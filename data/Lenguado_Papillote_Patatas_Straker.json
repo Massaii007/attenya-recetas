@@ -20,6 +20,10 @@
     {
       "role": "id",
       "id": "Lenguado_Papillote_Straker"
+    },
+    {
+      "role": "guarnicion",
+      "id": "Patatas_Vapor_Horno"
     }
   ]
 }

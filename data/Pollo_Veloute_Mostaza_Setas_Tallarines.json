@@ -20,6 +20,18 @@
     {
       "role": "id",
       "id": "Pollo_Deshuesado_Asado_Caldo"
+    },
+    {
+      "role": "salsa",
+      "id": "Veloute_Mostaza"
+    },
+    {
+      "role": "guarnicion",
+      "id": "Tallarines_Caseros_Huevo"
+    },
+    {
+      "role": "guarnicion",
+      "id": "Portobello_Shiitake_Glaseados_Fondo_Oscuro"
     }
   ]
 }

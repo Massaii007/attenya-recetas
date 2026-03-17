@@ -20,6 +20,18 @@
     {
       "role": "id",
       "id": "Albondigas_Cordero_Feta_Componente"
+    },
+    {
+      "role": "guarnicion",
+      "id": "Couscous_Aromatico"
+    },
+    {
+      "role": "salsa",
+      "id": "Salsa_Yogur_Zumaque"
+    },
+    {
+      "role": "guarnicion",
+      "id": "Verduras_Mediterraneo_Este"
     }
   ]
 }

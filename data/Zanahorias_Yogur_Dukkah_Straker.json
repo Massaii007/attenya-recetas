@@ -15,5 +15,11 @@
   "appcc": "- Servir a temperatura ambiente (zanahorias) sobre yogur frio (<4 C).\n- Dukkah: conservar seco en recipiente hermetico, vida util 2 semanas.\n- Alergenos: sesamo (si se anade), lacteos (yogur).",
   "senior_adaptation": "- Zanahorias asadas: MUY blandas, se cortan con tenedor -- ideal senior\n- Yogur escurrido: textura cremosa espesa -- apto\n- Dukkah: semillas trituradas gruesas -- si deglucion dificil, moler mas fino\n- Hierbas frescas: blandas -- apto\n- La miel en las zanahorias aporta dulzor natural apreciado por senior",
   "quote": null,
-  "storytelling": "# Zanahorias Asadas con Yogur y Dukkah (T.Straker) -- Storytelling\n## Origen\nEl dukkah es mezcla egipcia de semillas y especias tostadas. Las zanahorias asadas con yogur y dukkah son clasico Ottolenghi que Straker adopta con su propia mezcla de semillas. Mediterraneo oriental via Londres.\n## Thomas Straker\n\"Asegúrate de conseguir un buen char en las zanahorias -- necesitan caracter.\" La miel al final intensifica el dulzor natural.\n## Narrativa para el residente\n\"Zanahorias asadas al horno con miel, servidas sobre yogur espeso con una mezcla crujiente de semillas tostadas con especias y hierbas frescas. Es un plato con sabores de Oriente Medio: aromatico, fresco, texturado.\"\n## Conexion emocional\nLas zanahorias son universales -- Moehren en aleman, presentes en toda cocina europea. Aqui se visten de Egipto con el dukkah. Familiar pero exotico."
+  "storytelling": "# Zanahorias Asadas con Yogur y Dukkah (T.Straker) -- Storytelling\n## Origen\nEl dukkah es mezcla egipcia de semillas y especias tostadas. Las zanahorias asadas con yogur y dukkah son clasico Ottolenghi que Straker adopta con su propia mezcla de semillas. Mediterraneo oriental via Londres.\n## Thomas Straker\n\"Asegúrate de conseguir un buen char en las zanahorias -- necesitan caracter.\" La miel al final intensifica el dulzor natural.\n## Narrativa para el residente\n\"Zanahorias asadas al horno con miel, servidas sobre yogur espeso con una mezcla crujiente de semillas tostadas con especias y hierbas frescas. Es un plato con sabores de Oriente Medio: aromatico, fresco, texturado.\"\n## Conexion emocional\nLas zanahorias son universales -- Moehren en aleman, presentes en toda cocina europea. Aqui se visten de Egipto con el dukkah. Familiar pero exotico.",
+  "componentes": [
+    {
+      "role": "salsa",
+      "id": "Yogur_Escurrido_Straker"
+    }
+  ]
 }

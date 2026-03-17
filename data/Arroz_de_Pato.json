@@ -20,6 +20,10 @@
     {
       "role": "id",
       "id": "Sofrito_Portugues"
+    },
+    {
+      "role": "principal",
+      "id": "Pato_Asado_Clasico"
     }
   ]
 }

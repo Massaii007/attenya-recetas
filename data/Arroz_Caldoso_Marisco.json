@@ -20,6 +20,10 @@
     {
       "role": "id",
       "id": "Sofrito_Portugues"
+    },
+    {
+      "role": "base",
+      "id": "03_Fumet_Pescado"
     }
   ]
 }

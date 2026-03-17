@@ -20,6 +20,10 @@
     {
       "role": "id",
       "id": "Carrilleras_Ternera_Vino_Mostaza"
+    },
+    {
+      "role": "guarnicion",
+      "id": "Polenta_Parmesano"
     }
   ]
 }

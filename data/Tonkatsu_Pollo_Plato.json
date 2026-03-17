@@ -20,6 +20,18 @@
     {
       "role": "id",
       "id": "Tonkatsu_Pollo_Componente"
+    },
+    {
+      "role": "guarnicion",
+      "id": "Arroz_Blanco_Suelto"
+    },
+    {
+      "role": "guarnicion",
+      "id": "Ensalada_Col_Japonesa"
+    },
+    {
+      "role": "salsa",
+      "id": "Salsa_Tonkatsu_Mejorada"
     }
   ]
 }

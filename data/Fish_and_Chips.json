@@ -20,6 +20,14 @@
     {
       "role": "id",
       "id": "Bacalao_Beer_Batter"
+    },
+    {
+      "role": "guarnicion",
+      "id": "Patatas_Fritas_Triple_Coccion"
+    },
+    {
+      "role": "salsa",
+      "id": "Salsa_Tartara_Roux"
     }
   ]
 }

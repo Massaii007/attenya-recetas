@@ -15,5 +15,11 @@
   "appcc": null,
   "senior_adaptation": null,
   "quote": null,
-  "storytelling": "# Fondo de Ternera (T.Straker) -- Storytelling\n\n## Contexto en el libro\nStraker incluye el beef stock como base del capitulo de carne, esencial para las Beef Cheeks y la Peppercorn Sauce. Huesos asados a alta temperatura para color y profundidad, desgrasado con vino tinto.\n\n## Por que encaja en ATTENYA\n- Base para platos de ternera del catalogo Straker (Carrilleras, Solomillo Pimienta).\n- Coexiste con 05_Fondo_Oscuro_Ternera del catalogo — la version Straker incluye vino tinto en la coccion.\n- Produccion en lote: congelable 3 meses. Ideal para produccion quincenal.\n\n## Conexiones con el catalogo\n- Base para: Carrilleras Ternera Polenta Straker, Solomillo Pimienta Straker, Ragu Cerdo Ternera Straker.\n- Coexiste con 05_Fondo_Oscuro_Ternera y 07_Demi_Glace del catalogo."
+  "storytelling": "# Fondo de Ternera (T.Straker) -- Storytelling\n\n## Contexto en el libro\nStraker incluye el beef stock como base del capitulo de carne, esencial para las Beef Cheeks y la Peppercorn Sauce. Huesos asados a alta temperatura para color y profundidad, desgrasado con vino tinto.\n\n## Por que encaja en ATTENYA\n- Base para platos de ternera del catalogo Straker (Carrilleras, Solomillo Pimienta).\n- Coexiste con 05_Fondo_Oscuro_Ternera del catalogo — la version Straker incluye vino tinto en la coccion.\n- Produccion en lote: congelable 3 meses. Ideal para produccion quincenal.\n\n## Conexiones con el catalogo\n- Base para: Carrilleras Ternera Polenta Straker, Solomillo Pimienta Straker, Ragu Cerdo Ternera Straker.\n- Coexiste con 05_Fondo_Oscuro_Ternera y 07_Demi_Glace del catalogo.",
+  "componentes": [
+    {
+      "role": "base",
+      "id": "05_Fondo_Oscuro_Ternera"
+    }
+  ]
 }

@@ -15,5 +15,11 @@
   "appcc": "- Servir inmediatamente tras fritura. No regenera. Aceite: no reutilizar mas de 3 veces.\n- Alergenos: gluten (harina trigo).",
   "senior_adaptation": "FILTRO SENIOR PENDIENTE:\n- La tempura de harina arroz + maicena es MAS LIGERA que empanado tradicional\n- Variante horno: pulverizar con spray aceite, Convotherm 230 C conveccion 8-10 min\n- Los limon fritos son comestibles (laminas translucidas) -- textura apta si bien fritas\n- Las laminas finas de calabacin/calabaza quedan muy blandas bajo el rebozado\n- Para deglucion dificil: omitir rebozado, servir verduras asadas con sauce verte",
   "quote": null,
-  "storytelling": "# Fritti de Verduras (T.Straker) -- Storytelling\n## Origen\nLos fritti son tradicion italiana de verano: verduras de temporada rebozadas en tempura ligera y fritas al momento. En cada restaurante italiano de verano hay fritti de calabacin en la carta.\n## Thomas Straker\n\"Uno de mis snacks pre-cena favoritos con un negroni. Los limones fritos son la sorpresa.\"\n## Narrativa para el residente\n\"Verduras de temporada rebozadas en una masa finisima y ligera, fritas hasta crujientes. Se sirven con una salsa verde fresca para mojar. Es la forma mas elegante de comer verdura frita.\"\n## Conexion emocional\nLos fritti evocan terrazas italianas en verano, aperitivos al atardecer. Para los residentes: vacaciones en Italia, ligereza, aperitivo."
+  "storytelling": "# Fritti de Verduras (T.Straker) -- Storytelling\n## Origen\nLos fritti son tradicion italiana de verano: verduras de temporada rebozadas en tempura ligera y fritas al momento. En cada restaurante italiano de verano hay fritti de calabacin en la carta.\n## Thomas Straker\n\"Uno de mis snacks pre-cena favoritos con un negroni. Los limones fritos son la sorpresa.\"\n## Narrativa para el residente\n\"Verduras de temporada rebozadas en una masa finisima y ligera, fritas hasta crujientes. Se sirven con una salsa verde fresca para mojar. Es la forma mas elegante de comer verdura frita.\"\n## Conexion emocional\nLos fritti evocan terrazas italianas en verano, aperitivos al atardecer. Para los residentes: vacaciones en Italia, ligereza, aperitivo.",
+  "componentes": [
+    {
+      "role": "salsa",
+      "id": "Sauce_Verte_Straker"
+    }
+  ]
 }

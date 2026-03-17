@@ -20,6 +20,10 @@
     {
       "role": "id",
       "id": "Moqueca_Camarones_Baiano"
+    },
+    {
+      "role": "guarnicion",
+      "id": "Arroz_Bahiano"
     }
   ]
 }

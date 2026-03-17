@@ -20,6 +20,14 @@
     {
       "role": "id",
       "id": "Pollo_Salmorejo_Canario"
+    },
+    {
+      "role": "guarnicion",
+      "id": "Patatas_Vapor_Horno"
+    },
+    {
+      "role": "salsa",
+      "id": "Salmorejo_Canario"
     }
   ]
 }

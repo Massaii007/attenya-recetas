@@ -15,5 +15,11 @@
   "appcc": "- Servir caliente o templado. Conservar <3 C, 48 h. Regenera bien.\n- Alergenos: ninguno en base (salsa verde: ver ficha).",
   "senior_adaptation": "- Calabaza asada: MUY blanda, se corta con cuchara -- ideal senior\n- Borlotti cocidas: cremosas, textura suave -- ideal senior\n- Salsa verde: hierbas picadas en emulsion -- apto\n- Plato completo vegetariano: proteina vegetal (alubias) + hidrato (calabaza) + grasa (aceite)\n- Para deglucion dificil: aplastar calabaza, servir alubias mas cocidas",
   "quote": null,
-  "storytelling": "# Calabaza con Borlotti y Salsa Verde (T.Straker) -- Storytelling\n## Origen\nCalabaza asada con legumbres es cocina toscana otonal. Las borlotti son la alubia de los mercados italianos. Straker las combina con salsa verde para un plato vegetariano completo.\n## Thomas Straker\n\"Las borlotti frescas congelan muy bien, asi que compralas cuando las veas. La espera merece la pena.\"\n## Narrativa para el residente\n\"Calabaza asada al horno servida sobre alubias borlotti cremosas con salsa verde de hierbas frescas. Es un plato vegetariano completo, nutritivo y reconfortante.\"\n## Conexion emocional\nKuerbis con Bohnen -- calabaza con alubias es combinacion otonal que los residentes alemanes reconocen. Aqui con sabor toscano."
+  "storytelling": "# Calabaza con Borlotti y Salsa Verde (T.Straker) -- Storytelling\n## Origen\nCalabaza asada con legumbres es cocina toscana otonal. Las borlotti son la alubia de los mercados italianos. Straker las combina con salsa verde para un plato vegetariano completo.\n## Thomas Straker\n\"Las borlotti frescas congelan muy bien, asi que compralas cuando las veas. La espera merece la pena.\"\n## Narrativa para el residente\n\"Calabaza asada al horno servida sobre alubias borlotti cremosas con salsa verde de hierbas frescas. Es un plato vegetariano completo, nutritivo y reconfortante.\"\n## Conexion emocional\nKuerbis con Bohnen -- calabaza con alubias es combinacion otonal que los residentes alemanes reconocen. Aqui con sabor toscano.",
+  "componentes": [
+    {
+      "role": "salsa",
+      "id": "Salsa_Verde_Straker"
+    }
+  ]
 }

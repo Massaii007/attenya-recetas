@@ -20,6 +20,10 @@
     {
       "role": "id",
       "id": "Salmon_Glaseado"
+    },
+    {
+      "role": "guarnicion",
+      "id": "Broccoli_Charred_Miso_Bagna_Cauda"
     }
   ]
 }

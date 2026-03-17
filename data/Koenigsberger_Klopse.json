@@ -15,5 +15,20 @@
   "appcc": "- Escalfado 80-85 C, 10-12 min\n- Temp. interna albondiga >74 C\n- Servicio 65-68 C\n- Alergenos: gluten (pan, harina), huevo, lacteos (nata, mantequilla), pescado (anchoas)\n\n\"Las Koenigsberger Klopse son el alma de la cocina prusiana: albondigas tiernas y aireadas en una salsa blanca donde las alcaparras y el limon hacen todo el trabajo acido. No se hierven, se escalfan. No se aprietan, se moldean con suavidad.\"",
   "senior_adaptation": null,
   "quote": null,
-  "storytelling": "# Koenigsberger Klopse — Historia\n\n## Origen\nLas Koenigsberger Klopse nacen en Königsberg, Prusia Oriental, ciudad perdida hoy pero viva en memoria culinaria. Albondiguillas de ternera-cerdo, pan remojado, anchoa—clave de profundidad umami invisible—escalfadas en caldo suave, bañadas en salsa blanca de alcaparras. Es cocina prusiana que habla de elegancia sin ostentación.\n\n## La Historia\nLa masa es aireada, jamás compacta: carne picada ternera-cerdo setenta-treinta, panecillos remojados leche y escurridos muy bien, cebolla pochada fría, anchoas picadas hasta pasta—la anchoa no se siente, se siente su profundidad. Huevos, sal, pimienta blanca, nuez moscada. Se prueban en mini albondiga cocida: eso es obligatorio. Se bolea setenta y cinco albondiguillas de sesenta gramos, se refrigeran treinta minutos. Escalfado es clave—ochenta a ochenta y cinco grados, sin burbujeo fuerte durante diez a doce minutos. La salsa es velouté blanco: roux uno a uno en mantequilla y harina, caldo cocción filtrado, nata, alcaparras con su vinagre, zumo limón progresivo. Las alcaparras aportan ácido-amargo que levanta todo. Se introducen albondiguillas en salsa: calentar suave sin hervir jamás. Salzkartoffeln—patatas hervidas mantequilla—a lado. Rote Bete Salat—remolacha en vinagreta templada—al otro lado. Perejil fresco al pase.\n\n## Para Nuestros Comensales\nRecuerdan esa Prusia que leyeron en libros, que visitaron en sueños. Las albondiguillas son tan tiernas que se deshacen, la salsa es blanca delicada pero profunda, las alcaparras hacen trabajo ácido que limpian palader. Es plato que habla de una forma de vivir donde nada era accidente, todo era precisión. Aquí la vivimos completamente."
+  "storytelling": "# Koenigsberger Klopse — Historia\n\n## Origen\nLas Koenigsberger Klopse nacen en Königsberg, Prusia Oriental, ciudad perdida hoy pero viva en memoria culinaria. Albondiguillas de ternera-cerdo, pan remojado, anchoa—clave de profundidad umami invisible—escalfadas en caldo suave, bañadas en salsa blanca de alcaparras. Es cocina prusiana que habla de elegancia sin ostentación.\n\n## La Historia\nLa masa es aireada, jamás compacta: carne picada ternera-cerdo setenta-treinta, panecillos remojados leche y escurridos muy bien, cebolla pochada fría, anchoas picadas hasta pasta—la anchoa no se siente, se siente su profundidad. Huevos, sal, pimienta blanca, nuez moscada. Se prueban en mini albondiga cocida: eso es obligatorio. Se bolea setenta y cinco albondiguillas de sesenta gramos, se refrigeran treinta minutos. Escalfado es clave—ochenta a ochenta y cinco grados, sin burbujeo fuerte durante diez a doce minutos. La salsa es velouté blanco: roux uno a uno en mantequilla y harina, caldo cocción filtrado, nata, alcaparras con su vinagre, zumo limón progresivo. Las alcaparras aportan ácido-amargo que levanta todo. Se introducen albondiguillas en salsa: calentar suave sin hervir jamás. Salzkartoffeln—patatas hervidas mantequilla—a lado. Rote Bete Salat—remolacha en vinagreta templada—al otro lado. Perejil fresco al pase.\n\n## Para Nuestros Comensales\nRecuerdan esa Prusia que leyeron en libros, que visitaron en sueños. Las albondiguillas son tan tiernas que se deshacen, la salsa es blanca delicada pero profunda, las alcaparras hacen trabajo ácido que limpian palader. Es plato que habla de una forma de vivir donde nada era accidente, todo era precisión. Aquí la vivimos completamente.",
+  "componentes": [
+    {
+      "role": "principal",
+      "id": "pendiente_Koenigsberger_Klopse_Componente",
+      "nota": "pendiente de crear"
+    },
+    {
+      "role": "guarnicion",
+      "id": "Salzkartoffeln"
+    },
+    {
+      "role": "guarnicion",
+      "id": "Rote_Bete_Salat"
+    }
+  ]
 }
