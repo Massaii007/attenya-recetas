@@ -205,6 +205,7 @@ body { background: #1a1612; color: #e8dfd4; font-family: 'Cormorant Garamond', G
   .compra-item { grid-template-columns: 1fr 80px; }
 }
 </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 </head>
 <body>
 
@@ -241,7 +242,7 @@ body { background: #1a1612; color: #e8dfd4; font-family: 'Cormorant Garamond', G
     <div class="cats" id="cats"></div>
     <div style="padding:8px 0 12px;border-bottom:1px solid #2a241e;display:flex;gap:8px;flex-wrap:wrap;">
       <button class="cat-btn" id="periodo-btn-actual" onclick="togglePeriodo('actual')">✦ Periodo actual</button>
-      <button class="cat-btn" id="periodo-btn-siguiente" onclick="togglePeriodo('siguiente')">✦ Periodo siguiente</button>
+      <button class="cat-btn" id="periodo-btn-siguiente" onclick="togglePeriodo('siguiente')">✦ Periodo</button>
     </div>
     <div class="subs" id="subs"></div>
     <div class="results-count" id="results-count"></div>
@@ -1465,14 +1466,14 @@ const subCats = ["Principal","Guarnición HI","Guarnición V","Base/Salsa","Base
    PERIODO DETECTION — auto-detect actual vs siguiente by date
    ============================================================ */
 /* Determine which dataset is "actual" (today falls within) and which is "siguiente" */
-var periodoActualData, periodoSiguienteData;
+var periodoActualData, periodoSiguienteData, periodoOtroLabel;
 (function() {
   var today = new Date().toISOString().split('T')[0];
   var mdFirst = menuData.dias[0].fecha;
   var mdLast = menuData.dias[menuData.dias.length - 1].fecha;
   var pvFirst = menuData_prev.dias[0].fecha;
   var pvLast = menuData_prev.dias[menuData_prev.dias.length - 1].fecha;
-  
+
   if (today >= mdFirst && today <= mdLast) {
     periodoActualData = menuData;
     periodoSiguienteData = menuData_prev;
@@ -1488,6 +1489,9 @@ var periodoActualData, periodoSiguienteData;
     periodoActualData = mdLast > pvLast ? menuData : menuData_prev;
     periodoSiguienteData = mdLast > pvLast ? menuData_prev : menuData;
   }
+  /* Determine label: is the "otro" periodo in the past or future? */
+  var otroFirst = periodoSiguienteData.dias[0].fecha;
+  periodoOtroLabel = otroFirst < today ? 'anterior' : 'siguiente';
 })();
 
 /* Build ID sets from the detected assignment */
@@ -1635,7 +1639,8 @@ function renderPeriodoBtns() {
   }
   if (btnSiguiente) {
     btnSiguiente.className = "cat-btn" + (state.periodo === 'siguiente' ? " active" : "");
-    btnSiguiente.textContent = state.periodo === 'siguiente' ? "✦ Periodo siguiente (" + periodoIds_siguiente.size + ")" : "✦ Periodo siguiente";
+    var otroLbl = periodoOtroLabel.charAt(0).toUpperCase() + periodoOtroLabel.slice(1);
+    btnSiguiente.textContent = state.periodo === 'siguiente' ? "✦ Periodo " + periodoOtroLabel + " (" + periodoIds_siguiente.size + ")" : "✦ Periodo " + periodoOtroLabel;
   }
 }
 
@@ -1849,6 +1854,59 @@ function downloadFile(url, filename) {
 }
 
 /* ============================================================
+   DAY PACK DOWNLOAD — ZIP with all PDFs for a menu day
+   ============================================================ */
+async function downloadDayPack(fecha) {
+  var dia = getMenuData().dias.find(function(d) { return d.fecha === fecha; });
+  if (!dia) { alert('Día no encontrado'); return; }
+
+  /* Collect recipe IDs from the day */
+  var ids = new Set();
+  ['entrante','principal','guarnicion','postre'].forEach(function(k) {
+    if (dia[k] && dia[k].id) ids.add(dia[k].id);
+  });
+
+  /* Expand with components from each recipe's JSON */
+  var baseIds = Array.from(ids);
+  for (var i = 0; i < baseIds.length; i++) {
+    try {
+      var d = await loadJson(baseIds[i]);
+      if (d && d.componentes) {
+        d.componentes.forEach(function(c) {
+          if (c.id && !c.id.startsWith('pendiente_')) ids.add(c.id);
+        });
+      }
+    } catch(e) {}
+  }
+
+  /* Fetch PDFs and build ZIP */
+  var zip = new JSZip();
+  var found = 0;
+  var allIds = Array.from(ids);
+  for (var j = 0; j < allIds.length; j++) {
+    var id = allIds[j];
+    try {
+      var res = await fetch('data/pdf/' + id + '.pdf');
+      if (res.ok) {
+        zip.file(id + '.pdf', await res.blob());
+        found++;
+      }
+    } catch(e) {}
+  }
+
+  if (found === 0) { alert('No se encontraron PDFs para este día'); return; }
+
+  /* Generate and download */
+  var ds = dia.ds.replace(/\//g, '-').replace(/\s+/g, '_');
+  var blob = await zip.generateAsync({type: 'blob'});
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'Pack_' + ds + '.zip';
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+/* ============================================================
    MENU RENDERING
    ============================================================ */
 function recipeLink(item) {
@@ -1876,6 +1934,7 @@ function renderMenu() {
           <div class="menu-produccion-title">Notas de producción</div>
           ${d.prod}
         </div>
+        <button class="pdf-btn" style="margin-top:12px;" onclick="event.stopPropagation(); downloadDayPack('${d.fecha}')">↓ Pack día</button>
       </div>
     </div>
   `).join("");
@@ -2074,6 +2133,7 @@ async function init() {
   renderCats();
   renderSubs();
   renderGrid();
+  renderPeriodoBtns();
   renderMenu();
   renderMise();
   renderCompras();
