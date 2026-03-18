@@ -210,6 +210,8 @@ body { background: #1a1612; color: #e8dfd4; font-family: 'Cormorant Garamond', G
 /* === FOOTER === */
 .footer { border-top: 1px solid #2a241e; padding: 20px; text-align: center; font-family: 'Jost', sans-serif; font-size: 12px; color: #5a4e3e; letter-spacing: 2px; }
 .hidden { display: none; }
+.rest-back { display: block; font-family: 'Jost', sans-serif; font-size: 12px; color: #5a4e3e; letter-spacing: 1px; padding: 12px 20px; text-decoration: none; cursor: pointer; }
+.rest-back:hover { color: #c4a97d; }
 
 /* === RESPONSIVE === */
 @media (max-width: 600px) {
@@ -230,6 +232,7 @@ body { background: #1a1612; color: #e8dfd4; font-family: 'Cormorant Garamond', G
 <body>
 
 <div class="header">
+  <div class="rest-back hidden" id="rest-back" onclick="history.back()">← attenya.com</div>
   <div class="header-sub">ATTENYA SENIOR RETREAT</div>
   <h1>Sistema Culinario</h1>
   <div class="header-count" id="total-count"></div>
@@ -2119,6 +2122,8 @@ async function init() {
   /* modo=restaurante: like cocina but hide Mise/Compras tabs and filter out Componentes */
   if (modo === 'restaurante') {
     isRestaurante = true;
+    /* Show back link */
+    document.getElementById('rest-back').classList.remove('hidden');
     /* Hide Mise en Place and Compras nav tabs */
     document.querySelectorAll('.nav-tab').forEach(function(tab) {
       if (tab.textContent.trim() === 'Mise en Place' || tab.textContent.trim() === 'Compras') tab.style.display = 'none';
