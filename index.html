@@ -45,7 +45,18 @@ body { background: #1a1612; color: #e8dfd4; font-family: 'Cormorant Garamond', G
 .card-img-placeholder { width: 100%; height: 180px; background: linear-gradient(135deg, #2a241e 0%, #3a322a 100%); display: flex; align-items: center; justify-content: center; font-size: 40px; color: #3a322a; }
 .card-body { padding: 16px 20px 20px; }
 .card-cat { font-family: 'Jost', sans-serif; font-size: 10px; letter-spacing: 2px; color: #8a7d6b; margin-bottom: 6px; text-transform: uppercase; }
-.card-day { font-family: 'Jost', sans-serif; font-size: 10px; letter-spacing: 1px; color: #7da8c4; margin-bottom: 4px; padding: 2px 8px; background: rgba(125,168,196,0.1); border-radius: 3px; display: inline-block; }
+.card-day { font-family: 'Jost', sans-serif; font-size: 10px; letter-spacing: 1px; color: #7da8c4; margin-bottom: 4px; padding: 2px 8px; background: rgba(125,168,196,0.1); border-radius: 3px; display: inline-flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.card-prot { padding: 2px 8px; border-radius: 3px; font-family: 'Jost', sans-serif; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 500; }
+.card-prot[data-prot="Pescado blanco"] { background: rgba(120,180,210,0.15); color: #78b4d2; }
+.card-prot[data-prot="Pescado azul"] { background: rgba(80,130,190,0.2); color: #6fa0d0; }
+.card-prot[data-prot="Carne blanca"] { background: rgba(210,180,140,0.15); color: #d2b48c; }
+.card-prot[data-prot="Carne roja"] { background: rgba(190,100,100,0.2); color: #c47070; }
+.card-prot[data-prot*="Cerdo"] { background: rgba(200,150,120,0.18); color: #c89678; }
+.card-prot[data-prot="Vegetariano"] { background: rgba(120,180,120,0.15); color: #7db47d; }
+.card-prot[data-prot*="Pasta"], .card-prot[data-prot="Hidrato"] { background: rgba(210,190,130,0.15); color: #d2be82; }
+.card-prot[data-prot="Marisco"] { background: rgba(210,140,160,0.15); color: #d28ca0; }
+.card-prot[data-prot="Huevo"] { background: rgba(230,200,100,0.15); color: #d2be64; }
+.card-prot[data-prot="Legumbre"] { background: rgba(160,140,100,0.18); color: #b4a064; }
 .card-name { font-size: 18px; color: #f0e6d6; margin-bottom: 8px; line-height: 1.3; }
 .card-desc { font-family: 'Jost', sans-serif; font-size: 13px; color: #a89880; line-height: 1.5; margin-bottom: 12px; font-weight: 300; }
 .card-tags { display: flex; gap: 8px; flex-wrap: wrap; }
@@ -129,6 +140,16 @@ body { background: #1a1612; color: #e8dfd4; font-family: 'Cormorant Garamond', G
 .menu-day-label { font-family: 'Jost', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; }
 .menu-day-label.normal { color: #8a7d6b; }
 .menu-day-label.chef-free-label { color: #c47d7d; }
+.menu-day-label[data-prot="Pescado blanco"] { color: #78b4d2; }
+.menu-day-label[data-prot="Pescado azul"] { color: #6fa0d0; }
+.menu-day-label[data-prot="Carne blanca"] { color: #d2b48c; }
+.menu-day-label[data-prot="Carne roja"] { color: #c47070; }
+.menu-day-label[data-prot*="Cerdo"] { color: #c89678; }
+.menu-day-label[data-prot="Vegetariano"] { color: #7db47d; }
+.menu-day-label[data-prot*="Pasta"], .menu-day-label[data-prot="Hidrato"] { color: #d2be82; }
+.menu-day-label[data-prot="Marisco"] { color: #d28ca0; }
+.menu-day-label[data-prot="Huevo"] { color: #d2be64; }
+.menu-day-label[data-prot="Legumbre"] { color: #b4a064; }
 .menu-day-body { padding: 0 20px 20px; display: none; }
 .menu-day.open .menu-day-body { display: block; }
 .menu-day.open .menu-day-header { border-bottom: 1px solid #3a322a; padding-bottom: 14px; margin-bottom: 0; }
@@ -209,7 +230,7 @@ body { background: #1a1612; color: #e8dfd4; font-family: 'Cormorant Garamond', G
 <body>
 
 <div class="header">
-  <div class="header-sub">ATTENYA SENIOR RESIDENCES</div>
+  <div class="header-sub">ATTENYA SENIOR RETREAT</div>
   <h1>Sistema Culinario</h1>
   <div class="header-count" id="total-count"></div>
 </div>
@@ -241,7 +262,7 @@ body { background: #1a1612; color: #e8dfd4; font-family: 'Cormorant Garamond', G
     <div class="cats" id="cats"></div>
     <div style="padding:8px 0 12px;border-bottom:1px solid #2a241e;display:flex;gap:8px;flex-wrap:wrap;">
       <button class="cat-btn" id="periodo-btn-actual" onclick="togglePeriodo('actual')">✦ Periodo actual</button>
-      <button class="cat-btn" id="periodo-btn-siguiente" onclick="togglePeriodo('siguiente')">✦ Periodo siguiente</button>
+      <button class="cat-btn" id="periodo-btn-anterior" onclick="togglePeriodo('anterior')">✦ Periodo anterior</button>
     </div>
     <div class="subs" id="subs"></div>
     <div class="results-count" id="results-count"></div>
@@ -1462,10 +1483,10 @@ const comprasData = [
 const subCats = ["Principal","Guarnición HI","Guarnición V","Base/Salsa","Base/Caldo","Base/Elemento"];
 
 /* ============================================================
-   PERIODO DETECTION — auto-detect actual vs siguiente by date
+   PERIODO DETECTION — auto-detect actual vs anterior by date
    ============================================================ */
-/* Determine which dataset is "actual" (today falls within) and which is "siguiente" */
-var periodoActualData, periodoSiguienteData;
+/* Determine which dataset is "actual" (today falls within) and which is "anterior" */
+var periodoActualData, periodoAnteriorData;
 (function() {
   var today = new Date().toISOString().split('T')[0];
   var mdFirst = menuData.dias[0].fecha;
@@ -1475,18 +1496,18 @@ var periodoActualData, periodoSiguienteData;
   
   if (today >= mdFirst && today <= mdLast) {
     periodoActualData = menuData;
-    periodoSiguienteData = menuData_prev;
+    periodoAnteriorData = menuData_prev;
   } else if (today >= pvFirst && today <= pvLast) {
     periodoActualData = menuData_prev;
-    periodoSiguienteData = menuData;
+    periodoAnteriorData = menuData;
   } else if (today < mdFirst && today < pvFirst) {
     /* Both in the future — the earlier one is "actual" */
     periodoActualData = mdFirst < pvFirst ? menuData : menuData_prev;
-    periodoSiguienteData = mdFirst < pvFirst ? menuData_prev : menuData;
+    periodoAnteriorData = mdFirst < pvFirst ? menuData_prev : menuData;
   } else {
     /* Both in the past — the later one is "actual" */
     periodoActualData = mdLast > pvLast ? menuData : menuData_prev;
-    periodoSiguienteData = mdLast > pvLast ? menuData_prev : menuData;
+    periodoAnteriorData = mdLast > pvLast ? menuData_prev : menuData;
   }
 })();
 
@@ -1504,7 +1525,7 @@ function buildIdsFromMenu(md) {
 }
 
 let periodoIds_actual = buildIdsFromMenu(periodoActualData);
-let periodoIds_siguiente = buildIdsFromMenu(periodoSiguienteData);
+let periodoIds_anterior = buildIdsFromMenu(periodoAnteriorData);
 
 /* Also expose periodoIds for backward compat (used by switchPeriodo toggle) */
 let periodoIds = periodoIds_actual;
@@ -1515,7 +1536,7 @@ var isRestaurante = false;
 
 function activePeriodoIds() {
   if (state.periodo === 'actual') return periodoIds_actual;
-  if (state.periodo === 'siguiente') return periodoIds_siguiente;
+  if (state.periodo === 'anterior') return periodoIds_anterior;
   return null;
 }
 
@@ -1531,7 +1552,8 @@ function buildPeriodoSortMap(menuDataRef) {
           order: dayIdx * 100 + roleOrder[k] * 10,
           dayLabel: d.ds,
           role: k,
-          parentId: null
+          parentId: null,
+          prot: d.prot || ''
         };
       }
     });
@@ -1540,7 +1562,7 @@ function buildPeriodoSortMap(menuDataRef) {
 }
 
 var periodoSortMap_actual = buildPeriodoSortMap(periodoActualData);
-var periodoSortMap_siguiente = buildPeriodoSortMap(periodoSiguienteData);
+var periodoSortMap_anterior = buildPeriodoSortMap(periodoAnteriorData);
 
 /* Expand periodo IDs with componentes from assembled dishes + track parent relationships */
 var componenteParents = {};
@@ -1564,7 +1586,8 @@ async function expandPeriodoIds() {
                   order: sortMap[id].order + 1,
                   dayLabel: sortMap[id].dayLabel,
                   role: "componente",
-                  parentId: id
+                  parentId: id,
+                  prot: sortMap[id].prot || ''
                 };
               }
             }
@@ -1575,18 +1598,18 @@ async function expandPeriodoIds() {
     /* Mark remaining unassigned IDs */
     ids.forEach(function(rid) {
       if (!sortMap[rid]) {
-        sortMap[rid] = { order: 9999, dayLabel: "", role: "componente", parentId: null };
+        sortMap[rid] = { order: 9999, dayLabel: "", role: "componente", parentId: null, prot: '' };
       }
     });
   }
   await expandAndTrack(periodoIds_actual, periodoSortMap_actual);
-  await expandAndTrack(periodoIds_siguiente, periodoSortMap_siguiente);
+  await expandAndTrack(periodoIds_anterior, periodoSortMap_anterior);
   periodoIds = periodoIds_actual;
 }
 
 function activeSortMap() {
   if (state.periodo === 'actual') return periodoSortMap_actual;
-  if (state.periodo === 'siguiente') return periodoSortMap_siguiente;
+  if (state.periodo === 'anterior') return periodoSortMap_anterior;
   return null;
 }
 
@@ -1630,14 +1653,14 @@ function togglePeriodo(which) {
 
 function renderPeriodoBtns() {
   const btnActual = document.getElementById("periodo-btn-actual");
-  const btnSiguiente = document.getElementById("periodo-btn-siguiente");
+  const btnAnterior = document.getElementById("periodo-btn-anterior");
   if (btnActual) {
     btnActual.className = "cat-btn" + (state.periodo === 'actual' ? " active" : "");
     btnActual.textContent = state.periodo === 'actual' ? "✦ Periodo actual (" + periodoIds_actual.size + ")" : "✦ Periodo actual";
   }
-  if (btnSiguiente) {
-    btnSiguiente.className = "cat-btn" + (state.periodo === 'siguiente' ? " active" : "");
-    btnSiguiente.textContent = state.periodo === 'siguiente' ? "✦ Periodo siguiente (" + periodoIds_siguiente.size + ")" : "✦ Periodo siguiente";
+  if (btnAnterior) {
+    btnAnterior.className = "cat-btn" + (state.periodo === 'anterior' ? " active" : "");
+    btnAnterior.textContent = state.periodo === 'anterior' ? "✦ Periodo anterior (" + periodoIds_anterior.size + ")" : "✦ Periodo anterior";
   }
 }
 
@@ -1662,7 +1685,8 @@ function renderGrid() {
   document.getElementById("results-count").textContent = `${f.length} receta${f.length!==1?"s":""}`;
   document.getElementById("grid").innerHTML = f.map(r => {
     const info = sm ? sm[r.id] : null;
-    const dayTag = info && info.dayLabel ? `<div class="card-day">${info.dayLabel}${info.role === 'componente' ? ' · componente' : ''}</div>` : '';
+    const protBadge = info && info.prot ? `<span class="card-prot" data-prot="${info.prot}">${info.prot}</span>` : '';
+    const dayTag = info && info.dayLabel ? `<div class="card-day">${info.dayLabel}${info.role === 'componente' ? ' · componente' : ''} ${protBadge}</div>` : '';
     return `
     <div class="card" onclick="select('${r.id}')">
       <img class="card-img" src="${getImg(r.id)}" alt="${r.n}" loading="lazy" onerror="this.outerHTML='<div class=\\'card-img-placeholder\\'>&#9672;</div>'">
@@ -1868,7 +1892,7 @@ function renderMenu() {
     <div class="menu-day ${d.tipo}${i===0?' open':''}" onclick="toggleDay(this)">
       <div class="menu-day-header">
         <div class="menu-day-date">${d.ds} — Día ${d.dc}</div>
-        <div class="menu-day-label ${d.tipo==='chef-free'?'chef-free-label':'normal'}">${d.prot}${d.tipo==='chef-free'?' · CHEF-FREE':''}</div>
+        <div class="menu-day-label ${d.tipo==='chef-free'?'chef-free-label':'normal'}" data-prot="${d.prot}">${d.prot}${d.tipo==='chef-free'?' · CHEF-FREE':''}</div>
       </div>
       <div class="menu-day-body">
         <div class="menu-row"><div class="menu-row-label">Entrante</div><div class="menu-row-value">${recipeLink(d.entrante)}</div></div>
@@ -2016,7 +2040,7 @@ document.getElementById("search").addEventListener("input", e => { state.search 
 /* ============================================================
    PERIODO SWITCHING (top tabs — date-based, controls Menu/Mise/Compras)
    p1 = menuData (newest), p2 = menuData_prev (oldest)
-   Independent of actual/siguiente detection in catalog buttons.
+   Independent of actual/anterior detection in catalog buttons.
    ============================================================ */
 var currentPeriodo = 'p1';
 
