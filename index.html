@@ -2119,17 +2119,25 @@ async function init() {
     renderPeriodoBtns();
     switchView('menu');
   }
-  /* modo=restaurante: like cocina but hide Mise/Compras tabs and filter out Componentes */
+  /* modo=restaurante: like cocina but hide operational UI */
   if (modo === 'restaurante') {
     isRestaurante = true;
     /* Show back link */
     document.getElementById('rest-back').classList.remove('hidden');
+    /* Change header text */
+    document.querySelector('.header h1').textContent = 'Nuestra Cocina';
+    document.getElementById('total-count').textContent = 'Tenerife';
+    /* Hide periodo selector tabs */
+    document.querySelector('.periodo-tabs').style.display = 'none';
+    /* Hide search bar */
+    document.querySelector('.search-wrap').style.display = 'none';
     /* Hide Mise en Place and Compras nav tabs */
     document.querySelectorAll('.nav-tab').forEach(function(tab) {
       if (tab.textContent.trim() === 'Mise en Place' || tab.textContent.trim() === 'Compras') tab.style.display = 'none';
     });
-    /* Hide PDF buttons in menu header */
+    /* Hide PDF buttons and meta line in menu header */
     document.querySelectorAll('#view-menu .pdf-btn').forEach(function(btn) { btn.style.display = 'none'; });
+    document.getElementById('menu-meta').style.display = 'none';
     state.periodo = 'actual';
     renderCats();
     renderSubs();
