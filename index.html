@@ -190,6 +190,67 @@ body { background: #1a1612; color: #e8dfd4; font-family: 'Cormorant Garamond', G
 .footer { border-top: 1px solid #2a241e; padding: 20px; text-align: center; font-family: 'Jost', sans-serif; font-size: 12px; color: #5a4e3e; letter-spacing: 2px; }
 .hidden { display: none; }
 
+/* === MODO RESTAURANTE === */
+.rest-header { background: linear-gradient(180deg, #2a241e 0%, #1a1612 100%); border-bottom: 1px solid #3a322a; padding: 32px 20px 24px; text-align: center; }
+.rest-header-sub { font-family: 'Jost', sans-serif; font-size: 11px; letter-spacing: 6px; color: #8a7d6b; margin-bottom: 8px; text-transform: uppercase; }
+.rest-header h1 { font-size: 42px; font-weight: 300; color: #f0e6d6; letter-spacing: 12px; }
+.rest-header-periodo { font-size: 14px; color: #8a7d6b; margin-top: 8px; font-family: 'Jost', sans-serif; }
+.rest-lang { font-family: 'Jost', sans-serif; font-size: 11px; color: #5a4e3e; letter-spacing: 1px; margin-top: 12px; }
+.rest-lang span { cursor: pointer; padding: 2px 6px; transition: color 0.2s; }
+.rest-lang span:hover, .rest-lang span.active { color: #c4a97d; }
+.rest-tabs { display: flex; justify-content: center; gap: 0; background: #221e19; border-bottom: 1px solid #3a322a; }
+.rest-tab { background: none; border: none; border-bottom: 2px solid transparent; color: #8a7d6b; padding: 14px 28px; cursor: pointer; font-family: 'Jost', sans-serif; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; transition: all 0.2s; }
+.rest-tab:hover { color: #c4a97d; }
+.rest-tab.active { color: #c4a97d; border-bottom-color: #c4a97d; }
+
+/* Menu semanal restaurante */
+.rest-day { background: #221e19; border: 1px solid #3a322a; margin-bottom: 12px; overflow: hidden; cursor: pointer; transition: border-color 0.2s; }
+.rest-day:hover { border-color: #5a4e3e; }
+.rest-day-header { padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; }
+.rest-day-date { font-family: 'Jost', sans-serif; font-size: 14px; font-weight: 500; color: #e8dfd4; }
+.rest-day-body { padding: 0 20px 20px; display: none; }
+.rest-day.open .rest-day-body { display: block; }
+.rest-day.open .rest-day-header { border-bottom: 1px solid #3a322a; padding-bottom: 14px; }
+.rest-meal { display: grid; grid-template-columns: 90px 1fr; gap: 0; padding: 10px 0; border-bottom: 1px solid #2a241e; }
+.rest-meal:last-child { border-bottom: none; }
+.rest-meal-label { font-family: 'Jost', sans-serif; font-size: 11px; letter-spacing: 2px; color: #8a7d6b; text-transform: uppercase; padding-top: 2px; }
+.rest-meal-name { font-size: 17px; color: #f0e6d6; cursor: pointer; transition: color 0.2s; }
+.rest-meal-name:hover { color: #c4a97d; }
+.rest-meal-text { font-size: 15px; color: #a89880; font-weight: 300; }
+
+/* Carta restaurante */
+.rest-section-title { font-family: 'Jost', sans-serif; font-size: 12px; letter-spacing: 4px; color: #8a7d6b; text-transform: uppercase; margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid #3a322a; }
+.rest-carta-item { display: flex; gap: 16px; background: #221e19; border: 1px solid #3a322a; margin-bottom: 12px; cursor: pointer; transition: border-color 0.2s; overflow: hidden; }
+.rest-carta-item:hover { border-color: #c4a97d; }
+.rest-carta-img { width: 100px; height: 100px; object-fit: cover; flex-shrink: 0; background: #2a241e; }
+.rest-carta-info { padding: 14px 14px 14px 0; flex: 1; min-width: 0; }
+.rest-carta-name { font-size: 18px; color: #f0e6d6; margin-bottom: 4px; }
+.rest-carta-desc { font-family: 'Jost', sans-serif; font-size: 13px; color: #a89880; line-height: 1.4; font-weight: 300; }
+
+/* Detail overlay restaurante */
+.rest-detail-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #1a1612; z-index: 100; overflow-y: auto; padding: 24px 0 40px; }
+.rest-detail-overlay.show { display: block; }
+.rest-detail-cat { font-family: 'Jost', sans-serif; font-size: 11px; letter-spacing: 3px; color: #8a7d6b; text-transform: uppercase; margin-bottom: 8px; }
+.rest-detail-name { font-size: 32px; font-weight: 400; line-height: 1.2; color: #f0e6d6; margin-bottom: 8px; }
+.rest-detail-desc { font-size: 16px; color: #a89880; font-style: italic; margin-bottom: 24px; }
+.rest-detail-story { font-family: 'Cormorant Garamond', serif; font-size: 18px; line-height: 2; color: #c4b8a8; font-weight: 300; border-top: 1px solid #3a322a; padding-top: 24px; }
+.rest-detail-story p { margin-bottom: 16px; }
+
+/* Footer restaurante */
+.rest-footer { text-align: center; padding: 40px 20px; font-family: 'Jost', sans-serif; font-size: 11px; letter-spacing: 4px; color: #5a4e3e; text-transform: uppercase; border-top: 1px solid #2a241e; margin-top: 40px; }
+
+/* Prot badges restaurante */
+.rest-prot { padding: 2px 8px; border-radius: 3px; font-family: 'Jost', sans-serif; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 500; }
+.rest-prot[data-prot="Pescado blanco"] { background: rgba(120,180,210,0.15); color: #78b4d2; }
+.rest-prot[data-prot="Pescado azul"] { background: rgba(80,130,190,0.2); color: #6fa0d0; }
+.rest-prot[data-prot="Carne blanca"] { background: rgba(210,180,140,0.15); color: #d2b48c; }
+.rest-prot[data-prot="Carne roja"] { background: rgba(190,100,100,0.2); color: #c47070; }
+.rest-prot[data-prot*="Cerdo"] { background: rgba(200,150,120,0.18); color: #c89678; }
+.rest-prot[data-prot="Vegetariano"] { background: rgba(120,180,120,0.15); color: #7db47d; }
+.rest-prot[data-prot*="Pasta"], .rest-prot[data-prot="Hidrato"] { background: rgba(210,190,130,0.15); color: #d2be82; }
+.rest-prot[data-prot="Marisco"] { background: rgba(210,140,160,0.15); color: #d28ca0; }
+.rest-prot[data-prot*="Carne roja"] { background: rgba(190,100,100,0.2); color: #c47070; }
+
 /* === RESPONSIVE === */
 @media (max-width: 600px) {
   .header h1 { font-size: 28px; }
@@ -203,6 +264,9 @@ body { background: #1a1612; color: #e8dfd4; font-family: 'Cormorant Garamond', G
   .mise-day-header { flex-direction: column; align-items: flex-start; gap: 8px; }
   .mise-day-header-left { flex-direction: column; gap: 4px; }
   .compra-item { grid-template-columns: 1fr 80px; }
+  .rest-header h1 { font-size: 28px; letter-spacing: 6px; }
+  .rest-meal { grid-template-columns: 80px 1fr; }
+  .rest-carta-img { width: 80px; height: 80px; }
 }
 </style>
 </head>
@@ -291,6 +355,44 @@ body { background: #1a1612; color: #e8dfd4; font-family: 'Cormorant Garamond', G
 </div>
 
 <div class="footer" id="footer"></div>
+
+<!-- MODO RESTAURANTE VIEW -->
+<div id="view-restaurante" class="hidden">
+  <!-- Header propio -->
+  <div class="rest-header">
+    <div class="rest-header-sub">Senior Residenz · Tenerife</div>
+    <h1>ATTENYA</h1>
+    <div class="rest-header-periodo">Nuestra Cocina · [periodo]</div>
+    <div class="rest-lang">
+      <span class="active">ES</span> · <span>DE</span>
+    </div>
+  </div>
+
+  <!-- Tabs propios -->
+  <div class="rest-tabs">
+    <button class="rest-tab active" onclick="switchRestTab('menu')">Menú semanal</button>
+    <button class="rest-tab" onclick="switchRestTab('carta')">Nuestra carta</button>
+  </div>
+
+  <div class="container">
+    <div id="rest-menu" style="margin-top:24px;"></div>
+    <div id="rest-carta" style="display:none;margin-top:24px;"></div>
+  </div>
+
+  <!-- Detail overlay para storytelling -->
+  <div id="rest-detail" class="rest-detail-overlay">
+    <div class="container" style="max-width:720px;">
+      <button class="back-btn" onclick="hideRestDetail()">← VOLVER</button>
+      <img class="detail-hero" id="rest-detail-img" src="" alt="" onerror="this.style.display='none'">
+      <div class="rest-detail-cat" id="rest-detail-cat"></div>
+      <h1 class="rest-detail-name" id="rest-detail-name"></h1>
+      <p class="rest-detail-desc" id="rest-detail-desc"></p>
+      <div class="rest-detail-story" id="rest-detail-story"></div>
+    </div>
+  </div>
+
+  <div class="rest-footer">ATTENYA · Senior Residenz · Tenerife · 2026</div>
+</div>
 
 <script>
 /* ============================================================
@@ -2054,6 +2156,175 @@ function downloadPeriodoPDF(tipo) {
 }
 
 /* ============================================================
+   MODO RESTAURANTE — Vista pública para clientes/familiares
+   ============================================================ */
+
+var restI18n = {
+  es: { menu: 'Menú semanal', carta: 'Nuestra carta', entrantes: 'Entrantes', principales: 'Platos principales', postres: 'Postres', cocina: 'Nuestra Cocina', volver: '← VOLVER', cena: 'Cena' },
+  de: { menu: 'Wochenkarte', carta: 'Unsere Küche', entrantes: 'Vorspeisen', principales: 'Hauptgerichte', postres: 'Desserts', cocina: 'Unsere Küche', volver: '← ZURÜCK', cena: 'Abendessen' }
+};
+var restLang = 'es';
+
+function switchRestTab(tab) {
+  document.querySelectorAll('.rest-tab').forEach(function(b) { b.classList.remove('active'); });
+  event.target.classList.add('active');
+  document.getElementById('rest-menu').style.display = tab === 'menu' ? 'block' : 'none';
+  document.getElementById('rest-carta').style.display = tab === 'carta' ? 'block' : 'none';
+}
+
+function toggleRestDay(el) { el.classList.toggle('open'); }
+
+function renderRestMenu() {
+  var md = menuData;
+  document.querySelector('.rest-header-periodo').textContent = restI18n[restLang].cocina + ' · ' + md.periodo;
+
+  var html = '';
+  md.dias.forEach(function(d, i) {
+    var chefFreeLabel = d.tipo === 'chef-free' ? ' <span style="font-family:Jost,sans-serif;font-size:10px;letter-spacing:1px;color:#c47d7d;text-transform:uppercase;">Chef-free</span>' : '';
+    html += '<div class="rest-day' + (i === 0 ? ' open' : '') + '" onclick="toggleRestDay(this)">';
+    html += '<div class="rest-day-header">';
+    html += '<div class="rest-day-date">' + d.ds + '</div>';
+    html += '<div><span class="rest-prot" data-prot="' + d.prot + '">' + d.prot + '</span>' + chefFreeLabel + '</div>';
+    html += '</div>';
+    html += '<div class="rest-day-body">';
+
+    /* Entrante */
+    if (d.entrante) {
+      html += '<div class="rest-meal"><div class="rest-meal-label">Entrante</div>';
+      if (d.entrante.id) {
+        html += '<div class="rest-meal-name" onclick="event.stopPropagation(); showRestDetail(\'' + d.entrante.id + '\')">' + d.entrante.n + '</div>';
+      } else {
+        html += '<div class="rest-meal-text">' + d.entrante.n + '</div>';
+      }
+      html += '</div>';
+    }
+
+    /* Principal */
+    if (d.principal) {
+      html += '<div class="rest-meal"><div class="rest-meal-label">Principal</div>';
+      if (d.principal.id) {
+        html += '<div class="rest-meal-name" onclick="event.stopPropagation(); showRestDetail(\'' + d.principal.id + '\')">' + d.principal.n + '</div>';
+      } else {
+        html += '<div class="rest-meal-text">' + d.principal.n + '</div>';
+      }
+      html += '</div>';
+    }
+
+    /* Postre */
+    if (d.postre) {
+      html += '<div class="rest-meal"><div class="rest-meal-label">Postre</div>';
+      if (d.postre.id) {
+        html += '<div class="rest-meal-name" onclick="event.stopPropagation(); showRestDetail(\'' + d.postre.id + '\')">' + d.postre.n + '</div>';
+      } else {
+        html += '<div class="rest-meal-text">' + d.postre.n + '</div>';
+      }
+      html += '</div>';
+    }
+
+    /* Cena — always text, never clickable */
+    if (d.cena) {
+      html += '<div class="rest-meal"><div class="rest-meal-label">' + restI18n[restLang].cena + '</div>';
+      html += '<div class="rest-meal-text">' + d.cena + '</div>';
+      html += '</div>';
+    }
+
+    html += '</div></div>';
+  });
+
+  document.getElementById('rest-menu').innerHTML = html;
+}
+
+function renderRestCarta() {
+  var md = menuData;
+  var entrantes = [], principales = [], postres = [];
+  var seen = {};
+
+  md.dias.forEach(function(d) {
+    if (d.entrante && d.entrante.id && !seen[d.entrante.id]) {
+      seen[d.entrante.id] = true;
+      var r = recipes.find(function(x) { return x.id === d.entrante.id; });
+      if (r) entrantes.push(r);
+    }
+    if (d.principal && d.principal.id && !seen[d.principal.id]) {
+      seen[d.principal.id] = true;
+      var r = recipes.find(function(x) { return x.id === d.principal.id; });
+      if (r) principales.push(r);
+    }
+    if (d.postre && d.postre.id && !seen[d.postre.id]) {
+      seen[d.postre.id] = true;
+      var r = recipes.find(function(x) { return x.id === d.postre.id; });
+      if (r) postres.push(r);
+    }
+  });
+
+  function renderSection(title, items) {
+    if (!items.length) return '';
+    var html = '<div class="rest-section-title">' + title + '</div>';
+    items.forEach(function(r) {
+      html += '<div class="rest-carta-item" onclick="showRestDetail(\'' + r.id + '\')">';
+      html += '<img class="rest-carta-img" src="' + getImg(r.id) + '" alt="' + r.n + '" onerror="this.style.background=\'#2a241e\';this.style.display=\'flex\';this.alt=\'\'">';
+      html += '<div class="rest-carta-info"><div class="rest-carta-name">' + r.n + '</div><div class="rest-carta-desc">' + r.d + '</div></div>';
+      html += '</div>';
+    });
+    return html;
+  }
+
+  var t = restI18n[restLang];
+  document.getElementById('rest-carta').innerHTML = renderSection(t.entrantes, entrantes) + renderSection(t.principales, principales) + renderSection(t.postres, postres);
+}
+
+async function showRestDetail(id) {
+  var r = recipes.find(function(x) { return x.id === id; });
+  if (!r) return;
+
+  document.getElementById('rest-detail-img').src = getImg(r.id);
+  document.getElementById('rest-detail-img').alt = r.n;
+  document.getElementById('rest-detail-img').style.display = 'block';
+  document.getElementById('rest-detail-cat').textContent = r.c + (r.s ? ' · ' + r.s : '');
+  document.getElementById('rest-detail-name').textContent = r.n;
+  document.getElementById('rest-detail-desc').textContent = r.d;
+
+  /* Load JSON and show ONLY storytelling */
+  document.getElementById('rest-detail-story').innerHTML = '<p style="color:#8a7d6b;font-style:italic;">Cargando...</p>';
+  document.getElementById('rest-detail').classList.add('show');
+  document.body.style.overflow = 'hidden';
+
+  var d = await loadJson(r.id);
+  if (d && d.storytelling) {
+    document.getElementById('rest-detail-story').innerHTML = '<div class="story-content">' + md2html(d.storytelling) + '</div>';
+  } else {
+    document.getElementById('rest-detail-story').innerHTML = '<p style="color:#8a7d6b;font-style:italic;">Storytelling no disponible.</p>';
+  }
+
+  document.getElementById('rest-detail').scrollTop = 0;
+}
+
+function hideRestDetail() {
+  document.getElementById('rest-detail').classList.remove('show');
+  document.body.style.overflow = '';
+}
+
+function initRestaurante() {
+  /* Hide all normal UI */
+  document.querySelector('.header').style.display = 'none';
+  document.querySelector('.nav-bar').style.display = 'none';
+  var periodoTabs = document.querySelector('.periodo-tabs');
+  if (periodoTabs) periodoTabs.style.display = 'none';
+  document.getElementById('view-catalogo').classList.add('hidden');
+  document.getElementById('view-menu').classList.add('hidden');
+  document.getElementById('view-mise').classList.add('hidden');
+  document.getElementById('view-compras').classList.add('hidden');
+  document.getElementById('footer').style.display = 'none';
+
+  /* Show restaurante view */
+  document.getElementById('view-restaurante').classList.remove('hidden');
+
+  /* Render both views */
+  renderRestMenu();
+  renderRestCarta();
+}
+
+/* ============================================================
    INIT
    ============================================================ */
 async function init() {
@@ -2070,14 +2341,20 @@ async function init() {
   /* Check URL parameters */
   var params = new URLSearchParams(window.location.search);
   var modo = params.get('modo');
-  
+
+  /* modo=restaurante: public restaurant view */
+  if (modo === 'restaurante') {
+    initRestaurante();
+    return;
+  }
+
   renderCats();
   renderSubs();
   renderGrid();
   renderMenu();
   renderMise();
   renderCompras();
-  
+
   /* modo=cocina: activate periodo filter + switch to menu view */
   if (modo === 'cocina') {
     state.periodo = 'actual';
