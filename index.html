@@ -45,21 +45,7 @@ body { background: #1a1612; color: #e8dfd4; font-family: 'Cormorant Garamond', G
 .card-img-placeholder { width: 100%; height: 180px; background: linear-gradient(135deg, #2a241e 0%, #3a322a 100%); display: flex; align-items: center; justify-content: center; font-size: 40px; color: #3a322a; }
 .card-body { padding: 16px 20px 20px; }
 .card-cat { font-family: 'Jost', sans-serif; font-size: 10px; letter-spacing: 2px; color: #8a7d6b; margin-bottom: 6px; text-transform: uppercase; }
-.card-day { font-family: 'Jost', sans-serif; font-size: 10px; letter-spacing: 1px; color: #7da8c4; margin-bottom: 4px; padding: 2px 8px; background: rgba(125,168,196,0.1); border-radius: 3px; display: inline-flex; align-items: center; gap: 6px; flex-wrap: wrap; }
-.card-prot { padding: 1px 7px; border-radius: 3px; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 500; }
-.card-prot[data-prot="Pescado blanco"] { background: rgba(120,180,210,0.15); color: #78b4d2; }
-.card-prot[data-prot="Pescado azul"] { background: rgba(80,130,190,0.2); color: #6fa0d0; }
-.card-prot[data-prot="Carne blanca"] { background: rgba(210,180,140,0.15); color: #d2b48c; }
-.card-prot[data-prot="Carne roja"] { background: rgba(190,100,100,0.2); color: #c47070; }
-.card-prot[data-prot*="Cerdo"] { background: rgba(200,150,120,0.18); color: #c89678; }
-.card-prot[data-prot="Vegetariano"] { background: rgba(120,180,120,0.15); color: #7db47d; }
-.card-prot[data-prot*="Pasta"], .card-prot[data-prot="Hidrato"] { background: rgba(210,190,130,0.15); color: #d2be82; }
-.card-prot[data-prot="Marisco"] { background: rgba(210,140,160,0.15); color: #d28ca0; }
-.card-prot[data-prot="Huevo"] { background: rgba(230,200,100,0.15); color: #d2be64; }
-.card-prot[data-prot="Legumbre"] { background: rgba(160,140,100,0.18); color: #b4a064; }
-.card-prot[data-prot="Lácteo"] { background: rgba(220,210,190,0.15); color: #d2c8b4; }
-.card-prot[data-prot="Fruta"] { background: rgba(200,160,100,0.15); color: #d2a064; }
-.card-prot[data-prot="Chocolate"] { background: rgba(140,90,60,0.25); color: #b47850; }
+.card-day { font-family: 'Jost', sans-serif; font-size: 10px; letter-spacing: 1px; color: #7da8c4; margin-bottom: 4px; padding: 2px 8px; background: rgba(125,168,196,0.1); border-radius: 3px; display: inline-block; }
 .card-name { font-size: 18px; color: #f0e6d6; margin-bottom: 8px; line-height: 1.3; }
 .card-desc { font-family: 'Jost', sans-serif; font-size: 13px; color: #a89880; line-height: 1.5; margin-bottom: 12px; font-weight: 300; }
 .card-tags { display: flex; gap: 8px; flex-wrap: wrap; }
@@ -142,14 +128,6 @@ body { background: #1a1612; color: #e8dfd4; font-family: 'Cormorant Garamond', G
 .menu-day-date { font-family: 'Jost', sans-serif; font-size: 14px; font-weight: 600; color: #e8dfd4; }
 .menu-day-label { font-family: 'Jost', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; }
 .menu-day-label.normal { color: #8a7d6b; }
-.menu-day-label[data-prot="Pescado blanco"] { color: #78b4d2; }
-.menu-day-label[data-prot="Pescado azul"] { color: #6fa0d0; }
-.menu-day-label[data-prot="Carne blanca"] { color: #d2b48c; }
-.menu-day-label[data-prot="Carne roja"] { color: #c47070; }
-.menu-day-label[data-prot*="Cerdo"] { color: #c89678; }
-.menu-day-label[data-prot="Vegetariano"] { color: #7db47d; }
-.menu-day-label[data-prot*="Pasta"], .menu-day-label[data-prot="Hidrato"] { color: #d2be82; }
-.menu-day-label[data-prot="Marisco"] { color: #d28ca0; }
 .menu-day-label.chef-free-label { color: #c47d7d; }
 .menu-day-body { padding: 0 20px 20px; display: none; }
 .menu-day.open .menu-day-body { display: block; }
@@ -227,7 +205,6 @@ body { background: #1a1612; color: #e8dfd4; font-family: 'Cormorant Garamond', G
   .compra-item { grid-template-columns: 1fr 80px; }
 }
 </style>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 </head>
 <body>
 
@@ -264,7 +241,7 @@ body { background: #1a1612; color: #e8dfd4; font-family: 'Cormorant Garamond', G
     <div class="cats" id="cats"></div>
     <div style="padding:8px 0 12px;border-bottom:1px solid #2a241e;display:flex;gap:8px;flex-wrap:wrap;">
       <button class="cat-btn" id="periodo-btn-actual" onclick="togglePeriodo('actual')">✦ Periodo actual</button>
-      <button class="cat-btn" id="periodo-btn-siguiente" onclick="togglePeriodo('siguiente')">✦ Periodo</button>
+      <button class="cat-btn" id="periodo-btn-siguiente" onclick="togglePeriodo('siguiente')">✦ Periodo siguiente</button>
     </div>
     <div class="subs" id="subs"></div>
     <div class="results-count" id="results-count"></div>
@@ -1488,14 +1465,14 @@ const subCats = ["Principal","Guarnición HI","Guarnición V","Base/Salsa","Base
    PERIODO DETECTION — auto-detect actual vs siguiente by date
    ============================================================ */
 /* Determine which dataset is "actual" (today falls within) and which is "siguiente" */
-var periodoActualData, periodoSiguienteData, periodoOtroLabel;
+var periodoActualData, periodoSiguienteData;
 (function() {
   var today = new Date().toISOString().split('T')[0];
   var mdFirst = menuData.dias[0].fecha;
   var mdLast = menuData.dias[menuData.dias.length - 1].fecha;
   var pvFirst = menuData_prev.dias[0].fecha;
   var pvLast = menuData_prev.dias[menuData_prev.dias.length - 1].fecha;
-
+  
   if (today >= mdFirst && today <= mdLast) {
     periodoActualData = menuData;
     periodoSiguienteData = menuData_prev;
@@ -1511,9 +1488,6 @@ var periodoActualData, periodoSiguienteData, periodoOtroLabel;
     periodoActualData = mdLast > pvLast ? menuData : menuData_prev;
     periodoSiguienteData = mdLast > pvLast ? menuData_prev : menuData;
   }
-  /* Determine label: is the "otro" periodo in the past or future? */
-  var otroFirst = periodoSiguienteData.dias[0].fecha;
-  periodoOtroLabel = otroFirst < today ? 'anterior' : 'siguiente';
 })();
 
 /* Build ID sets from the detected assignment */
@@ -1544,7 +1518,7 @@ function activePeriodoIds() {
   return null;
 }
 
-/* Build a map of recipeId → { order, dayLabel, role, prot } for periodo sorting */
+/* Build a map of recipeId → { order, dayLabel, role } for periodo sorting */
 function buildPeriodoSortMap(menuDataRef) {
   var sortMap = {};
   if (!menuDataRef || !menuDataRef.dias) return sortMap;
@@ -1555,7 +1529,6 @@ function buildPeriodoSortMap(menuDataRef) {
         sortMap[d[k].id] = {
           order: dayIdx * 100 + roleOrder[k] * 10,
           dayLabel: d.ds,
-          prot: d.prot || '',
           role: k,
           parentId: null
         };
@@ -1589,7 +1562,6 @@ async function expandPeriodoIds() {
                 sortMap[c.id] = {
                   order: sortMap[id].order + 1,
                   dayLabel: sortMap[id].dayLabel,
-                  prot: sortMap[id].prot || '',
                   role: "componente",
                   parentId: id
                 };
@@ -1602,7 +1574,7 @@ async function expandPeriodoIds() {
     /* Mark remaining unassigned IDs */
     ids.forEach(function(rid) {
       if (!sortMap[rid]) {
-        sortMap[rid] = { order: 9999, dayLabel: "", prot: "", role: "componente", parentId: null };
+        sortMap[rid] = { order: 9999, dayLabel: "", role: "componente", parentId: null };
       }
     });
   }
@@ -1663,8 +1635,7 @@ function renderPeriodoBtns() {
   }
   if (btnSiguiente) {
     btnSiguiente.className = "cat-btn" + (state.periodo === 'siguiente' ? " active" : "");
-    var otroLbl = periodoOtroLabel.charAt(0).toUpperCase() + periodoOtroLabel.slice(1);
-    btnSiguiente.textContent = state.periodo === 'siguiente' ? "✦ Periodo " + periodoOtroLabel + " (" + periodoIds_siguiente.size + ")" : "✦ Periodo " + periodoOtroLabel;
+    btnSiguiente.textContent = state.periodo === 'siguiente' ? "✦ Periodo siguiente (" + periodoIds_siguiente.size + ")" : "✦ Periodo siguiente";
   }
 }
 
@@ -1688,9 +1659,7 @@ function renderGrid() {
   document.getElementById("results-count").textContent = `${f.length} receta${f.length!==1?"s":""}`;
   document.getElementById("grid").innerHTML = f.map(r => {
     const info = sm ? sm[r.id] : null;
-    const protLabel = info && info.prot ? info.prot : '';
-    const protBadge = protLabel ? `<span class="card-prot" data-prot="${protLabel}">${protLabel}</span>` : '';
-    const dayTag = info && info.dayLabel ? `<div class="card-day">${info.dayLabel}${info.role === 'componente' ? ' · componente' : ''} ${protBadge}</div>` : '';
+    const dayTag = info && info.dayLabel ? `<div class="card-day">${info.dayLabel}${info.role === 'componente' ? ' · componente' : ''}</div>` : '';
     return `
     <div class="card" onclick="select('${r.id}')">
       <img class="card-img" src="${getImg(r.id)}" alt="${r.n}" loading="lazy" onerror="this.outerHTML='<div class=\\'card-img-placeholder\\'>&#9672;</div>'">
@@ -1880,59 +1849,6 @@ function downloadFile(url, filename) {
 }
 
 /* ============================================================
-   DAY PACK DOWNLOAD — ZIP with all PDFs for a menu day
-   ============================================================ */
-async function downloadDayPack(fecha) {
-  var dia = getMenuData().dias.find(function(d) { return d.fecha === fecha; });
-  if (!dia) { alert('Día no encontrado'); return; }
-
-  /* Collect recipe IDs from the day */
-  var ids = new Set();
-  ['entrante','principal','guarnicion','postre'].forEach(function(k) {
-    if (dia[k] && dia[k].id) ids.add(dia[k].id);
-  });
-
-  /* Expand with components from each recipe's JSON */
-  var baseIds = Array.from(ids);
-  for (var i = 0; i < baseIds.length; i++) {
-    try {
-      var d = await loadJson(baseIds[i]);
-      if (d && d.componentes) {
-        d.componentes.forEach(function(c) {
-          if (c.id && !c.id.startsWith('pendiente_')) ids.add(c.id);
-        });
-      }
-    } catch(e) {}
-  }
-
-  /* Fetch PDFs and build ZIP */
-  var zip = new JSZip();
-  var found = 0;
-  var allIds = Array.from(ids);
-  for (var j = 0; j < allIds.length; j++) {
-    var id = allIds[j];
-    try {
-      var res = await fetch('data/pdf/' + id + '.pdf');
-      if (res.ok) {
-        zip.file(id + '.pdf', await res.blob());
-        found++;
-      }
-    } catch(e) {}
-  }
-
-  if (found === 0) { alert('No se encontraron PDFs para este día'); return; }
-
-  /* Generate and download */
-  var ds = dia.ds.replace(/\//g, '-').replace(/\s+/g, '_');
-  var blob = await zip.generateAsync({type: 'blob'});
-  var a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = 'Pack_' + ds + '.zip';
-  a.click();
-  URL.revokeObjectURL(a.href);
-}
-
-/* ============================================================
    MENU RENDERING
    ============================================================ */
 function recipeLink(item) {
@@ -1948,7 +1864,7 @@ function renderMenu() {
     <div class="menu-day ${d.tipo}${i===0?' open':''}" onclick="toggleDay(this)">
       <div class="menu-day-header">
         <div class="menu-day-date">${d.ds} — Día ${d.dc}</div>
-        <div class="menu-day-label ${d.tipo==='chef-free'?'chef-free-label':'normal'}" data-prot="${d.prot}">${d.prot}${d.tipo==='chef-free'?' · CHEF-FREE':''}</div>
+        <div class="menu-day-label ${d.tipo==='chef-free'?'chef-free-label':'normal'}">${d.prot}${d.tipo==='chef-free'?' · CHEF-FREE':''}</div>
       </div>
       <div class="menu-day-body">
         <div class="menu-row"><div class="menu-row-label">Entrante</div><div class="menu-row-value">${recipeLink(d.entrante)}</div></div>
@@ -1960,7 +1876,6 @@ function renderMenu() {
           <div class="menu-produccion-title">Notas de producción</div>
           ${d.prod}
         </div>
-        <button class="pdf-btn" style="margin-top:12px;" onclick="event.stopPropagation(); downloadDayPack('${d.fecha}')">↓ Pack día</button>
       </div>
     </div>
   `).join("");
@@ -2159,7 +2074,6 @@ async function init() {
   renderCats();
   renderSubs();
   renderGrid();
-  renderPeriodoBtns();
   renderMenu();
   renderMise();
   renderCompras();
