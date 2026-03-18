@@ -2305,19 +2305,20 @@ function hideRestDetail() {
 }
 
 function initRestaurante() {
-  /* Hide all normal UI */
+  /* Hide ALL normal UI elements with display:none (not classList) to guarantee override */
   document.querySelector('.header').style.display = 'none';
   document.querySelector('.nav-bar').style.display = 'none';
   var periodoTabs = document.querySelector('.periodo-tabs');
   if (periodoTabs) periodoTabs.style.display = 'none';
-  document.getElementById('view-catalogo').classList.add('hidden');
-  document.getElementById('view-menu').classList.add('hidden');
-  document.getElementById('view-mise').classList.add('hidden');
-  document.getElementById('view-compras').classList.add('hidden');
+  document.getElementById('view-catalogo').style.display = 'none';
+  document.getElementById('view-menu').style.display = 'none';
+  document.getElementById('view-mise').style.display = 'none';
+  document.getElementById('view-compras').style.display = 'none';
+  document.getElementById('detail-view').style.display = 'none';
   document.getElementById('footer').style.display = 'none';
 
   /* Show restaurante view */
-  document.getElementById('view-restaurante').classList.remove('hidden');
+  document.getElementById('view-restaurante').style.display = 'block';
 
   /* Render both views */
   renderRestMenu();
