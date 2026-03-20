@@ -228,6 +228,7 @@ body { background: #1a1612; color: #e8dfd4; font-family: 'Cormorant Garamond', G
   .compra-item { grid-template-columns: 1fr 80px; }
 }
 </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 </head>
 <body>
 
@@ -1907,6 +1908,7 @@ function renderMenu() {
           <div class="menu-produccion-title">Notas de producción</div>
           ${d.prod}
         </div>`}
+        ${isRestaurante ? '' : `<button class="pdf-btn" style="margin-top:10px;width:100%;" onclick="event.stopPropagation(); downloadDayPack(${i})">↓ Pack día</button>`}
       </div>
     </div>
   `).join("");
@@ -2082,6 +2084,65 @@ function downloadPeriodoPDF(tipo) {
   };
   var p = paths[tipo];
   if (p) downloadFile(p[0], p[1]);
+}
+
+/* ============================================================
+   DAY PACK — ZIP all PDFs for a given day (entrante + principal + guarnición + postre + componentes)
+   ============================================================ */
+async function downloadDayPack(dayIndex) {
+  var md = getMenuData();
+  var day = md.dias[dayIndex];
+  if (!day) return;
+
+  /* Collect all recipe IDs for this day */
+  var ids = [day.entrante, day.principal, day.guarnicion, day.postre].filter(Boolean);
+
+  /* Expand components: for each id, fetch its JSON and add component ids */
+  var expanded = [];
+  for (var id of ids) {
+    expanded.push(id);
+    try {
+      var resp = await fetch('data/' + id + '.json');
+      if (resp.ok) {
+        var json = await resp.json();
+        if (json.componentes && Array.isArray(json.componentes)) {
+          json.componentes.forEach(function(c) { if (c.id) expanded.push(c.id); });
+        }
+      }
+    } catch(e) { /* skip */ }
+  }
+
+  /* Deduplicate */
+  var unique = [...new Set(expanded)];
+
+  /* Fetch PDFs and build ZIP */
+  var zip = new JSZip();
+  var found = 0;
+  for (var rid of unique) {
+    try {
+      var pdfResp = await fetch('data/pdf/' + rid + '.pdf');
+      if (pdfResp.ok) {
+        var blob = await pdfResp.blob();
+        zip.file(rid + '.pdf', blob);
+        found++;
+      }
+    } catch(e) { /* skip missing */ }
+  }
+
+  if (found === 0) {
+    alert('No se encontraron PDFs para este día.');
+    return;
+  }
+
+  /* Generate and download ZIP */
+  var zipBlob = await zip.generateAsync({ type: 'blob' });
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(zipBlob);
+  a.download = 'Pack_' + day.ds.replace(/ /g, '_') + '.zip';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(a.href);
 }
 
 /* ============================================================
