@@ -1,0 +1,19 @@
+{
+  "nombre": "Ensalada Verde",
+  "fuente": "",
+  "pax": "25",
+  "time_total": "15",
+  "technique": "",
+  "protein": "",
+  "allergens": "Mostaza",
+  "difficulty": "Baja",
+  "ingredients": "| Ingrediente | Cantidad | UEI | Notas |\n|---|---|---|---|\n| **Hojas verdes variadas** | 1.250 | g | Lechuga, rúcula, espinaca baby, canónigos, berros |\n| **Hierbas frescas** | 75 | g | Perejil, menta, albahaca, cebollino |\n| **Pepino** | 750 | g | ~3 pepinos, en rodajas o bastones finos |\n| **Cebolletas** | 200 | g | ~12 cebolletas, en rodajas |\n| **Aguacate** | 750 | g | ~4 aguacates, en rodajas (opcional) |\n| **Brotes** | 100 | g | Opcional |\n| *Aliño:* | | | |\n| **Aceite de oliva virgen extra** | 250 | ml | |\n| **Vinagre de vino blanco** | 65 | ml | |\n| **Mostaza de Dijon** | 15 | g | |\n| **Sal** | 8 | g | |\n| **Pimienta negra** | 3 | g | |",
+  "procedure": "### MISE EN PLACE\nLavar y secar MUY bien todas las hojas (centrifugadora). Cortar pepino. Cortar cebolletas. Preparar hierbas. Cortar aguacate si se incluye.\n\n### FASE 1 — Aliño\nMezclar aceite de oliva, vinagre de vino blanco, mostaza de Dijon, sal y pimienta. Emulsionar.\n\n### FASE 2 — Ensamblaje\nCombinar hojas, hierbas, pepino y cebolletas en bol grande. NO aliñar hasta servicio.\n\n### USO EN PLATO / SERVICIO\nAliñar al momento de servir. Mezclar con suavidad. Añadir aguacate y brotes por encima si se incluyen.",
+  "plating": "Aliñar al momento de servir. Mezclar con suavidad. Añadir aguacate y brotes por encima si se incluyen.",
+  "timing": null,
+  "critical_points": "- Hojas SECAS — el agua diluye el aliño y produce ensalada floja\n- Aliñar SOLO al momento de servir — las hojas se marchitan rápido con ácido\n- Variedad de hojas: combinar texturas y sabores (amargo, suave, picante)",
+  "appcc": "- **Alérgenos:** Mostaza\n- **Conservación:** Hojas lavadas y secas: hasta 24 h en nevera tapadas con paño húmedo. Aliño aparte: 5 días refrigerado\n- **Regeneración:** No aplica — servir fría al momento",
+  "senior_adaptation": "- Hojas tiernas: espinaca baby y canónigos preferentes sobre lechugas duras\n- Pepino en rodajas finas o bastones pequeños\n- Aguacate: textura cremosa, aporta saciedad\n- Sin elementos crujientes duros ni trozos grandes\n- Aliño suave: vinagre moderado, mostaza poca",
+  "quote": null,
+  "storytelling": "# Ensalada Verde — Storytelling\n\nLa ensalada verde es, en apariencia, el plato más sencillo que existe. Hojas, aliño, y a la mesa. Pero es precisamente en esa simplicidad donde se revela el oficio del cocinero. Una gran ensalada verde exige hojas impecables, lavadas y secas a la perfección — porque el agua es el enemigo del aliño —, una vinagreta bien equilibrada y el gesto justo de mezclar con suavidad en el último momento. Los franceses la sirven después del plato principal, como limpieza del paladar. Los italianos la ponen al centro de la mesa como acompañamiento perpetuo. En ambos casos, es indispensable.\n\nKatie y Giancarlo Caldesi proponen aquí una versión generosa que combina varias hojas — lechuga, rúcula, espinaca baby, canónigos, berros — con hierbas frescas, pepino, cebolletas y la opción de aguacate. La vinagreta clásica de mostaza de Dijon, vinagre de vino blanco y aceite de oliva es la misma que ha aliñado ensaladas en los bistrós parisinos durante generaciones.\n\nEn ATTENYA, la ensalada verde es un pilar del servicio diario. La clave está en la selección de hojas: espinaca baby y canónigos, tiernos y fáciles de masticar, tienen prioridad sobre lechugas más duras o fibrosas. El pepino se corta en rodajas finas o bastones pequeños. El aguacate aporta cremosidad y saciedad. La vinagreta se dosifica con suavidad, sin exceso de acidez. Es el plato que acompaña, que nunca sobra y que los residentes agradecen como un gesto de frescura en cada comida.\n\n---\n*Origen: Ensaladas — Katie & Giancarlo Caldesi*\n*Adaptación ATTENYA Senior Residences*"
+}

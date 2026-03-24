@@ -4,7 +4,7 @@
   "pax": "25",
   "time_total": "15 min (ensamblaje)",
   "technique": "",
-  "protein": "",
+  "protein": "Pescado blanco",
   "allergens": "Pescado, gluten (pangrattato)",
   "difficulty": "Baja",
   "ingredients": "| Ingrediente | Cantidad (25 PAX) | Unidad | Notas |\n|---|---|---|---|\n| Lomos de bacalao fresco sin piel | 25 | uds | ~200 g/ud |\n| Pimiento rojo | 12 | uds | para asar y pelar |\n| Aceite de oliva virgen extra | 500 | ml | |\n| Chalota | 12 | uds | juliana fina |\n| Ajo | 12 | dientes | laminas finas |\n| Tomate cherry | 2.500 | g | |\n| Albahaca fresca | 60 | g | mitad en ramilletes (coccion), mitad hojas (servicio) |\n| Pangrattato | 600 | g | ver receta Pangrattato_Straker |\n| Cebollino fresco | 120 | g | picado fino |\n| Limon | 8 | uds | cunas para servicio + ralladura |\n| Mayonesa de limon | 400 | g | opcional, servicio lateral |\n| Sal en escamas | c/n | | |\n| Pimienta negra | c/n | | |",
@@ -15,15 +15,15 @@
   "appcc": "- Regeneración bacalao >65 °C centro.\n- Espinas: tolerancia cero. Verificar cada porción.\n- Alérgenos: pescado (bacalao), gluten (pangrattato).",
   "senior_adaptation": "- Bacalao: textura perfecta para senior — se deshace en láminas tiernas.\n- Tomate y pimientos asados: muy blandos, sin fibra.\n- Pangrattato: crujiente suave que se deshace en boca (recalibrado filtro masticación OK).\n- Sin espinas (verificado).",
   "quote": null,
-  "storytelling": "# Bacalao con Tomate y Pimientos (T.Straker) — Storytelling\n\nEl bacalao con tomate es uno de esos platos que aparece en cada cocina del Mediterráneo con un nombre distinto pero una verdad compartida: el pescado blanco y el tomate son pareja desde que existe la cocina. Lo que Straker le añade es el pangrattato — esas migas de pan tostadas en aceite que coronan el plato como una corona crujiente sobre un lecho de suavidad.\n\nEl bacalao es el pescado perfecto para colectividades. Llega en porciones regulares, sin espinas si se trabaja bien, y tiene una textura que se lamina con el tenedor cuando está en su punto. La base de tomate y pimientos asados actúa como colchón aromático y fuente de humedad — el pescado nunca se reseca porque está protegido por el vegetal.\n\nEl pangrattato es el toque que separa este plato de un bacalao con tomate de cantina. Esas migas doradas, crujientes, con ajo y hierbas, aportan el contraste textural que el plato necesita para pasar de correcto a memorable. Pero tiene una regla: se añade al momento. Si espera, absorbe la humedad del tomate y se convierte en papilla. El pangrattato no espera a nadie.\n\nPara nuestros residentes, este plato es divertidamente familiar — el Backfisch con tomate y pimientos es un concepto que entienden inmediatamente — pero con un acabado que los sorprende cada vez.",
+  "storytelling": "# Bacalao con Tomate y Pimientos (T.Straker) — Storytelling\n\nEl bacalao con tomate es uno de esos platos que aparece en cada cocina del Mediterráneo con un nombre distinto pero una verdad compartida: el pescado blanco y el tomate son pareja desde que existe la cocina. Lo que Straker le añade es el pangrattato — esas migas de pan tostadas en aceite que coronan el plato como una corona crujiente sobre un lecho de suavidad.\n\nEl bacalao es el pescado perfecto para colectividades. Llega en porciones regulares, sin espinas si se trabaja bien, y tiene una textura que se lamina con el tenedor cuando está en su punto. La base de tomate y pimientos asados actúa como colchón aromático y fuente de humedad — el pescado nunca se reseca porque está protegido por el vegetal.\n\nEl pangrattato es el toque que separa este plato de un bacalao con tomate de cantina. Esas migas doradas, crujientes, con ajo y hierbas, aportan el contraste textural que el plato necesita para pasar de correcto a memorable. Pero tiene una regla: se añade al momento. Si espera, absorbe la humedad del tomate y se convierte en papilla. El pangrattato no espera a nadie.\n\nPara nuestros residentes, este plato es divertidamente familiar — el Backfisch con tomate y pimientos es un concepto que entienden inmediatamente — pero con un acabado que los sorprende cada vez.\n\n## Relaciones\n\n- [[Bacalao_Tomate_Pimientos_Plato|Receta principal: Bacalao Tomate Pimientos Plato]]",
   "componentes": [
     {
       "role": "principal",
       "id": "Bacalao_Tomate_Pimientos_Straker"
     },
     {
-      "role": "topping",
-      "id": "Pangrattato_Straker"
+      "role": "acompanamiento",
+      "id": "Pangrattato (existente)"
     }
   ]
 }

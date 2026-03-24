@@ -1,0 +1,19 @@
+{
+  "nombre": "Ensalada Italiana de Marisco",
+  "fuente": "",
+  "pax": "25",
+  "time_total": "35",
+  "technique": "",
+  "protein": "",
+  "allergens": "Pescado, crustáceos, moluscos",
+  "difficulty": "Media",
+  "ingredients": "| Ingrediente | Cantidad | UEI | Notas |\n|---|---|---|---|\n| **Filetes de pescado blanco** | 1.250 | g | Lubina o bacalao, sin espinas |\n| **Marisco variado** | 1.000 | g | Langostinos pelados, sepia limpia |\n| **Mejillones** | 500 | g | Frescos, limpios |\n| **Zanahoria** | 250 | g | Juliana fina |\n| **Apio** | 250 | g | Rodajas finas |\n| **Pimiento rojo** | 250 | g | En tiras finas |\n| **Tomates cherry** | 500 | g | Cortados por la mitad |\n| **Perejil de hoja plana** | 50 | g | Picado |\n| **Albahaca fresca** | 30 | g | |\n| **Aceite de oliva virgen extra** | 250 | ml | |\n| **Zumo de limón** | 125 | ml | |\n| **Sal** | 8 | g | |\n| **Pimienta negra** | 3 | g | |",
+  "procedure": "### MISE EN PLACE\nLimpiar todo el marisco. Cortar verduras. Picar hierbas.\n\n### FASE 1 — Cocción del marisco\nCocinar el pescado blanco en agua hirviendo suave 6-8 minutos. Retirar, templar, desmenuzar en trozos. Cocinar sepia en la misma agua 3-4 min. Cocinar langostinos hasta rosados (~2 min). Abrir mejillones al vapor 3-4 min. Escurrir todo.\n\n### FASE 2 — Ensalada\nMezclar las verduras (zanahoria, apio, pimiento, tomate) con las hierbas. Añadir el marisco con cuidado para no romper los trozos.\n\n### USO EN PLATO / SERVICIO\nAliñar con aceite y limón. Salpimentar. Servir a temperatura ambiente o ligeramente fría. Mejora con 1h de marinado en frigorífico.",
+  "plating": "Aliñar con aceite y limón. Salpimentar. Servir a temperatura ambiente o ligeramente fría. Mejora con 1h de marinado en frigorífico.",
+  "timing": null,
+  "critical_points": "- Cada marisco tiene su tiempo de cocción — no sobrecocer\n- Desmenuzar pescado en trozos grandes, no deshacer",
+  "appcc": "- **Alérgenos:** Pescado, crustáceos (langostinos), moluscos (mejillones)\n- **Conservación:** Refrigerar y consumir el mismo día\n- **Regeneración:** No aplica — servir frío o temperatura ambiente",
+  "senior_adaptation": "- Verificar ausencia de espinas en el pescado\n- Sepia: cortar en trozos pequeños — puede ser dura si se pasa\n- Mejillones: retirar de la concha para servicio",
+  "quote": null,
+  "storytelling": "# Ensalada Italiana de Marisco — Storytelling\n\nLa insalata di mare es uno de los grandes clásicos de la costa italiana, presente en cada trattoria desde Liguria hasta Sicilia. No es un plato de restaurante sofisticado sino de tradición marinera: pescado blanco, langostinos, sepia y mejillones cocidos con precisión, enfriados y aliñados simplemente con aceite de oliva virgen extra y limón. La calidad del marisco y el respeto por los tiempos de cocción son todo lo que se necesita.\n\nLos Caldesi añaden a la base marina una guarnición de zanahoria en juliana, apio, pimiento rojo y tomates cherry que aportan color y frescor sin competir con el protagonismo del mar. El truco está en dejar que la ensalada marine al menos una hora en frigorífico, permitiendo que los sabores se fundan y el aceite y el limón penetren cada pieza de marisco.\n\nEn ATTENYA, esta ensalada requiere atención en cocina pero recompensa con un plato que evoca la costa mediterránea. La verificación de ausencia de espinas en el pescado es obligatoria. La sepia debe cortarse en trozos pequeños para evitar la textura gomosa que puede resultar difícil de masticar. Los mejillones se retiran de la concha para el servicio, facilitando la ingesta. Es un entrante que conecta con la memoria gustativa de residentes que han disfrutado del Mediterráneo durante décadas, servido con la atención al detalle que merece su bienestar.\n\n---\n*Origen: Ensaladas — Katie & Giancarlo Caldesi*\n*Adaptación ATTENYA Senior Residences*"
+}

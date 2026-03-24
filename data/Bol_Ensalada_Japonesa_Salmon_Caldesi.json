@@ -1,0 +1,19 @@
+{
+  "nombre": "Bol de Ensalada Japonesa de Salmón",
+  "fuente": "",
+  "pax": "25",
+  "time_total": "40",
+  "technique": "",
+  "protein": "",
+  "allergens": "Pescado, soja, sésamo",
+  "difficulty": "Media",
+  "ingredients": "| Ingrediente | Cantidad | UEI | Notas |\n|---|---|---|---|\n| *Salmón:* | | | |\n| **Filetes de salmón** | 1.500 | g | Con piel opcional |\n| **Salsa de soja** | 125 | ml | Para marinada |\n| **Mirin** | 60 | ml | |\n| **Jengibre rallado** | 15 | g | |\n| **Aceite de oliva** | 40 | ml | Para sellar |\n| *Bol:* | | | |\n| **[[Arroz_Integral_Japonesa_Caldesi]]** | 3.750 | g | Cocido, ver receta |\n| **Pepino** | 500 | g | Bastones finos |\n| **Zanahoria** | 375 | g | Rallada o juliana |\n| **Edamame cocidos** | 375 | g | |\n| **Aguacate** | 625 | g | ~4 aguacates, rodajas |\n| **[[Pepinos_Encurtidos_Reiko_Caldesi]]** | 400 | g | Ver receta |\n| **Jengibre encurtido (gari)** | 100 | g | |\n| **Semillas de sésamo tostadas** | 40 | g | |\n| **Furikake** | 30 | g | Para servir |\n| **Salsa de soja y wasabi** | c/s | ml | Para servir aparte |",
+  "procedure": "### MISE EN PLACE\nMarinar salmón en soja, mirin y jengibre mín. 15-30 minutos. Preparar arroz y pepinos encurtidos (ver recetas). Cortar verduras.\n\n### FASE 1 — Salmón\nSecar salmón de la marinada. Calentar sartén a fuego alto con aceite. Sellar 2-3 minutos por lado (rosado por dentro). Cortar en láminas.\n\n### FASE 2 — Montaje de boles\nBase de arroz integral japonesa. Disponer verduras (pepino, zanahoria, edamame, aguacate) en secciones. Salmón al centro. Pepinos encurtidos y gari al lado.\n\n### USO EN PLATO / SERVICIO\nEspolvorear sésamo y furikake. Servir con soja y wasabi aparte.",
+  "plating": "Espolvorear sésamo y furikake. Servir con soja y wasabi aparte.",
+  "timing": null,
+  "critical_points": "- El salmón rosado por dentro es clave — no sobrecocinar\n- El montaje por secciones es parte de la estética japonesa",
+  "appcc": "- **Alérgenos:** Pescado, soja, sésamo\n- **Conservación:** Montar al momento. Arroz: mismo día\n- **Regeneración:** Arroz: NO regenerar (riesgo B. cereus). Salmón: servir tibio",
+  "senior_adaptation": "- Salmón tierno y jugoso — cortar en trozos si las láminas son difíciles\n- Edamame: verificar que son tiernos (blanquear 1 min extra si necesario)\n- Wasabi aparte — puede ser intenso",
+  "quote": null,
+  "storytelling": "# Bol de Ensalada Japonesa de Salmón — Storytelling\n\nEl donburi —bol de arroz con acompañamientos— es la comida cotidiana de Japón, un formato que combina nutrición, estética y practicidad en un único recipiente. Este bol de salmón marinado en soja y mirin sobre arroz integral aliñado recoge esa tradición y la hace accesible para nuestro comedor, con la frescura del aguacate, el crujiente del edamame y los matices del jengibre encurtido.\n\nEl salmón es uno de los pescados más agradecidos para el perfil senior: tierno, jugoso, rico en omega-3 y con un sabor suave que no genera rechazo. Sellado brevemente a fuego alto, queda rosado por dentro, mantecoso y fácil de desmenuzar con el tenedor. La marinada de soja y mirin le aporta un glaseado umami que los residentes encuentran profundamente satisfactorio.\n\nPara ATTENYA, este plato representa lo mejor de la cocina de boles: cada componente se prepara por separado, el montaje es rápido, la presentación visual es atractiva con sus secciones de colores organizadas al estilo japonés, y el perfil nutricional es excelente —proteína de calidad, grasas saludables, fibra del arroz integral y vitaminas de las verduras frescas. Es un plato que sorprende sin intimidar, que introduce sabores del mundo con elegancia y que nuestros residentes reconocen como algo especial en la carta.\n\n---\n*Origen: Ensaladas — Katie & Giancarlo Caldesi*\n*Adaptación ATTENYA Senior Residences*"
+}

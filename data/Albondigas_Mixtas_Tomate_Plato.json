@@ -4,7 +4,7 @@
   "pax": "25",
   "time_total": "20 min (ensamblaje)",
   "technique": "",
-  "protein": "",
+  "protein": "Carne roja",
   "allergens": "Gluten (pan), huevos, lácteos",
   "difficulty": "Baja",
   "ingredients": "**Albondigas**\n\n| Ingrediente | Cantidad (25 PAX) | Unidad | Notas |\n|---|---|---|---|\n| Cebolla | 6 | uds | troceada gruesa |\n| Ajo | 18 | dientes | pelados |\n| Perejil fresco | 180 | g | solo hojas |\n| Pan rallado seco | 450 | g | |\n| Huevos | 6 | uds | ligeramente batidos |\n| Leche entera | 600 | ml | |\n| Carne picada ternera lechal | 1.800 | g | |\n| Carne picada cerdo | 1.800 | g | |\n| Carne picada ternera | 1.800 | g | |\n| Sal fina | 30 | g | ~6 cucharaditas |\n| Pimienta negra | c/n | | generosa |\n\n**Salsa de tomate**\n\n| Ingrediente | Cantidad (25 PAX) | Unidad | Notas |\n|---|---|---|---|\n| Aceite de oliva virgen extra | 480 | ml | |\n| Ajo | 48 | dientes | laminas finas |\n| Tomate triturado | 4.800 | g | 12 latas calidad |\n| Albahaca fresca | 6 | ramilletes | |\n| Azucar | 60 | g | ~12 cucharaditas |\n\n**Servicio**\n\n| Ingrediente | Cantidad (25 PAX) | Unidad | Notas |\n|---|---|---|---|\n| Pesto de albahaca | 400 | g | ver Basil_Pesto_Straker (CONDIMENTS) |\n| Parmesano rallado | 300 | g | |",
@@ -15,11 +15,15 @@
   "appcc": "- Regeneración >75 °C centro albóndigas.\n- Alérgenos: gluten (pan, miga en albóndigas), huevos (ligante), lácteos (parmesano en albóndigas).",
   "senior_adaptation": "- Albóndigas tiernas, textura que se deshace con tenedor.\n- Pan sin corteza — ningún riesgo de masticación.\n- Salsa de tomate suavizada, sin acidez agresiva.",
   "quote": null,
-  "storytelling": "# Albóndigas Mixtas en Tomate (T.Straker) — Storytelling\n\nHay algo profundamente honesto en unas albóndigas en salsa de tomate. Es un plato que existe en todas las cocinas del Mediterráneo — desde las polpette italianas hasta las kofta del Levante — porque la combinación de carne picada, tomate cocido y pan es un lenguaje universal del confort.\n\nLas de Straker son directas: cerdo y ternera mezclados, especiados con delicadeza, cocinados en una salsa de tomate que ha tenido tiempo de perder su acidez y convertirse en algo dulce y profundo. No buscan sorprender — buscan satisfacer. Y lo consiguen con una consistencia que las hace ideales para producción en volumen: se forman con antelación, se cocinan en lote, regeneran sin perder textura.\n\nEl pan tostado sin corteza es el detalle que Straker añade como guiño británico — el pan para mojar, para arrastrar la salsa del fondo del plato. En ATTENYA lo adaptamos quitando la corteza dura para nuestros comensales, manteniendo solo la miga tostada que absorbe la salsa como una esponja dorada.\n\nEs un plato que los residentes alemanes reconocen inmediatamente — las Frikadellen con tomate son parte de su memoria gustativa — pero con un acabado mediterráneo que eleva el conjunto. Comida de casa hecha con criterio de restaurante.",
+  "storytelling": "# Albóndigas Mixtas en Tomate (T.Straker) — Storytelling\n\nHay algo profundamente honesto en unas albóndigas en salsa de tomate. Es un plato que existe en todas las cocinas del Mediterráneo — desde las polpette italianas hasta las kofta del Levante — porque la combinación de carne picada, tomate cocido y pan es un lenguaje universal del confort.\n\nLas de Straker son directas: cerdo y ternera mezclados, especiados con delicadeza, cocinados en una salsa de tomate que ha tenido tiempo de perder su acidez y convertirse en algo dulce y profundo. No buscan sorprender — buscan satisfacer. Y lo consiguen con una consistencia que las hace ideales para producción en volumen: se forman con antelación, se cocinan en lote, regeneran sin perder textura.\n\nEl pan tostado sin corteza es el detalle que Straker añade como guiño británico — el pan para mojar, para arrastrar la salsa del fondo del plato. En ATTENYA lo adaptamos quitando la corteza dura para nuestros comensales, manteniendo solo la miga tostada que absorbe la salsa como una esponja dorada.\n\nEs un plato que los residentes alemanes reconocen inmediatamente — las Frikadellen con tomate son parte de su memoria gustativa — pero con un acabado mediterráneo que eleva el conjunto. Comida de casa hecha con criterio de restaurante.\n\n## Relaciones\n\n- [[Albondigas_Mixtas_Tomate_Plato|Receta principal: Albondigas Mixtas Tomate Plato]]",
   "componentes": [
     {
       "role": "principal",
       "id": "Albondigas_Mixtas_Tomate_Straker"
+    },
+    {
+      "role": "acompanamiento",
+      "id": "Pan tostado sin corteza (servicio)"
     }
   ]
 }
