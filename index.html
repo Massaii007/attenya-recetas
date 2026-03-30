@@ -2949,7 +2949,15 @@ document.getElementById("search").addEventListener("input", e => { state.search 
    p1 = menuData (newest), p2 = menuData_prev (oldest)
    Independent of actual/anterior detection in catalog buttons.
    ============================================================ */
-var currentPeriodo = 'p1';
+var currentPeriodo = (function() {
+  var today = new Date().toISOString().split('T')[0];
+  var mdLast = menuData.dias[menuData.dias.length - 1].fecha;
+  var pvLast = menuData_prev.dias[menuData_prev.dias.length - 1].fecha;
+  // If today falls within _prev range, show _prev first
+  var pvFirst = menuData_prev.dias[0].fecha;
+  if (today >= pvFirst && today <= pvLast) return 'p2';
+  return 'p1';
+})();
 
 function getMenuData() { return currentPeriodo === 'p1' ? menuData : menuData_prev; }
 function getMiseData() { return currentPeriodo === 'p1' ? miseData : miseData_prev; }
@@ -3057,6 +3065,9 @@ async function init() {
   /* Populate top periodo tabs with dates from data */
   document.getElementById('tab-p1').textContent = menuData.periodo;
   document.getElementById('tab-p2').textContent = menuData_prev.periodo;
+  
+  /* Auto-select correct tab based on date */
+  switchPeriodo(currentPeriodo);
   
   /* Expand periodo IDs with components from assembled dishes */
   await expandPeriodoIds();
