@@ -2544,15 +2544,17 @@ function togglePeriodo(which) {
 }
 
 function renderPeriodoBtns() {
+  var actualLabel = window._actualBtnLabel || 'actual';
+  var anteriorLabel = window._anteriorBtnLabel || 'anterior';
   const btnActual = document.getElementById("periodo-btn-actual");
   const btnAnterior = document.getElementById("periodo-btn-anterior");
   if (btnActual) {
     btnActual.className = "cat-btn" + (state.periodo === 'actual' ? " active" : "");
-    btnActual.textContent = state.periodo === 'actual' ? "✦ Periodo actual (" + periodoIds_actual.size + ")" : "✦ Periodo actual";
+    btnActual.textContent = state.periodo === 'actual' ? "✦ Periodo " + actualLabel + " (" + periodoIds_actual.size + ")" : "✦ Periodo " + actualLabel;
   }
   if (btnAnterior) {
     btnAnterior.className = "cat-btn" + (state.periodo === 'anterior' ? " active" : "");
-    btnAnterior.textContent = state.periodo === 'anterior' ? "✦ Periodo " + (window._p2Label||"anterior") + " (" + periodoIds_anterior.size + ")" : "✦ Periodo " + (window._p2Label||"anterior");
+    btnAnterior.textContent = state.periodo === 'anterior' ? "✦ Periodo " + anteriorLabel + " (" + periodoIds_anterior.size + ")" : "✦ Periodo " + anteriorLabel;
   }
 }
 
@@ -3072,6 +3074,12 @@ async function init() {
   if (btnAnterior) { var otherLabel = currentPeriodo === 'p1' ? p2Label : p1Label; btnAnterior.textContent = '✦ Periodo ' + otherLabel; }
   
   window._p1Label = p1Label; window._p2Label = p2Label;
+  // Labels for catalog periodo filter buttons
+  // periodoActualData is always labeled 'actual'
+  window._actualBtnLabel = 'actual';
+  // periodoAnteriorData: check if it's past or future relative to today
+  var antFirst = periodoAnteriorData.dias[0].fecha;
+  window._anteriorBtnLabel = antFirst > today ? 'siguiente' : 'anterior';
   switchPeriodo(currentPeriodo);
   
   /* Expand periodo IDs with components from assembled dishes */
