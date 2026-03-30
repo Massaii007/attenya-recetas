@@ -266,7 +266,7 @@ body { background: #1a1612; color: #e8dfd4; font-family: 'Cormorant Garamond', G
     <div class="cats" id="cats"></div>
     <div style="padding:8px 0 12px;border-bottom:1px solid #2a241e;display:flex;gap:8px;flex-wrap:wrap;">
       <button class="cat-btn" id="periodo-btn-actual" onclick="togglePeriodo('actual')">✦ Periodo actual</button>
-      <button class="cat-btn" id="periodo-btn-anterior" onclick="togglePeriodo('anterior')">✦ Periodo anterior</button>
+      <button class="cat-btn" id="periodo-btn-anterior" onclick="togglePeriodo('anterior')">✦ Periodo</button>
     </div>
     <div class="subs" id="subs"></div>
     <div class="results-count" id="results-count"></div>
@@ -2552,7 +2552,7 @@ function renderPeriodoBtns() {
   }
   if (btnAnterior) {
     btnAnterior.className = "cat-btn" + (state.periodo === 'anterior' ? " active" : "");
-    btnAnterior.textContent = state.periodo === 'anterior' ? "✦ Periodo anterior (" + periodoIds_anterior.size + ")" : "✦ Periodo anterior";
+    btnAnterior.textContent = state.periodo === 'anterior' ? "✦ Periodo " + (window._p2Label||"anterior") + " (" + periodoIds_anterior.size + ")" : "✦ Periodo " + (window._p2Label||"anterior");
   }
 }
 
@@ -3071,6 +3071,7 @@ async function init() {
   var btnAnterior = document.getElementById('periodo-btn-anterior');
   if (btnAnterior) { var otherLabel = currentPeriodo === 'p1' ? p2Label : p1Label; btnAnterior.textContent = '✦ Periodo ' + otherLabel; }
   
+  window._p1Label = p1Label; window._p2Label = p2Label;
   switchPeriodo(currentPeriodo);
   
   /* Expand periodo IDs with components from assembled dishes */
