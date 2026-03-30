@@ -3066,6 +3066,35 @@ async function init() {
   document.getElementById('tab-p1').textContent = menuData.periodo;
   document.getElementById('tab-p2').textContent = menuData_prev.periodo;
   
+  /* Determine labels: actual/anterior/siguiente based on date */
+  var today = new Date().toISOString().split('T')[0];
+  var mdFirst = menuData.dias[0].fecha;
+  var mdLast = menuData.dias[menuData.dias.length - 1].fecha;
+  var pvFirst = menuData_prev.dias[0].fecha;
+  var pvLast = menuData_prev.dias[menuData_prev.dias.length - 1].fecha;
+  
+  var p1Label, p2Label;
+  if (today >= mdFirst && today <= mdLast) {
+    p1Label = 'actual'; p2Label = pvFirst > today ? 'siguiente' : 'anterior';
+  } else if (today >= pvFirst && today <= pvLast) {
+    p2Label = 'actual'; p1Label = mdFirst > today ? 'siguiente' : 'anterior';
+  } else {
+    p1Label = mdFirst > pvFirst ? 'siguiente' : 'anterior';
+    p2Label = pvFirst > mdFirst ? 'siguiente' : 'anterior';
+  }
+  
+  document.getElementById('tab-p1').textContent = menuData.periodo + ' (' + p1Label + ')';
+  document.getElementById('tab-p2').textContent = menuData_prev.periodo + ' (' + p2Label + ')';
+  
+  /* Update catalog periodo buttons too */
+  var btnActual = document.getElementById('periodo-btn-actual');
+  var btnAnterior = document.getElementById('periodo-btn-anterior');
+  if (btnActual) btnActual.textContent = '✦ Periodo ' + (currentPeriodo === 'p1' ? p1Label : p2Label);
+  if (btnAnterior) {
+    var otherLabel = currentPeriodo === 'p1' ? p2Label : p1Label;
+    btnAnterior.textContent = '✦ Periodo ' + otherLabel;
+  }
+  
   /* Auto-select correct tab based on date */
   switchPeriodo(currentPeriodo);
   
