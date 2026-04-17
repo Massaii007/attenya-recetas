@@ -2896,10 +2896,15 @@ async function init() {
   
   var today = new Date().toISOString().split('T')[0];
   var mdFirst = menuData.dias[0].fecha;
+  var mdLast = menuData.dias[menuData.dias.length - 1].fecha;
   var pvFirst = menuData_prev.dias[0].fecha;
   var pvLast = menuData_prev.dias[menuData_prev.dias.length - 1].fecha;
-  var p1Label = (today >= mdFirst) ? 'actual' : 'siguiente';
-  var p2Label = (today >= pvFirst && today <= pvLast) ? 'actual' : 'anterior';
+  var p1Label = (today >= mdFirst && today <= mdLast) ? 'actual'
+              : (today < mdFirst) ? 'siguiente'
+              : 'anterior';
+  var p2Label = (today >= pvFirst && today <= pvLast) ? 'actual'
+              : (today < pvFirst) ? 'siguiente'
+              : 'anterior';
   document.getElementById('tab-p1').textContent = menuData.periodo + ' (' + p1Label + ')';
   document.getElementById('tab-p2').textContent = menuData_prev.periodo + ' (' + p2Label + ')';
   var btnAnterior = document.getElementById('periodo-btn-anterior');
