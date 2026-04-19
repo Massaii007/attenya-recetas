@@ -1359,7 +1359,120 @@ const menuData = {
 
 const miseData = [];
 
-const comprasData = [];
+const comprasData = [
+  {
+    lista: 1,
+    titulo: "ENTREGA ÚNICA — Pack 2 días (Lunes 20 + Martes 21 Abril)",
+    entrega: "Pedido relámpago domingo noche / lunes mañana D-0",
+    cubre: "L20 salmón post-excesos · M21 día canario (Conejo Salmorejo Chicharrero, Paula Carballo)",
+    secciones: [
+      {
+        s: "YA EN CÁMARAS (NO COMPRAR)",
+        items: [
+          { p: "Salmón fresco (lomos)", c: "7 kg", n: "L20 principal — usar 4,4 kg útil" },
+          { p: "Conejo despiezado con cabeza", c: "8,6 kg", n: "M21 principal — marinar 24h D-1" },
+          { p: "Papa negra canaria", c: "8 kg", n: "M21 papas arrugadas (~5 kg) + sobrante menú canario mié+" }
+        ]
+      },
+      {
+        s: "Frutería / Verduras",
+        items: [
+          { p: "Tomate maduro en rama o pera", c: "4 kg", n: "MUY maduro. M21 entrante Antonio — Tenerife si posible, D-1 mín" },
+          { p: "Pepino", c: "3,2 kg (~13 uds)", n: "L20 ens. sueca (2,5 kg) + L20 raita (625 g)" },
+          { p: "Remolacha cocida", c: "300 g", n: "L20 ens. sueca — bote o fresca ya cocida" },
+          { p: "Espinacas frescas baby", c: "2,5 kg", n: "L20 guarnición — sin tallos gruesos" },
+          { p: "Patata waxy (Charlotte)", c: "5 kg", n: "L20 patatas vapor — NO harinosa" },
+          { p: "Calabacín firme", c: "3 kg", n: "L20 cena crema" },
+          { p: "Cebolla", c: "3,5 kg (~18 uds)", n: "L20 crema (18) + M21 guiso (400g)" },
+          { p: "Naranja sanguina", c: "3 kg (~12 uds)", n: "L20 sorbete — 1,25 L zumo" },
+          { p: "Limón", c: "16 uds", n: "Crema (6) + raita (6) + salmón (2) + tomate-queso (2)" },
+          { p: "Lima", c: "10 uds", n: "M21 postre plátano-lima — ralladura + zumo" },
+          { p: "Plátano canario", c: "25 uds", n: "M21 postre — MADUROS pero firmes" },
+          { p: "Pimiento verde", c: "1 ud pequeño", n: "M21 mojo verde" }
+        ]
+      },
+      {
+        s: "Hierbas frescas (críticas)",
+        items: [
+          { p: "Eneldo fresco", c: "60 g (~2 manojos)", n: "L20 ens. sueca (40g) + salmón (20g) — eje nórdico" },
+          { p: "Perejil fresco", c: "60 g", n: "M21 tomate (40g) + patatas (4g) + mojo (15g)" },
+          { p: "Menta fresca", c: "30 g", n: "L20 raita" },
+          { p: "Albahaca fresca", c: "180 g", n: "L20 cena crema — CANTIDAD ALTA, verificar" },
+          { p: "Cilantro fresco", c: "150 g", n: "M21 mojo verde — hojas y tallos tiernos" },
+          { p: "Tomillo fresco", c: "8 g (2-3 ramas)", n: "M21 guiso conejo" },
+          { p: "Laurel (fresco o seco)", c: "4 hojas", n: "M21 guiso conejo" },
+          { p: "Cebollino fresco", c: "40 g", n: "L20 patatas vapor — brunoise fina" }
+        ]
+      },
+      {
+        s: "Quesería / Lácteos",
+        items: [
+          { p: "Queso fresco cabra majorero (Maxorata)", c: "1,1 kg", n: "CRÍTICO DOP MAJORERO FRESCO — M21 entrante Antonio" },
+          { p: "Yogur natural (griego preferible)", c: "1,3 kg", n: "L20 raita" },
+          { p: "Queso surtido Abendbrot", c: "800 g", n: "M21 cena — emmental/gouda/similar" },
+          { p: "Mantequilla", c: "250 g", n: "L20 cena (pan)" }
+        ]
+      },
+      {
+        s: "Carnicería / Charcutería",
+        items: [
+          { p: "Fiambre surtido Abendbrot", c: "~1 kg", n: "M21 cena — jamón cocido + chorizo suave + fiambres ligeros" }
+        ]
+      },
+      {
+        s: "Panadería",
+        items: [
+          { p: "Pan rústico del día anterior", c: "500 g", n: "CRÍTICO M21 majado — miga densa. Reservar desde sábado/domingo. Si no hay: pan lunes en horno 80°C 20 min" },
+          { p: "Pan fresco (para cenas)", c: "2 piezas grandes", n: "L20 cena + M21 Abendbrot — normal o masa madre" },
+          { p: "Knäckebröd sueco (opcional)", c: "25 uds", n: "L20 acompañamiento ens. sueca — omitible" }
+        ]
+      },
+      {
+        s: "Especias críticas",
+        items: [
+          { p: "⚡ Pimienta palmera semi-seca", c: "80 g", n: "ALMA M21 conejo. Paula confirma. Hidratar 30 min agua tibia, reservar 100 ml del agua" },
+          { p: "Pimentón dulce", c: "40 g", n: "Marinada conejo + mojo rojo" },
+          { p: "Pimentón dulce ahumado", c: "10 g", n: "Marinada conejo" },
+          { p: "Comino molido", c: "35 g", n: "Marinada + mojos + raita" },
+          { p: "Orégano seco", c: "10 g", n: "Marinada conejo" },
+          { p: "Cayena molida", c: "3 g", n: "Marinada — MÍNIMA (perfil senior)" },
+          { p: "Nuez moscada entera", c: "1 ud", n: "L20 espinacas — rallar fresca" },
+          { p: "Pimienta blanca molida", c: "3 g", n: "L20 salmón — NO negra" },
+          { p: "Semillas sésamo o hinojo", c: "25 g", n: "L20 ens. sueca — sésamo negro si posible" }
+        ]
+      },
+      {
+        s: "Sal / Azúcar / Endulzantes",
+        items: [
+          { p: "Sal gruesa marina", c: "500 g", n: "M21 papas arrugadas (350g) + varios — costra blanca tradicional" },
+          { p: "Sal en escamas (Maldon)", c: "100 g", n: "M21 entrante Antonio — acabado" },
+          { p: "Sal fina", c: "verificar stock", n: "Múltiples usos" },
+          { p: "Azúcar blanco", c: "1,1 kg", n: "L20 sorbete (440g) + M21 plátano lima (625g)" },
+          { p: "Glucosa líquida", c: "250 g", n: "CRÍTICA L20 sorbete — sin ella cristaliza. Tienda pastelería pro" },
+          { p: "Miel suave", c: "60 g", n: "L20 ens. sueca (marinada pepino)" }
+        ]
+      },
+      {
+        s: "Aceites / Vinagres / Vinos",
+        items: [
+          { p: "AOVE virgen extra", c: "~2,5 L", n: "Múltiples usos (mojos 1L + crema 600ml + ensaladas 260ml + conejo 500ml). Verificar stock" },
+          { p: "Vinagre vino blanco", c: "500 ml", n: "Ens. sueca + marinada conejo + mojos" },
+          { p: "Vinagre de Jerez DOP", c: "100 ml", n: "CRÍTICO M21 entrante Antonio — reserva o añada" },
+          { p: "Vinagre manzana", c: "50 ml", n: "M21 marinada conejo — suaviza acidez" },
+          { p: "Vino blanco seco canario", c: "400 ml (1 botella)", n: "M21 guiso — listán blanco o verdejo canario" }
+        ]
+      },
+      {
+        s: "Conservas / Caldo / Otros",
+        items: [
+          { p: "Caldo de ave ligero", c: "6,8 L", n: "L20 crema (6L) + M21 guiso (800ml). Producir fresco D-1 o bricks calidad" },
+          { p: "Pepinillos en vinagre", c: "1 bote", n: "M21 cena Abendbrot" },
+          { p: "Fruta variada Abendbrot", c: "2 kg", n: "M21 cena — uvas, manzana, pera" }
+        ]
+      }
+    ]
+  }
+];
 
 
 var periodoActualData, periodoAnteriorData;
