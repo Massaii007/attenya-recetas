@@ -2150,8 +2150,11 @@ async function downloadDayPack(dayIndex) {
   var day = md.dias[dayIndex];
   if (!day) return;
 
-  /* Collect all recipe IDs for this day */
-  var ids = [day.entrante, day.principal, day.guarnicion, day.postre].filter(Boolean);
+  /* Collect all recipe IDs for this day — extract .id from {n,id} objects */
+  var rawItems = [day.entrante, day.principal, day.guarnicion, day.postre, day.cena].filter(Boolean);
+  var ids = rawItems
+    .map(function(x) { return (x && typeof x === 'object' && x.id) ? x.id : null; })
+    .filter(Boolean);
 
   /* Expand components: for each id, fetch its JSON and add component ids */
   var expanded = [];
