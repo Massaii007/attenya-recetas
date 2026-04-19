@@ -1,0 +1,25 @@
+{
+  "nombre": "Salmón al Horno con Raita de Pepino, Espinacas y Patatas al Vapor",
+  "fuente": "",
+  "pax": "25",
+  "time_total": "50 min (ensamblaje 15 min)",
+  "technique": "",
+  "protein": "Pescado azul",
+  "allergens": "Pescado, lácteos (raita)",
+  "difficulty": "Baja",
+  "ingredients": "| Ingrediente | Cantidad | Notas |\n|---|---|---|\n| Salmón al Horno | 25 porciones | 150-180 g/pax, 52-54 °C centro |\n| Raita de Pepino | ~1,75 kg | 70 g/pax, servir fría |\n| Espinacas Salteadas | ~3 kg cocidas | 120 g/pax, calientes |\n| Patatas Vapor Horno | ~4,5 kg | 180 g/pax, calientes |\n| Eneldo fresco | c/s | acabado, 15 g |\n| Ralladura limón | c/s | acabado, 2 limones |",
+  "procedure": "1. **Raita (-2 h):** pepino rallado y escurrido, yogur frío, menta picada. Mezclar y reservar en cámara — mejora con reposo. (véase componente: [[Raita_Pepino_Caldesi]])\n2. **Patatas al vapor (-50 min):** lavadas, cuarteadas, en GN perforada. Vapor combinado 100-110 °C, 35-45 min. (véase componente: [[Patatas_Vapor_Horno]])\n3. **Espinacas (-20 min):** lavadas, escurridas, listas para salteado rápido. (véase componente: [[Espinacas_Salteadas]])\n4. **Salmón (-20 min):** lomos limpios pinzados, sazonados, reposando. (véase componente: [[Salmon_Horno_Convotherm_Mixto]])\n5. **Plato caliente:** precalentar platos o bandeja de servicio.",
+  "plating": "1. Base: cama de espinacas salteadas desplazada al lado izquierdo del plato (120 g).\n2. Patatas al vapor (3-4 piezas, 180 g) en el lado derecho, brillantes.\n3. Salmón al horno centrado sobre espinacas o entre ambas guarniciones.\n4. Quenelle de raita (70 g, técnica dos cucharas) al lado del salmón — NO encima.\n5. Acabado: pincelada de aceite del salmón, eneldo fresco picado, ralladura de limón muy fina.\n\n**Criterio visual:** tres colores limpios (verde oscuro espinacas, naranja claro salmón, blanco patatas + raita). Composición relajada, sin apilar. Dignidad sin esfuerzo.",
+  "timing": null,
+  "critical_points": "- PC1: **Salmón centro 52-54 °C** — sin compromiso. Sonda en ración de control.\n- PC2: Raita **fría** contra salmón **caliente** — servir la raita justo antes del envío.\n- PC3: Espinacas escurridas — exceso de agua \"lava\" el plato.\n- PC4: Patatas waxy, no harinosas — si no hay, ver [[Patatas_Aplastadas_Straker]] como alternativa.\n- PC5: Sin espinas en salmón — verificación doble pre-horno.",
+  "appcc": "- Salmón: cadena frío <4 °C hasta horno. Servicio >60 °C centro. Regeneración: vapor 80 °C, 4-5 min.\n- Raita: <4 °C siempre. Vida útil 48 h desde elaboración.\n- Espinacas: consumo inmediato post-salteado.\n- Patatas: mantenimiento ≤63 °C máx 2 h.\n- Alérgenos: **pescado, lácteos** (raita).",
+  "senior_adaptation": "- Salmón jugoso, se lamina sin resistencia — sin espinas.\n- Raita aparte → residente dosifica acidez.\n- Espinacas textura suave, sin tallo duro.\n- Patatas vapor (no arrugadas) — sodio moderado (vs papas arrugadas clásicas).\n- Perfil graso controlado: grasa propia del salmón + hilo AOVE en patatas. Sin grasa añadida en salsa (yogur magro).\n\n---\n\n*\"Plato de restablecimiento. Tras fines de semana densos, el salmón al horno con raita refresca, digiere sin drama, y deja al residente listo para el día siguiente. Senior-elegancia sin barroquismo.\"*\n\n---",
+  "quote": null,
+  "storytelling": null,
+  "componentes": [
+    {
+      "role": "id",
+      "id": "Salmon_Horno_Convotherm_Mixto"
+    }
+  ]
+}

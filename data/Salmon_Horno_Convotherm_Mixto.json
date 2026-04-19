@@ -1,0 +1,19 @@
+{
+  "nombre": "Salmón al Horno Convotherm Mixto",
+  "fuente": "",
+  "pax": "25",
+  "time_total": "30 min",
+  "technique": "Horno mixto (convección + vapor)",
+  "protein": "Pescado azul",
+  "allergens": "Pescado",
+  "difficulty": "Baja",
+  "ingredients": "### Proteína principal\n| Ingrediente | Cantidad | Notas |\n|---|---|---|\n| Salmón fresco (lomos) | 4,4 kg | limpio, sin espinas, 175 g/porción en crudo |\n\n### Sazón base\n| Ingrediente | Cantidad | Notas |\n|---|---|---|\n| Aceite de oliva virgen extra | 60 ml | pincelado fino |\n| Sal fina | 20 g | ~4 g/kg, sazón discreta |\n| Pimienta blanca molida | 3 g | suave, no pimienta negra |\n| Piel de limón rallada | 8 g | 2 limones, aromático |\n| Eneldo fresco | 20 g | picado, opcional pero recomendado |",
+  "procedure": "### Mise en Place\n1. Lomos limpios, pinzados (sin espinas — tolerancia cero).\n2. Piel retirada o mantenida según preferencia (con piel retiene mejor forma al hornear).\n3. Porcionar 150-180 g por ración antes de hornear.\n4. Precalentar Convotherm modo mixto 180 °C vapor 30%.\n5. GN 1/1 honda con papel sulfurizado (evita pegado y facilita extracción).\n\n### Fase 1 — Sazón (5 min)\n1. Disponer lomos en GN sin solapar, piel abajo (si conservada).\n2. Pincelar fino con AOVE (NO bañar).\n3. Sazonar con sal, pimienta blanca, ralladura de limón.\n4. Espolvorear eneldo picado por encima.\n5. Reposar 5 min a temperatura ambiente antes de hornear.\n\n### Fase 2 — Horneado Convotherm mixto (12-14 min)\n1. Introducir GN en Convotherm precalentado 180 °C mixto vapor 30%.\n2. Hornear 12 min para lomos 150 g, 14 min para 180 g.\n3. Temperatura interna objetivo: **52-54 °C** (centro rosado translúcido, jugoso).\n4. NO abrir puerta durante la cocción — el vapor mantiene jugosidad.\n5. Usar sonda en ración de control para validar.\n\n### Fase 3 — Reposo y servicio (3 min)\n1. Sacar GN del horno.\n2. Reposar 3 min cubierto con papel aluminio (inercia llega a 55-56 °C centro).\n3. Servir inmediatamente o mantener a 63 °C máx. hasta servicio.",
+  "plating": "1. Servir lomo centrado en plato con salsa fresca (raita, sauce verte, vinagreta cítrica).\n2. Salsa **aparte** o napada ligeramente — no cubrir el lomo.\n3. Acompañar con guarnición vegetal + hidrato (ver plato ensamblado).\n4. Toque final: eneldo fresco o microgreens.",
+  "timing": null,
+  "critical_points": "- PC1: **Temperatura interna 52-54 °C** — NO sobrepasar 56 °C (seca el pescado).\n- PC2: Vapor 30% mixto — menos vapor reseca, más vapor pocha (pierde textura).\n- PC3: Sin espinas — verificar pinzado ANTES de hornear (tolerancia cero senior).\n- PC4: No bañar en aceite — pincelado fino basta (perfil limpio post-excesos).\n- PC5: Reposo 3 min obligatorio — la inercia del Convotherm sigue cocinando.",
+  "appcc": "- Temperatura centro servicio: ≥60 °C (la inercia + mantenimiento cubre).\n- Mantenimiento: máx. 63 °C (baño María o Convotherm en mantenimiento).\n- Regeneración 24 h: vapor suave 80 °C 4-5 min (NUNCA recalentar agresivo).\n- Cadena frío pre-cocción: <4 °C hasta horno.\n- Alérgenos: **pescado**.",
+  "senior_adaptation": "- Textura tierna, se lamina con tenedor — masticación mínima.\n- Sin glaseado dulce ni salsa napante pesada — salsa fresca aparte permite al residente dosificar.\n- Sal discreta (4 g/kg) — cumple perfil bajo sodio.\n- Piel retirada en plato (retener en cocción solo si facilita integridad del lomo).\n- Sin espinas — protocolo absoluto.",
+  "quote": null,
+  "storytelling": null
+}

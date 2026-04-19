@@ -1,0 +1,25 @@
+{
+  "nombre": "Conejo en Salmorejo Chicharrero con Papas Arrugadas y Mojo Verde",
+  "fuente": "",
+  "pax": "25",
+  "time_total": "24 h marinado + 2 h elaboración",
+  "technique": "",
+  "protein": "Carne blanca",
+  "allergens": "Gluten (pan frito), sulfitos (vinagre marinada)",
+  "difficulty": "Media-Alta",
+  "ingredients": "| Ingrediente | Cantidad | Notas |\n|---|---|---|\n| Conejo en Salmorejo guisado | 25 raciones | 1-2 piezas/pax + 120 ml salsa |\n| Papas Arrugadas Canarias | ~4,5 kg cocinadas | 200 g/pax, calientes |\n| Mojo Verde | ~500 ml | 20 ml/pax, frío-templado aparte |\n| Perejil fresco picado | 15 g | acabado |\n| Cabezas fritas | 5-6 | bandeja central de mesa |",
+  "procedure": "### D-1 (24 h antes)\n1. **Marinada conejo** — producir [[Salmorejo_Canario]] y marinar las piezas de conejo 24 h en cámara. Reservar cabezas aparte (no marinar). (véase componente: [[Conejo_Salmorejo_Chicharrero]])\n\n### Día D — mañana servicio (arrancar -2 h 30 min)\n2. **Pimienta palmera** — si seca, hidratar 30 min. Preparar majado base en mortero. (véase componente: [[Conejo_Salmorejo_Chicharrero]])\n3. **Papas arrugadas** — lavar, seleccionar calibre 4-5 cm. En olla con agua justa + sal gruesa (70 g/kg). Cocer cuando el conejo esté en su última media hora. (véase componente: [[Papas_Arrugadas_Canarias]])\n4. **Mojo verde** — preparar 2 h antes o D-1, reposar en frío. (véase componente: [[Mojos_Canarios]])\n5. **Platos calientes** — precalentar.",
+  "plating": "1. **Plato individual:** 1-2 piezas de conejo con hueso, napadas con salsa densa (120 ml).\n2. Papas arrugadas (3-4 piezas, 200 g) al lado — no mezclar con la salsa, que el residente moje.\n3. Pocillo individual de mojo verde (20 ml).\n4. Perejil picado sobre el conejo al envío.\n5. **Bandeja central comedor:** cabezas fritas con medio limón y perejil, como guiño cultural.\n\n**Criterio visual:** rusticidad elegante. Colores: rojizo-terroso (salsa salmorejo), blanco-salino (papas), verde intenso (mojo). Ningún intento de \"modernizar\" — se presenta como es, y vale.",
+  "timing": null,
+  "critical_points": "- PC1: **Marinada 24 h, no más** — acidez \"cuece\" la carne.\n- PC2: **Pimienta palmera real** (fresca o seca hidratada) — no pimentón comercial.\n- PC3: **Cabeza NO se machaca** — aporta al aceite, no a la salsa (regla Paula).\n- PC4: **Pan frito va al mortero**, majado rústico, no puré.\n- PC5: **Guiso a fuego suave**, nunca hervor fuerte — endurece el conejo.\n- PC6: **Papas arrugadas**: tamaño uniforme 4-5 cm, no pelar, no tapar, sal cristaliza en superficie.\n- PC7: Servicio simultáneo conejo (caliente) + papas (calientes) + mojo (templado-frío).",
+  "appcc": "- Marinada: <4 °C, 24 h máx.\n- Fritura inicial: aceite 170-180 °C.\n- Guiso: hervor suave, control temperatura ~85-90 °C en caldero.\n- Servicio: >65 °C conejo, >65 °C papas, mojo <15 °C.\n- Regeneración: vapor 85 °C 15 min. NO microondas.\n- Alérgenos: **gluten** (pan frito en la salsa), **sulfitos** (vinagre marinada), **frutos secos** (si el mojo lleva almendra — verificar receta mojo usada).",
+  "senior_adaptation": "- **Carne tierna garantizada** por guiso prolongado fuego suave.\n- **Sin huesos pequeños** en plato individual — reservar para caldo.\n- **Mojo aparte** — dosificación individual.\n- **Cabezas en bandeja central** — opción cultural, no obligación digestiva.\n- **Picante controlado** — pimienta palmera aporta aroma más que picor agresivo.\n- **Papas arrugadas sodio:** residentes con restricción severa → servir con menos costra o pelar parcialmente al emplatar.\n- **Pan en la salsa ya hidratado** — sin tropiezos duros.\n\n---",
+  "quote": null,
+  "storytelling": null,
+  "componentes": [
+    {
+      "role": "id",
+      "id": "Conejo_Salmorejo_Chicharrero"
+    }
+  ]
+}
