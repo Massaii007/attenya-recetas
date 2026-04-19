@@ -1357,7 +1357,60 @@ const menuData = {
 };
 
 
-const miseData = [];
+const miseData = [
+  {
+    fecha: "2026-04-20",
+    ds: "Lunes 20/04",
+    tipo: "normal",
+    titulo: "Salmón al Horno + arranque 24h Conejo M21",
+    carga: "Media-Alta",
+    tareas: [
+      { h: "7:30", t: "CONEJO: trocear 8,6 kg en piezas ración. Reservar cabezas aparte (no marinar).", tipo: "anticipacion", para: "Mar 21" },
+      { h: "7:45", t: "Elaborar Salmorejo Canario (marinada). Cubrir conejo. Refrigerar 24h. Girar a las 12h.", tipo: "anticipacion", para: "Mar 21" },
+      { h: "8:00", t: "Pimienta palmera semi-seca: hidratar 30 min agua tibia. Reservar pulpa + 100 ml agua.", tipo: "anticipacion", para: "Mar 21" },
+      { h: "8:15", t: "Mojo Verde: procesar cilantro + ajo + comino + vinagre + AOVE en hilo. Reposar frío 2h+.", tipo: "anticipacion", para: "Mar 21" },
+      { h: "8:30", t: "Raita Pepino: rallar + escurrir pepino 10 min. Mezclar yogur + comino + menta + limón. Refrigerar.", tipo: "servicio" },
+      { h: "9:00", t: "Ens. Sueca Pepino: mandolina 2-3 mm, marinada vinagre + miel + sal. Macerar 15-30 min.", tipo: "servicio" },
+      { h: "9:30", t: "Patatas Vapor Horno: waxy en cuartos. Convotherm 100-110°C vapor combinado 35-45 min.", tipo: "servicio" },
+      { h: "10:00", t: "Sorbete Naranja Sanguina: almíbar azúcar+glucosa+agua → frío → zumo 1,25L → heladera.", tipo: "servicio" },
+      { h: "10:30", t: "Espinacas: lavar 2,5 kg, centrifugar. Ajo laminado. Reservar para salteado último minuto.", tipo: "servicio" },
+      { h: "11:00", t: "Salmón: lomos pinzados (sin espinas). Porcionar 150-180 g. Sazón: AOVE + sal + pimienta blanca + ralladura limón + eneldo. Reposo 5 min.", tipo: "servicio" },
+      { h: "11:15", t: "SALMÓN AL HORNO: Convotherm 180°C mixto vapor 30%, 12-14 min. Centro 52-54°C. Reposo 3 min aluminio.", tipo: "servicio" },
+      { h: "11:20", t: "Espinacas salteado último minuto: AOVE + ajo 30 seg + espinacas 2-3 min. Escurrir bien.", tipo: "servicio" },
+      { h: "11:30", t: "EMPLATADO L20: espinacas + salmón + patatas + quenelle raita (al lado, no encima). Eneldo + ralladura + AOVE + escama.", tipo: "servicio" },
+      { h: "12:00", t: "Crema Calabacín Albahaca (cena): pochar cebolla+ajo, calabacín, caldo, 5 min, triturar con albahaca+limón.", tipo: "servicio" },
+      { h: "13:30", t: "Plátano Lima: jarabe agua+azúcar → frío COMPLETO → ralladura+zumo 10 limas → rodajas plátano 0,3 cm → macerar refrig 1h+.", tipo: "anticipacion", para: "Mar 21" },
+      { h: "14:00", t: "Tomate (ens. Antonio): lavar, escaldar 15 seg si piel gruesa, pelar. Reservar ENTERO frío — NO cortar hoy.", tipo: "anticipacion", para: "Mar 21" },
+      { h: "14:15", t: "Conejo marinada: girar piezas (12h).", tipo: "anticipacion", para: "Mar 21" }
+    ],
+    nota: "Arranque ciclo post-excesos fin de semana. Igino al mando. Conejo marinando desde 7:30 para servicio martes comida."
+  },
+  {
+    fecha: "2026-04-21",
+    ds: "Martes 21/04",
+    tipo: "normal",
+    titulo: "Día Canario — Conejo Salmorejo Chicharrero (Paula Carballo supervisa)",
+    carga: "Alta (compartida Igino + Paula)",
+    tareas: [
+      { h: "7:00", t: "PAULA SUPERVISA arranque conejo — revisión marinada + ajuste pimienta palmera según criterio Paula.", tipo: "servicio" },
+      { h: "7:15", t: "Ens. Antonio mise: queso majorero atemperar 20 min. Perejil picado medio. Ajo brunoise extrafina. Vinagreta jerez (vinagre + sal + pimienta + ajo macerado 3-5 min + AOVE en hilo).", tipo: "servicio" },
+      { h: "7:30", t: "Papas Arrugadas: lavar 5 kg, calibre 4-5 cm. Olla + agua justa + sal gruesa 350 g. Hervor fuerte 25-30 min.", tipo: "servicio" },
+      { h: "7:45", t: "CONEJO — majado base (Paula): mortero con pulpa pimienta palmera + sal gruesa. Añadir ajo + comino + orégano.", tipo: "servicio" },
+      { h: "8:00", t: "CONEJO — fritura (Paula): caldero + 250 ml AOVE. Freír cabezas (partidas) 4-5 min. RETIRAR cabezas a bandeja. Freír 500 g pan rebanadas ambos lados. Retirar.", tipo: "servicio" },
+      { h: "8:20", t: "CONEJO — majado del pan (Paula): pan caliente al mortero sobre majado base. Majar rústico + cucharadas aceite + 50 ml vinagre marinada. Textura espesa granulada.", tipo: "servicio" },
+      { h: "8:30", t: "CONEJO — marcado (Paula): escurrir piezas sin secar, reservar 600-800 ml marinada. Marcar en tandas en mismo caldero 2-3 min/cara. Retirar.", tipo: "servicio" },
+      { h: "8:50", t: "CONEJO — guiso (Paula): pochar cebolla+ajo+laurel+tomillo 8-10 min. Devolver conejo. Desglasar 400 ml vino blanco canario 2-3 min. Marinada + majado + caldo hasta 3/4. Agua hidratación palmera 100 ml. Suave 45-55 min tapado parcial.", tipo: "servicio" },
+      { h: "9:15", t: "Papas arrugadas acabado: escurrir casi toda agua, fuego medio-bajo, agitar circular. Sal cristaliza costra blanca.", tipo: "servicio" },
+      { h: "9:30", t: "Tomate corte: queso majorero dados 2 cm (patrón). Tomate dados 2 cm idénticos. Drenar tomate colador 5-10 min.", tipo: "servicio" },
+      { h: "10:00", t: "Conejo comprobación 30 min: punto sal + acidez. Si ácido: pizca azúcar moreno. Si plano: gotas vinagre.", tipo: "servicio" },
+      { h: "10:30", t: "Conejo fin guiso: retirar laurel+tomillo. Reposar 10 min. Salsa napante densa con pan integrado.", tipo: "servicio" },
+      { h: "11:00", t: "Ens. Antonio montaje AL MOMENTO: mezclar dados tomate+queso con espátula suave. Perejil encima. ALIÑAR al envío (nunca antes). Hilo AOVE + escama sal.", tipo: "servicio" },
+      { h: "11:15", t: "EMPLATADO M21: 1-2 piezas conejo napadas (~120 ml salsa). Papas arrugadas lado. Pocillo mojo verde individual. Perejil. BANDEJA CENTRAL: cabezas fritas + medio limón + perejil.", tipo: "servicio" },
+      { h: "13:00", t: "Cena Abendbrot ligero: pan + fiambre surtido + queso surtido + pepinillos + fruta. Presentación tipo tablero.", tipo: "servicio" }
+    ],
+    nota: "DÍA CANARIO con dignidad. Paula Carballo (25 años ATTENYA, canaria) supervisa receta chicharrera tradicional. Autoridad cultural sobre ajustes."
+  }
+];
 
 const comprasData = [
   {
@@ -1832,7 +1885,7 @@ async function renderDetail() {
    PDF DOWNLOAD — links to pre-generated benchmark PDFs
    ============================================================ */
 async function downloadPDF(id) {
-  const url = 'data/pdf/' + id + '.pdf';
+  const url = 'pdfs/' + id + '.pdf';
   try {
     const res = await fetch(url, {method: 'HEAD'});
     if (res.ok) {
@@ -2081,9 +2134,9 @@ function downloadPeriodoPDF(tipo) {
   };
   var suffix = parseInt(first) + '-' + parseInt(last) + months[mon];
   var paths = {
-    menu: ['data/pdf/Menu_periodo_' + suffix + '.pdf', 'Menu_ATTENYA.pdf'],
-    mise: ['data/pdf/Mise_periodo_' + suffix + '.pdf', 'Mise_en_Place_ATTENYA.pdf'],
-    compras: ['data/pdf/Compras_periodo_' + suffix + '.pdf', 'Compras_ATTENYA.pdf']
+    menu: ['pdfs/Menu_periodo_' + suffix + '.pdf', 'Menu_ATTENYA.pdf'],
+    mise: ['pdfs/Mise_periodo_' + suffix + '.pdf', 'Mise_en_Place_ATTENYA.pdf'],
+    compras: ['pdfs/Compras_periodo_' + suffix + '.pdf', 'Compras_ATTENYA.pdf']
   };
   var p = paths[tipo];
   if (p) downloadFile(p[0], p[1]);
@@ -2123,7 +2176,7 @@ async function downloadDayPack(dayIndex) {
   var found = 0;
   for (var rid of unique) {
     try {
-      var pdfResp = await fetch('data/pdf/' + rid + '.pdf');
+      var pdfResp = await fetch('pdfs/' + rid + '.pdf');
       if (pdfResp.ok) {
         var blob = await pdfResp.blob();
         zip.file(rid + '.pdf', blob);
