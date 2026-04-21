@@ -1,0 +1,19 @@
+{
+  "nombre": "Arroz Basmati",
+  "fuente": "",
+  "pax": "25",
+  "time_total": "30 min",
+  "technique": "Absorción + reposo",
+  "protein": "",
+  "allergens": "Ninguno",
+  "difficulty": "Baja",
+  "ingredients": "| Ingrediente | Cantidad | Notas |\n|---|---|---|\n| Arroz basmati (grano largo) | 1.400 g | variedad de calidad, envejecido si posible |\n| Agua fría | 2.100 ml | ratio 1:1,5 |\n| Sal fina | 14 g | ~1 g por 100 g de arroz |\n| Aceite neutro (girasol u oliva suave) | 30 ml | opcional, para separar granos |\n| Hoja de laurel | 2 uds | opcional, aromatizar suavemente |\n| Cardamomo verde (vaina entera) | 4 uds | opcional, perfil asiático |",
+  "procedure": "### Fase 1 — Mise en Place (5 min)\n1. Medir el arroz.\n2. Lavar en bol con agua fría **3-4 veces** hasta que el agua salga casi clara — retira el almidón superficial (clave para grano suelto).\n3. **Remojar** en agua limpia 15-20 min (hidrata el grano, acorta cocción, grano entero uniforme).\n4. Escurrir bien.\n\n### Fase 2 — Cocción por Absorción (15 min)\n1. En olla amplia con tapa: calentar el aceite a fuego medio (opcional).\n2. Añadir el arroz escurrido, mezclar 1 min para impregnar con aceite.\n3. Añadir agua + sal + laurel + cardamomo (si se usan).\n4. **Llevar a ebullición fuerte sin tapar** — unos 2 min.\n5. Bajar el fuego al mínimo, **tapar** y cocer **12 min sin destapar**.\n6. Retirar del fuego. Mantener tapado **5 min más** para el reposo (crítico — termina la absorción).\n\n### Fase 3 — Separado final\n1. Destapar. Retirar laurel + vainas cardamomo.\n2. **Esponjar con tenedor** (nunca cuchara, no aplastar el grano).\n3. Ajustar sal si necesario.\n4. Servir caliente.",
+  "plating": "- Ración: ~140 g cocinado por persona.\n- Disposición: montoncito lateral, quenelle amplia, o base bajo el pescado (en caso de escabeches).\n- Sin apilar ni comprimir. Grano visible y suelto.",
+  "timing": null,
+  "critical_points": "- PC1: **Lavar hasta agua casi clara** — el almidón superficial es lo que pega los granos.\n- PC2: **Remojo 15-20 min** — no imprescindible pero mejora el rendimiento y la cocción pareja.\n- PC3: **Ratio exacto 1:1,5** (arroz:agua) — más agua = pastoso, menos = duro.\n- PC4: **NO destapar durante cocción** ni reposo — el vapor es clave.\n- PC5: **Reposo 5 min** obligatorio — termina la absorción, granos se separan definitivamente.\n- PC6: **Esponjar con tenedor**, nunca cuchara — aplasta grano y suelta almidón residual.",
+  "appcc": "- Consumo inmediato >63 °C (plato compatible con mantenimiento hasta 2 h).\n- Regeneración: vapor suave o Convotherm 100 °C vapor 10 min. Añadir gotas de agua si reseco. NO microondas (reseca puntos).\n- Cadena frío 48 h máx. post-cocción.\n- Alérgenos: **ninguno**.",
+  "senior_adaptation": "- Textura tierna y suelta — fácil masticación.\n- Sodio moderado (14 g sal / 3,5 kg cocinado ≈ 4 g/kg, controlado).\n- Grano suelto no se apelmaza en plato — evita la \"bola de arroz\" incómoda.\n- Perfume aromático sin picante ni acidez — accesible a todos.\n- Sin gluten, sin lácteos, sin frutos secos — alérgenos cero.\n\n---\n\n*\"El basmati bien hecho es silencio: grano entero, suelto, perfumado, sin protagonismo. Es el escenario donde brilla lo que va encima. Mal hecho es pegajoso y ofensivo.\"*\n\n---",
+  "quote": null,
+  "storytelling": null
+}
