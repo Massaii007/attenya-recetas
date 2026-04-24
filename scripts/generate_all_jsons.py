@@ -77,7 +77,9 @@ def find_storytelling(recipe_dir, recipe_id):
         c = os.path.join(recipe_dir, recipe_id + suffix)
         if os.path.exists(c):
             with open(c, "r", encoding="utf-8") as f:
-                return f.read().strip()
+                text = f.read()
+            # Strip YAML frontmatter (between --- ... ---) if present
+            return after_frontmatter(text).strip()
     return None
 
 def parse_componentes_yaml(raw):
