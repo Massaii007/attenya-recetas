@@ -773,7 +773,8 @@ const recipes = [
   {n:"Escabeche Cítrico Bonito Lemongrass Jengibre Sumac",id:"Escabeche_Citrico_Bonito_Lemongrass_Jengibre_Sumac",c:"Platos",s:"",d:"Escabeche cítrico moderno de bonito con lemongrass, jengibre y sumac sobre arroz basmati — marinado 24h",t:"Escabeche templado",p:"Pescado azul"},
   {n:"Paella Valenciana de Verduras (David)",id:"Paella_Valenciana_Verduras",c:"Platos",s:"",d:"Paella valenciana 100% vegetal con arroz bomba, judía plana, garrofón, alcachofa, azafrán (David lidera)",t:"Paella",p:"-"},
   {n:"Naranjas en Láminas Finas con Canela",id:"Naranjas_Laminas_Canela",c:"Postres",s:"",d:"Naranjas peladas a vivo en láminas finas maceradas en su zumo con canela infusionada (italiano clásico)",t:"Macerado frío",p:"-"},
-  {n:"Panna Cotta Culis Frutos Negros y Oreo",id:"Panna_Cotta_Culis_Frutos_Negros_Oreo",c:"Postres",s:"",d:"Panna cotta con base de Oreo escachada y culis de frutos negros encima (tres capas en vaso transparente)",t:"Cuajado gelatina",p:"-"}
+  {n:"Panna Cotta Culis Frutos Negros y Oreo",id:"Panna_Cotta_Culis_Frutos_Negros_Oreo",c:"Postres",s:"",d:"Panna cotta con base de Oreo escachada y culis de frutos negros encima (tres capas en vaso transparente)",t:"Cuajado gelatina",p:"-"},
+  {n:"Polbo á Feira, Pulpo a la Gallega (David)",id:"Polbo_a_Feira_Pulpo_Gallega",c:"Platos",s:"",d:"Pulpo cocido tradicional gallego sobre cama de patata cocida en el mismo caldo + AOVE + pimentón Vera + sal gorda (David Cacho)",t:"Cocción tradicional",p:"Pescado azul"}
 ];
 /* ============================================================
    MENU DATA — 17-30 Marzo 2026 (ANTERIOR)
@@ -1100,13 +1101,13 @@ const menuData = {
       ds: "Domingo 26/04",
       dc: 5,
       tipo: "normal",
-      prot: "Pescado azul",
+      prot: "Pescado azul (molusco)",
       entrante: { n: "Ens. Remolacha Asada Lentejas Queso Cabra Nueces (Caldesi)", id: "Ensalada_Remolacha_Asada_Lentejas_Queso_Cabra_Nueces_Caldesi" },
-      principal: { n: "Escabeche Cítrico Bonito + Arroz Basmati", id: "Escabeche_Citrico_Bonito_Lemongrass_Jengibre_Sumac" },
-      guarnicion: { n: "Arroz Basmati (integrado)", id: "Arroz_Basmati" },
+      principal: { n: "Polbo á Feira, Pulpo a la Gallega (David)", id: "Polbo_a_Feira_Pulpo_Gallega" },
+      guarnicion: { n: "Patatas integradas (cocidas en caldo del pulpo)", id: null },
       postre: { n: "Fresas al Vinagre", id: "Fresas_Vinagre" },
       cena: "Abendbrot + ensalada fresca",
-      prod: "Escabeche bonito templado (marinado 24h D-1 sáb). Sumac al envío sobre bonito. Cilantro + menta acabado. Panna cotta D-1 noche para lunes."
+      prod: "SUSTITUYE escabeche bonito (proveedor sin bonito). Polbo á feira tradicional David. Pulpo congelado descongelar D-1. Cocción 35-50 min + reposo 15-20 min en caldo. Patata cocida en el mismo caldo del pulpo. Acabado AOVE generoso + sal gorda + pimentón Vera DOP (dulce protagonista + apenas pizca picante senior)."
     },
     {
       fecha: "2026-04-27",
@@ -1235,19 +1236,22 @@ const miseData = [
     fecha: "2026-04-26",
     ds: "Domingo 26/04",
     tipo: "normal",
-    titulo: "Escabeche Cítrico Bonito (templado) + Panna Cotta preparación",
-    carga: "Media",
+    titulo: "Polbo á Feira (David) — sustituye escabeche · Panna Cotta preparación",
+    carga: "Media-Alta (David lidera pulpo)",
     tareas: [
-      { h: "8:00", t: "Ens. Remolacha Asada Lentejas Queso Cabra Nueces: remolacha asada víspera, lentejas cocidas, queso desmigado, nueces tostadas.", tipo: "servicio" },
-      { h: "9:00", t: "ARROZ BASMATI: lavar 1,4 kg 3-4 veces, remojar 15-20 min, escurrir. Absorción con agua 2,1 L + sal + laurel + cardamomo 12 min + reposo 5 min. Esponjar tenedor.", tipo: "servicio" },
-      { h: "10:00", t: "ESCABECHE atemperar: sacar cámara 30-45 min antes (templado 18-20°C).", tipo: "servicio" },
-      { h: "10:30", t: "Fresas Vinagre: cuartos + azúcar + balsámico suave + reposo 15 min.", tipo: "servicio" },
-      { h: "10:45", t: "ESCABECHE montaje: retirar lemongrass + laurel + clavo + pimienta entera. Separar bonito y verduras. Colar líquido.", tipo: "servicio" },
+      { h: "8:00", t: "Pulpo descongelado D-1: revisar (debe estar tierno al tacto). Si fresco vivo: macerar contra superficie dura.", tipo: "servicio" },
+      { h: "8:30", t: "Ens. Remolacha Asada Lentejas Queso Cabra Nueces: remolacha asada víspera, lentejas cocidas, queso desmigado, nueces tostadas, hierbas, aliño.", tipo: "servicio" },
+      { h: "9:00", t: "OLLA ALTA agua hirviendo SIN SAL para pulpo (10 L). Llevar a hervor fuerte.", tipo: "servicio" },
+      { h: "9:15", t: "EL ASUSTO (David): agarrar pulpo por cabeza, sumergir 3 veces en agua hirviendo (sacar entre cada inmersión 1-2 seg), dejar dentro a la 3ª. Cocer fuego fuerte destapado 35-50 min según tamaño.", tipo: "servicio" },
+      { h: "10:00", t: "Verificar punto: palillo en grueso del tentáculo debe entrar SIN resistencia. Apagar fuego. REPOSO 15-20 min en agua de cocción (clave ternura).", tipo: "servicio" },
+      { h: "10:20", t: "Retirar pulpo a bandeja templada (cubrir con paño). EL CALDO ahora es naranja-dorado. Añadir patatas ENTERAS CON PIEL al caldo. Hervir 25-30 min hasta tiernas.", tipo: "servicio" },
+      { h: "10:50", t: "Escurrir patatas, pelar (piel sale fácil), cortar rodajas 4-5 mm. Reservar templadas.", tipo: "servicio" },
+      { h: "11:00", t: "PULPO corte a TIJERA (no cuchillo): tentáculos en rodajas 5-7 mm transversales. Reservar templado.", tipo: "servicio" },
       { h: "11:15", t: "PANNA COTTA preparación: hidratar gelatina 24g, calentar nata 1,5L + leche 500ml + azúcar 300g + vainilla a 70-75°C, disolver gelatina, colar. Base Oreo escachada 25 vasos. Verter panna cotta templada sobre reverso cuchara. Refrigerar.", tipo: "anticipacion", para: "Lun 27" },
-      { h: "11:30", t: "EMPLATADO: arroz base + bonito templado + verduras escabeche + napar líquido + SUMAC acabado + cilantro + menta + hilo AOVE.", tipo: "servicio" },
+      { h: "11:30", t: "EMPLATADO Polbo: plato madera o cerámica oscura. CAMA patata (6-8 rodajas, ~150g). Pulpo distribuido encima. AOVE generoso. Sal gorda pizca. Pimentón Vera DULCE espolvorear (capa visible). Apenas pizca picante. Servir TEMPLADO 50-55°C.", tipo: "servicio" },
       { h: "14:00", t: "Abendbrot + ensalada fresca cena.", tipo: "servicio" }
     ],
-    nota: "Escabeche templado (no frío no caliente). Sumac al envío = firma del plato."
+    nota: "POLBO Á FEIRA sustituye escabeche bonito (proveedor sin bonito). David Cacho lidera técnica gallega. PIMENTÓN VERA DOP imprescindible (dulce protagonista + apenas pizca picante perfil senior). Variante PARMENTIER opcional para residentes con dificultad masticación: puré con leche caliente + mantequilla + nuez moscada como cama en lugar de rodajas."
   },
   {
     fecha: "2026-04-27",
@@ -1394,7 +1398,7 @@ const comprasData = [
     cubre: "d4-d8: Paella, Escabeche, Schnitzel, Lubina, Coliflor",
     secciones: [
       { s: "Pescadería (entregas posteriores)", items: [
-        { p: "Bonito del Norte (lomos limpios)", c: "4,2 kg", n: "SÁB 25 mañana — marinar sábado tarde 24h" },
+        { p: "PULPO ENTERO (preferible congelado o que llegue ya congelado)", c: "5 kg crudo (~2 pulpos 2,5 kg)", n: "SUSTITUYE BONITO. Descongelar D-1 (sáb) en cámara. Cocción tradicional gallega David" },
         { p: "Lubina fresca (filetes ~180g)", c: "5 kg (25 filetes)", n: "MAR 28 mañana — pinzado doble" },
         { p: "Arenques marinados", c: "1 kg", n: "Hoy viernes — Lun 27 cena" }
       ]},
@@ -1405,8 +1409,8 @@ const comprasData = [
         { p: "Pimiento verde italiano", c: "500 g", n: "Paella" },
         { p: "Patata para bistro", c: "6 kg", n: "Solomillo viernes" },
         { p: "Cebolla roja morada", c: "500 g", n: "Arenque + paella opcional" },
-        { p: "Jengibre fresco", c: "300 g", n: "Escabeche 60g + sopa melón + otros" },
-        { p: "Lemongrass fresco", c: "5 tallos", n: "Escabeche — crítico aroma asiático" },
+        { p: "Jengibre fresco", c: "60 g", n: "Sopa melón (toque) + otros — cantidad reducida (escabeche eliminado)" },
+        { p: "PATATA GALLEGA Kennebec o Monalisa", c: "5 kg", n: "SUSTITUYE lemongrass/jengibre del escabeche. Cama del pulpo gallego — entera con piel para cocer en caldo del pulpo" },
         { p: "Chile fresco serrano", c: "2 uds pequeños", n: "Salsa quemada (senior mínimo)" },
         { p: "Remolacha cocida", c: "1 kg", n: "Dom ens + Lun arenque cena" },
         { p: "Lentejas Puy (seco)", c: "1,5 kg", n: "Dom ens + Mar lubina" },
@@ -1442,7 +1446,7 @@ const comprasData = [
       ]},
       { s: "Especias y despensa especializada", items: [
         { p: "Arroz bomba D.O. Valencia", c: "2,5 kg", n: "CRÍTICO paella — variedad imprescindible" },
-        { p: "Arroz basmati", c: "1,5 kg", n: "Domingo base escabeche" },
+        { p: "Arroz basmati (RETENER en stock)", c: "0 — ya no se usa domingo", n: "Receta Arroz Basmati queda en catálogo para usos futuros. Si se compró ya, conservar en seco" },
         { p: "Gelatina hojas (2g/hoja)", c: "30 g (15 hojas)", n: "Panna cotta + margen" },
         { p: "Vainilla vainas frescas", c: "4 uds", n: "Panna cotta 2 + otros" },
         { p: "Miso blanco pasta", c: "500 g", n: "Berenjena miso + sopa miso" },
@@ -1454,11 +1458,12 @@ const comprasData = [
         { p: "Anís estrella", c: "6 uds", n: "Compota manzana" },
         { p: "Clavo entero", c: "5 g", n: "Escabeche bonito" },
         { p: "Pimentón dulce", c: "30 g", n: "Paella + demi-glace" },
+        { p: "⚡ Pimentón de la Vera PICANTE DOP", c: "10 g", n: "CRÍTICO — apenas pizca acabado Polbo á Feira (perfil senior). 3-5 g sobre 25 PAX = imperceptible" },
         { p: "Semillas adormidera", c: "30 g", n: "Mié ens manchego" },
         { p: "Pipas calabaza", c: "100 g", n: "Mar brocolini" },
         { p: "Nueces", c: "300 g", n: "Dom ens remolacha" },
         { p: "Anacardos", c: "200 g", n: "Macedonia crema" },
-        { p: "⚡ Sumac polvo", c: "20 g", n: "CRÍTICO — firma escabeche domingo" },
+        { p: "⚡ Pimentón de la Vera DULCE DOP", c: "50 g", n: "CRÍTICO — firma Polbo á Feira domingo. DOP ahumado característico imprescindible" },
         { p: "Sal gruesa marina", c: "500 g", n: "Papas arrugadas si repite + otros" }
       ]},
       { s: "Otros", items: [
