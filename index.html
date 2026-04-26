@@ -775,271 +775,20 @@ const recipes = [
   {n:"Naranjas en Láminas Finas con Canela",id:"Naranjas_Laminas_Canela",c:"Postres",s:"",d:"Naranjas peladas a vivo en láminas finas maceradas en su zumo con canela infusionada (italiano clásico)",t:"Macerado frío",p:"-"},
   {n:"Panna Cotta Culis Frutos Negros y Oreo",id:"Panna_Cotta_Culis_Frutos_Negros_Oreo",c:"Postres",s:"",d:"Panna cotta con base de Oreo escachada y culis de frutos negros encima (tres capas en vaso transparente)",t:"Cuajado gelatina",p:"-"},
   {n:"Polbo á Feira, Pulpo a la Gallega (David)",id:"Polbo_a_Feira_Pulpo_Gallega",c:"Platos",s:"",d:"Pulpo cocido tradicional gallego sobre cama de patata cocida en el mismo caldo + AOVE + pimentón Vera + sal gorda (David Cacho)",t:"Cocción tradicional",p:"Pescado azul"},
-  {n:"Chucrut Afinado Gourmet",id:"Chucrut_Afinado_Gourmet",c:"Componentes",s:"Guarnición V",d:"Sauerkraut estofado con panceta, manzana Granny Smith y aromáticos centroeuropeos. Acidez elegante, fondo umami",t:"Estofado lento fundición",p:"-"}
+  {n:"Chucrut Afinado Gourmet",id:"Chucrut_Afinado_Gourmet",c:"Componentes",s:"Guarnición V",d:"Sauerkraut estofado con panceta, manzana Granny Smith y aromáticos centroeuropeos. Acidez elegante, fondo umami",t:"Estofado lento fundición",p:"-"},
+  {n:"Sauerbraten + Rotkohl + Kartoffelklöße",id:"Sauerbraten_Rotkohl_Kartoffelklosse",c:"Platos",s:"",d:"Asado de ternera marinado 3 días en escabeche vino tinto+vinagre+especias, estofado lento. Salsa con Lebkuchen alemán. Para residentes alemanes",t:"Marinado + estofado lento",p:"Carne roja"},
+  {n:"Atún a Baja Temperatura con Parmentier de Boniato",id:"Atun_Baja_Temperatura_Parmentier_Boniato",c:"Platos",s:"",d:"Atún rojo sushi-grade sous vide 50°C 30 min sobre parmentier de boniato canario. Elegancia atlantico-canaria",t:"Sous vide Roner",p:"Pescado azul"},
+  {n:"Curry Massaman de Pollo + Arroz Basmati (David)",id:"Curry_Massaman_Pollo",c:"Platos",s:"",d:"Curry tailandés con pasta Massaman comercial, contramuslo deshuesado, leche coco, cacahuetes enteros, especias decorativas. David lidera",t:"Curry tailandés",p:"Carne blanca"},
+  {n:"Rodaballo + Cogollo Brasa + Patatas Vapor (David)",id:"Rodaballo_Cogollo_Brasa_Patatas_Vapor",c:"Platos",s:"",d:"Rodaballo plancha con mantequilla noisette + cogollo Tudela marcado fuerte fundición + patatas vapor horno. David lidera",t:"Plancha + brasa fundición",p:"Pescado blanco"},
+  {n:"Risotto de Setas Portobello",id:"Risotto_Setas_Portobello",c:"Platos",s:"",d:"Risotto Carnaroli mantecato all'onda con portobello salteadas, refuerzo porcini secos. Plato único, mantecatura final parmesano+mantequilla fría",t:"Risotto clásico mantecato",p:"Vegetariano"},
+  {n:"Sauerkraut Casero",id:"Sauerkraut_Casero",c:"Componentes",s:"Base/Salsa",d:"Lactofermentación tradicional col + 2% sal sin yodo en tarro vidrio + lastre. 1-3 semanas a 18-22°C. Materia prima del Chucrut Afinado o consumo directo",t:"Lactofermentación tradicional",p:"-"},
+  {n:"Gurkensalat — Ensalada de Pepino Alemana",id:"Gurkensalat_Ensalada_Pepino_Alemana",c:"Entrantes",s:"",d:"Pepino mandolina 1-2 mm escurrido + smetana + yogur + eneldo abundante + vinagre + azúcar. Clásica de mesa Brotzeit alemana",t:"Macerado en frío",p:"Vegetariano"},
+  {n:"Sorbete de Naranja",id:"Sorbete_Naranja",c:"Postres",s:"",d:"Versión simple del sorbete cítrico — naranjas comunes + glucosa líquida + almíbar. Variante de Sorbete Naranja Sanguina con producto base accesible todo el año",t:"Almíbar + heladera",p:"-"}
 ];
 /* ============================================================
    MENU DATA — 17-30 Marzo 2026 (ANTERIOR)
    ============================================================ */
 const menuData_prev = {
-  periodo: "20-21 Abril 2026",
-  pax: 25,
-  ciclo: "Arranque de ciclo · Pack 2 días · Sin desayunos",
-  chef_free: "—",
-  dias: [
-    {
-      fecha: "2026-04-20",
-      ds: "Lunes 20/04",
-      dc: 1,
-      tipo: "normal",
-      prot: "Pescado azul",
-      entrante: { n: "Ensalada Sueca de Pepino (Caldesi)", id: "Ensalada_Sueca_Pepino_Caldesi" },
-      principal: { n: "Salmón al Horno con Raita de Pepino", id: "Salmon_Horno_Raita_Pepino" },
-      guarnicion: { n: "Integrada (raita + espinacas + patatas vapor)", id: null },
-      postre: { n: "Sorbete Naranja Sanguina", id: "Sorbete_Naranja_Sanguina_Straker" },
-      cena: { n: "Crema de Calabacín Albahaca", id: "Crema_Calabacin_Albahaca_Straker" }, cena_text: " + pan + mantequilla",
-      prod: "Arranque ciclo. Salmón fresco al horno Convotherm mixto 180°C vapor 30%. Técnica post-excesos tras fin de semana denso. Raita aparte, salsa limpia."
-    },
-    {
-      fecha: "2026-04-21",
-      ds: "Martes 21/04",
-      dc: 2,
-      tipo: "normal",
-      prot: "Carne blanca — Día Canario",
-      entrante: { n: "Ensalada de Tomate y Queso (Homenaje a Antonio)", id: "Ensalada_Tomate_Queso_Maxorata_Vinagreta_Jerez" },
-      principal: { n: "Conejo en Salmorejo Chicharrero (Paula Carballo)", id: "Conejo_Salmorejo_Chicharrero_Plato" },
-      guarnicion: { n: "Papas Arrugadas Canarias + Mojo Verde", id: "Papas_Arrugadas_Canarias" },
-      postre: { n: "Plátano con Lima", id: "Platano_Lima" },
-      cena: "Abendbrot ligero — pan + fiambre + queso + fruta",
-      prod: "DÍA CANARIO. Conejo marinado 24h en salmorejo canario. Técnica tinerfeña: fritura cabeza+pan saboriza aceite, pan se maja con pimienta palmera, marcado conejo, guiso lento. Supervisión Paula Carballo (25 años ATTENYA). Cabezas fritas en bandeja central como guiño cultural."
-    }
-  ]
-};
-
-/* ============================================================
-   MISE EN PLACE DATA — 17-30 Marzo 2026 (ACTUAL)
-   ============================================================ */
-const miseData_prev = [
-  {
-    fecha: "2026-04-20",
-    ds: "Lunes 20/04",
-    tipo: "normal",
-    titulo: "Salmón al Horno + arranque 24h Conejo M21",
-    carga: "Media-Alta",
-    tareas: [
-      { h: "7:30", t: "CONEJO: trocear 8,6 kg en piezas ración. Reservar cabezas aparte (no marinar).", tipo: "anticipacion", para: "Mar 21" },
-      { h: "7:45", t: "Elaborar Salmorejo Canario (marinada). Cubrir conejo. Refrigerar 24h. Girar a las 12h.", tipo: "anticipacion", para: "Mar 21" },
-      { h: "8:00", t: "Pimienta palmera semi-seca: hidratar 30 min agua tibia. Reservar pulpa + 100 ml agua.", tipo: "anticipacion", para: "Mar 21" },
-      { h: "8:15", t: "Mojo Verde: procesar cilantro + ajo + comino + vinagre + AOVE en hilo. Reposar frío 2h+.", tipo: "anticipacion", para: "Mar 21" },
-      { h: "8:30", t: "Raita Pepino: rallar + escurrir pepino 10 min. Mezclar yogur + comino + menta + limón. Refrigerar.", tipo: "servicio" },
-      { h: "9:00", t: "Ens. Sueca Pepino: mandolina 2-3 mm, marinada vinagre + miel + sal. Macerar 15-30 min.", tipo: "servicio" },
-      { h: "9:30", t: "Patatas Vapor Horno: waxy en cuartos. Convotherm 100-110°C vapor combinado 35-45 min.", tipo: "servicio" },
-      { h: "10:00", t: "Sorbete Naranja Sanguina: almíbar azúcar+glucosa+agua → frío → zumo 1,25L → heladera.", tipo: "servicio" },
-      { h: "10:30", t: "Espinacas: lavar 2,5 kg, centrifugar. Ajo laminado. Reservar para salteado último minuto.", tipo: "servicio" },
-      { h: "11:00", t: "Salmón: lomos pinzados (sin espinas). Porcionar 150-180 g. Sazón: AOVE + sal + pimienta blanca + ralladura limón + eneldo. Reposo 5 min.", tipo: "servicio" },
-      { h: "11:15", t: "SALMÓN AL HORNO: Convotherm 180°C mixto vapor 30%, 12-14 min. Centro 52-54°C. Reposo 3 min aluminio.", tipo: "servicio" },
-      { h: "11:20", t: "Espinacas salteado último minuto: AOVE + ajo 30 seg + espinacas 2-3 min. Escurrir bien.", tipo: "servicio" },
-      { h: "11:30", t: "EMPLATADO L20: espinacas + salmón + patatas + quenelle raita (al lado, no encima). Eneldo + ralladura + AOVE + escama.", tipo: "servicio" },
-      { h: "12:00", t: "Crema Calabacín Albahaca (cena): pochar cebolla+ajo, calabacín, caldo, 5 min, triturar con albahaca+limón.", tipo: "servicio" },
-      { h: "13:30", t: "Plátano Lima: jarabe agua+azúcar → frío COMPLETO → ralladura+zumo 10 limas → rodajas plátano 0,3 cm → macerar refrig 1h+.", tipo: "anticipacion", para: "Mar 21" },
-      { h: "14:00", t: "Tomate (ens. Antonio): lavar, escaldar 15 seg si piel gruesa, pelar. Reservar ENTERO frío — NO cortar hoy.", tipo: "anticipacion", para: "Mar 21" },
-      { h: "14:15", t: "Conejo marinada: girar piezas (12h).", tipo: "anticipacion", para: "Mar 21" }
-    ],
-    nota: "Arranque ciclo post-excesos fin de semana. Igino al mando. Conejo marinando desde 7:30 para servicio martes comida."
-  },
-  {
-    fecha: "2026-04-21",
-    ds: "Martes 21/04",
-    tipo: "normal",
-    titulo: "Día Canario — Conejo Salmorejo Chicharrero (Paula Carballo supervisa)",
-    carga: "Alta (compartida Igino + Paula)",
-    tareas: [
-      { h: "7:00", t: "PAULA SUPERVISA arranque conejo — revisión marinada + ajuste pimienta palmera según criterio Paula.", tipo: "servicio" },
-      { h: "7:15", t: "Ens. Antonio mise: queso majorero atemperar 20 min. Perejil picado medio. Ajo brunoise extrafina. Vinagreta jerez (vinagre + sal + pimienta + ajo macerado 3-5 min + AOVE en hilo).", tipo: "servicio" },
-      { h: "7:30", t: "Papas Arrugadas: lavar 5 kg, calibre 4-5 cm. Olla + agua justa + sal gruesa 350 g. Hervor fuerte 25-30 min.", tipo: "servicio" },
-      { h: "7:45", t: "CONEJO — majado base (Paula): mortero con pulpa pimienta palmera + sal gruesa. Añadir ajo + comino + orégano.", tipo: "servicio" },
-      { h: "8:00", t: "CONEJO — fritura (Paula): caldero + 250 ml AOVE. Freír cabezas (partidas) 4-5 min. RETIRAR cabezas a bandeja. Freír 500 g pan rebanadas ambos lados. Retirar.", tipo: "servicio" },
-      { h: "8:20", t: "CONEJO — majado del pan (Paula): pan caliente al mortero sobre majado base. Majar rústico + cucharadas aceite + 50 ml vinagre marinada. Textura espesa granulada.", tipo: "servicio" },
-      { h: "8:30", t: "CONEJO — marcado (Paula): escurrir piezas sin secar, reservar 600-800 ml marinada. Marcar en tandas en mismo caldero 2-3 min/cara. Retirar.", tipo: "servicio" },
-      { h: "8:50", t: "CONEJO — guiso (Paula): pochar cebolla+ajo+laurel+tomillo 8-10 min. Devolver conejo. Desglasar 400 ml vino blanco canario 2-3 min. Marinada + majado + caldo hasta 3/4. Agua hidratación palmera 100 ml. Suave 45-55 min tapado parcial.", tipo: "servicio" },
-      { h: "9:15", t: "Papas arrugadas acabado: escurrir casi toda agua, fuego medio-bajo, agitar circular. Sal cristaliza costra blanca.", tipo: "servicio" },
-      { h: "9:30", t: "Tomate corte: queso majorero dados 2 cm (patrón). Tomate dados 2 cm idénticos. Drenar tomate colador 5-10 min.", tipo: "servicio" },
-      { h: "10:00", t: "Conejo comprobación 30 min: punto sal + acidez. Si ácido: pizca azúcar moreno. Si plano: gotas vinagre.", tipo: "servicio" },
-      { h: "10:30", t: "Conejo fin guiso: retirar laurel+tomillo. Reposar 10 min. Salsa napante densa con pan integrado.", tipo: "servicio" },
-      { h: "11:00", t: "Ens. Antonio montaje AL MOMENTO: mezclar dados tomate+queso con espátula suave. Perejil encima. ALIÑAR al envío (nunca antes). Hilo AOVE + escama sal.", tipo: "servicio" },
-      { h: "11:15", t: "EMPLATADO M21: 1-2 piezas conejo napadas (~120 ml salsa). Papas arrugadas lado. Pocillo mojo verde individual. Perejil. BANDEJA CENTRAL: cabezas fritas + medio limón + perejil.", tipo: "servicio" },
-      { h: "13:00", t: "Cena Abendbrot ligero: pan + fiambre surtido + queso surtido + pepinillos + fruta. Presentación tipo tablero.", tipo: "servicio" }
-    ],
-    nota: "DÍA CANARIO con dignidad. Paula Carballo (25 años ATTENYA, canaria) supervisa receta chicharrera tradicional. Autoridad cultural sobre ajustes."
-  }
-];
-
-/* ============================================================
-   COMPRAS DATA — 17-30 Marzo 2026 (ACTUAL)
-   ============================================================ */
-const comprasData_prev = [
-  {
-    lista: 1,
-    titulo: "ENTREGA ÚNICA — Pack 2 días (Lunes 20 + Martes 21 Abril)",
-    entrega: "Pedido relámpago domingo noche / lunes mañana D-0",
-    cubre: "L20 salmón post-excesos · M21 día canario (Conejo Salmorejo Chicharrero, Paula Carballo)",
-    secciones: [
-      {
-        s: "YA EN CÁMARAS (NO COMPRAR)",
-        items: [
-          { p: "Salmón fresco (lomos)", c: "7 kg", n: "L20 principal — usar 4,4 kg útil" },
-          { p: "Conejo despiezado con cabeza", c: "8,6 kg", n: "M21 principal — marinar 24h D-1" },
-          { p: "Papa negra canaria", c: "8 kg", n: "M21 papas arrugadas (~5 kg) + sobrante menú canario mié+" }
-        ]
-      },
-      {
-        s: "Frutería / Verduras",
-        items: [
-          { p: "Tomate maduro en rama o pera", c: "4 kg", n: "MUY maduro. M21 entrante Antonio — Tenerife si posible, D-1 mín" },
-          { p: "Pepino", c: "3,2 kg (~13 uds)", n: "L20 ens. sueca (2,5 kg) + L20 raita (625 g)" },
-          { p: "Remolacha cocida", c: "300 g", n: "L20 ens. sueca — bote o fresca ya cocida" },
-          { p: "Espinacas frescas baby", c: "2,5 kg", n: "L20 guarnición — sin tallos gruesos" },
-          { p: "Patata waxy (Charlotte)", c: "5 kg", n: "L20 patatas vapor — NO harinosa" },
-          { p: "Calabacín firme", c: "3 kg", n: "L20 cena crema" },
-          { p: "Cebolla", c: "3,5 kg (~18 uds)", n: "L20 crema (18) + M21 guiso (400g)" },
-          { p: "Naranja sanguina", c: "3 kg (~12 uds)", n: "L20 sorbete — 1,25 L zumo" },
-          { p: "Limón", c: "16 uds", n: "Crema (6) + raita (6) + salmón (2) + tomate-queso (2)" },
-          { p: "Lima", c: "10 uds", n: "M21 postre plátano-lima — ralladura + zumo" },
-          { p: "Plátano canario", c: "25 uds", n: "M21 postre — MADUROS pero firmes" },
-          { p: "Pimiento verde", c: "1 ud pequeño", n: "M21 mojo verde" }
-        ]
-      },
-      {
-        s: "Hierbas frescas (críticas)",
-        items: [
-          { p: "Eneldo fresco", c: "60 g (~2 manojos)", n: "L20 ens. sueca (40g) + salmón (20g) — eje nórdico" },
-          { p: "Perejil fresco", c: "60 g", n: "M21 tomate (40g) + patatas (4g) + mojo (15g)" },
-          { p: "Menta fresca", c: "30 g", n: "L20 raita" },
-          { p: "Albahaca fresca", c: "180 g", n: "L20 cena crema — CANTIDAD ALTA, verificar" },
-          { p: "Cilantro fresco", c: "150 g", n: "M21 mojo verde — hojas y tallos tiernos" },
-          { p: "Tomillo fresco", c: "8 g (2-3 ramas)", n: "M21 guiso conejo" },
-          { p: "Laurel (fresco o seco)", c: "4 hojas", n: "M21 guiso conejo" },
-          { p: "Cebollino fresco", c: "40 g", n: "L20 patatas vapor — brunoise fina" }
-        ]
-      },
-      {
-        s: "Quesería / Lácteos",
-        items: [
-          { p: "Queso fresco cabra majorero (Maxorata)", c: "1,1 kg", n: "CRÍTICO DOP MAJORERO FRESCO — M21 entrante Antonio" },
-          { p: "Yogur natural (griego preferible)", c: "1,3 kg", n: "L20 raita" },
-          { p: "Queso surtido Abendbrot", c: "800 g", n: "M21 cena — emmental/gouda/similar" },
-          { p: "Mantequilla", c: "250 g", n: "L20 cena (pan)" }
-        ]
-      },
-      {
-        s: "Carnicería / Charcutería",
-        items: [
-          { p: "Fiambre surtido Abendbrot", c: "~1 kg", n: "M21 cena — jamón cocido + chorizo suave + fiambres ligeros" }
-        ]
-      },
-      {
-        s: "Panadería",
-        items: [
-          { p: "Pan rústico del día anterior", c: "500 g", n: "CRÍTICO M21 majado — miga densa. Reservar desde sábado/domingo. Si no hay: pan lunes en horno 80°C 20 min" },
-          { p: "Pan fresco (para cenas)", c: "2 piezas grandes", n: "L20 cena + M21 Abendbrot — normal o masa madre" },
-          { p: "Knäckebröd sueco (opcional)", c: "25 uds", n: "L20 acompañamiento ens. sueca — omitible" }
-        ]
-      },
-      {
-        s: "Especias críticas",
-        items: [
-          { p: "⚡ Pimienta palmera semi-seca", c: "80 g", n: "ALMA M21 conejo. Paula confirma. Hidratar 30 min agua tibia, reservar 100 ml del agua" },
-          { p: "Pimentón dulce", c: "40 g", n: "Marinada conejo + mojo rojo" },
-          { p: "Pimentón dulce ahumado", c: "10 g", n: "Marinada conejo" },
-          { p: "Comino molido", c: "35 g", n: "Marinada + mojos + raita" },
-          { p: "Orégano seco", c: "10 g", n: "Marinada conejo" },
-          { p: "Cayena molida", c: "3 g", n: "Marinada — MÍNIMA (perfil senior)" },
-          { p: "Nuez moscada entera", c: "1 ud", n: "L20 espinacas — rallar fresca" },
-          { p: "Pimienta blanca molida", c: "3 g", n: "L20 salmón — NO negra" },
-          { p: "Semillas sésamo o hinojo", c: "25 g", n: "L20 ens. sueca — sésamo negro si posible" }
-        ]
-      },
-      {
-        s: "Sal / Azúcar / Endulzantes",
-        items: [
-          { p: "Sal gruesa marina", c: "500 g", n: "M21 papas arrugadas (350g) + varios — costra blanca tradicional" },
-          { p: "Sal en escamas (Maldon)", c: "100 g", n: "M21 entrante Antonio — acabado" },
-          { p: "Sal fina", c: "verificar stock", n: "Múltiples usos" },
-          { p: "Azúcar blanco", c: "1,1 kg", n: "L20 sorbete (440g) + M21 plátano lima (625g)" },
-          { p: "Glucosa líquida", c: "250 g", n: "CRÍTICA L20 sorbete — sin ella cristaliza. Tienda pastelería pro" },
-          { p: "Miel suave", c: "60 g", n: "L20 ens. sueca (marinada pepino)" }
-        ]
-      },
-      {
-        s: "Aceites / Vinagres / Vinos",
-        items: [
-          { p: "AOVE virgen extra", c: "~2,5 L", n: "Múltiples usos (mojos 1L + crema 600ml + ensaladas 260ml + conejo 500ml). Verificar stock" },
-          { p: "Vinagre vino blanco", c: "500 ml", n: "Ens. sueca + marinada conejo + mojos" },
-          { p: "Vinagre de Jerez DOP", c: "100 ml", n: "CRÍTICO M21 entrante Antonio — reserva o añada" },
-          { p: "Vinagre manzana", c: "50 ml", n: "M21 marinada conejo — suaviza acidez" },
-          { p: "Vino blanco seco canario", c: "400 ml (1 botella)", n: "M21 guiso — listán blanco o verdejo canario" }
-        ]
-      },
-      {
-        s: "Conservas / Caldo / Otros",
-        items: [
-          { p: "Caldo de ave ligero", c: "6,8 L", n: "L20 crema (6L) + M21 guiso (800ml). Producir fresco D-1 o bricks calidad" },
-          { p: "Pepinillos en vinagre", c: "1 bote", n: "M21 cena Abendbrot" },
-          { p: "Fruta variada Abendbrot", c: "2 kg", n: "M21 cena — uvas, manzana, pera" }
-        ]
-      }
-    ]
-  }
-];
-
-
-const subCats = ["Principal","Guarnición HI","Guarnición V","Base/Salsa","Base/Caldo","Base/Elemento"];
-
-/* ============================================================
-   PERIODO DETECTION — auto-detect actual vs anterior by date
-   ============================================================ */
-/* Determine which dataset is "actual" (today falls within) and which is "anterior" */
-
-/* ============================================================
-   IMAGE MAPPING (existing)
-   ============================================================ */
-const jpegIds = new Set([
-  "01_Fondo_Blanco_Pollo","02_Fondo_Dorado_Pollo","03_Fumet_Pescado",
-  "04_Fondo_Marisco","05_Fondo_Oscuro_Ternera","06_Caldo_Verduras","07_Demi_Glace",
-  "Chucrut_Afinado_Gourmet","Chuleta_Cerdo_Chucrut","Coq_au_Vin",
-  "Koenigsberger_Klopse","Linseneintopf_Bockwurst","Mojos_Canarios",
-  "Patatas_Gajo_Bistro","Pure_Boniato",
-  "Pure_Cremoso_Robuchon","Pure_Patata_Firme","Ropa_Vieja_Canaria",
-  "Rote_Bete_Salat","Salmon_Curado_Confitado","Salsa_Tonkatsu_Mejorada",
-  "Sancocho_Canario_Bacalao","Shakshuka","Sopa_Miso_Tofu_Wakame",
-  "Tonkatsu_Pollo_Componente","Tonkatsu_Pollo_Plato"
-]);
-const imgAlias = {
-  "Portobello_Shiitake_Glaseados_Fondo_Oscuro": "Portobello_Shiitake_Glaseados",
-  "Risotto_Azafran_Plato": "Risotto_Azafran"
-};
-function getImg(id) {
-  const base = imgAlias[id] || id;
-  const ext = jpegIds.has(id) ? "jpeg" : "jpg";
-  return `img/${base}_AI.${ext}`;
-}
-
-/* ============================================================
-   CATALOG LOGIC (existing)
-   ============================================================ */
-const cats = [
-  {id:"all",l:"Todo",i:"◈"},
-  {id:"Componentes",l:"Componentes",i:"◆"},
-  {id:"Platos",l:"Platos",i:"◉"},
-  {id:"Entrantes",l:"Entrantes",i:"◎"},
-  {id:"Postres",l:"Postres",i:"◇"},
-  {id:"Desayunos",l:"Desayunos",i:"◐"},
-  {id:"Cenas",l:"Cenas",i:"◑"}
-];
-
-/* ============================================================
-   MENU + MISE + COMPRAS — 31 Marzo - 14 Abril 2026 (ACTUAL)
-   ============================================================ */
-const menuData = {
   periodo: "22-29 Abril 2026",
   pax: 25,
   ciclo: "Segunda semana quincena · 8 días · Recetas autor (David Cacho) · Coliflor Caldesi como plato",
@@ -1152,8 +901,10 @@ const menuData = {
   ]
 };
 
-
-const miseData = [
+/* ============================================================
+   MISE EN PLACE DATA — 17-30 Marzo 2026 (ACTUAL)
+   ============================================================ */
+const miseData_prev = [
   {
     fecha: "2026-04-22",
     ds: "Miércoles 22/04",
@@ -1313,7 +1064,10 @@ const miseData = [
   }
 ];
 
-const comprasData = [
+/* ============================================================
+   COMPRAS DATA — 17-30 Marzo 2026 (ACTUAL)
+   ============================================================ */
+const comprasData_prev = [
   {
     lista: 1,
     titulo: "ENTREGA 1 — Miércoles 22 abril (primera hora)",
@@ -1478,6 +1232,467 @@ const comprasData = [
         { p: "Anchoas en aceite", c: "100 g", n: "Salsa verde + caponata" },
         { p: "Pepinillos vinagre", c: "2 botes", n: "Abendbrot" },
         { p: "Aceitunas", c: "300 g", n: "Cenas + emergencias" }
+      ]}
+    ]
+  }
+];
+
+
+const subCats = ["Principal","Guarnición HI","Guarnición V","Base/Salsa","Base/Caldo","Base/Elemento"];
+
+/* ============================================================
+   PERIODO DETECTION — auto-detect actual vs anterior by date
+   ============================================================ */
+/* Determine which dataset is "actual" (today falls within) and which is "anterior" */
+
+/* ============================================================
+   IMAGE MAPPING (existing)
+   ============================================================ */
+const jpegIds = new Set([
+  "01_Fondo_Blanco_Pollo","02_Fondo_Dorado_Pollo","03_Fumet_Pescado",
+  "04_Fondo_Marisco","05_Fondo_Oscuro_Ternera","06_Caldo_Verduras","07_Demi_Glace",
+  "Chucrut_Afinado_Gourmet","Chuleta_Cerdo_Chucrut","Coq_au_Vin",
+  "Koenigsberger_Klopse","Linseneintopf_Bockwurst","Mojos_Canarios",
+  "Patatas_Gajo_Bistro","Pure_Boniato",
+  "Pure_Cremoso_Robuchon","Pure_Patata_Firme","Ropa_Vieja_Canaria",
+  "Rote_Bete_Salat","Salmon_Curado_Confitado","Salsa_Tonkatsu_Mejorada",
+  "Sancocho_Canario_Bacalao","Shakshuka","Sopa_Miso_Tofu_Wakame",
+  "Tonkatsu_Pollo_Componente","Tonkatsu_Pollo_Plato"
+]);
+const imgAlias = {
+  "Portobello_Shiitake_Glaseados_Fondo_Oscuro": "Portobello_Shiitake_Glaseados",
+  "Risotto_Azafran_Plato": "Risotto_Azafran"
+};
+function getImg(id) {
+  const base = imgAlias[id] || id;
+  const ext = jpegIds.has(id) ? "jpeg" : "jpg";
+  return `img/${base}_AI.${ext}`;
+}
+
+/* ============================================================
+   CATALOG LOGIC (existing)
+   ============================================================ */
+const cats = [
+  {id:"all",l:"Todo",i:"◈"},
+  {id:"Componentes",l:"Componentes",i:"◆"},
+  {id:"Platos",l:"Platos",i:"◉"},
+  {id:"Entrantes",l:"Entrantes",i:"◎"},
+  {id:"Postres",l:"Postres",i:"◇"},
+  {id:"Desayunos",l:"Desayunos",i:"◐"},
+  {id:"Cenas",l:"Cenas",i:"◑"}
+];
+
+/* ============================================================
+   MENU + MISE + COMPRAS — 31 Marzo - 14 Abril 2026 (ACTUAL)
+   ============================================================ */
+const menuData = {
+  periodo: "30 Abril - 6 Mayo 2026",
+  pax: 25,
+  ciclo: "Cierre quincena · 7 días · Cocina internacional · Sauerbraten + Atún BT + Curry Massaman + Rodaballo brasa + Risotto setas + Bratwurst",
+  chef_free: "Igino libre: Sáb 2 + Dom 3 (David sostiene fin de semana 8-20h). David libre: Lun 4 + Mar 5 (Igino solo). Mié 6 plato regenerable",
+  dias: [
+    {
+      fecha: "2026-04-30",
+      ds: "Jueves 30/04",
+      dc: 1,
+      tipo: "normal",
+      prot: "Carne roja",
+      entrante: { n: "Ens. Berros Baby Almendras Suero Leche (Caldesi)", id: "Ensalada_Berros_Baby_Almendras_Alino_Suero_Leche_Caldesi" },
+      principal: { n: "Sauerbraten + Rotkohl + Kartoffelklöße", id: "Sauerbraten_Rotkohl_Kartoffelklosse" },
+      guarnicion: { n: "Integradas (Rotkohl + Knödel)", id: null },
+      postre: { n: "Compota Manzana Especiada", id: "Compota_Manzana_Especiada" },
+      cena: { n: "Crema Calabacín Albahaca (Straker)", id: "Crema_Calabacin_Albahaca_Straker" }, cena_text: " + pan",
+      prod: "Marinado Sauerbraten ARRANCADO lunes 27/04 (D-3). Recipiente vidrio/cerámica/inox. Estofado lento 2,5 h. Salsa con Lebkuchen alemán + pasas opcional renano. Cortar lonchas finas EN CONTRA fibra. Receta para residentes alemanes nuevos."
+    },
+    {
+      fecha: "2026-05-01",
+      ds: "Viernes 01/05",
+      dc: 2,
+      tipo: "normal",
+      prot: "Pescado azul",
+      entrante: { n: "Ens. Cebolla Ahumada Sumac (Hage)", id: "Ensalada_Cebolla_Ahumada_Sumac_Hage" },
+      principal: { n: "Atún BT + Parmentier Boniato", id: "Atun_Baja_Temperatura_Parmentier_Boniato" },
+      guarnicion: { n: "Integrada (parmentier boniato canario)", id: null },
+      postre: { n: "Sopa Fría Melón Menta", id: "Sopa_Melon_Menta" },
+      cena: { n: "Escalivada caliente", id: "Escalivada" },
+      prod: "Atún sushi-grade obligatorio o congelación previa -20°C 24h (APPCC sous vide 50°C). Roner 50°C 30 min. Parmentier boniato canario — variante Pure Boniato con más mantequilla+nata."
+    },
+    {
+      fecha: "2026-05-02",
+      ds: "Sábado 02/05",
+      dc: 3,
+      tipo: "normal",
+      prot: "Carne blanca",
+      entrante: { n: "Ens. Coreana Pomelo Fresas (Caldesi)", id: "Ensalada_Coreana_Pomelo_Fresas_Caldesi" },
+      principal: { n: "Curry Massaman Pollo + Basmati (David)", id: "Curry_Massaman_Pollo" },
+      guarnicion: { n: "Arroz Basmati", id: "Arroz_Basmati" },
+      postre: { n: "Plátano Lima", id: "Platano_Lima" },
+      cena: { n: "Calabaza Borlotti Salsa Verde (Straker)", id: "Calabaza_Borlotti_Salsa_Verde_Straker" },
+      prod: "IGINO LIBRE. David lidera. Pasta Massaman comercial Maesri/Mae Ploy autorizada (calidad tailandesa). Contramuslo deshuesado sin piel. Cacahuetes ENTEROS. Especias decorativas (cardamomo+canela+anís estrella) RETIRAR antes servir."
+    },
+    {
+      fecha: "2026-05-03",
+      ds: "Domingo 03/05",
+      dc: 4,
+      tipo: "normal",
+      prot: "Pescado blanco",
+      entrante: { n: "Ens. Zanahoria Rallada Perejil Limón (Caldesi)", id: "Ensalada_Zanahoria_Rallada_Perejil_Limon_Caldesi" },
+      principal: { n: "Rodaballo + Cogollo Brasa + Patatas Vapor (David)", id: "Rodaballo_Cogollo_Brasa_Patatas_Vapor" },
+      guarnicion: { n: "Integradas (cogollo brasa + patatas vapor horno)", id: "Patatas_Vapor_Horno" },
+      postre: { n: "Naranjas con Miel", id: "Naranjas_Miel" },
+      cena: { n: "Verduras Braseadas Cardamomo Yogur (Hage)", id: "Verduras_Braseadas_Cardamomo_Yogur_Hage" },
+      prod: "IGINO LIBRE. David lidera. Cogollo Tudela (NO iceberg) marcado fuerte cara cortada en plancha fundición pesada. Mantequilla noisette al final con alcaparras + zumo limón. Borderline 5 días desde lubina mar 28 (cumple regla mínima)."
+    },
+    {
+      fecha: "2026-05-04",
+      ds: "Lunes 04/05",
+      dc: 5,
+      tipo: "normal",
+      prot: "Hidrato",
+      entrante: { n: "Ens. César Nueces Caramelizadas (Caldesi)", id: "Ensalada_Cesar_Nueces_Caramelizadas_Caldesi" },
+      principal: { n: "Risotto Setas Portobello", id: "Risotto_Setas_Portobello" },
+      guarnicion: { n: "Integrada (HI completo)", id: null },
+      postre: { n: "Sorbete Naranja", id: "Sorbete_Naranja" },
+      cena: "Igino aprovecha cámara — sobras curry, risotto, verduras",
+      prod: "IGINO SOLO (David libra). Plato único Carnaroli + portobello + porcini secos. Mantecatura final parmesano + mantequilla fría. Textura ALL'ONDA servicio inmediato — no admite espera."
+    },
+    {
+      fecha: "2026-05-05",
+      ds: "Martes 05/05",
+      dc: 6,
+      tipo: "normal",
+      prot: "Cerdo",
+      entrante: { n: "Gurkensalat — Ens. Pepino Alemana", id: "Gurkensalat_Ensalada_Pepino_Alemana" },
+      principal: { n: "Bratwurst + Bratkartoffeln + Chucrut Afinado", id: "Bratwurst_Plato" },
+      guarnicion: { n: "Bratkartoffeln", id: "Bratkartoffeln" },
+      postre: { n: "Macedonia Frutas Oscuras Asadas Amaretto (Caldesi)", id: "Macedonia_Frutas_Oscuras_Asadas_Amaretto_Crema_Anacardos_Lima_Caldesi" },
+      cena: "Igino vacía cámara — Abendbrot con sobras Bratwurst/embutidos + pan",
+      prod: "IGINO SOLO (David libra). Bratwurst doble cocción (escaldar suave 12 min + dorar plancha). Chucrut Afinado con Sauerkraut comercial fermentado natural (el casero in-house aún en fermentación 1-3 sem). Mostaza Dijon + Sweet Senf acompañamiento."
+    },
+    {
+      fecha: "2026-05-06",
+      ds: "Miércoles 06/05",
+      dc: 7,
+      tipo: "normal",
+      prot: "Vegetariano",
+      entrante: { n: "Pimientos Asados Burrata (Straker)", id: "Pimientos_Asados_Burrata_Straker" },
+      principal: { n: "Sopa Lentejas Rojas Coliflor Especiada (Hage)", id: "Sopa_Lentejas_Rojas_Coliflor_Especiada_Hage" },
+      guarnicion: { n: "Integrada", id: null },
+      postre: { n: "Naranjas Láminas Canela", id: "Naranjas_Laminas_Canela" },
+      cena: { n: "Brocolini Aliño Limón Alcaparras (Caldesi) caliente", id: "Brocolini_Alino_Limon_Alcaparras_Pipas_Calabaza_Caldesi" },
+      prod: "Ambos chefs presentes. Plato regenerable — sopa lentejas levantina con yogur+cilantro acabado. Cierre semana en limpio."
+    }
+  ]
+};
+
+
+const miseData = [
+  {
+    fecha: "2026-04-30",
+    ds: "Jueves 30/04",
+    tipo: "normal",
+    titulo: "Sauerbraten + Rotkohl + Kartoffelklöße (CR · marinado D-3 desde lun 27/04)",
+    carga: "Alta (David + Igino)",
+    tareas: [
+      { h: "7:30", t: "SAUERBRATEN Fase 1: sacar carne marinada (3 días), secar muy bien, colar marinada (~1,8 L líquido + verduras reservadas).", tipo: "servicio" },
+      { h: "8:00", t: "Ens. Berros Baby: lavar centrifugar 600 g berros, almendras laminadas tostadas 150 g, aliño suero leche + limón + AOVE.", tipo: "servicio" },
+      { h: "8:15", t: "Knödel mise: 3 kg patata mitad cruda rallada + mitad cocida pasapurés + harina 300 g + sémola 100 g + 4 huevos + sal + nuez moscada. Bolas 80-100 g.", tipo: "servicio" },
+      { h: "8:30", t: "Rotkohl Clásico: cebolla pochar + lombarda 2,5 kg juliana + manzana Granny Smith + vinagre vino tinto + azúcar + canela + clavo + manteca/mantequilla. Estofado 1,5-2 h tapado.", tipo: "servicio" },
+      { h: "9:00", t: "SAUERBRATEN Fase 2 sellado+estofado: olla fundición esmaltada. Sellar redondo todos lados (8-10 min). Pochar verduras marinada. Devolver carne + líquido + caldo oscuro 1 L. ESTOFAR 2,5 h fuego MUY bajo. Girar c/45-60 min.", tipo: "servicio" },
+      { h: "10:00", t: "Crema Calabacín Albahaca (cena): 4 kg calabacín + cebolla + ajo + caldo + albahaca + limón. Triturar fino.", tipo: "servicio" },
+      { h: "11:00", t: "Knödel cocción: agua salada hervor suave 18-20 min. Reservar templados.", tipo: "servicio" },
+      { h: "11:30", t: "SAUERBRATEN Fase 3 salsa: retirar carne. Triturar verduras+líquido. Hervor suave. Añadir 100 g LEBKUCHEN desmenuzadas. Pasas opcional rehidratadas. Rectificar.", tipo: "servicio" },
+      { h: "11:40", t: "Cortar Sauerbraten lonchas finas 4-5 mm EN CONTRA fibra. Reservar napadas con poca salsa.", tipo: "servicio" },
+      { h: "11:45", t: "EMPLATADO: plato hondo · cama Rotkohl ~150g · 2 Knödel ~200g · 2-3 lonchas Sauerbraten ~180g · napar abundante salsa caoba.", tipo: "servicio" }
+    ],
+    nota: "Sauerbraten = paciencia. 3 días marinado + 2,5 h estofado. Lebkuchen es la firma renana — sin ellas es solo guiso. Recipiente NO aluminio NO hierro fundido sin esmaltar."
+  },
+  {
+    fecha: "2026-05-01",
+    ds: "Viernes 01/05",
+    tipo: "normal",
+    titulo: "Atún BT + Parmentier Boniato (PA · sushi-grade · sous vide 50°C)",
+    carga: "Media-Alta",
+    tareas: [
+      { h: "7:30", t: "Atún recibido proveedor mañana (sushi-grade certificado o descongelar bloque -20°C 24h). Verificar visual + olor.", tipo: "servicio" },
+      { h: "8:00", t: "Ens. Cebolla Ahumada Sumac: cebolla blanca láminas finas + marinar limón+sal 15 min + escurrir. Aliño AOVE+sumac+comino+perejil+cilantro.", tipo: "servicio" },
+      { h: "8:30", t: "Parmentier Boniato: 4 kg boniato canario pelado cocer agua sal 25 min + pasapurés caliente + 200g mantequilla + 200ml nata + sal. Reservar baño maría 60°C.", tipo: "servicio" },
+      { h: "9:30", t: "Atún mise: porcionar lomo en tacos 150-180 g/pax (25 uds). Salpimentar + envasar al vacío + AOVE + finas hierbas.", tipo: "servicio" },
+      { h: "10:00", t: "Roner 50°C preparar y estabilizar.", tipo: "servicio" },
+      { h: "10:15", t: "Escalivada (cena): pimientos rojos + berenjenas + cebollas + tomates Convotherm 200°C 40 min mixto. Pelar tibios.", tipo: "anticipacion", para: "Vie 01 cena" },
+      { h: "10:30", t: "ATÚN SOUS VIDE Roner 50°C 30 min — bolsas vacío sumergidas.", tipo: "servicio" },
+      { h: "11:00", t: "Sopa Melón Menta postre: 3 kg melón maduro pelado triturado + menta + limón + jengibre. Refrigerar.", tipo: "servicio" },
+      { h: "11:00", t: "Atún sacar Roner, secar ligeramente.", tipo: "servicio" },
+      { h: "11:10", t: "Marcado opcional plancha 20 seg cada cara (caramelizar exterior, manteniendo nacarado interior).", tipo: "servicio" },
+      { h: "11:20", t: "EMPLATADO: cama parmentier ~180g + atún en taco ~150g + AOVE + escamas sal + albahaca thai opcional.", tipo: "servicio" },
+      { h: "12:30", t: "Escalivada caliente cena: regenerar Convotherm vapor suave + AOVE + sal.", tipo: "servicio" }
+    ],
+    nota: "Sushi-grade certificado o congelación previa -20°C 24h. APPCC sous vide 50°C requiere garantía sanitaria. Parmentier de boniato canario ≠ parmentier patata clásico (más dulce + naranja)."
+  },
+  {
+    fecha: "2026-05-02",
+    ds: "Sábado 02/05",
+    tipo: "normal",
+    titulo: "Curry Massaman Pollo + Basmati (CB · David al mando · Igino LIBRE)",
+    carga: "Media (David solo + auxiliar)",
+    tareas: [
+      { h: "7:30", t: "DAVID llega 8h. Toma mando completo. Verificar stock pasta Massaman.", tipo: "servicio" },
+      { h: "8:00", t: "Ens. Coreana Pomelo Fresas: pomelo pelado a vivo + fresas cuartos + sésamo tostado + sésamo aceite + soja baja sal + miel + jengibre rallado.", tipo: "servicio" },
+      { h: "8:30", t: "Curry mise: 4 kg contramuslo pollo deshuesado sin piel cubos 4 cm + 800 ml leche coco entera + 200g pasta Massaman Maesri/Mae Ploy + salsa pescado tailandesa 60ml + azúcar palma 60g + tamarindo pulpa 40g + cacahuetes tostados enteros 250g + cardamomo verde 6 vainas + canela rama 2 + anís estrella 4 (decorativos) + patata baby 500g + cebolla morada 300g.", tipo: "servicio" },
+      { h: "9:00", t: "CURRY cocción: tostar pasta + AOVE 1 min + crema coco hasta separar grasa + pollo dorado 5 min + leche coco resto + caldo + salsa pescado + azúcar palma + tamarindo + especias decorativas + patata + cebolla. Cocción 35-40 min fuego suave.", tipo: "servicio" },
+      { h: "9:30", t: "Calabaza Borlotti Salsa Verde (cena): 3 kg calabaza moscada cubos + alubias borlotti cocidas + salsa verde (perejil+ajo+anchoa+alcaparras+AOVE+limón).", tipo: "servicio" },
+      { h: "10:00", t: "Plátano Lima postre: plátanos canarios + lima zumo+ralladura + miel + canela. Reposo 15 min.", tipo: "servicio" },
+      { h: "10:30", t: "Arroz Basmati: lavar 2,5 kg hasta agua clara. Saltear ligero AOVE+cardamomo. Ratio 1:1,5 hervor + tapar fuego mínimo 12 min + reposo 5 min OBLIGATORIO. Esponjar tenedor.", tipo: "servicio" },
+      { h: "11:00", t: "Curry — añadir cacahuetes ENTEROS últimos 10 min (no antes — se reblandecen).", tipo: "servicio" },
+      { h: "11:20", t: "Verificar curry: pollo tierno desmigable, salsa napante ámbar profundo. Rectificar (tamarindo si falta acidez, azúcar palma si falta dulzor).", tipo: "servicio" },
+      { h: "11:30", t: "EMPLATADO: bol hondo · cama basmati ~120g · curry encima ~180g (pollo+patata+salsa) · cacahuetes enteros visibles · cilantro fresco · lima cuartos · RETIRAR especias decorativas (cardamomo+canela+anís) ANTES de servir.", tipo: "servicio" },
+      { h: "13:30", t: "Calabaza Borlotti Salsa Verde cena emplatar templado.", tipo: "servicio" }
+    ],
+    nota: "IGINO LIBRE. Curry mejora con reposo 30 min antes servicio. Pasta Massaman Maesri/Mae Ploy son las marcas tailandesas autorizadas — otras producen polvo de curry plano."
+  },
+  {
+    fecha: "2026-05-03",
+    ds: "Domingo 03/05",
+    tipo: "normal",
+    titulo: "Rodaballo + Cogollo Brasa + Patatas Vapor (PB · David al mando · Igino LIBRE)",
+    carga: "Media-Alta (David solo + auxiliar)",
+    tareas: [
+      { h: "7:30", t: "DAVID llega 8h. Verifica entrega rodaballo (mañana o víspera tarde · pinzado doble).", tipo: "servicio" },
+      { h: "8:00", t: "Ens. Zanahoria Rallada Perejil Limón: zanahoria rallada gruesa 1,5 kg + perejil abundante 100 g + vinagreta limón+AOVE+miel.", tipo: "servicio" },
+      { h: "8:30", t: "Patatas Vapor Horno: 4 kg patata baby Charlotte cuartos GN perforada Convotherm vapor 100-110°C 35-45 min. Reservar templadas.", tipo: "servicio" },
+      { h: "9:00", t: "Cogollos Tudela mise: 13 cogollos cuartos longitudinales (2 cuartos/pax). AOVE pincelar + sal.", tipo: "servicio" },
+      { h: "9:30", t: "Naranjas Miel postre: 8 naranjas peladas a vivo gajos limpios + hilo miel ligero (50g total) + ralladura limón + canela polvo. Maceración 1 h refrigerado.", tipo: "servicio" },
+      { h: "10:00", t: "Verduras Braseadas Cardamomo Yogur (cena): pre-cocción adelanto.", tipo: "anticipacion", para: "Dom 03 cena" },
+      { h: "10:30", t: "Rodaballo mise: 25 filetes 180 g (4,5 kg) sin espinas verificadas, secar bien, salpimentar suave.", tipo: "servicio" },
+      { h: "11:00", t: "COGOLLOS A LA BRASA: plancha fundición pesada al fuego fuerte hasta humear. Marcar cara cortada hacia abajo 2-3 min hasta marca profunda dorada-negra. NO mover. Voltear cara redondeada 1-2 min suave.", tipo: "servicio" },
+      { h: "11:10", t: "RODABALLO PLANCHA o Convotherm 200°C mixto vapor 30% 8-10 min hasta opaco interno. Mantequilla NOISETTE al final (200 g mantequilla a fuego medio hasta marrón claro y aroma).", tipo: "servicio" },
+      { h: "11:25", t: "EMPLATADO: 3-4 patatas vapor cama · 1 filete rodaballo 180g · 2 cuartos cogollo brasa al lado · napar mantequilla noisette + zumo limón · acabado AOVE+sal+perejil+anchoa fina opcional.", tipo: "servicio" },
+      { h: "11:45", t: "Naranjas Miel emplatar copa · gajos + jarabe miel-naranja-canela-limón.", tipo: "servicio" },
+      { h: "13:00", t: "Verduras Braseadas Cardamomo: regenerar + salsa yogur fría al servicio.", tipo: "servicio" }
+    ],
+    nota: "IGINO LIBRE. David lidera tres elementos. Cogollo Tudela (NO iceberg). Plancha fundición pesada para marcas de brasa profundas. Rodaballo centro nacarado, no recocer."
+  },
+  {
+    fecha: "2026-05-04",
+    ds: "Lunes 04/05",
+    tipo: "normal",
+    titulo: "Risotto Setas Portobello (HI · Igino SOLO · David LIBRE)",
+    carga: "Media (Igino solo)",
+    tareas: [
+      { h: "7:30", t: "IGINO SOLO. Plato único hoy (sin componentes externos), gestión simplificada con auxiliar.", tipo: "servicio" },
+      { h: "8:00", t: "Ens. César Nueces Caramelizadas: cogollo+romana + nueces caramelizadas + parmesano lascas + crutones + aliño César ligero (anchoa+ajo+mostaza+limón+AOVE+parmesano+yogur en lugar de mayo para senior).", tipo: "servicio" },
+      { h: "8:30", t: "SORBETE NARANJA mantecar mañana temprano: 1.250 ml zumo naranja + 380g azúcar (almíbar enfriado) + 220g GLUCOSA LÍQUIDA + ralladura limón. Mantecadora 25-30 min hasta cremoso. Pasar a contenedor congelación. Reservar 4 h mín.", tipo: "anticipacion", para: "Lun 04 postre" },
+      { h: "9:00", t: "Setas Portobello mise: 3 kg portobello frescas limpias seco (NO lavar) cuartos + 60g porcini secos rehidratar 20 min agua tibia (reservar agua remojo colada).", tipo: "servicio" },
+      { h: "9:30", t: "Caldo setas: caldo vegetal base + agua remojo porcini colada + reducción suave 30 min. Mantener 80°C en cazo.", tipo: "servicio" },
+      { h: "10:00", t: "Saltear setas portobello + ajo + perejil sartén AOVE+mantequilla 8-10 min hasta dorado profundo · separar 1/3 enteras como acabado · 2/3 trocear para dentro del risotto.", tipo: "servicio" },
+      { h: "10:30", t: "Igino aprovecha cámara cena: revisar sobras curry/risotto/verduras braseadas — diseño operativo libre criterio.", tipo: "servicio" },
+      { h: "10:45", t: "RISOTTO arranque (timing crítico — servicio 30 min después): 2,3 kg Carnaroli + cebolla brunoise + AOVE. Tostar arroz 2 min sin color. Desglasar vino blanco 200 ml. Caldo caliente cucharón a cucharón removiendo, 18-20 min total. A los 12 min añadir 2/3 setas troceadas. Mantecar final 250 g parmesano + 200 g mantequilla fría + porcini picados muy finos.", tipo: "servicio" },
+      { h: "11:15", t: "Verificar textura ALL'ONDA (oleaje, no compacto). Si demasiado denso, cucharón caldo caliente. Servicio inmediato — no admite espera.", tipo: "servicio" },
+      { h: "11:25", t: "EMPLATADO: plato hondo · cazo risotto centrado ~250g · acabado portobello enteras encima · pizca perejil + ralladura parmesano + escamas sal · servicio inmediato.", tipo: "servicio" },
+      { h: "11:40", t: "Sorbete Naranja: emplatar bola en copa fría + pizca ralladura naranja.", tipo: "servicio" }
+    ],
+    nota: "IGINO SOLO. Risotto all'onda no admite espera. Glucosa líquida es CRÍTICA en sorbete (sin ella cristaliza). David libra hasta miércoles."
+  },
+  {
+    fecha: "2026-05-05",
+    ds: "Martes 05/05",
+    tipo: "normal",
+    titulo: "Bratwurst + Bratkartoffeln + Chucrut Afinado + Gurkensalat (CE · Igino SOLO)",
+    carga: "Media (Igino solo)",
+    tareas: [
+      { h: "7:30", t: "IGINO SOLO. Bratwurst y embutidos ya en cámara desde sábado. Verificar.", tipo: "servicio" },
+      { h: "8:00", t: "GURKENSALAT (entrante NUEVO): 3 kg pepino mandolina 1-2 mm + sal pizca + escurrir 30 min. Aliño 400 g smetana + 200 g yogur griego + 50 ml vinagre vino blanco + 30 g azúcar + sal + pimienta blanca + 50 g eneldo abundante. Mezclar. Refrigerar 30 min mín.", tipo: "servicio" },
+      { h: "8:30", t: "Bratkartoffeln: 4 kg patata cocida víspera (cuartos 12 min agua sal refrigerar) — sacar cámara, rodajas 5 mm. Sartén grande/plancha + manteca/aceite + cebolla juliana + opcional 200g panceta cubos. Saltear hasta dorado bordes crujientes.", tipo: "servicio" },
+      { h: "9:00", t: "Chucrut Afinado Gourmet: pochar panceta cubos 200g + cebolla juliana 500g + manzana Granny Smith 4 uds en mantequilla. Sauerkraut comercial fermentado 2 kg escurrido + 200 ml caldo + comino 5g + bayas enebro 8 + laurel 2. Estofado tapado 45 min.", tipo: "servicio" },
+      { h: "9:30", t: "Macedonia Frutas Oscuras Asadas Amaretto: melocotón+ciruela oscura+cereza+arándano (1,5 kg total) horno 180°C 12 min + amaretto 50 ml + miel + crema anacardos lima. Templado.", tipo: "servicio" },
+      { h: "10:00", t: "Naranjas láminas canela MACERACIÓN para mié 6: pelar 25 naranjas a vivo láminas 4-5 mm + jarabe zumo + 2 ramas canela infusión 15 min + ralladura + miel suave. Macerar 12 h.", tipo: "anticipacion", para: "Mié 06 postre" },
+      { h: "10:30", t: "Pan rústico cortar para Abendbrot cena.", tipo: "servicio" },
+      { h: "11:00", t: "Bratwurst doble cocción: olla agua + laurel + pimienta + comino, hervor SUAVE (no fuerte). Bratwurst 25 uds escaldar 12 min sin pinchar. Reservar templados.", tipo: "servicio" },
+      { h: "11:15", t: "Bratwurst dorado plancha/sartén justo antes servicio: 2-3 min hasta piel dorada crujiente.", tipo: "servicio" },
+      { h: "11:25", t: "EMPLATADO: plato hondo · cama Bratkartoffeln ~180g · 1 Bratwurst encima ~100g · cucharón Chucrut Afinado al lado ~120g · mostaza Dijon + Sweet Senf en ramekins.", tipo: "servicio" },
+      { h: "13:30", t: "Abendbrot cena Igino vacía cámara: pan rústico + sobras Bratwurst rodajas + fiambre + queso + pepinillos + manzana + uvas + Gurkensalat sobrante. Bandejas frías.", tipo: "servicio" }
+    ],
+    nota: "IGINO SOLO. Sauerkraut Casero in-house aún en fermentación 1-3 sem — Chucrut Afinado usa producto comercial fermentado natural. David libra hasta miércoles."
+  },
+  {
+    fecha: "2026-05-06",
+    ds: "Miércoles 06/05",
+    tipo: "normal",
+    titulo: "Sopa Lentejas Coliflor + Pimientos Burrata (VE · ambos chefs · plato regenerable)",
+    carga: "Baja-Media",
+    tareas: [
+      { h: "8:00", t: "Pimientos Asados Burrata: 8 pimientos rojos asar Convotherm 200°C 30 min + pelar tibios + juliana. Burrata 1,5 kg cuartos en plato + pimientos + AOVE + escamas sal + albahaca + tostada pan.", tipo: "servicio" },
+      { h: "8:30", t: "Sopa Lentejas Rojas Coliflor (Hage): pochar cebolla+ajo+jengibre+comino tostado+cilantro semilla. Añadir 1,5 kg lentejas rojas lavadas + 2 coliflor ramilletes + 6 L caldo vegetal. Hervor + 25 min cocción suave. Triturar parcial (textura híbrida). Limón zumo acabado.", tipo: "servicio" },
+      { h: "9:30", t: "Brocolini cena: blanquear 1,5 kg + escurrir + aliño AOVE+limón+alcaparras+pipas calabaza tostadas. Reservar.", tipo: "anticipacion", para: "Mié 06 cena" },
+      { h: "10:00", t: "Naranjas láminas canela: sacar cámara + atemperar 15 min + canela polvo + ralladura limón.", tipo: "servicio" },
+      { h: "11:00", t: "Sopa regenerar caliente 70-75°C en marmita. Acabado yogur + cilantro fresco + limón al servicio.", tipo: "servicio" },
+      { h: "11:30", t: "EMPLATADO: plato hondo · cucharón sopa ~350 ml · cucharada yogur encima · cilantro fresco · pizca pimentón ahumado opcional · pan al lado.", tipo: "servicio" },
+      { h: "13:00", t: "Brocolini al servicio: regenerar plancha o sartén 2-3 min para dorado ligero.", tipo: "servicio" }
+    ],
+    nota: "Ambos chefs presentes. Plato regenerable simple. Cierra semana en limpio."
+  }
+];
+
+const comprasData = [
+  {
+    lista: 0,
+    titulo: "ENTREGA ESPECIAL — Lunes 27 abril mañana (PRE-MARINADO)",
+    entrega: "Lun 27 mañana CRÍTICO",
+    cubre: "Marinado Sauerbraten D-3 obligatorio",
+    secciones: [
+      { s: "Carnicería pre-marinado", items: [
+        { p: "⚡ Redondo de ternera (sin grasa, atado)", c: "5 kg", n: "CRÍTICO LUN 27 — sin esto no hay Sauerbraten jueves. Carnicero corte limpio sin nervios" },
+        { p: "Huesos ternera (caldo oscuro)", c: "3 kg", n: "Lun 27 — tostar para enriquecer caldo refuerzo" }
+      ]},
+      { s: "Especias específicas marinada (si no en stock)", items: [
+        { p: "Vino tinto corpulento (Spätburgunder/Tempranillo seco)", c: "2 botellas 750 ml", n: "1,5 L marinada Sauerbraten" },
+        { p: "Vinagre vino tinto (NO de manzana)", c: "1 L", n: "500 ml marinada Sauerbraten" },
+        { p: "Bayas enebro", c: "30 g", n: "15 uds marinada (~5g) + Chucrut afinado mar 5" },
+        { p: "Mostaza Dijon", c: "250 g", n: "Marinada (50g) + Bratwurst (100g) + ensaladas" }
+      ]}
+    ]
+  },
+  {
+    lista: 1,
+    titulo: "ENTREGA 1 — Miércoles 29 abril (primera hora)",
+    entrega: "Mié 29 mañana",
+    cubre: "Jue 30 → Dom 03 — Sauerbraten servicio + Atún BT + Curry Massaman + Rodaballo",
+    secciones: [
+      { s: "Pescadería (entrega posterior)", items: [
+        { p: "Bratwurst alemán fresco", c: "25 uds (~2,5 kg)", n: "Entrega hoy. Cámara 4°C hasta mar 5. Marca alemana original o canario calidad" }
+      ]},
+      { s: "Carnicería", items: [
+        { p: "Contramuslo pollo deshuesado sin piel", c: "4 kg", n: "Sáb 02 curry — cubos 4 cm carne tierna" },
+        { p: "Panceta fresca cubos", c: "300 g", n: "Mar 05 Chucrut afinado (200g) + Bratkartoffeln opcional (100g)" },
+        { p: "Fiambre surtido alemán Abendbrot", c: "2 kg", n: "Mar 05 cena — jamón cocido + fiambres ligeros + opcional Leberwurst" }
+      ]},
+      { s: "Frutería / Verduras", items: [
+        { p: "Lombarda (Rotkohl)", c: "2,5 kg", n: "Jue 30 Rotkohl Clásico" },
+        { p: "Patata cruda Halb-Halb (Knödel)", c: "4 kg", n: "Jue 30 — mitad cruda rallada + mitad cocida" },
+        { p: "Boniato canario", c: "4,5 kg", n: "Vie 01 parmentier" },
+        { p: "Berros baby", c: "600 g", n: "Jue 30 entrante" },
+        { p: "Cebolla blanca", c: "4 kg", n: "Múltiples — marinada Sauerbraten (600g) + crema calabacín + risotto + curry + Chucrut + Bratkartoffeln + parmentier" },
+        { p: "Cebolla ahumada (Hage)", c: "1 kg", n: "Vie 01 entrante (ahumar in-house o comprar)" },
+        { p: "Calabacín", c: "5 kg", n: "Jue 30 cena crema (4 kg) + Dom 03 cena verduras braseadas (1 kg)" },
+        { p: "Tomate maduro", c: "3 kg", n: "Curry sofrito + Escalivada + Pimientos burrata + Verduras Braseadas" },
+        { p: "Berenjena (Escalivada)", c: "3 kg", n: "Vie 01 cena" },
+        { p: "Pimiento rojo asar", c: "4 kg", n: "Escalivada (1 kg) + Pimientos Burrata Mié (3 kg)" },
+        { p: "Calabaza moscada", c: "3 kg", n: "Sáb 02 cena Calabaza Borlotti" },
+        { p: "Apio rama", c: "500 g", n: "Marinada Sauerbraten + sopa coliflor + caldos" },
+        { p: "Zanahoria", c: "3 kg", n: "Marinada Sauerbraten (300g) + Dom 03 ensalada (1,5 kg) + curry/sopas + Chucrut" },
+        { p: "Manzana Granny Smith (Chucrut)", c: "4 uds", n: "Mar 05 Chucrut afinado" },
+        { p: "Manzana Golden/Reineta (Compota)", c: "4 kg", n: "Jue 30 compota" },
+        { p: "Naranjas mesa maduras", c: "8 kg (40-45 uds)", n: "Sorbete (~15 uds zumo) + Naranjas miel Dom 03 + Naranjas láminas Mié 06 + ralladuras" },
+        { p: "Limones", c: "30 uds", n: "Múltiples — meunière rodaballo + ensaladas + acabados + sorbete ralladura" },
+        { p: "Melón galia/piel sapo", c: "1 ud grande (~3 kg)", n: "Vie 01 sopa fría postre" },
+        { p: "Ajo cabezas", c: "6 uds", n: "Múltiples" },
+        { p: "Albahaca + perejil + eneldo + cilantro fresco", c: "Mix 700 g", n: "Múltiples" }
+      ]},
+      { s: "Quesería / Lácteos", items: [
+        { p: "Mantequilla sin sal calidad", c: "2,5 kg", n: "Sauerbraten salsa + Rotkohl + parmentier + risotto mantecar + mantequilla noisette rodaballo + cremas + Knödel + reservas" },
+        { p: "Suero leche (Caldesi entrante)", c: "250 ml", n: "Jue 30 aliño berros" },
+        { p: "Yogur griego natural", c: "2,5 kg", n: "Gurkensalat + Verduras Braseadas + sopa lentejas + reservas" },
+        { p: "Parmesano (pieza)", c: "800 g", n: "Risotto (400g) + ensalada César (200g) + acabados (200g)" },
+        { p: "Queso surtido Abendbrot alemán (Tilsiter, Bergkäse)", c: "1 kg", n: "Mar 05 cena" },
+        { p: "Huevos frescos", c: "2 docenas", n: "Knödel (4) + risotto + reservas" },
+        { p: "Nata líquida 35% MG", c: "1 L", n: "Parmentier boniato (200ml) + reserva" }
+      ]},
+      { s: "Especias críticas + despensa", items: [
+        { p: "⚡ Lebkuchen alemán (Aachener Printen)", c: "200 g", n: "CRÍTICO Sauerbraten salsa — alternativa pan jengibre/digestivas con canela+jengibre+clavo si no encontrado" },
+        { p: "Pasas (Sauerbraten renano opcional)", c: "100 g", n: "Toque tradicional renano salsa" },
+        { p: "Cardamomo verde vainas", c: "30 g", n: "Curry decorativo (6) + Verduras Braseadas (15-20g) + basmati (4)" },
+        { p: "Canela rama", c: "5 ramas", n: "Curry decorativo (2) + compota (1) + naranjas láminas (2)" },
+        { p: "Anís estrella", c: "8 uds", n: "Curry decorativo (4) + compota (2) + reservas" },
+        { p: "Clavo entero", c: "15 g", n: "Marinada Sauerbraten (8 uds) + Rotkohl + reservas" },
+        { p: "Comino (semilla + molido)", c: "80 g", n: "Sopa lentejas + Chucrut afinado + ensalada cebolla ahumada + reservas" },
+        { p: "Cilantro semilla", c: "30 g", n: "Sopa lentejas" },
+        { p: "Sumac", c: "30 g", n: "Vie 01 entrante Hage" },
+        { p: "Garam masala", c: "30 g", n: "Verduras Braseadas (stock anterior probable)" },
+        { p: "Sweet Senf alemán (mostaza dulce)", c: "200 g", n: "Mar 05 Bratwurst acompañamiento" },
+        { p: "Vainilla vainas", c: "2 uds", n: "Compota + reservas" },
+        { p: "Miel", c: "250 g", n: "Naranjas miel + ensalada zanahoria + plátano lima + reservas" },
+        { p: "Azúcar moreno (muscovado)", c: "500 g", n: "Marinada (30g) + macedonia + Rotkohl + reservas" },
+        { p: "Azúcar blanco", c: "1,5 kg", n: "Sorbete (380g) + Gurkensalat (30g) + Rotkohl + reservas" },
+        { p: "Glucosa líquida", c: "250 g", n: "⚡ CRÍTICO Sorbete Naranja (220g) — sin ella cristaliza" },
+        { p: "Sal gruesa marina + escamas", c: "500g + 100g", n: "Múltiples" }
+      ]},
+      { s: "Despensa secos / Asiáticos", items: [
+        { p: "Arroz Carnaroli/Arborio (risotto)", c: "2,5 kg", n: "Lun 04 — Carnaroli preferible" },
+        { p: "Arroz Basmati", c: "2,5 kg", n: "Sáb 02 curry — verificar stock previo" },
+        { p: "Lentejas rojas", c: "1,5 kg", n: "Mié 06 sopa" },
+        { p: "Alubias Borlotti cocidas (bote)", c: "600 g", n: "Sáb 02 cena Calabaza Borlotti" },
+        { p: "Sauerkraut comercial fermentado natural (no pasteurizado)", c: "2 kg", n: "Mar 05 Chucrut Afinado base — el casero in-house aún fermentando" },
+        { p: "⚡ Pasta Massaman comercial Maesri/Mae Ploy", c: "200 g (1 lata)", n: "CRÍTICO Sáb 02 curry — marca tailandesa" },
+        { p: "Leche coco entera (lata)", c: "800 ml (2 latas 400ml)", n: "Sáb 02 curry" },
+        { p: "Salsa pescado tailandesa (nam pla)", c: "100 ml", n: "Curry" },
+        { p: "Tamarindo pulpa", c: "60 g", n: "Curry" },
+        { p: "Azúcar palma o demerara", c: "100 g", n: "Curry (60g) + reservas" },
+        { p: "Cacahuetes tostados sin sal", c: "300 g", n: "Curry (250g enteros) + reserva" },
+        { p: "Almendras laminadas", c: "200 g", n: "Jue 30 ensalada berros (150g tostadas)" },
+        { p: "Anacardos crudos", c: "250 g", n: "Mar 05 macedonia crema anacardos lima" },
+        { p: "Sésamo blanco tostado + aceite tostado", c: "100g + 100ml", n: "Sáb 02 entrante coreana" },
+        { p: "Salsa soja baja sal", c: "100 ml", n: "Ensalada coreana + reservas" },
+        { p: "Harina + sémola fina", c: "1kg + 200g", n: "Knödel + Sauerbraten salsa" },
+        { p: "Pan rústico miga densa + Pan fresco cenas", c: "800g + 5 piezas", n: "Cenas múltiples + crutones César + tostadas Mié 06" },
+        { p: "Caldos ave + vegetal bricks", c: "8L + 8L", n: "Risotto + Sauerbraten + sopa lentejas + cremas" }
+      ]}
+    ]
+  },
+  {
+    lista: 2,
+    titulo: "ENTREGA 2 — Viernes 1 mayo (mañana muy temprano)",
+    entrega: "Vie 01 mañana",
+    cubre: "Vie 01 → Mié 06 (atún sushi-grade + frescos fin de semana)",
+    secciones: [
+      { s: "Pescadería ENTREGA TEMPRANA", items: [
+        { p: "⚡ Atún rojo lomos sushi-grade", c: "4 kg (25 tacos 150-180g)", n: "CRÍTICO sushi-grade certificado. Si NO certificado: congelación previa -20°C 24h. APPCC sous vide 50°C" }
+      ]},
+      { s: "Frutería reposición fin de semana", items: [
+        { p: "Patata baby Charlotte/waxy", c: "4 kg", n: "Dom 03 patatas vapor horno" },
+        { p: "Patata para Bratkartoffeln (cocer víspera)", c: "4 kg", n: "Mar 05 Bratkartoffeln" },
+        { p: "Pepino largo", c: "3 kg (~6-8 uds)", n: "Mar 05 Gurkensalat" },
+        { p: "Cogollos Tudela (NO iceberg)", c: "13 uds", n: "Dom 03 brasa" },
+        { p: "Romana (César)", c: "1 kg", n: "Lun 04" },
+        { p: "Setas portobello frescas", c: "3 kg", n: "Lun 04 risotto" },
+        { p: "Setas porcini secas", c: "60 g", n: "Lun 04 refuerzo caldo risotto" },
+        { p: "Coliflor mediana", c: "2 uds (~3 kg)", n: "Mié 06 sopa" },
+        { p: "Cebolla roja morada", c: "500 g", n: "Curry (300g) + Gurkensalat variante (200g)" },
+        { p: "Pomelo amarillo", c: "8 uds", n: "Sáb 02 entrante coreana" },
+        { p: "Fresas", c: "1 kg", n: "Sáb 02 entrante coreana" },
+        { p: "Plátanos canarios maduros", c: "25 uds", n: "Sáb 02 postre" },
+        { p: "Limas", c: "8 uds", n: "Plátano lima + acabados curry + macedonia" },
+        { p: "Rúcula", c: "300 g", n: "Pimientos burrata + ensaladas" },
+        { p: "Jengibre fresco", c: "200 g", n: "Curry (60g) + sopa lentejas (40g) + sopa melón (10g) + macedonia" },
+        { p: "Uvas Abendbrot", c: "1 kg", n: "Mar 05 cena" }
+      ]},
+      { s: "Quesería reposición", items: [
+        { p: "Smetana o crema ácida", c: "500 g", n: "Mar 05 Gurkensalat (400g) + reserva" }
+      ]}
+    ]
+  },
+  {
+    lista: 3,
+    titulo: "ENTREGA 3 — Pescado del día",
+    entrega: "Sáb 2 tarde o Dom 3 mañana",
+    cubre: "Rodaballo dom",
+    secciones: [
+      { s: "Pescadería del día", items: [
+        { p: "⚡ Rodaballo fresco filetes 180 g pinzados", c: "5 kg (25 filetes)", n: "CRÍTICO pinzado doble verificado. Senior tolerancia cero espinas" }
+      ]}
+    ]
+  },
+  {
+    lista: 4,
+    titulo: "ENTREGA 4 — Martes 5 mayo mañana",
+    entrega: "Mar 05 mañana refresco",
+    cubre: "Burrata + frescos macedonia + brocolini",
+    secciones: [
+      { s: "Quesería + Frutas + Verduras", items: [
+        { p: "Burrata fresca", c: "1,5 kg", n: "Mié 06 entrante (4 uds 375g aprox cuartos para 25 PAX)" },
+        { p: "Tostadas pan especial Pimientos Burrata", c: "200 g", n: "Mié 06 entrante" },
+        { p: "Brocolini", c: "1,5 kg", n: "Mié 06 cena" },
+        { p: "Pipas calabaza", c: "100 g", n: "Mié 06 brocolini cena" },
+        { p: "Frutas macedonia (melocotón+ciruela+cereza+arándanos)", c: "Mix ~3 kg", n: "Mar 05 macedonia" }
       ]}
     ]
   }
@@ -2083,12 +2298,15 @@ function downloadPeriodoPDF(tipo) {
   var md = getMenuData();
   var first = md.dias[0].fecha.slice(8,10);
   var last = md.dias[md.dias.length-1].fecha.slice(8,10);
-  var mon = md.dias[0].fecha.slice(5,7);
+  var firstMon = md.dias[0].fecha.slice(5,7);
+  var lastMon = md.dias[md.dias.length-1].fecha.slice(5,7);
   var months = {
     '01':'ene','02':'feb','03':'mar','04':'abr','05':'may','06':'jun',
     '07':'jul','08':'ago','09':'sep','10':'oct','11':'nov','12':'dic'
   };
-  var suffix = parseInt(first) + '-' + parseInt(last) + months[mon];
+  var suffix = (firstMon === lastMon)
+    ? parseInt(first) + '-' + parseInt(last) + months[firstMon]
+    : parseInt(first) + months[firstMon] + '-' + parseInt(last) + months[lastMon];
   var paths = {
     menu: ['pdfs/Menu_periodo_' + suffix + '.pdf', 'Menu_ATTENYA.pdf'],
     mise: ['pdfs/Mise_periodo_' + suffix + '.pdf', 'Mise_en_Place_ATTENYA.pdf'],

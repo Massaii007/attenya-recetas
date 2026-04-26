@@ -28,7 +28,11 @@ def parse_fm(text):
             for line in text[3:end].strip().split("\n"):
                 if ":" in line:
                     k, v = line.split(":", 1)
-                    fm[k.strip()] = v.strip()
+                    v = v.strip()
+                    # Strip surrounding quotes from YAML scalar values
+                    if len(v) >= 2 and ((v[0] == '"' and v[-1] == '"') or (v[0] == "'" and v[-1] == "'")):
+                        v = v[1:-1]
+                    fm[k.strip()] = v
     return fm
 
 def after_frontmatter(text):
