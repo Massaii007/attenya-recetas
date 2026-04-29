@@ -44,7 +44,8 @@ def parse_benchmark_md(filepath):
     # Skip standard section headers — only capture descriptive subtitles
     _skip_h2 = ['componentes', 'procedimiento', 'emplatado', 'ingredientes',
                 'puntos', 'descripci', 'appcc', 'adaptaci', 'mise en place',
-                'regeneraci', 'ensamblaje', 'montaje']
+                'regeneraci', 'ensamblaje', 'montaje', 'relaciones',
+                'relacion', 'notas', 'variantes', 'fuente', 'storytelling']
     for i, line in enumerate(lines):
         if line.startswith('## ') and not line.startswith('### '):
             sub = line[3:].strip()
