@@ -2061,7 +2061,7 @@ let periodoIds_anterior = buildIdsFromMenu(periodoAnteriorData);
 /* Also expose periodoIds for backward compat (used by switchPeriodo toggle) */
 let periodoIds = periodoIds_actual;
 
-let state = { cat: "all", sub: null, search: "", selected: null, tab: "ficha", view: "catalogo", periodo: false, autores: [] };
+let state = { cat: [], sub: [], search: "", selected: null, tab: "ficha", view: "catalogo", periodo: false, autores: [] };
 const navStack = [];
 var isRestaurante = false;
 
@@ -2156,8 +2156,8 @@ function filter() {
   if (isRestaurante) r = r.filter(x => x.c !== "Componentes");
   const pids = activePeriodoIds();
   if (pids) r = r.filter(x => pids.has(x.id));
-  if (state.cat !== "all") r = r.filter(x => x.c === state.cat);
-  if (state.sub) r = r.filter(x => x.s === state.sub);
+  if (state.cat && state.cat.length) r = r.filter(x => state.cat.includes(x.c));
+  if (state.sub && state.sub.length) r = r.filter(x => state.sub.includes(x.s));
   if (state.autores && state.autores.length) r = r.filter(x => x.a && state.autores.includes(x.a));
   if (state.search.trim()) {
     const s = state.search.toLowerCase();
@@ -2200,17 +2200,19 @@ function renderPeriodoBtns() {
 
 function renderCats() {
   var filteredCats = isRestaurante ? cats.filter(c => c.id !== "Componentes") : cats;
-  document.getElementById("cats").innerHTML = filteredCats.map(c =>
-    `<button class="cat-btn${state.cat===c.id?" active":""}" onclick="setCat('${c.id}')">${c.i} ${c.l} (${count(c.id)})</button>`
-  ).join("");
+  document.getElementById("cats").innerHTML = filteredCats.map(c => {
+    const isAll = c.id === "all";
+    const active = isAll ? (state.cat.length === 0) : state.cat.includes(c.id);
+    return `<button class="cat-btn${active?" active":""}" onclick="setCat('${c.id}')">${c.i} ${c.l} (${count(c.id)})</button>`;
+  }).join("");
 }
 
 function renderSubs() {
   const el = document.getElementById("subs");
-  if (state.cat !== "Componentes") { el.classList.remove("visible"); return; }
+  if (!state.cat.includes("Componentes")) { el.classList.remove("visible"); return; }
   el.classList.add("visible");
-  el.innerHTML = `<button class="sub-btn${!state.sub?" active":""}" onclick="setSub(null)">Todos</button>` +
-    subCats.map(s => `<button class="sub-btn${state.sub===s?" active":""}" onclick="setSub('${s}')">${s}</button>`).join("");
+  el.innerHTML = `<button class="sub-btn${state.sub.length===0?" active":""}" onclick="setSub(null)">Todos</button>` +
+    subCats.map(s => `<button class="sub-btn${state.sub.includes(s)?" active":""}" onclick="setSub('${s}')">${s}</button>`).join("");
 }
 
 function renderGrid() {
@@ -2559,8 +2561,28 @@ function goToRecipe(id) {
   }
 }
 
-function setCat(c) { state.cat = c; state.sub = null; renderCats(); renderSubs(); renderGrid(); }
-function setSub(s) { state.sub = s; renderSubs(); renderGrid(); }
+function setCat(c) {
+  if (c === "all") {
+    state.cat = [];
+    state.sub = [];
+  } else {
+    const idx = state.cat.indexOf(c);
+    if (idx >= 0) state.cat.splice(idx, 1);
+    else state.cat.push(c);
+    if (!state.cat.includes("Componentes")) state.sub = [];
+  }
+  renderCats(); renderSubs(); renderGrid();
+}
+function setSub(s) {
+  if (s === null) {
+    state.sub = [];
+  } else {
+    const idx = state.sub.indexOf(s);
+    if (idx >= 0) state.sub.splice(idx, 1);
+    else state.sub.push(s);
+  }
+  renderSubs(); renderGrid();
+}
 var _savedScrollY = 0;
 function select(id) {
   _savedScrollY = window.scrollY;
