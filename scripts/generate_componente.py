@@ -449,7 +449,12 @@ def generate_componente_pdf(recipe, output_path, image_path=None):
     body_h_10, n_pages = _measure_height(header_parts + body_10, PAGE_W, MARGIN)
 
     # Altura del cuerpo a escala 1.0
-    body_content_h = body_h_10 - header_h
+    # If LayoutError (body_h_10 is None), assume body is much larger than budget
+    # so the scale calculation aggressively reduces and the loop converges.
+    if body_h_10 is None or header_h is None:
+        body_content_h = body_budget * 2.0
+    else:
+        body_content_h = body_h_10 - header_h
     if body_content_h <= 0:
         body_content_h = 1
 

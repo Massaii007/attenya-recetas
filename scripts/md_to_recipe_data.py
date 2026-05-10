@@ -45,7 +45,9 @@ def parse_benchmark_md(filepath):
     _skip_h2 = ['componentes', 'procedimiento', 'emplatado', 'ingredientes',
                 'puntos', 'descripci', 'appcc', 'adaptaci', 'mise en place',
                 'regeneraci', 'ensamblaje', 'montaje', 'relaciones',
-                'relacion', 'notas', 'variantes', 'fuente', 'storytelling']
+                'relacion', 'notas', 'variantes', 'fuente', 'storytelling',
+                'timing', 'servicio', 'familia', 'archivos asociados',
+                'ver tambien', 'ver también']
     for i, line in enumerate(lines):
         if line.startswith('## ') and not line.startswith('### '):
             sub = line[3:].strip()
@@ -76,7 +78,8 @@ def parse_benchmark_md(filepath):
         found_title = False
         passed_subtitle = False
         _section_h2 = ['ingredientes', 'procedimiento', 'emplatado', 'puntos', 'appcc',
-                        'adaptaci', 'mise en place', 'componentes']
+                        'adaptaci', 'mise en place', 'componentes',
+                        'ensamblaje', 'timing', 'servicio', 'relacion']
         for i, line in enumerate(lines):
             if line.startswith('# ') and not line.startswith('## '):
                 found_title = True
@@ -173,8 +176,9 @@ def parse_benchmark_md(filepath):
         if m: data["meta"]["conservacion"] = m.group(1).strip()
 
     # --- ADAPTACIÓN SENIOR (narrative paragraph) ---
+    # Accepts trailing suffix like "(ensamblaje)" or "(plato)"
     senior_m = re.search(
-        r'#{2,3}\s*(?:Adaptaci[oó]n\s+Senior|ADAPTACI[OÓ]N\s+SENIOR)\s*\n+(.+?)(?=\n---|\n#{2,3}\s|\Z)',
+        r'#{2,3}\s*(?:Adaptaci[oó]n\s+Senior|ADAPTACI[OÓ]N\s+SENIOR)[^\n]*\n+(.+?)(?=\n---|\n#{2,3}\s|\Z)',
         text, re.DOTALL | re.IGNORECASE
     )
     if senior_m:
@@ -186,7 +190,7 @@ def parse_benchmark_md(filepath):
 
     # --- COMPONENTES DEL PLATO ---
     comp_m = re.search(
-        r'##?\s*Componentes\s+del\s+plato\s*\n+(.+?)(?=\n---|\n##[^#]|\n###\s+(?!-))',
+        r'##?\s*Componentes\s+del\s+[Pp]lato\s*\n+(.+?)(?=\n---|\n##[^#]|\n###\s+(?!-))',
         text, re.DOTALL | re.IGNORECASE
     )
     if comp_m:
@@ -197,12 +201,29 @@ def parse_benchmark_md(filepath):
             if cl.startswith('- '):
                 cl = re.sub(r'\*\*(.+?)\*\*', r'\1', cl)
                 comp_lines.append(cl[2:].strip())
+            elif cl.startswith('|') and cl.endswith('|'):
+                cols = [c.strip() for c in cl.split('|')[1:-1]]
+                if len(cols) >= 2:
+                    nombre_c = cols[0]
+                    if nombre_c.lower() in ('componente', '---', '', 'nombre'):
+                        continue
+                    if re.match(r'^[-|:\s]+$', nombre_c):
+                        continue
+                    tipo_c = cols[1] if cols[1] and cols[1] != '-' else ''
+                    nombre_clean = re.sub(r'\*\*(.+?)\*\*', r'\1', nombre_c)
+                    nombre_clean = re.sub(r'\[\[([^\]|]+)\|([^\]]+)\]\]', r'\2', nombre_clean)
+                    nombre_clean = re.sub(r'\[\[([^\]]+)\]\]', r'\1', nombre_clean)
+                    if tipo_c:
+                        comp_lines.append(f'{nombre_clean} ({tipo_c})')
+                    else:
+                        comp_lines.append(nombre_clean)
         if comp_lines:
             data["componentes_plato"] = comp_lines
 
     # --- EMPLATADO ---
+    # Matches: ## Emplatado, ### Emplatado, ## Ensamblaje y Emplatado
     empl_m = re.search(
-        r'###?\s*(?:Emplatado|EMPLATADO)\s*\n+(.+?)(?=\n---|\n###?\s+(?![\d])|\n##[^#])',
+        r'###?\s*(?:Ensamblaje\s+y\s+Emplatado|Emplatado|EMPLATADO)\s*\n+(.+?)(?=\n---|\n###?\s+(?![\d])|\n##[^#])',
         text, re.DOTALL
     )
     if empl_m:
@@ -225,8 +246,9 @@ def parse_benchmark_md(filepath):
             data["emplatado"] = empl_steps
 
     # --- PUNTOS CRÍTICOS ---
+    # Accepts variants like "## Puntos Críticos del Plato (ensamblaje)"
     puntos_m = re.search(
-        r'#{2,3}\s*(?:⚠️?\s*)?(?:PUNTOS?\s+CR[IÍ]TICOS?|Puntos?\s+cr[ií]ticos?)\s*\n+(.+?)(?=\n---|\n#{2,3}\s|\n\*")',
+        r'#{2,3}\s*(?:⚠️?\s*)?(?:PUNTOS?\s+CR[IÍ]TICOS?|Puntos?\s+cr[ií]ticos?)[^\n]*\n+(.+?)(?=\n---|\n#{2,3}\s|\n\*")',
         text, re.DOTALL | re.IGNORECASE
     )
     if puntos_m:
@@ -237,7 +259,9 @@ def parse_benchmark_md(filepath):
 
     # --- FASES (procedure sections) ---
     skip_sections = ['adaptaci', 'ingrediente', 'puntos cr', 'appcc', 'alérgeno', 'alergeno',
-                     'emplatado', 'componentes']
+                     'emplatado', 'componentes', 'relacion', 'notas', 'variantes',
+                     'fuente', 'storytelling', 'ensamblaje', 'timing', 'servicio',
+                     'familia', 'archivos asociados', 'ver tambien', 'ver también']
 
     current_fase = None
     in_ingredients = False
@@ -261,7 +285,11 @@ def parse_benchmark_md(filepath):
                 in_ingredients = False
                 in_appcc = False
                 in_skip = False
-            elif any(s in h2 for s in ['emplatado', 'puntos', 'appcc', 'adaptaci']):
+            elif any(h2.startswith(s) for s in ['emplatado', 'puntos', 'appcc', 'adaptaci',
+                                                   'relacion', 'notas', 'variantes', 'fuente',
+                                                   'storytelling', 'ensamblaje', 'timing',
+                                                   'servicio', 'familia', 'archivos', 'ver tambien',
+                                                   'ver también']):
                 in_skip = True
                 in_ingredients = False
                 if current_fase:
@@ -293,7 +321,12 @@ def parse_benchmark_md(filepath):
                     data["fases"].append(current_fase)
                     current_fase = None
                 continue
-            elif any(s in header_lower for s in ['puntos cr', 'punto cr', 'emplatado', 'componentes']):
+            elif any(header_lower.startswith(s) for s in ['puntos cr', 'punto cr', 'emplatado',
+                                                            'componentes', 'relacion', 'notas',
+                                                            'variantes', 'fuente', 'storytelling',
+                                                            'ensamblaje', 'timing', 'servicio',
+                                                            'familia', 'archivos asociados',
+                                                            'ver tambien', 'ver también']):
                 in_skip = True
                 in_ingredients = False
                 in_appcc = False
@@ -468,8 +501,9 @@ def parse_benchmark_md(filepath):
 
     # --- PLATO ENSAMBLADO FALLBACK ---
     # If no ingredientes found, try ## Componentes del Plato table
+    # Skip if componentes_plato already captured the table (avoid duplication in PDF render)
     has_ing = any(g.get("items") for g in data["ingredientes"])
-    if not has_ing:
+    if not has_ing and not data.get("componentes_plato"):
         comp_tbl_m = re.search(
             r'##\s*Componentes\s+del\s+[Pp]lato\s*\n(.+?)(?=\n##[^#]|\Z)',
             text, re.DOTALL
@@ -492,14 +526,20 @@ def parse_benchmark_md(filepath):
             if comp_group["items"]:
                 data["ingredientes"].append(comp_group)
 
-    # If no fases found, try plato-specific sections
+    # If no fases with steps found, try plato-specific sections.
+    # Filter empty fases first to allow plato fallback even when garbage sections leaked through.
+    data["fases"] = [f for f in data["fases"] if f.get("steps")]
     if not data["fases"]:
-        for section_re, section_name in [
-            (r'##\s*Ensamblaje\s+y\s+Emplatado\s*\n(.+?)(?=\n##[^#]|\Z)', 'Ensamblaje y Emplatado'),
+        # Skip "Ensamblaje y Emplatado" as a fase if it's already captured as emplatado block
+        plato_sections = []
+        if not data.get("emplatado"):
+            plato_sections.append((r'##\s*Ensamblaje\s+y\s+Emplatado\s*\n(.+?)(?=\n##[^#]|\Z)', 'Ensamblaje y Emplatado'))
+        plato_sections.extend([
             (r'##\s*Mise\s+en\s+Place\s*(?:--[^\n]*)?\s*\n(.+?)(?=\n##[^#]|\Z)', 'Mise en Place'),
             (r'##\s*Servicio\s*(?:--[^\n]*)?\s*\n(.+?)(?=\n##[^#]|\Z)', 'Servicio'),
             (r'##\s*Timing\s+de\s+Servicio\s*\n(.+?)(?=\n##[^#]|\Z)', 'Timing de Servicio'),
-        ]:
+        ])
+        for section_re, section_name in plato_sections:
             sec_m = re.search(section_re, text, re.DOTALL | re.IGNORECASE)
             if sec_m:
                 steps = []
@@ -514,8 +554,9 @@ def parse_benchmark_md(filepath):
                     data["fases"].append({"title": section_name, "steps": steps})
 
     # --- LEGACY FALLBACK: extract ingredients from scattered "- Name: Qty" / "• Name: Qty" ---
+    # Skip for plato ensamblado: would scoop frontmatter and prose-style "- A: B" lines
     has_ing_now = any(g.get("items") for g in data["ingredientes"])
-    if not has_ing_now:
+    if not has_ing_now and not data.get("componentes_plato"):
         legacy_group = {"grupo": "General", "items": []}
         for line in lines:
             stripped = line.strip()
@@ -575,7 +616,8 @@ def parse_benchmark_md(filepath):
             data["fases"] = legacy_fases
 
     # --- APPCC ---
-    appcc_m = re.search(r'#{2,3}\s*(?:⚠️?\s*)?APPCC\s*\n+(.+?)(?:\n\n|\n---|\n#{2,3}\s|\n\*")', text, re.DOTALL)
+    # Accepts variants like "## APPCC (ensamblaje)"
+    appcc_m = re.search(r'#{2,3}\s*(?:⚠️?\s*)?APPCC[^\n]*\n+(.+?)(?:\n\n|\n---|\n#{2,3}\s|\n\*")', text, re.DOTALL)
     if appcc_m:
         appcc_text = appcc_m.group(1).strip()
         appcc_text = re.sub(r'\*\*(.+?)\*\*', r'\1', appcc_text)
