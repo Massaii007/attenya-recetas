@@ -1,0 +1,19 @@
+{
+  "name": "ATTENYA Cocina",
+  "short_name": "Cocina",
+  "description": "Sistema culinario ATTENYA para cocina",
+  "start_url": "/?modo=cocina",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#1a1612",
+  "theme_color": "#1a1612",
+  "orientation": "landscape",
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
