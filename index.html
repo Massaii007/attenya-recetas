@@ -59,6 +59,8 @@ body { background: #1a1612; color: #e8dfd4; font-family: 'Cormorant Garamond', G
 .kitchen-protein { display: inline-block; margin-left: 10px; border: 1px solid #c47d7d; color: #d7a3a3; padding: 4px 8px; font-family: 'Jost', sans-serif; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; vertical-align: middle; }
 .kitchen-restore-hint { display: none; position: fixed; right: 26px; bottom: 22px; z-index: 20; font-family: 'Jost', sans-serif; font-size: 10px; letter-spacing: 2px; color: #6f8ea3; text-transform: uppercase; }
 .kitchen-home.idle-restore .kitchen-restore-hint { display: block; }
+.kitchen-update-status { position: fixed; left: 26px; bottom: 22px; z-index: 20; font-family: 'Jost', sans-serif; font-size: 10px; letter-spacing: 2px; color: #4f5d4a; text-transform: uppercase; pointer-events: none; }
+.kitchen-update-status.updating { color: #c4a97d; }
 
 /* === NAVIGATION TABS === */
 .nav-bar { background: #221e19; border-bottom: 1px solid #3a322a; padding: 0 20px; display: flex; justify-content: center; gap: 0; overflow-x: auto; }
@@ -342,6 +344,7 @@ body { background: #1a1612; color: #e8dfd4; font-family: 'Cormorant Garamond', G
     <div class="kitchen-days-label">Próximos días</div>
     <div class="kitchen-day-rail" id="kitchen-day-rail"></div>
     <div class="kitchen-plate-grid" id="kitchen-plate-grid"></div>
+    <div class="kitchen-update-status" id="kitchen-update-status"></div>
     <div class="kitchen-restore-hint">Tocar para volver</div>
   </div>
 </div>
@@ -418,6 +421,54 @@ body { background: #1a1612; color: #e8dfd4; font-family: 'Cormorant Garamond', G
 <div class="footer" id="footer"></div>
 
 <script>
+const APP_BUILD_ID = "2026-05-16T18:46:50Z";
+const APP_BUILD_LABEL = "16/05 20:46";
+const VERSION_URL = "/version.json";
+const UPDATE_CHECK_INTERVAL_MS = 30000;
+let updateCheckTimer = null;
+
+function updateStatus(text, mode) {
+  var el = document.getElementById('kitchen-update-status');
+  if (!el) return;
+  el.textContent = text || '';
+  el.classList.toggle('updating', mode === 'updating');
+}
+
+function withVersionParam(buildId) {
+  var url = new URL(window.location.href);
+  url.searchParams.set('v', buildId);
+  return url.toString();
+}
+
+async function checkForAppUpdate(reason) {
+  try {
+    var response = await fetch(VERSION_URL + '?t=' + Date.now(), { cache: 'no-store' });
+    if (!response.ok) return;
+    var remote = await response.json();
+    if (!remote || !remote.buildId) return;
+    if (remote.buildId !== APP_BUILD_ID) {
+      updateStatus('Actualizando ' + (remote.label || ''), 'updating');
+      window.location.replace(withVersionParam(remote.buildId));
+      return;
+    }
+    if (reason === 'manual' || reason === 'startup') updateStatus('Online · ' + APP_BUILD_LABEL);
+  } catch (e) {
+    if (reason === 'startup') updateStatus('Offline · ' + APP_BUILD_LABEL);
+  }
+}
+
+function startSelfUpdater() {
+  checkForAppUpdate('startup');
+  clearInterval(updateCheckTimer);
+  updateCheckTimer = setInterval(function() { checkForAppUpdate('interval'); }, UPDATE_CHECK_INTERVAL_MS);
+  document.addEventListener('visibilitychange', function() {
+    if (!document.hidden) checkForAppUpdate('visible');
+  });
+  window.addEventListener('pageshow', function() {
+    checkForAppUpdate('pageshow');
+  });
+}
+
 /* ============================================================
    RECIPES DATA (existing)
    ============================================================ */
@@ -3129,6 +3180,7 @@ async function init() {
 
 init();
 renderAutorChips();
+startSelfUpdater();
 </script>
 </body>
 </html>
