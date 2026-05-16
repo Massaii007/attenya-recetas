@@ -21,7 +21,44 @@ body { background: #1a1612; color: #e8dfd4; font-family: 'Cormorant Garamond', G
 .header { background: linear-gradient(180deg, #2a241e 0%, #1a1612 100%); border-bottom: 1px solid #3a322a; padding: 32px 20px 24px; text-align: center; }
 .header-sub { font-family: 'Jost', sans-serif; font-size: 11px; letter-spacing: 6px; color: #8a7d6b; margin-bottom: 8px; text-transform: uppercase; }
 .header h1 { font-size: 42px; font-weight: 300; color: #f0e6d6; letter-spacing: 12px; }
+.app-title { display: inline-block; cursor: pointer; transition: color 0.2s, opacity 0.2s; }
+.app-title:hover { color: #c4a97d; }
 .header-count { font-size: 14px; color: #8a7d6b; margin-top: 8px; font-family: 'Jost', sans-serif; }
+
+/* === HOME SCREEN === */
+.home-active .header, .home-active .periodo-tabs, .home-active .nav-bar, .home-active .footer,
+.kitchen-mode .header, .kitchen-mode .periodo-tabs, .kitchen-mode .nav-bar, .kitchen-mode .footer { display: none; }
+.kitchen-home { min-height: 100vh; padding: 28px 34px 34px; background: #050604; color: #e8dfd4; }
+.kitchen-topbar { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; margin-bottom: 18px; }
+.kitchen-brand { font-family: 'Jost', sans-serif; font-size: 11px; letter-spacing: 4px; color: #5f7d52; text-transform: uppercase; }
+.kitchen-title { font-size: 34px; font-weight: 300; color: #f0e6d6; line-height: 1.1; margin-top: 8px; }
+.kitchen-meta { font-family: 'Jost', sans-serif; font-size: 11px; letter-spacing: 4px; color: #5a4e3e; text-transform: uppercase; margin-top: 12px; }
+.kitchen-open-system { background: transparent; color: #8a7d6b; border: 1px solid #2f352c; padding: 10px 14px; font-family: 'Jost', sans-serif; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; }
+.kitchen-open-system:hover { color: #e8dfd4; border-color: #c4a97d; }
+.kitchen-days-label { font-family: 'Jost', sans-serif; font-size: 10px; letter-spacing: 4px; color: #5f7d52; text-transform: uppercase; margin: 26px 0 12px; }
+.kitchen-day-rail { display: grid; grid-template-columns: repeat(6, minmax(118px, 1fr)); gap: 12px; margin-bottom: 28px; }
+.kitchen-day-card { min-height: 96px; background: #11120f; border: 1px solid #2b3129; color: #c4b8a8; padding: 13px 14px; text-align: left; cursor: pointer; position: relative; display: flex; flex-direction: column; justify-content: space-between; }
+.kitchen-day-card.active { border-color: #c4a97d; color: #f0e6d6; }
+.kitchen-day-card .day-dot { position: absolute; top: 14px; right: 14px; width: 8px; height: 8px; background: #7da8c4; }
+.kitchen-day-card.active .day-dot { background: #c47d7d; }
+.kitchen-day-week { font-family: 'Jost', sans-serif; font-size: 10px; letter-spacing: 3px; color: #5f7d52; text-transform: uppercase; }
+.kitchen-day-date { font-family: 'Jost', sans-serif; font-size: 12px; color: #8a7d6b; margin-top: 8px; }
+.kitchen-day-main { font-family: 'Jost', sans-serif; font-size: 13px; color: #d4c8b8; line-height: 1.25; margin-top: 6px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.kitchen-plate-grid { display: grid; grid-template-columns: minmax(0, 1.28fr) minmax(330px, 0.92fr); gap: 16px; }
+.kitchen-hero-card, .kitchen-side-card { border: 1px solid #2b3129; background: #0d0e0c; position: relative; overflow: hidden; cursor: pointer; }
+.kitchen-hero-card { min-height: 520px; }
+.kitchen-side-stack { display: grid; gap: 14px; }
+.kitchen-side-card { min-height: 164px; }
+.kitchen-hero-card img, .kitchen-side-card img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.82; filter: saturate(0.95) contrast(1.04); }
+.kitchen-hero-card::after, .kitchen-side-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5,6,4,0.08) 0%, rgba(5,6,4,0.2) 48%, rgba(5,6,4,0.82) 100%); pointer-events: none; }
+.kitchen-badge { position: absolute; top: 18px; left: 18px; z-index: 2; background: #c47d7d; color: #120f0e; padding: 7px 11px; font-family: 'Jost', sans-serif; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; }
+.kitchen-plate-copy { position: absolute; left: 18px; right: 18px; bottom: 18px; z-index: 2; }
+.kitchen-plate-date { font-family: 'Jost', sans-serif; font-size: 10px; letter-spacing: 4px; color: #8a7d6b; text-transform: uppercase; margin-bottom: 8px; }
+.kitchen-plate-name { font-size: 26px; color: #f0e6d6; line-height: 1.15; }
+.kitchen-side-card .kitchen-plate-name { font-size: 18px; }
+.kitchen-protein { display: inline-block; margin-left: 10px; border: 1px solid #c47d7d; color: #d7a3a3; padding: 4px 8px; font-family: 'Jost', sans-serif; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; vertical-align: middle; }
+.kitchen-restore-hint { display: none; position: fixed; right: 26px; bottom: 22px; z-index: 20; font-family: 'Jost', sans-serif; font-size: 10px; letter-spacing: 2px; color: #6f8ea3; text-transform: uppercase; }
+.kitchen-home.idle-restore .kitchen-restore-hint { display: block; }
 
 /* === NAVIGATION TABS === */
 .nav-bar { background: #221e19; border-bottom: 1px solid #3a322a; padding: 0 20px; display: flex; justify-content: center; gap: 0; overflow-x: auto; }
@@ -243,6 +280,12 @@ body { background: #1a1612; color: #e8dfd4; font-family: 'Cormorant Garamond', G
 /* === RESPONSIVE === */
 @media (max-width: 600px) {
   .header h1 { font-size: 28px; }
+  .kitchen-home { padding: 22px 18px 26px; }
+  .kitchen-topbar { flex-direction: column; }
+  .kitchen-title { font-size: 29px; }
+  .kitchen-day-rail { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .kitchen-plate-grid { grid-template-columns: 1fr; }
+  .kitchen-hero-card { min-height: 420px; }
   .grid { grid-template-columns: 1fr; }
   .card-name { font-size: 16px; }
   .card-img { height: 160px; }
@@ -262,7 +305,7 @@ body { background: #1a1612; color: #e8dfd4; font-family: 'Cormorant Garamond', G
 <div class="header">
   <div class="rest-back hidden" id="rest-back" onclick="history.back()">← attenya.com</div>
   <div class="header-sub">ATTENYA SENIOR RETREAT</div>
-  <h1>Sistema Culinario</h1>
+  <h1 class="app-title" onclick="goHome()">Sistema Culinario</h1>
   <div class="header-count" id="total-count"></div>
 </div>
 
@@ -278,10 +321,29 @@ body { background: #1a1612; color: #e8dfd4; font-family: 'Cormorant Garamond', G
 
 <!-- NAVIGATION -->
 <div class="nav-bar">
+  <button class="nav-tab" onclick="switchView('home')">Inicio</button>
   <button class="nav-tab active" onclick="switchView('catalogo')">Catálogo</button>
   <button class="nav-tab" onclick="switchView('menu')">Menú</button>
   <button class="nav-tab" onclick="switchView('mise')">Mise en Place</button>
   <button class="nav-tab" onclick="switchView('compras')">Compras</button>
+</div>
+
+<!-- HOME VIEW -->
+<div id="view-home" class="hidden">
+  <div class="kitchen-home" id="kitchen-home">
+    <div class="kitchen-topbar">
+      <div>
+        <div class="kitchen-brand">ATTENYA - RESTAURANTE</div>
+        <div class="kitchen-title" id="kitchen-title">Menú del día</div>
+        <div class="kitchen-meta" id="kitchen-meta"></div>
+      </div>
+      <button class="kitchen-open-system" onclick="openKitchenSystem(event)">Sistema completo</button>
+    </div>
+    <div class="kitchen-days-label">Próximos días</div>
+    <div class="kitchen-day-rail" id="kitchen-day-rail"></div>
+    <div class="kitchen-plate-grid" id="kitchen-plate-grid"></div>
+    <div class="kitchen-restore-hint">Tocar para volver</div>
+  </div>
 </div>
 
 <!-- CATALOG VIEW -->
@@ -2362,8 +2424,10 @@ async function renderDetail() {
   if (!r) {
     document.getElementById("detail-view").classList.add("hidden");
     if (state.view === "catalogo") document.getElementById("view-catalogo").classList.remove("hidden");
+    if (state.view === "home") document.getElementById("view-home").classList.remove("hidden");
     return;
   }
+  document.getElementById("view-home").classList.add("hidden");
   document.getElementById("view-catalogo").classList.add("hidden");
   document.getElementById("view-menu").classList.add("hidden");
   document.getElementById("view-mise").classList.add("hidden");
@@ -2534,6 +2598,97 @@ function renderCompras() {
   `).join("");
 }
 
+function itemName(item) {
+  if (!item) return '—';
+  if (typeof item === 'object') return item.n || '—';
+  return item;
+}
+
+function itemId(item) {
+  return item && typeof item === 'object' ? item.id : null;
+}
+
+function itemProtein(item) {
+  var id = itemId(item);
+  var r = id ? recipes.find(function(x) { return x.id === id; }) : null;
+  return r && r.p && r.p !== '-' ? r.p : '';
+}
+
+function cleanItemName(item) {
+  return itemName(item).replace(/^🆕\s*/, '');
+}
+
+function getHomeDayIndex() {
+  var days = getMenuData().dias;
+  var today = new Date().toISOString().split('T')[0];
+  var idx = days.findIndex(function(d) { return d.fecha === today; });
+  return idx >= 0 ? idx : 0;
+}
+
+var kitchenDayIndex = 0;
+var kitchenIdleRestoreState = null;
+var kitchenIdleTimer = null;
+var kitchenModeActive = false;
+
+function setKitchenDay(index) {
+  var days = getMenuData().dias;
+  kitchenDayIndex = Math.max(0, Math.min(index, days.length - 1));
+  renderHome();
+}
+
+function renderKitchenRail(days) {
+  var todayIndex = getHomeDayIndex();
+  var visible = days.slice(todayIndex, todayIndex + 6);
+  return visible.map(function(day, offset) {
+    var i = todayIndex + offset;
+    var active = i === kitchenDayIndex ? ' active' : '';
+    var main = cleanItemName(day.principal);
+    return `<button class="kitchen-day-card${active}" onclick="setKitchenDay(${i})">
+      <span class="day-dot"></span>
+      <span class="kitchen-day-week">${i === todayIndex ? 'Hoy' : day.ds.slice(0, 3)}</span>
+      <span class="kitchen-day-date">${day.fecha.slice(8,10)}/${day.fecha.slice(5,7)}</span>
+      <span class="kitchen-day-main">${main}</span>
+    </button>`;
+  }).join('');
+}
+
+function renderKitchenPlate(item, role, isHero, day) {
+  var id = itemId(item);
+  var img = id ? getImg(id) : '';
+  var name = cleanItemName(item);
+  var prot = itemProtein(item);
+  var roleLabel = role.toUpperCase();
+  var dateLine = day ? `${day.ds} · ${day.fecha.slice(8,10)}/${day.fecha.slice(5,7)}` : '';
+  var onClick = id ? `onclick="goToRecipe('${id}')"` : '';
+  return `<article class="${isHero ? 'kitchen-hero-card' : 'kitchen-side-card'}" ${onClick}>
+    ${img ? `<img src="${img}" alt="${name}" onerror="this.style.opacity='0.08'">` : ''}
+    <div class="kitchen-badge">${roleLabel}</div>
+    <div class="kitchen-plate-copy">
+      <div class="kitchen-plate-date">${dateLine}</div>
+      <div class="kitchen-plate-name">${name}${isHero && prot ? `<span class="kitchen-protein">${prot}</span>` : ''}</div>
+    </div>
+  </article>`;
+}
+
+function renderHome() {
+  var days = getMenuData().dias;
+  if (!days.length) return;
+  if (kitchenDayIndex >= days.length) kitchenDayIndex = getHomeDayIndex();
+  var d = days[kitchenDayIndex];
+  if (!d) return;
+  document.getElementById("kitchen-title").textContent = getMenuData().periodo;
+  document.getElementById("kitchen-meta").textContent = getMenuData().pax + " PAX · " + getMenuData().ciclo;
+  document.getElementById("kitchen-day-rail").innerHTML = renderKitchenRail(days);
+  document.getElementById("kitchen-plate-grid").innerHTML = `
+    ${renderKitchenPlate(d.principal, 'principal', true, d)}
+    <div class="kitchen-side-stack">
+      ${renderKitchenPlate(d.entrante, 'entrante', false, d)}
+      ${renderKitchenPlate(d.postre, 'postre', false, d)}
+      ${renderKitchenPlate(d.cena, 'cena', false, d)}
+    </div>
+  `;
+}
+
 /* ============================================================
    NAVIGATION & INTERACTION
    ============================================================ */
@@ -2541,8 +2696,11 @@ function switchView(v) {
   state.view = v;
   state.selected = null;
   navStack.length = 0;
+  document.body.classList.toggle('home-active', v === 'home');
+  if (kitchenModeActive && v === 'home') document.body.classList.add('kitchen-mode');
   
   // Hide all views
+  document.getElementById("view-home").classList.add("hidden");
   document.getElementById("view-catalogo").classList.add("hidden");
   document.getElementById("view-menu").classList.add("hidden");
   document.getElementById("view-mise").classList.add("hidden");
@@ -2557,6 +2715,57 @@ function switchView(v) {
   document.querySelector(`.nav-tab[onclick="switchView('${v}')"]`).classList.add("active");
   
   window.scrollTo(0, 0);
+}
+
+function goHome() {
+  if (isRestaurante) {
+    switchView('menu');
+    return;
+  }
+  switchView('home');
+}
+
+function openKitchenSystem(event) {
+  if (event) event.stopPropagation();
+  document.body.classList.remove('kitchen-mode');
+  switchView('menu');
+}
+
+function scheduleKitchenIdle() {
+  if (!kitchenModeActive) return;
+  clearTimeout(kitchenIdleTimer);
+  kitchenIdleTimer = setTimeout(function() {
+    if (state.view !== 'home') {
+      kitchenIdleRestoreState = {
+        view: state.view,
+        selectedId: state.selected ? state.selected.id : null,
+        tab: state.tab
+      };
+      switchView('home');
+      document.getElementById('kitchen-home').classList.add('idle-restore');
+    }
+  }, 90000);
+}
+
+function handleKitchenActivity(event) {
+  if (!kitchenModeActive) return;
+  var home = document.getElementById('kitchen-home');
+  if (state.view === 'home' && kitchenIdleRestoreState && home && home.classList.contains('idle-restore')) {
+    if (event) event.preventDefault();
+    home.classList.remove('idle-restore');
+    var target = kitchenIdleRestoreState;
+    kitchenIdleRestoreState = null;
+    document.body.classList.remove('kitchen-mode');
+    switchView(target.view);
+    if (target.selectedId) {
+      state.selected = recipes.find(function(r) { return r.id === target.selectedId; }) || null;
+      state.tab = target.tab || 'ficha';
+      if (state.selected) renderDetail();
+    }
+    scheduleKitchenIdle();
+    return;
+  }
+  scheduleKitchenIdle();
 }
 
 function toggleDay(el) {
@@ -2643,12 +2852,14 @@ function getComprasData() { return currentPeriodo === 'p1' ? comprasData : compr
 
 function switchPeriodo(p) {
   currentPeriodo = p;
+  kitchenDayIndex = getHomeDayIndex();
   document.getElementById('tab-p1').style.background = p === 'p1' ? 'rgba(255,255,255,0.1)' : 'transparent';
   document.getElementById('tab-p1').style.color = p === 'p1' ? '#d4c5a0' : '#888';
   document.getElementById('tab-p1').style.borderColor = p === 'p1' ? 'rgba(255,255,255,0.2)' : 'rgba(255,255,255,0.1)';
   document.getElementById('tab-p2').style.background = p === 'p2' ? 'rgba(255,255,255,0.1)' : 'transparent';
   document.getElementById('tab-p2').style.color = p === 'p2' ? '#d4c5a0' : '#888';
   document.getElementById('tab-p2').style.borderColor = p === 'p2' ? 'rgba(255,255,255,0.2)' : 'rgba(255,255,255,0.1)';
+  renderHome();
   renderMenu();
   renderMise();
   renderCompras();
@@ -2858,18 +3069,27 @@ async function init() {
   renderCats();
   renderSubs();
   renderGrid();
+  renderHome();
   renderMenu();
   renderMise();
   renderCompras();
   
-  /* modo=cocina: activate periodo filter + switch to menu view */
+  /* modo=cocina: activate periodo filter + switch to kitchen home */
   if (modo === 'cocina') {
+    kitchenModeActive = true;
+    document.body.classList.add('kitchen-mode');
+    kitchenDayIndex = getHomeDayIndex();
     state.periodo = 'actual';
     renderCats();
     renderSubs();
     renderGrid();
+    renderHome();
     renderPeriodoBtns();
-    switchView('menu');
+    switchView('home');
+    ['pointerdown', 'keydown', 'touchstart'].forEach(function(evt) {
+      document.addEventListener(evt, handleKitchenActivity, { passive: evt !== 'touchstart' });
+    });
+    scheduleKitchenIdle();
   }
   /* modo=restaurante: like cocina but hide operational UI */
   if (modo === 'restaurante') {
@@ -2883,9 +3103,9 @@ async function init() {
     document.querySelector('.periodo-tabs').style.display = 'none';
     /* Hide search bar */
     document.querySelector('.search-wrap').style.display = 'none';
-    /* Hide Mise en Place and Compras nav tabs */
+    /* Hide operational nav tabs */
     document.querySelectorAll('.nav-tab').forEach(function(tab) {
-      if (tab.textContent.trim() === 'Mise en Place' || tab.textContent.trim() === 'Compras') tab.style.display = 'none';
+      if (tab.textContent.trim() === 'Inicio' || tab.textContent.trim() === 'Mise en Place' || tab.textContent.trim() === 'Compras') tab.style.display = 'none';
     });
     /* Hide PDF buttons and meta line in menu header */
     document.querySelectorAll('#view-menu .pdf-btn').forEach(function(btn) { btn.style.display = 'none'; });
