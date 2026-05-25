@@ -1,0 +1,123 @@
+{
+  "recipe_id": "Dorada_Vapor_Japonesa_Plato",
+  "title": "Dorada al Vapor Japonesa",
+  "subtitle": "Adaptación senior · 25 PAX · Filetes sin espina",
+  "elements": [
+    {"key": "pescado", "label": "PESCADO BLANCO", "color": "#3B6B47"},
+    {"key": "alino",   "label": "ALIÑO JAPONÉS",  "color": "#B7950B"},
+    {"key": "montaje", "label": "MONTAJE",        "color": "#1A5276"}
+  ],
+  "calc_base": "Base de cálculo: 25 PAX · 1 filete (150-160 g) por persona · técnica vapor cantonesa con escaldado aceite jengibre.",
+  "ingredients_by_element": {
+    "pescado": {
+      "items": [
+        "Filetes de dorada limpios sin espinas: 25 uds (150-160 g)",
+        "Arroz blanco basmati: 2,5 kg seco",
+        "Sal fina: moderada (la soja sala)",
+        "Pimienta blanca: c/s"
+      ],
+      "note": "ESPINA CERO obligatorio · verificar cada porción con pinza si necesario.",
+      "equipment_label": "Equipo necesario:",
+      "equipment": ["Convotherm modo vapor", "Sartén amplia para aceite", "Bandejas GN de vapor"]
+    },
+    "alino": {
+      "items": [
+        "Jengibre fresco: 250 g (laminado translúcido)",
+        "Cebolla tierna: 375 g (juliana fina)",
+        "Cilantro fresco: 100 g (deshojado)",
+        "Aceite de girasol: 500 ml",
+        "Salsa de soja: 250 ml",
+        "Semillas de sésamo tostadas: 40 g"
+      ],
+      "note": "El aceite debe estar MUY caliente al verter (chisporroteo = correcto)."
+    },
+    "montaje": {
+      "items": [
+        "Plato llano amplio (cerámica clara)",
+        "Cuchara honda para verter aceite",
+        "Pinzas para juliana"
+      ]
+    }
+  },
+  "time": "45 min total · 15 min mise · 8 min vapor · 5 min escaldado · servicio inmediato.",
+  "senior": "Técnica más digestiva del recetario para pescado · textura ultra delicada (se deshace sola) · umami sin agresividad · espinas tolerancia cero.",
+  "steps": [
+    {
+      "n": 1,
+      "element": "pescado",
+      "title": "Verificar espinas filetes",
+      "illustration": "Dorada_Vapor_Japonesa_Plato_step01.jpeg",
+      "action": "Repasar cada filete con pinza de espinas pasando contra la fibra. Verificar pieza por pieza · tolerancia cero obligatoria por perfil senior.",
+      "note": "Si una sola espina pasa, el plato falla · validar las 25 unidades."
+    },
+    {
+      "n": 2,
+      "element": "pescado",
+      "title": "Salpimentar y vapor 6-8 min",
+      "illustration": "Dorada_Vapor_Japonesa_Plato_step02.jpeg",
+      "action": "Salpimentar filetes (moderado · la soja sala). Disponer en bandejas GN de vapor sin amontonar. Cocer Convotherm 100% vapor 100 °C, 6-8 min hasta nacarado jugoso.",
+      "temp_time": "100 °C vapor · 6-8 min",
+      "note": "No sobrecocer · centro >65 °C pero jugoso."
+    },
+    {
+      "n": 3,
+      "element": "pescado",
+      "title": "Hervir arroz basmati suelto",
+      "illustration": "Dorada_Vapor_Japonesa_Plato_step03.jpeg",
+      "action": "Cocer arroz basmati 2,5 kg en agua salada hasta al dente. Escurrir bien · vaporizar 2 min en Convotherm para soltar el grano · reservar caliente.",
+      "temp_time": "Hervir 12 min + vapor 2 min"
+    },
+    {
+      "n": 4,
+      "element": "alino",
+      "title": "Laminar jengibre translúcido",
+      "illustration": "Dorada_Vapor_Japonesa_Plato_step04.jpeg",
+      "action": "Pelar 250 g de jengibre fresco · laminar finísimo con mandolina o cuchillo afilado · láminas translúcidas. Cortar 375 g cebolla tierna en juliana fina · deshojar 100 g cilantro fresco.",
+      "ingredients": "Jengibre 250 g · cebolla tierna 375 g · cilantro 100 g"
+    },
+    {
+      "n": 5,
+      "element": "alino",
+      "title": "Freír jengibre crujiente",
+      "illustration": "Dorada_Vapor_Japonesa_Plato_step05.jpeg",
+      "action": "Calentar 500 ml aceite girasol en sartén amplia hasta humeo ligero (180 °C). Freír las láminas de jengibre hasta crujientes y aromáticas. Mantener el aceite MUY caliente · reservar.",
+      "temp_time": "180 °C · 2-3 min",
+      "note": "El aceite caliente con aroma a jengibre es la firma del plato."
+    },
+    {
+      "n": 6,
+      "element": "alino",
+      "title": "Preparar 250 ml salsa soja",
+      "illustration": "Dorada_Vapor_Japonesa_Plato_step06.jpeg",
+      "action": "Medir 250 ml de salsa de soja en jarrita de servicio. Reservar a temperatura ambiente · se vierte al final sin calentar para preservar matices."
+    },
+    {
+      "n": 7,
+      "element": "montaje",
+      "title": "Moldear arroz al lado",
+      "illustration": "Dorada_Vapor_Japonesa_Plato_step07.jpeg",
+      "action": "Plato llano amplio claro. Moldear arroz a un lado del plato con aro o cucharón · cantidad aproximada 100 g por persona.",
+      "ingredients": "Arroz: ~100 g por plato"
+    },
+    {
+      "n": 8,
+      "element": "montaje",
+      "title": "Colocar dorada y guarnición",
+      "illustration": "Dorada_Vapor_Japonesa_Plato_step08.jpeg",
+      "action": "Colocar filete de dorada centrado · piel arriba si la tiene. Cubrir con juliana de cebolla tierna + cilantro fresco + semillas de sésamo tostadas (40 g distribuidas)."
+    },
+    {
+      "n": 9,
+      "element": "montaje",
+      "title": "Verter aceite y soja al pase",
+      "illustration": "Dorada_Vapor_Japonesa_Plato_step09.jpeg",
+      "action": "Verter el aceite de jengibre MUY caliente sobre el pescado y la juliana · debe chisporrotear escaldando la cebolla y el cilantro. Rociar salsa de soja por encima · servir inmediatamente.",
+      "note": "El sizzle es parte de la experiencia · si no chisporrotea, el aceite está frío."
+    }
+  ],
+  "notes_final": {
+    "appcc": "Pescado >65 °C interno · vapor 100 °C 6-8 min · aceite >180 °C escaldado · alérgenos: pescado (dorada), soja (salsa), sésamo (semillas).",
+    "senior": "Espinas tolerancia cero verificadas pieza a pieza · técnica ultra digestiva · sin agresividad · ideal días descanso digestivo.",
+    "critical": "Aceite MUY caliente al verter (chisporrotea) · si no chisporrotea, no escalda la juliana y el plato pierde su firma cantonesa."
+  }
+}

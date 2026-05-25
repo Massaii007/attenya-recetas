@@ -1,0 +1,421 @@
+/* Receta IKEA · CSS común · 2026-05-25 */
+
+:root {
+  --ink:        #1a1612;
+  --ink-soft:   #4a3f33;
+  --ink-mute:   #8a7d6b;
+  --paper:      #fdfcf9;
+  --paper-card: #f7f3ec;
+  --paper-soft: #fbf8f3;
+  --rule:       #d7cdb8;
+  --rule-soft:  rgba(26,22,18,0.08);
+  --apionabo:   #3a6a3e;
+  --salsa:      #b8860b;
+  --montaje:    #1f5e8c;
+  --apionabo-bg: #e8f0e6;
+  --salsa-bg:   #fbf3df;
+  --montaje-bg: #e0eaf2;
+  --critical:   #922B21;
+  --senior:     #1A5276;
+  --appcc:      #7D6608;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Jost', -apple-system, "Helvetica Neue", sans-serif;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* === Layout principal · sidebar + content === */
+.layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  height: 100vh;
+}
+
+/* === Slide system (navegación discreta) === */
+.slide { display: none; }
+.slide.active { display: block; }
+.sidebar-step .badge.intro,
+.summary-cell .cell-badge.intro { background: var(--ink-mute); }
+
+/* === Sidebar resumen 10 pasos (sticky) === */
+.sidebar {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  height: 100vh;
+  overflow-y: auto;
+  background: var(--paper-card);
+  border-right: 1px solid var(--rule);
+  padding: 20px 14px;
+}
+.sidebar h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--ink-soft);
+  margin-bottom: 10px;
+  letter-spacing: 0.3px;
+}
+.sidebar-step {
+  display: flex; gap: 8px; align-items: center;
+  padding: 6px 8px;
+  margin-bottom: 2px;
+  border-radius: 6px;
+  cursor: pointer;
+  border-left: 3px solid transparent;
+  transition: background 0.2s, border-color 0.2s;
+  text-decoration: none;
+  color: var(--ink-soft);
+}
+.sidebar-step:hover { background: var(--paper-soft); }
+.sidebar-step.active {
+  background: #fff;
+  border-left-color: var(--ink);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  color: var(--ink);
+}
+.sidebar-step .num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px; font-weight: 400;
+  min-width: 24px;
+}
+.sidebar-step .info { flex: 1; min-width: 0; }
+.sidebar-step .info.pair { display: flex; flex-direction: column; gap: 3px; }
+.pair-line { font-size: 10px; line-height: 1.3; color: inherit; display: flex; align-items: center; gap: 5px; }
+.pair-badge { display: inline-block; font-size: 8px; font-weight: 500; letter-spacing: 0.5px; padding: 1px 5px; color: #fff; border-radius: 2px; flex-shrink: 0; }
+.pair-notes-hint { color: var(--ink-mute); font-style: italic; font-size: 9px; }
+.sidebar-step .badge {
+  display: inline-block;
+  font-size: 9px; font-weight: 500;
+  letter-spacing: 0.6px;
+  padding: 2px 6px;
+  color: #fff;
+  border-radius: 2px;
+  margin-bottom: 3px;
+}
+.sidebar-step .title-mini {
+  font-size: 11px; line-height: 1.3;
+  color: inherit;
+}
+
+/* === Content === */
+.content { padding: 20px 28px 60px; max-width: 1100px; height: 100vh; overflow-y: auto; }
+.content > * + * { margin-top: 16px; }
+
+/* === Header === */
+.hero-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; }
+.hero-left { flex: 1; min-width: 0; }
+.hero-pax {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400; font-size: 24px;
+  color: var(--ink);
+  padding: 8px 18px;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  white-space: nowrap;
+  align-self: flex-start;
+}
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 1.05;
+  color: var(--ink);
+  margin-bottom: 2px;
+}
+.hero .subtitle {
+  font-size: 12px;
+  color: var(--ink-mute);
+  letter-spacing: 0.3px;
+}
+
+/* === Element headers (3 columnas color) === */
+.elements-rail { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-top: 12px; }
+.element-tag {
+  text-align: center;
+  font-size: 10px; font-weight: 500;
+  letter-spacing: 1.4px;
+  padding: 6px;
+  color: #fff;
+  border-radius: 2px;
+}
+.element-tag.apionabo { background: var(--apionabo); }
+.element-tag.salsa    { background: var(--salsa); }
+.element-tag.montaje  { background: var(--montaje); }
+.element-explainer {
+  font-size: 11px; color: var(--ink-mute);
+  text-align: center; font-style: italic;
+  margin-top: 6px;
+}
+
+/* === Ingredientes 3 columnas === */
+.ingredients-block h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500; font-size: 18px;
+  margin-bottom: 2px;
+}
+.calc-base {
+  text-align: center;
+  font-size: 10px; font-style: italic;
+  color: var(--ink-mute);
+  margin: 4px 0 8px;
+}
+.ingredients-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+.ing-col {
+  padding: 10px 12px;
+  border-radius: 4px;
+  font-size: 11px;
+}
+.ing-col.apionabo { background: var(--apionabo-bg); }
+.ing-col.salsa    { background: var(--salsa-bg); }
+.ing-col.montaje  { background: var(--montaje-bg); }
+.ing-col h3 {
+  font-size: 10px; font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+.ing-col.apionabo h3 { color: var(--apionabo); }
+.ing-col.salsa    h3 { color: var(--salsa); }
+.ing-col.montaje  h3 { color: var(--montaje); }
+.ing-col ul { list-style: none; }
+.ing-col li {
+  padding: 2px 0 2px 12px;
+  position: relative;
+  line-height: 1.4;
+}
+.ing-col li::before {
+  content: '·';
+  position: absolute; left: 2px;
+  font-weight: 700;
+}
+.ing-col .note {
+  margin-top: 10px;
+  font-size: 11px;
+  font-style: italic;
+  color: var(--ink-soft);
+}
+.ing-col .equipment-label {
+  margin-top: 10px;
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 0.4px;
+}
+
+/* === Banda TIEMPO / SENIOR === */
+.banda {
+  display: grid; grid-template-columns: 80px 1fr; gap: 0;
+  margin-top: 6px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.banda .tag {
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; font-weight: 500; letter-spacing: 1.2px;
+  color: #fff;
+  padding: 8px;
+}
+.banda.tiempo .tag { background: var(--montaje); }
+.banda.senior .tag { background: var(--apionabo); }
+.banda .body {
+  background: var(--paper-soft);
+  padding: 8px 14px;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+/* === Resumen visual · grid 5x2 (at-one-glance) === */
+.summary-block { margin-top: 12px; }
+.summary-block h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500; font-size: 16px;
+  margin-bottom: 6px;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+.summary-cell.span-2 { grid-column: span 2; }
+.summary-cell {
+  display: flex; flex-direction: column;
+  background: var(--paper-soft);
+  border-radius: 4px;
+  padding: 7px;
+  text-decoration: none;
+  color: var(--ink);
+  border: 1px solid var(--rule-soft);
+  transition: background 0.15s, border-color 0.15s, transform 0.15s;
+}
+.summary-cell:hover {
+  background: #fff;
+  border-color: var(--rule);
+  transform: translateY(-1px);
+}
+.summary-cell .cell-head {
+  display: flex; align-items: center; gap: 6px;
+  margin-bottom: 4px;
+}
+.summary-cell .cell-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400; font-size: 18px;
+  color: var(--ink); line-height: 1;
+}
+.summary-cell .cell-badge {
+  font-size: 9px; font-weight: 500;
+  letter-spacing: 0.8px;
+  color: #fff;
+  padding: 3px 7px;
+  border-radius: 2px;
+}
+.summary-cell .cell-illustration {
+  flex: 1;
+  display: flex; align-items: center; justify-content: center;
+  background: #fff;
+  border-radius: 3px;
+  padding: 4px;
+  margin-bottom: 4px;
+  min-height: 68px;
+}
+.summary-cell .cell-illustration img {
+  max-width: 100%; max-height: 60px;
+  display: block;
+}
+.summary-cell .cell-title {
+  font-size: 10px; line-height: 1.25;
+  color: var(--ink-soft);
+}
+
+/* === Pasos detallados === */
+.steps-block h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500; font-size: 22px;
+  margin-bottom: 14px;
+}
+.step {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 24px;
+  padding: 12px 0;
+}
+.group-slide .step + .step { border-top: 1px solid var(--rule-soft); padding-top: 16px; margin-top: 4px; }
+.step .illustration {
+  background: var(--paper-soft);
+  border-radius: 4px;
+  padding: 10px;
+  display: flex; align-items: center; justify-content: center;
+  min-height: 170px;
+}
+.step .illustration img {
+  max-width: 100%; max-height: 200px;
+  display: block;
+}
+.step .info { display: flex; flex-direction: column; }
+.step .head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 6px; }
+.step .num {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300; font-size: 38px;
+  color: var(--ink);
+  line-height: 1;
+}
+.step .badge {
+  font-size: 10px; font-weight: 500;
+  letter-spacing: 1.2px;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 2px;
+}
+.step .badge.apionabo { background: var(--apionabo); }
+.step .badge.salsa    { background: var(--salsa); }
+.step .badge.montaje  { background: var(--montaje); }
+.step .title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500; font-size: 20px;
+  margin-bottom: 10px;
+}
+.step .field {
+  display: grid; grid-template-columns: 100px 1fr; gap: 10px;
+  font-size: 11px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--rule-soft);
+}
+.step .field:last-child { border-bottom: none; }
+.step .field-label {
+  font-weight: 500; letter-spacing: 1px;
+  font-size: 10px;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 2px;
+  text-align: center;
+  align-self: start;
+  width: 90px;
+}
+.step .field-label.accion       { background: var(--apionabo); }
+.step .field-label.ingredientes { background: #5a4a3a; }
+.step .field-label.temp         { background: var(--critical); }
+.step .field-label.nota         { background: var(--ink-mute); }
+.step .field-value { line-height: 1.5; }
+
+/* === Notas finales (APPCC, SENIOR, CRÍTICO) === */
+.notes-final {
+  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px;
+  margin-top: 24px;
+}
+.note-card {
+  padding: 14px 16px;
+  border-radius: 4px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.note-card.appcc    { background: #FEF9E7; color: var(--appcc); }
+.note-card.senior   { background: #EBF5FB; color: var(--senior); }
+.note-card.critical { background: #FDEDEC; color: var(--critical); }
+.note-card h4 {
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 1.4px;
+  margin-bottom: 6px;
+}
+.notes-section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400; font-size: 16px;
+  color: var(--ink-soft);
+  margin-top: 24px; margin-bottom: 8px;
+  padding-top: 16px;
+  border-top: 1px solid var(--rule-soft);
+}
+.final-notes { margin-top: 12px; }
+
+/* === Responsive: si la sidebar se hace muy estrecha === */
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { position: static; height: auto; border-right: none; border-bottom: 1px solid var(--rule); }
+  .step { grid-template-columns: 1fr; }
+  .ingredients-grid, .notes-final, .elements-rail { grid-template-columns: 1fr; }
+}
+
+/* === Back link al index cocina (esquina sup-izq sidebar) === */
+.back-cocina {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 6px 10px;
+  color: var(--ink-mute);
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  transition: all 0.2s;
+}
+.back-cocina:hover {
+  background: var(--montaje);
+  color: #fff;
+  border-color: var(--montaje);
+}

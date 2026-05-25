@@ -1,0 +1,130 @@
+{
+  "recipe_id": "Bunuelos_Remolacha_Feta_Plato_Vegetariano",
+  "title": "Buñuelos Remolacha-Feta · Yogur · Couscous",
+  "subtitle": "Plato vegetariano levantino · 25 PAX · Chef-free compatible",
+  "elements": [
+    {"key": "bunuelos", "label": "BUÑUELOS REMOLACHA-FETA", "color": "#3B6B47"},
+    {"key": "guarni",   "label": "YOGUR Y COUSCOUS",        "color": "#B7950B"},
+    {"key": "montaje",  "label": "MONTAJE FINAL",           "color": "#1A5276"}
+  ],
+  "calc_base": "Base de cálculo: 25 PAX · 4-5 buñuelos (280-350 g) + ~120 g couscous + cucharón yogur · adaptación a plato del entrante Hage.",
+  "ingredients_by_element": {
+    "bunuelos": {
+      "items": [
+        "Remolacha cruda rallada gruesa: 5.000 g",
+        "Cebolla picada fina: 1.250 g",
+        "Queso feta desmenuzado: 2.500 g",
+        "Huevos M batidos: 24 uds",
+        "Comino molido: 30 g · cilantro molido: 30 g",
+        "Ralladura 8 limones + zumo 180 ml",
+        "Eneldo fresco picado: 80 g",
+        "AOVE: 240 ml · Sal 30 g · Pimienta 10 g"
+      ],
+      "note": "SIN chile (eliminado por tolerancia gástrica senior · receta Hage original lleva).",
+      "equipment_label": "Equipo necesario:",
+      "equipment": ["Convotherm modo combinado 70/30", "Rallador grueso", "Bandejas GN con papel horno"]
+    },
+    "guarni": {
+      "items": [
+        "Yogur griego natural: 1.250 ml",
+        "Comino molido: 16 g · eneldo fresco: 60 g",
+        "Couscous semolina mediana: 1.500 g",
+        "Caldo de verduras hirviendo: 1.800 ml",
+        "Pasas sultanas hidratadas: 250 g",
+        "Ralladura 4 limones · canela polvo 4 g",
+        "AOVE: 100 ml · Perejil fresco: 30 g"
+      ]
+    },
+    "montaje": {
+      "items": [
+        "Hojas eneldo enteras: 10 g (decoración)",
+        "Gajos de limón (opcional al lado)",
+        "Plato grande llano o ligeramente hondo"
+      ]
+    }
+  },
+  "time": "90 min total · 40 min mise · 12 min pochar · 15 min mezcla · 22 min horno · 15 min couscous · 5 min yogur.",
+  "senior": "Horneado NO frito · sin chile · porción 70-80 g manejable con cubiertos · couscous suelto sin granos compactos · yogur lubrica deglución · combinación nutricional completa.",
+  "steps": [
+    {
+      "n": 1,
+      "element": "bunuelos",
+      "title": "Rallar remolacha y picar cebolla",
+      "illustration": "Bunuelos_Remolacha_Feta_Plato_Vegetariano_step01.jpeg",
+      "action": "Pelar y rallar 5 kg de remolacha cruda con rallador grueso (guantes recomendados · mancha). Picar finamente 1,25 kg de cebolla. Reservar por separado en boles grandes.",
+      "ingredients": "Remolacha 5 kg · cebolla 1,25 kg",
+      "note": "Guantes obligatorios · no usar tabla blanca de madera."
+    },
+    {
+      "n": 2,
+      "element": "bunuelos",
+      "title": "Pochar cebolla y enfriar",
+      "illustration": "Bunuelos_Remolacha_Feta_Plato_Vegetariano_step02.jpeg",
+      "action": "Calentar 120 ml AOVE en sartén grande · pochar la cebolla con pizca de sal 10-12 min hasta transparente sin coloración. Retirar y ENFRIAR completamente antes de continuar.",
+      "temp_time": "Fuego medio · 10-12 min",
+      "note": "Si la cebolla entra caliente a la mezcla, el huevo cuece y la masa se rompe."
+    },
+    {
+      "n": 3,
+      "element": "bunuelos",
+      "title": "Mezclar masa y refrigerar",
+      "illustration": "Bunuelos_Remolacha_Feta_Plato_Vegetariano_step03.jpeg",
+      "action": "En bol grande combinar: remolacha rallada + 2,5 kg feta desmenuzado + cebolla pochada FRÍA + 30 g comino + 30 g cilantro + ralladura 8 limones + 180 ml zumo limón + 80 g eneldo + 24 huevos batidos. Sazonar con cuidado (feta ya sala). Refrigerar 30 min.",
+      "note": "SIN chile (omitido por perfil senior)."
+    },
+    {
+      "n": 4,
+      "element": "bunuelos",
+      "title": "Hornear buñuelos Convotherm 190°C",
+      "illustration": "Bunuelos_Remolacha_Feta_Plato_Vegetariano_step04.jpeg",
+      "action": "Formar porciones de 70-80 g con cuchara · disponer en bandejas GN con papel horno pincelado AOVE · separación entre buñuelos. Pincelar superficie con AOVE. Convotherm 190 °C combinado 70 % aire + 30 % vapor · 18-22 min hasta dorados.",
+      "temp_time": "190 °C combinado 70/30 · 18-22 min",
+      "note": "Dar vuelta a media cocción si necesita dorado uniforme."
+    },
+    {
+      "n": 5,
+      "element": "guarni",
+      "title": "Mezclar yogur comino-eneldo",
+      "illustration": "Bunuelos_Remolacha_Feta_Plato_Vegetariano_step05.jpeg",
+      "action": "En bol mediano combinar 1,25 L yogur griego + 16 g comino + 50 g eneldo picado fino + 6 g sal + 4 g pimienta. Mezclar bien. Reservar en frío. Las 10 g hojas enteras de eneldo reservar para decoración final.",
+      "ingredients": "Yogur 1,25 L · comino 16 g · eneldo 50 g"
+    },
+    {
+      "n": 6,
+      "element": "guarni",
+      "title": "Hidratar couscous con caldo",
+      "illustration": "Bunuelos_Remolacha_Feta_Plato_Vegetariano_step06.jpeg",
+      "action": "Calentar 1,8 L caldo de verduras a ebullición. Distribuir 1,5 kg couscous seco en bandeja GN amplia · añadir canela 4 g + ralladura 4 limones + sal + pimienta. Verter caldo caliente removiendo · TAPAR con film 8-10 min para hidratación por vapor.",
+      "temp_time": "Tapado 8-10 min",
+      "note": "Sin tapa el grano queda crujiente · la hidratación es por vapor atrapado."
+    },
+    {
+      "n": 7,
+      "element": "guarni",
+      "title": "Soltar couscous y añadir pasas",
+      "illustration": "Bunuelos_Remolacha_Feta_Plato_Vegetariano_step07.jpeg",
+      "action": "Destapar el couscous · añadir 100 ml AOVE · soltar el grano con tenedor hasta que quede suelto, no apelmazado. Incorporar 250 g pasas sultanas hidratadas + 30 g perejil picado. Mezclar suavemente · rectificar.",
+      "note": "Pasas previamente hidratadas 10 min en agua caliente (sin esto, son duras para senior)."
+    },
+    {
+      "n": 8,
+      "element": "montaje",
+      "title": "Base de yogur en plato",
+      "illustration": "Bunuelos_Remolacha_Feta_Plato_Vegetariano_step08.jpeg",
+      "action": "Plato grande llano o ligeramente hondo. Disponer una base de yogur de comino-eneldo (cucharón medio) en el centro · el blanco contrasta con el bordó del buñuelo."
+    },
+    {
+      "n": 9,
+      "element": "montaje",
+      "title": "Buñuelos · couscous · acabado",
+      "illustration": "Bunuelos_Remolacha_Feta_Plato_Vegetariano_step09.jpeg",
+      "action": "Colocar 4-5 buñuelos sobre el yogur ligeramente solapados · al lado disponer porción de couscous con pasas (~120 g) con molde o aro · decorar con hojas enteras de eneldo + gajo de limón opcional. Servir inmediato (buñuelos calientes >65 °C · couscous templado · yogur frío <10 °C).",
+      "note": "Triple temperatura clara: caliente / templado / frío es parte del plato."
+    }
+  ],
+  "notes_final": {
+    "appcc": "Buñuelos >65 °C · regeneración Convotherm 160 °C 8-10 min · alérgenos: huevo, lácteos (feta+yogur), gluten (couscous semolina trigo).",
+    "senior": "Horneado no frito · SIN chile (omitido vs receta Hage original) · couscous suelto · pasas hidratadas · yogur lubrica deglución · plato vegetariano completo no empobrecido.",
+    "critical": "Mezcla FRÍA antes de hornear (cebolla caliente cuece huevo y rompe masa) · couscous TAPADO 8-10 min para hidratación correcta · pasas hidratadas previas obligatorio."
+  }
+}

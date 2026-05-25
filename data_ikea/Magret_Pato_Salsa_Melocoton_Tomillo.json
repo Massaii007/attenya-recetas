@@ -1,0 +1,129 @@
+{
+  "recipe_id": "Magret_Pato_Salsa_Melocoton_Tomillo",
+  "title": "Magret de Pato Melocotón-Tomillo",
+  "subtitle": "Plato dominical festivo · 25 PAX · Adaptación senior",
+  "elements": [
+    {"key": "magret",  "label": "MAGRET DE PATO",         "color": "#3B6B47"},
+    {"key": "salsa",   "label": "SALSA MELOCOTÓN-TOMILLO", "color": "#B7950B"},
+    {"key": "montaje", "label": "TRINCHADO Y MONTAJE",    "color": "#1A5276"}
+  ],
+  "calc_base": "Base de cálculo: 25 PAX · 1 magret entero (~280 g antes / ~180-200 g cocinado) por persona · salsa anticipable D-1.",
+  "ingredients_by_element": {
+    "magret": {
+      "items": [
+        "Magret de pato fresco entero: 25 uds (~7 kg) · ~280 g/ud",
+        "Sal en escamas Maldon: c/s (solo piel inicialmente)",
+        "Pimienta negra molida: c/s (en carne)"
+      ],
+      "note": "Sacar del frío 30 min antes de cocinar. Piel intacta.",
+      "equipment_label": "Equipo necesario:",
+      "equipment": ["Sartén pesada o plancha", "Termómetro sonda", "Tabla trinchar", "Papel aluminio para reposo"]
+    },
+    "salsa": {
+      "items": [
+        "Melocotón maduro fresco temporada: 2.500 g (8-10 uds grandes)",
+        "Chalota: 200 g (brunoise muy fina)",
+        "Mantequilla fría en dados: 80 g",
+        "Tomillo fresco: 15 g (4 ramitas + 12 g hojas)",
+        "Vinagre balsámico de Módena: 100 ml",
+        "Miel: 80 g",
+        "Fondo oscuro / demi-glace: 500 ml",
+        "Vino blanco seco (opcional): 150 ml",
+        "AOVE: 50 ml"
+      ],
+      "note": "Si se usa melocotón en almíbar reducir miel a 40 g · evita empalago."
+    },
+    "montaje": {
+      "items": [
+        "Hojas tomillo fresco: c/s (decoración)",
+        "Sal en escamas Maldon: c/s (acabado)",
+        "Plato grande llano (cerámica blanca o pizarra)"
+      ]
+    }
+  },
+  "time": "90 min total · 20 min mise · 35 min salsa (D-1 OK) · 15 min cocción · 10 min reposo · 10 min trinchado y servicio.",
+  "senior": "Magret trinchado contra-fibra 1 cm reduce esfuerzo masticatorio · 60-62 °C estándar (más cocido = más blando) · sin chile · piel removible si restricción grasa.",
+  "steps": [
+    {
+      "n": 1,
+      "element": "magret",
+      "title": "Cuadricular piel · sal solo piel",
+      "illustration": "Magret_Pato_Salsa_Melocoton_Tomillo_step01.jpeg",
+      "action": "Secar bien los magrets con papel absorbente. Cuchillo afilado · incisiones cruzadas en la piel formando cuadrícula ~1 cm SIN llegar a la carne. Salar generosamente la PIEL · no salar la carne todavía.",
+      "ingredients": "25 magrets · sal Maldon en piel",
+      "note": "Si el cuchillo toca carne, el magret pierde jugo durante la cocción."
+    },
+    {
+      "n": 2,
+      "element": "salsa",
+      "title": "Pochar chalota y saltear melocotón",
+      "illustration": "Magret_Pato_Salsa_Melocoton_Tomillo_step02.jpeg",
+      "action": "Sartén amplia con 30 ml AOVE · pochar 200 g chalota a fuego medio-bajo 6-8 min sin coloración. Añadir 2,5 kg melocotones pelados en gajos · saltear 5 min hasta soltar jugos.",
+      "temp_time": "Fuego medio-bajo · 6-8 min + 5 min"
+    },
+    {
+      "n": 3,
+      "element": "salsa",
+      "title": "Caramelizar miel y desglasar",
+      "illustration": "Magret_Pato_Salsa_Melocoton_Tomillo_step03.jpeg",
+      "action": "Añadir 80 g miel + 4 ramitas tomillo enteras. Caramelizar 3 min sin romper gajos. Desglasar con 100 ml vinagre balsámico · reducir 2 min hasta evaporar alcohol.",
+      "ingredients": "Miel 80 g · tomillo 4 ramitas · balsámico 100 ml"
+    },
+    {
+      "n": 4,
+      "element": "salsa",
+      "title": "Demi-glace y reducir",
+      "illustration": "Magret_Pato_Salsa_Melocoton_Tomillo_step04.jpeg",
+      "action": "Verter 500 ml fondo oscuro o demi-glace. Llevar a ebullición suave y cocinar 12-15 min hasta que la salsa nape la cuchara y los gajos estén tiernos pero con forma.",
+      "ingredients": "Demi-glace: 500 ml",
+      "temp_time": "Ebullición suave · 12-15 min"
+    },
+    {
+      "n": 5,
+      "element": "salsa",
+      "title": "Montar mantequilla fuera del fuego",
+      "illustration": "Magret_Pato_Salsa_Melocoton_Tomillo_step05.jpeg",
+      "action": "Retirar las 4 ramitas de tomillo (cumplieron función aromática). Incorporar las hojas frescas (12 g). FUERA del fuego añadir 80 g mantequilla fría en dados removiendo en círculo (no batir) para emulsionar brillo + untuosidad. Rectificar.",
+      "note": "Si la mantequilla entra al fuego, la salsa se corta. Movimiento circular suave."
+    },
+    {
+      "n": 6,
+      "element": "magret",
+      "title": "Sartén FRÍA · piel abajo",
+      "illustration": "Magret_Pato_Salsa_Melocoton_Tomillo_step06.jpeg",
+      "action": "Salpimentar la carne del magret (ahora sí). Sartén FRÍA sin aceite · colocar los magrets piel abajo. Encender fuego medio · la grasa se fundirá lentamente 8-10 min. Retirar exceso de grasa cada 3 min (oro líquido para otras preparaciones).",
+      "temp_time": "Sartén fría → fuego medio · 8-10 min",
+      "note": "Sartén caliente = piel quemada antes de extraer grasa = magret graso."
+    },
+    {
+      "n": 7,
+      "element": "magret",
+      "title": "Voltear 3-4 min al punto",
+      "illustration": "Magret_Pato_Salsa_Melocoton_Tomillo_step07.jpeg",
+      "action": "Cuando la piel esté dorada profunda y crujiente, voltear sobre la carne. 3-4 min máximo. Verificar interno con sonda: 60-62 °C senior estándar (más blando) · 54-56 °C rosado clásico opcional.",
+      "temp_time": "Interno 60-62 °C senior · 54-56 °C rosado"
+    },
+    {
+      "n": 8,
+      "element": "magret",
+      "title": "Reposo OBLIGATORIO 8-10 min",
+      "illustration": "Magret_Pato_Salsa_Melocoton_Tomillo_step08.jpeg",
+      "action": "Retirar a tabla · cubrir con papel aluminio SIN APRETAR. Reposar 8-10 min. El reposo recoloca jugos · sin reposo el corte sangra y la carne queda seca. Temperatura interna sube 2 °C residuales.",
+      "temp_time": "Reposo 8-10 min cubierto sin apretar",
+      "note": "Sin reposo, la receta falla. Sin excepción."
+    },
+    {
+      "n": 9,
+      "element": "montaje",
+      "title": "Trinchar contra-fibra y napar",
+      "illustration": "Magret_Pato_Salsa_Melocoton_Tomillo_step09.jpeg",
+      "action": "Trinchar contra-fibra en rodajas de 1 cm. Disponer 6-8 rodajas en abanico (~180-200 g/persona). Napar con salsa generosa · 2-3 gajos de melocotón visibles por plato. Acabar con tomillo fresco y sal Maldon.",
+      "note": "Contra-fibra es clave senior: fibras paralelas = masticación difícil, perpendiculares = textura amable."
+    }
+  ],
+  "notes_final": {
+    "appcc": "Cocción interna >65 °C para cumplimiento normativo senior (verificar con sonda) · salsa anticipable D-1 refrigerada · alérgenos: lácteos (mantequilla), sulfitos (balsámico opcional).",
+    "senior": "Trinchado contra-fibra 1 cm reduce esfuerzo · 60-62 °C estándar más blando · sin chile, sin pimienta agresiva · piel removible si restricción grasa.",
+    "critical": "Sartén FRÍA inicial (grasa funde lenta) + REPOSO 8-10 min sin excepción + trinchado contra-fibra · si falla cualquiera de los 3, el plato pierde su identidad."
+  }
+}

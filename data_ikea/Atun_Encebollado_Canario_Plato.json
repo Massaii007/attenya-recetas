@@ -1,0 +1,130 @@
+{
+  "recipe_id": "Atun_Encebollado_Canario_Plato",
+  "title": "Atún Encebollado Canario",
+  "subtitle": "Plato atlántico identidad isleña · 25 PAX · Pescado azul",
+  "elements": [
+    {"key": "atun",        "label": "ATÚN FRESCO",        "color": "#3B6B47"},
+    {"key": "encebollado", "label": "ENCEBOLLADO Y ÁCIDO", "color": "#B7950B"},
+    {"key": "montaje",     "label": "PAPAS Y MOJOS",      "color": "#1A5276"}
+  ],
+  "calc_base": "Base de cálculo: 25 PAX · ~170 g atún cocinado por persona · cebollada melosa abundante · acompañamiento canario papas + mojos.",
+  "ingredients_by_element": {
+    "atun": {
+      "items": [
+        "Atún fresco lomos limpios: 4.285 g (sin piel ni espinas)",
+        "Sal fina + pimienta: c/s (al momento del sellado)",
+        "AOVE: fondo de sartén"
+      ],
+      "note": "Atún máximo 48 h desde desembarque · 0-2 °C hasta corte · sin espinas tolerancia cero.",
+      "equipment_label": "Equipo necesario:",
+      "equipment": ["Sartén o rondeau grande (≥40 cm)", "Termómetro sonda", "Espátula plana"]
+    },
+    "encebollado": {
+      "items": [
+        "Cebolla blanca juliana fina: 8.930 g (~9 kg)",
+        "Ajo laminado: 107 g",
+        "Laurel: 4 hojas · comino grano: 9 g · pimienta negra grano: 7 g",
+        "Pimentón ahumado dulce: 9 g (disuelto en caldo)",
+        "Vino blanco seco: 645 ml",
+        "Vinagre de Jerez: 86 ml",
+        "AOVE: 570 ml",
+        "Demi-glace opcional: 130 ml"
+      ]
+    },
+    "montaje": {
+      "items": [
+        "Papas canarias negra/bonita: 5 kg (sin pelar)",
+        "Sal gruesa marina: 350 g (~70 g/kg patata)",
+        "Mojo rojo: ~400 ml",
+        "Mojo verde: ~400 ml",
+        "Plato llano amplio"
+      ],
+      "note": "Sin mojos las papas están incompletas · siempre presentes en el plato."
+    }
+  },
+  "time": "70 min total · 15 min mise · 5 min sellado · 30-40 min pochado cebolla · 8-12 min integración + ácido · papas 35 min paralelo.",
+  "senior": "Atún tierno por cocción suave en jugo de cebolla · cebolla melosa fácil masticación · sin espinas verificadas · especiado discreto (comino y pimienta de fondo) · sabores familiares.",
+  "steps": [
+    {
+      "n": 1,
+      "element": "atun",
+      "title": "Cortar atún y sazonar al momento",
+      "illustration": "Atun_Encebollado_Canario_Plato_step01.jpeg",
+      "action": "Mantener atún a 0-2 °C hasta el corte. Cortar 4,3 kg de lomo en dados grandes 3-4 cm. Secar bien con papel absorbente. Salpimentar JUSTO antes del sellado (no antes · la sal extrae jugo).",
+      "ingredients": "Atún 4.285 g · sal fina · pimienta",
+      "note": "Verificar ausencia total de espinas pieza por pieza."
+    },
+    {
+      "n": 2,
+      "element": "atun",
+      "title": "Sellar 20-30 s por cara",
+      "illustration": "Atun_Encebollado_Canario_Plato_step02.jpeg",
+      "action": "Sartén o rondeau muy caliente · aceite justo para cubrir fondo. Sellar dados de atún 20-30 segundos por cara · fuego alto. Retirar INMEDIATAMENTE · reservar fuera del fuego tapado ligeramente. No bajar fuego, no sobrecocer.",
+      "temp_time": "Fuego alto · 20-30 s/cara",
+      "note": "Sobrecocción aquí seca el atún · superficie marcada / interior crudo es el objetivo."
+    },
+    {
+      "n": 3,
+      "element": "encebollado",
+      "title": "Pochar cebolla 30-40 min sin color",
+      "illustration": "Atun_Encebollado_Canario_Plato_step03.jpeg",
+      "action": "En la misma sartén añadir más AOVE si necesario. Incorporar 9 kg cebolla juliana + 107 g ajo laminado + 4 hojas laurel + 9 g comino grano + 7 g pimienta. Fuego BAJO removiendo ocasional · 30-40 min hasta cebolla muy blanca, melosa y sin caramelizado.",
+      "temp_time": "Fuego bajo · 30-40 min",
+      "note": "SIN coloración · si caramelizado, perdemos el blanco característico canario."
+    },
+    {
+      "n": 4,
+      "element": "encebollado",
+      "title": "Integrar atún sellado suavemente",
+      "illustration": "Atun_Encebollado_Canario_Plato_step04.jpeg",
+      "action": "Añadir el atún sellado a la cebolla pochada. Movimiento muy suave para no desmenuzar los dados. Fuego BAJO · 8-12 min · el atún se cuece lentamente en el jugo de cebolla quedando jugoso y ligeramente rosado en centro.",
+      "temp_time": "Fuego bajo · 8-12 min",
+      "note": "No hervir el atún · cocción a baja temperatura es la clave."
+    },
+    {
+      "n": 5,
+      "element": "encebollado",
+      "title": "Vino y ácido controlado",
+      "illustration": "Atun_Encebollado_Canario_Plato_step05.jpeg",
+      "action": "Añadir 645 ml vino blanco · reducir ligeramente 3-5 min. Incorporar 86 ml vinagre de Jerez + 9 g pimentón ahumado disuelto en poco caldo. Mezclar suavemente · cocer 5-8 min más a fuego bajo.",
+      "ingredients": "Vino blanco 645 ml · vinagre Jerez 86 ml · pimentón 9 g"
+    },
+    {
+      "n": 6,
+      "element": "encebollado",
+      "title": "Ajustar y reforzar cuerpo",
+      "illustration": "Atun_Encebollado_Canario_Plato_step06.jpeg",
+      "action": "Ajustar sal · acidez presente pero no agresiva · dulzor de cebolla no de azúcar. Si falta cuerpo, añadir hasta 130 ml demi-glace · cocer 3-5 min más para integrar. Reservar tapado a fuego mínimo.",
+      "note": "Pimentón siempre integrado al jugo · nunca espolvoreado."
+    },
+    {
+      "n": 7,
+      "element": "montaje",
+      "title": "Papas arrugadas con sal cristalizada",
+      "illustration": "Atun_Encebollado_Canario_Plato_step07.jpeg",
+      "action": "Olla amplia · papas canarias 5 kg sin pelar cubiertas con agua + 350 g sal gruesa. Hervir fuerte hasta tiernas (25-30 min). Escurrir casi toda el agua dejando un dedo · agitar olla circular para evaporar resto · la sal cristaliza formando costra blanca y la piel se arruga.",
+      "temp_time": "Hervir 25-30 min + secado 5-8 min",
+      "note": "Sin tapa nunca · la evaporación es clave."
+    },
+    {
+      "n": 8,
+      "element": "montaje",
+      "title": "Atún centrado · cebolla generosa",
+      "illustration": "Atun_Encebollado_Canario_Plato_step08.jpeg",
+      "action": "Plato llano amplio. Mound de atún encebollado centrado · cebolla distribuida generosamente alrededor · napar ligeramente con jugo concentrado. Temperatura servicio 65-70 °C."
+    },
+    {
+      "n": 9,
+      "element": "montaje",
+      "title": "Papas y mojos · sencillez canaria",
+      "illustration": "Atun_Encebollado_Canario_Plato_step09.jpeg",
+      "action": "Disponer 4-5 papas arrugadas agrupadas a un lado · punto de mojo rojo en un lado del plato + punto de mojo verde en el otro. Sin más decoración · la sencillez es la identidad del plato.",
+      "note": "Sin mojos = papas incompletas · siempre los dos colores presentes."
+    }
+  ],
+  "notes_final": {
+    "appcc": "Atún 48 h máx desde desembarque · sellado superficie 70 °C interior 35-40 °C · servicio 65-70 °C · regeneración cazo fuego bajo 8-10 min hasta 65 °C centro · NO congelar (degrada textura) · alérgenos: pescado (atún).",
+    "senior": "Atún tierno por cocción suave en jugo de cebolla · cebolla melosa muy fácil masticación · sin espinas verificadas · especiado discreto · sabor profundo sin agresividad.",
+    "critical": "Sellado RÁPIDO (20-30 s) - sobrecocción aquí seca el atún irreversiblemente · pochado cebolla SIN coloración 30-40 min · sin mojos el plato pierde identidad canaria."
+  }
+}

@@ -193,6 +193,8 @@ body { background: #1a1612; color: #e8dfd4; font-family: 'Cormorant Garamond', G
 .meta-value { font-family: 'Jost', sans-serif; font-size: 14px; color: #e8dfd4; font-weight: 300; }
 .pdf-btn { background: transparent; color: #8a7d6b; border: 1px solid #3a322a; padding: 8px 20px; cursor: pointer; font-family: 'Jost', sans-serif; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; transition: all 0.2s; margin-left: 12px; }
 .pdf-btn:hover { background: #c4a97d; color: #1a1612; border-color: #c4a97d; }
+.pdf-btn.diagrama-btn { color: #6fa3d4; border-color: #2c5a85; font-weight: 500; }
+.pdf-btn.diagrama-btn:hover { background: #2c5a85; color: #fff; border-color: #6fa3d4; }
 
 /* === MENU VIEW === */
 .menu-header { padding: 28px 0 20px; text-align: center; border-bottom: 1px solid #3a322a; margin-bottom: 24px; }
@@ -226,6 +228,8 @@ body { background: #1a1612; color: #e8dfd4; font-family: 'Cormorant Garamond', G
 .menu-recipe-link { color: #c4a97d; cursor: pointer; text-decoration: none; border-bottom: 1px dotted #5a4e3e; transition: border-color 0.2s; }
 .menu-recipe-link:hover { border-bottom-color: #c4a97d; }
 .menu-pdf-icon { display: inline-block; color: #5a4e3e; cursor: pointer; font-size: 12px; margin-left: 6px; padding: 2px 6px; border: 1px solid #3a322a; transition: all 0.2s; vertical-align: middle; }
+.menu-pdf-icon.menu-diagrama-icon { color: #6fa3d4; border-color: #2c5a85; font-weight: 600; }
+.menu-pdf-icon.menu-diagrama-icon:hover { background: #2c5a85; color: #fff; }
 .menu-pdf-icon:hover { background: #c4a97d; color: #1a1612; border-color: #c4a97d; }
 .menu-produccion { margin-top: 12px; padding: 12px 16px; background: #2a241e; font-family: 'Jost', sans-serif; font-size: 13px; color: #a89880; line-height: 1.6; }
 .menu-produccion-title { font-size: 10px; letter-spacing: 2px; color: #8a7d6b; text-transform: uppercase; margin-bottom: 6px; }
@@ -421,8 +425,22 @@ body { background: #1a1612; color: #e8dfd4; font-family: 'Cormorant Garamond', G
 <div class="footer" id="footer"></div>
 
 <script>
-const APP_BUILD_ID = "2026-05-22T07:19:44Z";
-const APP_BUILD_LABEL = "22/05 09:19";
+const APP_BUILD_ID = "2026-05-26T00:57:00Z";
+const APP_BUILD_LABEL = "26/05 02:57 IKEA";
+
+/* ============================================================
+   IKEA DIAGRAMS — recetas con Receta IKEA HTML disponible
+   ============================================================ */
+const IKEA_RECIPES = new Set([
+  "Celeriac_Steaks_Cafe_de_Paris_Ottolenghi_Plato",
+  "Dorada_Vapor_Japonesa_Plato",
+  "Salchichas_Salsa_Tomate_Plato",
+  "Magret_Pato_Salsa_Melocoton_Tomillo",
+  "Bunuelos_Remolacha_Feta_Plato_Vegetariano",
+  "Atun_Encebollado_Canario_Plato"
+]);
+function hasDiagrama(id) { return IKEA_RECIPES.has(id); }
+function openDiagrama(id) { window.location.href = 'recetas/' + id + '.html'; }
 const VERSION_URL = "/version.json";
 const UPDATE_CHECK_INTERVAL_MS = 30000;
 let updateCheckTimer = null;
@@ -2540,7 +2558,9 @@ async function renderDetail() {
     <div class="tab-btns">
       ${isRestaurante ? '' : `<button class="tab-btn${state.tab==="ficha"?" active":""}" onclick="setTab('ficha')">FICHA TÉCNICA</button>`}
       <button class="tab-btn${state.tab==="story"?" active":""}" onclick="setTab('story')">STORYTELLING</button>
-      ${isRestaurante ? '' : `<button class="pdf-btn" onclick="downloadPDF('${r.id}')">↓ PDF</button>`}
+      ${isRestaurante ? '' : (hasDiagrama(r.id)
+        ? `<button class="pdf-btn diagrama-btn" onclick="openDiagrama('${r.id}')">→ DIAGRAMA</button>`
+        : `<button class="pdf-btn" onclick="downloadPDF('${r.id}')">↓ PDF</button>`)}
     </div>
     <div class="content-box"><p class="loading">Cargando...</p></div>
   `;
@@ -2603,7 +2623,9 @@ function renderCena(d) {
 
 function recipeLink(item) {
   if (!item || !item.id) return item ? item.n : "—";
-  var pdfIcon = isRestaurante ? '' : ` <span class="menu-pdf-icon" onclick="event.stopPropagation(); downloadPDF('${item.id}')" title="Descargar PDF">↓</span>`;
+  var pdfIcon = isRestaurante ? '' : (hasDiagrama(item.id)
+    ? ` <span class="menu-pdf-icon menu-diagrama-icon" onclick="event.stopPropagation(); openDiagrama('${item.id}')" title="Abrir Diagrama IKEA">→</span>`
+    : ` <span class="menu-pdf-icon" onclick="event.stopPropagation(); downloadPDF('${item.id}')" title="Descargar PDF">↓</span>`);
   return `<span class="menu-recipe-link" onclick="event.stopPropagation(); goToRecipe('${item.id}')">${item.n}</span>` + pdfIcon;
 }
 

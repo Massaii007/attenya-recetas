@@ -1,0 +1,171 @@
+{
+  "recipe_id": "Celeriac_Steaks_Cafe_de_Paris_Ottolenghi_Plato",
+  "title": "Celeriac Steaks con Salsa Café de Paris",
+  "subtitle": "Receta Ottolenghi adaptada · 25 PAX · perfil senior ATTENYA · Versión IKEA paso a paso",
+  "elements": [
+    {
+      "key": "apionabo",
+      "label": "APIONABO",
+      "color": "#3a6a3e"
+    },
+    {
+      "key": "salsa",
+      "label": "SALSA CAFÉ DE PARIS",
+      "color": "#b8860b"
+    },
+    {
+      "key": "montaje",
+      "label": "MONTAJE FINAL",
+      "color": "#1f5e8c"
+    }
+  ],
+  "calc_base": "Base de cálculo: factor 6,25× sobre la receta original Ottolenghi (4 PAX).",
+  "ingredients_by_element": {
+    "apionabo": {
+      "items": [
+        "13 apionabos enteros (~13 kg)",
+        "AOVE para pintar (~150 ml)",
+        "Miel o sirope arce (~6 cdas)",
+        "Sal Maldon final (al gusto)",
+        "Pimienta negra molida"
+      ],
+      "note": "Cada apionabo ≈ 4 steaks de 2,5 cm. Total: ~50 steaks = 2 por PAX"
+    },
+    "salsa": {
+      "items": [
+        "Mantequilla sin sal 690 g (cubos 2 cm)",
+        "Chalota fina picada 160 g (~6 uds)",
+        "Ajo majado 6 dientes",
+        "Anchoas en aceite 18 filetes",
+        "Curry suave en polvo 1 cda",
+        "Cayena 1 cdta (senior: reducir)",
+        "Mostaza en polvo 6 cdas",
+        "Alcaparras baby 6 cdas",
+        "Cebollino picado 50 g",
+        "Estragón picado 30 g",
+        "Perejil picado 15 g",
+        "Tomillo hojas 10 g",
+        "Nata para montar 690 ml",
+        "Zumo de limón 60 ml (4 cdas)",
+        "Sal Maldon 1,5 g"
+      ]
+    },
+    "montaje": {
+      "items": [
+        "Bandeja(s) grande con borde para servir",
+        "Pinzas para emplatar",
+        "Sal Maldon (terminar)",
+        "Pimienta negra recién molida"
+      ],
+      "equipment_label": "Equipo necesario:",
+      "equipment": [
+        "Convotherm o horno fuerte",
+        "Grill function (top heat)",
+        "Cazo mediano (salsa)",
+        "Sonda térmica",
+        "Mandolina o cuchillo largo",
+        "2-3 bandejas GN 1/1",
+        "Papel de horno"
+      ]
+    }
+  },
+  "time": "Mise en place 30 min + asado apionabo 45 min + salsa 8 min + grill 6-8 min + montaje 5 min ≈ 1h 30min total · D-1 opcional asar apionabos.",
+  "senior": "Apionabo asado largo = textura tierna sin masticación dura. Cayena al MÍNIMO o eliminar. Anchoas opcionales (alérgeno pescado): si se omiten subir ligeramente sal Maldon.",
+  "steps": [
+    {
+      "n": 1,
+      "element": "apionabo",
+      "title": "Pelar y cortar el apionabo en steaks",
+      "illustration": "Celeriac_Steaks_Cafe_de_Paris_Ottolenghi_Plato_step01.jpeg",
+      "action": "Pelar los 13 apionabos enteros con cuchillo afilado (piel rugosa, no usar pelador). Cortar transversalmente en discos gruesos de 2,5 cm. Cada apionabo da ~4 steaks útiles.",
+      "ingredients": "Paso: 13 apionabos enteros.",
+      "temp_time": null,
+      "note": "Reservar recortes para puré, sopa o caldo (no tirar)."
+    },
+    {
+      "n": 2,
+      "element": "apionabo",
+      "title": "Asar los steaks de apionabo",
+      "illustration": "Celeriac_Steaks_Cafe_de_Paris_Ottolenghi_Plato_step02.jpeg",
+      "action": "Disponer steaks en bandejas con papel de horno, en una sola capa. Pintar cada cara con AOVE + hilo fino de miel/sirope arce. Sazonar con Maldon y pimienta.",
+      "ingredients": "Paso: AOVE 150 ml, miel 6 cdas, sal y pimienta.",
+      "temp_time": "200 °C convección · 45 min hasta tiernos al centro.",
+      "note": "Pueden hacerse D-1 y regenerar al pase con el grill (paso 5)."
+    },
+    {
+      "n": 3,
+      "element": "salsa",
+      "title": "Pochar mantequilla con aromáticos",
+      "illustration": "Celeriac_Steaks_Cafe_de_Paris_Ottolenghi_Plato_step03.jpeg",
+      "action": "En cazo a fuego medio: mantequilla en cubos + chalota + ajo majado + anchoas troceadas + curry + cayena + mostaza + 1,5 g sal Maldon. Mover en círculo el cazo.",
+      "ingredients": "690 g mantequilla · 160 g chalota · 6 dientes ajo · 18 anchoas · 1 cda curry · 1 cdta cayena · 6 cdas mostaza · 1,5 g sal.",
+      "temp_time": "6 min. Mantequilla dorada (no oscura), aromas integrados, chalota tierna.",
+      "note": null
+    },
+    {
+      "n": 4,
+      "element": "salsa",
+      "title": "Añadir alcaparras y hierbas",
+      "illustration": "Celeriac_Steaks_Cafe_de_Paris_Ottolenghi_Plato_step04.jpeg",
+      "action": "Incorporar alcaparras + hierbas picadas (cebollino, estragón, perejil, tomillo) + vuelta generosa de pimienta. 1 min más swirling. Retirar y reservar.",
+      "ingredients": "6 cdas alcaparras · 50 g cebollino · 30 g estragón · 15 g perejil · 10 g tomillo · pimienta.",
+      "temp_time": null,
+      "note": "En este punto la salsa es \"mantequilla compuesta líquida\". La nata se añade al pase (paso 6)."
+    },
+    {
+      "n": 5,
+      "element": "apionabo",
+      "title": "Grill alto: dorar la superficie",
+      "illustration": "Celeriac_Steaks_Cafe_de_Paris_Ottolenghi_Plato_step05.jpeg",
+      "action": "Grill del horno a posición más alta (top heat). Bandeja en riel superior. Sin papel de horno colgando.",
+      "ingredients": null,
+      "temp_time": "6-8 min hasta dorado-marrón intenso. Vigilar cada 2 min.",
+      "note": "Apagar horno y mantener bandeja dentro caliente hasta servir."
+    },
+    {
+      "n": 6,
+      "element": "salsa",
+      "title": "Añadir nata y limón (NO emulsionar)",
+      "illustration": "Celeriac_Steaks_Cafe_de_Paris_Ottolenghi_Plato_step06.jpeg",
+      "action": "Devolver salsa al fuego medio 1 min. Añadir nata y zumo de limón. Swirling 2 min. NO remover — la salsa DEBE quedar \"split\" (cortada), no emulsionada.",
+      "ingredients": "690 ml nata para montar · 60 ml zumo de limón.",
+      "temp_time": null,
+      "note": "Punto crítico: receta deliberadamente \"rota\". Gotitas separadas = firma del plato."
+    },
+    {
+      "n": 7,
+      "element": "montaje",
+      "title": "Verter la salsa en bandeja de servicio",
+      "illustration": "Celeriac_Steaks_Cafe_de_Paris_Ottolenghi_Plato_step07.jpeg",
+      "action": "En bandeja grande con borde alto (o GN para servicio colectivo), verter salsa caliente cubriendo el fondo. Tibia pero líquida.",
+      "ingredients": null,
+      "temp_time": null,
+      "note": "La salsa va DEBAJO de los steaks, no encima. Presentación tradicional."
+    },
+    {
+      "n": 8,
+      "element": "montaje",
+      "title": "Disponer los steaks sobre la salsa",
+      "illustration": "Celeriac_Steaks_Cafe_de_Paris_Ottolenghi_Plato_step08.jpeg",
+      "action": "Sacar bandeja del horno (templada). Con pinzas, colocar steaks en una sola capa sobre la salsa, ligeramente solapados. 2 steaks por PAX = 50 totales.",
+      "ingredients": null,
+      "temp_time": null,
+      "note": "Servicio individual: 2 steaks + 2-3 cdas de salsa alrededor."
+    },
+    {
+      "n": 9,
+      "element": "montaje",
+      "title": "Acabado y servir caliente",
+      "illustration": "Celeriac_Steaks_Cafe_de_Paris_Ottolenghi_Plato_step10.jpeg",
+      "action": "Espolvorear pizca de sal Maldon (cristales visibles, NO sal fina) y pimienta negra recién molida sobre los steaks. Servir inmediatamente. La salsa cortada se ve mejor al primer pase. Reposición: salsa en cazo aparte, recalentar suave.",
+      "ingredients": null,
+      "temp_time": null,
+      "note": "Maldon visible = señal de cocina cuidada. Sin pasarse: la salsa ya lleva sal. Acompañar opcionalmente con Iceberg Wedges Smoky Aubergine Cream Ottolenghi o Patatas Fritas Sartén Ajo."
+    }
+  ],
+  "notes_final": {
+    "appcc": "Mantequilla y nata: cadena de frío estricta. Salsa terminada máx 30 min ambiente. Apionabo asado: refrigerar <2 h si D-1. Regenerar centro >65 °C. Alérgenos: lácteos (mantequilla+nata), mostaza, sulfitos, pescado (anchoas).",
+    "senior": "Apionabo asado largo = corte cómodo. Cayena al MÍNIMO o eliminar. Anchoas: alérgeno pescado, si se omiten compensar sal. Salsa \"cortada\" intencional — explicar al residente que es el estilo, no que está rota.",
+    "critical": "La salsa NO se emulsiona. Es la firma de Café de Paris. Si se remueve en exceso pierde identidad. Swirling del cazo, NO cuchara."
+  }
+}

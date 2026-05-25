@@ -1,0 +1,123 @@
+{
+  "recipe_id": "Salchichas_Salsa_Tomate_Plato",
+  "title": "Salchichas en Salsa de Tomate",
+  "subtitle": "Adaptación senior · 25 PAX · Salchichas de pollo (no cerdo)",
+  "elements": [
+    {"key": "salchichas", "label": "SALCHICHAS POLLO",   "color": "#3B6B47"},
+    {"key": "salsa",      "label": "SALSA TOMATE Y VINO", "color": "#B7950B"},
+    {"key": "montaje",    "label": "PURÉ Y MONTAJE",     "color": "#1A5276"}
+  ],
+  "calc_base": "Base de cálculo: 25 PAX · 6 salchichas (~40 g/ud) por persona · receta Adrià La Comida de la Familia adaptada.",
+  "ingredients_by_element": {
+    "salchichas": {
+      "items": [
+        "Salchichas naturales de POLLO ~40 g: 150 uds (~6 kg)",
+        "Ajo: 45 g (laminado)",
+        "Tomillo seco: 8 g",
+        "AOVE: 200 ml",
+        "Sal fina y pimienta negra: c/s"
+      ],
+      "note": "REGLA NUCLEAR: las salchichas son de POLLO, no cerdo (preferencia Mike doctrinal)."
+    },
+    "salsa": {
+      "items": [
+        "Salsa de tomate casera o calidad: 2 kg",
+        "Vino rancio: 450 ml",
+        "Perejil fresco: 30 g (acabado)"
+      ],
+      "note": "Vino rancio debe reducir completamente · no servir crudo."
+    },
+    "montaje": {
+      "items": [
+        "Puré de patata firme regenerado: 4,5 kg (~180 g/persona)",
+        "Plato llano amplio",
+        "Cuchara para quenelle"
+      ],
+      "equipment_label": "Equipo necesario:",
+      "equipment": ["Sartén amplia para tandas", "Baño maría o Convotherm vapor para puré"]
+    }
+  },
+  "time": "25 min total · 10 min mise · 12 min dorado · 5 min salsa + montaje al pase.",
+  "senior": "Carne blanca en preparación reconfortante tipo Hausmannskost · salchichas de pollo más digestivas que cerdo · puré firme no líquido · alta aceptación.",
+  "steps": [
+    {
+      "n": 1,
+      "element": "salchichas",
+      "title": "Separar salchichas y laminar ajo",
+      "illustration": "Salchichas_Salsa_Tomate_Plato_step01.jpeg",
+      "action": "Separar 150 salchichas naturales de POLLO. Laminar 45 g de ajo en láminas finas. Medir 8 g de tomillo seco. NO pinchar las salchichas en ningún momento (pierden jugo).",
+      "ingredients": "Salchichas pollo 150 uds · ajo 45 g · tomillo seco 8 g",
+      "note": "VERIFICAR composición salchichas (alérgeno gluten posible)."
+    },
+    {
+      "n": 2,
+      "element": "salchichas",
+      "title": "Dorar salchichas por tandas",
+      "illustration": "Salchichas_Salsa_Tomate_Plato_step02.jpeg",
+      "action": "Calentar AOVE en sartén amplia. Dorar las salchichas en tandas (no amontonar) a fuego medio-alto · color uniforme por ambos lados. No pinchar bajo ningún concepto.",
+      "temp_time": "Fuego medio-alto · 8-10 min por tanda"
+    },
+    {
+      "n": 3,
+      "element": "salchichas",
+      "title": "Añadir ajo y tomillo",
+      "illustration": "Salchichas_Salsa_Tomate_Plato_step03.jpeg",
+      "action": "Incorporar el ajo laminado y el tomillo seco a la sartén antes de la última vuelta. Saltear 1-2 min sin que el ajo se queme. Retirar salchichas y reservar tapadas.",
+      "note": "El ajo quemado amarga toda la salsa · vigilar color."
+    },
+    {
+      "n": 4,
+      "element": "salsa",
+      "title": "Desglasar con vino rancio",
+      "illustration": "Salchichas_Salsa_Tomate_Plato_step04.jpeg",
+      "action": "En la misma sartén con los jugos del dorado, verter 450 ml de vino rancio. Despegar los fondos con espátula de madera · reducir a fuego alto.",
+      "ingredients": "Vino rancio: 450 ml",
+      "temp_time": "Fuego alto · 3-5 min hasta evaporar alcohol"
+    },
+    {
+      "n": 5,
+      "element": "salsa",
+      "title": "Calentar salsa de tomate",
+      "illustration": "Salchichas_Salsa_Tomate_Plato_step05.jpeg",
+      "action": "Calentar los 2 kg de salsa de tomate en cazo aparte a fuego medio hasta caliente. Probar acidez · si pica, equilibrar con una pizca de azúcar.",
+      "ingredients": "Salsa tomate: 2 kg",
+      "temp_time": "Fuego medio · 8 min"
+    },
+    {
+      "n": 6,
+      "element": "salsa",
+      "title": "Combinar salsa con fondo vino",
+      "illustration": "Salchichas_Salsa_Tomate_Plato_step06.jpeg",
+      "action": "Incorporar la salsa de tomate caliente a la sartén con el fondo de vino reducido. Mezclar bien · cocer 5 min para integrar sabores · rectificar sal y pimienta."
+    },
+    {
+      "n": 7,
+      "element": "montaje",
+      "title": "Regenerar puré de patata",
+      "illustration": "Salchichas_Salsa_Tomate_Plato_step07.jpeg",
+      "action": "Regenerar el puré de patata firme en baño maría o Convotherm vapor suave. La consistencia debe ser FIRME (quenelle estable) · no líquido.",
+      "temp_time": "Vapor suave 5-7 min",
+      "note": "Si queda líquido, no soporta la quenelle · textura tipo mash con cuerpo."
+    },
+    {
+      "n": 8,
+      "element": "montaje",
+      "title": "Quenelle de puré y salchichas",
+      "illustration": "Salchichas_Salsa_Tomate_Plato_step08.jpeg",
+      "action": "Plato llano amplio. Disponer una quenelle generosa de puré (~180 g) a un lado. Colocar 2-3 salchichas centradas (o las 6 si es plato único)."
+    },
+    {
+      "n": 9,
+      "element": "montaje",
+      "title": "Napar salsa y acabar perejil",
+      "illustration": "Salchichas_Salsa_Tomate_Plato_step09.jpeg",
+      "action": "Napar las salchichas con la salsa de tomate + vino generosamente · la salsa debe humectar cada bocado. Acabar con perejil fresco picado distribuido. Servir caliente.",
+      "note": "Sin salsa = plato seco. Generoso pero sin anegar el puré."
+    }
+  ],
+  "notes_final": {
+    "appcc": "Salchichas centro >74 °C · regeneración tapada Convotherm vapor 80 °C · alérgenos: sulfitos (vino), gluten (verificar composición salchichas).",
+    "senior": "Salchichas de POLLO (preferencia Mike doctrinal) · textura blanda · puré firme no líquido · plato comfort Hausmannskost.",
+    "critical": "No pinchar las salchichas en ningún paso · pierden jugo y se secan. Vino rancio debe reducir completamente antes de añadir tomate."
+  }
+}
