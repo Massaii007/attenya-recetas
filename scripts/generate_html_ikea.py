@@ -26,6 +26,13 @@ CSS_REL  = "_styles_ikea.css"
 STEPS_PER_SLIDE = 3
 
 
+def hex_to_rgba(hex_color: str, alpha: float = 0.12) -> str:
+    """Convierte #RRGGBB a rgba(R,G,B,alpha) para fondos suaves."""
+    h = hex_color.lstrip('#')
+    r, g, b = int(h[0:2], 16), int(h[2:4], 16), int(h[4:6], 16)
+    return f"rgba({r},{g},{b},{alpha})"
+
+
 def step_to_slide(n: int) -> int:
     """Paso (1..N) → slide-idx (1..ceil(N/3))."""
     return ((n - 1) // STEPS_PER_SLIDE) + 1
@@ -125,8 +132,8 @@ def render(data: dict) -> str:
                 f'<ul>{equip_items}</ul>'
             )
         ing_html_blocks.append(f'''
-          <div class="ing-col {e["key"]}">
-            <h3>{escape(e["label"])}</h3>
+          <div class="ing-col {e["key"]}" style="background:{hex_to_rgba(e["color"], 0.10)}; border-top:4px solid {e["color"]}">
+            <h3 style="color:{e["color"]}">{escape(e["label"])}</h3>
             <ul>{items}</ul>
             {note}
             {equip}
