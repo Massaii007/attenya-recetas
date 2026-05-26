@@ -425,8 +425,8 @@ body { background: #1a1612; color: #e8dfd4; font-family: 'Cormorant Garamond', G
 <div class="footer" id="footer"></div>
 
 <script>
-const APP_BUILD_ID = "2026-05-26T14:04:57Z";
-const APP_BUILD_LABEL = "26/05 16:04 menu d6-d15 visible";
+const APP_BUILD_ID = "2026-05-26T14:17:02Z";
+const APP_BUILD_LABEL = "26/05 16:17 mise compras d6-d15";
 
 /* ============================================================
    IKEA DIAGRAMS — desactivado tras rollback V2 s56 (TT Code)
@@ -1968,65 +1968,146 @@ const miseData = [
     ],
     nota: "PA medio + Abendbrot · Igino solo · papas arrugadas técnica canaria icónica · atún cadena frío crítica"},
 
-  {fecha: "2026-05-27", ds: "Miércoles 27/05", tipo: "pendiente",
-    titulo: "Pendiente diseño — CE fuerte (Igino solo)",
-    carga: "Pendiente",
-    tareas: [{h: "—", t: "Pendiente diseño d6: cerdo (CE) fuerte · Igino solo (David libra) · slot cerdo aislado entre PA→CB.", tipo: "preparacion"}],
-    nota: "Pendiente cierre periodo · d6 sin definir"},
+  {fecha: "2026-05-27", ds: "Miércoles 27/05", tipo: "chef-free",
+    titulo: "Costilla con Papa y Piña (CE · Igino solo)",
+    carga: "Media-Alta",
+    tareas: [
+      {h: "7:30", t: "Verificar desalado costilla si era salada: 24 h, 3 cambios, último agua sin sal. Escurrir.", tipo: "control"},
+      {h: "8:00", t: "Carpaccio champiñón: limpiar seco, laminar fino, reservar tapado. Aliñar 15-20 min antes del pase.", tipo: "servicio"},
+      {h: "8:15", t: "Costillas: cubrir con agua fría, espumar 30 min. Añadir pasta aromática perejil-ajo-cebolla-pimiento-apio.", tipo: "servicio"},
+      {h: "9:00", t: "Cocción larga costilla: caldo temblando, nunca hervor fuerte. Objetivo carne melosa.", tipo: "servicio"},
+      {h: "10:00", t: "Gazpacho cena: tomate maduro, pepino, pimiento, AOVE, vinagre suave. Triturar fino y cámara.", tipo: "servicio"},
+      {h: "10:30", t: "Papas en trozos grandes + maíz escurrido. Cocer/regenerar en caldo colado.", tipo: "servicio"},
+      {h: "11:30", t: "Emplatado: papas + caldo, costilla melosa, maíz, mojo verde suave aparte.", tipo: "servicio"},
+      {h: "13:30", t: "Coq au Vin D-1: pollo + vino tinto + mirepoix + ajo + tomillo. Refrigerar 24 h.", tipo: "anticipacion", para: "Jue 28"},
+      {h: "14:00", t: "Naranjas láminas canela D-1: pelar a vivo, laminar, canela, miel ligera. Cámara.", tipo: "anticipacion", para: "Jue 28"}
+    ],
+    nota: "CE fuerte · costilla salada requiere control desalado · d7 queda adelantado"},
 
-  {fecha: "2026-05-28", ds: "Jueves 28/05", tipo: "pendiente",
-    titulo: "Pendiente diseño — CB medio (ambos chefs)",
-    carga: "Pendiente",
-    tareas: [{h: "—", t: "Pendiente diseño d7: carne blanca medio · ambos chefs.", tipo: "preparacion"}],
-    nota: "Pendiente cierre periodo · d7 sin definir"},
+  {fecha: "2026-05-28", ds: "Jueves 28/05", tipo: "normal",
+    titulo: "Coq au Vin + Ceviche Camarones (CB · ambos chefs)",
+    carga: "Alta",
+    tareas: [
+      {h: "7:30", t: "Sacar pollo del marinado, escurrir y secar. Reservar vino y mirepoix por separado.", tipo: "servicio"},
+      {h: "8:00", t: "Ceviche: verificar descongelación en nevera. Escaldar camarones 60-90 s, baño hielo, escurrir.", tipo: "servicio"},
+      {h: "8:15", t: "Marinar ceviche 10-15 min en nevera con lima/limón, cebolla roja fina, cilantro, ají mínimo y AOVE.", tipo: "servicio"},
+      {h: "8:30", t: "Coq: dorar lardons/cebollitas/champiñones. Dorar pollo enharinado.", tipo: "servicio"},
+      {h: "9:15", t: "Sofreír mirepoix, deglasar vino, reducir, añadir fondo y pollo. Horno 160 °C ~1 h.", tipo: "servicio"},
+      {h: "10:00", t: "Puré Robuchon o guarnición ficha: patata tamizada, mantequilla/nata, textura sedosa.", tipo: "servicio"},
+      {h: "11:30", t: "Emplatado: puré, pollo, salsa napante, champiñón/cebollita/lardons, perejil.", tipo: "servicio"},
+      {h: "13:00", t: "Cena: Ensalada Verde Caldesi + pan.", tipo: "cena"}
+    ],
+    nota: "APPCC ceviche: frío <4 °C hasta servicio · camarón cocido, no crudo"},
 
-  {fecha: "2026-05-29", ds: "Viernes 29/05", tipo: "pendiente",
-    titulo: "Pendiente diseño — PB ligero (ambos chefs)",
-    carga: "Pendiente",
-    tareas: [{h: "—", t: "Pendiente diseño d8: pescado blanco ligero · ambos chefs.", tipo: "preparacion"}],
-    nota: "Pendiente cierre periodo · d8 sin definir"},
+  {fecha: "2026-05-29", ds: "Viernes 29/05", tipo: "normal",
+    titulo: "Suquet de Corvina (PB · ambos chefs)",
+    carga: "Media",
+    tareas: [
+      {h: "8:00", t: "Ensalada aguacate naranja: naranja a vivo, aguacate al final, aliño cítrico.", tipo: "servicio"},
+      {h: "8:30", t: "Suquet base: sofrito ajo-perejil-tomate, pimentón, caldo pescado.", tipo: "servicio"},
+      {h: "9:00", t: "Patata del suquet en caldo 20 min hasta casi hecha.", tipo: "servicio"},
+      {h: "10:00", t: "Corvina: espina cero, porcionar 25 lomos 150-180 g.", tipo: "control"},
+      {h: "11:00", t: "Añadir corvina al suquet 8-10 min suave. Movimiento vaivén, no remover.", tipo: "servicio"},
+      {h: "11:30", t: "Emplatado: patata + corvina + caldo ligado, perejil, AOVE.", tipo: "servicio"},
+      {h: "13:00", t: "Cena: pimientos asados + burrata + pan.", tipo: "cena"}
+    ],
+    nota: "Corvina al final para no secar ni romper"},
 
-  {fecha: "2026-05-30", ds: "Sábado 30/05", tipo: "pendiente",
-    titulo: "Pendiente diseño — VE ligero (David solo · regenerable)",
-    carga: "Pendiente",
-    tareas: [{h: "—", t: "Pendiente diseño d9: vegetariano ligero · David solo · regenerable.", tipo: "preparacion"}],
-    nota: "Pendiente cierre periodo · d9 sin definir"},
+  {fecha: "2026-05-30", ds: "Sábado 30/05", tipo: "normal",
+    titulo: "Filet Mignon (CR · David solo)",
+    carga: "Alta",
+    tareas: [
+      {h: "8:00", t: "Ensalada judía verde: blanquear judías, abatir, melocotón en gajos, almendra tostada.", tipo: "servicio"},
+      {h: "8:30", t: "Filet Mignon: limpiar solomillo, porcionar medallones, atemperar controlado.", tipo: "servicio"},
+      {h: "9:00", t: "Sorbete limón: producir o sacar stock. Único sorbete d6-d15.", tipo: "postre"},
+      {h: "10:00", t: "Abendbrot cena: Kräuterquark, embutidos/salmón, panes, pepino/tomate.", tipo: "cena"},
+      {h: "10:45", t: "Filet: sellado fuerte, horno corto, reposo. Salsa/guarniciones listas antes del corte.", tipo: "servicio"},
+      {h: "11:30", t: "Emplatado: medallón, salsa, guarnición caliente, acabado limpio.", tipo: "servicio"}
+    ],
+    nota: "CR fuerte · controlar punto y reposo"},
 
-  {fecha: "2026-05-31", ds: "Domingo 31/05", tipo: "pendiente",
-    titulo: "Pendiente diseño — HI medio (David solo)",
-    carga: "Pendiente",
-    tareas: [{h: "—", t: "Pendiente diseño d10: hidrato medio · pasta horno o arroz caldoso · David solo.", tipo: "preparacion"}],
-    nota: "Pendiente cierre periodo · d10 sin definir"},
+  {fecha: "2026-05-31", ds: "Domingo 31/05", tipo: "normal",
+    titulo: "Salmón al Horno con Raita (PA · David solo)",
+    carga: "Media",
+    tareas: [
+      {h: "8:00", t: "Tomate AOVE Straker: tomate maduro, sal mínima, AOVE bueno.", tipo: "servicio"},
+      {h: "8:30", t: "Raita: pepino rallado y escurrido, yogur, menta, comino suave, limón. Cámara <4 °C.", tipo: "servicio"},
+      {h: "9:00", t: "Salmón: espina cero, porcionar 25 lomos 150-180 g.", tipo: "control"},
+      {h: "9:30", t: "Guarniciones: patata vapor y espinaca según ficha/stock.", tipo: "servicio"},
+      {h: "10:30", t: "Sopa melón menta: triturar melón maduro + menta + lima mínima. Cámara.", tipo: "postre"},
+      {h: "11:00", t: "Salmón Convotherm 180 °C mixto 30%, 12-14 min, centro 52-54 °C.", tipo: "servicio"},
+      {h: "13:00", t: "Fattoush cena: verduras frescas + pita tostada al último momento.", tipo: "cena"}
+    ],
+    nota: "Raita fría aparte; no poner encima del salmón caliente"},
 
-  {fecha: "2026-06-01", ds: "Lunes 01/06", tipo: "pendiente",
-    titulo: "Pendiente diseño — CR fuerte (ambos chefs)",
-    carga: "Pendiente",
-    tareas: [{h: "—", t: "Pendiente diseño d11: carne roja fuerte · ambos chefs.", tipo: "preparacion"}],
-    nota: "Pendiente cierre periodo · d11 sin definir"},
+  {fecha: "2026-06-01", ds: "Lunes 01/06", tipo: "normal",
+    titulo: "Canelones Caprese (HI · ambos chefs)",
+    carga: "Alta",
+    tareas: [
+      {h: "8:00", t: "Ensalada calabacín limón rúcula: calabacín laminado fino, limón, AOVE, rúcula al final.", tipo: "servicio"},
+      {h: "8:30", t: "Salsa tomate: Mutti triturado/polpa + pelati roto + tomate natural. Albahaca al final.", tipo: "servicio"},
+      {h: "9:15", t: "Relleno ligero: ricotta/requesón + mozzarella picada + albahaca + pimienta blanca + poco parmesano.", tipo: "servicio"},
+      {h: "9:45", t: "Bechamel veladura: fina, no capa pesada.", tipo: "servicio"},
+      {h: "10:45", t: "Montaje GN: tomate, canelones, tomate, mozzarella visible, veladura bechamel marmoleada.", tipo: "servicio"},
+      {h: "11:05", t: "Gratinado 180-190 °C 12-15 min. Mozzarella fundida en manchas blancas.", tipo: "servicio"},
+      {h: "13:00", t: "Vichyssoise fría cena.", tipo: "cena"}
+    ],
+    nota: "Clave visual: tomate rojo fresco + mozzarella blanca visible + albahaca"},
 
-  {fecha: "2026-06-02", ds: "Martes 02/06", tipo: "pendiente",
-    titulo: "Pendiente diseño — PA medio (Igino solo)",
-    carga: "Pendiente",
-    tareas: [{h: "—", t: "Pendiente diseño d12: pescado azul medio · Igino solo (David libra).", tipo: "preparacion"}],
-    nota: "Pendiente cierre periodo · d12 sin definir"},
+  {fecha: "2026-06-02", ds: "Martes 02/06", tipo: "normal",
+    titulo: "Sopa Lentejas Rojas con Coliflor (VE · Igino solo)",
+    carga: "Media",
+    tareas: [
+      {h: "8:00", t: "Ensalada sandía feta: sandía dados, feta, menta, AOVE, lima. Ración ligera.", tipo: "servicio"},
+      {h: "8:30", t: "Sopa: pochar cebolla + ajo + jengibre + comino/cilantro. Añadir lentejas rojas lavadas, coliflor y caldo.", tipo: "servicio"},
+      {h: "9:15", t: "Cocer 25 min suave. Triturar parcial, textura híbrida con coliflor visible.", tipo: "servicio"},
+      {h: "10:30", t: "Mango yogur chocolate blanco: mango dados, yogur, chocolate blanco rallado/crema ligera. Cámara.", tipo: "postre"},
+      {h: "11:15", t: "Ajuste sopa con limón, AOVE, cilantro si procede. No picante.", tipo: "servicio"},
+      {h: "13:00", t: "Cena: ensalada sueca de pepino, eneldo, vinagre suave, yogur opcional.", tipo: "cena"}
+    ],
+    nota: "No entrante sopa/crema: evitamos doble cuchara"},
 
-  {fecha: "2026-06-03", ds: "Miércoles 03/06", tipo: "pendiente",
-    titulo: "Pendiente diseño — PB ligero regenerable (Igino solo)",
-    carga: "Pendiente",
-    tareas: [{h: "—", t: "Pendiente diseño d13: pescado blanco ligero · Igino solo · guiso regenerable.", tipo: "preparacion"}],
-    nota: "Pendiente cierre periodo · d13 sin definir"},
+  {fecha: "2026-06-03", ds: "Miércoles 03/06", tipo: "chef-free",
+    titulo: "Calamar Plancha, Patatas y Berros (MAR/PB · Igino solo)",
+    carga: "Media-Alta",
+    tareas: [
+      {h: "8:00", t: "Carpaccio calabacín ricotta: calabacín fino, ricotta, limón, AOVE.", tipo: "servicio"},
+      {h: "8:30", t: "Calamar: limpiar, retirar piel/membranas si procede, cortar piezas manejables. Secar muy bien.", tipo: "servicio"},
+      {h: "9:00", t: "Patatas: cocer/vapor hasta tiernas; marcar/saltear con AOVE.", tipo: "servicio"},
+      {h: "9:45", t: "Migas verdes: miga/pan grueso, perejil, ajo mínimo, limón, AOVE. Tostar sin quemar.", tipo: "servicio"},
+      {h: "10:15", t: "Berros: lavar, centrifugar, cortar tallos duros o marchitar ligeramente para perfil senior.", tipo: "servicio"},
+      {h: "10:45", t: "Calamar plancha muy caliente, 1-2 min por cara. Evitar sobrecocción.", tipo: "servicio"},
+      {h: "13:00", t: "Ajoblanco frío cena.", tipo: "cena"}
+    ],
+    nota: "Punto crítico: calamar tierno, no gomoso"},
 
-  {fecha: "2026-06-04", ds: "Jueves 04/06", tipo: "pendiente",
-    titulo: "Pendiente diseño — CB medio (ambos chefs)",
-    carga: "Pendiente",
-    tareas: [{h: "—", t: "Pendiente diseño d14: carne blanca medio · ambos chefs.", tipo: "preparacion"}],
-    nota: "Pendiente cierre periodo · d14 sin definir"},
+  {fecha: "2026-06-04", ds: "Jueves 04/06", tipo: "normal",
+    titulo: "Pollo Velouté con Setas (CB · ambos chefs)",
+    carga: "Media",
+    tareas: [
+      {h: "8:00", t: "Ensalada remolacha naranja almendras eneldo: remolacha, naranja, almendra tostada, eneldo.", tipo: "servicio"},
+      {h: "8:30", t: "Pollo Velouté: porcionar pollo, preparar velouté mostaza, limpiar setas en seco.", tipo: "servicio"},
+      {h: "9:00", t: "Setas: saltear fuerte, glasear con fondo si aplica.", tipo: "servicio"},
+      {h: "9:30", t: "Tallarines/guarnición: cocer al dente, reservar con aceite mínimo.", tipo: "servicio"},
+      {h: "10:15", t: "Pollo: cocción suave en salsa o regeneración controlada. Centro seguro, no seco.", tipo: "servicio"},
+      {h: "11:30", t: "Emplatado: pasta, pollo, velouté napante, setas visibles, perejil.", tipo: "servicio"},
+      {h: "14:00", t: "Cheesecake fruta pasión-piña D-1: base digestive, relleno, hornear y refrigerar overnight.", tipo: "anticipacion", para: "Vie 05"}
+    ],
+    nota: "Principal cremoso; entrante ácido-terroso compensa"},
 
-  {fecha: "2026-06-05", ds: "Viernes 05/06", tipo: "pendiente",
-    titulo: "Pendiente diseño — PB ligero cierre (ambos chefs)",
-    carga: "Pendiente",
-    tareas: [{h: "—", t: "Pendiente diseño d15: pescado blanco ligero · cierre periodo · ambos chefs.", tipo: "preparacion"}],
-    nota: "Pendiente cierre periodo · d15 sin definir"}
+  {fecha: "2026-06-05", ds: "Viernes 05/06", tipo: "normal",
+    titulo: "Moqueca Camarones con Arroz Bahiano (MAR/PB · ambos chefs)",
+    carga: "Media-Alta",
+    tareas: [
+      {h: "8:00", t: "Ensalada pomelo coco lima: pomelo a vivo, coco, lima, menta/cilantro.", tipo: "servicio"},
+      {h: "8:30", t: "Moqueca base: sofrito cebolla/pimiento/tomate, leche coco, dendê o AOVE+pimentón, cilantro.", tipo: "servicio"},
+      {h: "9:30", t: "Arroz Bahiano: arroz suelto, leche coco si ficha lo indica, mantener caliente y suelto.", tipo: "servicio"},
+      {h: "10:30", t: "Camarones: añadir al final, cocción corta hasta opacos y jugosos.", tipo: "servicio"},
+      {h: "11:30", t: "Emplatado: arroz base, moqueca napando, camarones visibles, cilantro, lima.", tipo: "servicio"},
+      {h: "11:45", t: "Cheesecake fruta pasión-piña: porcionar, piña asada/acabado.", tipo: "postre"},
+      {h: "13:00", t: "Crema tomate asado albahaca cena.", tipo: "cena"}
+    ],
+    nota: "Cierre tropical · camarón jugoso, no sobrecocer"}
 ];
 
 const comprasData = [
@@ -2198,14 +2279,80 @@ const comprasData = [
   },
   {
     lista: 2,
-    titulo: "ENTREGA 2-4 — d6-d15 pendientes diseño",
-    entrega: "Por definir cuando se cierre el diseño d6-d15",
-    cubre: "Mié 27 may → Vie 5 jun (10 días pendientes diseño culinario)",
+    titulo: "ENTREGA 2 — d6-d15 completos",
+    entrega: "Mar 26 tarde / Mié 27 mañana + reposiciones frescas según día crítico",
+    cubre: "Mié 27 may → Vie 5 jun (10 días · d6-d15)",
     secciones: [
-      {
-        s: "Pendiente diseño",
-        items: [{p: "Pendiente diseño d6-d15", c: "—", n: "10 días con categoría definida (CE-CB-PB-VE-HI-CR-PA-PB-CB-PB) pero principales pendientes. Compras se cierran al cerrar el diseño."}]
-      }
+      {s: "Pescadería / Marisco", items: [
+        {p: "Corvina fresca lomos limpios", c: "6,5 kg", n: "d8 Suquet · espina cero, 25 lomos"},
+        {p: "Salmón fresco lomo", c: "5 kg", n: "d10 · 25 porciones 150-180 g, espina cero"},
+        {p: "Calamar o pota tierna limpia", c: "5-6 kg", n: "d13 principal · secar muy bien, cocción corta"},
+        {p: "Camarón/langostino ultracongelado pelado", c: "3,5-4 kg", n: "d7 ceviche + d15 moqueca · descongelar en nevera"}
+      ]},
+      {s: "Carnicería", items: [
+        {p: "Costillas de cerdo saladas", c: "7 kg", n: "d6 · desalado 24 h con 3 cambios"},
+        {p: "Pollo entero o piezas para deshuesar", c: "10 kg", n: "d7 Coq au Vin"},
+        {p: "Bacon/ventrèche/lardons", c: "1,2 kg", n: "d7 guarnición Grand Mère"},
+        {p: "Solomillo ternera entero", c: "5 kg", n: "d9 Filet Mignon · 25 medallones"},
+        {p: "Pollo para velouté", c: "5 kg", n: "d14 Pollo Velouté"}
+      ]},
+      {s: "Fruta y verdura", items: [
+        {p: "Champiñón blanco fresco", c: "2 kg", n: "d6 carpaccio"},
+        {p: "Papa/patata", c: "14,5 kg", n: "d6 costilla + d13 calamar + vichyssoise"},
+        {p: "Tomate maduro", c: "10 kg", n: "gazpacho, tomate AOVE, salsa canelones, crema d15"},
+        {p: "Pepino", c: "5 kg", n: "gazpacho, raita, ensaladas, gurkensalat"},
+        {p: "Pimiento rojo/verde", c: "5 kg + 25 uds", n: "gazpacho, pimientos burrata, moqueca"},
+        {p: "Cebolla blanca + roja", c: "8 kg + 1,5 kg", n: "sofritos + ceviche/ensaladas"},
+        {p: "Naranjas", c: "8 kg", n: "postres y ensaladas"},
+        {p: "Aguacate", c: "2 kg", n: "d8 entrante"},
+        {p: "Papaya canaria", c: "4 uds / ~4 kg", n: "d8 postre"},
+        {p: "Judía verde + melocotón", c: "3 kg + 2 kg", n: "d9 entrante"},
+        {p: "Melón", c: "5 kg", n: "d10 postre"},
+        {p: "Calabacín", c: "5 kg", n: "d11 + d13 entrantes"},
+        {p: "Sandía", c: "5 kg", n: "d12 entrante"},
+        {p: "Coliflor + lentejas rojas", c: "4 kg + 1,8 kg", n: "d12 principal"},
+        {p: "Mango", c: "4 kg", n: "d12 postre"},
+        {p: "Berros", c: "1,5 kg", n: "d13 principal"},
+        {p: "Remolacha + manzana", c: "4 kg + 4 kg", n: "d14 entrante/postre"},
+        {p: "Pomelo", c: "8 uds", n: "d15 entrante"},
+        {p: "Piña fresca + fruta pasión", c: "2 uds + 12-15 uds", n: "d15 cheesecake"},
+        {p: "Hierbas frescas", c: "albahaca 300 g, cilantro 250 g, perejil 250 g, menta 120 g, eneldo 120 g", n: "servicios d6-d15"},
+        {p: "Limones + limas", c: "40 + 20 uds", n: "ceviche, aliños, raita, postres"}
+      ]},
+      {s: "Lácteos / Quesos / Huevos", items: [
+        {p: "Mantequilla sin sal", c: "3 kg", n: "Coq, bechamel, velouté, postres"},
+        {p: "Nata 35% + leche entera", c: "3 L + 4 L", n: "velouté, vichyssoise, bechamel"},
+        {p: "Mozzarella + ricotta/requesón", c: "3 kg + 2 kg", n: "d11 Canelones Caprese"},
+        {p: "Parmesano", c: "800 g", n: "d11 + acabados"},
+        {p: "Burrata", c: "1,5 kg", n: "d8 cena"},
+        {p: "Feta", c: "1 kg", n: "d12 entrante"},
+        {p: "Yogur griego", c: "3 kg", n: "d10 raita + d12 postre"},
+        {p: "Cream cheese", c: "1 kg", n: "d15 cheesecake"},
+        {p: "Huevos", c: "2 docenas", n: "recetas auxiliares"},
+        {p: "Queso fresco", c: "1,5 kg", n: "d14 cena"}
+      ]},
+      {s: "Secos / Despensa", items: [
+        {p: "Tomate Mutti triturado/polpa + pelati", c: "4 kg + 2 kg", n: "d11 salsa canelones"},
+        {p: "Pasta canelón / placas", c: "60-70 uds", n: "d11 principal"},
+        {p: "Harina trigo", c: "1 kg", n: "Coq, bechamel, velouté"},
+        {p: "Vino tinto", c: "5 botellas", n: "d7 Coq au Vin"},
+        {p: "Fondo de ave + pescado", c: "8 L + 5 L", n: "Coq/velouté + suquet/moqueca"},
+        {p: "Arroz Bahiano / largo", c: "3 kg", n: "d15"},
+        {p: "Leche de coco", c: "3 L", n: "d15 moqueca"},
+        {p: "Aceite dendê", c: "250 ml", n: "opcional; alt AOVE + pimentón"},
+        {p: "AOVE", c: "5 L", n: "general"},
+        {p: "Almendra laminada", c: "300 g", n: "d9 + d14"},
+        {p: "Pan/miga para migas verdes", c: "1 kg", n: "d13"},
+        {p: "Pan cena", c: "12 piezas", n: "cenas d6-d15"},
+        {p: "Galletas digestive", c: "400 g", n: "d15 cheesecake"},
+        {p: "Azúcar + especias/vinagres", c: "2 kg + stock", n: "postres, raita, lentejas, suquet, moqueca"}
+      ]},
+      {s: "Riesgos / Sustituciones", items: [
+        {p: "Fruta pasión", c: "riesgo medio", n: "sustituir por Crema Piña Coco o Papaya Lima"},
+        {p: "Aceite dendê", c: "riesgo medio", n: "AOVE + pimentón dulce"},
+        {p: "Calamar tierno", c: "riesgo medio", n: "pota canaria limpia, cocción muy corta"},
+        {p: "Ricotta", c: "riesgo bajo", n: "requesón fino + yogur colado"}
+      ]}
     ]
   }
 ];
