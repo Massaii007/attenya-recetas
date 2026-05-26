@@ -1,6 +1,6 @@
 {
-  "buildId": "2026-05-26T01:25:00Z",
-  "label": "26/05 03:25 IKEA V2",
+  "buildId": "2026-05-26T01:35:00Z",
+  "label": "26/05 03:35 rollback IKEA",
   "channel": "kitchen-kiosk",
   "minCheckIntervalSeconds": 30
 }
