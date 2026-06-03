@@ -425,8 +425,8 @@ body { background: #1a1612; color: #e8dfd4; font-family: 'Cormorant Garamond', G
 <div class="footer" id="footer"></div>
 
 <script>
-const APP_BUILD_ID = "2026-06-01T19:03:22Z";
-const APP_BUILD_LABEL = "01/06 21:03 Pollo Patiki";
+const APP_BUILD_ID = "2026-06-03T13:32:11Z";
+const APP_BUILD_LABEL = "03/06 15:32 Quincena 05-19 Junio";
 
 /* ============================================================
    IKEA DIAGRAMS — desactivado tras rollback V2 s56 (TT Code)
@@ -1764,631 +1764,1041 @@ const cats = [
    MENU + MISE + COMPRAS — 31 Marzo - 14 Abril 2026 (ACTUAL)
    ============================================================ */
 const menuData = {
-  periodo: "22 Mayo - 5 Junio 2026",
-  pax: 25,
-  ciclo: "Quincena 15 días · PB-CB-CR-VE-PA-CE-CB-PB-CR-PA-HI-VE-MAR/PB-CB-MAR/PB · d1-d15 completo · d6-d15 publicado",
-  chef_free: "Igino libra sáb-dom (David lidera fin de semana). David libra mar-mié (Igino solo). Ambos chefs el resto.",
-  dias: [
-    {fecha: "2026-05-22", ds: "Viernes 22/05", dc: 1, tipo: "normal", prot: "Pescado blanco",
-      entrante: {n: "Ens. Coreana Pomelo Fresas (Caldesi)", id: "Ensalada_Coreana_Pomelo_Fresas_Caldesi"},
-      principal: {n: "Dorada al Vapor a la Japonesa", id: "Dorada_Vapor_Japonesa_Plato"},
-      guarnicion: {n: "Arroz blanco basmati", id: "Arroz_Basmati"},
-      postre: {n: "Papaya con Lima y Pimienta Rosa", id: "Papaya_Lima_Pimienta_Rosa"},
-      cena: {n: "Crema Calabacín Albahaca (Straker)", id: "Crema_Calabacin_Albahaca_Straker"},
-      cena_text: " + pan rústico",
-      prod: "PB ligero arranque periodo · ambos chefs · técnica escaldado aceite jengibre"},
-    {fecha: "2026-05-23", ds: "Sábado 23/05", dc: 2, tipo: "normal", prot: "Carne blanca",
-      entrante: {n: "Ens. Pepino Chafado (Caldesi)", id: "Ensalada_Pepino_Chafado_Caldesi"},
-      principal: {n: "Salchichas con Salsa de Tomate", id: "Salchichas_Salsa_Tomate_Plato"},
-      guarnicion: {n: "Puré de patata casero", id: null},
-      postre: {n: "Fresas al Vinagre", id: "Fresas_Vinagre"},
-      cena: {n: "Cena Abendbrot Clásica", id: "Cena_Abendbrot_Clasica"},
-      cena_text: " (1ª iteración semanal)",
-      prod: "CB medio · David solo (Igino libra) · regenerable D-1"},
-    {fecha: "2026-05-24", ds: "Domingo 24/05", dc: 3, tipo: "festivo", prot: "Carne roja",
-      entrante: {n: "Ens. Nepalí Picante Cebolla Patata (Caldesi)", id: "Ensalada_Nepali_Picante_Cebolla_Patata_Caldesi"},
-      principal: {n: "🆕 Magret de Pato con Salsa de Melocotón y Tomillo", id: "Magret_Pato_Salsa_Melocoton_Tomillo"},
-      guarnicion: {n: "Patatas Boulangère", id: "Patatas_Boulangere"},
-      postre: {n: "Naranjas en Láminas con Canela", id: "Naranjas_Laminas_Canela"},
-      cena: {n: "Pimientos Asados Burrata (Straker)", id: "Pimientos_Asados_Burrata_Straker"},
-      cena_text: "",
-      prod: "CR fuerte ⭐ DOMINGO FESTIVO · David solo · Magret receta nueva ATTENYA"},
-    {fecha: "2026-05-25", ds: "Lunes 25/05", dc: 4, tipo: "normal", prot: "Vegetariano",
-      entrante: {n: "Ens. Col Libanesa (Hage)", id: "Ensalada_Col_Libanesa_Hage"},
-      principal: {n: "🆕 Buñuelos Remolacha Feta — Plato Vegetariano", id: "Bunuelos_Remolacha_Feta_Plato_Vegetariano"},
-      guarnicion: {n: "Couscous con pasas", id: null},
-      postre: {n: "Helado de Pistacho Casero", id: "Helado_Pistacho_Casero"},
-      cena: {n: "Caldo Pollo Verduras (Straker)", id: "Caldo_Pollo_Verduras_Straker"},
-      cena_text: "",
-      prod: "VE medio · ambos chefs · adaptación entrante→plato principal levantino"},
-    {fecha: "2026-05-26", ds: "Martes 26/05", dc: 5, tipo: "normal", prot: "Pescado azul",
-      entrante: {n: "Ens. Tomate Queso Maxorata (Antonio)", id: "Ensalada_Tomate_Queso_Maxorata_Vinagreta_Jerez"},
-      principal: {n: "Atún Encebollado Canario", id: "Atun_Encebollado_Canario_Plato"},
-      guarnicion: {n: "Papas Arrugadas Canarias", id: "Papas_Arrugadas_Canarias"},
-      postre: {n: "Macedonia Frutas Oscuras Asadas Amaretto (Caldesi)", id: "Macedonia_Frutas_Oscuras_Asadas_Amaretto_Crema_Anacardos_Lima_Caldesi"},
-      cena: {n: "Cena Abendbrot Clásica", id: "Cena_Abendbrot_Clasica"},
-      cena_text: " (2ª iteración semanal)",
-      prod: "PA medio · Igino solo (David libra) · coherencia canaria"},
-    {fecha: "2026-05-27", ds: "Miércoles 27/05", dc: 6, tipo: "chef-free", prot: "Cerdo",
-      entrante: {n: "Carpaccio de Champiñón Blanco", id: "Carpaccio_Champinon_Blanco"},
-      principal: {n: "Costilla con Papa y Piña", id: "Costilla_Papa_Pina"},
-      guarnicion: {n: "Papa integrada", id: null},
-      postre: {n: "Plátano con Lima", id: "Platano_Lima"},
-      cena: {n: "Gazpacho Straker", id: "Gazpacho_Straker"},
-      cena_text: " + pan",
-      prod: "CE fuerte · Igino solo (David libra) · costilla salada desalado 24 h si aplica · entrante vegetal frío"},
-    {fecha: "2026-05-28", ds: "Jueves 28/05", dc: 7, tipo: "normal", prot: "Carne blanca",
-      entrante: {n: "Ceviche de Camarones a la Piedra", id: "Ceviche_Camarones_a_la_Piedra"},
-      principal: {n: "Coq au Vin", id: "Coq_au_Vin"},
-      guarnicion: {n: "Integrada", id: null},
-      postre: {n: "Naranjas en Láminas con Canela", id: "Naranjas_Laminas_Canela"},
-      cena: {n: "Ensalada Verde Caldesi", id: "Ensalada_Verde_Caldesi"},
-      cena_text: " + pan",
-      prod: "CB medio · ambos chefs · ceviche seguro: camarón escaldado 60-90 s + baño hielo + marinado frío 10-15 min"},
-    {fecha: "2026-05-29", ds: "Viernes 29/05", dc: 8, tipo: "normal", prot: "Pescado blanco",
-      entrante: {n: "Ensalada de Aguacate y Naranja", id: "Ensalada_Aguacate_Naranja_Caldesi"},
-      principal: {n: "Suquet de Corvina", id: "Suquet_Corvina"},
-      guarnicion: {n: "Patata integrada", id: null},
-      postre: {n: "Papaya con Lima y Pimienta Rosa", id: "Papaya_Lima_Pimienta_Rosa"},
-      cena: {n: "Pimientos Asados con Burrata", id: "Pimientos_Asados_Burrata_Straker"},
-      cena_text: "",
-      prod: "PB ligero · ambos chefs · suquet catalán con corvina, espina cero"},
-    {fecha: "2026-05-30", ds: "Sábado 30/05", dc: 9, tipo: "normal", prot: "Carne roja",
-      entrante: {n: "Judía Verde, Almendra y Melocotón", id: "Ensalada_Judia_Verde_Almendra_Melocoton_Straker"},
-      principal: {n: "Filet Mignon", id: "Filet_Mignon_Plato"},
-      guarnicion: {n: "Integrada", id: null},
-      postre: {n: "Sorbete de Limón", id: "Sorbete_Limon"},
-      cena: {n: "Cena Abendbrot Clásica", id: "Cena_Abendbrot_Clasica"},
-      cena_text: "",
-      prod: "CR fuerte · David solo (Igino libra) · único sorbete del tramo d6-d15"},
-    {fecha: "2026-05-31", ds: "Domingo 31/05", dc: 10, tipo: "normal", prot: "Pescado azul",
-      entrante: {n: "Tomate AOVE Straker", id: "Ensalada_Tomate_AOVE_Straker"},
-      principal: {n: "Salmón al Horno con Raita de Pepino", id: "Salmon_Horno_Raita_Pepino"},
-      guarnicion: {n: "Espinacas y patatas al vapor", id: null},
-      postre: {n: "Sopa Fría de Melón y Menta", id: "Sopa_Melon_Menta"},
-      cena: {n: "Fattoush Fresco Crujiente", id: "Fattoush_Fresco_Crujiente_Hage"},
-      cena_text: "",
-      prod: "PA medio · David solo · salmón fresco con raita fría aparte"},
-    {fecha: "2026-06-01", ds: "Lunes 01/06", dc: 11, tipo: "normal", prot: "Hidrato",
-      entrante: {n: "Calabacín, Limón y Rúcula", id: "Ensalada_Calabacin_Limon_Rucula_Straker"},
-      principal: {n: "Canelones Caprese con Tomate, Mozzarella y Albahaca", id: "Canelones_Caprese_Tomate_Mozzarella_Albahaca"},
-      guarnicion: {n: "Integrada", id: null},
-      postre: {n: "Fresas con Vinagre", id: "Fresas_Vinagre"},
-      cena: {n: "Vichyssoise", id: "Vichyssoise"},
-      cena_text: " fría",
-      prod: "HI medio · ambos chefs · tomate Mutti + mozzarella visible + albahaca + veladura mínima bechamel"},
-    {fecha: "2026-06-02", ds: "Martes 02/06", dc: 12, tipo: "normal", prot: "Vegetariano",
-      entrante: {n: "Sandía y Feta", id: "Ensalada_Sandia_Feta_Hage"},
-      principal: {n: "Sopa de Lentejas Rojas con Coliflor Especiada", id: "Sopa_Lentejas_Rojas_Coliflor_Especiada_Hage"},
-      guarnicion: {n: "Integrada", id: null},
-      postre: {n: "Mango, Yogur y Chocolate Blanco", id: "Mango_Yogur_Chocolate_Blanco"},
-      cena: {n: "Ensalada Sueca de Pepino", id: "Ensalada_Sueca_Pepino_Caldesi"},
-      cena_text: "",
-      prod: "VE medio · Igino solo (David libra) · evitar doble cuchara en entrante"},
-    {fecha: "2026-06-03", ds: "Miércoles 03/06", dc: 13, tipo: "chef-free", prot: "Marisco / Pescado blanco",
-      entrante: {n: "Carpaccio de Calabacín y Ricotta", id: "Carpaccio_Calabacin_Flor_Calabacin_Ricotta_Caldesi"},
-      principal: {n: "Calamar a la Plancha, Patatas y Berros con Migas Verdes", id: "Calamar_Plancha_Patatas_Berros_Migas_Verdes_Plato"},
-      guarnicion: {n: "Patatas y berros integrados", id: null},
-      postre: {n: "Naranjas con Miel", id: "Naranjas_Miel"},
-      cena: {n: "Ajoblanco", id: "Ajoblanco"},
-      cena_text: "",
-      prod: "MAR/PB ligero · Igino solo · conversión entrante Caldesi a principal"},
-    {fecha: "2026-06-04", ds: "Jueves 04/06", dc: 14, tipo: "normal", prot: "Carne blanca",
-      entrante: {n: "Remolacha, Naranja, Almendras y Eneldo", id: "Ensalada_Remolacha_Naranja_Almendras_Eneldo_Caldesi"},
-      principal: {n: "Pollo Velouté con Setas", id: "Pollo_Veloute_Mostaza_Setas_Tallarines"},
-      guarnicion: {n: "Tallarines integrados", id: null},
-      postre: {n: "Compota de Manzana Especiada", id: "Compota_Manzana_Especiada"},
-      cena: {n: "Gurkensalat", id: "Gurkensalat_Ensalada_Pepino_Alemana"},
-      cena_text: " + pan/queso fresco",
-      prod: "CB medio · ambos chefs · principal cremoso, entrante ácido-terroso"},
-    {fecha: "2026-06-05", ds: "Viernes 05/06", dc: 15, tipo: "normal", prot: "Marisco / Pescado blanco",
-      entrante: {n: "Pomelo, Coco y Lima", id: "Ensalada_Pomelo_Alino_Coco_Lima_Caldesi"},
-      principal: {n: "Moqueca con Arroz Bahiano", id: "Moqueca_Camarones_Arroz_Bahiano"},
-      guarnicion: {n: "Arroz Bahiano", id: "Arroz_Bahiano"},
-      postre: {n: "Cheesecake Fruta Pasión-Piña Ottolenghi", id: "Passionfruit_Cheesecake_Pineapple_Ottolenghi"},
-      cena: {n: "Crema de Tomate Asado y Albahaca", id: "Crema_Tomate_Asado_Albahaca_Straker"},
-      cena_text: "",
-      prod: "MAR/PB cierre tropical · ambos chefs · moqueca con arroz coco/dendê"}
+  "periodo": "5-19 Junio 2026",
+  "pax": 25,
+  "ciclo": "Quincena 15 días · CB-PA-CR-VE-HI-CB-PB-CE-PA-MAR/PB-VE-CB-PB-CR-MAR/PB · compras segmentadas d1-d5, d6-d8, d9-d12, d13-d15",
+  "chef_free": "Igino libra sáb-dom. David libra mar-mié. Restricción aplicada: evitar VE/HI en días de David solo; d5 noche sin chef = Caponata preparada/regenerable.",
+  "dias": [
+    {
+      "fecha": "2026-06-05",
+      "ds": "Viernes 05/06",
+      "dc": 1,
+      "tipo": "normal",
+      "prot": "Carne blanca",
+      "entrante": {
+        "n": "Ens. Coreana Pomelo Fresas (Caldesi)",
+        "id": "Ensalada_Coreana_Pomelo_Fresas_Caldesi"
+      },
+      "principal": {
+        "n": "Pollo Patiki Beach",
+        "id": "Pollo_Patiki_Beach"
+      },
+      "guarnicion": {
+        "n": "Ensalada/verde integrada",
+        "id": null
+      },
+      "postre": {
+        "n": "Papaya con Lima y Pimienta Rosa",
+        "id": "Papaya_Lima_Pimienta_Rosa"
+      },
+      "cena": {
+        "n": "Pimientos Asados con Burrata",
+        "id": "Pimientos_Asados_Burrata_Straker"
+      },
+      "prod": "CB · cena corregida: no Gazpacho Straker."
+    },
+    {
+      "fecha": "2026-06-06",
+      "ds": "Sábado 06/06",
+      "dc": 2,
+      "tipo": "normal",
+      "prot": "Pescado azul",
+      "entrante": {
+        "n": "Gurkensalat, Ensalada de Pepino Alemana",
+        "id": "Gurkensalat_Ensalada_Pepino_Alemana"
+      },
+      "principal": {
+        "n": "Atún a Baja Temperatura con Parmentier de Boniato",
+        "id": "Atun_Baja_Temperatura_Parmentier_Boniato"
+      },
+      "guarnicion": {
+        "n": "Parmentier de boniato",
+        "id": null
+      },
+      "postre": {
+        "n": "Naranjas con Miel",
+        "id": "Naranjas_Miel"
+      },
+      "cena": {
+        "n": "Cena Abendbrot Clásica",
+        "id": "Cena_Abendbrot_Clasica"
+      },
+      "prod": "PA fin de semana · David solo · entrante cambiado a pepino alemán."
+    },
+    {
+      "fecha": "2026-06-07",
+      "ds": "Domingo 07/06",
+      "dc": 3,
+      "tipo": "normal",
+      "prot": "Carne roja",
+      "entrante": {
+        "n": "Carpaccio de Champiñón Blanco",
+        "id": "Carpaccio_Champinon_Blanco"
+      },
+      "principal": {
+        "n": "Tabulé con Paletilla de Cordero, Dátiles y Labneh",
+        "id": null
+      },
+      "guarnicion": {
+        "n": "Tabulé integrado",
+        "id": null
+      },
+      "postre": {
+        "n": "Sorbete de Naranja",
+        "id": "Sorbete_Naranja"
+      },
+      "cena": {
+        "n": "Crema de Calabacín y Albahaca",
+        "id": "Crema_Calabacin_Albahaca_Straker"
+      },
+      "prod": "CR domingo · entrante no verde puro porque el principal ya trae tabulé/verde."
+    },
+    {
+      "fecha": "2026-06-08",
+      "ds": "Lunes 08/06",
+      "dc": 4,
+      "tipo": "normal",
+      "prot": "Vegetariano",
+      "entrante": {
+        "n": "Tomate y Queso Maxorata",
+        "id": "Ensalada_Tomate_Queso_Maxorata_Vinagreta_Jerez"
+      },
+      "principal": {
+        "n": "Musaka de Verduras",
+        "id": null
+      },
+      "guarnicion": {
+        "n": "Integrada",
+        "id": null
+      },
+      "postre": {
+        "n": "Fresas con Vinagre",
+        "id": "Fresas_Vinagre"
+      },
+      "cena": {
+        "n": "Ensalada Sueca de Pepino",
+        "id": "Ensalada_Sueca_Pepino_Caldesi"
+      },
+      "cena_text": " + pan/queso fresco",
+      "prod": "VE fuera de David solo."
+    },
+    {
+      "fecha": "2026-06-09",
+      "ds": "Martes 09/06",
+      "dc": 5,
+      "tipo": "normal",
+      "prot": "Hidrato",
+      "entrante": {
+        "n": "Remolacha, Naranja, Almendras y Eneldo",
+        "id": "Ensalada_Remolacha_Naranja_Almendras_Eneldo_Caldesi"
+      },
+      "principal": {
+        "n": "Risotto de Boletus con Trufa Negra Fresca",
+        "id": "Risotto_Boletus_Trufa_Negra"
+      },
+      "guarnicion": {
+        "n": "Integrada",
+        "id": null
+      },
+      "postre": {
+        "n": "Sorbete de Limón",
+        "id": "Sorbete_Limon"
+      },
+      "cena": {
+        "n": "Caponata Siciliana",
+        "id": "Caponata_Plato"
+      },
+      "prod": "HI con trufa fresca · risotto al pase · noche sin chef: caponata preparada/regenerable."
+    },
+    {
+      "fecha": "2026-06-10",
+      "ds": "Miércoles 10/06",
+      "dc": 6,
+      "tipo": "normal",
+      "prot": "Carne blanca",
+      "entrante": {
+        "n": "Ensalada de Sandía y Feta",
+        "id": "Ensalada_Sandia_Feta_Hage"
+      },
+      "principal": {
+        "n": "Tonkatsu de Pollo",
+        "id": null
+      },
+      "guarnicion": {
+        "n": "Salsa tonkatsu aparte",
+        "id": null
+      },
+      "postre": {
+        "n": "Mango, Yogur y Chocolate Blanco",
+        "id": "Mango_Yogur_Chocolate_Blanco"
+      },
+      "cena": {
+        "n": "Ajoblanco",
+        "id": "Ajoblanco"
+      },
+      "prod": "CB · crujiente controlado, salsa aparte."
+    },
+    {
+      "fecha": "2026-06-11",
+      "ds": "Jueves 11/06",
+      "dc": 7,
+      "tipo": "normal",
+      "prot": "Pescado blanco",
+      "entrante": {
+        "n": "Ensalada de Aguacate y Naranja",
+        "id": "Ensalada_Aguacate_Naranja_Caldesi"
+      },
+      "principal": {
+        "n": "Suquet de Corvina",
+        "id": "Suquet_Corvina"
+      },
+      "guarnicion": {
+        "n": "Patata integrada",
+        "id": null
+      },
+      "postre": {
+        "n": "Plátano con Lima",
+        "id": "Platano_Lima"
+      },
+      "cena": {
+        "n": "Fattoush Fresco",
+        "id": "Fattoush_Fresco_Crujiente_Hage"
+      },
+      "prod": "PB · suquet recuperado de la quincena anterior."
+    },
+    {
+      "fecha": "2026-06-12",
+      "ds": "Viernes 12/06",
+      "dc": 8,
+      "tipo": "normal",
+      "prot": "Centroeuropeo",
+      "entrante": {
+        "n": "Ensalada Rosa de Remolacha y Manzana",
+        "id": "Ensalada_Rosa_Remolacha_Manzana_Caldesi"
+      },
+      "principal": {
+        "n": "Königsberger Klopse",
+        "id": null
+      },
+      "guarnicion": {
+        "n": "Salsa alcaparras",
+        "id": null
+      },
+      "postre": {
+        "n": "Compota de Manzana Especiada",
+        "id": "Compota_Manzana_Especiada"
+      },
+      "cena": {
+        "n": "Ratatouille",
+        "id": null
+      },
+      "prod": "CE aceptado por Mike · cena corregida a ratatouille."
+    },
+    {
+      "fecha": "2026-06-13",
+      "ds": "Sábado 13/06",
+      "dc": 9,
+      "tipo": "normal",
+      "prot": "Pescado azul",
+      "entrante": {
+        "n": "Ensalada de Zanahoria y Jengibre",
+        "id": null
+      },
+      "principal": {
+        "n": "Tuna Cheeseburger con Aros de Cebolla Sal y Vinagre",
+        "id": "Tuna_Cheeseburger_Salt_Vinegar_Onion_Rings_Josh_Niland"
+      },
+      "guarnicion": {
+        "n": "Aros de cebolla al lado + hojas verdes",
+        "id": null
+      },
+      "postre": {
+        "n": "Sorbete de Sandía",
+        "id": "Sorbete_Sandia"
+      },
+      "cena": {
+        "n": "Cena Abendbrot Clásica",
+        "id": "Cena_Abendbrot_Clasica"
+      },
+      "prod": "PA fin de semana · aros fuera de la burger · bollo propio Tangzhong o brioche comprado calidad."
+    },
+    {
+      "fecha": "2026-06-14",
+      "ds": "Domingo 14/06",
+      "dc": 10,
+      "tipo": "normal",
+      "prot": "Marisco / Pescado blanco",
+      "entrante": {
+        "n": "Tomate con AOVE",
+        "id": "Ensalada_Tomate_AOVE_Straker"
+      },
+      "principal": {
+        "n": "Polbo á Feira, Pulpo a la Gallega",
+        "id": "Polbo_a_Feira_Pulpo_Gallega"
+      },
+      "guarnicion": {
+        "n": "Patata cachelo integrada",
+        "id": null
+      },
+      "postre": {
+        "n": "Naranjas en Láminas con Canela",
+        "id": "Naranjas_Laminas_Canela"
+      },
+      "cena": {
+        "n": "Calabacín, Limón y Rúcula",
+        "id": "Ensalada_Calabacin_Limon_Rucula_Straker"
+      },
+      "cena_text": " + pan",
+      "prod": "MAR/PB marcado por Mike."
+    },
+    {
+      "fecha": "2026-06-15",
+      "ds": "Lunes 15/06",
+      "dc": 11,
+      "tipo": "normal",
+      "prot": "Vegetariano",
+      "entrante": {
+        "n": "Pomelo, Coco y Lima",
+        "id": "Ensalada_Pomelo_Alino_Coco_Lima_Caldesi"
+      },
+      "principal": {
+        "n": "Caponata a la Siciliana",
+        "id": "Caponata_Plato"
+      },
+      "guarnicion": {
+        "n": "Pan opcional",
+        "id": null
+      },
+      "postre": {
+        "n": "Papaya con Lima y Pimienta Rosa",
+        "id": "Papaya_Lima_Pimienta_Rosa"
+      },
+      "cena": {
+        "n": "Vichyssoise",
+        "id": "Vichyssoise"
+      },
+      "cena_text": " fría",
+      "prod": "VE fuera de David solo · caponata con reposo."
+    },
+    {
+      "fecha": "2026-06-16",
+      "ds": "Martes 16/06",
+      "dc": 12,
+      "tipo": "normal",
+      "prot": "Carne blanca",
+      "entrante": {
+        "n": "Espárragos y Patatas Nuevas",
+        "id": null
+      },
+      "principal": {
+        "n": "Escabeche de Pavo Europeo",
+        "id": "Escabeche_Pavo_Europeo_Plato"
+      },
+      "guarnicion": {
+        "n": "Escabeche integrado",
+        "id": null
+      },
+      "postre": {
+        "n": "Fresas con Vinagre",
+        "id": "Fresas_Vinagre"
+      },
+      "cena": {
+        "n": "Ensalada Verde Caldesi",
+        "id": "Ensalada_Verde_Caldesi"
+      },
+      "cena_text": " + tortilla francesa/queso",
+      "prod": "CB · escabeche mejor con 12-24 h de reposo."
+    },
+    {
+      "fecha": "2026-06-17",
+      "ds": "Miércoles 17/06",
+      "dc": 13,
+      "tipo": "normal",
+      "prot": "Pescado blanco",
+      "entrante": {
+        "n": "Maíz y Aguacate con Lima",
+        "id": null
+      },
+      "principal": {
+        "n": "Goujons de Pescado con Salsa Tártara",
+        "id": null
+      },
+      "guarnicion": {
+        "n": "Tártara aparte",
+        "id": null
+      },
+      "postre": {
+        "n": "Sopa Fría de Melón y Menta",
+        "id": "Sopa_Melon_Menta"
+      },
+      "cena": {
+        "n": "Crema de Tomate Asado y Albahaca",
+        "id": "Crema_Tomate_Asado_Albahaca_Straker"
+      },
+      "prod": "PB · pescado blanco crujiente."
+    },
+    {
+      "fecha": "2026-06-18",
+      "ds": "Jueves 18/06",
+      "dc": 14,
+      "tipo": "normal",
+      "prot": "Carne roja",
+      "entrante": {
+        "n": "Judía Verde, Almendra y Melocotón",
+        "id": "Ensalada_Judia_Verde_Almendra_Melocoton_Straker"
+      },
+      "principal": {
+        "n": "Magret de Pato con Salsa de Melocotón y Tomillo",
+        "id": "Magret_Pato_Salsa_Melocoton_Tomillo"
+      },
+      "guarnicion": {
+        "n": "Integrada",
+        "id": null
+      },
+      "postre": {
+        "n": "Sorbete de Frambuesa",
+        "id": "Sorbete_Frambuesa"
+      },
+      "cena": {
+        "n": "Caldo de Pollo con Verduras",
+        "id": "Caldo_Pollo_Verduras_Straker"
+      },
+      "prod": "CR final · salsa melocotón-tomillo."
+    },
+    {
+      "fecha": "2026-06-19",
+      "ds": "Viernes 19/06",
+      "dc": 15,
+      "tipo": "normal",
+      "prot": "Marisco / Pescado blanco",
+      "entrante": {
+        "n": "Hinojo, Feta, Granada y Sumac",
+        "id": "Fennel_Feta_Granada_Sumac_Ottolenghi"
+      },
+      "principal": {
+        "n": "Pota Canaria a la Brasa con Patatas Paja y Alioli",
+        "id": "Pota_Brasa_Patatas_Paja_Alioli_Plato"
+      },
+      "guarnicion": {
+        "n": "Patatas paja + alioli",
+        "id": null
+      },
+      "postre": {
+        "n": "Crema de Piña y Coco",
+        "id": "Crema_Pina_Coco"
+      },
+      "cena": {
+        "n": "Cena Abendbrot Clásica",
+        "id": "Cena_Abendbrot_Clasica"
+      },
+      "prod": "MAR/PB marcado por Mike · cierre de quincena."
+    }
   ]
 };
 
-
 const miseData = [
-  {fecha: "2026-05-22", ds: "Viernes 22/05", tipo: "normal",
-    titulo: "Dorada Vapor Japonesa (PB · ambos chefs · arranque periodo)",
-    carga: "Media (ambos chefs)",
-    tareas: [
-      {h: "8:00", t: "Recepción pescadería: 25 filetes dorada (150-160 g/ud) SIN ESPINAS — verificación pin bones obligatoria con pinza.", tipo: "servicio"},
-      {h: "9:00", t: "Arroz blanco basmati: 2,5 kg cocción por absorción 1:1,5 caldo verduras + sal.", tipo: "servicio"},
-      {h: "10:00", t: "Mise dorada: jengibre 250 g laminado fino translúcido + cebolla tierna 375 g juliana + cilantro 100 g deshojado.", tipo: "servicio"},
-      {h: "11:30", t: "Ens. Coreana Pomelo Fresas: pomelos 12 uds pelados a vivo en gajos + fresas 1,25 kg en cuartos + aguacate 625 g dados + aliño gochujang/soja/sésamo/miel/lima.", tipo: "servicio"},
-      {h: "12:30", t: "Postre Papaya Lima: 4 papayas peladas rodajas 1,5-2 cm refrigeradas. Acabado al pase con lima exprimida + 2-3 vueltas pimienta rosa.", tipo: "servicio"},
-      {h: "13:00", t: "Cocción dorada Convotherm 100% vapor 100°C 6-8 min · escaldado aceite jengibre MUY caliente (chisporrotea) sobre cebolla+cilantro al pase. Soja al final.", tipo: "servicio"},
-      {h: "17:00", t: "Cena Crema Calabacín Albahaca (Straker): 3 kg calabacín + base cebolla pochada + caldo verduras 6 L + albahaca 180 g al triturar + limón 6 uds zumo.", tipo: "servicio"}
+  {
+    "fecha": "2026-06-05",
+    "ds": "Viernes 05/06",
+    "tipo": "normal",
+    "titulo": "Pollo Patiki Beach",
+    "carga": "Media",
+    "tareas": [
+      {
+        "h": "8:00",
+        "t": "Marinar/porcionar pollo y preparar ensalada fresca.",
+        "tipo": "servicio"
+      },
+      {
+        "h": "16:30",
+        "t": "Pimientos asados + burrata para cena. No Gazpacho Straker.",
+        "tipo": "cena"
+      }
     ],
-    nota: "PB ligero · ambos chefs · Convotherm pleno vapor · escaldado aceite caliente firma del plato"},
-
-  {fecha: "2026-05-23", ds: "Sábado 23/05", tipo: "normal",
-    titulo: "Salchichas Salsa Tomate (CB · David solo · Abendbrot 1ª iteración)",
-    carga: "Alta (David solo + prep Abendbrot tarde)",
-    tareas: [
-      {h: "7:30", t: "David solo todo el día. Salchichas pollo 150 uds (~6 kg) dorar en tandas con ajo laminado 45 g + tomillo seco 8 g.", tipo: "servicio"},
-      {h: "9:00", t: "Salsa tomate 2 kg calentar aparte + vino rancio 450 ml reducir en sartén dorado · combinar fondo + salsa.", tipo: "servicio"},
-      {h: "10:00", t: "Puré de patata: 3 kg patata variedad puré cocer + escachar + mantequilla 200 g + leche templada.", tipo: "servicio"},
-      {h: "11:00", t: "Ens. Pepino Chafado: 3,5 kg pepino chafado + sal 15 min en colador + aliño soja/vinagre arroz/sésamo/ajo/chile suave + sésamo tostado decorar.", tipo: "servicio"},
-      {h: "12:00", t: "Postre Fresas al Vinagre: 4,5 kg fresas maduras en cuartos + 315 g azúcar + 125 ml vinagre balsámico + pimienta. Macerar mín 1 h refrigerado.", tipo: "servicio"},
-      {h: "13:30", t: "SERVICIO mediodía: 6 salchichas/PAX napadas con salsa tomate-vino + porción puré.", tipo: "servicio"},
-      {h: "16:30", t: "ABENDBROT 1ª arranque mise (60 min antes servicio): Kräuterquark + corte vegetales Frischzeug pepino-tomate + escurrido encurtidos.", tipo: "servicio"},
-      {h: "17:15", t: "Embutidos+salmón loncheado × 4 platos. Mantequilla rosetas 32 uds (8/tabla).", tipo: "servicio"},
-      {h: "18:00", t: "Cuencos finales (Krauterquark + paté oca) + cestas pan tostado al final · pumpernickel + vollkornbrot + blanco tostado.", tipo: "servicio"},
-      {h: "18:30", t: "SERVICIO ABENDBROT — 4 tablas de 5-6 PAX, ensamblaje Stulle por residente.", tipo: "servicio"}
+    "nota": "Arranque quincena."
+  },
+  {
+    "fecha": "2026-06-06",
+    "ds": "Sábado 06/06",
+    "tipo": "normal",
+    "titulo": "Atún BT + Parmentier",
+    "carga": "Media",
+    "tareas": [
+      {
+        "h": "8:00",
+        "t": "Atún porcionado y cadena frío; parmentier de boniato listo.",
+        "tipo": "servicio"
+      },
+      {
+        "h": "10:30",
+        "t": "Gurkensalat aliñar cerca del servicio.",
+        "tipo": "servicio"
+      }
     ],
-    nota: "CB medio + Abendbrot · David sostiene día completo · puré regenerable D-1 si necesario"},
-
-  {fecha: "2026-05-24", ds: "Domingo 24/05", tipo: "festivo",
-    titulo: "⭐ Magret Pato Salsa Melocotón-Tomillo (CR · David solo · FESTIVO DOMINICAL)",
-    carga: "Alta (David solo · plato técnico nuevo)",
-    tareas: [
-      {h: "D-1 noche (sáb 23 cierre)", t: "Salsa peach-tomillo D-1: pochar 200 g chalota + 2,5 kg gajos peach + 80 g miel + 12 ramitas tomillo + 100 ml balsámico + 500 ml demi-glace. Reservar refrigerada. Mantequilla 80 g aparte para montaje día.", tipo: "preparacion"},
-      {h: "D-1 noche", t: "Pimientos Asados Burrata cena: marinado pimientos 25 uds asados pelados + vinagre Jerez 600 ml + ajo + AOVE 750 ml. Refrigerado mín 2 h (toda la noche ideal).", tipo: "preparacion"},
-      {h: "8:00", t: "David solo. Magrets: 25 uds atemperar 30 min · cuadrícula piel 1 cm · salar SOLO piel.", tipo: "servicio"},
-      {h: "10:30", t: "Ens. Nepalí Cebolla-Patata: cocer 3 kg patatas + 800 g cebolla rodajas finas + templar semillas mostaza + cúrcuma + comino + chile mínimo + lima al final.", tipo: "servicio"},
-      {h: "11:30", t: "Naranjas Láminas Canela postre: pelar a vivo 25 naranjas + láminas 4-5 mm + infusión zumo (4-5 naranjas exprimidas) + canela 2 ramas + maceración 1-2 h refrigerado.", tipo: "servicio"},
-      {h: "12:30", t: "Cocción magret: sartén FRÍA piel abajo 8-10 min (extraer grasa) · voltear 3-4 min carne · 54-62 °C interno · REPOSO 8-10 min OBLIGATORIO cubierto.", tipo: "servicio"},
-      {h: "13:00", t: "Trinchar contra-fibra rodajas 1 cm · napar salsa peach-tomillo + gajos visibles + mantequilla montada al final · sal Maldon + tomillo fresco.", tipo: "servicio"},
-      {h: "17:00", t: "Cena Pimientos Asados Burrata: pan sourdough 25 rebanadas plancha + frotar ajo + burrata abrir con manos (stracciatella fluye) + pimientos marinados + AOVE + pimienta.", tipo: "servicio"}
+    "nota": "David solo, PA."
+  },
+  {
+    "fecha": "2026-06-07",
+    "ds": "Domingo 07/06",
+    "tipo": "normal",
+    "titulo": "Paletilla Cordero, Dátiles y Labneh",
+    "carga": "Alta",
+    "tareas": [
+      {
+        "h": "8:00",
+        "t": "Cordero asado lento/regenerable, costra dátiles, labneh menta.",
+        "tipo": "servicio"
+      },
+      {
+        "h": "10:30",
+        "t": "Carpaccio champiñón al momento.",
+        "tipo": "servicio"
+      }
     ],
-    nota: "CR fuerte FESTIVO · David solo · plato dominical de prestigio · salsa anticipable D-1 · magret nuevo en catálogo ATTENYA"},
-
-  {fecha: "2026-05-25", ds: "Lunes 25/05", tipo: "normal",
-    titulo: "Buñuelos Remolacha-Feta Plato Vegetariano + Couscous con Pasas (VE · ambos chefs)",
-    carga: "Media-Alta (mise extensa · adaptación entrante→plato)",
-    tareas: [
-      {h: "D-2 (sáb 23 noche)", t: "Helado Pistacho Casero D-2: crème anglaise 1 L leche + 500 ml nata + 8 yemas + 220 g azúcar a 82-84 °C · incorporar 200 g pasta pistacho Bronte caliente · abatir Sammic <4 °C · churning mantecadora · congelar 6 h mín.", tipo: "preparacion"},
-      {h: "8:00", t: "Buñuelos masa: 5 kg remolacha rallada gruesa + 1,25 kg cebolla pochada fría + 2,5 kg feta desmenuzado + 24 huevos batidos + comino 30 g/cilantro 30 g molidos + 8 ralladuras + 180 ml zumo limón + 80 g eneldo. SIN chile (senior). Refrigerar 30 min.", tipo: "servicio"},
-      {h: "9:30", t: "Yogur comino-eneldo: 1,25 L yogur griego + 16 g comino + 50 g eneldo picado + sal/pimienta. Reservar frío.", tipo: "servicio"},
-      {h: "10:00", t: "Couscous con pasas: 1,5 kg couscous + 2 L caldo verduras hidratado tapado 8-10 min + 100 ml AOVE soltar grano + 250 g pasas hidratadas + 4 ralladuras limón + canela polvo + 30 g perejil.", tipo: "servicio"},
-      {h: "10:30", t: "Ens. Col Libanesa Hage: 2,5 kg repollo escaldado 2 min (clave senior) + tomate cherry 625 g + perejil 60 g + aliño AOVE 125 ml + ajo rallado + limón 5 uds + menta seca 12 g.", tipo: "servicio"},
-      {h: "11:30", t: "Hornear buñuelos Convotherm 190°C combinado 70 aire / 30 vapor · 18-22 min · porciones 70-80 g pincelar AOVE · dar vuelta media cocción.", tipo: "servicio"},
-      {h: "12:30", t: "Helado Pistacho: sacar 8-10 min antes pase · decorar 50 g pistachos tostados granillo fino (no enteros senior).", tipo: "servicio"},
-      {h: "13:00", t: "SERVICIO: yogur base + 4-5 buñuelos solapados + couscous con pasas al lado + eneldo hojas + gajo limón.", tipo: "servicio"},
-      {h: "17:00", t: "Cena Caldo Pollo Verduras (Straker): 4 pollos enteros caldo 1 h + mirepoix base + acabado verduras frescas (apio + zanahoria + ajo) + eneldo + limón AOVE al pase.", tipo: "servicio"}
+    "nota": "Entrante no verde puro."
+  },
+  {
+    "fecha": "2026-06-08",
+    "ds": "Lunes 08/06",
+    "tipo": "normal",
+    "titulo": "Musaka de Verduras",
+    "carga": "Media-Alta",
+    "tareas": [
+      {
+        "h": "8:00",
+        "t": "Asar/pochar verduras y montar musaka.",
+        "tipo": "servicio"
+      },
+      {
+        "h": "11:00",
+        "t": "Hornear y reposar antes de cortar.",
+        "tipo": "servicio"
+      }
     ],
-    nota: "VE medio · ambos chefs · helado pistacho D-2 mínimo · caldo pollo D-1 ok"},
-
-  {fecha: "2026-05-26", ds: "Martes 26/05", tipo: "normal",
-    titulo: "Atún Encebollado Canario + Papas Arrugadas (PA · Igino solo · Abendbrot 2ª)",
-    carga: "Alta (Igino solo · Abendbrot prep tarde)",
-    tareas: [
-      {h: "D-1 mañana", t: "Pedido atún sushi-grade o fresco 4,3 kg (48 h máx desde desembarque). APPCC: cadena frío 0-2 °C obligatoria.", tipo: "preparacion"},
-      {h: "8:00", t: "Igino solo todo día (David libra). Papas Arrugadas: 5 kg papa canaria (negra/bonita) + 350 g sal gruesa marina + agua justa cubrir. Hervor + arrugado fuego medio-bajo hasta costra sal.", tipo: "servicio"},
-      {h: "9:30", t: "Atún encebollado mise: 4,3 kg atún dados 3-4 cm + 8,9 kg cebolla blanca juliana fina + 107 g ajo laminado + 4 hojas laurel + 9 g comino grano + 7 g pimienta grano.", tipo: "servicio"},
-      {h: "10:00", t: "Sellado atún: sartén/rondeau muy caliente 20-30 s/cara · retirar inmediatamente · reservar tapado ligeramente.", tipo: "servicio"},
-      {h: "10:30", t: "Pochado cebolla 30-40 min fuego bajo + ajo + laurel + comino + pimienta · sin caramelizar · cebolla muy blanca y melosa.", tipo: "servicio"},
-      {h: "11:30", t: "Integración: atún + cebolla pochada + vino blanco 645 ml + vinagre Jerez 86 ml + pimentón ahumado 9 g disuelto · 8-12 min fuego bajo.", tipo: "servicio"},
-      {h: "12:00", t: "Ens. Tomate Queso Maxorata: 3,8 kg tomate dados 2 cm + 1,1 kg queso Maxorata DOP fresco dados idénticos + perejil + vinagreta jerez/AOVE/ajo macerado.", tipo: "servicio"},
-      {h: "12:30", t: "Macedonia Frutas Oscuras Asadas Amaretto (Caldesi): moras 1 kg + ciruelas 1 kg + cerezas 500 g + arándanos 500 g asadas 180°C 15-20 min + amaretto 125 ml + miel + crema anacardos lima.", tipo: "servicio"},
-      {h: "16:30", t: "ABENDBROT 2ª: idem sáb 23 mise 60 min antes. Igino lidera.", tipo: "servicio"},
-      {h: "18:30", t: "SERVICIO ABENDBROT 2ª iteración.", tipo: "servicio"}
+    "nota": "VE fuera de David solo."
+  },
+  {
+    "fecha": "2026-06-09",
+    "ds": "Martes 09/06",
+    "tipo": "normal",
+    "titulo": "Risotto Boletus Trufa",
+    "carga": "Alta",
+    "tareas": [
+      {
+        "h": "8:00",
+        "t": "Caldo setas caliente, boletus limpios y salteados, parmesano rallado.",
+        "tipo": "servicio"
+      },
+      {
+        "h": "11:05",
+        "t": "Arrancar risotto 25 min antes; mantecatura y trufa al pase.",
+        "tipo": "servicio"
+      },
+      {
+        "h": "16:00",
+        "t": "Caponata de cena preparada y regenerable.",
+        "tipo": "cena"
+      }
     ],
-    nota: "PA medio + Abendbrot · Igino solo · papas arrugadas técnica canaria icónica · atún cadena frío crítica"},
-
-  {fecha: "2026-05-27", ds: "Miércoles 27/05", tipo: "chef-free",
-    titulo: "Costilla con Papa y Piña (CE · Igino solo)",
-    carga: "Media-Alta",
-    tareas: [
-      {h: "7:30", t: "Verificar desalado costilla si era salada: 24 h, 3 cambios, último agua sin sal. Escurrir.", tipo: "control"},
-      {h: "8:00", t: "Carpaccio champiñón: limpiar seco, laminar fino, reservar tapado. Aliñar 15-20 min antes del pase.", tipo: "servicio"},
-      {h: "8:15", t: "Costillas: cubrir con agua fría, espumar 30 min. Añadir pasta aromática perejil-ajo-cebolla-pimiento-apio.", tipo: "servicio"},
-      {h: "9:00", t: "Cocción larga costilla: caldo temblando, nunca hervor fuerte. Objetivo carne melosa.", tipo: "servicio"},
-      {h: "10:00", t: "Gazpacho cena: tomate maduro, pepino, pimiento, AOVE, vinagre suave. Triturar fino y cámara.", tipo: "servicio"},
-      {h: "10:30", t: "Papas en trozos grandes + maíz escurrido. Cocer/regenerar en caldo colado.", tipo: "servicio"},
-      {h: "11:30", t: "Emplatado: papas + caldo, costilla melosa, maíz, mojo verde suave aparte.", tipo: "servicio"},
-      {h: "13:30", t: "Coq au Vin D-1: pollo + vino tinto + mirepoix + ajo + tomillo. Refrigerar 24 h.", tipo: "anticipacion", para: "Jue 28"},
-      {h: "14:00", t: "Naranjas láminas canela D-1: pelar a vivo, laminar, canela, miel ligera. Cámara.", tipo: "anticipacion", para: "Jue 28"}
+    "nota": "Trufa fresca: laminar al final."
+  },
+  {
+    "fecha": "2026-06-10",
+    "ds": "Miércoles 10/06",
+    "tipo": "normal",
+    "titulo": "Tonkatsu de Pollo",
+    "carga": "Media",
+    "tareas": [
+      {
+        "h": "8:30",
+        "t": "Empanar pollo, salsa aparte, controlar fritura.",
+        "tipo": "servicio"
+      },
+      {
+        "h": "13:00",
+        "t": "Ajoblanco frío para cena.",
+        "tipo": "cena"
+      }
     ],
-    nota: "CE fuerte · costilla salada requiere control desalado · d7 queda adelantado"},
-
-  {fecha: "2026-05-28", ds: "Jueves 28/05", tipo: "normal",
-    titulo: "Coq au Vin + Ceviche Camarones (CB · ambos chefs)",
-    carga: "Alta",
-    tareas: [
-      {h: "7:30", t: "Sacar pollo del marinado, escurrir y secar. Reservar vino y mirepoix por separado.", tipo: "servicio"},
-      {h: "8:00", t: "Ceviche: verificar descongelación en nevera. Escaldar camarones 60-90 s, baño hielo, escurrir.", tipo: "servicio"},
-      {h: "8:15", t: "Marinar ceviche 10-15 min en nevera con lima/limón, cebolla roja fina, cilantro, ají mínimo y AOVE.", tipo: "servicio"},
-      {h: "8:30", t: "Coq: dorar lardons/cebollitas/champiñones. Dorar pollo enharinado.", tipo: "servicio"},
-      {h: "9:15", t: "Sofreír mirepoix, deglasar vino, reducir, añadir fondo y pollo. Horno 160 °C ~1 h.", tipo: "servicio"},
-      {h: "10:00", t: "Puré Robuchon o guarnición ficha: patata tamizada, mantequilla/nata, textura sedosa.", tipo: "servicio"},
-      {h: "11:30", t: "Emplatado: puré, pollo, salsa napante, champiñón/cebollita/lardons, perejil.", tipo: "servicio"},
-      {h: "13:00", t: "Cena: Ensalada Verde Caldesi + pan.", tipo: "cena"}
+    "nota": "CB."
+  },
+  {
+    "fecha": "2026-06-11",
+    "ds": "Jueves 11/06",
+    "tipo": "normal",
+    "titulo": "Suquet de Corvina",
+    "carga": "Media",
+    "tareas": [
+      {
+        "h": "8:30",
+        "t": "Fumet/base suquet y corvina espina cero.",
+        "tipo": "servicio"
+      },
+      {
+        "h": "11:00",
+        "t": "Corvina al final, cocción suave.",
+        "tipo": "servicio"
+      }
     ],
-    nota: "APPCC ceviche: frío <4 °C hasta servicio · camarón cocido, no crudo"},
-
-  {fecha: "2026-05-29", ds: "Viernes 29/05", tipo: "normal",
-    titulo: "Suquet de Corvina (PB · ambos chefs)",
-    carga: "Media",
-    tareas: [
-      {h: "8:00", t: "Ensalada aguacate naranja: naranja a vivo, aguacate al final, aliño cítrico.", tipo: "servicio"},
-      {h: "8:30", t: "Suquet base: sofrito ajo-perejil-tomate, pimentón, caldo pescado.", tipo: "servicio"},
-      {h: "9:00", t: "Patata del suquet en caldo 20 min hasta casi hecha.", tipo: "servicio"},
-      {h: "10:00", t: "Corvina: espina cero, porcionar 25 lomos 150-180 g.", tipo: "control"},
-      {h: "11:00", t: "Añadir corvina al suquet 8-10 min suave. Movimiento vaivén, no remover.", tipo: "servicio"},
-      {h: "11:30", t: "Emplatado: patata + corvina + caldo ligado, perejil, AOVE.", tipo: "servicio"},
-      {h: "13:00", t: "Cena: pimientos asados + burrata + pan.", tipo: "cena"}
+    "nota": "Suquet recuperado."
+  },
+  {
+    "fecha": "2026-06-12",
+    "ds": "Viernes 12/06",
+    "tipo": "normal",
+    "titulo": "Königsberger Klopse",
+    "carga": "Media",
+    "tareas": [
+      {
+        "h": "8:30",
+        "t": "Formar klopse, preparar salsa alcaparras.",
+        "tipo": "servicio"
+      },
+      {
+        "h": "13:00",
+        "t": "Ratatouille regenerable para cena.",
+        "tipo": "cena"
+      }
     ],
-    nota: "Corvina al final para no secar ni romper"},
-
-  {fecha: "2026-05-30", ds: "Sábado 30/05", tipo: "normal",
-    titulo: "Filet Mignon (CR · David solo)",
-    carga: "Alta",
-    tareas: [
-      {h: "8:00", t: "Ensalada judía verde: blanquear judías, abatir, melocotón en gajos, almendra tostada.", tipo: "servicio"},
-      {h: "8:30", t: "Filet Mignon: limpiar solomillo, porcionar medallones, atemperar controlado.", tipo: "servicio"},
-      {h: "9:00", t: "Sorbete limón: producir o sacar stock. Único sorbete d6-d15.", tipo: "postre"},
-      {h: "10:00", t: "Abendbrot cena: Kräuterquark, embutidos/salmón, panes, pepino/tomate.", tipo: "cena"},
-      {h: "10:45", t: "Filet: sellado fuerte, horno corto, reposo. Salsa/guarniciones listas antes del corte.", tipo: "servicio"},
-      {h: "11:30", t: "Emplatado: medallón, salsa, guarnición caliente, acabado limpio.", tipo: "servicio"}
+    "nota": "CE."
+  },
+  {
+    "fecha": "2026-06-13",
+    "ds": "Sábado 13/06",
+    "tipo": "normal",
+    "titulo": "Tuna Cheeseburger",
+    "carga": "Alta",
+    "tareas": [
+      {
+        "h": "D-1",
+        "t": "Producir bollos Tangzhong o confirmar brioche comprado calidad.",
+        "tipo": "anticipacion"
+      },
+      {
+        "h": "8:30",
+        "t": "Formar burgers de atún frías; preparar aros de cebolla como guarnición lateral.",
+        "tipo": "servicio"
+      }
     ],
-    nota: "CR fuerte · controlar punto y reposo"},
-
-  {fecha: "2026-05-31", ds: "Domingo 31/05", tipo: "normal",
-    titulo: "Salmón al Horno con Raita (PA · David solo)",
-    carga: "Media",
-    tareas: [
-      {h: "8:00", t: "Tomate AOVE Straker: tomate maduro, sal mínima, AOVE bueno.", tipo: "servicio"},
-      {h: "8:30", t: "Raita: pepino rallado y escurrido, yogur, menta, comino suave, limón. Cámara <4 °C.", tipo: "servicio"},
-      {h: "9:00", t: "Salmón: espina cero, porcionar 25 lomos 150-180 g.", tipo: "control"},
-      {h: "9:30", t: "Guarniciones: patata vapor y espinaca según ficha/stock.", tipo: "servicio"},
-      {h: "10:30", t: "Sopa melón menta: triturar melón maduro + menta + lima mínima. Cámara.", tipo: "postre"},
-      {h: "11:00", t: "Salmón Convotherm 180 °C mixto 30%, 12-14 min, centro 52-54 °C.", tipo: "servicio"},
-      {h: "13:00", t: "Fattoush cena: verduras frescas + pita tostada al último momento.", tipo: "cena"}
+    "nota": "Aros fuera de la burger; Maldon al acabado."
+  },
+  {
+    "fecha": "2026-06-14",
+    "ds": "Domingo 14/06",
+    "tipo": "normal",
+    "titulo": "Polbo á Feira",
+    "carga": "Media",
+    "tareas": [
+      {
+        "h": "D-1",
+        "t": "Cocer pulpo si llega crudo; reposar.",
+        "tipo": "anticipacion"
+      },
+      {
+        "h": "11:00",
+        "t": "Patata cachelo, pimentón, AOVE y pulpo templado.",
+        "tipo": "servicio"
+      }
     ],
-    nota: "Raita fría aparte; no poner encima del salmón caliente"},
-
-  {fecha: "2026-06-01", ds: "Lunes 01/06", tipo: "normal",
-    titulo: "Canelones Caprese (HI · ambos chefs)",
-    carga: "Alta",
-    tareas: [
-      {h: "8:00", t: "Ensalada calabacín limón rúcula: calabacín laminado fino, limón, AOVE, rúcula al final.", tipo: "servicio"},
-      {h: "8:30", t: "Salsa tomate: Mutti triturado/polpa + pelati roto + tomate natural. Albahaca al final.", tipo: "servicio"},
-      {h: "9:15", t: "Relleno ligero: ricotta/requesón + mozzarella picada + albahaca + pimienta blanca + poco parmesano.", tipo: "servicio"},
-      {h: "9:45", t: "Bechamel veladura: fina, no capa pesada.", tipo: "servicio"},
-      {h: "10:45", t: "Montaje GN: tomate, canelones, tomate, mozzarella visible, veladura bechamel marmoleada.", tipo: "servicio"},
-      {h: "11:05", t: "Gratinado 180-190 °C 12-15 min. Mozzarella fundida en manchas blancas.", tipo: "servicio"},
-      {h: "13:00", t: "Vichyssoise fría cena.", tipo: "cena"}
+    "nota": "MAR/PB."
+  },
+  {
+    "fecha": "2026-06-15",
+    "ds": "Lunes 15/06",
+    "tipo": "normal",
+    "titulo": "Caponata Siciliana",
+    "carga": "Media",
+    "tareas": [
+      {
+        "h": "D-1",
+        "t": "Caponata con reposo 12-24 h.",
+        "tipo": "anticipacion"
+      },
+      {
+        "h": "13:00",
+        "t": "Vichyssoise fría para cena.",
+        "tipo": "cena"
+      }
     ],
-    nota: "Clave visual: tomate rojo fresco + mozzarella blanca visible + albahaca"},
-
-  {fecha: "2026-06-02", ds: "Martes 02/06", tipo: "normal",
-    titulo: "Sopa Lentejas Rojas con Coliflor (VE · Igino solo)",
-    carga: "Media",
-    tareas: [
-      {h: "8:00", t: "Ensalada sandía feta: sandía dados, feta, menta, AOVE, lima. Ración ligera.", tipo: "servicio"},
-      {h: "8:30", t: "Sopa: pochar cebolla + ajo + jengibre + comino/cilantro. Añadir lentejas rojas lavadas, coliflor y caldo.", tipo: "servicio"},
-      {h: "9:15", t: "Cocer 25 min suave. Triturar parcial, textura híbrida con coliflor visible.", tipo: "servicio"},
-      {h: "10:30", t: "Mango yogur chocolate blanco: mango dados, yogur, chocolate blanco rallado/crema ligera. Cámara.", tipo: "postre"},
-      {h: "11:15", t: "Ajuste sopa con limón, AOVE, cilantro si procede. No picante.", tipo: "servicio"},
-      {h: "13:00", t: "Cena: ensalada sueca de pepino, eneldo, vinagre suave, yogur opcional.", tipo: "cena"}
+    "nota": "VE."
+  },
+  {
+    "fecha": "2026-06-16",
+    "ds": "Martes 16/06",
+    "tipo": "normal",
+    "titulo": "Escabeche de Pavo Europeo",
+    "carga": "Media",
+    "tareas": [
+      {
+        "h": "D-1",
+        "t": "Cocinar pavo y dejar en escabeche.",
+        "tipo": "anticipacion"
+      },
+      {
+        "h": "10:30",
+        "t": "Espárragos y patata nueva para entrante.",
+        "tipo": "servicio"
+      }
     ],
-    nota: "No entrante sopa/crema: evitamos doble cuchara"},
-
-  {fecha: "2026-06-03", ds: "Miércoles 03/06", tipo: "chef-free",
-    titulo: "Calamar Plancha, Patatas y Berros (MAR/PB · Igino solo)",
-    carga: "Media-Alta",
-    tareas: [
-      {h: "8:00", t: "Carpaccio calabacín ricotta: calabacín fino, ricotta, limón, AOVE.", tipo: "servicio"},
-      {h: "8:30", t: "Calamar: limpiar, retirar piel/membranas si procede, cortar piezas manejables. Secar muy bien.", tipo: "servicio"},
-      {h: "9:00", t: "Patatas: cocer/vapor hasta tiernas; marcar/saltear con AOVE.", tipo: "servicio"},
-      {h: "9:45", t: "Migas verdes: miga/pan grueso, perejil, ajo mínimo, limón, AOVE. Tostar sin quemar.", tipo: "servicio"},
-      {h: "10:15", t: "Berros: lavar, centrifugar, cortar tallos duros o marchitar ligeramente para perfil senior.", tipo: "servicio"},
-      {h: "10:45", t: "Calamar plancha muy caliente, 1-2 min por cara. Evitar sobrecocción.", tipo: "servicio"},
-      {h: "13:00", t: "Ajoblanco frío cena.", tipo: "cena"}
+    "nota": "CB."
+  },
+  {
+    "fecha": "2026-06-17",
+    "ds": "Miércoles 17/06",
+    "tipo": "normal",
+    "titulo": "Goujons de Pescado",
+    "carga": "Media",
+    "tareas": [
+      {
+        "h": "8:30",
+        "t": "Pescado sin espinas, tiras, empanado y tártara.",
+        "tipo": "servicio"
+      },
+      {
+        "h": "13:00",
+        "t": "Crema tomate asado albahaca para cena.",
+        "tipo": "cena"
+      }
     ],
-    nota: "Punto crítico: calamar tierno, no gomoso"},
-
-  {fecha: "2026-06-04", ds: "Jueves 04/06", tipo: "normal",
-    titulo: "Pollo Velouté con Setas (CB · ambos chefs)",
-    carga: "Media",
-    tareas: [
-      {h: "8:00", t: "Ensalada remolacha naranja almendras eneldo: remolacha, naranja, almendra tostada, eneldo.", tipo: "servicio"},
-      {h: "8:30", t: "Pollo Velouté: porcionar pollo, preparar velouté mostaza, limpiar setas en seco.", tipo: "servicio"},
-      {h: "9:00", t: "Setas: saltear fuerte, glasear con fondo si aplica.", tipo: "servicio"},
-      {h: "9:30", t: "Tallarines/guarnición: cocer al dente, reservar con aceite mínimo.", tipo: "servicio"},
-      {h: "10:15", t: "Pollo: cocción suave en salsa o regeneración controlada. Centro seguro, no seco.", tipo: "servicio"},
-      {h: "11:30", t: "Emplatado: pasta, pollo, velouté napante, setas visibles, perejil.", tipo: "servicio"},
-      {h: "14:00", t: "Cheesecake fruta pasión-piña D-1: base digestive, relleno, hornear y refrigerar overnight.", tipo: "anticipacion", para: "Vie 05"}
+    "nota": "PB."
+  },
+  {
+    "fecha": "2026-06-18",
+    "ds": "Jueves 18/06",
+    "tipo": "normal",
+    "titulo": "Magret Pato Melocotón Tomillo",
+    "carga": "Alta",
+    "tareas": [
+      {
+        "h": "D-1",
+        "t": "Salsa melocotón-tomillo preparada.",
+        "tipo": "anticipacion"
+      },
+      {
+        "h": "11:30",
+        "t": "Magret sartén fría por piel, reposo obligatorio.",
+        "tipo": "servicio"
+      }
     ],
-    nota: "Principal cremoso; entrante ácido-terroso compensa"},
-
-  {fecha: "2026-06-05", ds: "Viernes 05/06", tipo: "normal",
-    titulo: "Moqueca Camarones con Arroz Bahiano (MAR/PB · ambos chefs)",
-    carga: "Media-Alta",
-    tareas: [
-      {h: "8:00", t: "Ensalada pomelo coco lima: pomelo a vivo, coco, lima, menta/cilantro.", tipo: "servicio"},
-      {h: "8:30", t: "Moqueca base: sofrito cebolla/pimiento/tomate, leche coco, dendê o AOVE+pimentón, cilantro.", tipo: "servicio"},
-      {h: "9:30", t: "Arroz Bahiano: arroz suelto, leche coco si ficha lo indica, mantener caliente y suelto.", tipo: "servicio"},
-      {h: "10:30", t: "Camarones: añadir al final, cocción corta hasta opacos y jugosos.", tipo: "servicio"},
-      {h: "11:30", t: "Emplatado: arroz base, moqueca napando, camarones visibles, cilantro, lima.", tipo: "servicio"},
-      {h: "11:45", t: "Cheesecake fruta pasión-piña: porcionar, piña asada/acabado.", tipo: "postre"},
-      {h: "13:00", t: "Crema tomate asado albahaca cena.", tipo: "cena"}
+    "nota": "CR."
+  },
+  {
+    "fecha": "2026-06-19",
+    "ds": "Viernes 19/06",
+    "tipo": "normal",
+    "titulo": "Pota Canaria Brasa",
+    "carga": "Alta",
+    "tareas": [
+      {
+        "h": "8:30",
+        "t": "Pota limpia, secar muy bien, patatas paja y alioli seguro.",
+        "tipo": "servicio"
+      },
+      {
+        "h": "13:00",
+        "t": "Abendbrot para cena.",
+        "tipo": "cena"
+      }
     ],
-    nota: "Cierre tropical · camarón jugoso, no sobrecocer"}
+    "nota": "MAR/PB cierre."
+  }
 ];
 
 const comprasData = [
   {
-    lista: 1,
-    titulo: "ENTREGA 1 — Jue 21 / Vie 22 mañana (arranque periodo d1-d5)",
-    entrega: "Jue 21 tarde o Vie 22 antes de las 8:00",
-    cubre: "Vie 22 → Mar 26 (Dorada + Salchichas + Magret + Buñuelos plato VE + Atún encebollado + Abendbrot ×2)",
-    secciones: [
+    "lista": 1,
+    "titulo": "ENTREGA 1 - d1-d5",
+    "entrega": "Primera compra / viernes 05 mañana",
+    "cubre": "Vie 05 -> Mar 09",
+    "secciones": [
       {
-        s: "Pescadería específica (refrigerados D-1/D-0)",
-        items: [
-          {p: "Filetes de dorada limpios SIN ESPINAS", c: "25 uds (150-160 g/ud · ~4 kg)", n: "⚡ Vie 22 mañana · ESPINA CERO obligatorio · pasar pinza si necesario"},
-          {p: "Atún fresco lomos limpios", c: "4,3 kg", n: "⚡ Lun 25 o Mar 26 mañana · 48 h máx desde desembarque · 0-2 °C cadena frío"},
-          {p: "Salmón ahumado calidad sashimi-grade", c: "~1,5 kg lonchas finas", n: "Abendbrot ×2 noches · pin bones obligatorio retirar"}
+        "s": "Críticos",
+        "items": [
+          {
+            "p": "Trufa negra fresca",
+            "c": "90-120 g",
+            "n": "d5 risotto"
+          },
+          {
+            "p": "Boletus fresco + boletus seco",
+            "c": "2,5 kg + 150 g",
+            "n": "d5 risotto"
+          },
+          {
+            "p": "Atún lomo limpio",
+            "c": "4,5-5 kg",
+            "n": "d2 baja temperatura"
+          },
+          {
+            "p": "Paletilla de cordero",
+            "c": "6,5-7,5 kg bruto",
+            "n": "d3"
+          }
         ]
       },
       {
-        s: "Carnicería + Aves",
-        items: [
-          {p: "Magret de pato fresco entero", c: "25 uds (~7 kg · ~280 g/ud)", n: "Rougié/Labeyrie · piel intacta · D-1 ideal"},
-          {p: "Salchichas naturales de pollo (~40 g/ud)", c: "150 uds (~6 kg)", n: "Tripa natural · textura blanda · baja sal"},
-          {p: "Pollo entero (~1,5 kg)", c: "4 uds", n: "Caldo Pollo Verduras Straker cena d4 lun 25"}
+        "s": "Carnicería / Pescadería",
+        "items": [
+          {
+            "p": "Pollo",
+            "c": "6-7 kg",
+            "n": "d1 Patiki"
+          },
+          {
+            "p": "Atún",
+            "c": "4,5-5 kg",
+            "n": "d2"
+          },
+          {
+            "p": "Cordero",
+            "c": "6,5-7,5 kg",
+            "n": "d3"
+          }
         ]
       },
       {
-        s: "Charcutería alemana (Abendbrot ×2 noches)",
-        items: [
-          {p: "Paté de hígado de oca", c: "500 g", n: "Sin tropezones · untable suave · 4 cuencos × 2 noches"},
-          {p: "Fleischwurst (mortadela alemana fina)", c: "600 g", n: "Lonchas finas"},
-          {p: "Jagdwurst o Schinkenwurst", c: "400 g", n: "Lonchas finas"},
-          {p: "Schinken curado tipo Westfälisch", c: "400 g", n: "Lonchas finas"}
+        "s": "Verdura / Fruta",
+        "items": [
+          {
+            "p": "Berenjena, calabacín, tomate, pimiento",
+            "c": "10 kg / 8 kg / 13 kg / 30 uds",
+            "n": "musaka + caponata + cenas"
+          },
+          {
+            "p": "Pomelo, fresas, papaya, naranjas",
+            "c": "según lista",
+            "n": "entrantes y postres"
+          },
+          {
+            "p": "Pepino, remolacha, champiñón",
+            "c": "6 kg / 4 kg / 2,5 kg",
+            "n": "entrantes"
+          }
         ]
       },
       {
-        s: "Frutas (con postres y entrantes)",
-        items: [
-          {p: "Papaya madura grande (Tenerife local)", c: "4 uds (~4 kg)", n: "Tenerife — local · piel amarilla-naranja madura"},
-          {p: "Fresas muy maduras", c: "5,75 kg", n: "Postre Fresas Vinagre 4,5 kg + ens. Coreana 1,25 kg · VERIFICAR madurez ANTES"},
-          {p: "Naranjas mesa maduras dulces (Navel/Lane Late)", c: "25 uds + 1 ralladura (~6 kg)", n: "Postre Naranjas Láminas d3"},
-          {p: "Melocotón maduro fresco temporada", c: "8-10 uds (~2,5 kg)", n: "Salsa Magret · ALT: en almíbar premium 1,5 kg escurrido"},
-          {p: "Limones", c: "~20 uds", n: "Múltiple"},
-          {p: "Limas", c: "~25 uds", n: "Múltiple (papaya + nepalí + macedonia + crema anacardos)"},
-          {p: "Pomelos rosas", c: "12 uds (~2,5 kg)", n: "Entrante Coreana d1"},
-          {p: "Moras + Ciruelas + Cerezas + Arándanos", c: "1+1+0,5+0,5 = 3 kg", n: "Macedonia Frutas Oscuras Caldesi d5"}
-        ]
-      },
-      {
-        s: "Verduras frescas",
-        items: [
-          {p: "Remolacha cruda", c: "5 kg (~24-28 uds)", n: "Buñuelos plato vegetariano d4 (escalado 2x)"},
-          {p: "Patata canaria (negra o bonita)", c: "5 kg", n: "Papas Arrugadas d5"},
-          {p: "Patata variedad puré", c: "3 kg", n: "Puré acompañamiento salchichas d2"},
-          {p: "Patata cocer (Nepalí)", c: "3 kg", n: "Entrante Nepalí d3"},
-          {p: "Cebolla blanca", c: "~13 kg", n: "Atún encebollado 8,9 kg + buñuelos 1,25 + entrante nepalí 0,8 + cremas/caldo/pochados"},
-          {p: "Cebolla tierna juliana", c: "400 g", n: "Dorada Japonesa d1"},
-          {p: "Chalota", c: "200 g", n: "Salsa Magret d3"},
-          {p: "Pimientos rojos grandes carnosos", c: "25 uds", n: "Cena Pimientos Asados Burrata d3"},
-          {p: "Calabacín", c: "3 kg", n: "Cena Crema Calabacín Albahaca d1"},
-          {p: "Zanahoria", c: "5,5 kg (22 uds)", n: "Caldo Pollo + acabado"},
-          {p: "Apio (tallos)", c: "26 tallos", n: "Caldo Pollo · ALÉRGENO declarar"},
-          {p: "Puerro", c: "4 uds", n: "Caldo Pollo"},
-          {p: "Ajo (dientes)", c: "~300 g + 4 cabezas", n: "Múltiple + dientes enteros frotar pan sourdough cena d3"},
-          {p: "Pepino", c: "6 kg", n: "Pepino Chafado d2 3,5 kg + Frischzeug Abendbrot ×2 2,4 kg"},
-          {p: "Tomate maduro (rama/pera/canario)", c: "4 kg", n: "Ens. Tomate Queso Maxorata d5 3,8 kg"},
-          {p: "Tomate Abendbrot Frischzeug", c: "2,4 kg", n: "Frischzeug ×2 noches"},
-          {p: "Tomate cherry", c: "625 g", n: "Ens. Col Libanesa d4"},
-          {p: "Repollo blanco", c: "2,5 kg (~3 uds medianas)", n: "Ens. Col Libanesa d4"},
-          {p: "Aguacate", c: "625 g (~4 uds)", n: "Ens. Coreana d1"}
-        ]
-      },
-      {
-        s: "Hierbas frescas y aromáticos",
-        items: [
-          {p: "Jengibre fresco", c: "250 g", n: "Dorada Japonesa"},
-          {p: "Cilantro fresco", c: "150 g", n: "Dorada + Nepalí"},
-          {p: "Eneldo fresco", c: "~250 g", n: "Buñuelos + yogur + caldo pollo + Krauterquark"},
-          {p: "Perejil hoja plana", c: "100 g", n: "Col Libanesa + Tomate Queso"},
-          {p: "Albahaca fresca", c: "180 g", n: "Cena Crema Calabacín"},
-          {p: "Menta fresca", c: "60 g", n: "Coreana + Krauterquark"},
-          {p: "Cebollino", c: "50 g", n: "Krauterquark Abendbrot"},
-          {p: "Tomillo fresco", c: "30 g (~30 ramitas)", n: "Magret + caldo pollo"},
-          {p: "Romero fresco", c: "12 ramitas", n: "Caldo Pollo"}
-        ]
-      },
-      {
-        s: "Lácteos y huevos",
-        items: [
-          {p: "Queso feta", c: "2,5 kg", n: "Buñuelos plato vegetariano (escalado 2x)"},
-          {p: "Queso fresco Maxorata DOP", c: "1,1 kg", n: "Ens. Tomate Queso d5 · DOP Majorero FRESCO no curado"},
-          {p: "Yogur griego natural", c: "~1,5 L", n: "Buñuelos 1,25 + opcional naranjas 200 ml"},
-          {p: "Burrata bolas individuales (~125 g)", c: "25 uds", n: "⚡ Comprar DOM 24 mañana mismo · cena d3"},
-          {p: "Mantequilla calidad", c: "1 kg", n: "Abendbrot rosetas ×2 ~600 g + puré d2 + salsa magret 80 g"},
-          {p: "Quark alemán (alt: yogur griego escurrido)", c: "3 kg", n: "Kräuterquark Abendbrot ×2 noches"},
-          {p: "Crème fraîche", c: "400 g", n: "Kräuterquark Abendbrot ×2"},
-          {p: "Leche entera", c: "1 L", n: "Helado Pistacho"},
-          {p: "Nata 35% MG", c: "1 L", n: "Helado Pistacho 500 ml + opcional acompañamiento fresas vinagre 500 ml"},
-          {p: "Huevos M", c: "20 uds", n: "Buñuelos 12 + helado pistacho yemas 8"}
-        ]
-      },
-      {
-        s: "Panadería",
-        items: [
-          {p: "Pan blanco baguette buena calidad", c: "2 uds", n: "Abendbrot ×2 cestas"},
-          {p: "Pumpernickel", c: "2 paquetes", n: "Abendbrot ×2"},
-          {p: "Vollkornbrot (integral oscuro alemán)", c: "2 paquetes", n: "Abendbrot ×2"},
-          {p: "Pan sourdough rebanadas gruesas", c: "25 rebanadas", n: "Cena Pimientos Burrata d3"}
-        ]
-      },
-      {
-        s: "Cereales y féculas",
-        items: [
-          {p: "Arroz blanco basmati o jazmín", c: "2,5 kg", n: "Acompañamiento Dorada d1"},
-          {p: "Couscous semolina mediana", c: "1,5 kg", n: "Acompañamiento Buñuelos d4"}
-        ]
-      },
-      {
-        s: "Despensa especializada (producto crítico)",
-        items: [
-          {p: "Pasta de pistacho Bronte 100%", c: "200 g", n: "🔥 Helado Pistacho · sin colorante · pastelería profesional · verde-gris natural"},
-          {p: "Pistachos crudos sin sal", c: "50 g", n: "Decoración helado pistacho"},
-          {p: "Cacahuetes tostados sin sal", c: "200 g", n: "Coreana · machacar (no enteros)"},
-          {p: "Anacardos crudos", c: "750 g", n: "Macedonia Crema Anacardos · remojar 2 h"},
-          {p: "Pasas sultanas", c: "250 g", n: "Couscous con pasas"},
-          {p: "Aceite girasol freír jengibre", c: "500 ml", n: "Dorada Japonesa"},
-          {p: "Aceite sésamo", c: "250 ml", n: "Coreana + Pepino Chafado"},
-          {p: "Aceite mostaza (alt: girasol)", c: "100 ml", n: "Nepalí"},
-          {p: "Vinagre Jerez DOP", c: "1 L", n: "Pimientos Burrata 600 + Tomate Queso 60 + Atún 86 + reserva"},
-          {p: "Vinagre balsámico Módena calidad", c: "250 ml", n: "Fresas Vinagre 125 + Salsa Magret 100"},
-          {p: "Vinagre de arroz", c: "200 ml", n: "Coreana + Pepino Chafado"},
-          {p: "Sal gruesa marina (papas)", c: "350 g", n: "Específica Papas Arrugadas"},
-          {p: "Pimienta rosa en grano", c: "10 g", n: "Postre Papaya d1"},
-          {p: "Pimentón ahumado dulce", c: "10 g", n: "Atún"},
-          {p: "Comino grano", c: "10 g", n: "Atún"},
-          {p: "Comino molido", c: "35 g", n: "Buñuelos + yogur + Nepalí"},
-          {p: "Cilantro molido", c: "30 g", n: "Buñuelos"},
-          {p: "Cúrcuma", c: "12 g", n: "Nepalí"},
-          {p: "Copos de chile", c: "15 g", n: "Nepalí + Pepino Chafado · senior dosis mínima"},
-          {p: "Semillas mostaza negra", c: "12 g", n: "Nepalí · ALÉRGENO mostaza"},
-          {p: "Menta seca", c: "15 g", n: "Col Libanesa"},
-          {p: "Canela en rama", c: "4 uds", n: "Naranjas Láminas"},
-          {p: "Salsa soja", c: "500 ml", n: "Dorada + Pepino Chafado + Coreana"},
-          {p: "Gochujang", c: "50 g", n: "Coreana · dosis reducida senior"},
-          {p: "Miel", c: "250 g", n: "Coreana + Macedonia + Salsa Magret"},
-          {p: "Extracto vainilla", c: "10 ml", n: "Macedonia crema anacardos"},
-          {p: "Semillas sésamo tostadas + sésamo negro", c: "40 + 15 g", n: "Pepino Chafado + Coreana"},
-          {p: "Azúcar blanco", c: "1 kg", n: "Helado pistacho + Fresas Vinagre + Pimientos Burrata + Pepino Chafado"}
-        ]
-      },
-      {
-        s: "Vinos y licores",
-        items: [
-          {p: "Vino rancio", c: "500 ml", n: "Salchichas"},
-          {p: "Vino blanco seco", c: "800 ml", n: "Atún 645 + salsa magret 150"},
-          {p: "Amaretto", c: "125 ml", n: "Macedonia"},
-          {p: "Fondo oscuro ave / demi-glace", c: "500 ml", n: "Salsa Magret"}
-        ]
-      },
-      {
-        s: "Encurtidos y conservas",
-        items: [
-          {p: "Pepinillos Gewürzgurken (tarro alemán)", c: "2 tarros grandes", n: "Abendbrot ×2"},
-          {p: "Alcaparras encurtidas", c: "200 g", n: "Abendbrot ×2"},
-          {p: "Caldo verduras/pollo (stock)", c: "6 L", n: "Cena Crema Calabacín d1"},
-          {p: "Salsa tomate calidad casera/premium", c: "2 kg", n: "Salchichas d2"}
+        "s": "Secos / Lácteos",
+        "items": [
+          {
+            "p": "Arroz Carnaroli",
+            "c": "2,5 kg",
+            "n": "risotto"
+          },
+          {
+            "p": "Parmesano + mantequilla",
+            "c": "900 g + 1,5 kg",
+            "n": "risotto/parmentier"
+          },
+          {
+            "p": "Labneh/yogur + Maxorata + burrata",
+            "c": "3 kg + 1,5 kg + 2 kg",
+            "n": "d3/d4/d1 cena"
+          }
         ]
       }
     ]
   },
   {
-    lista: 2,
-    titulo: "ENTREGA 2 — d6-d15 completos",
-    entrega: "Mar 26 tarde / Mié 27 mañana + reposiciones frescas según día crítico",
-    cubre: "Mié 27 may → Vie 5 jun (10 días · d6-d15)",
-    secciones: [
-      {s: "Pescadería / Marisco", items: [
-        {p: "Corvina fresca lomos limpios", c: "6,5 kg", n: "d8 Suquet · espina cero, 25 lomos"},
-        {p: "Salmón fresco lomo", c: "5 kg", n: "d10 · 25 porciones 150-180 g, espina cero"},
-        {p: "Calamar o pota tierna limpia", c: "5-6 kg", n: "d13 principal · secar muy bien, cocción corta"},
-        {p: "Camarón/langostino ultracongelado pelado", c: "3,5-4 kg", n: "d7 ceviche + d15 moqueca · descongelar en nevera"}
-      ]},
-      {s: "Carnicería", items: [
-        {p: "Costillas de cerdo saladas", c: "7 kg", n: "d6 · desalado 24 h con 3 cambios"},
-        {p: "Pollo entero o piezas para deshuesar", c: "10 kg", n: "d7 Coq au Vin"},
-        {p: "Bacon/ventrèche/lardons", c: "1,2 kg", n: "d7 guarnición Grand Mère"},
-        {p: "Solomillo ternera entero", c: "5 kg", n: "d9 Filet Mignon · 25 medallones"},
-        {p: "Pollo para velouté", c: "5 kg", n: "d14 Pollo Velouté"}
-      ]},
-      {s: "Fruta y verdura", items: [
-        {p: "Champiñón blanco fresco", c: "2 kg", n: "d6 carpaccio"},
-        {p: "Papa/patata", c: "14,5 kg", n: "d6 costilla + d13 calamar + vichyssoise"},
-        {p: "Tomate maduro", c: "10 kg", n: "gazpacho, tomate AOVE, salsa canelones, crema d15"},
-        {p: "Pepino", c: "5 kg", n: "gazpacho, raita, ensaladas, gurkensalat"},
-        {p: "Pimiento rojo/verde", c: "5 kg + 25 uds", n: "gazpacho, pimientos burrata, moqueca"},
-        {p: "Cebolla blanca + roja", c: "8 kg + 1,5 kg", n: "sofritos + ceviche/ensaladas"},
-        {p: "Naranjas", c: "8 kg", n: "postres y ensaladas"},
-        {p: "Aguacate", c: "2 kg", n: "d8 entrante"},
-        {p: "Papaya canaria", c: "4 uds / ~4 kg", n: "d8 postre"},
-        {p: "Judía verde + melocotón", c: "3 kg + 2 kg", n: "d9 entrante"},
-        {p: "Melón", c: "5 kg", n: "d10 postre"},
-        {p: "Calabacín", c: "5 kg", n: "d11 + d13 entrantes"},
-        {p: "Sandía", c: "5 kg", n: "d12 entrante"},
-        {p: "Coliflor + lentejas rojas", c: "4 kg + 1,8 kg", n: "d12 principal"},
-        {p: "Mango", c: "4 kg", n: "d12 postre"},
-        {p: "Berros", c: "1,5 kg", n: "d13 principal"},
-        {p: "Remolacha + manzana", c: "4 kg + 4 kg", n: "d14 entrante/postre"},
-        {p: "Pomelo", c: "8 uds", n: "d15 entrante"},
-        {p: "Piña fresca + fruta pasión", c: "2 uds + 12-15 uds", n: "d15 cheesecake"},
-        {p: "Hierbas frescas", c: "albahaca 300 g, cilantro 250 g, perejil 250 g, menta 120 g, eneldo 120 g", n: "servicios d6-d15"},
-        {p: "Limones + limas", c: "40 + 20 uds", n: "ceviche, aliños, raita, postres"}
-      ]},
-      {s: "Lácteos / Quesos / Huevos", items: [
-        {p: "Mantequilla sin sal", c: "3 kg", n: "Coq, bechamel, velouté, postres"},
-        {p: "Nata 35% + leche entera", c: "3 L + 4 L", n: "velouté, vichyssoise, bechamel"},
-        {p: "Mozzarella + ricotta/requesón", c: "3 kg + 2 kg", n: "d11 Canelones Caprese"},
-        {p: "Parmesano", c: "800 g", n: "d11 + acabados"},
-        {p: "Burrata", c: "1,5 kg", n: "d8 cena"},
-        {p: "Feta", c: "1 kg", n: "d12 entrante"},
-        {p: "Yogur griego", c: "3 kg", n: "d10 raita + d12 postre"},
-        {p: "Cream cheese", c: "1 kg", n: "d15 cheesecake"},
-        {p: "Huevos", c: "2 docenas", n: "recetas auxiliares"},
-        {p: "Queso fresco", c: "1,5 kg", n: "d14 cena"}
-      ]},
-      {s: "Secos / Despensa", items: [
-        {p: "Tomate Mutti triturado/polpa + pelati", c: "4 kg + 2 kg", n: "d11 salsa canelones"},
-        {p: "Pasta canelón / placas", c: "60-70 uds", n: "d11 principal"},
-        {p: "Harina trigo", c: "1 kg", n: "Coq, bechamel, velouté"},
-        {p: "Vino tinto", c: "5 botellas", n: "d7 Coq au Vin"},
-        {p: "Fondo de ave + pescado", c: "8 L + 5 L", n: "Coq/velouté + suquet/moqueca"},
-        {p: "Arroz Bahiano / largo", c: "3 kg", n: "d15"},
-        {p: "Leche de coco", c: "3 L", n: "d15 moqueca"},
-        {p: "Aceite dendê", c: "250 ml", n: "opcional; alt AOVE + pimentón"},
-        {p: "AOVE", c: "5 L", n: "general"},
-        {p: "Almendra laminada", c: "300 g", n: "d9 + d14"},
-        {p: "Pan/miga para migas verdes", c: "1 kg", n: "d13"},
-        {p: "Pan cena", c: "12 piezas", n: "cenas d6-d15"},
-        {p: "Galletas digestive", c: "400 g", n: "d15 cheesecake"},
-        {p: "Azúcar + especias/vinagres", c: "2 kg + stock", n: "postres, raita, lentejas, suquet, moqueca"}
-      ]},
-      {s: "Riesgos / Sustituciones", items: [
-        {p: "Fruta pasión", c: "riesgo medio", n: "sustituir por Crema Piña Coco o Papaya Lima"},
-        {p: "Aceite dendê", c: "riesgo medio", n: "AOVE + pimentón dulce"},
-        {p: "Calamar tierno", c: "riesgo medio", n: "pota canaria limpia, cocción muy corta"},
-        {p: "Ricotta", c: "riesgo bajo", n: "requesón fino + yogur colado"}
-      ]}
+    "lista": 2,
+    "titulo": "ENTREGA 2 - d6-d8",
+    "entrega": "Martes 09",
+    "cubre": "Mié 10 -> Vie 12",
+    "secciones": [
+      {
+        "s": "Críticos",
+        "items": [
+          {
+            "p": "Corvina lomos limpios",
+            "c": "6,5 kg",
+            "n": "d7 espina cero"
+          },
+          {
+            "p": "Pollo Tonkatsu",
+            "c": "5,5-6 kg",
+            "n": "d6"
+          },
+          {
+            "p": "Carne picada mixta",
+            "c": "5 kg",
+            "n": "d8 Klopse"
+          }
+        ]
+      },
+      {
+        "s": "Verdura / Fruta",
+        "items": [
+          {
+            "p": "Sandía, mango, aguacate, naranjas",
+            "c": "6 kg / 4,5 kg / 3 kg / 6 kg",
+            "n": "d6-d7"
+          },
+          {
+            "p": "Tomate, patata, pimientos, berenjena, calabacín",
+            "c": "según lista",
+            "n": "suquet + ratatouille"
+          },
+          {
+            "p": "Remolacha y manzana",
+            "c": "3 kg + 6 kg",
+            "n": "d8"
+          }
+        ]
+      },
+      {
+        "s": "Despensa",
+        "items": [
+          {
+            "p": "Panko, harina, huevos",
+            "c": "2,5 kg / 2 kg / 3 doc",
+            "n": "Tonkatsu/Klopse"
+          },
+          {
+            "p": "Almendra, pan blanco, alcaparras",
+            "c": "1,5 kg / 2 kg / 700 g",
+            "n": "ajoblanco/Klopse"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lista": 3,
+    "titulo": "ENTREGA 3 - d9-d12",
+    "entrega": "Jueves 11 o viernes 12",
+    "cubre": "Sáb 13 -> Mar 16",
+    "secciones": [
+      {
+        "s": "Críticos",
+        "items": [
+          {
+            "p": "Atún para burger",
+            "c": "5-5,5 kg",
+            "n": "d9"
+          },
+          {
+            "p": "Bollos Tangzhong",
+            "c": "28 uds",
+            "n": "o brioche calidad"
+          },
+          {
+            "p": "Pulpo",
+            "c": "6-7 kg cocido / 10 kg crudo",
+            "n": "d10"
+          },
+          {
+            "p": "Pavo",
+            "c": "6 kg",
+            "n": "d12 escabeche"
+          }
+        ]
+      },
+      {
+        "s": "Verdura / Fruta",
+        "items": [
+          {
+            "p": "Zanahoria, cebolla, hojas verdes",
+            "c": "5 kg / 5 kg / 4 kg",
+            "n": "burger + entrante"
+          },
+          {
+            "p": "Berenjena, apio, pimientos, tomate",
+            "c": "8 kg / 1,5 kg / 5 kg / 6 kg",
+            "n": "caponata"
+          },
+          {
+            "p": "Pomelo, papaya, fresas, naranjas, sandía",
+            "c": "según lista",
+            "n": "postres/entrantes"
+          }
+        ]
+      },
+      {
+        "s": "Despensa",
+        "items": [
+          {
+            "p": "Harinas, levadura, cerveza, vinagre malta",
+            "c": "según lista",
+            "n": "bollos + aros"
+          },
+          {
+            "p": "AOVE, pimentón, alcaparras, aceitunas, vinagre",
+            "c": "según lista",
+            "n": "polbo/caponata/escabeche"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lista": 4,
+    "titulo": "ENTREGA 4 - d13-d15",
+    "entrega": "Martes 16",
+    "cubre": "Mié 17 -> Vie 19",
+    "secciones": [
+      {
+        "s": "Críticos",
+        "items": [
+          {
+            "p": "Pescado blanco sin espinas",
+            "c": "5,5-6 kg",
+            "n": "d13 goujons"
+          },
+          {
+            "p": "Magret de pato",
+            "c": "25 uds / 6-7 kg",
+            "n": "d14"
+          },
+          {
+            "p": "Pota canaria limpia",
+            "c": "6-7 kg",
+            "n": "d15 MAR/PB"
+          }
+        ]
+      },
+      {
+        "s": "Verdura / Fruta",
+        "items": [
+          {
+            "p": "Melón, tomate, judía verde, melocotón",
+            "c": "6 kg / 8 kg / 4 kg / 4 kg",
+            "n": "d13-d14"
+          },
+          {
+            "p": "Hinojo, granada, piña, coco",
+            "c": "4 kg / 6 uds / 4 uds / 3 L",
+            "n": "d15"
+          },
+          {
+            "p": "Patata",
+            "c": "8 kg",
+            "n": "patatas paja"
+          }
+        ]
+      },
+      {
+        "s": "Despensa / Lácteos",
+        "items": [
+          {
+            "p": "Panko, harina, aceite freír",
+            "c": "2,5 kg / 2 kg / 10 L",
+            "n": "goujons + patatas"
+          },
+          {
+            "p": "Mayonesa pasteurizada, pepinillos, alcaparras",
+            "c": "2,5 kg / 1,2 kg / 700 g",
+            "n": "tártara/alioli"
+          },
+          {
+            "p": "Feta, huevos pasteurizados, pan Abendbrot",
+            "c": "1,5 kg / 1 L / 8-10 piezas",
+            "n": "d15"
+          }
+        ]
+      }
     ]
   }
 ];
 
-
-var periodoActualData, periodoAnteriorData;
-(function() {
-  var today = new Date().toISOString().split('T')[0];
-  var mdFirst = menuData.dias[0].fecha;
-  var mdLast = menuData.dias[menuData.dias.length - 1].fecha;
-  var pvFirst = menuData_prev.dias[0].fecha;
-  var pvLast = menuData_prev.dias[menuData_prev.dias.length - 1].fecha;
-  
-  if (today >= mdFirst && today <= mdLast) {
-    periodoActualData = menuData;
-    periodoAnteriorData = menuData_prev;
-  } else if (today >= pvFirst && today <= pvLast) {
-    periodoActualData = menuData_prev;
-    periodoAnteriorData = menuData;
-  } else if (today < mdFirst && today < pvFirst) {
-    /* Both in the future — the earlier one is "actual" */
-    periodoActualData = mdFirst < pvFirst ? menuData : menuData_prev;
-    periodoAnteriorData = mdFirst < pvFirst ? menuData_prev : menuData;
-  } else {
-    /* Both in the past — the later one is "actual" */
-    periodoActualData = mdLast > pvLast ? menuData : menuData_prev;
-    periodoAnteriorData = mdLast > pvLast ? menuData_prev : menuData;
-  }
-})();
-
-/* Build ID sets from the detected assignment */
 function buildIdsFromMenu(md) {
   var ids = new Set();
   if (md && md.dias) {
@@ -2400,6 +2810,29 @@ function buildIdsFromMenu(md) {
   }
   return ids;
 }
+
+var periodoActualData, periodoAnteriorData;
+(function() {
+  var today = new Date().toISOString().split('T')[0];
+  var mdFirst = menuData.dias[0].fecha;
+  var mdLast = menuData.dias[menuData.dias.length - 1].fecha;
+  var pvFirst = menuData_prev.dias[0].fecha;
+  var pvLast = menuData_prev.dias[menuData_prev.dias.length - 1].fecha;
+
+  if (today >= mdFirst && today <= mdLast) {
+    periodoActualData = menuData;
+    periodoAnteriorData = menuData_prev;
+  } else if (today >= pvFirst && today <= pvLast) {
+    periodoActualData = menuData_prev;
+    periodoAnteriorData = menuData;
+  } else if (today < mdFirst && today < pvFirst) {
+    periodoActualData = mdFirst < pvFirst ? menuData : menuData_prev;
+    periodoAnteriorData = mdFirst < pvFirst ? menuData_prev : menuData;
+  } else {
+    periodoActualData = mdLast > pvLast ? menuData : menuData_prev;
+    periodoAnteriorData = mdLast > pvLast ? menuData_prev : menuData;
+  }
+})();
 
 let periodoIds_actual = buildIdsFromMenu(periodoActualData);
 let periodoIds_anterior = buildIdsFromMenu(periodoAnteriorData);
