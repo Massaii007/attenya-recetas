@@ -38,7 +38,7 @@ for root, dirs, files in os.walk(VAULT):
 
 # Special naming mappings
 NAMING_MAP = {
-    'Patatas_Fritas_Triple_Coccion': 'Patatas_Fritas_Triple_Cocción',
+    'Patatas_Fritas_Triple_Coccion': 'Patatas_Fritas_Triple_Coccion',
     'Risotto_Azafran_Plato': 'Risotto_Azafran',  # Use Platos/ version
 }
 
