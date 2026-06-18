@@ -498,6 +498,11 @@ async function checkForAppUpdate(reason) {
     var remote = await response.json();
     if (!remote || !remote.buildId) return;
     if (remote.buildId !== APP_BUILD_ID) {
+      var currentVersionParam = new URL(window.location.href).searchParams.get('v');
+      if (currentVersionParam === remote.buildId) {
+        updateStatus('Online · ' + (remote.label || APP_BUILD_LABEL));
+        return;
+      }
       updateStatus('Actualizando ' + (remote.label || ''), 'updating');
       window.location.replace(withVersionParam(remote.buildId));
       return;
