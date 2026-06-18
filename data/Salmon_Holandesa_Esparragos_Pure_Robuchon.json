@@ -1,0 +1,37 @@
+{
+  "nombre": "Salmón con salsa holandesa, espárragos trigueros y puré Robuchon",
+  "fuente": "ATTENYA Culinario Amp · Quincena 2026-06-20 a 2026-07-04 · Receta ensamblada desde componentes de catálogo",
+  "pax": "25",
+  "time_total": "75 min",
+  "technique": "Horno mixto Convotherm + holandesa en sifón + blanqueado/finalización de espárragos + puré Robuchon",
+  "protein": "Pescado azul",
+  "allergens": "Pescado, Huevo, Lácteos (mantequilla, nata)",
+  "difficulty": "Alta",
+  "ingredients": "### Proteína principal\n| Ingrediente | Cantidad | Notas |\n|---|---:|---|\n| Salmón fresco en lomos, limpio y sin espinas | 4,4 kg | 175 g por ración en crudo; pinzado con tolerancia cero |\n| Aceite de oliva virgen extra | 60 ml | pincelado fino |\n| Sal fina | 20 g | sazón discreta |\n| Pimienta blanca molida | 3 g | suave |\n| Piel de limón rallada | 8 g | 2 limones |\n| Eneldo fresco | 20 g | picado, opcional |\n\n### Salsa y guarniciones de catálogo\n| Componente | Cantidad / referencia | Notas |\n|---|---|---|\n| Salsa Holandesa Profesional | 1 receta `Salsa_Holandesa` | mantener en sifón a 55-58 °C |\n| Espárragos Trigueros | 1 receta `Esparragos_Trigueros` | 2-3 puntas por persona |\n| Puré Cremoso Robuchon | 1 receta `Pure_Cremoso_Robuchon` | ración moderada 120-150 g/persona para equilibrar grasa total |",
+  "procedure": "### Mise en Place\n1. Confirmar salmón limpio, sin piel si se desea presentación más amable, y pinzado sin espinas.\n2. Ejecutar el puré Robuchon según `Pure_Cremoso_Robuchon`; mantener en baño maría suave con film a piel.\n3. Preparar la reducción y la salsa holandesa según `Salsa_Holandesa`; cargar en sifón y mantener a 55-58 °C.\n4. Blanquear espárragos según `Esparragos_Trigueros`; refrescar en hielo, secar y reservar en frío máximo 4 h.\n5. Precalentar Convotherm modo mixto 180 °C vapor 30%.\n\n### Fase 1 — Sazón del salmón\n1. Disponer lomos en GN con papel sulfurizado, sin solapar.\n2. Pincelar con AOVE; no bañar.\n3. Sazonar con sal, pimienta blanca, ralladura de limón y eneldo.\n4. Reposar 5 min antes de hornear.\n\n### Fase 2 — Cocción del salmón\n1. Hornear en Convotherm mixto 180 °C / 30% vapor durante 12-14 min según calibre.\n2. Temperatura interna objetivo: 52-54 °C; no superar 56 °C.\n3. Reposar 3 min cubierto.\n\n### Fase 3 — Finalización de guarniciones\n1. Recuperar espárragos en Convotherm seco 180 °C 2 min o salteo rápido con mantequilla/AOVE.\n2. Ajustar textura del puré solo con nata caliente si hiciera falta; nunca con agua.\n3. Agitar sifón de holandesa antes de cada servicio.\n\n### Fase 4 — Pase\n1. Emplatar primero el puré Robuchon.\n2. Colocar el lomo de salmón junto al puré, entero y jugoso.\n3. Disponer 2-3 espárragos trigueros en paralelo o cruzados.\n4. Terminar con holandesa en último segundo, preferiblemente ligera y parcial para no cubrir el salmón.",
+  "plating": "Plato claro y clásico: base/quenelle de puré Robuchon a un lado, lomo de salmón centrado, espárragos trigueros visibles y salsa holandesa napando de forma parcial o en cordón. Evitar cubrir todo el plato: la salsa es rica y debe actuar como acento. Final opcional de eneldo fresco o ralladura fina de limón.",
+  "timing": "D-1 o mañana: reducción de holandesa si se desea. D0 mañana: puré y espárragos. Servicio: salmón al horno, recuperar espárragos, holandesa en sifón al pase.",
+  "critical_points": "- Pinzado del salmón con tolerancia cero a espinas.\n- Salmón: 52-54 °C centro; por encima de 56 °C se seca.\n- Holandesa: sifón y baño María a 55-58 °C; no superar 60 °C ni dejar enfriar.\n- Puré: prohibido turmix/robot; doble tamizado y regeneración solo con nata caliente.\n- Espárragos: blanqueo corto y enfriado inmediato; no conservar blanqueados más de 4 h.\n- Plato de alto contenido graso: ración de salsa moderada y puré en cantidad contenida.",
+  "appcc": "- Salmón en frío <4 °C hasta cocción; servicio caliente tras cocción y reposo.\n- Holandesa con huevo: control estricto de temperatura; mantener 55-58 °C y descartar si hay ruptura, enfriamiento prolongado o contaminación.\n- Puré con lácteos: mantener baño María máximo 65 °C con film a piel.\n- Espárragos blanqueados: conservar 0-4 °C máximo 4 h.\n- Alérgenos declarados: pescado, huevo y lácteos.",
+  "senior_adaptation": "- Salmón jugoso y sin espinas, fácil de comer.\n- Puré Robuchon sedoso, sin grumos, adecuado para deglución.\n- Espárragos tiernos, de fibra controlada.\n- Salsa holandesa en dosis medida para aportar lujo sin resultar pesada.",
+  "quote": null,
+  "storytelling": "# Salmón con salsa holandesa, espárragos trigueros y puré Robuchon — Historia\n\nUn plato de cocina clásica luminosa: salmón jugoso, holandesa francesa, espárrago verde y puré Robuchon. La intención es ofrecer una comida de domingo elegante sin complicar la mesa: técnica precisa, sabores reconocibles y textura amable para ATTENYA.\n\nEl salmón se cocina con vapor controlado para preservar jugosidad; la holandesa aporta el gesto francés; los espárragos traen frescor vegetal; el puré Robuchon cierra el plato con una textura sedosa que lo hace confortable y especial. Es un plato de celebración contenida, pensado para que el residente lo entienda de inmediato y lo recuerde como comida cuidada.",
+  "componentes": [
+    {
+      "role": "principal",
+      "id": "Salmon_Horno_Convotherm_Mixto"
+    },
+    {
+      "role": "salsa",
+      "id": "Salsa_Holandesa"
+    },
+    {
+      "role": "verdura",
+      "id": "Esparragos_Trigueros"
+    },
+    {
+      "role": "guarnicion",
+      "id": "Pure_Cremoso_Robuchon"
+    }
+  ]
+}
