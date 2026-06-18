@@ -3886,6 +3886,7 @@ var currentPeriodo = (function() {
   var today = new Date().toISOString().split('T')[0];
   var pvFirst = menuData_prev.dias[0].fecha;
   var pvLast = menuData_prev.dias[menuData_prev.dias.length - 1].fecha;
+  if (today < pvFirst) return 'p2';
   if (today >= pvFirst && today <= pvLast) return 'p2';
   return 'p1';
 })();
