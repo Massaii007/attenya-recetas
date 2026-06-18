@@ -425,8 +425,8 @@ body { background: #1a1612; color: #e8dfd4; font-family: 'Cormorant Garamond', G
 <div class="footer" id="footer"></div>
 
 <script>
-const APP_BUILD_ID = "2026-06-18T03:20:00Z";
-const APP_BUILD_LABEL = "18/06 Next period prep · tablet refresh ready";
+const APP_BUILD_ID = "2026-06-18T07:00:00Z";
+const APP_BUILD_LABEL = "18/06 Next period prep · real compras mise";
 
 /* ============================================================
    IKEA DIAGRAMS — desactivado tras rollback V2 s56 (TT Code)
@@ -3602,6 +3602,16 @@ function renderMenu() {
    ============================================================ */
 function renderMise() {
   document.getElementById("mise-meta").textContent = `${getMenuData().pax} PAX · ${getMenuData().periodo} · Chef solo 7:30–15:30`;
+  if (getMenuData().periodo === '20 Junio - 4 Julio 2026') {
+    document.getElementById("mise-days").innerHTML = `
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin:0 0 16px;">
+        <a class="pdf-btn" href="production/mise-periodo-2026-06-20_2026-07-04.html" target="_blank" rel="noopener">Abrir mise real completa</a>
+        <a class="pdf-btn" href="production/mise-urgente-20jun-23jun.html" target="_blank" rel="noopener">Abrir mise urgente d1-d4</a>
+      </div>
+      <iframe src="production/mise-periodo-2026-06-20_2026-07-04.html?v=${APP_BUILD_ID}" title="Mise real próxima quincena" style="width:100%;height:78vh;border:1px solid #3a322a;background:#fbfaf7;border-radius:10px;"></iframe>
+    `;
+    return;
+  }
   
   document.getElementById("mise-days").innerHTML = getMiseData().map((d, i) => {
     const cargaClass = d.carga.toLowerCase().replace(/[- ]/g,'-');
@@ -3633,6 +3643,16 @@ function renderMise() {
    ============================================================ */
 function renderCompras() {
   document.getElementById("compras-meta").textContent = `${getMenuData().pax} PAX · ${getMenuData().periodo}`;
+  if (getMenuData().periodo === '20 Junio - 4 Julio 2026') {
+    document.getElementById("compras-listas").innerHTML = `
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin:0 0 16px;">
+        <a class="pdf-btn" href="production/compras-urgente-18jun-entrega19-cubre23jun.html" target="_blank" rel="noopener">Abrir compra urgente 18→19 cubre d1-d4</a>
+        <a class="pdf-btn" href="production/compras-periodo-2026-06-20_2026-07-04.html" target="_blank" rel="noopener">Abrir compras reales completas</a>
+      </div>
+      <iframe src="production/compras-urgente-18jun-entrega19-cubre23jun.html?v=${APP_BUILD_ID}" title="Compra urgente real" style="width:100%;height:78vh;border:1px solid #3a322a;background:#fbfaf7;border-radius:10px;"></iframe>
+    `;
+    return;
+  }
   
   document.getElementById("compras-listas").innerHTML = getComprasData().map((l, i) => `
     <div class="compra-lista${i===0?' open':''}" onclick="toggleCompra(this)">
@@ -3917,12 +3937,10 @@ document.getElementById("search").addEventListener("input", e => { state.search 
    Independent of actual/anterior detection in catalog buttons.
    ============================================================ */
 var currentPeriodo = (function() {
-  var today = new Date().toISOString().split('T')[0];
-  var pvFirst = menuData_prev.dias[0].fecha;
-  var pvLast = menuData_prev.dias[menuData_prev.dias.length - 1].fecha;
-  if (today < pvFirst) return 'p2';
-  if (today >= pvFirst && today <= pvLast) return 'p2';
-  return 'p1';
+  /* Release surface is for the next ATTENYA period. In this file p2 is the
+     20 Jun - 4 Jul package, so default there to keep menu packs and period
+     actions away from the previous 5-19 Jun data. */
+  return 'p2';
 })();
 
 function getMenuData() { return currentPeriodo === 'p1' ? menuData : menuData_prev; }
@@ -3947,6 +3965,19 @@ function switchPeriodo(p) {
 function downloadPeriodoPDF(tipo) {
   /* Build suffix from the active periodo's date range */
   var md = getMenuData();
+
+  if (md.periodo === '20 Junio - 4 Julio 2026') {
+    var htmlPaths = {
+      menu: 'production/menu-periodo-2026-06-20_2026-07-04.html',
+      mise: 'production/mise-periodo-2026-06-20_2026-07-04.html',
+      compras: 'production/compras-periodo-2026-06-20_2026-07-04.html'
+    };
+    if (htmlPaths[tipo]) {
+      window.open(htmlPaths[tipo] + '?v=' + APP_BUILD_ID, '_blank', 'noopener');
+      return;
+    }
+  }
+
   var first = md.dias[0].fecha.slice(8,10);
   var last = md.dias[md.dias.length-1].fecha.slice(8,10);
   var firstMon = md.dias[0].fecha.slice(5,7);
