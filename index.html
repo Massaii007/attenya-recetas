@@ -530,6 +530,19 @@ function isStandaloneKitchenApp() {
 }
 
 /* ============================================================
+   CATALOG FILTERS
+   ============================================================ */
+const CAT_FILTERS = [
+  {id:"all",l:"Todo",i:"◈"},
+  {id:"Componentes",l:"Componentes",i:"◆"},
+  {id:"Platos",l:"Platos",i:"◉"},
+  {id:"Entrantes",l:"Entrantes",i:"◎"},
+  {id:"Postres",l:"Postres",i:"◇"},
+  {id:"Desayunos",l:"Desayunos",i:"◐"},
+  {id:"Cenas",l:"Cenas",i:"◑"}
+];
+
+/* ============================================================
    RECIPES DATA (existing)
    ============================================================ */
 const recipes = [
@@ -3314,7 +3327,7 @@ function renderPeriodoBtns() {
 }
 
 function renderCats() {
-  var filteredCats = isRestaurante ? cats.filter(c => c.id !== "Componentes") : cats;
+  var filteredCats = isRestaurante ? CAT_FILTERS.filter(c => c.id !== "Componentes") : CAT_FILTERS;
   document.getElementById("cats").innerHTML = filteredCats.map(c => {
     const isAll = c.id === "all";
     const active = isAll ? (state.cat.length === 0) : state.cat.includes(c.id);
@@ -3753,6 +3766,12 @@ function switchView(v) {
   
   // Show selected view
   document.getElementById("view-" + v).classList.remove("hidden");
+  if (v === 'catalogo') {
+    renderCats();
+    renderSubs();
+    renderGrid();
+    renderPeriodoBtns();
+  }
   
   // Update nav tabs
   document.querySelectorAll(".nav-tab").forEach(t => t.classList.remove("active"));
