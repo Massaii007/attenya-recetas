@@ -633,7 +633,7 @@ const recipes = [
   {n:"Col Braseada con Melaza de Granada y Nueces",id:"Col_Verano_Brasa_Melaza_Granada_Nueces_Hage",c:"Entrantes",s:"",d:"Col Braseada con Melaza de Granada y Nueces",t:"",p:"V",a:"Hage"},
   {n:"Coles de Bruselas con Lardo",id:"Coles_Bruselas_Lardo",c:"Componentes",s:"Guarnición V",d:"Coles de Bruselas crujientes con lardo",t:"Horno",p:"-",a:"Paul Derez"},
   {n:"Coliflor Asada con Garam Masala y Aliño de Yogur de Mango",id:"Coliflor_Asada_Garam_Masala_Yogur_Mango_Caldesi",c:"Entrantes",s:"",d:"Coliflor Asada con Garam Masala y Aliño de Yogur de Mango",t:"",p:"Vegetariano",a:"Caldesi"},
-  {n:"Coliflor Gratinada",id:"Coliflor_Gratinada",c:"Entrantes",s:"",d:"Coliflor con bechamel gratinada",t:"Horno",p:"-",a:"Ferran Adrià"},
+  {n:"Coliflor Gratinada",id:"Coliflor_Gratinada",c:"Platos",s:"",d:"Coliflor con bechamel gratinada",t:"Horno",p:"-",a:"Ferran Adrià"},
   {n:"Compota de Manzana Especiada",id:"Compota_Manzana_Especiada",c:"Postres",s:"",d:"Compota templada con canela",t:"Cocción",p:"-",a:"Tradicional"},
   {n:"Conejo en Salmorejo Chicharrero",id:"Conejo_Salmorejo_Chicharrero",c:"Componentes",s:"Principal",d:"Conejo marinado en salmorejo tinerfeño, majado pimienta palmera, pan frito (Paula Carballo)",t:"Marinado + Majado + Guiso",p:"Conejo",a:"Paula Carballo"},
   {n:"Conejo en Salmorejo Chicharrero — Plato (Paula Carballo)",id:"Conejo_Salmorejo_Chicharrero_Plato",c:"Platos",s:"",d:"Plato canario tinerfeño completo con papas arrugadas y mojo verde — autoría Paula Carballo",t:"Guiso tradicional",p:"Conejo",a:"Paula Carballo"},
@@ -868,7 +868,7 @@ const recipes = [
   {n:"Nasi Goreng",id:"Nasi_Goreng",c:"Platos",s:"",d:"Arroz frito indonesio",t:"Wok",p:"Ave",a:"Tradicional"},
   {n:"Natillas Cuajadas con Ruibarbo (Straker)",id:"Natillas_Cuajadas_Ruibarbo_Straker",c:"Postres",s:"",d:"Set custard con compota de ruibarbo",t:"Horno",p:"-",a:"Straker"},
   {n:"Natillas de Pistacho",id:"Natillas_Pistacho",c:"Postres",s:"",d:"Natillas con pasta de pistacho",t:"Cocción",p:"-",a:"Ferran Adrià"},
-  {n:"Ossobuco a la Milanesa",id:"Ossobuco_Milanesa",c:"Componentes",s:"Principal",d:"Braseado milanés con gremolata suave",t:"Braseado",p:"Ternera",a:"Ferran Adrià"},
+  {n:"Ossobuco a la Milanesa",id:"Ossobuco_Milanesa",c:"Platos",s:"",d:"Braseado milanés con gremolata suave",t:"Braseado",p:"Ternera",a:"Ferran Adrià"},
   {n:"Ossobuco alla Milanese",id:"Ossobuco_Milanese_Plato",c:"Platos",s:"",d:"Ossobuco braseado con gremolata y risotto",t:"Braseado",p:"Ternera",a:"Ferran Adrià"},
   {n:"Paccheri con Pesto de Ajo Silvestre (Straker)",id:"Paccheri_Pesto_Ajo_Silvestre_Straker",c:"Platos",s:"",d:"Paccheri con pesto de ajo silvestre y parmesano",t:"Cocción",p:"Vegetariano",a:"Straker"},
   {n:"Paccheri al Pomodoro Cremoso",id:"Paccheri_Pomodoro_Cremoso",c:"Platos",s:"",d:"Pasta con salsa de tomate cremosa",t:"Cocción",p:"Vegetariano",a:"Tradicional"},
@@ -3330,9 +3330,17 @@ function renderCats() {
   var filteredCats = isRestaurante ? CAT_FILTERS.filter(c => c.id !== "Componentes") : CAT_FILTERS;
   document.getElementById("cats").innerHTML = filteredCats.map(c => {
     const isAll = c.id === "all";
-    const active = isAll ? (state.cat.length === 0) : state.cat.includes(c.id);
+    const active = isAll ? allCatalogFiltersClear() : state.cat.includes(c.id);
     return `<button class="cat-btn${active?" active":""}" onclick="setCat('${c.id}')">${c.i} ${c.l} (${count(c.id)})</button>`;
   }).join("");
+}
+
+function allCatalogFiltersClear() {
+  return state.cat.length === 0
+    && state.sub.length === 0
+    && !state.periodo
+    && state.autores.length === 0
+    && !state.search.trim();
 }
 
 function renderSubs() {
@@ -3855,6 +3863,13 @@ function setCat(c) {
   if (c === "all") {
     state.cat = [];
     state.sub = [];
+    state.periodo = false;
+    state.autores = [];
+    state.search = "";
+    var searchInput = document.getElementById("search");
+    if (searchInput) searchInput.value = "";
+    renderAutorChips();
+    renderPeriodoBtns();
   } else {
     const idx = state.cat.indexOf(c);
     if (idx >= 0) state.cat.splice(idx, 1);
