@@ -1,0 +1,29 @@
+{
+  "nombre": "Ternera al Curry Thai",
+  "fuente": "La Comida de la Familia — Ferran Adrià · Menú 12, pág. 192",
+  "pax": "25",
+  "time_total": "70 min guiso (D-1 regenerable) + 15 min ensamblaje",
+  "technique": "",
+  "protein": "Carne roja",
+  "allergens": "Leche de coco (no lácteo); verificar pasta de curry (puede contener crustáceos/pescado/soja)",
+  "difficulty": "Media",
+  "ingredients": "### Proteína principal\n- Ternera (llata): 3,75 kg *(lonchas de 0,5 cm)*\n\n### Aromáticos\n- Jengibre fresco: 100 g *(picado fino)*\n- Cilantro fresco: 75 g *(mitad al inicio, mitad al final)*\n- Pasta de curry amarillo: 50 g *(suave, no picante)*\n\n### Líquidos\n- Leche de coco: 1,6 L *(¾ al inicio, ¼ al final)*\n- Agua: 4,25 L\n- Aceite de oliva: 250 ml\n\n### Acompañamiento\n- Arroz largo: 2 kg *(en crudo, cocer aparte)*\n\n### Condimentos\n- Sal fina: al gusto *(moderada)*\n- Pimienta negra: al gusto\n\n---",
+  "procedure": "### MISE EN PLACE\n\n1. Cortar la llata de ternera en lonchas de 0,5 cm (3 por persona).\n2. Picar el jengibre fresco fino.\n3. Picar la mitad del cilantro. Reservar la otra mitad para acabado.\n4. Medir leche de coco: separar ¾ y ¼.\n\n### AROMÁTICOS (5 min)\n\n1. En olla exprés con aceite de oliva, rehogar jengibre picado.\n2. Añadir pasta de curry amarillo y tostar hasta que desprenda aroma.\n3. Incorporar la mitad del cilantro y ¾ de la leche de coco.\n\n### ESTOFADO EN OLLA EXPRÉS (50 min)\n\n1. Salpimentar la carne e introducir en la olla.\n2. Añadir el agua. Cerrar y cocer a fuego medio 50 minutos.\n3. La carne debe quedar muy tierna, casi deshilachable.\n\n### REDUCCIÓN Y ACABADO (10 min)\n\n1. Abrir olla y reducir a fuego fuerte hasta salsa consistente.\n2. Añadir el ¼ restante de leche de coco (frescor).\n3. Incorporar cilantro fresco restante.\n4. Rectificar de sal. La salsa debe ser cremosa y envolvente.\n\n---\n\n---\n\n### Ensamblaje y Emplatado\n\n1. **Guiso (D-1 recomendado):** el estofado de ternera al curry se adelanta y **regenera** perfecto — mejora de un día para otro. Regenerar en su salsa a 75 °C, tapado, sin sobrecocer.\n2. **Arroz basmati al pase:** cocer el basmati por absorción (o al vapor) y soltar el grano; regenerar 3 min al vapor si se preparó antes.\n3. **Salsa:** debe quedar cremosa y envolvente (leche de coco en dos tiempos: ¾ en cocción + ¼ al acabado para frescor).\n4. **Montaje:** base de arroz basmati moldeado a un lateral; disponer 3 lonchas de ternera parcialmente superpuestas; napar generosamente con la salsa de curry-coco.\n5. **Acabado:** hojas de cilantro fresco al momento del pase.",
+  "plating": "1. Base de arroz blanco (150–180 g cocido) en un lateral o moldeado.\n2. Disponer 3 lonchas de ternera parcialmente superpuestas.\n3. Napar generosamente con salsa de curry y coco.\n4. Hojas de cilantro fresco como acabado.\n\n---",
+  "timing": "- Guiso: regenerar tapado a 75 °C mientras se monta (10-12 min).\n- Arroz basmati: al pase o regenerar (3 min).\n- Napar y coronar con cilantro **al momento** — el cilantro fresco es la firma aromática, no marchitarlo.",
+  "critical_points": "- **Pasta de curry SUAVE** (amarillo, no rojo ni verde) — sin picante para perfil senior.\n- **Leche de coco en dos tiempos** — ¾ cocción + ¼ acabado (cremosidad + frescor).\n- **Cilantro fresco del final** es esencial.\n- **No sobrecocer al regenerar** — la carne ya está tierna, casi deshilachable.\n- Arroz basmati suelto, nunca apelmazado.",
+  "appcc": "- Cocción del guiso en olla exprés >90 °C; **regenerar en salsa a 75 °C tapado**.\n- Arroz: manipulación y regeneración con cadena de calor correcta (>65 °C al servicio).\n- **Alérgenos: leche de coco (no lácteo); verificar la pasta de curry** — muchas llevan **pasta de gambas (crustáceos)**, salsa de pescado o soja. **Usar pasta de curry sin gambas** o **declarar crustáceos/pescado/soja** según etiqueta.",
+  "senior_adaptation": "- **Sin picante:** curry amarillo suave; el jengibre aporta calidez, no ardor.\n- **Textura tierna, casi deshilachable** — la llata guisada larga se corta con tenedor, sin esfuerzo.\n- **Salsa cremosa y envolvente** que humedece el arroz — fácil de comer.\n- **Arroz basmati** aromático y ligero como base neutra.\n- Guiso **regenerable** — ideal para servicio sin tensión y calidad constante.\n\n---\n\n*\"Un guiso que sorprende por su suavidad y profundidad: la leche de coco en dos tiempos da cremosidad y frescor, el jengibre calienta sin picar. Sobre basmati aromático, es carne roja con un guiño exótico que los residentes reciben con gusto.\"*",
+  "quote": null,
+  "storytelling": null,
+  "componentes": [
+    {
+      "role": "principal",
+      "id": "Ternera_Curry_Thai"
+    },
+    {
+      "role": "hi",
+      "id": "Arroz_Basmati"
+    }
+  ]
+}
